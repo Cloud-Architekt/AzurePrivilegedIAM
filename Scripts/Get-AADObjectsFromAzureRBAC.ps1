@@ -1,7 +1,7 @@
 function Get-AADObjectsFromAzureRBAC {
  
     # Module
-    Import-Module Az.Accounts, Az.Resources, Microsoft.Graph.Authentication, Microsoft.Graph.Groups
+    Import-Module Az.Accounts, Az.Resources
 
     # Authentication
     $context = Get-AzContext
@@ -16,9 +16,6 @@ function Get-AADObjectsFromAzureRBAC {
             $TenantId = $context.Tenant.Id
             Write-Host "TenantId '$TenantId' already connected"
         }
-
-    $MgGraphAccessToken = (Get-AzAccessToken -ResourceUrl "https://graph.microsoft.com").Token
-    $ConnectMg = Connect-MgGraph -AccessToken $MgGraphAccessToken
 
     # Eligible roles in PIM
     $MSPIM = Get-AzADServicePrincipal | Where-Object {$_.DisplayName -eq "MS-PIM"}
@@ -54,8 +51,6 @@ function Get-AADObjectsFromAzureRBAC {
         else {
             $RoleDefinitionType = "BuiltInRole"
         }
-
-        #$Tag = Get-AzTag -ResourceId $Scope
 
         [pscustomobject]@{
             RoleDefinitionId            = $_.RoleDefinitionId
