@@ -42,11 +42,11 @@ function Get-AzEARoleMembers {
         }
 
     # Authentication and Connect to Az
-    Connect-AzAccount -Tenant $TenantName
+    Connect-AzAccount -Tenant $TenantName | Out-Null
 
     # Get Token and connect to MgGraph
     $AccessToken = (Get-AzAccessToken -ResourceTypeName "MSGraph").Token
-    Connect-MgGraph -AccessToken $AccessToken
+    Connect-MgGraph -AccessToken $AccessToken | Out-Null
     $TenantId = (Get-AzContext).Tenant.Id
 
     # List all subscriptions to get classic administrators
