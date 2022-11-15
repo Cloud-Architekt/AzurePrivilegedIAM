@@ -1,0 +1,434 @@
+{
+    "definition": {
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "actions": {
+            "For_each_ObjectId_in_privilegedAccount": {
+                "actions": {
+                    "Disable_privileged_account": {
+                        "inputs": {
+                            "authentication": {
+                                "audience": "@variables('Audience')",
+                                "type": "ManagedServiceIdentity"
+                            },
+                            "body": {
+                                "accountEnabled": false
+                            },
+                            "method": "PATCH",
+                            "uri": "https://graph.microsoft.com/beta/users/@{items('For_each_ObjectId_in_privilegedAccount')}"
+                        },
+                        "runAfter": {
+                            "Revoke_sign-in_sessions_of_privileged_account": [
+                                "Succeeded",
+                                "Failed"
+                            ]
+                        },
+                        "type": "Http"
+                    },
+                    "Revoke_sign-in_sessions_of_privileged_account": {
+                        "inputs": {
+                            "authentication": {
+                                "audience": "@variables('Audience')",
+                                "type": "ManagedServiceIdentity"
+                            },
+                            "method": "PATCH",
+                            "uri": "https://graph.microsoft.com/v1.0/users/@{items('For_each_ObjectId_in_privilegedAccount')}/revokeSignInSessions"
+                        },
+                        "runAfter": {},
+                        "type": "Http"
+                    },
+                    "Send_an_email_from_a_shared_mailbox_(V2)": {
+                        "inputs": {
+                            "body": {
+                                "Body": "<p>Disabling or revocation of sign-in accounts of @{body('Parse_JSON_of_custom_security_attributes_from_work_account')?['displayName']} has been failed. Error message:<br>\n<br>\n@{variables('ErrorMessage')}<br>\n<br>\nObjectId of privileged account is: @{items('For_each_ObjectId_in_privilegedAccount')}.<br>\n</p>",
+                                "Importance": "High",
+                                "MailboxAddress": "@variables('SharedMailbox')",
+                                "Subject": "Offboarding has failed - @{items('For_each_ObjectId_in_privilegedAccount')}",
+                                "To": "@variables('Recipient')"
+                            },
+                            "host": {
+                                "connection": {
+                                    "name": "@parameters('$connections')['office365']['connectionId']"
+                                }
+                            },
+                            "method": "post",
+                            "path": "/v2/SharedMailbox/Mail"
+                        },
+                        "runAfter": {
+                            "Set_variable_with_ErrorMessage_text": [
+                                "Succeeded"
+                            ]
+                        },
+                        "type": "ApiConnection"
+                    },
+                    "Set_variable_with_ErrorMessage_text": {
+                        "inputs": {
+                            "name": "ErrorMessage",
+                            "value": "actions('Set_variable')['error']['message']"
+                        },
+                        "runAfter": {
+                            "Disable_privileged_account": [
+                                "Failed",
+                                "TimedOut"
+                            ]
+                        },
+                        "type": "SetVariable"
+                    }
+                },
+                "foreach": "@variables('privilegedAccount')",
+                "runAfter": {
+                    "Initialize_variable_for_privilegedAccount": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "Foreach"
+            },
+            "Get_custom_security_attribute_of_associated_privileged_account(s)": {
+                "inputs": {
+                    "authentication": {
+                        "audience": "@variables('Audience')",
+                        "type": "ManagedServiceIdentity"
+                    },
+                    "method": "GET",
+                    "uri": "https://graph.microsoft.com/beta/users/@{triggerBody()?['data']?['subject']?['id']}?$select=id,displayName,customSecurityAttributes"
+                },
+                "runAfter": {
+                    "Initialize_variable_for_Custom_Security_Attribute_Name": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "Http"
+            },
+            "HTTP": {
+                "inputs": {
+                    "authentication": {
+                        "audience": "https://graph.microsoft.com",
+                        "type": "ManagedServiceIdentity"
+                    },
+                    "body": {
+                        "data": {
+                            "operationStatus": "Completed"
+                        },
+                        "source": "sample",
+                        "type": "lifecycleEvent"
+                    },
+                    "method": "POST",
+                    "uri": "https://graph.microsoft.com/beta@{triggerBody()?['data']?['callbackUriPath']}"
+                },
+                "runAfter": {
+                    "For_each_ObjectId_in_privilegedAccount": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "Http"
+            },
+            "Initialize_variable_for_Audience": {
+                "inputs": {
+                    "variables": [
+                        {
+                            "name": "Audience",
+                            "type": "string",
+                            "value": "https://graph.microsoft.com"
+                        }
+                    ]
+                },
+                "runAfter": {},
+                "type": "InitializeVariable"
+            },
+            "Initialize_variable_for_Custom_Security_Attribute_Name": {
+                "inputs": {
+                    "variables": [
+                        {
+                            "name": "AttributeName",
+                            "type": "string",
+                            "value": "associatedWorkAccount"
+                        }
+                    ]
+                },
+                "runAfter": {
+                    "Initialize_variable_for_Custom_Security_Attribute_Set_Name": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "InitializeVariable"
+            },
+            "Initialize_variable_for_Custom_Security_Attribute_Set_Name": {
+                "inputs": {
+                    "variables": [
+                        {
+                            "name": "AttributeSetName",
+                            "type": "string",
+                            "value": "privilegedUser"
+                        }
+                    ]
+                },
+                "runAfter": {
+                    "Initialize_variable_for_Error_Message": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "InitializeVariable"
+            },
+            "Initialize_variable_for_Error_Message": {
+                "inputs": {
+                    "variables": [
+                        {
+                            "name": "ErrorMessage",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "runAfter": {
+                    "Initialize_variable_for_Recipient_of_notifications": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "InitializeVariable"
+            },
+            "Initialize_variable_for_Recipient_of_notifications": {
+                "inputs": {
+                    "variables": [
+                        {
+                            "name": "Recipient",
+                            "type": "string",
+                            "value": "identityteam@contoso.com"
+                        }
+                    ]
+                },
+                "runAfter": {
+                    "Initialize_variable_for_Shared_Mailbox_(sender_of_notification)": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "InitializeVariable"
+            },
+            "Initialize_variable_for_Shared_Mailbox_(sender_of_notification)": {
+                "inputs": {
+                    "variables": [
+                        {
+                            "name": "SharedMailbox",
+                            "type": "string",
+                            "value": "privilegediamservice@contoso.com"
+                        }
+                    ]
+                },
+                "runAfter": {
+                    "Initialize_variable_for_Audience": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "InitializeVariable"
+            },
+            "Initialize_variable_for_privilegedAccount": {
+                "inputs": {
+                    "variables": [
+                        {
+                            "name": "privilegedAccount",
+                            "type": "array",
+                            "value": "@body('Parse_JSON_of_custom_security_attributes_from_work_account')?['customSecurityAttributes']?['standardUser']?['associatedPrivilegedAccount']"
+                        }
+                    ]
+                },
+                "runAfter": {
+                    "Parse_JSON_of_custom_security_attributes_from_work_account": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "InitializeVariable"
+            },
+            "Parse_JSON_of_custom_security_attributes_from_work_account": {
+                "inputs": {
+                    "content": "@body('Get_custom_security_attribute_of_associated_privileged_account(s)')",
+                    "schema": {
+                        "properties": {
+                            "@@odata.context": {
+                                "type": "string"
+                            },
+                            "customSecurityAttributes": {
+                                "properties": {
+                                    "standardUser": {
+                                        "properties": {
+                                            "@@odata.type": {
+                                                "type": "string"
+                                            },
+                                            "associatedPrivilegedAccount": {
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "type": "array"
+                                            },
+                                            "associatedPrivilegedAccount@odata.type": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "displayName": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                },
+                "runAfter": {
+                    "Get_custom_security_attribute_of_associated_privileged_account(s)": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "ParseJson"
+            }
+        },
+        "contentVersion": "1.0.0.0",
+        "outputs": {},
+        "parameters": {
+            "$connections": {
+                "defaultValue": {},
+                "type": "Object"
+            }
+        },
+        "triggers": {
+            "manual": {
+                "inputs": {
+                    "schema": {
+                        "properties": {
+                            "data": {
+                                "properties": {
+                                    "callbackUriPath": {
+                                        "description": "CallbackUriPath used for Resume Action",
+                                        "title": "Data.CallbackUriPath",
+                                        "type": "string"
+                                    },
+                                    "subject": {
+                                        "properties": {
+                                            "displayName": {
+                                                "description": "DisplayName of the Subject",
+                                                "title": "Subject.DisplayName",
+                                                "type": "string"
+                                            },
+                                            "email": {
+                                                "description": "Email of the Subject",
+                                                "title": "Subject.Email",
+                                                "type": "string"
+                                            },
+                                            "id": {
+                                                "description": "Id of the Subject",
+                                                "title": "Subject.Id",
+                                                "type": "string"
+                                            },
+                                            "manager": {
+                                                "properties": {
+                                                    "displayName": {
+                                                        "description": "DisplayName parameter for Manager",
+                                                        "title": "Manager.DisplayName",
+                                                        "type": "string"
+                                                    },
+                                                    "email": {
+                                                        "description": "Mail parameter for Manager",
+                                                        "title": "Manager.Mail",
+                                                        "type": "string"
+                                                    },
+                                                    "id": {
+                                                        "description": "Id parameter for Manager",
+                                                        "title": "Manager.Id",
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "userPrincipalName": {
+                                                "description": "UserPrincipalName of the Subject",
+                                                "title": "Subject.UserPrincipalName",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "task": {
+                                        "properties": {
+                                            "displayName": {
+                                                "description": "DisplayName for Task Object",
+                                                "title": "Task.DisplayName",
+                                                "type": "string"
+                                            },
+                                            "id": {
+                                                "description": "Id for Task Object",
+                                                "title": "Task.Id",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "taskProcessingResult": {
+                                        "properties": {
+                                            "createdDateTime": {
+                                                "description": "CreatedDateTime for TaskProcessingResult Object",
+                                                "title": "TaskProcessingResult.CreatedDateTime",
+                                                "type": "string"
+                                            },
+                                            "id": {
+                                                "description": "Id for TaskProcessingResult Object",
+                                                "title": "TaskProcessingResult.Id",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "workflow": {
+                                        "properties": {
+                                            "displayName": {
+                                                "description": "DisplayName for Workflow Object",
+                                                "title": "Workflow.DisplayName",
+                                                "type": "string"
+                                            },
+                                            "id": {
+                                                "description": "Id for Workflow Object",
+                                                "title": "Workflow.Id",
+                                                "type": "string"
+                                            },
+                                            "workflowVerson": {
+                                                "description": "WorkflowVersion for Workflow Object",
+                                                "title": "Workflow.WorkflowVersion",
+                                                "type": "integer"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "source": {
+                                "description": "Context in which an event happened",
+                                "title": "Request.Source",
+                                "type": "string"
+                            },
+                            "type": {
+                                "description": "Value describing the type of event related to the originating occurrence.",
+                                "title": "Request.Type",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                },
+                "kind": "Http",
+                "type": "Request"
+            }
+        }
+    },
+    "parameters": {
+        "$connections": {
+            "value": {
+                "office365": {
+                    "connectionId": "/subscriptions/<YourSubscriptionId>/resourceGroups/<YourResourceGroupName>/providers/Microsoft.Web/connections/office365",
+                    "connectionName": "office365",
+                    "id": "/subscriptions/<YourSubscriptionId>/providers/Microsoft.Web/locations/<YourRegion>/managedApis/office365"
+                }
+            }
+        }
+    }
+}

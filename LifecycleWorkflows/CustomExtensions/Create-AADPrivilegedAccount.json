@@ -1,0 +1,727 @@
+{
+    "definition": {
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "actions": {
+            "Classification_of_Tiering_Level_based_on_Job_Title": {
+                "actions": {
+                    "Set_Tiering_Level_Name_for_Identity_Operations": {
+                        "inputs": {
+                            "name": "TierLevelName",
+                            "value": "ControlPlane"
+                        },
+                        "runAfter": {},
+                        "type": "SetVariable"
+                    },
+                    "Set_Tiering_Level_for_Identity_Operations": {
+                        "inputs": {
+                            "name": "TierLevel",
+                            "value": 0
+                        },
+                        "runAfter": {
+                            "Set_Tiering_Level_Name_for_Identity_Operations": [
+                                "Succeeded"
+                            ]
+                        },
+                        "type": "SetVariable"
+                    }
+                },
+                "else": {
+                    "actions": {
+                        "Set_Tiering_Level_Name_for_other_IT_job_roles": {
+                            "inputs": {
+                                "name": "TierLevelName",
+                                "value": "ManagementPlane"
+                            },
+                            "runAfter": {},
+                            "type": "SetVariable"
+                        },
+                        "Set_Tiering_Level__for_other_IT_job_roles": {
+                            "inputs": {
+                                "name": "TierLevel",
+                                "value": 1
+                            },
+                            "runAfter": {
+                                "Set_Tiering_Level_Name_for_other_IT_job_roles": [
+                                    "Succeeded"
+                                ]
+                            },
+                            "type": "SetVariable"
+                        }
+                    }
+                },
+                "expression": {
+                    "or": [
+                        {
+                            "equals": [
+                                "@body('Parse_JSON_from_work_account')?['jobTitle']",
+                                "Identity Operations"
+                            ]
+                        }
+                    ]
+                },
+                "runAfter": {
+                    "Initialize_variable_for_MailAddress": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "If"
+            },
+            "Create_privileged_account": {
+                "inputs": {
+                    "authentication": {
+                        "audience": "@variables('Audience')",
+                        "type": "ManagedServiceIdentity"
+                    },
+                    "body": {
+                        "accountEnabled": false,
+                        "country": "Germany",
+                        "displayName": "adm@{body('Parse_JSON_from_work_account')?['employeeId']}@{variables('TierLevel')}",
+                        "employeeHireDate": "@{body('Parse_JSON_from_work_account')?['employeeHireDate']}",
+                        "mail": "@{variables('MailAddress')}",
+                        "mailNickname": "adm@{body('Parse_JSON_from_work_account')?['employeeId']}@{variables('TierLevel')}",
+                        "otherMails": [
+                            "@{body('Parse_JSON_from_work_account')?['mail']}"
+                        ],
+                        "passwordPolicies": "DisablePasswordExpiration",
+                        "passwordProfile": {
+                            "forceChangePasswordNextSignIn": false,
+                            "password": "@{concat(variables('PasswordCharacters')[rand(0,52)],variables('PasswordCharacters')[rand(0,52)],variables('PasswordCharacters')[rand(0,52)],variables('PasswordCharacters')[rand(0,52)],variables('PasswordCharacters')[rand(0,52)],rand(0,21),rand(0,21),rand (0,21),'!')}"
+                        },
+                        "preferredLanguage": "en-US",
+                        "usageLocation": "DE",
+                        "userPrincipalName": "adm@{body('Parse_JSON_from_work_account')?['employeeId']}@{variables('TierLevel')}@contoso.com"
+                    },
+                    "method": "POST",
+                    "uri": "https://graph.microsoft.com/beta/users/"
+                },
+                "runAfter": {
+                    "Initialize_variable_for_Valid_Characters_for_Password": [
+                        "Succeeded"
+                    ]
+                },
+                "runtimeConfiguration": {
+                    "secureData": {
+                        "properties": [
+                            "inputs",
+                            "outputs"
+                        ]
+                    }
+                },
+                "type": "Http"
+            },
+            "Get_user_details_from_work_account": {
+                "inputs": {
+                    "authentication": {
+                        "audience": "@variables('Audience')",
+                        "type": "ManagedServiceIdentity"
+                    },
+                    "method": "GET",
+                    "uri": "https://graph.microsoft.com/beta/users/@{triggerBody()?['data']?['subject']?['id']}"
+                },
+                "runAfter": {
+                    "Initialize_variable_for_Tenant_Name": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "Http"
+            },
+            "HTTP": {
+                "inputs": {
+                    "authentication": {
+                        "audience": "https://graph.microsoft.com",
+                        "type": "ManagedServiceIdentity"
+                    },
+                    "body": {
+                        "data": {
+                            "operationStatus": "Completed"
+                        },
+                        "source": "sample",
+                        "type": "lifecycleEvent"
+                    },
+                    "method": "POST",
+                    "uri": "https://graph.microsoft.com/beta@{triggerBody()?['data']?['callbackUriPath']}"
+                },
+                "runAfter": {
+                    "Update_custom_security_attributes_of_work_account": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "Http"
+            },
+            "Initialize_variable_for_Audience": {
+                "inputs": {
+                    "variables": [
+                        {
+                            "name": "Audience",
+                            "type": "string",
+                            "value": "https://graph.microsoft.com"
+                        }
+                    ]
+                },
+                "runAfter": {},
+                "type": "InitializeVariable"
+            },
+            "Initialize_variable_for_MailAddress": {
+                "inputs": {
+                    "variables": [
+                        {
+                            "name": "MailAddress",
+                            "type": "string",
+                            "value": "@{concat(first(skip(split(body('Parse_JSON_from_work_account')?['mail'], '@'), 0)),'+pim@',first(skip(split(body('Parse_JSON_from_work_account')?['mail'], '@'), 1)))}"
+                        }
+                    ]
+                },
+                "runAfter": {
+                    "Parse_JSON_from_work_account": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "InitializeVariable"
+            },
+            "Initialize_variable_for_Tenant_Name": {
+                "inputs": {
+                    "variables": [
+                        {
+                            "name": "TenantName",
+                            "type": "string",
+                            "value": "contoso.onmicrosoft.com"
+                        }
+                    ]
+                },
+                "runAfter": {
+                    "Initialize_variable_for_Tiering_Level_Name": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "InitializeVariable"
+            },
+            "Initialize_variable_for_Tiering_Level": {
+                "inputs": {
+                    "variables": [
+                        {
+                            "name": "TierLevel",
+                            "type": "integer"
+                        }
+                    ]
+                },
+                "runAfter": {
+                    "Initialize_variable_for_Audience": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "InitializeVariable"
+            },
+            "Initialize_variable_for_Tiering_Level_Name": {
+                "inputs": {
+                    "variables": [
+                        {
+                            "name": "TierLevelName",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "runAfter": {
+                    "Initialize_variable_for_Tiering_Level": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "InitializeVariable"
+            },
+            "Initialize_variable_for_Valid_Characters_for_Password": {
+                "inputs": {
+                    "variables": [
+                        {
+                            "name": "PasswordCharacters",
+                            "type": "array",
+                            "value": [
+                                "A",
+                                "B",
+                                "C",
+                                "D",
+                                "E",
+                                "F",
+                                "G",
+                                "H",
+                                "I",
+                                "J",
+                                "K",
+                                "L",
+                                "M",
+                                "N",
+                                "O",
+                                "P",
+                                "Q",
+                                "R",
+                                "S",
+                                "T",
+                                "U",
+                                "V",
+                                "W",
+                                "X",
+                                "Y",
+                                "Z",
+                                "a",
+                                "b",
+                                "c",
+                                "d",
+                                "e",
+                                "f",
+                                "g",
+                                "h",
+                                "i",
+                                "j",
+                                "k",
+                                "l",
+                                "m",
+                                "n",
+                                "o",
+                                "p",
+                                "q",
+                                "r",
+                                "s",
+                                "t",
+                                "u",
+                                "v",
+                                "w",
+                                "x",
+                                "y",
+                                "z"
+                            ]
+                        }
+                    ]
+                },
+                "runAfter": {
+                    "Classification_of_Tiering_Level_based_on_Job_Title": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "InitializeVariable"
+            },
+            "Parse_JSON_from_privileged_account": {
+                "inputs": {
+                    "content": "@body('Create_privileged_account')",
+                    "schema": {
+                        "properties": {
+                            "@@odata.context": {
+                                "type": "string"
+                            },
+                            "accountEnabled": {
+                                "type": "boolean"
+                            },
+                            "ageGroup": {},
+                            "assignedLicenses": {
+                                "type": "array"
+                            },
+                            "assignedPlans": {
+                                "type": "array"
+                            },
+                            "authorizationInfo": {
+                                "properties": {
+                                    "certificateUserIds": {
+                                        "type": "array"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "businessPhones": {
+                                "type": "array"
+                            },
+                            "city": {},
+                            "companyName": {},
+                            "consentProvidedForMinor": {},
+                            "country": {
+                                "type": "string"
+                            },
+                            "createdDateTime": {
+                                "type": "string"
+                            },
+                            "creationType": {},
+                            "deletedDateTime": {},
+                            "department": {},
+                            "deviceKeys": {
+                                "type": "array"
+                            },
+                            "displayName": {
+                                "type": "string"
+                            },
+                            "employeeHireDate": {},
+                            "employeeId": {},
+                            "employeeLeaveDateTime": {},
+                            "employeeOrgData": {},
+                            "employeeType": {},
+                            "externalUserConvertedOn": {},
+                            "externalUserState": {},
+                            "externalUserStateChangeDateTime": {},
+                            "faxNumber": {},
+                            "givenName": {},
+                            "id": {
+                                "type": "string"
+                            },
+                            "identities": {
+                                "items": {
+                                    "properties": {
+                                        "issuer": {
+                                            "type": "string"
+                                        },
+                                        "issuerAssignedId": {
+                                            "type": "string"
+                                        },
+                                        "signInType": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "signInType",
+                                        "issuer",
+                                        "issuerAssignedId"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "imAddresses": {
+                                "type": "array"
+                            },
+                            "infoCatalogs": {
+                                "type": "array"
+                            },
+                            "isManagementRestricted": {},
+                            "isResourceAccount": {},
+                            "jobTitle": {},
+                            "legalAgeGroupClassification": {},
+                            "mail": {},
+                            "mailNickname": {
+                                "type": "string"
+                            },
+                            "mobilePhone": {},
+                            "officeLocation": {},
+                            "onPremisesDistinguishedName": {},
+                            "onPremisesDomainName": {},
+                            "onPremisesExtensionAttributes": {
+                                "properties": {
+                                    "extensionAttribute1": {},
+                                    "extensionAttribute10": {},
+                                    "extensionAttribute11": {},
+                                    "extensionAttribute12": {},
+                                    "extensionAttribute13": {},
+                                    "extensionAttribute14": {},
+                                    "extensionAttribute15": {},
+                                    "extensionAttribute2": {},
+                                    "extensionAttribute3": {},
+                                    "extensionAttribute4": {},
+                                    "extensionAttribute5": {},
+                                    "extensionAttribute6": {},
+                                    "extensionAttribute7": {},
+                                    "extensionAttribute8": {},
+                                    "extensionAttribute9": {}
+                                },
+                                "type": "object"
+                            },
+                            "onPremisesImmutableId": {},
+                            "onPremisesLastSyncDateTime": {},
+                            "onPremisesProvisioningErrors": {
+                                "type": "array"
+                            },
+                            "onPremisesSamAccountName": {},
+                            "onPremisesSecurityIdentifier": {},
+                            "onPremisesSyncEnabled": {},
+                            "onPremisesUserPrincipalName": {},
+                            "otherMails": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "passwordPolicies": {
+                                "type": "string"
+                            },
+                            "passwordProfile": {},
+                            "postalCode": {},
+                            "preferredDataLocation": {},
+                            "preferredLanguage": {
+                                "type": "string"
+                            },
+                            "provisionedPlans": {
+                                "type": "array"
+                            },
+                            "proxyAddresses": {
+                                "type": "array"
+                            },
+                            "refreshTokensValidFromDateTime": {
+                                "type": "string"
+                            },
+                            "securityIdentifier": {
+                                "type": "string"
+                            },
+                            "showInAddressList": {},
+                            "signInSessionsValidFromDateTime": {
+                                "type": "string"
+                            },
+                            "state": {},
+                            "streetAddress": {},
+                            "surname": {},
+                            "usageLocation": {
+                                "type": "string"
+                            },
+                            "userPrincipalName": {
+                                "type": "string"
+                            },
+                            "userType": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                },
+                "runAfter": {
+                    "Create_privileged_account": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "ParseJson"
+            },
+            "Parse_JSON_from_work_account": {
+                "inputs": {
+                    "content": "@body('Get_user_details_from_work_account')",
+                    "schema": {
+                        "properties": {
+                            "@@odata.context": {
+                                "type": "string"
+                            },
+                            "businessPhones": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "department": {
+                                "type": "string"
+                            },
+                            "displayName": {
+                                "type": "string"
+                            },
+                            "employeeHireDate": {},
+                            "employeeId": {
+                                "type": "string"
+                            },
+                            "givenName": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "jobTitle": {
+                                "type": "string"
+                            },
+                            "mail": {
+                                "type": "string"
+                            },
+                            "preferredLanguage": {},
+                            "surname": {
+                                "type": "string"
+                            },
+                            "userPrincipalName": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                },
+                "runAfter": {
+                    "Get_user_details_from_work_account": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "ParseJson"
+            },
+            "Update_custom_security_attributes_of_privileged_account": {
+                "inputs": {
+                    "authentication": {
+                        "audience": "@variables('Audience')",
+                        "type": "ManagedServiceIdentity"
+                    },
+                    "body": {
+                        "customSecurityAttributes": {
+                            "privilegedUser": {
+                                "@@odata.type": "#Microsoft.DirectoryServices.CustomSecurityAttributeValue",
+                                "adminTierLevelName": "@{variables('TierLevelName')}",
+                                "associatedWorkAccount": "@{body('Parse_JSON_from_work_account')?['id']}",
+                                "targetMgmtEnv": "@{variables('TenantName')}"
+                            }
+                        }
+                    },
+                    "headers": {
+                        "Content-type": "application/json"
+                    },
+                    "method": "PATCH",
+                    "uri": "https://graph.microsoft.com/beta/users/@{body('Parse_JSON_from_privileged_account')?['id']}"
+                },
+                "runAfter": {
+                    "Parse_JSON_from_privileged_account": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "Http"
+            },
+            "Update_custom_security_attributes_of_work_account": {
+                "inputs": {
+                    "authentication": {
+                        "audience": "@variables('Audience')",
+                        "type": "ManagedServiceIdentity"
+                    },
+                    "body": {
+                        "customSecurityAttributes": {
+                            "standardUser": {
+                                "@@odata.type": "#Microsoft.DirectoryServices.CustomSecurityAttributeValue",
+                                "associatedPrivilegedAccount": [
+                                    "@{body('Parse_JSON_from_work_account')?['id']}"
+                                ],
+                                "associatedPrivilegedAccount@odata.type": "#Collection(String)"
+                            }
+                        }
+                    },
+                    "method": "PATCH",
+                    "uri": "https://graph.microsoft.com/beta/users/@{triggerBody()?['data']?['subject']?['id']}"
+                },
+                "runAfter": {
+                    "Update_custom_security_attributes_of_privileged_account": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "Http"
+            }
+        },
+        "contentVersion": "1.0.0.0",
+        "outputs": {},
+        "parameters": {},
+        "triggers": {
+            "manual": {
+                "inputs": {
+                    "schema": {
+                        "properties": {
+                            "data": {
+                                "properties": {
+                                    "callbackUriPath": {
+                                        "description": "CallbackUriPath used for Resume Action",
+                                        "title": "Data.CallbackUriPath",
+                                        "type": "string"
+                                    },
+                                    "subject": {
+                                        "properties": {
+                                            "displayName": {
+                                                "description": "DisplayName of the Subject",
+                                                "title": "Subject.DisplayName",
+                                                "type": "string"
+                                            },
+                                            "email": {
+                                                "description": "Email of the Subject",
+                                                "title": "Subject.Email",
+                                                "type": "string"
+                                            },
+                                            "id": {
+                                                "description": "Id of the Subject",
+                                                "title": "Subject.Id",
+                                                "type": "string"
+                                            },
+                                            "manager": {
+                                                "properties": {
+                                                    "displayName": {
+                                                        "description": "DisplayName parameter for Manager",
+                                                        "title": "Manager.DisplayName",
+                                                        "type": "string"
+                                                    },
+                                                    "email": {
+                                                        "description": "Mail parameter for Manager",
+                                                        "title": "Manager.Mail",
+                                                        "type": "string"
+                                                    },
+                                                    "id": {
+                                                        "description": "Id parameter for Manager",
+                                                        "title": "Manager.Id",
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "userPrincipalName": {
+                                                "description": "UserPrincipalName of the Subject",
+                                                "title": "Subject.UserPrincipalName",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "task": {
+                                        "properties": {
+                                            "displayName": {
+                                                "description": "DisplayName for Task Object",
+                                                "title": "Task.DisplayName",
+                                                "type": "string"
+                                            },
+                                            "id": {
+                                                "description": "Id for Task Object",
+                                                "title": "Task.Id",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "taskProcessingResult": {
+                                        "properties": {
+                                            "createdDateTime": {
+                                                "description": "CreatedDateTime for TaskProcessingResult Object",
+                                                "title": "TaskProcessingResult.CreatedDateTime",
+                                                "type": "string"
+                                            },
+                                            "id": {
+                                                "description": "Id for TaskProcessingResult Object",
+                                                "title": "TaskProcessingResult.Id",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "workflow": {
+                                        "properties": {
+                                            "displayName": {
+                                                "description": "DisplayName for Workflow Object",
+                                                "title": "Workflow.DisplayName",
+                                                "type": "string"
+                                            },
+                                            "id": {
+                                                "description": "Id for Workflow Object",
+                                                "title": "Workflow.Id",
+                                                "type": "string"
+                                            },
+                                            "workflowVerson": {
+                                                "description": "WorkflowVersion for Workflow Object",
+                                                "title": "Workflow.WorkflowVersion",
+                                                "type": "integer"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "source": {
+                                "description": "Context in which an event happened",
+                                "title": "Request.Source",
+                                "type": "string"
+                            },
+                            "type": {
+                                "description": "Value describing the type of event related to the originating occurrence.",
+                                "title": "Request.Type",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                },
+                "kind": "Http",
+                "type": "Request"
+            }
+        }
+    },
+    "parameters": {}
+}

@@ -1,0 +1,516 @@
+{
+    "definition": {
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "actions": {
+            "Compose_otherMails": {
+                "inputs": "@first(body('Parse_user_details_from_privileged_account')?['otherMails'])",
+                "runAfter": {
+                    "Parse_user_details_from_privileged_account": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "Compose"
+            },
+            "Create_Temporary_Access_Pass": {
+                "inputs": {
+                    "authentication": {
+                        "audience": "@variables('Audience')",
+                        "type": "ManagedServiceIdentity"
+                    },
+                    "body": {
+                        "isUsableOnce": true,
+                        "lifetimeInMinutes": 60
+                    },
+                    "method": "POST",
+                    "uri": "https://graph.microsoft.com/beta/users/@{triggerBody()?['data']?['subject']?['id']}/authentication/temporaryAccessPassMethods"
+                },
+                "runAfter": {
+                    "Compose_otherMails": [
+                        "Succeeded"
+                    ]
+                },
+                "runtimeConfiguration": {
+                    "secureData": {
+                        "properties": [
+                            "outputs"
+                        ]
+                    }
+                },
+                "type": "Http"
+            },
+            "Get_user_details_from_privileged_account": {
+                "inputs": {
+                    "authentication": {
+                        "audience": "@variables('Audience')",
+                        "type": "ManagedServiceIdentity"
+                    },
+                    "method": "GET",
+                    "uri": "https://graph.microsoft.com/beta/users/@{triggerBody()?['data']?['subject']?['id']}"
+                },
+                "runAfter": {
+                    "Initialize_variable_for_Audience": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "Http"
+            },
+            "HTTP": {
+                "inputs": {
+                    "authentication": {
+                        "audience": "https://graph.microsoft.com",
+                        "type": "ManagedServiceIdentity"
+                    },
+                    "body": {
+                        "data": {
+                            "operationStatus": "Completed"
+                        },
+                        "source": "sample",
+                        "type": "lifecycleEvent"
+                    },
+                    "method": "POST",
+                    "uri": "https://graph.microsoft.com/beta@{triggerBody()?['data']?['callbackUriPath']}"
+                },
+                "runAfter": {
+                    "Send_an_email_from_a_shared_mailbox_(V2)": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "Http"
+            },
+            "Initialize_variable_for_Audience": {
+                "inputs": {
+                    "variables": [
+                        {
+                            "name": "Audience",
+                            "type": "string",
+                            "value": "https://graph.microsoft.com"
+                        }
+                    ]
+                },
+                "runAfter": {
+                    "Initialize_variable_of_Shared_Mailbox_(sender_of_TAP)": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "InitializeVariable"
+            },
+            "Initialize_variable_of_Shared_Mailbox_(sender_of_TAP)": {
+                "inputs": {
+                    "variables": [
+                        {
+                            "name": "SharedMailbox",
+                            "type": "string",
+                            "value": "privilegediamservice@contoso.com"
+                        }
+                    ]
+                },
+                "runAfter": {},
+                "type": "InitializeVariable"
+            },
+            "Parse_Temporary_Access_Pass": {
+                "inputs": {
+                    "content": "@body('Create_Temporary_Access_Pass')",
+                    "schema": {
+                        "properties": {
+                            "@@odata.context": {
+                                "type": "string"
+                            },
+                            "createdDateTime": {
+                                "type": "string"
+                            },
+                            "id": {
+                                "type": "string"
+                            },
+                            "isUsable": {
+                                "type": "boolean"
+                            },
+                            "isUsableOnce": {
+                                "type": "boolean"
+                            },
+                            "lifetimeInMinutes": {
+                                "type": "integer"
+                            },
+                            "methodUsabilityReason": {
+                                "type": "string"
+                            },
+                            "startDateTime": {
+                                "type": "string"
+                            },
+                            "temporaryAccessPass": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                },
+                "runAfter": {
+                    "Create_Temporary_Access_Pass": [
+                        "Succeeded"
+                    ]
+                },
+                "runtimeConfiguration": {
+                    "secureData": {
+                        "properties": [
+                            "inputs"
+                        ]
+                    }
+                },
+                "type": "ParseJson"
+            },
+            "Parse_user_details_from_privileged_account": {
+                "inputs": {
+                    "content": "@body('Get_user_details_from_privileged_account')",
+                    "schema": {
+                        "properties": {
+                            "@@odata.context": {
+                                "type": "string"
+                            },
+                            "accountEnabled": {
+                                "type": "boolean"
+                            },
+                            "ageGroup": {},
+                            "assignedLicenses": {
+                                "type": "array"
+                            },
+                            "assignedPlans": {
+                                "type": "array"
+                            },
+                            "authorizationInfo": {
+                                "properties": {
+                                    "certificateUserIds": {
+                                        "type": "array"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "businessPhones": {
+                                "type": "array"
+                            },
+                            "city": {},
+                            "companyName": {},
+                            "consentProvidedForMinor": {},
+                            "country": {
+                                "type": "string"
+                            },
+                            "createdDateTime": {
+                                "type": "string"
+                            },
+                            "creationType": {},
+                            "deletedDateTime": {},
+                            "department": {},
+                            "deviceKeys": {
+                                "type": "array"
+                            },
+                            "displayName": {
+                                "type": "string"
+                            },
+                            "employeeHireDate": {},
+                            "employeeId": {},
+                            "employeeLeaveDateTime": {},
+                            "employeeOrgData": {},
+                            "employeeType": {},
+                            "externalUserConvertedOn": {},
+                            "externalUserState": {},
+                            "externalUserStateChangeDateTime": {},
+                            "faxNumber": {},
+                            "givenName": {},
+                            "id": {
+                                "type": "string"
+                            },
+                            "identities": {
+                                "items": {
+                                    "properties": {
+                                        "issuer": {
+                                            "type": "string"
+                                        },
+                                        "issuerAssignedId": {
+                                            "type": "string"
+                                        },
+                                        "signInType": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "signInType",
+                                        "issuer",
+                                        "issuerAssignedId"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "imAddresses": {
+                                "type": "array"
+                            },
+                            "infoCatalogs": {
+                                "type": "array"
+                            },
+                            "isManagementRestricted": {},
+                            "isResourceAccount": {},
+                            "jobTitle": {},
+                            "legalAgeGroupClassification": {},
+                            "mail": {},
+                            "mailNickname": {
+                                "type": "string"
+                            },
+                            "mobilePhone": {},
+                            "officeLocation": {},
+                            "onPremisesDistinguishedName": {},
+                            "onPremisesDomainName": {},
+                            "onPremisesExtensionAttributes": {
+                                "properties": {
+                                    "extensionAttribute1": {},
+                                    "extensionAttribute10": {},
+                                    "extensionAttribute11": {},
+                                    "extensionAttribute12": {},
+                                    "extensionAttribute13": {},
+                                    "extensionAttribute14": {},
+                                    "extensionAttribute15": {},
+                                    "extensionAttribute2": {},
+                                    "extensionAttribute3": {},
+                                    "extensionAttribute4": {},
+                                    "extensionAttribute5": {},
+                                    "extensionAttribute6": {},
+                                    "extensionAttribute7": {},
+                                    "extensionAttribute8": {},
+                                    "extensionAttribute9": {}
+                                },
+                                "type": "object"
+                            },
+                            "onPremisesImmutableId": {},
+                            "onPremisesLastSyncDateTime": {},
+                            "onPremisesProvisioningErrors": {
+                                "type": "array"
+                            },
+                            "onPremisesSamAccountName": {},
+                            "onPremisesSecurityIdentifier": {},
+                            "onPremisesSyncEnabled": {},
+                            "onPremisesUserPrincipalName": {},
+                            "otherMails": {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            "passwordPolicies": {
+                                "type": "string"
+                            },
+                            "passwordProfile": {},
+                            "postalCode": {},
+                            "preferredDataLocation": {},
+                            "preferredLanguage": {
+                                "type": "string"
+                            },
+                            "provisionedPlans": {
+                                "type": "array"
+                            },
+                            "proxyAddresses": {
+                                "type": "array"
+                            },
+                            "refreshTokensValidFromDateTime": {
+                                "type": "string"
+                            },
+                            "securityIdentifier": {
+                                "type": "string"
+                            },
+                            "showInAddressList": {},
+                            "signInSessionsValidFromDateTime": {
+                                "type": "string"
+                            },
+                            "state": {},
+                            "streetAddress": {},
+                            "surname": {},
+                            "usageLocation": {
+                                "type": "string"
+                            },
+                            "userPrincipalName": {
+                                "type": "string"
+                            },
+                            "userType": {
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                },
+                "runAfter": {
+                    "Get_user_details_from_privileged_account": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "ParseJson"
+            },
+            "Send_an_email_from_a_shared_mailbox_(V2)": {
+                "inputs": {
+                    "body": {
+                        "Body": "<p><strong>Your Temporary access pass for </strong><strong>@{body('Parse_user_details_from_privileged_account')?['userPrincipalName']}</strong><strong>:</strong><br>\n<br>\n@{body('Parse_Temporary_Access_Pass')?['temporaryAccessPass']}<br>\n<br>\n<em>Can be used from </em><em>@{body('Parse_Temporary_Access_Pass')?['startDateTime']}</em><em> for </em><em>@{body('Parse_Temporary_Access_Pass')?['lifetimeInMinutes']}</em><em> minutes.</em></p>",
+                        "Importance": "Normal",
+                        "MailboxAddress": "@variables('SharedMailbox')",
+                        "Subject": "Your onboarding TAP",
+                        "To": "@{outputs('Compose_otherMails')}"
+                    },
+                    "host": {
+                        "connection": {
+                            "name": "@parameters('$connections')['office365']['connectionId']"
+                        }
+                    },
+                    "method": "post",
+                    "path": "/v2/SharedMailbox/Mail"
+                },
+                "runAfter": {
+                    "Parse_Temporary_Access_Pass": [
+                        "Succeeded"
+                    ]
+                },
+                "type": "ApiConnection"
+            }
+        },
+        "contentVersion": "1.0.0.0",
+        "outputs": {},
+        "parameters": {
+            "$connections": {
+                "defaultValue": {},
+                "type": "Object"
+            }
+        },
+        "triggers": {
+            "manual": {
+                "inputs": {
+                    "schema": {
+                        "properties": {
+                            "data": {
+                                "properties": {
+                                    "callbackUriPath": {
+                                        "description": "CallbackUriPath used for Resume Action",
+                                        "title": "Data.CallbackUriPath",
+                                        "type": "string"
+                                    },
+                                    "subject": {
+                                        "properties": {
+                                            "displayName": {
+                                                "description": "DisplayName of the Subject",
+                                                "title": "Subject.DisplayName",
+                                                "type": "string"
+                                            },
+                                            "email": {
+                                                "description": "Email of the Subject",
+                                                "title": "Subject.Email",
+                                                "type": "string"
+                                            },
+                                            "id": {
+                                                "description": "Id of the Subject",
+                                                "title": "Subject.Id",
+                                                "type": "string"
+                                            },
+                                            "manager": {
+                                                "properties": {
+                                                    "displayName": {
+                                                        "description": "DisplayName parameter for Manager",
+                                                        "title": "Manager.DisplayName",
+                                                        "type": "string"
+                                                    },
+                                                    "email": {
+                                                        "description": "Mail parameter for Manager",
+                                                        "title": "Manager.Mail",
+                                                        "type": "string"
+                                                    },
+                                                    "id": {
+                                                        "description": "Id parameter for Manager",
+                                                        "title": "Manager.Id",
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "userPrincipalName": {
+                                                "description": "UserPrincipalName of the Subject",
+                                                "title": "Subject.UserPrincipalName",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "task": {
+                                        "properties": {
+                                            "displayName": {
+                                                "description": "DisplayName for Task Object",
+                                                "title": "Task.DisplayName",
+                                                "type": "string"
+                                            },
+                                            "id": {
+                                                "description": "Id for Task Object",
+                                                "title": "Task.Id",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "taskProcessingResult": {
+                                        "properties": {
+                                            "createdDateTime": {
+                                                "description": "CreatedDateTime for TaskProcessingResult Object",
+                                                "title": "TaskProcessingResult.CreatedDateTime",
+                                                "type": "string"
+                                            },
+                                            "id": {
+                                                "description": "Id for TaskProcessingResult Object",
+                                                "title": "TaskProcessingResult.Id",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "workflow": {
+                                        "properties": {
+                                            "displayName": {
+                                                "description": "DisplayName for Workflow Object",
+                                                "title": "Workflow.DisplayName",
+                                                "type": "string"
+                                            },
+                                            "id": {
+                                                "description": "Id for Workflow Object",
+                                                "title": "Workflow.Id",
+                                                "type": "string"
+                                            },
+                                            "workflowVerson": {
+                                                "description": "WorkflowVersion for Workflow Object",
+                                                "title": "Workflow.WorkflowVersion",
+                                                "type": "integer"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object"
+                            },
+                            "source": {
+                                "description": "Context in which an event happened",
+                                "title": "Request.Source",
+                                "type": "string"
+                            },
+                            "type": {
+                                "description": "Value describing the type of event related to the originating occurrence.",
+                                "title": "Request.Type",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    }
+                },
+                "kind": "Http",
+                "type": "Request"
+            }
+        }
+    },
+    "parameters": {
+        "$connections": {
+            "value": {
+                "office365": {
+                    "connectionId": "/subscriptions/<YourSubscriptionId>/resourceGroups/<YourResourceGroupName>/providers/Microsoft.Web/connections/office365",
+                    "connectionName": "office365",
+                    "id": "/subscriptions/<YourSubscriptionId>/providers/Microsoft.Web/locations/<YourRegion>/managedApis/office365"
+                }
+            }
+        }
+    }
+}
