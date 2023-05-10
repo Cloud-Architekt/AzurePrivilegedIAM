@@ -21,6 +21,28 @@
   },
   {
     "EAMTierLevel": "ControlPlane",
+    "Category": "AbacManagement",
+    "Scope": "Directory",
+    "templateId": "8424c6f0-a189-499e-bbd0-26c1753c96d4",
+    "displayName": "Attribute Definition Administrator",
+    "id": "8424c6f0-a189-499e-bbd0-26c1753c96d4",
+    "isPrivileged": false,
+    "description": "Define and manage the definition of custom security attributes.",
+    "version": "1"
+  },
+  {
+    "EAMTierLevel": "ControlPlane",
+    "Category": "AbacManagement",
+    "Scope": "Directory",
+    "templateId": "58a13ea3-c632-46ae-9ee0-9c0d43cd7f3d",
+    "displayName": "Attribute Assignment Administrator",
+    "id": "58a13ea3-c632-46ae-9ee0-9c0d43cd7f3d",
+    "isPrivileged": false,
+    "description": "Assign custom security attribute keys and values to supported Azure AD objects.",
+    "version": "1"
+  },  
+  {
+    "EAMTierLevel": "ControlPlane",
     "Category": "IdentityManagement",
     "Scope": "Directory",
     "templateId": "729827e3-9c14-49f7-bb1b-9608f156bbb8",
