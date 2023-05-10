@@ -348,79 +348,79 @@
     "APIPermission": "DeviceManagementServiceConfig.ReadWrite.All"
   },
   {
-    "EAMTierLevel": "ControlPane",
+    "EAMTierLevel": "ControlPlane",
     "Category": "IdentityManagement",
     "Scope": "CustomSecurityExtension",
     "APIPermission": "CustomSecAttributeAssignment.ReadWrite.All"
   },
   {
-    "EAMTierLevel": "ControlPane",
+    "EAMTierLevel": "ControlPlane",
     "Category": "IdentityManagement",
     "Scope": "CustomSecurityExtension",
     "APIPermission": "CustomSecAttributeDefinition.ReadWrite.All"
   },
   {
-    "EAMTierLevel": "ControlPane",
+    "EAMTierLevel": "ControlPlane",
     "Category": "IdentityManagement",
     "Scope": "Directory",
     "APIPermission": "ManagedTenants.ReadWrite.All"
   },
   {
-    "EAMTierLevel": "ControlPane",
+    "EAMTierLevel": "ControlPlane",
     "Category": "IdentityManagement",
     "Scope": "Directory",
     "APIPermission": "ManagedTenants.WriteRead.All"
   },
   {
-    "EAMTierLevel": "ControlPane",
+    "EAMTierLevel": "ControlPlane",
     "Category": "IdentityManagement",
     "Scope": "Directory",
     "APIPermission": "PermissionGrantPolicy.ReadWrite.All"
   },
   {
-    "EAMTierLevel": "ControlPane",
+    "EAMTierLevel": "ControlPlane",
     "Category": "IdentityManagement",
     "Scope": "Directory",
     "APIPermission": "RoleAssignmentSchedule.ReadWrite.Directory"
   },
   {
-    "EAMTierLevel": "ControlPane",
+    "EAMTierLevel": "ControlPlane",
     "Category": "IdentityManagement",
     "Scope": "Directory",
     "APIPermission": "RoleEligibilitySchedule.ReadWrite.Directory"
   },
   {
-    "EAMTierLevel": "ControlPane",
+    "EAMTierLevel": "ControlPlane",
     "Category": "IdentityManagement",
     "Scope": "Directory",
     "APIPermission": "RoleManagement.ReadWrite.Directory"
   },
   {
-    "EAMTierLevel": "ControlPane",
+    "EAMTierLevel": "ControlPlane",
     "Category": "IdentityManagement",
     "Scope": "Directory",
     "APIPermission": "RoleManagementPolicy.ReadWrite.Directory"
   },
   {
-    "EAMTierLevel": "ControlPane",
+    "EAMTierLevel": "ControlPlane",
     "Category": "SecurityManagement",
     "Scope": "Directory",
     "APIPermission": "SecurityActions.ReadWrite.All"
   },
   {
-    "EAMTierLevel": "ControlPane",
+    "EAMTierLevel": "ControlPlane",
     "Category": "SecurityManagement",
     "Scope": "Directory",
     "APIPermission": "Library.Manage"
   },
   {
-    "EAMTierLevel": "ControlPane",
+    "EAMTierLevel": "ControlPlane",
     "Category": "SecurityManagement",
     "Scope": "Directory",
     "APIPermission": "Machine.LiveResponse"
   },    
   {
-    "EAMTierLevel": "ControlPane",
+    "EAMTierLevel": "ControlPlane",
     "Category": "SecurityManagement",
     "Scope": "Directory",
     "APIPermission": "SecurityEvents.ReadWrite.All"
