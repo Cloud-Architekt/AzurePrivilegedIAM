@@ -411,6 +411,18 @@
     "EAMTierLevel": "ControlPane",
     "Category": "SecurityManagement",
     "Scope": "Directory",
+    "APIPermission": "Library.Manage"
+  },
+  {
+    "EAMTierLevel": "ControlPane",
+    "Category": "SecurityManagement",
+    "Scope": "Directory",
+    "APIPermission": "Machine.LiveResponse"
+  },    
+  {
+    "EAMTierLevel": "ControlPane",
+    "Category": "SecurityManagement",
+    "Scope": "Directory",
     "APIPermission": "SecurityEvents.ReadWrite.All"
   }
 ]
