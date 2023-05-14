@@ -424,5 +424,17 @@
     "Category": "SecurityManagement",
     "Scope": "Directory",
     "APIPermission": "SecurityEvents.ReadWrite.All"
-  }
+  },
+  {
+    "EAMTierLevel": "DataPlane",
+    "Category": "CollaborationManagement",
+    "Scope": "Directory",
+    "APIPermission": "Sites.ReadWrite.All"
+  },  
+  {
+    "EAMTierLevel": "DataPlane",
+    "Category": "CollaborationManagement",
+    "Scope": "Directory",
+    "APIPermission": "Files.ReadWrite.All"
+  }  
 ]
