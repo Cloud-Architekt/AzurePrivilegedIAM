@@ -45,6 +45,12 @@
     "EAMTierLevel": "ControlPlane",
     "Category": "IdentityManagement",
     "Scope": "Directory",
+    "APIPermission": "Directory.Write.Restricted"
+  }, 
+  {
+    "EAMTierLevel": "ControlPlane",
+    "Category": "IdentityManagement",
+    "Scope": "Directory",
     "APIPermission": "Domain.ReadWrite.All"
   },
   {
