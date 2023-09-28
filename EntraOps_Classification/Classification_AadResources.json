@@ -124,7 +124,7 @@
                 "Category": "Microsoft.AzureAD",
                 "Service": "Application and Workload Identity",
                 "RoleAssignmentScopeName": [
-                    "/*"
+                    "/"
                 ],
                 "RoleDefinitionActions": [
                     "microsoft.directory/applications/allProperties/allTasks",

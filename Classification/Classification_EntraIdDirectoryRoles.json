@@ -6,9 +6,9 @@
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/adminConsentRequestPolicy/allProperties/allTasks",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Application and Workload Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/appConsent/appConsentRequests/allProperties/read",
@@ -48,15 +48,15 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/applications/applicationProxySslCertificate/update",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Application and Workload Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/applications/applicationProxyUrlSettings/update",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Application and Workload Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/applications/appRoles/update",
@@ -1269,9 +1269,9 @@
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/adminConsentRequestPolicy/allProperties/allTasks",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Application and Workload Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/appConsent/appConsentRequests/allProperties/read",
@@ -3607,9 +3607,9 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/adminConsentRequestPolicy/allProperties/allTasks",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Application and Workload Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/administrativeUnits/allProperties/allTasks",
