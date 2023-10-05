@@ -1,6 +1,9 @@
 # Get EntraOps Classification
 $Classification = Get-Content -Path ./EntraOps_Classification/Classification_AadResources.json | ConvertFrom-Json -Depth 10
 
+# Single classifcation (highest tier level only)
+$SingleClassification = $True
+
 Write-Output "Query directory role templates for mapping ID to name and further details"
 $DirectoryRoleDefinitions = (Invoke-MgGraphRequest -Uri "https://graph.microsoft.com/beta/roleManagement/directory/roleDefinitions").value | where-object {$_.isBuiltin -eq "True"} | select-object displayName, templateId, isPrivileged, rolePermissions
 
@@ -37,7 +40,14 @@ $DirectoryRoles = $DirectoryRoleDefinitions | foreach-object {
         }    
     }
 
-    $RoleDefinitionClassification         = $ClassifiedDirectoryRolePermissions | select-object -ExcludeProperty AuthorizedResourceAction -Unique | Sort-Object TierLevelTagValue, Category
+    if ($SingleClassification -eq $True) {
+        $RoleDefinitionClassification            = ($ClassifiedDirectoryRolePermissions | select-object -ExcludeProperty AuthorizedResourceAction, Category -Unique | Sort-Object EAMTierLevelTagValue | select-object -First 1)
+    }
+    else {
+        $FilteredRoleClassifications            = ($ClassifiedDirectoryRolePermissions | select-object -ExcludeProperty AuthorizedResourceAction -Unique | Sort-Object EAMTierLevelTagValue )
+        $RoleDefinitionClassification           = [System.Collections.Generic.List[object]]::new()
+        $RoleDefinitionClassification.Add($FilteredRoleClassifications)        
+    }
 
     [PSCustomObject]@{
         "RoleId"                = $_.templateId
