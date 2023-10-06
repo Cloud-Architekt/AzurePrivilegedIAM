@@ -4,17 +4,16 @@ function Get-EntraOpsClassificationAppRoles {
     param
     (
         [Parameter(Mandatory = $false)]
-        $IncludeAuthorizedApiCalls = $False,
-
-        [Parameter(Mandatory = $false)]
-        $IncludeOnlyPrivilegedApiCalls = $False
+        $IncludeAuthorizedApiCalls = $False
     )
 
     # Get EntraOps Classification
     $Classification = Get-Content -Path .\EntraOps_Classification/Classification_AppRoles.json | ConvertFrom-Json -Depth 10
 
     # Get Graph API actions 
-    $AllGraphApiCalls = Invoke-WebRequest -Method GET -Uri "https://raw.githubusercontent.com/merill/graphpermissions.github.io/main/permissions.csv" | ConvertFrom-Csv
+    if ($IncludeAuthorizedApiCalls -eq $true) {
+        $AllAuthorizedApiCalls = Invoke-WebRequest -Method GET -Uri "https://raw.githubusercontent.com/merill/graphpermissions.github.io/main/permissions.csv" | ConvertFrom-Csv
+    }
 
     # Get information about App Role Provider
     $AppRoleProviderIds = @("00000003-0000-0000-c000-000000000000")
@@ -29,15 +28,9 @@ function Get-EntraOpsClassificationAppRoles {
             # Apply Classification
             $AppRoleTierLevelClassification = $Classification | where-object {$_.TierLevelDefinition.RoleDefinitionActions -contains $($AppRole.value)} | select-object EAMTierLevelName, EAMTierLevelTagValue
             $AppRoleServiceClassification = $Classification | select-object -ExpandProperty TierLevelDefinition | where-object {$_.RoleDefinitionActions -contains $($AppRole.value)} | select-object Service
-
-            if ($IncludeAuthorizedApiCalls -eq $True) {
+            if ($IncludeAuthorizedApiCalls -eq $True -and $_.appId -eq "00000003-0000-0000-c000-000000000000") {
                 # Apply Autorized Graph Calls if AppRoleProvider is Microsoft Graph
-                if ($_.appId -eq "00000003-0000-0000-c000-000000000000") {
-                    $AppRoleAuthorizedApiCalls = $AllGraphApiCalls | where-object {$_.PermissionName -contains $($AppRole.value)} | select-object -ExpandProperty API
-                    if ($AuthorizedApiCallsWithoutMethod -eq $true) {
-                        ($AppRoleAuthorizedApiCalls | ? { $_ -notmatch "^GET" }) -replace "^(.*?)/", "/" -replace '({.*?})', '<UUID>' | Where-Object { $_ -match "^\/"} | Select-Object -Unique  | Sort-Object
-                    }
-                }
+                $AppRoleAuthorizedApiCalls = $AllAuthorizedApiCalls | where-object {$_.PermissionName -contains $($AppRole.value)} | select-object -ExpandProperty API
             }
 
             if ($AppRoleTierLevelClassification.Count -gt 1 -and $AppRoleServiceClassification.Count -gt 1) {
@@ -57,7 +50,7 @@ function Get-EntraOpsClassificationAppRoles {
                 }
             }
 
-            if ($AuthorizedApiCalls -eq $True) {
+            if ($IncludeAuthorizedApiCalls -eq $True) {
                 [PSCustomObject]@{
                     "AppId"                 = $_.appId
                     "AppRoleId"             = $AppRole.id

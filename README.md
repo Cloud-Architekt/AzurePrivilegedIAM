@@ -15,7 +15,7 @@ The generated classification based on the previous definition files are also ava
 
 [Classified Microsoft Graph API Permissions in JSON](https://raw.githubusercontent.com/Cloud-Architekt/AzurePrivilegedIAM/main/Classification/Classification_AppRoles.json)
 
-Side Note: A classification export including a list of "Authorized Api Calls" can be generated (by using `Get-EntraOpsClassificationAppRoles`` and Parameter `IncludeAuthorizedApiCalls`) which is using enrichment from the GitHub project "[graphpermissions.github.io](https://github.com/merill/graphpermissions.github.io)" (created by [Merill Fernando](https://github.com/merill)). Kudos to Merill!
+Side Note: A classification export including a list of "Authorized Api Calls" can be generated (by using `Get-EntraOpsClassificationAppRoles` and Parameter `IncludeAuthorizedApiCalls`) which is using enrichment from the GitHub project "[graphpermissions.github.io](https://github.com/merill/graphpermissions.github.io)" (created by [Merill Fernando](https://github.com/merill)). Kudos to Merill!
 
 The helper script to create classification based on the definition are available here:
 
