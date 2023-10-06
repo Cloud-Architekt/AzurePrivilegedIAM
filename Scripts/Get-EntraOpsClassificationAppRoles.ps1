@@ -1,59 +1,85 @@
-# Get EntraOps Classification
-$Classification = Get-Content -Path .\EntraOps_Classification/Classification_AppRoles.json | ConvertFrom-Json -Depth 10
+function Get-EntraOpsClassificationAppRoles {
 
-# Get Graph API actions 
-$GraphPermissions = Invoke-WebRequest -Method GET -Uri "https://raw.githubusercontent.com/merill/graphpermissions.github.io/main/permissions.csv" | ConvertFrom-Csv
+    [cmdletbinding()]
+    param
+    (
+        [Parameter(Mandatory = $false)]
+        $IncludeAuthorizedApiCalls = $False,
 
-# Get information about App Role Provider
-$AppRoleProviderIds = @("00000003-0000-0000-c000-000000000000")
-$AppRoleProviders = foreach ($AppRoleProviderId in $AppRoleProviderIds) {
-    (Invoke-MgGraphRequest -Uri "https://graph.microsoft.com/beta/servicePrincipals?`$filter=appId eq '$FirstPartyAppRoleProvider'" -OutputType PSObject).value | select-object appId, appRoles
-}
+        [Parameter(Mandatory = $false)]
+        $IncludeOnlyPrivilegedApiCalls = $False
+    )
 
-$AppRoles = $AppRoleProviders | foreach-object {
+    # Get EntraOps Classification
+    $Classification = Get-Content -Path .\EntraOps_Classification/Classification_AppRoles.json | ConvertFrom-Json -Depth 10
 
-    foreach ($AppRole in $_.AppRoles) {
+    # Get Graph API actions 
+    $AllGraphApiCalls = Invoke-WebRequest -Method GET -Uri "https://raw.githubusercontent.com/merill/graphpermissions.github.io/main/permissions.csv" | ConvertFrom-Csv
 
-        # Apply Classification
-        $AppRoleTierLevelClassification = $Classification | where-object {$_.TierLevelDefinition.RoleDefinitionActions -contains $($AppRole.value)} | select-object EAMTierLevelName, EAMTierLevelTagValue
-        $AppRoleServiceClassification = $Classification | select-object -ExpandProperty TierLevelDefinition | where-object {$_.RoleDefinitionActions -contains $($AppRole.value)} | select-object Service
+    # Get information about App Role Provider
+    $AppRoleProviderIds = @("00000003-0000-0000-c000-000000000000")
+    $AppRoleProviders = foreach ($AppRoleProviderId in $AppRoleProviderIds) {
+        (Invoke-MgGraphRequest -Uri "https://graph.microsoft.com/beta/servicePrincipals?`$filter=appId eq '$AppRoleProviderId'" -OutputType PSObject).value | select-object appId, appRoles
+    }
 
-        # Apply Autorized Graph Calls if AppRoleProvider is Microsoft Graph
-        if ($_.appId -eq "00000003-0000-0000-c000-000000000000") {
-            $AppRoleAuthorizedApiCalls = $GraphPermissions | where-object {$_.PermissionName -contains $($AppRole.value)} | select-object -ExpandProperty API
-        }
-        else {
-            $AppRoleAuthorizedApiCalls = $null
-        }
+    $AppRoles = $AppRoleProviders | foreach-object {
 
-        if ($AppRoleTierLevelClassification.Count -gt 1 -and $AppRoleServiceClassification.Count -gt 1) {
-            Write-Warning "Multiple Tier Level Classification found for $($AppRole.value)"
-        }
+        foreach ($AppRole in $_.AppRoles) {
 
-        if ($null -eq $AppRoleTierLevelClassification) {
-            $AppRoleTierLevelClassification = [PSCustomObject]@{
-                "EAMTierLevelName"      = "Unclassified"
-                "EAMTierLevelTagValue"  = "Unclassified"
+            # Apply Classification
+            $AppRoleTierLevelClassification = $Classification | where-object {$_.TierLevelDefinition.RoleDefinitionActions -contains $($AppRole.value)} | select-object EAMTierLevelName, EAMTierLevelTagValue
+            $AppRoleServiceClassification = $Classification | select-object -ExpandProperty TierLevelDefinition | where-object {$_.RoleDefinitionActions -contains $($AppRole.value)} | select-object Service
+
+            if ($IncludeAuthorizedApiCalls -eq $True) {
+                # Apply Autorized Graph Calls if AppRoleProvider is Microsoft Graph
+                if ($_.appId -eq "00000003-0000-0000-c000-000000000000") {
+                    $AppRoleAuthorizedApiCalls = $AllGraphApiCalls | where-object {$_.PermissionName -contains $($AppRole.value)} | select-object -ExpandProperty API
+                    if ($AuthorizedApiCallsWithoutMethod -eq $true) {
+                        ($AppRoleAuthorizedApiCalls | ? { $_ -notmatch "^GET" }) -replace "^(.*?)/", "/" -replace '({.*?})', '<UUID>' | Where-Object { $_ -match "^\/"} | Select-Object -Unique  | Sort-Object
+                    }
+                }
             }
-        }
 
-        if ($null -eq $AppRoleServiceClassification) {
-            $AppRoleServiceClassification = [PSCustomObject]@{
-                "Service"             = "Unclassified"
+            if ($AppRoleTierLevelClassification.Count -gt 1 -and $AppRoleServiceClassification.Count -gt 1) {
+                Write-Warning "Multiple Tier Level Classification found for $($AppRole.value)"
             }
-        }
 
-        [PSCustomObject]@{
-            "AppId"                 = $_.appId
-            "AppRoleId"             = $AppRole.id
-            "AppRoleDisplayName"    = $AppRole.value
-            "AuthorizedApiCalls"    = $AppRoleAuthorizedApiCalls
-            "Category"              = $AppRoleServiceClassification.Service
-            "EAMTierLevelName"      = $AppRoleTierLevelClassification.EAMTierLevelName
-            "EAMTierLevelTagValue"  = $AppRoleTierLevelClassification.EAMTierLevelTagValue
+            if ($null -eq $AppRoleTierLevelClassification) {
+                $AppRoleTierLevelClassification = [PSCustomObject]@{
+                    "EAMTierLevelName"      = "Unclassified"
+                    "EAMTierLevelTagValue"  = "Unclassified"
+                }
+            }
+
+            if ($null -eq $AppRoleServiceClassification) {
+                $AppRoleServiceClassification = [PSCustomObject]@{
+                    "Service"             = "Unclassified"
+                }
+            }
+
+            if ($AuthorizedApiCalls -eq $True) {
+                [PSCustomObject]@{
+                    "AppId"                 = $_.appId
+                    "AppRoleId"             = $AppRole.id
+                    "AppRoleDisplayName"    = $AppRole.value
+                    "AuthorizedApiCalls"    = $AppRoleAuthorizedApiCalls
+                    "Category"              = $AppRoleServiceClassification.Service
+                    "EAMTierLevelName"      = $AppRoleTierLevelClassification.EAMTierLevelName
+                    "EAMTierLevelTagValue"  = $AppRoleTierLevelClassification.EAMTierLevelTagValue
+                }
+            } else {
+                [PSCustomObject]@{
+                    "AppId"                 = $_.appId
+                    "AppRoleId"             = $AppRole.id
+                    "AppRoleDisplayName"    = $AppRole.value
+                    "Category"              = $AppRoleServiceClassification.Service
+                    "EAMTierLevelName"      = $AppRoleTierLevelClassification.EAMTierLevelName
+                    "EAMTierLevelTagValue"  = $AppRoleTierLevelClassification.EAMTierLevelTagValue
+                }
+            }
         }
     }
-}
 
-$AppRoles = $AppRoles | sort-object AppRoleDisplayName
-$AppRoles | ConvertTo-Json -Depth 10 | Out-File .\Classification\Classification_AppRoles.json -Force
+    $AppRoles = $AppRoles | sort-object AppRoleDisplayName
+    $AppRoles | ConvertTo-Json -Depth 10 | Out-File .\Classification\Classification_AppRoles.json -Force
+}

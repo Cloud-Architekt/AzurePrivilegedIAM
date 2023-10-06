@@ -1,62 +1,70 @@
-# Get EntraOps Classification
-$Classification = Get-Content -Path ./EntraOps_Classification/Classification_AadResources.json | ConvertFrom-Json -Depth 10
+function Get-EntraOpsClassificationDirectoryRoles {
 
-# Single classifcation (highest tier level only)
-$SingleClassification = $True
+    [cmdletbinding()]
+    param
+    (
+        [Parameter(Mandatory = $false)]
+        $SingleClassification = $True
+    )
 
-Write-Output "Query directory role templates for mapping ID to name and further details"
-$DirectoryRoleDefinitions = (Invoke-MgGraphRequest -Uri "https://graph.microsoft.com/beta/roleManagement/directory/roleDefinitions").value | where-object {$_.isBuiltin -eq "True"} | select-object displayName, templateId, isPrivileged, rolePermissions
+    # Get EntraOps Classification
+    $Classification = Get-Content -Path ./EntraOps_Classification/Classification_AadResources.json | ConvertFrom-Json -Depth 10
 
-$DirectoryRoles = $DirectoryRoleDefinitions | foreach-object {
+    # Single classifcation (highest tier level only)
+    Write-Output "Query directory role templates for mapping ID to name and further details"
+    $DirectoryRoleDefinitions = (Invoke-MgGraphRequest -Uri "https://graph.microsoft.com/beta/roleManagement/directory/roleDefinitions").value | where-object {$_.isBuiltin -eq "True"} | select-object displayName, templateId, isPrivileged, rolePermissions
 
-    $DirectoryRolePermissions = $_.RolePermissions.allowedResourceActions
-    $ClassifiedDirectoryRolePermissions = foreach ($RolePermission in $DirectoryRolePermissions) {
-        # Apply Classification
-        $EntraRolePermissionTierLevelClassification = $Classification | where-object {$_.TierLevelDefinition.RoleDefinitionActions -contains $($RolePermission)} | select-object EAMTierLevelName, EAMTierLevelTagValue
-        $EntraRolePermissionServiceClassification = $Classification | select-object -ExpandProperty TierLevelDefinition | where-object {$_.RoleDefinitionActions -contains $($RolePermission)} | select-object Service
+    $DirectoryRoles = $DirectoryRoleDefinitions | foreach-object {
 
-        if ($EntraRolePermissionTierLevelClassification.Count -gt 1 -and $EntraRolePermissionServiceClassification.Count -gt 1) {
-            Write-Warning "Multiple Tier Level Classification found for $($RolePermission)"
+        $DirectoryRolePermissions = $_.RolePermissions.allowedResourceActions
+        $ClassifiedDirectoryRolePermissions = foreach ($RolePermission in $DirectoryRolePermissions) {
+            # Apply Classification
+            $EntraRolePermissionTierLevelClassification = $Classification | where-object {$_.TierLevelDefinition.RoleDefinitionActions -contains $($RolePermission)} | select-object EAMTierLevelName, EAMTierLevelTagValue
+            $EntraRolePermissionServiceClassification = $Classification | select-object -ExpandProperty TierLevelDefinition | where-object {$_.RoleDefinitionActions -contains $($RolePermission)} | select-object Service
+
+            if ($EntraRolePermissionTierLevelClassification.Count -gt 1 -and $EntraRolePermissionServiceClassification.Count -gt 1) {
+                Write-Warning "Multiple Tier Level Classification found for $($RolePermission)"
+            }
+
+            if ($null -eq $EntraRolePermissionTierLevelClassification) {
+                $EntraRolePermissionTierLevelClassification = [PSCustomObject]@{
+                    "EAMTierLevelName"      = "Unclassified"
+                    "EAMTierLevelTagValue"  = "Unclassified"
+                }
+            }
+
+            if ($null -eq $EntraRolePermissionServiceClassification) {
+                $EntraRolePermissionServiceClassification = [PSCustomObject]@{
+                    "Service"             = "Unclassified"
+                }
+            }
+
+            [PSCustomObject]@{
+                "AuthorizedResourceAction"  = $RolePermission
+                "Category"                  = $EntraRolePermissionServiceClassification.Service
+                "EAMTierLevelName"          = $EntraRolePermissionTierLevelClassification.EAMTierLevelName
+                "EAMTierLevelTagValue"      = $EntraRolePermissionTierLevelClassification.EAMTierLevelTagValue
+            }    
         }
 
-        if ($null -eq $EntraRolePermissionTierLevelClassification) {
-            $EntraRolePermissionTierLevelClassification = [PSCustomObject]@{
-                "EAMTierLevelName"      = "Unclassified"
-                "EAMTierLevelTagValue"  = "Unclassified"
-            }
+        if ($SingleClassification -eq $True) {
+            $RoleDefinitionClassification            = ($ClassifiedDirectoryRolePermissions | select-object -ExcludeProperty AuthorizedResourceAction, Category -Unique | Sort-Object EAMTierLevelTagValue | select-object -First 1)
         }
-
-        if ($null -eq $EntraRolePermissionServiceClassification) {
-            $EntraRolePermissionServiceClassification = [PSCustomObject]@{
-                "Service"             = "Unclassified"
-            }
+        else {
+            $FilteredRoleClassifications            = ($ClassifiedDirectoryRolePermissions | select-object -ExcludeProperty AuthorizedResourceAction -Unique | Sort-Object EAMTierLevelTagValue )
+            $RoleDefinitionClassification           = [System.Collections.Generic.List[object]]::new()
+            $RoleDefinitionClassification.Add($FilteredRoleClassifications)        
         }
 
         [PSCustomObject]@{
-            "AuthorizedResourceAction"  = $RolePermission
-            "Category"                  = $EntraRolePermissionServiceClassification.Service
-            "EAMTierLevelName"          = $EntraRolePermissionTierLevelClassification.EAMTierLevelName
-            "EAMTierLevelTagValue"      = $EntraRolePermissionTierLevelClassification.EAMTierLevelTagValue
+            "RoleId"                = $_.templateId
+            "RoleName"              = $_.displayName
+            "isPrivileged"          = $_.isPrivileged
+            "RolePermissions"       = $ClassifiedDirectoryRolePermissions
+            "Classification"        = $RoleDefinitionClassification
         }    
     }
 
-    if ($SingleClassification -eq $True) {
-        $RoleDefinitionClassification            = ($ClassifiedDirectoryRolePermissions | select-object -ExcludeProperty AuthorizedResourceAction, Category -Unique | Sort-Object EAMTierLevelTagValue | select-object -First 1)
-    }
-    else {
-        $FilteredRoleClassifications            = ($ClassifiedDirectoryRolePermissions | select-object -ExcludeProperty AuthorizedResourceAction -Unique | Sort-Object EAMTierLevelTagValue )
-        $RoleDefinitionClassification           = [System.Collections.Generic.List[object]]::new()
-        $RoleDefinitionClassification.Add($FilteredRoleClassifications)        
-    }
-
-    [PSCustomObject]@{
-        "RoleId"                = $_.templateId
-        "RoleName"              = $_.displayName
-        "isPrivileged"          = $_.isPrivileged
-        "RolePermissions"       = $ClassifiedDirectoryRolePermissions
-        "Classification"        = $RoleDefinitionClassification
-    }    
+    $DirectoryRoles = $DirectoryRoles | sort-object RoleName
+    $DirectoryRoles | ConvertTo-Json -Depth 10 | Out-File .\Classification\Classification_EntraIdDirectoryRoles.json -Force
 }
-
-$DirectoryRoles = $DirectoryRoles | sort-object RoleName
-$DirectoryRoles | ConvertTo-Json -Depth 10 | Out-File .\Classification\Classification_EntraIdDirectoryRoles.json -Force
