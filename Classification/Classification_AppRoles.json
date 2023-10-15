@@ -1099,9 +1099,9 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "5b567255-7703-4780-807c-7be8301ae99b",
     "AppRoleDisplayName": "Group.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Directory reader",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -1115,9 +1115,9 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "98830695-27a2-44f7-8c18-0c3ebc9698f6",
     "AppRoleDisplayName": "GroupMember.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Directory reader",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -3025,9 +3025,9 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "df021288-bdef-4463-88db-98f22de89214",
     "AppRoleDisplayName": "User.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Directory reader",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",

@@ -307,5 +307,23 @@
               ]
           }       
       ]
-  }
+  },
+  {
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2",
+    "TierLevelDefinition": [             
+        {
+            "Category": "Microsoft.Graph",
+            "Service": "Directory reader",
+            "RoleAssignmentScopeName": [
+                "/"
+            ],             
+            "RoleDefinitionActions": [
+                "Group.Read.All",
+                "GroupMember.Read.All",
+                "User.Read.All"               
+            ]
+        }   
+    ]
+  } 
 ]
