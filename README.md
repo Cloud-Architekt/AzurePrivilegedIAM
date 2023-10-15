@@ -15,13 +15,18 @@ The generated classification based on the previous definition files are also ava
 
 [Classified Microsoft Graph API Permissions in JSON](https://raw.githubusercontent.com/Cloud-Architekt/AzurePrivilegedIAM/main/Classification/Classification_AppRoles.json)
 
-Side Note: A classification export including a list of "Authorized Api Calls" can be generated (by using `Get-EntraOpsClassificationAppRoles` and Parameter `IncludeAuthorizedApiCalls`) which is using enrichment from the GitHub project "[graphpermissions.github.io](https://github.com/merill/graphpermissions.github.io)" (created by [Merill Fernando](https://github.com/merill)). Kudos to Merill!
+Sample queries to use classification in KQL queries in Microsoft Sentinel can be found here:
+
+* [List of (active/permanent) Directory role member with with enriched classification](https://github.com/Cloud-Architekt/AzureSentinel/blob/main/Hunting%20Queries/EID-PrivilegedIdentities/DirectoryRoleMemberWithClassification.kusto)
+* [Added API Permissions with enriched classification from EntraOps Privileged EAM](https://github.com/Cloud-Architekt/AzureSentinel/blob/main/Hunting%20Queries/EID-PrivilegedIdentities/AddedAppRolesWithClassification.kusto)
 
 The helper script to create classification based on the definition are available here:
 
 [Script for Classification of Entra ID Roles](./Get-EntraOpsClassificationDirectoryRoles.ps1)
 
 [Script for Classification of Microsoft Graph API Permission](./Scripts/Get-EntraOpsClassificationAppRoles.ps1)
+
+Side Note: A classification export including a list of "Authorized Api Calls" can be generated (by using `Get-EntraOpsClassificationAppRoles` and Parameter `IncludeAuthorizedApiCalls`) which is using enrichment from the GitHub project "[graphpermissions.github.io](https://github.com/merill/graphpermissions.github.io)" (created by [Merill Fernando](https://github.com/merill)). Kudos to Merill!
 
 ### 📢 Call for Community Contributors!
 Mostly, role actions and permissions on Control Plane has been classified. There are still a high number of "unclassified" role actions and maybe also some classified roles which should be reviewed or may assessed differently. As already described, the source for all classification will be managed in the "[EntraOps_Classification](https://github.com/Cloud-Architekt/AzurePrivilegedIAM/tree/main/EntraOps_Classification)" files and should be the single point for modification to this project. I would be more than happy to see contributions by the community which helps to increase the coverage and quality of the classification for the Enterprise Access Model. Feel free to create PR, issues or contact me if you have any further questions or feedback.
