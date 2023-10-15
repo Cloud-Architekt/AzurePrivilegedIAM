@@ -5,6 +5,9 @@ function Get-EntraOpsClassificationDirectoryRoles {
     (
         [Parameter(Mandatory = $false)]
         $SingleClassification = $True
+        ,
+        [Parameter(Mandatory = $false)]
+        $IncludeCustomRoles = $True
     )
 
     # Get EntraOps Classification
@@ -12,7 +15,11 @@ function Get-EntraOpsClassificationDirectoryRoles {
 
     # Single classifcation (highest tier level only)
     Write-Output "Query directory role templates for mapping ID to name and further details"
-    $DirectoryRoleDefinitions = (Invoke-MgGraphRequest -Uri "https://graph.microsoft.com/beta/roleManagement/directory/roleDefinitions").value | where-object {$_.isBuiltin -eq "True"} | select-object displayName, templateId, isPrivileged, rolePermissions
+    $DirectoryRoleDefinitions = (Invoke-MgGraphRequest -Uri "https://graph.microsoft.com/beta/roleManagement/directory/roleDefinitions").value | select-object displayName, templateId, isBuiltin, isPrivileged, rolePermissions
+
+    if ($IncludeCustomRoles -eq $False) {
+        $DirectoryRoleDefinitions = $DirectoryRoleDefinitions | where-object {$_.isBuiltin -eq "True"}
+    }
 
     $DirectoryRoles = $DirectoryRoleDefinitions | foreach-object {
 
