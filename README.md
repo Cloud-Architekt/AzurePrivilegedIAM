@@ -34,8 +34,8 @@ Mostly, role actions and permissions on Control Plane has been classified. There
 ## 🔁 Lifecycle Workflows
 On- and Offboarding of Privileged Accounts can be automated with the Entra ID Governance feature "Lifecycle workflows". Samples for the custom tasks can be found here and are described in the blog post "[Automated Lifecycle Workflows for Privileged Identities with Azure AD Identity Governance](https://www.cloud-architekt.net/manage-privileged-identities-with-azuread-identity-governance/)"
 
-## 📄 Role Definition Matrix of Personas for Privileged Access in Azure
+## 📄 Role Definition Matrix of Personas for Privileged Access in Microsoft Azure
 Various articles on Microsoft Learn describes Roles and Personas for privileged access in Azure. I've created a role definition matrix to compare the descriptions of personas but also tiering levels from Enterprise Access Model. Check out the "[EAS_EAM_AzureRBAC_TabularSummary.pdf](https://github.com/Cloud-Architekt/AzurePrivilegedIAM/blob/main/EAS_EAM_AzureRBAC_TabularSummary.pdf)"
 
-## 🤖 Scripts for Automation
+## 🤖 Scripts for Automation and Definition of Classification
 Examples for PowerShell Scripts to export a list of privileged assignments in Azure (incl. Azure Billing/Enterprise Agreement) and also helper files for Classification can be found [here](https://github.com/Cloud-Architekt/AzurePrivilegedIAM/tree/main/Scripts).
