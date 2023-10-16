@@ -1,4 +1,4 @@
-# Enterprise Access Model and Privileged IAM in Microsoft Entra
+# Privileged Identity & Access in Microsoft Entra
 Docs, resources and samples to implement a secure privileged identity and access management in Microsoft Azure and Microsoft Entra.
 
 ## 📝 Classification of Roles and Permissions
