@@ -14,7 +14,7 @@ The generated classification (based on the previous definition files) are also a
 
 Sample queries to use classification in KQL queries in Microsoft Sentinel can be found here:
 
-* [List of (active/permanent) Directory role member with with enriched classification](https://github.com/Cloud-Architekt/AzureSentinel/blob/main/Hunting%20Queries/EID-PrivilegedIdentities/DirectoryRoleMemberWithClassification.kusto)
+* [List of (active/permanent) Directory role member with enriched classification](https://github.com/Cloud-Architekt/AzureSentinel/blob/main/Hunting%20Queries/EID-PrivilegedIdentities/DirectoryRoleMemberWithClassification.kusto)
 * [Added API Permissions with enriched classification from EntraOps Privileged EAM](https://github.com/Cloud-Architekt/AzureSentinel/blob/main/Hunting%20Queries/EID-PrivilegedIdentities/AddedAppRolesWithClassification.kusto)
 
 The helper script to create classification by using the definition of classification are available here:
