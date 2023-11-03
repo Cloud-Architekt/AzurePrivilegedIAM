@@ -681,6 +681,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "50bbb34b-8df4-4148-8e59-239c00555340",
+    "AppRoleDisplayName": "DataClassificationSession.Create",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "f6e9e124-4586-492f-adc0-c6f96e4823fd",
     "AppRoleDisplayName": "DelegatedAdminRelationship.Read.All",
     "Category": "Unclassified",
@@ -1356,6 +1364,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "34cbd96c-d824-4755-90d3-1008ef47efc1",
+    "AppRoleDisplayName": "Insights-UserMetric.Read.All",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "535e6066-2894-49ef-ab33-e2c6d064bb81",
     "AppRoleDisplayName": "LearningAssignedCourse.Read.All",
     "Category": "Unclassified",
@@ -1876,6 +1892,14 @@
     "Category": "Tenant Management",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "90bbca0b-227c-4cdc-8083-1c6cfb95bac6",
+    "AppRoleDisplayName": "Policy.ReadWrite.FedTokenValidation",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Tenant Management",
+    "EAMTierLevelTagValue": "ControlPlane"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
