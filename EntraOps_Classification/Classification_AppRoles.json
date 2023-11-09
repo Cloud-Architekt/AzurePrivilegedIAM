@@ -1,329 +1,371 @@
 [
-  {
-      "EAMTierLevelName": "ControlPlane",
-      "EAMTierLevelTagValue": "0",
+    {
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0",
+        "TierLevelDefinition": [
+            {
+                "Category": "Microsoft.Graph",
+                "Service": "Privileged IAM",
+                "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+                "ResourceScope": "Application",
+                "RoleAssignmentScopeName": [
+                    "/"
+                ],
+                "RoleDefinitionActions": [
+                  "DeviceManagementRBAC.ReadWrite.All",
+                  "PrivilegedAccess.ReadWrite.AzureAD",
+                  "PrivilegedAccess.ReadWrite.AzureADGroup",
+                  "PrivilegedAccess.ReadWrite.AzureResources",
+                  "PrivilegedAssignmentSchedule.ReadWrite.AzureADGroup",
+                  "PrivilegedEligibilitySchedule.ReadWrite.AzureADGroup",
+                  "RoleAssignmentSchedule.ReadWrite.Directory",
+                  "RoleEligibilitySchedule.ReadWrite.Directory",
+                  "RoleManagement.ReadWrite.CloudPC",
+                  "RoleManagement.ReadWrite.Directory",
+                  "RoleManagement.ReadWrite.Exchange",
+                  "RoleManagementAlert.ReadWrite.Directory",
+                  "RoleManagementPolicy.ReadWrite.AzureADGroup",
+                  "RoleManagementPolicy.ReadWrite.Directory"
+                ]
+            },
+            {
+                "Category": "Microsoft.Graph",
+                "Service": "Identity Detection Response",
+                "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+                "ResourceScope": "Application",
+                "RoleAssignmentScopeName": [
+                  "/"
+                ],
+                "RoleDefinitionActions": [
+                  "IdentityProvider.ReadWrite.All",
+                  "IdentityRiskEvent.ReadWrite.All",
+                  "IdentityRiskyServicePrincipal.ReadWrite.All",
+                  "IdentityRiskyUser.ReadWrite.All"
+                ]
+            },
+            {
+                "Category": "Microsoft.WindowsDefenderATP",
+                "Service": "Identity Detection Response",
+                "ResourceAppId": "fc780465-2017-40d4-a0c5-307022471b92",
+                "ResourceScope": "Application",                
+                "RoleAssignmentScopeName": [
+                  "/"
+                ],
+                "RoleDefinitionActions": [
+                  "Library.Manage",
+                  "Machine.Isolate",
+                  "Machine.LiveResponse",
+                  "SecurityRecommendation.ReadWrite.All"
+                ]
+            },
+            {
+                "Category": "Microsoft.Graph",
+                "Service": "SIEM Incident Response",
+                "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+                "ResourceScope": "Application",                
+                "RoleAssignmentScopeName": [
+                  "/"
+                ],
+                "RoleDefinitionActions": [
+                  "Library.Manage",
+                  "Machine.LiveResponse",
+                  "SecurityActions.ReadWrite.All",
+                  "SecurityAlert.ReadWrite.All",
+                  "SecurityEvents.ReadWrite.All",
+                  "SecurityIncident.ReadWrite.All",
+                  "Ti.ReadWrite"
+                ]
+            },
+            {
+                "Category": "Microsoft.Graph",
+                "Service": "Group Management",
+                "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+                "ResourceScope": "Application",                
+                "RoleAssignmentScopeName": [
+                    "/"
+                ],
+                "RoleDefinitionActions": [
+                  "Group.ReadWrite.All",
+                  "GroupMember.ReadWrite.All"
+                ]
+            },
+            {
+                "Category": "Microsoft.Graph",
+                "Service": "Privileged ABAC",
+                "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+                "ResourceScope": "Application",                
+                "RoleAssignmentScopeName": [
+                    "/"
+                ],
+                "RoleDefinitionActions": [
+                    "CustomSecAttributeAssignment.ReadWrite.All",
+                    "CustomSecAttributeDefinition.ReadWrite.All"
+                ]
+            },
+            {
+                "Category": "Microsoft.Graph",
+                "Service": "Entitlement Management",
+                "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+                "ResourceScope": "Application",                
+                "RoleAssignmentScopeName": [
+                    "/"
+                ],
+                "RoleDefinitionActions": [
+                    "AccessReview.ReadWrite.All",
+                    "AccessReview.ReadWrite.Membership",
+                    "EntitlementManagement.ReadWrite.All",
+                    "Policy.ReadWrite.AccessReview"
+                ]
+            },
+            {
+                "Category": "Microsoft.Graph",
+                "Service": "External Identities",
+                "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+                "ResourceScope": "Application",                
+                "RoleAssignmentScopeName": [
+                    "/"
+                ],
+                "RoleDefinitionActions": [
+                  "Policy.ReadWrite.TrustFramework",
+                  "TrustFrameworkKeySet.ReadWrite.All",
+                  "APIConnectors.ReadWrite.All",
+                  "Policy.ReadWrite.ExternalIdentities"
+                ]
+            },
+            {
+                "Category": "Microsoft.Graph",
+                "Service": "Application and Workload Identity",
+                "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+                "ResourceScope": "Application",                
+                "RoleAssignmentScopeName": [
+                    "/*"
+                ],
+                "RoleDefinitionActions": [
+                    "Application.ReadWrite.OwnedBy",
+                    "Application.ReadWrite.All",
+                    "AppRoleAssignment.ReadWrite.All",
+                    "ConsentRequest.ReadWrite.All",
+                    "DelegatedPermissionGrant.ReadWrite.All",
+                    "PermissionGrantPolicy.ReadWrite.All",
+                    "Policy.ReadWrite.ApplicationConfiguration",
+                    "Policy.ReadWrite.ConsentRequest",
+                    "Policy.ReadWrite.PermissionGrant",
+                    "ServicePrincipalEndpoint.ReadWrite.All",
+                    "Synchronization.ReadWrite.All"
+                ]
+            },
+            {
+                "Category": "Microsoft.Graph",
+                "Service": "Global Endpoint Management",
+                "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+                "ResourceScope": "Application",                
+                "RoleAssignmentScopeName": [
+                    "/"
+                ],
+                "RoleDefinitionActions": [
+                    "DeviceManagementApps.ReadWrite.All",
+                    "DeviceManagementApps.ReadW.All",
+                    "DeviceManagementConfiguration.ReadWrite.All",
+                    "DeviceManagementManagedDevices.PriviligedOperation.All",
+                    "DeviceManagementManagedDevices.ReadWrite.All",
+                    "DeviceManagementServiceConfig.Read.All",
+                    "DeviceManagementServiceConfig.ReadWrite.All",
+                    "Device.Command",
+                    "Device.ReadWrite.All",
+                    "DeviceLocalCredential.Read.All",
+                    "DeviceManagementManagedDevices.PrivilegedOperations.All",
+                    "DeviceManagementManagedDevices.PriviligedOperation.All",
+                    "Policy.ReadWrite.MobilityManagement"
+
+                ]
+            },
+            {
+                "Category": "Microsoft.Graph",
+                "Service": "Authentication",
+                "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+                "ResourceScope": "Application",                
+                "RoleAssignmentScopeName": [
+                    "/"
+                ],
+                "RoleDefinitionActions": [
+                    "Policy.ReadWrite.AuthenticationFlows",
+                    "Policy.ReadWrite.AuthenticationMethod",
+                    "Policy.ReadWrite.Authorization",
+                    "UserAuthenticationMethod.ReadWrite",
+                    "UserAuthenticationMethod.ReadWrite.All"
+                ]
+            },
+            {
+                "Category": "Microsoft.Graph",
+                "Service": "Tenant Management",
+                "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+                "ResourceScope": "Application",                
+                "RoleAssignmentScopeName": [
+                    "/"
+                ],
+                "RoleDefinitionActions": [
+                    "AdministrativeUnit.ReadWrite.All",
+                    "Agreement.ReadWrite.All",
+                    "DelegatedAdminRelationship.ReadWrite.All",
+                    "Directory.ReadWrite.All",
+                    "Directory.Write.Restricted",
+                    "Domain.ReadWrite.All",
+                    "EduRoster.ReadWrite.All",
+                    "IdentityProvider.ReadWrite.All",
+                    "ManagedTenants.WriteRead.All",
+                    "ManagedTenants.ReadWrite.All",
+                    "ManagedTenant.ReadWrite.All",
+                    "ManagedTenants.ReadWrite.All",
+                    "Organization.ReadWrite.All",
+                    "Policy.ReadWrite.ApplicationConfiguration",
+                    "Policy.ReadWrite.FeatureRollout"
+                ]
+            },
+            {
+                "Category": "Microsoft.Graph",
+                "Service": "Conditional Access",
+                "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+                "ResourceScope": "Application",                
+                "RoleAssignmentScopeName": [
+                    "/"
+                ],
+                "RoleDefinitionActions": [
+                    "CrossTenantUserProfileSharing.ReadWrite.All",
+                    "CrossTenantUserProfileSharing.ReadWrite",
+                    "Policy.ReadWrite.ConditionalAccess",
+                    "Policy.ReadWrite.CrossTenantAccess"
+                ]
+            },
+            {
+              "Category": "Microsoft.Graph",
+              "Service": "User Management",
+              "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+              "ResourceScope": "Application",              
+              "RoleAssignmentScopeName": [
+                  "/"
+              ],
+              "RoleDefinitionActions": [
+                  "LifecycleWorkflows.ReadWrite.All",
+                  "User.Export.All",
+                  "User.ManageIdentities.All",
+                  "User.ManageCreds.All",
+                  "User.ReadWrite",
+                  "User.ReadWrite.All"
+              ]
+          }
+        ]
+    },
+    {
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1",
+        "TierLevelDefinition": [
+            {
+                "Category": "Microsoft.Graph",
+                "Service": "Security Analysis",
+                "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+                "ResourceScope": "Application",                
+                "RoleAssignmentScopeName": [
+                    "/"
+                ],
+                "RoleDefinitionActions": [
+                    "IdentityProvider.Read.All",
+                    "IdentityRiskEvent.Read.All",
+                    "IdentityRiskyServicePrincipal.Read.All",
+                    "IdentityRiskyUser.Read.All",
+                    "SecurityActions.Read.All",
+                    "SecurityAlert.Read.All",
+                    "SecurityEvents.Read.All",
+                    "SecurityIncident.Read.All",
+                    "SecurityRecommendation.Read.All",
+                    "Score.Read.All"
+                ]
+            },
+            {
+                "Category": "Microsoft.Graph",
+                "Service": "Compliance",
+                "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+                "ResourceScope": "Application",                
+                "RoleAssignmentScopeName": [
+                    "/"
+                ],
+                "RoleDefinitionActions": [
+                    "eDiscovery.ReadWrite.All"
+                ]
+            },
+            {
+                "Category": "Microsoft.Graph",
+                "Service": "Exchange Online",
+                "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+                "ResourceScope": "Application",                
+                "RoleAssignmentScopeName": [
+                    "/"
+                ],
+                "RoleDefinitionActions": [
+                  "Contacts.ReadWrite",
+                  "Mail.ReadWrite",
+                  "Mail.Send",
+                  "MailboxSettings.ReadWrite"
+                ]
+            },
+            {
+                "Category": "Microsoft.Intune",
+                "Service": "Certificate Management",
+                "ResourceAppId": "c161e42e-d4df-4a3d-9b42-e7a3c31f59d4",
+                "ResourceScope": "Application",                
+                "RoleAssignmentScopeName": [
+                  "/"
+                ],
+                "RoleDefinitionActions": [
+                  "scep_challenge_provider"
+                ]
+            },
+            {
+                "Category": "Microsoft.Graph",
+                "Service": "Teams",
+                "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+                "ResourceScope": "Application",                
+                "RoleAssignmentScopeName": [
+                    "/"
+                ],
+                "RoleDefinitionActions": [
+                    "TeamsAppInstallation.ReadWriteForUser.All",
+                    "TeamMember.ReadWrite.All",
+                    "Teamwork.Migrate.All"
+                ]
+            },
+            {
+                "Category": "Microsoft.Graph",
+                "Service": "SharePoint",
+                "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+                "ResourceScope": "Application",                
+                "RoleAssignmentScopeName": [
+                    "/"
+                ],
+                "RoleDefinitionActions": [
+                    "Files.ReadWrite.All",
+                    "Sites.ReadWrite.All"
+                ]
+            }
+        ]
+    },
+    {
+      "EAMTierLevelName": "UserAccess",
+      "EAMTierLevelTagValue": "2",
       "TierLevelDefinition": [
           {
               "Category": "Microsoft.Graph",
-              "Service": "Privileged IAM",
+              "Service": "Directory reader",
+              "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+              "ResourceScope": "Application",              
               "RoleAssignmentScopeName": [
                   "/"
               ],
               "RoleDefinitionActions": [
-                "DeviceManagementRBAC.ReadWrite.All",                
-                "PrivilegedAccess.ReadWrite.AzureAD",
-                "PrivilegedAccess.ReadWrite.AzureADGroup",
-                "PrivilegedAccess.ReadWrite.AzureResources",
-                "PrivilegedAssignmentSchedule.ReadWrite.AzureADGroup",
-                "PrivilegedEligibilitySchedule.ReadWrite.AzureADGroup",                
-                "RoleAssignmentSchedule.ReadWrite.Directory",
-                "RoleEligibilitySchedule.ReadWrite.Directory",                
-                "RoleManagement.ReadWrite.CloudPC",
-                "RoleManagement.ReadWrite.Directory",                
-                "RoleManagement.ReadWrite.Exchange",                
-                "RoleManagementAlert.ReadWrite.Directory",
-                "RoleManagementPolicy.ReadWrite.AzureADGroup",                
-                "RoleManagementPolicy.ReadWrite.Directory"                
+                  "Group.Read.All",
+                  "GroupMember.Read.All",
+                  "User.Read.All"
               ]
-          },
-          {
-              "Category": "Microsoft.Graph",
-              "Service": "Identity Detection Response",
-              "RoleAssignmentScopeName": [
-                "/"
-              ],
-              "RoleDefinitionActions": [
-                "IdentityProvider.ReadWrite.All",
-                "IdentityRiskEvent.ReadWrite.All",
-                "IdentityRiskyServicePrincipal.ReadWrite.All",
-                "IdentityRiskyUser.ReadWrite.All"                
-              ]
-          },
-          {
-              "Category": "Microsoft.WindowsDefenderATP",
-              "Service": "Identity Detection Response",
-              "RoleAssignmentScopeName": [
-                "/"
-              ],
-              "RoleDefinitionActions": [
-                "Library.Manage",                
-                "Machine.Isolate",
-                "Machine.LiveResponse",
-                "SecurityRecommendation.ReadWrite.All"                
-              ]
-          },          
-          {
-              "Category": "Microsoft.Graph",
-              "Service": "SIEM Incident Response",
-              "RoleAssignmentScopeName": [
-                "/"
-              ],
-              "RoleDefinitionActions": [
-                "Library.Manage",
-                "Machine.LiveResponse",                
-                "SecurityActions.ReadWrite.All",
-                "SecurityAlert.ReadWrite.All",
-                "SecurityEvents.ReadWrite.All",
-                "SecurityIncident.ReadWrite.All",
-                "Ti.ReadWrite"
-              ]
-          },          
-          {
-              "Category": "Microsoft.Graph",
-              "Service": "Group Management",
-              "RoleAssignmentScopeName": [
-                  "/"
-              ],
-              "RoleDefinitionActions": [
-                "Group.ReadWrite.All",
-                "GroupMember.ReadWrite.All"
-              ]
-          },            
-          {
-              "Category": "Microsoft.Graph",
-              "Service": "Privileged ABAC",
-              "RoleAssignmentScopeName": [
-                  "/"
-              ],
-              "RoleDefinitionActions": [
-                  "CustomSecAttributeAssignment.ReadWrite.All",
-                  "CustomSecAttributeDefinition.ReadWrite.All"
-              ]
-          },
-          {
-              "Category": "Microsoft.Graph",
-              "Service": "Entitlement Management",
-              "RoleAssignmentScopeName": [
-                  "/"
-              ],
-              "RoleDefinitionActions": [
-                  "AccessReview.ReadWrite.All",
-                  "AccessReview.ReadWrite.Membership",
-                  "EntitlementManagement.ReadWrite.All",                  
-                  "Policy.ReadWrite.AccessReview"
-              ]
-          },          
-          {
-              "Category": "Microsoft.Graph",
-              "Service": "External Identities",
-              "RoleAssignmentScopeName": [
-                  "/"
-              ],
-              "RoleDefinitionActions": [
-                "Policy.ReadWrite.TrustFramework",
-                "TrustFrameworkKeySet.ReadWrite.All",
-                "APIConnectors.ReadWrite.All",
-                "Policy.ReadWrite.ExternalIdentities"
-              ]
-          },            
-          {
-              "Category": "Microsoft.Graph",
-              "Service": "Application and Workload Identity",
-              "RoleAssignmentScopeName": [
-                  "/*"
-              ],
-              "RoleDefinitionActions": [
-                  "Application.ReadWrite.OwnedBy",
-                  "Application.ReadWrite.All",
-                  "AppRoleAssignment.ReadWrite.All",
-                  "ConsentRequest.ReadWrite.All",
-                  "DelegatedPermissionGrant.ReadWrite.All",
-                  "PermissionGrantPolicy.ReadWrite.All",
-                  "Policy.ReadWrite.ApplicationConfiguration",
-                  "Policy.ReadWrite.ConsentRequest",
-                  "Policy.ReadWrite.PermissionGrant",
-                  "ServicePrincipalEndpoint.ReadWrite.All",
-                  "Synchronization.ReadWrite.All"
-              ]
-          },            
-          {
-              "Category": "Microsoft.Graph",
-              "Service": "Global Endpoint Management",
-              "RoleAssignmentScopeName": [
-                  "/"
-              ],
-              "RoleDefinitionActions": [
-                  "DeviceManagementApps.ReadWrite.All",
-                  "DeviceManagementApps.ReadW.All",
-                  "DeviceManagementConfiguration.ReadWrite.All",                  
-                  "DeviceManagementManagedDevices.PriviligedOperation.All",
-                  "DeviceManagementManagedDevices.ReadWrite.All",                  
-                  "DeviceManagementServiceConfig.Read.All",
-                  "DeviceManagementServiceConfig.ReadWrite.All",
-                  "Device.Command",
-                  "Device.ReadWrite.All",                  
-                  "DeviceLocalCredential.Read.All",
-                  "DeviceManagementManagedDevices.PrivilegedOperations.All",
-                  "DeviceManagementManagedDevices.PriviligedOperation.All",
-                  "Policy.ReadWrite.MobilityManagement"
-
-              ]
-          },        
-          {
-              "Category": "Microsoft.Graph",
-              "Service": "Authentication",
-              "RoleAssignmentScopeName": [
-                  "/"
-              ],
-              "RoleDefinitionActions": [
-                  "Policy.ReadWrite.AuthenticationFlows",
-                  "Policy.ReadWrite.AuthenticationMethod",
-                  "Policy.ReadWrite.Authorization",
-                  "UserAuthenticationMethod.ReadWrite",
-                  "UserAuthenticationMethod.ReadWrite.All"
-              ]
-          },          
-          {
-              "Category": "Microsoft.Graph",
-              "Service": "Tenant Management",
-              "RoleAssignmentScopeName": [
-                  "/"
-              ],
-              "RoleDefinitionActions": [
-                  "AdministrativeUnit.ReadWrite.All",
-                  "Agreement.ReadWrite.All",
-                  "DelegatedAdminRelationship.ReadWrite.All",                                
-                  "Directory.ReadWrite.All",
-                  "Directory.Write.Restricted",
-                  "Domain.ReadWrite.All",
-                  "EduRoster.ReadWrite.All",                  
-                  "IdentityProvider.ReadWrite.All",
-                  "ManagedTenants.WriteRead.All",
-                  "ManagedTenants.ReadWrite.All",
-                  "ManagedTenant.ReadWrite.All",
-                  "ManagedTenants.ReadWrite.All",
-                  "Organization.ReadWrite.All",
-                  "Policy.ReadWrite.ApplicationConfiguration",                  
-                  "Policy.ReadWrite.FeatureRollout"
-              ]
-          },                                 
-          {
-              "Category": "Microsoft.Graph",
-              "Service": "Conditional Access",
-              "RoleAssignmentScopeName": [
-                  "/"
-              ],
-              "RoleDefinitionActions": [
-                  "CrossTenantUserProfileSharing.ReadWrite.All",
-                  "CrossTenantUserProfileSharing.ReadWrite",                
-                  "Policy.ReadWrite.ConditionalAccess",
-                  "Policy.ReadWrite.CrossTenantAccess"
-              ]
-          },
-          {
-            "Category": "Microsoft.Graph",
-            "Service": "User Management",
-            "RoleAssignmentScopeName": [
-                "/"
-            ],
-            "RoleDefinitionActions": [
-                "LifecycleWorkflows.ReadWrite.All",
-                "User.Export.All",
-                "User.ManageIdentities.All",
-                "User.ManageCreds.All",
-                "User.ReadWrite",
-                "User.ReadWrite.All"
-            ]
-        }              
+          }
       ]
-  },
-  {
-      "EAMTierLevelName": "ManagementPlane",
-      "EAMTierLevelTagValue": "1",
-      "TierLevelDefinition": [             
-          {
-              "Category": "Microsoft.Graph",
-              "Service": "Security Analysis",
-              "RoleAssignmentScopeName": [
-                  "/"
-              ],             
-              "RoleDefinitionActions": [
-                  "IdentityProvider.Read.All",
-                  "IdentityRiskEvent.Read.All",
-                  "IdentityRiskyServicePrincipal.Read.All",
-                  "IdentityRiskyUser.Read.All",
-                  "SecurityActions.Read.All",
-                  "SecurityAlert.Read.All",
-                  "SecurityEvents.Read.All",
-                  "SecurityIncident.Read.All",
-                  "SecurityRecommendation.Read.All",
-                  "Score.Read.All"                  
-              ]
-          },          
-          {
-              "Category": "Microsoft.Graph",
-              "Service": "Compliance",
-              "RoleAssignmentScopeName": [
-                  "/"
-              ],
-              "RoleDefinitionActions": [
-                  "eDiscovery.ReadWrite.All"
-              ]
-          },
-          {
-              "Category": "Microsoft.Graph",
-              "Service": "Exchange Online",
-              "RoleAssignmentScopeName": [
-                  "/"
-              ],
-              "RoleDefinitionActions": [     
-                "Contacts.ReadWrite",
-                "Mail.ReadWrite",
-                "Mail.Send",
-                "MailboxSettings.ReadWrite"
-              ]
-          },
-          {
-              "Category": "Microsoft.Intune",
-              "Service": "Certificate Management",
-              "RoleAssignmentScopeName": [
-                "/"
-              ],
-              "RoleDefinitionActions": [
-                "scep_challenge_provider"
-              ]
-          },      
-          {
-              "Category": "Microsoft.Graph",
-              "Service": "Teams",
-              "RoleAssignmentScopeName": [
-                  "/"
-              ],
-              "RoleDefinitionActions": [         
-                  "TeamsAppInstallation.ReadWriteForUser.All",
-                  "TeamMember.ReadWrite.All",                  
-                  "Teamwork.Migrate.All"
-              ]
-          },
-          {
-              "Category": "Microsoft.Graph",
-              "Service": "SharePoint",
-              "RoleAssignmentScopeName": [
-                  "/"
-              ],
-              "RoleDefinitionActions": [      
-                  "Files.ReadWrite.All",
-                  "Sites.ReadWrite.All"
-              ]
-          }       
-      ]
-  },
-  {
-    "EAMTierLevelName": "UserAccess",
-    "EAMTierLevelTagValue": "2",
-    "TierLevelDefinition": [             
-        {
-            "Category": "Microsoft.Graph",
-            "Service": "Directory reader",
-            "RoleAssignmentScopeName": [
-                "/"
-            ],             
-            "RoleDefinitionActions": [
-                "Group.Read.All",
-                "GroupMember.Read.All",
-                "User.Read.All"               
-            ]
-        }   
-    ]
-  } 
-]
+    }
+  ]
