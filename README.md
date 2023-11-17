@@ -27,9 +27,9 @@ Side Note: The classification export of App Roles (`Export-EntraOpsClassificatio
 ### 📢 Call for Community Contributors!
 Mostly, role actions and permissions on Control Plane has been classified. There are still a high number of "unclassified" role actions and maybe also some classified roles which should be reviewed or may assessed differently. As already described, the source for all classification will be managed in the "[EntraOps_Classification](https://github.com/Cloud-Architekt/AzurePrivilegedIAM/tree/main/EntraOps_Classification)" files and should be the single point for modification to this project. I would be more than happy to see contributions by the community which helps to increase the coverage and quality of the classification for the Enterprise Access Model. Feel free to create PR, issues or contact me if you have any further questions or feedback.
 
-### Use Cases and references
-
-- [AzEntraIdApiPermissionsAdvertizer](https://www.azadvertizer.net/azEntraIdAPIpermissionsAdvertizer.html) serves as a quick reference for 1st party Microsoft Entra Id applications and their respective API permissions (delegated and application permissions). My classification files has been used for enrichment of the API Permissions. This tool has been developed by Julian Hayward.
+### 💡 Community use cases and references
+- [AzEntraIdApiPermissionsAdvertizer (Tool by Julian Hayward)](https://www.azadvertizer.net/azEntraIdAPIpermissionsAdvertizer.html) serves as a quick reference for 1st party Microsoft Entra Id applications and their respective API permissions (delegated and application permissions). My classification files has been used for enrichment of the API Permissions.
+- [Detect threats using Microsoft Graph activity logs (Blog post by Fabian Bader)](https://cloudbrothers.info/detect-threats-microsoft-graph-logs-part-2/#find-missing-sign-in-logs) describes how to build Microsoft Sentinel detections. Sample queries shows how new sensitive role can be detected by using the classification files.
 
 ## 🔁 Lifecycle Workflows
 On- and Offboarding of Privileged Accounts can be automated with the Entra ID Governance feature "Lifecycle workflows". Samples for the custom tasks can be found here and are described in the blog post "[Automated Lifecycle Workflows for Privileged Identities with Azure AD Identity Governance](https://www.cloud-architekt.net/manage-privileged-identities-with-azuread-identity-governance/)"
