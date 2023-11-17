@@ -29,7 +29,7 @@ Mostly, role actions and permissions on Control Plane has been classified. There
 
 ### 💡 Community use cases and references
 - [AzEntraIdApiPermissionsAdvertizer (Tool by Julian Hayward)](https://www.azadvertizer.net/azEntraIdAPIpermissionsAdvertizer.html) serves as a quick reference for 1st party Microsoft Entra Id applications and their respective API permissions (delegated and application permissions). My classification files has been used for enrichment of the API Permissions.
-- [Detect threats using Microsoft Graph activity logs (Blog post by Fabian Bader)](https://cloudbrothers.info/detect-threats-microsoft-graph-logs-part-2/#find-missing-sign-in-logs) describes how to build Microsoft Sentinel detections. Sample queries shows how new sensitive role can be detected by using the classification files.
+- [Detect threats using Microsoft Graph activity logs (Blog post by Fabian Bader)](https://cloudbrothers.info/detect-threats-microsoft-graph-logs-part-2/#find-missing-sign-in-logs) describes how to build advanced Microsoft Sentinel detections for this logs. Sample queries show how new sensitive role can be detected by using the classification files.
 
 ## 🔁 Lifecycle Workflows
 On- and Offboarding of Privileged Accounts can be automated with the Entra ID Governance feature "Lifecycle workflows". Samples for the custom tasks can be found here and are described in the blog post "[Automated Lifecycle Workflows for Privileged Identities with Azure AD Identity Governance](https://www.cloud-architekt.net/manage-privileged-identities-with-azuread-identity-governance/)"
