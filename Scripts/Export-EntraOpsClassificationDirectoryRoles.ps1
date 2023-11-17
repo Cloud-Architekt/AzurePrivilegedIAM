@@ -1,4 +1,4 @@
-function Get-EntraOpsClassificationDirectoryRoles {
+function Export-EntraOpsClassificationDirectoryRoles {
 
     [cmdletbinding()]
     param

@@ -652,6 +652,28 @@
     }
   },
   {
+    "RoleId": "5b784334-f94b-471a-a387-e7219fc49ca2",
+    "RoleName": "Attribute Log Administrator",
+    "isPrivileged": false,
+    "RolePermissions": {
+      "AuthorizedResourceAction": "microsoft.azure.customSecurityAttributeDiagnosticSettings/allEntities/allProperties/allTasks",
+      "Category": "Unclassified",
+      "EAMTierLevelName": "Unclassified",
+      "EAMTierLevelTagValue": "Unclassified"
+    },
+    "Classification": {
+      "EAMTierLevelName": "Unclassified",
+      "EAMTierLevelTagValue": "Unclassified"
+    }
+  },
+  {
+    "RoleId": "9c99539d-8186-4804-835f-fd51ef9e2dcd",
+    "RoleName": "Attribute Log Reader",
+    "isPrivileged": false,
+    "RolePermissions": null,
+    "Classification": null
+  },
+  {
     "RoleId": "c4e39bd9-1100-46d3-8c65-fb160da0071f",
     "RoleName": "Authentication Administrator",
     "isPrivileged": true,
@@ -3326,6 +3348,18 @@
         "Category": "User Endpoint Management",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/groupsAssignableToRoles/assignLicense",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/groupsAssignableToRoles/reprocessLicenseAssignment",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/multiTenantOrganization/basic/update",
@@ -7677,6 +7711,18 @@
         "EAMTierLevelTagValue": "0"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/groupsAssignableToRoles/assignLicense",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/groupsAssignableToRoles/reprocessLicenseAssignment",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/oAuth2PermissionGrants/allProperties/allTasks",
         "Category": "Application and Workload Identity",
         "EAMTierLevelName": "ControlPlane",
@@ -7729,6 +7775,30 @@
         "Category": "Microsoft 365 Support Operations",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/permissionGrantPolicies/create",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/permissionGrantPolicies/delete",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/permissionGrantPolicies/allProperties/read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/permissionGrantPolicies/allProperties/update",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
       }
     ],
     "Classification": {
@@ -9224,6 +9294,12 @@
         "Category": "Unclassified",
         "EAMTierLevelName": "Unclassified",
         "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/permissionGrantPolicies/standard/read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
       }
     ],
     "Classification": {
@@ -10031,6 +10107,18 @@
         "Category": "Privileged IAM",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/groupsAssignableToRoles/assignLicense",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/groupsAssignableToRoles/reprocessLicenseAssignment",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/policies/delete",

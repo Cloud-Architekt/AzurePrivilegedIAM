@@ -1,4 +1,4 @@
-function Get-EntraOpsClassificationAppRoles {
+function Export-EntraOpsClassificationAppRoles {
 
     [cmdletbinding()]
     param
@@ -8,7 +8,7 @@ function Get-EntraOpsClassificationAppRoles {
     )
 
     # Get EntraOps Classification
-    $Classification = Get-Content -Path .\EntraOps_Classification/Classification_AppRoles.json | ConvertFrom-Json -Depth 10
+    $Classification = Get-Content -Path ./EntraOps_Classification/Classification_AppRoles.json | ConvertFrom-Json -Depth 10
 
     # Get Graph API actions 
     if ($IncludeAuthorizedApiCalls -eq $true) {
