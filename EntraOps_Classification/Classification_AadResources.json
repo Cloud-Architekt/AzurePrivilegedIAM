@@ -62,7 +62,7 @@
                 "Category": "Microsoft.AzureAD",
                 "Service": "Privileged ABAC",
                 "RoleAssignmentScopeName": [
-                    "/*"
+                    "/"
                 ],
                 "RoleDefinitionActions": [
                     "microsoft.directory/attributeSets/allProperties/allTasks",
@@ -179,7 +179,7 @@
                 "Category": "Microsoft.AzureAD",
                 "Service": "Application Policy Management",
                 "RoleAssignmentScopeName": [
-                    "/*"
+                    "/"
                 ],
                 "RoleDefinitionActions": [
                     "microsoft.directory/applications/policies/update"
@@ -280,8 +280,7 @@
                 "Category": "Microsoft.AzureAD",
                 "Service": "Conditional Access",
                 "RoleAssignmentScopeName": [
-                    "/",
-                    "/administrativeUnits/7adf066c-9e8c-4360-b1cc-005a0d5d2e73"
+                    "/"
                 ],
                 "RoleDefinitionActions": [
                     "microsoft.directory/policies/allProperties/allTasks",
@@ -417,7 +416,7 @@
                 "Category": "Microsoft.AzureAD",
                 "Service": "Support and Service Health",
                 "RoleAssignmentScopeName": [
-                    "/*"
+                    "/"
                 ],
                 "RoleDefinitionActions": [
                     "microsoft.azure.supportTickets/allEntities/allTasks",
