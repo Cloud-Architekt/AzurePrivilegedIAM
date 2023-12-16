@@ -1,0 +1,51 @@
+name: AzADServicePrincipalInsights_Ingest
+
+env:
+  ImportPath: wiki # Sub
+  DataCollectionEndpointName: AzADServicePrincipalInsights-DCE #Resource Name of Data Collection Endpoint
+  DataCollectionResourceGroup: identitysecops-rg #Resource Group Name of Data Collection Endpoint and Rule
+  DataCollectionSubscriptionId: "5929796a-a167-4b85-87fd-54b3314b7e17" #Resource Group Name of Data Collection Endpoint and Rule
+  ScriptDir: pwsh #example: 'my folder\pwsh' or 'my folder/pwsh'
+  ScriptFile: AzADSPI_DataCollectionIngest.ps1
+
+on:
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+  push:
+    branches:
+      - main
+    paths:
+      - "wiki/**"
+
+  schedule:
+      - cron:  '0 9 * * *'
+
+#requirement OIDC
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  AzADServicePrincipalInsights:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Connect Azure OIDC
+        uses: azure/login@v1
+        with:
+          client-id: ${{secrets.CLIENT_ID}}
+          tenant-id: ${{secrets.TENANT_ID}}
+          subscription-id: ${{secrets.SUBSCRIPTION_ID}}
+          enable-AzPSSession: true
+
+      - name: Run AzADSPIDataCollectionIngest
+        uses: azure/powershell@v1
+        with:
+          inlineScript: |
+            . .\$($env:ScriptDir)\$($env:ScriptFile) -ImportPath ${env:ImportPath} -DataCollectionResourceGroup ${env:DataCollectionResourceGroup} -DataCollectionEndpointName ${env:DataCollectionEndpointName} -DataCollectionSubscriptionId ${env:DataCollectionSubscriptionId}
+          azPSVersion: "latest"
