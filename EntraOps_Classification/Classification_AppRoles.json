@@ -216,6 +216,7 @@
                     "ManagedTenant.ReadWrite.All",
                     "ManagedTenants.ReadWrite.All",
                     "Organization.ReadWrite.All",
+                    "OrganizationalBranding.ReadWrite.All",
                     "Policy.ReadWrite.ApplicationConfiguration",
                     "Policy.ReadWrite.FeatureRollout"
                 ]

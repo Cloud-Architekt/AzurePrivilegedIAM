@@ -7,7 +7,10 @@ function Export-EntraOpsClassificationDirectoryRoles {
         $SingleClassification = $True
         ,
         [Parameter(Mandatory = $false)]
-        $IncludeCustomRoles = $True
+        $FilteredConditions = @('$ResourceIsSelf')
+        ,
+        [Parameter(Mandatory = $false)]
+        $IncludeCustomRoles = $False
     )
 
     # Get EntraOps Classification
@@ -23,7 +26,7 @@ function Export-EntraOpsClassificationDirectoryRoles {
 
     $DirectoryRoles = $DirectoryRoleDefinitions | foreach-object {
 
-        $DirectoryRolePermissions = $_.RolePermissions.allowedResourceActions
+        $DirectoryRolePermissions = ($_.RolePermissions | Where-Object {$_.condition -notin $FilteredConditions}).allowedResourceActions
         $ClassifiedDirectoryRolePermissions = foreach ($RolePermission in $DirectoryRolePermissions) {
             # Apply Classification
             $EntraRolePermissionTierLevelClassification = $Classification | where-object {$_.TierLevelDefinition.RoleDefinitionActions -contains $($RolePermission)} | select-object EAMTierLevelName, EAMTierLevelTagValue

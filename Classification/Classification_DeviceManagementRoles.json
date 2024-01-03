@@ -1,0 +1,2776 @@
+[
+  {
+    "RoleId": "c1d9fcbb-cba5-40b0-bf6b-527006585f4b",
+    "RoleName": "Application Manager",
+    "isPrivileged": null,
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Organization/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MobileApps/Create",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MobileApps/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MobileApps/Update",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MobileApps/Delete",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MobileApps/Assign",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MobileApps/Relate",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedDevices/Read",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Create",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Update",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Delete",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Assign",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Wipe",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AndroidSync/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AndroidSync/UpdateApps",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Assign",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Create",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Delete",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Update",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AssignmentFilter/Create",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AssignmentFilter/Delete",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AssignmentFilter/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AssignmentFilter/Update",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MicrosoftDefenderATP/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MicrosoftStoreForBusiness/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/WindowsEnterpriseCertificate/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/PartnerDeviceManagement/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MobileThreatDefense/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CertificateConnector/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DerivedCredentials/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Customization/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/ResourceExplorer",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/ClientDetails",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Timeline",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Collections",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Applications",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/ApplicationActions",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/SoftwareUpdates",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
+    }
+  },
+  {
+    "RoleId": "e9a9f614-7527-44e2-a61a-1879747ccfd7",
+    "RoleName": "Endpoint Privilege Manager",
+    "isPrivileged": null,
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Organization/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/Create",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/Update",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/Delete",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/Assign",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/ViewReports",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "Unclassified",
+      "EAMTierLevelTagValue": "Unclassified"
+    }
+  },
+  {
+    "RoleId": "9553af24-bd83-4ac3-a339-0e58f9e5478e",
+    "RoleName": "Endpoint Privilege Reader",
+    "isPrivileged": null,
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Organization/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/ViewReports",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "Unclassified",
+      "EAMTierLevelTagValue": "Unclassified"
+    }
+  },
+  {
+    "RoleId": "c56d53a2-73d0-4502-b6bd-4a9d3dba28d5",
+    "RoleName": "Endpoint Security Manager",
+    "isPrivileged": null,
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MobileApps/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/TermsAndConditions/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedDevices/Delete",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedDevices/Read",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedDevices/Update",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedDevices/SetPrimaryUser",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedDevices/ViewReports",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/ViewReports",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceCompliancePolices/Create",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceCompliancePolices/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceCompliancePolices/ViewReports",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceCompliancePolices/Update",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceCompliancePolices/Delete",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceCompliancePolices/Assign",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/TelecomExpenses/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistance/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistance/ViewReports",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Organization/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EndpointProtection/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EnrollmentProgramToken/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AppleEnrollmentProfiles/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AppleDeviceSerialNumbers/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceEnrollmentManagers/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CorporateDeviceIdentifiers/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Roles/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Reports/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AndroidSync/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Audit/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/ConfigurationManagerAction",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/GetFileVaultKey",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/RebootNow",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/RemoteLock",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/RotateBitLockerKeys",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/RotateFileVaultKey",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/ShutDown",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/SyncDevice",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/WindowsDefender",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/SecurityBaselines/Create",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/SecurityBaselines/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/SecurityBaselines/Update",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/SecurityBaselines/Delete",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/SecurityBaselines/Assign",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/SecurityTasks/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/SecurityTasks/Update",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AssignmentFilter/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EndpointAnalytics/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MicrosoftDefenderATP/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MicrosoftStoreForBusiness/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/WindowsEnterpriseCertificate/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/PartnerDeviceManagement/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MobileThreatDefense/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MobileThreatDefense/Modify",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CertificateConnector/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DerivedCredentials/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Customization/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AndroidFota/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/ResourceExplorer",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/ClientDetails",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Timeline",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Collections",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/CMPivot",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Scripts",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/SoftwareUpdates",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/Create",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/Update",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/Delete",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/Assign",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/ViewReports",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
+    }
+  },
+  {
+    "RoleId": "9e0cc482-82df-4ab2-a24c-0c23a3f52e1e",
+    "RoleName": "Help Desk Operator",
+    "isPrivileged": null,
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MobileApps/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MobileApps/Assign",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Assign",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Wipe",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedDevices/Read",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedDevices/Update",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedDevices/SetPrimaryUser",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedDevices/ViewReports",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/Wipe",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/Retire",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/RemoteLock",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/ResetPasscode",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/EnableLostMode",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/DisableLostMode",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/LocateDevice",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/PlayLostModeSound",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/SetDeviceName",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/RebootNow",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/ShutDown",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/RequestRemoteAssistance",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/EnableWindowsIntuneAgent",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/CleanPC",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/ManageSharedDeviceUsers",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/SyncDevice",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/WindowsDefender",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/RotateBitLockerKeys",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/UpdateDeviceAccount",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/RevokeAppleVppLicenses",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/CustomNotification",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/ActivateDeviceEsim",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/InitiateMDMKeyRecovery",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/InitiateDeviceAttestation",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/OnDemandProactiveRemediation",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/ViewReports",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceCompliancePolices/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceCompliancePolices/ViewReports",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/TelecomExpenses/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistance/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistanceApp/ViewScreen",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistanceApp/TakeFullControl",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistanceApp/Elevation",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistanceApp/Unattended",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Organization/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EndpointProtection/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EnrollmentProgramToken/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AppleEnrollmentProfiles/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AppleDeviceSerialNumbers/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceEnrollmentManagers/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CorporateDeviceIdentifiers/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/TermsAndConditions/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Roles/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AndroidSync/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Audit/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/GetFileVaultKey",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/RotateFileVaultKey",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/SecurityBaselines/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/ConfigurationManagerAction",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/DeviceLogs",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AssignmentFilter/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EndpointAnalytics/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MicrosoftDefenderATP/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MicrosoftStoreForBusiness/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/WindowsEnterpriseCertificate/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/PartnerDeviceManagement/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MobileThreatDefense/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CertificateConnector/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DerivedCredentials/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Customization/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AndroidFota/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/ResourceExplorer",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/ClientDetails",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Timeline",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Collections",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Applications",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/ApplicationActions",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/CMPivot",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Scripts",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/ScriptActions",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/SoftwareUpdates",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/EnrollNow",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ServiceNow/ViewIncidents",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
+    }
+  },
+  {
+    "RoleId": "fb2603eb-3c87-4be3-8b5b-d58a5b4a0bc0",
+    "RoleName": "Intune Role Administrator",
+    "isPrivileged": null,
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Organization/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Roles/Create",
+        "Category": "Privileged IAM",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Roles/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Roles/Update",
+        "Category": "Privileged IAM",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Roles/Delete",
+        "Category": "Privileged IAM",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Roles/Assign",
+        "Category": "Privileged IAM",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
+    }
+  },
+  {
+    "RoleId": "80d7a9c3-b5d2-4e46-a681-6f3d16e623cc",
+    "RoleName": "Organizational Messages Manager",
+    "isPrivileged": null,
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Organization/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/OrganizationalMessages/Create",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/OrganizationalMessages/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/OrganizationalMessages/Update",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/OrganizationalMessages/Delete",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/OrganizationalMessages/Assign",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/OrganizationalMessages/UpdateControl",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "Unclassified",
+      "EAMTierLevelTagValue": "Unclassified"
+    }
+  },
+  {
+    "RoleId": "0bd113fe-6be5-400c-a28f-ae5553f9c0be",
+    "RoleName": "Policy and Profile manager",
+    "isPrivileged": null,
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Organization/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/Create",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/Update",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/Delete",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/Assign",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/ViewReports",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceCompliancePolices/Create",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceCompliancePolices/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceCompliancePolices/ViewReports",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceCompliancePolices/Update",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceCompliancePolices/Delete",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceCompliancePolices/Assign",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EnrollmentProgramToken/Create",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EnrollmentProgramToken/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EnrollmentProgramToken/Update",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EnrollmentProgramToken/Delete",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AppleEnrollmentProfiles/Create",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AppleEnrollmentProfiles/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AppleEnrollmentProfiles/Update",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AppleEnrollmentProfiles/Delete",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AppleEnrollmentProfiles/Assign",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AppleDeviceSerialNumbers/Create",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AppleDeviceSerialNumbers/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AppleDeviceSerialNumbers/Update",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AppleDeviceSerialNumbers/Delete",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CorporateDeviceIdentifiers/Create",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CorporateDeviceIdentifiers/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CorporateDeviceIdentifiers/Update",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CorporateDeviceIdentifiers/Delete",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Create",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Update",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Delete",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Assign",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AndroidSync/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AndroidSync/UpdateEnrollmentProfiles",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AndroidSync/UpdateOnboarding",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AndroidSync/UpdateApps",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Audit/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Assign",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Create",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Delete",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Update",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AssignmentFilter/Create",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AssignmentFilter/Delete",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AssignmentFilter/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AssignmentFilter/Update",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MicrosoftDefenderATP/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/PartnerDeviceManagement/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MobileThreatDefense/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CertificateConnector/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DerivedCredentials/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AndroidFota/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/QuietTimePolicies/Create",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/QuietTimePolicies/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/QuietTimePolicies/Update",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/QuietTimePolicies/Delete",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/QuietTimePolicies/Assign",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/QuietTimePolicies/ViewReports",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/ResourceExplorer",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/ClientDetails",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Timeline",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Collections",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Applications",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Scripts",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/SoftwareUpdates",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
+    }
+  },
+  {
+    "RoleId": "fa1d7878-e8cb-41a1-8254-0142355c9f84",
+    "RoleName": "Read Only Operator",
+    "isPrivileged": null,
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MobileApps/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/TermsAndConditions/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedDevices/Read",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedDevices/ViewReports",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/ViewReports",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceCompliancePolices/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceCompliancePolices/ViewReports",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/TelecomExpenses/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistance/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistance/ViewReports",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Organization/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EndpointProtection/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EnrollmentProgramToken/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AppleEnrollmentProfiles/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AppleDeviceSerialNumbers/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceEnrollmentManagers/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CorporateDeviceIdentifiers/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Roles/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Reports/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AndroidSync/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Audit/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/GetFileVaultKey",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/SecurityBaselines/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EndpointAnalytics/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AssignmentFilter/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MicrosoftDefenderATP/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Customization/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MicrosoftStoreForBusiness/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/WindowsEnterpriseCertificate/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/PartnerDeviceManagement/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MobileThreatDefense/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CertificateConnector/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DerivedCredentials/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AndroidFota/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/QuietTimePolicies/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/QuietTimePolicies/ViewReports",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/ResourceExplorer",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/ClientDetails",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Timeline",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Collections",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Applications",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Scripts",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/SoftwareUpdates",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/OrganizationalMessages/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/ViewReports",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ServiceNow/ViewIncidents",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
+    }
+  },
+  {
+    "RoleId": "2f9f4f7e-2d13-427b-adf2-361a1eef7ae8",
+    "RoleName": "School Administrator",
+    "isPrivileged": null,
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AppleDeviceSerialNumbers/Delete",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AppleDeviceSerialNumbers/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AppleDeviceSerialNumbers/Update",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AppleEnrollmentProfiles/Assign",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AppleEnrollmentProfiles/Create",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AppleEnrollmentProfiles/Delete",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AppleEnrollmentProfiles/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AppleEnrollmentProfiles/Update",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Audit/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/Assign",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/Create",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/Delete",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/Update",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceEnrollmentManagers/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeviceEnrollmentManagers/Update",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EnrollmentProgramToken/Create",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EnrollmentProgramToken/Delete",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EnrollmentProgramToken/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EnrollmentProgramToken/Update",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Create",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Delete",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Update",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedDevices/Delete",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedDevices/Read",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedDevices/Update",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedDevices/SetPrimaryUser",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MobileApps/Assign",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MobileApps/Create",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MobileApps/Delete",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MobileApps/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MobileApps/Update",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MobileApps/Relate",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Organization/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/CleanPC",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/DisableLostMode",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/EnableLostMode",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/LocateDevice",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/PlayLostModeSound",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/RebootNow",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/RemoteLock",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/ResetPasscode",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/Retire",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/SetDeviceName",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/SyncDevice",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/Wipe",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/ActivateDeviceEsim",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/RequestRemoteAssistance",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/InitiateMDMKeyRecovery",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/InitiateDeviceAttestation",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/OnDemandProactiveRemediation",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Reports/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Assign",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Create",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Delete",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Update",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/ConfigurationManagerAction",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/DeviceLogs",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AssignmentFilter/Create",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AssignmentFilter/Delete",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AssignmentFilter/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AssignmentFilter/Update",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EndpointAnalytics/Create",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EndpointAnalytics/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EndpointAnalytics/Update",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EndpointAnalytics/Delete",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MicrosoftStoreForBusiness/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MicrosoftStoreForBusiness/Modify",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MicrosoftDefenderATP/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/WindowsEnterpriseCertificate/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/WindowsEnterpriseCertificate/Modify",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CertificateConnector/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CertificateConnector/Modify",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Customization/Create",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Customization/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Customization/Update",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Customization/Delete",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Customization/Assign",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/TermsAndConditions/Create",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/TermsAndConditions/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/TermsAndConditions/Update",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/TermsAndConditions/Delete",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/TermsAndConditions/Assign",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/PartnerDeviceManagement/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MobileThreatDefense/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DerivedCredentials/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistance/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistance/Update",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistance/ViewReports",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistanceApp/ViewScreen",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistanceApp/TakeFullControl",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistanceApp/Elevation",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/ResourceExplorer",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/ClientDetails",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Timeline",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Collections",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Applications",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/ApplicationActions",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/CMPivot",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Scripts",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/ScriptActions",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/SoftwareUpdates",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/EnrollNow",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ServiceNow/ViewIncidents",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
+    }
+  }
+]
