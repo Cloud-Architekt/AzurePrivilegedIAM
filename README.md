@@ -19,7 +19,7 @@ Sample queries to use classification in KQL queries in Microsoft Sentinel can be
 
 The helper script to create classification by using the definition of classification are available here:
 
-* [Script for Classification of Entra ID Roles](./Export-EntraOpsClassificationDirectoryRoles.ps1)
+* [Script for Classification of Entra ID Roles](./Scripts/Export-EntraOpsClassificationDirectoryRoles.ps1)
 * [Script for Classification of Microsoft Graph API Permission](./Scripts/Export-EntraOpsClassificationAppRoles.ps1)
 
 Side Note: The classification export of App Roles (`Export-EntraOpsClassificationAppRoles`) can also include a list of "Authorized Api Calls" by using the Parameter `IncludeAuthorizedApiCalls`. This information will be enriched from the GitHub project "[graphpermissions.github.io](https://github.com/merill/graphpermissions.github.io)" (created by [Merill Fernando](https://github.com/merill)). Kudos to Merill!
