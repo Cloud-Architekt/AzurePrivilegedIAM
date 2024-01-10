@@ -2783,8 +2783,8 @@
       {
         "AuthorizedResourceAction": "microsoft.directory/users/inviteGuest",
         "Category": "External Identities",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/users/reprocessLicenseAssignment",
@@ -5199,8 +5199,8 @@
       {
         "AuthorizedResourceAction": "microsoft.directory/users/inviteGuest",
         "Category": "External Identities",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/users/standard/read",
@@ -5288,8 +5288,8 @@
       }
     ],
     "Classification": {
-      "EAMTierLevelName": "ControlPlane",
-      "EAMTierLevelTagValue": "0"
+      "EAMTierLevelName": "UserAccess",
+      "EAMTierLevelTagValue": "2"
     }
   },
   {
@@ -5426,8 +5426,8 @@
       {
         "AuthorizedResourceAction": "microsoft.directory/users/inviteGuest",
         "Category": "External Identities",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/users/guestBasicProfile/limitedRead",
@@ -5437,8 +5437,8 @@
       }
     ],
     "Classification": {
-      "EAMTierLevelName": "ControlPlane",
-      "EAMTierLevelTagValue": "0"
+      "EAMTierLevelName": "UserAccess",
+      "EAMTierLevelTagValue": "2"
     }
   },
   {
@@ -9700,8 +9700,8 @@
       {
         "AuthorizedResourceAction": "microsoft.directory/users/inviteGuest",
         "Category": "External Identities",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/users/standard/read",
@@ -10335,8 +10335,8 @@
       {
         "AuthorizedResourceAction": "microsoft.directory/users/inviteGuest",
         "Category": "External Identities",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/users/invalidateAllRefreshTokens",
