@@ -7,7 +7,7 @@ function Export-EntraOpsClassificationDirectoryRoles {
         $SingleClassification = $True
         ,
         [Parameter(Mandatory = $false)]
-        $FilteredConditions = @('$ResourceIsSelf')
+        $FilteredConditions = @('$ResourceIsSelf','$SubjectIsOwner')
         ,
         [Parameter(Mandatory = $false)]
         $IncludeCustomRoles = $False
