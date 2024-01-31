@@ -10,7 +10,7 @@
                     "/"
                 ],
                 "RoleDefinitionActions": [
-                    "microsoft.directory/contracts/allProperties/allTasks",                    
+                    "microsoft.directory/contracts/allProperties/allTasks",
                     "microsoft.directory/directoryRoles/allProperties/allTasks",
                     "microsoft.directory/directoryRoleTemplates/allProperties/allTasks",
                     "microsoft.directory/groups/allProperties/allTasks",
@@ -31,8 +31,8 @@
                     "/"
                 ],
                 "RoleDefinitionActions": [
-                    "microsoft.directory/deletedItems.groups/restore",                    
-                    "microsoft.directory/groups/create",                   
+                    "microsoft.directory/deletedItems.groups/restore",
+                    "microsoft.directory/groups/create",
                     "microsoft.directory/groups/basic/update",
                     "microsoft.directory/groups/classification/update",
                     "microsoft.directory/groups/dynamicMembershipRule/update",
@@ -68,6 +68,7 @@
                     "microsoft.directory/attributeSets/allProperties/allTasks",
                     "microsoft.directory/attributeSets/allProperties/read",
                     "microsoft.directory/devices/customSecurityAttributes/update",
+                    "microsoft.directory/azureManagedIdentities/customSecurityAttributes/update",
                     "microsoft.directory/customSecurityAttributeDefinitions/allProperties/read",
                     "microsoft.directory/customSecurityAttributeDefinitions/allProperties/allTasks"
                 ]
@@ -116,8 +117,7 @@
                     "microsoft.directory/b2cTrustFrameworkPolicy/allProperties/allTasks",
                     "microsoft.directory/b2cUserFlow/allProperties/allTasks",
                     "microsoft.directory/b2cUserAttribute/allProperties/allTasks",
-                    "microsoft.directory/identityProviders/allProperties/allTasks",                    
-                    "microsoft.directory/users/inviteGuest"
+                    "microsoft.directory/identityProviders/allProperties/allTasks"
                 ]
             },
             {
@@ -194,7 +194,7 @@
                 "RoleDefinitionActions": [
                     "microsoft.directory/bitlockerKeys/key/read"
                 ]
-            },                       
+            },
             {
                 "Category": "Microsoft.AzureAD",
                 "Service": "Global Security & Compliance Management",
@@ -204,7 +204,7 @@
                 "RoleDefinitionActions": [
                     "microsoft.office365.protectionCenter/allEntities/basic/update"
                 ]
-            },  
+            },
             {
                 "Category": "Microsoft.AzureAD",
                 "Service": "Global Secure Access Management",
@@ -317,7 +317,7 @@
                 "Service": "Application and Workload Identity",
                 "RoleAssignmentScopeName": [
                     "/"
-                ],               
+                ],
                 "RoleDefinitionActions": [
                     "microsoft.directory/applications/allProperties/read",
                     "microsoft.directory/applications/basic/update",
@@ -325,14 +325,14 @@
                     "microsoft.directory/servicePrincipals/basic/update",
                     "microsoft.directory/servicePrincipals/disable"
                 ]
-            },            
+            },
             {
                 "Category": "Microsoft.AzureAD",
                 "Service": "User Management",
                 "RoleAssignmentScopeName": [
                     "/"
                 ],
-                "RoleDefinitionActions": [                
+                "RoleDefinitionActions": [
                     "microsoft.directory/users/authenticationMethods/create",
                     "microsoft.directory/users/authenticationMethods/delete",
                     "microsoft.directory/users/authenticationMethods/basic/update",
@@ -367,7 +367,7 @@
                     "microsoft.directory/devices/registeredOwners/update",
                     "microsoft.directory/devices/registeredUsers/update",
                     "microsoft.directory/devices/allProperties/allTasks",
-                    "microsoft.windows.updatesDeployments/allEntities/allProperties/allTasks",                    
+                    "microsoft.windows.updatesDeployments/allEntities/allProperties/allTasks",
                     "microsoft.directory/devices/extensionAttributeSet1/update",
                     "microsoft.directory/devices/extensionAttributeSet2/update",
                     "microsoft.directory/devices/extensionAttributeSet3/update",
@@ -386,7 +386,7 @@
                 ],
                 "RoleDefinitionActions": [
                     "microsoft.directory/auditLogs/allProperties/read",
-                    "microsoft.directory/identityProtection/allProperties/read",                    
+                    "microsoft.directory/identityProtection/allProperties/read",
                     "microsoft.directory/signInReports/allProperties/read",
                     "microsoft.directory/provisioningLogs/allProperties/read"
                 ]
@@ -529,5 +529,21 @@
                 ]
             }
         ]
-    }
+    },
+    {
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2",
+        "TierLevelDefinition": [
+            {
+                "Category": "Microsoft.AzureAD",
+                "Service": "External Identities",
+                "RoleAssignmentScopeName": [
+                    "/"
+                ],
+                "RoleDefinitionActions": [
+                    "microsoft.directory/users/inviteGuest"
+                ]
+            }
+        ]
+    }    
 ]

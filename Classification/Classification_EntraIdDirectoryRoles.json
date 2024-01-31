@@ -511,6 +511,18 @@
     "isPrivileged": false,
     "RolePermissions": [
       {
+        "AuthorizedResourceAction": "microsoft.directory/azureManagedIdentities/customSecurityAttributes/read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/azureManagedIdentities/customSecurityAttributes/update",
+        "Category": "Privileged ABAC",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/attributeSets/allProperties/read",
         "Category": "Privileged ABAC",
         "EAMTierLevelName": "ControlPlane",
@@ -574,6 +586,12 @@
         "Category": "Privileged ABAC",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/azureManagedIdentities/customSecurityAttributes/read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/customSecurityAttributeDefinitions/allProperties/read",
@@ -655,12 +673,20 @@
     "RoleId": "5b784334-f94b-471a-a387-e7219fc49ca2",
     "RoleName": "Attribute Log Administrator",
     "isPrivileged": false,
-    "RolePermissions": {
-      "AuthorizedResourceAction": "microsoft.azure.customSecurityAttributeDiagnosticSettings/allEntities/allProperties/allTasks",
-      "Category": "Unclassified",
-      "EAMTierLevelName": "Unclassified",
-      "EAMTierLevelTagValue": "Unclassified"
-    },
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.directory/customSecurityAttributeAuditLogs/allProperties/read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.azure.customSecurityAttributeDiagnosticSettings/allEntities/allProperties/allTasks",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      }
+    ],
     "Classification": {
       "EAMTierLevelName": "Unclassified",
       "EAMTierLevelTagValue": "Unclassified"
@@ -670,8 +696,16 @@
     "RoleId": "9c99539d-8186-4804-835f-fd51ef9e2dcd",
     "RoleName": "Attribute Log Reader",
     "isPrivileged": false,
-    "RolePermissions": null,
-    "Classification": null
+    "RolePermissions": {
+      "AuthorizedResourceAction": "microsoft.directory/customSecurityAttributeAuditLogs/allProperties/read",
+      "Category": "Unclassified",
+      "EAMTierLevelName": "Unclassified",
+      "EAMTierLevelTagValue": "Unclassified"
+    },
+    "Classification": {
+      "EAMTierLevelName": "Unclassified",
+      "EAMTierLevelTagValue": "Unclassified"
+    }
   },
   {
     "RoleId": "c4e39bd9-1100-46d3-8c65-fb160da0071f",
@@ -2749,8 +2783,8 @@
       {
         "AuthorizedResourceAction": "microsoft.directory/users/inviteGuest",
         "Category": "External Identities",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/users/reprocessLicenseAssignment",
@@ -2860,6 +2894,35 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.office365.webPortal/allEntities/standard/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "963797fb-eb3b-4cde-8ce3-5878b3f32a3f",
+    "RoleName": "Dynamics 365 Business Central Administrator",
+    "isPrivileged": false,
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.azure.serviceHealth/allEntities/allTasks",
+        "Category": "Support and Service Health",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.dynamics365.businessCentral/allEntities/allProperties/allTasks",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.serviceHealth/allEntities/allTasks",
         "Category": "Microsoft 365 Support Operations",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
@@ -5136,8 +5199,8 @@
       {
         "AuthorizedResourceAction": "microsoft.directory/users/inviteGuest",
         "Category": "External Identities",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/users/standard/read",
@@ -5225,8 +5288,8 @@
       }
     ],
     "Classification": {
-      "EAMTierLevelName": "ControlPlane",
-      "EAMTierLevelTagValue": "0"
+      "EAMTierLevelName": "UserAccess",
+      "EAMTierLevelTagValue": "2"
     }
   },
   {
@@ -5363,121 +5426,19 @@
       {
         "AuthorizedResourceAction": "microsoft.directory/users/inviteGuest",
         "Category": "External Identities",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/users/guestBasicProfile/limitedRead",
         "Category": "Unclassified",
         "EAMTierLevelName": "Unclassified",
         "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/standard/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/appRoleAssignments/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/deviceForResourceAccount/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/directReports/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/eligibleMemberOf/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/licenseDetails/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/manager/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/memberOf/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/oAuth2PermissionGrants/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/ownedDevices/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/ownedObjects/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/pendingMemberOf/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/photo/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/registeredDevices/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/scopedRoleMemberOf/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/sponsors/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/password/update",
-        "Category": "User Management",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
       }
     ],
     "Classification": {
-      "EAMTierLevelName": "ControlPlane",
-      "EAMTierLevelTagValue": "0"
+      "EAMTierLevelName": "UserAccess",
+      "EAMTierLevelTagValue": "2"
     }
   },
   {
@@ -6687,18 +6648,6 @@
         "Category": "Microsoft 365 Support Operations",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.hardware.support/shippingStatus/allProperties/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.hardware.support/warrantyClaims/allProperties/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
       }
     ],
     "Classification": {
@@ -7941,113 +7890,11 @@
         "Category": "Unclassified",
         "EAMTierLevelName": "Unclassified",
         "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/standard/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/appRoleAssignments/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/deviceForResourceAccount/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/directReports/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/eligibleMemberOf/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/licenseDetails/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/manager/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/memberOf/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/oAuth2PermissionGrants/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/ownedDevices/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/ownedObjects/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/pendingMemberOf/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/photo/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/registeredDevices/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/scopedRoleMemberOf/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/sponsors/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/password/update",
-        "Category": "User Management",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
       }
     ],
     "Classification": {
-      "EAMTierLevelName": "ManagementPlane",
-      "EAMTierLevelTagValue": "1"
+      "EAMTierLevelName": "Unclassified",
+      "EAMTierLevelTagValue": "Unclassified"
     }
   },
   {
@@ -9841,8 +9688,8 @@
       {
         "AuthorizedResourceAction": "microsoft.directory/users/inviteGuest",
         "Category": "External Identities",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/users/standard/read",
@@ -9927,389 +9774,11 @@
         "Category": "Unclassified",
         "EAMTierLevelName": "Unclassified",
         "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/applications/delete",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/applications/appRoles/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/applications/audience/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/applications/authentication/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/applications/basic/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/applications/credentials/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/applications/extensionProperties/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/applications/notes/update",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/applications/owners/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/applications/permissions/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/applications/policies/update",
-        "Category": "Application Policy Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/applications/tag/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/applications/verification/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/auditLogs/allProperties/read",
-        "Category": "Security Logs and Reports",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/deletedItems.applications/delete",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/deletedItems.applications/restore",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/deletedItems.groups/restore",
-        "Category": "Group Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/devices/disable",
-        "Category": "User Endpoint Management",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/groups/delete",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/groups/restore",
-        "Category": "Group Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/groups/basic/update",
-        "Category": "Group Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/groups/classification/update",
-        "Category": "Group Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/groups/groupType/update",
-        "Category": "Group Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/groups/members/update",
-        "Category": "Group Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/groups/owners/update",
-        "Category": "Group Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/groups/settings/update",
-        "Category": "Group Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/groups/visibility/update",
-        "Category": "Group Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/groupsAssignableToRoles/delete",
-        "Category": "Privileged IAM",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/groupsAssignableToRoles/restore",
-        "Category": "Privileged IAM",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/groupsAssignableToRoles/allProperties/update",
-        "Category": "Privileged IAM",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/groupsAssignableToRoles/assignLicense",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/groupsAssignableToRoles/reprocessLicenseAssignment",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/policies/delete",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/policies/basic/update",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/policies/owners/update",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/provisioningLogs/allProperties/read",
-        "Category": "Security Logs and Reports",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/delete",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/disable",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/enable",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/getPasswordSingleSignOnCredentials",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/managePasswordSingleSignOnCredentials",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/appRoleAssignedTo/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/audience/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/authentication/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/basic/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/credentials/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/notes/update",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/owners/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/permissions/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/policies/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/tag/update",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/signInReports/allProperties/read",
-        "Category": "Security Logs and Reports",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/changePassword",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/invalidateAllRefreshTokens",
-        "Category": "User Management",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/basicProfile/update",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/identities/update",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/mobile/update",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/searchableDeviceKey/update",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/userInfos/address/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/userInfos/email/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/userInfos/openId/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/userInfos/phone/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/userInfos/profile/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
       }
     ],
     "Classification": {
-      "EAMTierLevelName": "ControlPlane",
-      "EAMTierLevelTagValue": "0"
+      "EAMTierLevelName": "UserAccess",
+      "EAMTierLevelTagValue": "2"
     }
   },
   {
@@ -10542,8 +10011,8 @@
       {
         "AuthorizedResourceAction": "microsoft.directory/users/inviteGuest",
         "Category": "External Identities",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/users/invalidateAllRefreshTokens",
