@@ -269,9 +269,9 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/Create",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/Read",
@@ -281,18 +281,30 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/Update",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/Delete",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/Assign",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/ViewElevationRequests",
         "Category": "Unclassified",
         "EAMTierLevelName": "Unclassified",
         "EAMTierLevelTagValue": "Unclassified"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/Assign",
+        "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/ModifyElevationRequests",
         "Category": "Unclassified",
         "EAMTierLevelName": "Unclassified",
         "EAMTierLevelTagValue": "Unclassified"
@@ -305,8 +317,8 @@
       }
     ],
     "Classification": {
-      "EAMTierLevelName": "Unclassified",
-      "EAMTierLevelTagValue": "Unclassified"
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
     }
   },
   {
@@ -328,6 +340,12 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/ViewReports",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/ViewElevationRequests",
         "Category": "Unclassified",
         "EAMTierLevelName": "Unclassified",
         "EAMTierLevelTagValue": "Unclassified"
@@ -741,9 +759,9 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/Create",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/Read",
@@ -753,24 +771,36 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/Update",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/Delete",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/Assign",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/ViewReports",
         "Category": "Unclassified",
         "EAMTierLevelName": "Unclassified",
         "EAMTierLevelTagValue": "Unclassified"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/ViewReports",
+        "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/ViewElevationRequests",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/ModifyElevationRequests",
         "Category": "Unclassified",
         "EAMTierLevelName": "Unclassified",
         "EAMTierLevelTagValue": "Unclassified"
@@ -908,9 +938,9 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/RequestRemoteAssistance",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/EnableWindowsIntuneAgent",
@@ -920,9 +950,9 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/CleanPC",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/ManageSharedDeviceUsers",
@@ -1028,27 +1058,27 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistanceApp/ViewScreen",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistanceApp/TakeFullControl",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistanceApp/Elevation",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistanceApp/Unattended",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Organization/Read",
@@ -1808,6 +1838,36 @@
         "Category": "Unclassified",
         "EAMTierLevelName": "Unclassified",
         "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/WindowsOSRecovery/Create",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/WindowsOSRecovery/Read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/WindowsOSRecovery/Update",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/WindowsOSRecovery/Delete",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/WindowsOSRecovery/Assign",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
       }
     ],
     "Classification": {
@@ -2115,6 +2175,12 @@
         "EAMTierLevelTagValue": "Unclassified"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/ViewElevationRequests",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.Intune/ServiceNow/ViewIncidents",
         "Category": "Unclassified",
         "EAMTierLevelName": "Unclassified",
@@ -2343,9 +2409,9 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/CleanPC",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/DisableLostMode",
@@ -2421,9 +2487,9 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/RequestRemoteAssistance",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/InitiateMDMKeyRecovery",
@@ -2679,21 +2745,21 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistanceApp/ViewScreen",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistanceApp/TakeFullControl",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistanceApp/Elevation",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/ResourceExplorer",
