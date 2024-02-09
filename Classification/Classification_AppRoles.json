@@ -91,7 +91,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "e12dae10-5a57-4817-b79d-dfbec5348930",
     "AppRoleDisplayName": "AppCatalog.Read.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -99,7 +99,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "dc149144-f292-421e-b185-5953f2e98d7f",
     "AppRoleDisplayName": "AppCatalog.ReadWrite.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -347,7 +347,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "1abb026f-7572-49f6-9ddd-ad61cbba181e",
     "AppRoleDisplayName": "CallEvents.Read.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -355,7 +355,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "a2611786-80b3-417e-adaa-707d4261a5f0",
     "AppRoleDisplayName": "CallRecord-PstnCalls.Read.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -363,7 +363,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "45bbb07e-7321-4fd7-a8f6-3ff27e6a81c8",
     "AppRoleDisplayName": "CallRecords.Read.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -371,7 +371,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "a7a681dc-756e-4909-b988-f160edc6655f",
     "AppRoleDisplayName": "Calls.AccessMedia.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -379,7 +379,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "284383ee-7f6e-4e40-a2a8-e85dcb029101",
     "AppRoleDisplayName": "Calls.Initiate.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -387,7 +387,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "4c277553-8a09-487b-8023-29ee378d8324",
     "AppRoleDisplayName": "Calls.InitiateGroupCall.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -395,7 +395,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "f6b49018-60ab-4f81-83bd-22caeabfed2d",
     "AppRoleDisplayName": "Calls.JoinGroupCall.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -403,7 +403,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "fd7ccf6b-3d28-418b-9701-cd10f5cd2fd4",
     "AppRoleDisplayName": "Calls.JoinGroupCallAsGuest.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -411,7 +411,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "f3a65bd4-b703-46df-8f7e-0174fea562aa",
     "AppRoleDisplayName": "Channel.Create",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -419,7 +419,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "6a118a39-1227-45d4-af0c-ea7b40d210bc",
     "AppRoleDisplayName": "Channel.Delete.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -427,7 +427,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "59a6b24b-4225-4393-8165-ebaec5f55d7a",
     "AppRoleDisplayName": "Channel.ReadBasic.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -435,7 +435,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "3b55498e-47ec-484f-8136-9013221c06a9",
     "AppRoleDisplayName": "ChannelMember.Read.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -443,7 +443,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "35930dcf-aceb-4bd1-b99a-8ffed403c974",
     "AppRoleDisplayName": "ChannelMember.ReadWrite.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -451,7 +451,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "7b2449af-6ccd-4f4d-9f78-e550c193f0d1",
     "AppRoleDisplayName": "ChannelMessage.Read.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -459,7 +459,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "4d02b0cc-d90b-441f-8d82-4fb55c34d6bb",
     "AppRoleDisplayName": "ChannelMessage.UpdatePolicyViolation.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -467,7 +467,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "c97b873f-f59f-49aa-8a0e-52b32d762124",
     "AppRoleDisplayName": "ChannelSettings.Read.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -475,7 +475,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "243cded2-bd16-4fd6-a953-ff8177894c3d",
     "AppRoleDisplayName": "ChannelSettings.ReadWrite.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -483,7 +483,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "d9c48af6-9ad9-47ad-82c3-63757137b9af",
     "AppRoleDisplayName": "Chat.Create",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -491,7 +491,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "9c7abde0-eacd-4319-bf9e-35994b1a1717",
     "AppRoleDisplayName": "Chat.ManageDeletion.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -499,7 +499,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "6b7d71aa-70aa-4810-a8d9-5d9fb2830017",
     "AppRoleDisplayName": "Chat.Read.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -507,7 +507,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "1c1b4c8e-3cc7-4c58-8470-9b92c9d5848b",
     "AppRoleDisplayName": "Chat.Read.WhereInstalled",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -515,7 +515,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "b2e060da-3baf-4687-9611-f4ebc0f0cbde",
     "AppRoleDisplayName": "Chat.ReadBasic.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -523,7 +523,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "818ba5bd-5b3e-4fe0-bbe6-aa4686669073",
     "AppRoleDisplayName": "Chat.ReadBasic.WhereInstalled",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -531,7 +531,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "294ce7c9-31ba-490a-ad7d-97a7d075e4ed",
     "AppRoleDisplayName": "Chat.ReadWrite.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -539,7 +539,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "ad73ce80-f3cd-40ce-b325-df12c33df713",
     "AppRoleDisplayName": "Chat.ReadWrite.WhereInstalled",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -547,7 +547,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "7e847308-e030-4183-9899-5235d7270f58",
     "AppRoleDisplayName": "Chat.UpdatePolicyViolation.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -555,7 +555,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "a3410be2-8e48-4f32-8454-c29a7465209d",
     "AppRoleDisplayName": "ChatMember.Read.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -563,7 +563,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "93e7c9e4-54c5-4a41-b796-f2a5adaacda7",
     "AppRoleDisplayName": "ChatMember.Read.WhereInstalled",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -571,7 +571,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "57257249-34ce-4810-a8a2-a03adf0c5693",
     "AppRoleDisplayName": "ChatMember.ReadWrite.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -579,7 +579,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "e32c2cd9-0124-4e44-88fc-772cd98afbdb",
     "AppRoleDisplayName": "ChatMember.ReadWrite.WhereInstalled",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -587,7 +587,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "b9bb2381-47a4-46cd-aafb-00cb12f68504",
     "AppRoleDisplayName": "ChatMessage.Read.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -1718,7 +1718,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "df01ed3b-eb61-4eca-9965-6b3d789751b2",
     "AppRoleDisplayName": "OnlineMeetingArtifact.Read.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -1726,7 +1726,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "a4a08342-c95d-476b-b943-97e100569c8d",
     "AppRoleDisplayName": "OnlineMeetingRecording.Read.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -1734,7 +1734,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "c1684f21-1984-47fa-9d61-2dc8c296bb70",
     "AppRoleDisplayName": "OnlineMeetings.Read.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -1742,7 +1742,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "b8bb2037-6e08-44ac-a4ea-4674e010e2a4",
     "AppRoleDisplayName": "OnlineMeetings.ReadWrite.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -1750,7 +1750,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "a4a80d8d-d283-4bd8-8504-555ec3870630",
     "AppRoleDisplayName": "OnlineMeetingTranscript.Read.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -2137,7 +2137,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "83cded22-8297-4ff6-a7fa-e97e9545a259",
     "AppRoleDisplayName": "Presence.ReadWrite.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -2505,7 +2505,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "7b2ebf90-d836-437f-b90d-7b62722c4456",
     "AppRoleDisplayName": "Schedule.Read.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -2513,7 +2513,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "b7760610-0545-4e8a-9ec3-cce9e63db01c",
     "AppRoleDisplayName": "Schedule.ReadWrite.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -2809,7 +2809,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "23fc2474-f741-46ce-8465-674744c5c361",
     "AppRoleDisplayName": "Team.Create",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -2817,7 +2817,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "2280dda6-0bfd-44ee-a2f4-cb867cfc4c1e",
     "AppRoleDisplayName": "Team.ReadBasic.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -2825,7 +2825,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "660b7406-55f1-41ca-a0ed-0b035e182f3e",
     "AppRoleDisplayName": "TeamMember.Read.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -2833,7 +2833,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "0121dc95-1b9f-4aed-8bac-58c5ac466691",
     "AppRoleDisplayName": "TeamMember.ReadWrite.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -2841,7 +2841,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "4437522e-9a86-4a41-a7da-e380edd4a97d",
     "AppRoleDisplayName": "TeamMember.ReadWriteNonOwnerRole.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -2849,7 +2849,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "70dec828-f620-4914-aa83-a29117306807",
     "AppRoleDisplayName": "TeamsActivity.Read.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -2857,7 +2857,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "a267235f-af13-44dc-8385-c1dc93023186",
     "AppRoleDisplayName": "TeamsActivity.Send",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -2865,7 +2865,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "cc7e7635-2586-41d6-adaa-a8d3bcad5ee5",
     "AppRoleDisplayName": "TeamsAppInstallation.ReadForChat.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -2873,7 +2873,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "1f615aea-6bf9-4b05-84bd-46388e138537",
     "AppRoleDisplayName": "TeamsAppInstallation.ReadForTeam.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -2881,7 +2881,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "9ce09611-f4f7-4abd-a629-a05450422a97",
     "AppRoleDisplayName": "TeamsAppInstallation.ReadForUser.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -2889,7 +2889,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "6e74eff9-4a21-45d6-bc03-3a20f61f8281",
     "AppRoleDisplayName": "TeamsAppInstallation.ReadWriteAndConsentForChat.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -2897,7 +2897,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "b0c13be0-8e20-4bc5-8c55-963c23a39ce9",
     "AppRoleDisplayName": "TeamsAppInstallation.ReadWriteAndConsentForTeam.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -2905,7 +2905,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "32ca478f-f89e-41d0-aaf8-101deb7da510",
     "AppRoleDisplayName": "TeamsAppInstallation.ReadWriteAndConsentForUser.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -2913,7 +2913,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "ba1ba90b-2d8f-487e-9f16-80728d85bb5c",
     "AppRoleDisplayName": "TeamsAppInstallation.ReadWriteAndConsentSelfForChat.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -2921,7 +2921,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "1e4be56c-312e-42b8-a2c9-009600d732c0",
     "AppRoleDisplayName": "TeamsAppInstallation.ReadWriteAndConsentSelfForTeam.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -2929,7 +2929,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "a87076cf-6abd-4e56-8559-4dbdf41bef96",
     "AppRoleDisplayName": "TeamsAppInstallation.ReadWriteAndConsentSelfForUser.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -2937,7 +2937,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "9e19bae1-2623-4c4f-ab6e-2664615ff9a0",
     "AppRoleDisplayName": "TeamsAppInstallation.ReadWriteForChat.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -2945,7 +2945,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "5dad17ba-f6cc-4954-a5a2-a0dcc95154f0",
     "AppRoleDisplayName": "TeamsAppInstallation.ReadWriteForTeam.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -2953,7 +2953,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "74ef0291-ca83-4d02-8c7e-d2391e6a444f",
     "AppRoleDisplayName": "TeamsAppInstallation.ReadWriteForUser.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -2961,7 +2961,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "73a45059-f39c-4baf-9182-4954ac0e55cf",
     "AppRoleDisplayName": "TeamsAppInstallation.ReadWriteSelfForChat.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -2969,7 +2969,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "9f67436c-5415-4e7f-8ac1-3014a7132630",
     "AppRoleDisplayName": "TeamsAppInstallation.ReadWriteSelfForTeam.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -2977,7 +2977,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "908de74d-f8b2-4d6b-a9ed-2a17b3b78179",
     "AppRoleDisplayName": "TeamsAppInstallation.ReadWriteSelfForUser.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -2985,7 +2985,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "242607bd-1d2c-432c-82eb-bdb27baa23ab",
     "AppRoleDisplayName": "TeamSettings.Read.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -2993,7 +2993,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "bdd80a03-d9bc-451d-b7c4-ce7c63fe3c8f",
     "AppRoleDisplayName": "TeamSettings.ReadWrite.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -3001,7 +3001,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "49981c42-fd7b-4530-be03-e77b21aed25e",
     "AppRoleDisplayName": "TeamsTab.Create",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -3009,7 +3009,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "46890524-499a-4bb2-ad64-1476b4f3e1cf",
     "AppRoleDisplayName": "TeamsTab.Read.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -3017,7 +3017,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "a96d855f-016b-47d7-b51c-1218a98d791c",
     "AppRoleDisplayName": "TeamsTab.ReadWrite.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -3025,7 +3025,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "fd9ce730-a250-40dc-bd44-8dc8d20f39ea",
     "AppRoleDisplayName": "TeamsTab.ReadWriteForChat.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -3033,7 +3033,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "6163d4f4-fbf8-43da-a7b4-060fe85ed148",
     "AppRoleDisplayName": "TeamsTab.ReadWriteForTeam.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -3041,7 +3041,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "425b4b59-d5af-45c8-832f-bb0b7402348a",
     "AppRoleDisplayName": "TeamsTab.ReadWriteForUser.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -3049,7 +3049,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "9f62e4a2-a2d6-4350-b28b-d244728c4f86",
     "AppRoleDisplayName": "TeamsTab.ReadWriteSelfForChat.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -3057,7 +3057,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "91c32b81-0ef0-453f-a5c7-4ce2e562f449",
     "AppRoleDisplayName": "TeamsTab.ReadWriteSelfForTeam.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -3065,7 +3065,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "3c42dec6-49e8-4a0a-b469-36cff0d9da93",
     "AppRoleDisplayName": "TeamsTab.ReadWriteSelfForUser.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -3073,7 +3073,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "6323133e-1f6e-46d4-9372-ac33a0870636",
     "AppRoleDisplayName": "TeamTemplates.Read.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -3081,7 +3081,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "dfb0dd15-61de-45b2-be36-d6a69fba3c79",
     "AppRoleDisplayName": "Teamwork.Migrate.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -3089,7 +3089,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "75bcfbce-a647-4fba-ad51-b63d73b210f4",
     "AppRoleDisplayName": "Teamwork.Read.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -3097,7 +3097,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "475ebe88-f071-4bd7-af2b-642952bd4986",
     "AppRoleDisplayName": "TeamworkAppSettings.Read.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -3105,7 +3105,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "ab5b445e-8f10-45f4-9c79-dd3f8062cc4e",
     "AppRoleDisplayName": "TeamworkAppSettings.ReadWrite.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -3113,7 +3113,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "0591bafd-7c1c-4c30-a2a5-2b9aacb1dfe8",
     "AppRoleDisplayName": "TeamworkDevice.Read.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -3121,7 +3121,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "79c02f5b-bd4f-4713-bc2c-a8a4a66e127b",
     "AppRoleDisplayName": "TeamworkDevice.ReadWrite.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -3129,7 +3129,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "b74fd6c4-4bde-488e-9695-eeb100e4907f",
     "AppRoleDisplayName": "TeamworkTag.Read.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -3137,7 +3137,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "a3371ca5-911d-46d6-901c-42c8c7a937d8",
     "AppRoleDisplayName": "TeamworkTag.ReadWrite.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -3393,7 +3393,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "202bf709-e8e6-478e-bcfd-5d63c50b68e3",
     "AppRoleDisplayName": "WorkforceIntegration.ReadWrite.All",
-    "Category": "Teams",
+    "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   }

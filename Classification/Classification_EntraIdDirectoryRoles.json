@@ -144,7 +144,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/auditLogs/allProperties/read",
-        "Category": "Security Logs and Reports",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -252,7 +252,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/provisioningLogs/allProperties/read",
-        "Category": "Security Logs and Reports",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -402,7 +402,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/signInReports/allProperties/read",
-        "Category": "Security Logs and Reports",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -1302,7 +1302,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/auditLogs/allProperties/read",
-        "Category": "Security Logs and Reports",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -1368,7 +1368,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/provisioningLogs/allProperties/read",
-        "Category": "Security Logs and Reports",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -1518,7 +1518,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/signInReports/allProperties/read",
-        "Category": "Security Logs and Reports",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -1565,7 +1565,7 @@
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/auditLogs/allProperties/read",
-        "Category": "Security Logs and Reports",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -1643,7 +1643,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/signInReports/allProperties/read",
-        "Category": "Security Logs and Reports",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -2659,7 +2659,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/contacts/create",
-        "Category": "Exchange Online",
+        "Category": "Microsoft Exchange Online",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -2906,7 +2906,7 @@
   {
     "RoleId": "8329153b-31d0-4727-b945-745eb3bc5f31",
     "RoleName": "Domain Name Administrator",
-    "isPrivileged": false,
+    "isPrivileged": true,
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/domains/allProperties/allTasks",
@@ -3098,7 +3098,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.office365.exchange/allEntities/basic/allTasks",
-        "Category": "Exchange Online",
+        "Category": "Microsoft Exchange Online",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -3145,13 +3145,13 @@
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.exchange/recipients/allProperties/allTasks",
-        "Category": "Exchange Online",
+        "Category": "Microsoft Exchange Online",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.office365.exchange/migration/allProperties/allTasks",
-        "Category": "Exchange Online",
+        "Category": "Microsoft Exchange Online",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       }
@@ -3247,7 +3247,7 @@
   {
     "RoleId": "be2f45a1-457d-42af-a067-6ec1fa63bc45",
     "RoleName": "External Identity Provider Administrator",
-    "isPrivileged": false,
+    "isPrivileged": true,
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/domains/federation/update",
@@ -3369,7 +3369,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/auditLogs/allProperties/read",
-        "Category": "Security Logs and Reports",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -3909,7 +3909,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/provisioningLogs/allProperties/read",
-        "Category": "Security Logs and Reports",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -4017,7 +4017,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/signInReports/allProperties/read",
-        "Category": "Security Logs and Reports",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -4281,7 +4281,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.insights/allEntities/allProperties/allTasks",
-        "Category": "Viva",
+        "Category": "Microsoft Viva",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -4305,9 +4305,15 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.office365.exchange/allEntities/basic/allTasks",
-        "Category": "Exchange Online",
+        "Category": "Microsoft Exchange Online",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.fileStorageContainers/allEntities/allProperties/allTasks",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
       },
       {
         "AuthorizedResourceAction": "microsoft.office365.knowledge/contentUnderstanding/allProperties/allTasks",
@@ -4401,7 +4407,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.office365.sharePoint/allEntities/allTasks",
-        "Category": "SharePoint",
+        "Category": "Microsoft SharePoint",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -4473,13 +4479,13 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.viva.goals/allEntities/allProperties/allTasks",
-        "Category": "Viva",
+        "Category": "Microsoft Viva",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.viva.pulse/allEntities/allProperties/allTasks",
-        "Category": "Viva",
+        "Category": "Microsoft Viva",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -4556,7 +4562,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/auditLogs/allProperties/read",
-        "Category": "Security Logs and Reports",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -4676,7 +4682,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/identityProtection/allProperties/read",
-        "Category": "Security Logs and Reports",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -4814,7 +4820,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/provisioningLogs/allProperties/read",
-        "Category": "Security Logs and Reports",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -4862,7 +4868,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/signInReports/allProperties/read",
-        "Category": "Security Logs and Reports",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -4957,6 +4963,12 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "microsoft.office365.fileStorageContainers/allEntities/allProperties/read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.office365.messageCenter/messages/read",
         "Category": "Microsoft 365 Support Operations",
         "EAMTierLevelName": "ManagementPlane",
@@ -5036,19 +5048,19 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.viva.goals/allEntities/allProperties/read",
-        "Category": "Viva",
+        "Category": "Microsoft Viva",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.viva.pulse/allEntities/allProperties/read",
-        "Category": "Viva",
+        "Category": "Microsoft Viva",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.windows.updatesDeployments/allEntities/allProperties/read",
-        "Category": "Security Logs and Reports",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       }
@@ -5101,7 +5113,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/auditLogs/allProperties/read",
-        "Category": "Security Logs and Reports",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -5149,7 +5161,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/signInReports/allProperties/read",
-        "Category": "Security Logs and Reports",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -5741,7 +5753,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/auditLogs/allProperties/read",
-        "Category": "Security Logs and Reports",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -5819,7 +5831,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/provisioningLogs/allProperties/read",
-        "Category": "Security Logs and Reports",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -5963,7 +5975,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/signInReports/allProperties/read",
-        "Category": "Security Logs and Reports",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -6105,7 +6117,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.insights/allEntities/allProperties/allTasks",
-        "Category": "Viva",
+        "Category": "Microsoft Viva",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -6140,7 +6152,7 @@
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.insights/queries/allProperties/allTasks",
-        "Category": "Viva",
+        "Category": "Microsoft Viva",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -6175,7 +6187,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.insights/programs/allProperties/update",
-        "Category": "Viva",
+        "Category": "Microsoft Viva",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       }
@@ -6198,19 +6210,19 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/contacts/create",
-        "Category": "Exchange Online",
+        "Category": "Microsoft Exchange Online",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/contacts/delete",
-        "Category": "Exchange Online",
+        "Category": "Microsoft Exchange Online",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/contacts/basic/update",
-        "Category": "Exchange Online",
+        "Category": "Microsoft Exchange Online",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -6520,7 +6532,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.office365.sharePoint/allEntities/allTasks",
-        "Category": "SharePoint",
+        "Category": "Microsoft SharePoint",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -6597,7 +6609,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.office365.sharePoint/allEntities/allTasks",
-        "Category": "SharePoint",
+        "Category": "Microsoft SharePoint",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -7048,19 +7060,19 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/contacts/create",
-        "Category": "Exchange Online",
+        "Category": "Microsoft Exchange Online",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/contacts/delete",
-        "Category": "Exchange Online",
+        "Category": "Microsoft Exchange Online",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/contacts/basic/update",
-        "Category": "Exchange Online",
+        "Category": "Microsoft Exchange Online",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -7293,19 +7305,19 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/contacts/create",
-        "Category": "Exchange Online",
+        "Category": "Microsoft Exchange Online",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/contacts/delete",
-        "Category": "Exchange Online",
+        "Category": "Microsoft Exchange Online",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/contacts/basic/update",
-        "Category": "Exchange Online",
+        "Category": "Microsoft Exchange Online",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -7977,19 +7989,19 @@
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/auditLogs/allProperties/read",
-        "Category": "Security Logs and Reports",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/provisioningLogs/allProperties/read",
-        "Category": "Security Logs and Reports",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/signInReports/allProperties/read",
-        "Category": "Security Logs and Reports",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -8198,7 +8210,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/auditLogs/allProperties/read",
-        "Category": "Security Logs and Reports",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -8402,7 +8414,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/identityProtection/allProperties/read",
-        "Category": "Security Logs and Reports",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -8588,7 +8600,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/provisioningLogs/allProperties/read",
-        "Category": "Security Logs and Reports",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -8606,7 +8618,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/signInReports/allProperties/read",
-        "Category": "Security Logs and Reports",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -8689,7 +8701,7 @@
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/auditLogs/allProperties/read",
-        "Category": "Security Logs and Reports",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -8719,13 +8731,13 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/provisioningLogs/allProperties/read",
-        "Category": "Security Logs and Reports",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/signInReports/allProperties/read",
-        "Category": "Security Logs and Reports",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -8784,7 +8796,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/auditLogs/allProperties/read",
-        "Category": "Security Logs and Reports",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -8820,7 +8832,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/identityProtection/allProperties/read",
-        "Category": "Security Logs and Reports",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -8916,13 +8928,13 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/provisioningLogs/allProperties/read",
-        "Category": "Security Logs and Reports",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/signInReports/allProperties/read",
-        "Category": "Security Logs and Reports",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -9106,7 +9118,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.office365.sharePoint/allEntities/allTasks",
-        "Category": "SharePoint",
+        "Category": "Microsoft SharePoint",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -10075,19 +10087,19 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/contacts/create",
-        "Category": "Exchange Online",
+        "Category": "Microsoft Exchange Online",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/contacts/delete",
-        "Category": "Exchange Online",
+        "Category": "Microsoft Exchange Online",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/contacts/basic/update",
-        "Category": "Exchange Online",
+        "Category": "Microsoft Exchange Online",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -10450,7 +10462,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.viva.goals/allEntities/allProperties/allTasks",
-        "Category": "Viva",
+        "Category": "Microsoft Viva",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       }
@@ -10497,7 +10509,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.viva.pulse/allEntities/allProperties/allTasks",
-        "Category": "Viva",
+        "Category": "Microsoft Viva",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       }
