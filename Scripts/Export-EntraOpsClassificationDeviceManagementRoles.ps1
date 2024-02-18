@@ -1,4 +1,4 @@
-function Export-EntraOpsClassificationDirectoryRoles {
+function Export-EntraOpsClassificationDeviceManagementRoles {
 
     [cmdletbinding()]
     param
@@ -10,7 +10,10 @@ function Export-EntraOpsClassificationDirectoryRoles {
         $IncludeCustomRoles = $False
         ,
         [Parameter(Mandatory = $false)]
-        $DefaultScope = "/"        
+        $DefaultScope = "/"
+        ,
+        [Parameter(Mandatory = $false)]
+        $Exportfile = ".\Classification\Classification_DeviceManagementRoles.json"
     )
 
     # Get EntraOps Classification
@@ -18,7 +21,7 @@ function Export-EntraOpsClassificationDirectoryRoles {
 
     # Single classifcation (highest tier level only)
     Write-Output "Query directory role templates for mapping ID to name and further details"
-    $DeviceManagementRoleDefinitions = (Invoke-MgGraphRequest -Uri "https://graph.microsoft.com/beta/roleManagement/deviceManagement/roleDefinitions").value | select-object displayName, templateId, isBuiltin, isPrivileged, rolePermissions
+    $DeviceManagementRoleDefinitions = (Invoke-EntraOpsMsGraphQuery -Uri "https://graph.microsoft.com/beta/roleManagement/deviceManagement/roleDefinitions") | select-object displayName, templateId, isBuiltin, isPrivileged, rolePermissions
 
     if ($IncludeCustomRoles -eq $False) {
         $DeviceManagementRoleDefinitions = $DeviceManagementRoleDefinitions | where-object {$_.isBuiltin -eq "True"}
@@ -54,7 +57,7 @@ function Export-EntraOpsClassificationDirectoryRoles {
                 "Category"                  = $DeviceMgmtRolePermissionServiceClassification.Service
                 "EAMTierLevelName"          = $DeviceMgmtRolePermissionTierLevelClassification.EAMTierLevelName
                 "EAMTierLevelTagValue"      = $DeviceMgmtRolePermissionTierLevelClassification.EAMTierLevelTagValue
-            }    
+            }
         }
 
         if ($SingleClassification -eq $True) {
@@ -63,7 +66,7 @@ function Export-EntraOpsClassificationDirectoryRoles {
         else {
             $FilteredRoleClassifications            = ($ClassifiedDeviceRolePermissions | select-object -ExcludeProperty AuthorizedResourceAction -Unique | Sort-Object EAMTierLevelTagValue )
             $RoleDefinitionClassification           = [System.Collections.Generic.List[object]]::new()
-            $RoleDefinitionClassification.Add($FilteredRoleClassifications)        
+            $RoleDefinitionClassification.Add($FilteredRoleClassifications)
         }
 
         [PSCustomObject]@{
@@ -72,9 +75,9 @@ function Export-EntraOpsClassificationDirectoryRoles {
             "isPrivileged"          = $_.isPrivileged
             "RolePermissions"       = $ClassifiedDeviceRolePermissions
             "Classification"        = $RoleDefinitionClassification
-        }    
+        }
     }
 
     $DeviceManagementRoles = $DeviceManagementRoles | sort-object RoleName
-    $DeviceManagementRoles | ConvertTo-Json -Depth 10 | Out-File .\Classification\Classification_DeviceManagementRoles.json -Force
+    $DeviceManagementRoles | ConvertTo-Json -Depth 10 | Out-File $ExportFile -Force
 }
