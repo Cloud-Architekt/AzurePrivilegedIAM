@@ -109,8 +109,7 @@
                     "/"
                 ],
                 "RoleDefinitionActions": [
-                    "microsoft.permissionsManagement/allEntities/allProperties/allTasks",
-                    "microsoft.permissionsManagement/allEntities/allProperties/read"
+                    "microsoft.permissionsManagement/allEntities/allProperties/allTasks"
                 ]
             },
             {
@@ -439,8 +438,7 @@
                     "microsoft.directory/organization/basic/update",
                     "microsoft.directory/serviceAction/activateService",
                     "microsoft.directory/serviceAction/disableDirectoryFeature",
-                    "microsoft.directory/serviceAction/enableDirectoryFeature",
-                    "microsoft.directory/serviceAction/getAvailableExtentionProperties"
+                    "microsoft.directory/serviceAction/enableDirectoryFeature"
                 ]
             },
             {
@@ -538,6 +536,16 @@
                     "microsoft.powerApps.powerBI/allEntities/allTasks"
                 ]
             },
+            {
+                "Category": "Microsoft.AzureAD",
+                "Service": "Cloud Infrastructure Entitlement Management",
+                "RoleAssignmentScopeName": [
+                    "/"
+                ],
+                "RoleDefinitionActions": [
+                    "microsoft.permissionsManagement/allEntities/allProperties/read"
+                ]
+            },            
             {
                 "Category": "Microsoft.AzureAD",
                 "Service": "Dynamics 365",
@@ -824,6 +832,7 @@
                     "microsoft.directory/roleAssignments/allProperties/read",
                     "microsoft.directory/roleDefinitions/allProperties/read",
                     "microsoft.directory/scopedRoleMemberships/allProperties/read",
+                    "microsoft.directory/serviceAction/getAvailableExtentionProperties",
                     "microsoft.directory/servicePrincipalCreationPolicies/standard/read",
                     "microsoft.directory/servicePrincipals/synchronization/standard/read",
                     "microsoft.directory/subscribedSkus/allProperties/read",

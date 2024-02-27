@@ -769,6 +769,22 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "ab8a5872-7c88-47a6-8141-7becce939190",
+    "AppRoleDisplayName": "CustomTags.Read.All",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "2f503208-e509-4e39-974c-8cc16e5785c9",
+    "AppRoleDisplayName": "CustomTags.ReadWrite.All",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "f6e9e124-4586-492f-adc0-c6f96e4823fd",
     "AppRoleDisplayName": "DelegatedAdminRelationship.Read.All",
     "Category": "Tenant Configuration (Reader)",
@@ -1950,30 +1966,6 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "913b9306-0ce1-42b8-9137-6a7df690a760",
     "AppRoleDisplayName": "Place.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
-  },
-  {
-    "AppId": "00000003-0000-0000-c000-000000000000",
-    "AppRoleId": "8b724a84-ceac-4fd9-897e-e31ba8f2d7a3",
-    "AppRoleDisplayName": "PlaceDevice.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
-  },
-  {
-    "AppId": "00000003-0000-0000-c000-000000000000",
-    "AppRoleId": "2d510721-5c4e-43cd-bfdb-ac0f8819fb92",
-    "AppRoleDisplayName": "PlaceDevice.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
-  },
-  {
-    "AppId": "00000003-0000-0000-c000-000000000000",
-    "AppRoleId": "27fc435f-44e2-4b30-bf3c-e0ce74aed618",
-    "AppRoleDisplayName": "PlaceDeviceTelemetry.ReadWrite.All",
     "Category": "Unclassified",
     "EAMTierLevelName": "Unclassified",
     "EAMTierLevelTagValue": "Unclassified"
@@ -3369,6 +3361,14 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "bf46a256-f47d-448f-ab78-f226fff08d40",
     "AppRoleDisplayName": "VirtualAppointment.ReadWrite.All",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "97e45b36-1250-48e4-bd70-2df6dab7e94a",
+    "AppRoleDisplayName": "VirtualAppointmentNotification.Send",
     "Category": "Unclassified",
     "EAMTierLevelName": "Unclassified",
     "EAMTierLevelTagValue": "Unclassified"
