@@ -2282,6 +2282,12 @@
         "EAMTierLevelTagValue": "2"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/users/invitedBy/read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/users/licenseDetails/read",
         "Category": "Default member",
         "EAMTierLevelName": "UserAccess",
@@ -2991,6 +2997,12 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/subscribedSkus/standard/read",
+        "Category": "Default member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.dynamics365.businessCentral/allEntities/allProperties/allTasks",
         "Category": "Dynamics 365",
         "EAMTierLevelName": "ManagementPlane",
@@ -2998,6 +3010,12 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.office365.serviceHealth/allEntities/allTasks",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.webPortal/allEntities/standard/read",
         "Category": "Microsoft 365 Support Operations",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
@@ -3957,9 +3975,9 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/serviceAction/getAvailableExtentionProperties",
-        "Category": "Tenant Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/allProperties/allTasks",
@@ -4844,9 +4862,9 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/serviceAction/getAvailableExtentionProperties",
-        "Category": "Tenant Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/allProperties/read",
@@ -5031,8 +5049,8 @@
       {
         "AuthorizedResourceAction": "microsoft.permissionsManagement/allEntities/allProperties/read",
         "Category": "Cloud Infrastructure Entitlement Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.teams/allEntities/allProperties/read",
@@ -5378,6 +5396,12 @@
         "Category": "Default member",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/users/invitedBy/read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/users/licenseDetails/read",
@@ -6962,6 +6986,21 @@
     "Classification": {
       "EAMTierLevelName": "ManagementPlane",
       "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "92ed04bf-c94a-4b82-9729-b799a7a4c178",
+    "RoleName": "Organizational Branding Administrator",
+    "isPrivileged": false,
+    "RolePermissions": {
+      "AuthorizedResourceAction": "microsoft.directory/loginOrganizationBranding/allProperties/allTasks",
+      "Category": "Tenant Management",
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
+    },
+    "Classification": {
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
     }
   },
   {
