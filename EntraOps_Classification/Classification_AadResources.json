@@ -130,16 +130,12 @@
                     "microsoft.directory/crossTenantAccessPolicies/delete",
                     "microsoft.directory/crossTenantAccessPolicies/owners/update",
                     "microsoft.directory/crossTenantAccessPolicies/tenantDefault/update",
-                    "microsoft.directory/crossTenantAccessPolicy/allowedCloudEndpoints/update",
                     "microsoft.directory/crossTenantAccessPolicy/basic/update",
                     "microsoft.directory/crossTenantAccessPolicy/default/b2bCollaboration/update",
                     "microsoft.directory/crossTenantAccessPolicy/default/b2bDirectConnect/update",
-                    "microsoft.directory/crossTenantAccessPolicy/default/crossCloudMeetings/update",
                     "microsoft.directory/crossTenantAccessPolicy/default/tenantRestrictions/update",
                     "microsoft.directory/crossTenantAccessPolicy/partners/b2bCollaboration/update",
                     "microsoft.directory/crossTenantAccessPolicy/partners/b2bDirectConnect/update",
-                    "microsoft.directory/crossTenantAccessPolicy/partners/create",
-                    "microsoft.directory/crossTenantAccessPolicy/partners/crossCloudMeetings/update",
                     "microsoft.directory/crossTenantAccessPolicy/partners/delete",
                     "microsoft.directory/crossTenantAccessPolicy/partners/identitySynchronization/basic/update",
                     "microsoft.directory/crossTenantAccessPolicy/partners/identitySynchronization/create",
@@ -187,8 +183,6 @@
                     "microsoft.directory/b2cTrustFrameworkPolicy/allProperties/allTasks",
                     "microsoft.directory/b2cUserAttribute/allProperties/allTasks",
                     "microsoft.directory/b2cUserFlow/allProperties/allTasks",
-                    "microsoft.directory/externalUserProfiles/basic/update",
-                    "microsoft.directory/externalUserProfiles/delete",
                     "microsoft.directory/identityProviders/allProperties/allTasks"
                 ]
             },
@@ -545,7 +539,20 @@
                 "RoleDefinitionActions": [
                     "microsoft.permissionsManagement/allEntities/allProperties/read"
                 ]
-            },            
+            },
+            {
+                "Category": "Microsoft.AzureAD",
+                "Service": "Cross Tenant Partner Management",
+                "RoleAssignmentScopeName": [
+                    "/"
+                ],
+                "RoleDefinitionActions": [
+                    "microsoft.directory/crossTenantAccessPolicy/allowedCloudEndpoints/update",
+                    "microsoft.directory/crossTenantAccessPolicy/default/crossCloudMeetings/update",
+                    "microsoft.directory/crossTenantAccessPolicy/partners/crossCloudMeetings/update",
+                    "microsoft.directory/crossTenantAccessPolicy/partners/create"
+                ]
+            },                 
             {
                 "Category": "Microsoft.AzureAD",
                 "Service": "Dynamics 365",
@@ -752,6 +759,8 @@
                     "microsoft.office365.skypeForBusiness/allEntities/allTasks",
                     "microsoft.teams/allEntities/allProperties/allTasks",
                     "microsoft.teams/allEntities/allProperties/read",
+                    "microsoft.directory/externalUserProfiles/basic/update",
+                    "microsoft.directory/externalUserProfiles/delete",                    
                     "microsoft.teams/callQuality/allProperties/read",
                     "microsoft.teams/callQuality/standard/read",
                     "microsoft.teams/devices/standard/read",
