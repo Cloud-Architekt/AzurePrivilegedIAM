@@ -185,6 +185,7 @@
             "LifecycleWorkflows.ReadWrite.All",
             "SynchronizationData-User.Upload",
             "User-LifeCycleInfo.ReadWrite.All",
+            "User-ConvertToInternal.ReadWrite.All",            
             "User.EnableDisableAccount.All",
             "User.Export.All",
             "User.ManageCreds.All",

@@ -1021,6 +1021,12 @@
         "EAMTierLevelTagValue": "Unclassified"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/ChangeAssignments",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/Read",
         "Category": "Unclassified",
         "EAMTierLevelName": "Unclassified",
@@ -1559,6 +1565,12 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AppleEnrollmentProfiles/Assign",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EnrollmentProfiles/EnrollmentTimeMembershipAssign",
         "Category": "Unclassified",
         "EAMTierLevelName": "Unclassified",
         "EAMTierLevelTagValue": "Unclassified"
@@ -2246,6 +2258,12 @@
         "EAMTierLevelTagValue": "Unclassified"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.Intune/EnrollmentProfiles/EnrollmentTimeMembershipAssign",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.Intune/Audit/Read",
         "Category": "Unclassified",
         "EAMTierLevelName": "Unclassified",
@@ -2505,6 +2523,12 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/OnDemandProactiveRemediation",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/ChangeAssignments",
         "Category": "Unclassified",
         "EAMTierLevelName": "Unclassified",
         "EAMTierLevelTagValue": "Unclassified"
