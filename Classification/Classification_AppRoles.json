@@ -3281,9 +3281,9 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "9d952b72-f741-4b40-9185-8c53076c2339",
     "AppRoleDisplayName": "User-ConvertToInternal.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Global User Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
