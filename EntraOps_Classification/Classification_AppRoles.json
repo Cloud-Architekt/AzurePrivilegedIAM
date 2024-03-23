@@ -805,6 +805,7 @@
             "Calendars.ReadBasic",
             "Device.Read",
             "email",
+            "openid",          
             "profile",
             "User.ReadBasic.All"
           ]
