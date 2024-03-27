@@ -31,6 +31,8 @@ Mostly, role actions and permissions on Control Plane has been classified. There
 
 ### 💡 Community use cases and references
 - [AzEntraIdApiPermissionsAdvertizer (Tool by Julian Hayward)](https://www.azadvertizer.net/azEntraIdAPIpermissionsAdvertizer.html) serves as a quick reference for 1st party Microsoft Entra Id applications and their respective API permissions (delegated and application permissions). My classification files has been used for enrichment of the API Permissions.
+- [zEntraIdRolesAdvertizer (Tool by Julian Hayward)](https://www.azadvertizer.net/azEntraIdRolesAdvertizer.html) serves as a reference, snapshot and detailed overview of all Entra ID Roles and their role action permissions. My classification files has been used for enrichment of Directory Roles and Role Actions.
+- [Generate Cypher for Bloodhoud (by Martin Sohn](https://gist.github.com/martinsohn/3f6122c7486ca3ffcaa444772f1a35f2) offers a code sample for generating a cypher for searching high-privileged roles based on the EntraOps classification.
 - [Detect threats using Microsoft Graph activity logs (Blog post by Fabian Bader)](https://cloudbrothers.info/detect-threats-microsoft-graph-logs-part-2/#find-missing-sign-in-logs) describes how to build advanced Microsoft Sentinel detections for this logs. Sample queries show how new sensitive role can be detected by using the classification files.
 
 ## 🔁 Lifecycle Workflows
