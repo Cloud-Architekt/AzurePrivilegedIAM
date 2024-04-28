@@ -6723,7 +6723,7 @@
   {
     "RoleId": "59d46f88-662b-457b-bceb-5c3809e5908f",
     "RoleName": "Lifecycle Workflows Administrator",
-    "isPrivileged": false,
+    "isPrivileged": true,
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/lifecycleWorkflows/workflows/allProperties/allTasks",
@@ -6736,6 +6736,12 @@
         "Category": "Tenant Configuration (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/users/lifeCycleInfo/read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
       }
     ],
     "Classification": {
@@ -7001,6 +7007,35 @@
     "Classification": {
       "EAMTierLevelName": "ControlPlane",
       "EAMTierLevelTagValue": "0"
+    }
+  },
+  {
+    "RoleId": "e48398e2-f4bb-4074-8f31-4586725e205b",
+    "RoleName": "Organizational Messages Approver",
+    "isPrivileged": false,
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.office365.organizationalMessages/allEntities/allProperties/read",
+        "Category": "Microsoft 365 Platform Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.organizationalMessages/allEntities/allProperties/update",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.webPortal/allEntities/standard/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
     }
   },
   {
