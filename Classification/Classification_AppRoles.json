@@ -595,9 +595,9 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "64a59178-dad3-4673-89db-84fdcd622fec",
     "AppRoleDisplayName": "CloudApp-Discovery.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -1235,6 +1235,14 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "75359482-378d-4052-8f01-80520e7db3cd",
     "AppRoleDisplayName": "Files.ReadWrite.All",
+    "Category": "Microsoft SharePoint",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "b47b160b-1054-4efd-9ca0-e2f614696086",
+    "AppRoleDisplayName": "Files.ReadWrite.AppFolder",
     "Category": "Microsoft SharePoint",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
@@ -2359,6 +2367,22 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "214fda0c-514a-4650-b037-b562b1a66124",
+    "AppRoleDisplayName": "PublicKeyInfrastructure.Read.All",
+    "Category": "Public Key Infrastructure",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "a2b63618-5350-462d-b1b3-ba6eb3684e26",
+    "AppRoleDisplayName": "PublicKeyInfrastructure.ReadWrite.All",
+    "Category": "Public Key Infrastructure",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "ee49e170-1dd1-4030-b44c-61ad6e98f743",
     "AppRoleDisplayName": "QnA.Read.All",
     "Category": "Unclassified",
@@ -2548,6 +2572,14 @@
     "Category": "Privileged IAM",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "0b21c159-dbf4-4dbb-a6f6-490e412c716e",
+    "AppRoleDisplayName": "Schedule-WorkingTime.ReadWrite.All",
+    "Category": "Exchange Online",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -3233,17 +3265,17 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "ea047cc2-df29-4f3e-83a3-205de61501ca",
     "AppRoleDisplayName": "TermStore.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Microsoft SharePoint",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "f12eb8d6-28e3-46e6-b2c0-b7e4dc69fc95",
     "AppRoleDisplayName": "TermStore.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Microsoft SharePoint",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -3409,9 +3441,9 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "38d9df27-64da-44fd-b7c5-a6fbac20248f",
     "AppRoleDisplayName": "UserAuthenticationMethod.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Default member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",

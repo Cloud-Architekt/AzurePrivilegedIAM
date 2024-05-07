@@ -304,6 +304,19 @@
       },
       {
         "Category": "Microsoft.Graph",
+        "Service": "Public Key Infrastructure",
+        "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+        "ResourceScope": "Application",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "PublicKeyInfrastructure.ReadWrite.All",
+          "PublicKeyInfrastructure.Read.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.Graph",
         "Service": "Tenant Management",
         "ResourceAppId": "00000003-0000-0000-c000-000000000000",
         "ResourceScope": "Application",
@@ -423,7 +436,8 @@
           "Mail.ReadWrite",
           "Mail.Send",
           "MailboxSettings.Read",
-          "MailboxSettings.ReadWrite"
+          "MailboxSettings.ReadWrite",
+          "Schedule-WorkingTime.ReadWrite.All"
         ]
       },
       {
@@ -517,13 +531,16 @@
         "RoleDefinitionActions": [
           "Files.Read.All",
           "Files.ReadWrite.All",
+          "Files.ReadWrite.AppFolder",
           "SharePointTenantSettings.Read.All",
           "SharePointTenantSettings.ReadWrite.All",
           "Sites.FullControl.All",
           "Sites.Manage.All",
           "Sites.Read.All",
           "Sites.ReadWrite.All",
-          "Sites.Selected"
+          "Sites.Selected",
+          "TermStore.Read.All",
+          "TermStore.ReadWrite.All"
         ]
       },
       {
@@ -672,6 +689,7 @@
           "AuditLogsQuery-OneDrive.Read.All",
           "AuditLogsQuery-SharePoint.Read.All",
           "AuditLogsQuery.Read.All",
+          "CloudApp-Discovery.Read.All",
           "CustomDetection.Read.All",
           "CustomSecAttributeAuditLogs.Read.All",
           "eDiscovery.Read.All",
@@ -789,6 +807,7 @@
           "RoleManagement.Read.CloudPC",
           "RoleManagement.Read.Directory",
           "ServicePrincipalEndpoint.Read.All",
+          "UserAuthenticationMethod.Read.All",
           "User.Read.All"
         ]
       },
