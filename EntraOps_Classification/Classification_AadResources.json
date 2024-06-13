@@ -7,7 +7,7 @@
         "Category": "Microsoft.AzureAD",
         "Service": "Application and Workload Identity",
         "RoleAssignmentScopeName": [
-          "/"
+          "/*"
         ],
         "RoleDefinitionActions": [
           "microsoft.directory/adminConsentRequestPolicy/allProperties/allTasks",
@@ -190,7 +190,7 @@
         "Category": "Microsoft.AzureAD",
         "Service": "Global Endpoint Credential Management",
         "RoleAssignmentScopeName": [
-          "/"
+          "/*"
         ],
         "RoleDefinitionActions": [
           "microsoft.directory/bitlockerKeys/key/read",
@@ -201,7 +201,7 @@
         "Category": "Microsoft.AzureAD",
         "Service": "Global Endpoint Management",
         "RoleAssignmentScopeName": [
-          "/"
+          "/*"
         ],
         "RoleDefinitionActions": [
           "microsoft.directory/deletedItems.devices/delete",
@@ -258,7 +258,7 @@
         "Category": "Microsoft.AzureAD",
         "Service": "Global User Management",
         "RoleAssignmentScopeName": [
-          "/"
+          "/*"
         ],
         "RoleDefinitionActions": [
           "microsoft.directory/contacts/allProperties/allTasks",
@@ -290,7 +290,7 @@
         "Category": "Microsoft.AzureAD",
         "Service": "Group Management",
         "RoleAssignmentScopeName": [
-          "/"
+          "/*"
         ],
         "RoleDefinitionActions": [
           "microsoft.directory/deletedItems.groups/delete",
@@ -340,7 +340,7 @@
         "Category": "Microsoft.AzureAD",
         "Service": "License Management",
         "RoleAssignmentScopeName": [
-          "/"
+          "/*"
         ],
         "RoleDefinitionActions": [
           "microsoft.directory/groups/assignLicense",
@@ -496,7 +496,7 @@
         "Category": "Microsoft.AzureAD",
         "Service": "Application and Workload Identity",
         "RoleAssignmentScopeName": [
-          "/"
+          "/*"
         ],
         "RoleDefinitionActions": [
           "microsoft.directory/applications/allProperties/read",
