@@ -1297,8 +1297,32 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "bd61925e-3bf4-4d62-bc0b-06b06c96d95c",
+    "AppRoleDisplayName": "Files.SelectedOperations.Selected",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "40dc41bc-0f7e-42ff-89bd-d9516947e474",
     "AppRoleDisplayName": "FileStorageContainer.Selected",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "4f0a8235-6f6f-4ec7-9500-34b452a4a0c3",
+    "AppRoleDisplayName": "Group-Conversation.Read.All",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "6679c91b-820a-4900-ab47-e97b197a89c4",
+    "AppRoleDisplayName": "Group-Conversation.ReadWrite.All",
     "Category": "Unclassified",
     "EAMTierLevelName": "Unclassified",
     "EAMTierLevelTagValue": "Unclassified"
@@ -1524,6 +1548,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "bda16293-63d3-45b7-b16b-833841d27d56",
+    "AppRoleDisplayName": "IndustryData-ReferenceDefinition.ReadWrite.All",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "f6f5d10b-3024-4d1d-b674-aae4df4a1a73",
     "AppRoleDisplayName": "IndustryData-Run.Read.All",
     "Category": "Unclassified",
@@ -1681,6 +1713,22 @@
     "Category": "Global User Management",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "de4e4161-a10a-4dfd-809c-e328d89aefeb",
+    "AppRoleDisplayName": "ListItems.SelectedOperations.Selected",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "23c5a9bd-d900-4ecf-be26-a0689755d9e5",
+    "AppRoleDisplayName": "Lists.SelectedOperations.Selected",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -2815,6 +2863,22 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "5f0ffea2-f474-4cf2-9834-61cda2bcea5c",
+    "AppRoleDisplayName": "SecurityIdentitiesSensors.Read.All",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "d4dcee6d-0774-412a-b06c-aeabbd99e816",
+    "AppRoleDisplayName": "SecurityIdentitiesSensors.ReadWrite.All",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "45cc0394-e837-488b-a098-1918f48d186c",
     "AppRoleDisplayName": "SecurityIncident.Read.All",
     "Category": "Security and Compliance",
@@ -3092,6 +3156,14 @@
     "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "0fdf35a5-82f8-41ff-9ded-0b761cc73512",
+    "AppRoleDisplayName": "TeamsAppInstallation.Read.All",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -3556,6 +3628,14 @@
     "Category": "Global User Management",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "77f3a031-c388-4f99-b373-dc68676a979e",
+    "AppRoleDisplayName": "User.RevokeSessions.All",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",

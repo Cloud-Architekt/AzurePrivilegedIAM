@@ -18,7 +18,7 @@ function Export-EntraOpsClassificationDirectoryRoles {
 
     # Single classifcation (highest tier level only)
     Write-Output "Query directory role templates for mapping ID to name and further details"
-    $DirectoryRoleDefinitions = (Invoke-MgGraphRequest -Uri "https://graph.microsoft.com/beta/roleManagement/directory/roleDefinitions").value | select-object displayName, templateId, isBuiltin, isPrivileged, rolePermissions
+    $DirectoryRoleDefinitions = (Invoke-MgGraphRequest -Uri "https://graph.microsoft.com/beta/roleManagement/directory/roleDefinitions").value | select-object displayName, templateId, isBuiltin, isPrivileged, rolePermissions, categories, richDescription
 
     if ($IncludeCustomRoles -eq $False) {
         $DirectoryRoleDefinitions = $DirectoryRoleDefinitions | where-object { $_.isBuiltin -eq "True" }
@@ -71,6 +71,8 @@ function Export-EntraOpsClassificationDirectoryRoles {
             "RoleId"          = $_.templateId
             "RoleName"        = $_.displayName
             "isPrivileged"    = $_.isPrivileged
+            "Categories"      = $_.categories
+            "RichDescription" = $_.richDescription
             "RolePermissions" = $ClassifiedDirectoryRolePermissions
             "Classification"  = $RoleDefinitionClassification
         }    
