@@ -106,6 +106,7 @@
           "/"
         ],
         "RoleDefinitionActions": [
+          "BitlockerKey.Read.All",
           "DeviceLocalCredential.Read.All"
         ]
       },
@@ -191,7 +192,11 @@
           "User.ManageCreds.All",
           "User.ManageIdentities.All",
           "User.ReadWrite",
-          "User.ReadWrite.All"
+          "User.ReadWrite.All",
+          "User-Mail.ReadWrite.All",
+          "User-PasswordProfile.ReadWrite.All",
+          "User-Phone.ReadWrite.All",
+          "User.DeleteRestore.All"
         ]
       },
       {
@@ -380,6 +385,19 @@
       },
       {
         "Category": "Microsoft.Graph",
+        "Service": "Backup and Restore",
+        "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+        "ResourceScope": "Application",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "BackupRestore-Control.Read.All",
+          "BackupRestore-Control.ReadWrite.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.Graph",
         "Service": "Conditional Access",
         "ResourceAppId": "00000003-0000-0000-c000-000000000000",
         "ResourceScope": "Application",
@@ -435,6 +453,10 @@
           "Mail.ReadBasic.All",
           "Mail.ReadWrite",
           "Mail.Send",
+          "MailboxFolder.Read.All",
+          "MailboxFolder.ReadWrite.All",
+          "MailboxItem.ImportExport.All",
+          "MailboxItem.Read.All",
           "MailboxSettings.Read",
           "MailboxSettings.ReadWrite",
           "Schedule-WorkingTime.ReadWrite.All"
@@ -449,6 +471,7 @@
           "/"
         ],
         "RoleDefinitionActions": [
+          "BitlockerKey.ReadBasic.All",
           "CloudPC.Read.All",
           "DeviceLocalCredential.ReadBasic.All",
           "DeviceManagementApps.Read.All",
@@ -591,6 +614,8 @@
           "OnlineMeetings.ReadWrite.All",
           "OnlineMeetingTranscript.Read.All",
           "Presence.ReadWrite.All",
+          "ResourceSpecificPermissionGrant.ReadForChat.All",
+          "ResourceSpecificPermissionGrant.ReadForTeam.All",
           "Schedule.Read.All",
           "Schedule.ReadWrite.All",
           "Team.Create",

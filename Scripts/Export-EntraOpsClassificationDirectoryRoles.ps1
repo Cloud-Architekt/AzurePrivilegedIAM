@@ -13,6 +13,13 @@ function Export-EntraOpsClassificationDirectoryRoles {
         $IncludeCustomRoles = $False
     )
 
+    # Define sensitive role definitions without actions to classify
+    $ControlPlaneRolesWithoutRoleActions = @(
+        'd29b2b05-8046-44ba-8758-1e26182fcf32', # Directory Synchronization Accounts
+        'a92aed5d-d78a-4d16-b381-09adb37eb3b0', # On Premises Directory Sync Account
+        '9f06204d-73c1-4d4c-880a-6edb90606fd8' # Azure AD Joined Device Local Administrator
+    )
+
     # Get EntraOps Classification
     $Classification = Get-Content -Path ./EntraOps_Classification/Classification_AadResources.json | ConvertFrom-Json -Depth 10
 
@@ -65,6 +72,13 @@ function Export-EntraOpsClassificationDirectoryRoles {
             $FilteredRoleClassifications = ($ClassifiedDirectoryRolePermissions | select-object -ExcludeProperty AuthorizedResourceAction -Unique | Sort-Object EAMTierLevelTagValue )
             $RoleDefinitionClassification = [System.Collections.Generic.List[object]]::new()
             $RoleDefinitionClassification.Add($FilteredRoleClassifications)        
+        }
+
+        if ($ControlPlaneRolesWithoutRoleActions -contains $_.templateId) {
+            $RoleDefinitionClassification = [PSCustomObject]@{
+                "EAMTierLevelName"     = "ControlPlane"
+                "EAMTierLevelTagValue" = "0"
+            }
         }
 
         [PSCustomObject]@{

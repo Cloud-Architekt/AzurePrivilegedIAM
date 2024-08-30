@@ -73,6 +73,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "839c90ab-5771-41ee-aef8-a562e8487c1e",
+    "AppRoleDisplayName": "AiEnterpriseInteraction.Read.All",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "b86848a7-d5b1-41eb-a9b4-54a4e6306e97",
     "AppRoleDisplayName": "APIConnectors.Read.All",
     "Category": "Authentication",
@@ -142,6 +150,22 @@
     "Category": "Application and Workload Identity",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "9f265de7-8d5e-4e9a-a805-5e8bbc49656f",
+    "AppRoleDisplayName": "ApprovalSolution.Read.All",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "45583558-1113-4d06-8969-e79a28edc9ad",
+    "AppRoleDisplayName": "ApprovalSolution.ReadWrite.All",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -257,6 +281,22 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "6fe20a79-0e15-45a1-b019-834c125993a0",
+    "AppRoleDisplayName": "BackupRestore-Control.Read.All",
+    "Category": "Backup and Restore",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "fb240865-88f8-4a1d-923f-98dbc7920860",
+    "AppRoleDisplayName": "BackupRestore-Control.ReadWrite.All",
+    "Category": "Backup and Restore",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "ecae8511-f2d7-4be4-bdbf-91f244d45986",
     "AppRoleDisplayName": "BackupRestore-Monitor.Read.All",
     "Category": "Unclassified",
@@ -294,6 +334,22 @@
     "Category": "Tenant Management",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "57f1cf28-c0c4-4ec3-9a30-19a2eaaf2f6e",
+    "AppRoleDisplayName": "BitlockerKey.Read.All",
+    "Category": "Global Endpoint Credential Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "f690d423-6b29-4d04-98c6-694c42282419",
+    "AppRoleDisplayName": "BitlockerKey.ReadBasic.All",
+    "Category": "Microsoft 365 Platform Management",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -1772,6 +1828,38 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "99280d24-a782-4793-93cc-0888549957f6",
+    "AppRoleDisplayName": "MailboxFolder.Read.All",
+    "Category": "Exchange Online",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "fef87b92-8391-4589-9da7-eb93dab7dc8a",
+    "AppRoleDisplayName": "MailboxFolder.ReadWrite.All",
+    "Category": "Exchange Online",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "76577085-e73d-4f1d-b26a-85fb33892327",
+    "AppRoleDisplayName": "MailboxItem.ImportExport.All",
+    "Category": "Exchange Online",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "7d9f353d-a7bd-4fbb-822a-26d5dd39a3ce",
+    "AppRoleDisplayName": "MailboxItem.Read.All",
+    "Category": "Exchange Online",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "40f97065-369a-49f4-947c-6a255697ae91",
     "AppRoleDisplayName": "MailboxSettings.Read",
     "Category": "Exchange Online",
@@ -2588,6 +2676,22 @@
     "Category": "Unclassified",
     "EAMTierLevelName": "Unclassified",
     "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "2ff643d8-43e4-4a9b-88c1-86cb4a4b4c2f",
+    "AppRoleDisplayName": "ResourceSpecificPermissionGrant.ReadForChat.All",
+    "Category": "Microsoft Teams",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "ad4600ae-d900-42cb-a9a2-2415d05593d0",
+    "AppRoleDisplayName": "ResourceSpecificPermissionGrant.ReadForTeam.All",
+    "Category": "Microsoft Teams",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -3569,6 +3673,38 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "925f1248-0f97-47b9-8ec8-538c54e01325",
     "AppRoleDisplayName": "User-LifeCycleInfo.ReadWrite.All",
+    "Category": "Global User Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "280d0935-0796-47d1-8d26-273470a3f17a",
+    "AppRoleDisplayName": "User-Mail.ReadWrite.All",
+    "Category": "Global User Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "cc117bb9-00cf-4eb8-b580-ea2a878fe8f7",
+    "AppRoleDisplayName": "User-PasswordProfile.ReadWrite.All",
+    "Category": "Global User Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "86ceff06-c822-49ff-989a-d912845ffe69",
+    "AppRoleDisplayName": "User-Phone.ReadWrite.All",
+    "Category": "Global User Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "eccc023d-eccf-4e7b-9683-8813ab36cecc",
+    "AppRoleDisplayName": "User.DeleteRestore.All",
     "Category": "Global User Management",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"

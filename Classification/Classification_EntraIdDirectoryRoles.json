@@ -4,7 +4,7 @@
     "RoleName": "Application Administrator",
     "isPrivileged": true,
     "Categories": "identity",
-    "RichDescription":"Users in this role can add, manage, and configure enterprise applications, app registrations and manage on-premises like app proxy.",
+    "RichDescription": "Users in this role can add, manage, and configure enterprise applications, app registrations and manage on-premises like app proxy.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/adminConsentRequestPolicy/allProperties/allTasks",
@@ -449,7 +449,7 @@
     "RoleName": "Application Developer",
     "isPrivileged": true,
     "Categories": "identity",
-    "RichDescription":"Users in this role will continue to be able to register app registrations even if the Global Admin has turned off the tenant level switch for \"Users can register apps\".",
+    "RichDescription": "Users in this role will continue to be able to register app registrations even if the Global Admin has turned off the tenant level switch for \"Users can register apps\".",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/oAuth2PermissionGrants/createAsOwner",
@@ -480,7 +480,7 @@
     "RoleName": "Attack Payload Author",
     "isPrivileged": false,
     "Categories": "securityAndCompliance",
-    "RichDescription":"Users in this role can create attack payloads but not actually launch or schedule them. Attack payloads are then available to all administrators in the tenant who can use them to create a simulation.",
+    "RichDescription": "Users in this role can create attack payloads but not actually launch or schedule them. Attack payloads are then available to all administrators in the tenant who can use them to create a simulation.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.protectionCenter/attackSimulator/payload/allProperties/allTasks",
@@ -505,7 +505,7 @@
     "RoleName": "Attack Simulation Administrator",
     "isPrivileged": false,
     "Categories": "securityAndCompliance",
-    "RichDescription":"Users in this role can create and manage all aspects of attack simulation creation, launch/scheduling of a simulation, and the review of simulation results. Members of this role have this access for all simulations in the tenant.",
+    "RichDescription": "Users in this role can create and manage all aspects of attack simulation creation, launch/scheduling of a simulation, and the review of simulation results. Members of this role have this access for all simulations in the tenant.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.protectionCenter/attackSimulator/payload/allProperties/allTasks",
@@ -536,7 +536,7 @@
     "RoleName": "Attribute Assignment Administrator",
     "isPrivileged": false,
     "Categories": "identity",
-    "RichDescription":"Users with this role can assign and remove custom security attribute keys and values for supported Microsoft Entra objects such as users, service principals, and devices.",
+    "RichDescription": "Users with this role can assign and remove custom security attribute keys and values for supported Microsoft Entra objects such as users, service principals, and devices.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/customSecurityAttributes/read",
@@ -609,7 +609,7 @@
     "RoleName": "Attribute Assignment Reader",
     "isPrivileged": false,
     "Categories": "identity",
-    "RichDescription":"Users with this role can read custom security attribute keys and values for supported Microsoft Entra objects.",
+    "RichDescription": "Users with this role can read custom security attribute keys and values for supported Microsoft Entra objects.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/customSecurityAttributes/read",
@@ -658,7 +658,7 @@
     "RoleName": "Attribute Definition Administrator",
     "isPrivileged": false,
     "Categories": "identity",
-    "RichDescription":"Users with this role can define a valid set of custom security attributes that can be assigned to supported Microsoft Entra objects. This role can also activate and deactivate custom security attributes.",
+    "RichDescription": "Users with this role can define a valid set of custom security attributes that can be assigned to supported Microsoft Entra objects. This role can also activate and deactivate custom security attributes.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/attributeSets/allProperties/allTasks",
@@ -683,7 +683,7 @@
     "RoleName": "Attribute Definition Reader",
     "isPrivileged": false,
     "Categories": "identity",
-    "RichDescription":"Users with this role can read the definition of custom security attributes.",
+    "RichDescription": "Users with this role can read the definition of custom security attributes.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/attributeSets/allProperties/read",
@@ -708,7 +708,7 @@
     "RoleName": "Attribute Log Administrator",
     "isPrivileged": false,
     "Categories": "identity",
-    "RichDescription":"Assign the Attribute Log Reader role to users who need to do the following tasks:\n* Read audit logs for attribute set changes\n* Read audit logs for custom security attribute definition changes\n* Read audit logs for custom security attribute assignment changes\n* Configure diagnostic settings for custom security attributes\nUsers with this role *cannot* read audit logs for other events.\nBy default, Global Administrator and other administrator roles do not have permissions to read audit logs for custom security attributes. To read audit logs for custom security attributes, you must be assigned this role or the Attribute Log Reader role.",
+    "RichDescription": "Assign the Attribute Log Reader role to users who need to do the following tasks:\n* Read audit logs for attribute set changes\n* Read audit logs for custom security attribute definition changes\n* Read audit logs for custom security attribute assignment changes\n* Configure diagnostic settings for custom security attributes\nUsers with this role *cannot* read audit logs for other events.\nBy default, Global Administrator and other administrator roles do not have permissions to read audit logs for custom security attributes. To read audit logs for custom security attributes, you must be assigned this role or the Attribute Log Reader role.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.azure.customSecurityAttributeDiagnosticSettings/allEntities/allProperties/allTasks",
@@ -733,7 +733,7 @@
     "RoleName": "Attribute Log Reader",
     "isPrivileged": false,
     "Categories": "identity",
-    "RichDescription":"Assign the Attribute Log Reader role to users who need to do the following tasks:\n* Read audit logs for attribute set changes\n* Read audit logs for custom security attribute definition changes\n* Read audit logs for custom security attribute assignment changes\nUsers with this role *cannot* do the following tasks:\n* Configure diagnostic settings for custom security attributes\n* Read audit logs for other events\nBy default, Global Administrator and other administrator roles do not have permissions to read audit logs for custom security attributes. To read audit logs for custom security attributes, you must be assigned this role or the Attribute Log Administrator role.",
+    "RichDescription": "Assign the Attribute Log Reader role to users who need to do the following tasks:\n* Read audit logs for attribute set changes\n* Read audit logs for custom security attribute definition changes\n* Read audit logs for custom security attribute assignment changes\nUsers with this role *cannot* do the following tasks:\n* Configure diagnostic settings for custom security attributes\n* Read audit logs for other events\nBy default, Global Administrator and other administrator roles do not have permissions to read audit logs for custom security attributes. To read audit logs for custom security attributes, you must be assigned this role or the Attribute Log Administrator role.",
     "RolePermissions": {
       "AuthorizedResourceAction": "microsoft.directory/customSecurityAttributeAuditLogs/allProperties/read",
       "Category": "Security and Compliance",
@@ -750,7 +750,7 @@
     "RoleName": "Authentication Administrator",
     "isPrivileged": true,
     "Categories": "identity",
-    "RichDescription":"Users with this role can set or reset any authentication method (including passwords) for non-administrators and some roles. Authentication Administrators can require users who are non-administrators or assigned to some roles to re-register against existing non-password credentials (for example, multifactor authentication or FIDO), and can also revoke remember multifactor authentication on the device, which prompts for MFA on the next sign-in.",
+    "RichDescription": "Users with this role can set or reset any authentication method (including passwords) for non-administrators and some roles. Authentication Administrators can require users who are non-administrators or assigned to some roles to re-register against existing non-password credentials (for example, multifactor authentication or FIDO), and can also revoke remember multifactor authentication on the device, which prompts for MFA on the next sign-in.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/deletedItems.users/restore",
@@ -877,7 +877,7 @@
     "RoleName": "Authentication Extensibility Administrator",
     "isPrivileged": true,
     "Categories": "identity",
-    "RichDescription":"Users with this role can create and manage all aspects of custom authentication extensions. A custom authentication extension is an API endpoint created by a developer for authentication events and is registered in Microsoft Entra ID. Application administrators and application owners can use custom authentication extensions to customize their application's authentication experiences such as sign in and sign up, or password reset. This role does not grant the ability to apply the custom authentication extensions to applications.",
+    "RichDescription": "Users with this role can create and manage all aspects of custom authentication extensions. A custom authentication extension is an API endpoint created by a developer for authentication events and is registered in Microsoft Entra ID. Application administrators and application owners can use custom authentication extensions to customize their application's authentication experiences such as sign in and sign up, or password reset. This role does not grant the ability to apply the custom authentication extensions to applications.",
     "RolePermissions": {
       "AuthorizedResourceAction": "microsoft.directory/customAuthenticationExtensions/allProperties/allTasks",
       "Category": "Authentication",
@@ -894,7 +894,7 @@
     "RoleName": "Authentication Policy Administrator",
     "isPrivileged": false,
     "Categories": "collaboration,identity",
-    "RichDescription":"Users in this role can create, deploy, and maintain password protection policies and configure authentication methods in a tenant. An Authentication policy administrator can perform the following tasks - manage authentication method settings; configure smart lockout settings; manage a custom banned password list. Users in this role cannot set, change, or reset any individual users' registered authentication methods. This role is intended for managing policy rather than managing users. For example, an Authentication policy administrator will be able to configure that passwords are required to be registered, and the lockout policy for those passwords, but will not be able to reset a user's password.",
+    "RichDescription": "Users in this role can create, deploy, and maintain password protection policies and configure authentication methods in a tenant. An Authentication policy administrator can perform the following tasks - manage authentication method settings; configure smart lockout settings; manage a custom banned password list. Users in this role cannot set, change, or reset any individual users' registered authentication methods. This role is intended for managing policy rather than managing users. For example, an Authentication policy administrator will be able to configure that passwords are required to be registered, and the lockout policy for those passwords, but will not be able to reset a user's password.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/organization/strongAuthentication/allTasks",
@@ -1021,7 +1021,7 @@
     "RoleName": "Azure AD Joined Device Local Administrator",
     "isPrivileged": false,
     "Categories": "devices",
-    "RichDescription":"Users with this role become local machine administrators on all Windows 10 devices that are joined to Microsoft Entra ID. They do not have the ability to manage devices objects in Microsoft Entra ID.",
+    "RichDescription": "Users with this role become local machine administrators on all Windows 10 devices that are joined to Microsoft Entra ID. They do not have the ability to manage devices objects in Microsoft Entra ID.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/groupSettings/standard/read",
@@ -1037,8 +1037,8 @@
       }
     ],
     "Classification": {
-      "EAMTierLevelName": "ManagementPlane",
-      "EAMTierLevelTagValue": "1"
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
     }
   },
   {
@@ -1046,7 +1046,7 @@
     "RoleName": "Azure DevOps Administrator",
     "isPrivileged": false,
     "Categories": "collaboration",
-    "RichDescription":"Users with this role can manage the Azure DevOps policy to restrict new Azure DevOps organization creation to a set of configurable users/AAD groups. Users in this role can manage this policy through any Azure DevOps organization that is backed by the company's Microsoft Entra ID.",
+    "RichDescription": "Users with this role can manage the Azure DevOps policy to restrict new Azure DevOps organization creation to a set of configurable users/AAD groups. Users in this role can manage this policy through any Azure DevOps organization that is backed by the company's Microsoft Entra ID.",
     "RolePermissions": {
       "AuthorizedResourceAction": "microsoft.azure.devOps/allEntities/allTasks",
       "Category": "Azure DevOps",
@@ -1063,7 +1063,7 @@
     "RoleName": "Azure Information Protection Administrator",
     "isPrivileged": false,
     "Categories": "securityAndCompliance",
-    "RichDescription":"Users with this role have user rights only on the Azure Information Protection service. They are not granted user rights on Identity Protection Center, Privileged Identity Management, Monitor Office 365 Service Health, or Office 365 Security & Compliance Center. They can configure labels for the Azure Information Protection policy, manage protection templates, and activate protection.",
+    "RichDescription": "Users with this role have user rights only on the Azure Information Protection service. They are not granted user rights on Identity Protection Center, Privileged Identity Management, Monitor Office 365 Service Health, or Office 365 Security & Compliance Center. They can configure labels for the Azure Information Protection policy, manage protection templates, and activate protection.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.serviceHealth/allEntities/allTasks",
@@ -1118,7 +1118,7 @@
     "RoleName": "B2C IEF Keyset Administrator",
     "isPrivileged": true,
     "Categories": "identity",
-    "RichDescription":"User can create and manage policy keys and secrets for token encryption, token signatures, and claim encryption/decryption. By adding new keys to existing key containers, this limited administrator can rollover secrets as needed without impacting existing applications. This user can see the full content of these secrets and their expiration dates even after their creation. This is a sensitive role. The Keyset administrator role should be carefully audited and assigned with care during preproduction and production.",
+    "RichDescription": "User can create and manage policy keys and secrets for token encryption, token signatures, and claim encryption/decryption. By adding new keys to existing key containers, this limited administrator can rollover secrets as needed without impacting existing applications. This user can see the full content of these secrets and their expiration dates even after their creation. This is a sensitive role. The Keyset administrator role should be carefully audited and assigned with care during preproduction and production.",
     "RolePermissions": {
       "AuthorizedResourceAction": "microsoft.directory/b2cTrustFrameworkKeySet/allProperties/allTasks",
       "Category": "External Identities",
@@ -1135,7 +1135,7 @@
     "RoleName": "B2C IEF Policy Administrator",
     "isPrivileged": false,
     "Categories": "identity",
-    "RichDescription":"Users in this role have the ability to create, read, update, and delete all custom policies in Azure AD B2C and therefore have full control over the Identity Experience Framework in the relevant Azure AD B2C tenant. By editing policies, this user can establish direct federation with external identity providers, change the directory schema, change all user-facing content (HTML, CSS, JavaScript) , change the requirements to complete an authentication, create new users, send user data to external systems including full migrations, and edit all user information including sensitive fields like passwords and phone numbers.    Conversely, this role cannot change the encryption keys or edit the secrets used for federation in the tenant. The B2C IEF Policy Administrator is a highly sensitive role, which should be assigned on a very limited basis for tenants in production.  Activities by these users should be closely audited, especially for tenants in production.",
+    "RichDescription": "Users in this role have the ability to create, read, update, and delete all custom policies in Azure AD B2C and therefore have full control over the Identity Experience Framework in the relevant Azure AD B2C tenant. By editing policies, this user can establish direct federation with external identity providers, change the directory schema, change all user-facing content (HTML, CSS, JavaScript) , change the requirements to complete an authentication, create new users, send user data to external systems including full migrations, and edit all user information including sensitive fields like passwords and phone numbers.    Conversely, this role cannot change the encryption keys or edit the secrets used for federation in the tenant. The B2C IEF Policy Administrator is a highly sensitive role, which should be assigned on a very limited basis for tenants in production.  Activities by these users should be closely audited, especially for tenants in production.",
     "RolePermissions": {
       "AuthorizedResourceAction": "microsoft.directory/b2cTrustFrameworkPolicy/allProperties/allTasks",
       "Category": "External Identities",
@@ -1152,7 +1152,7 @@
     "RoleName": "Billing Administrator",
     "isPrivileged": false,
     "Categories": "other",
-    "RichDescription":"Makes purchases, manages subscriptions, manages support tickets, and monitors service health.",
+    "RichDescription": "Makes purchases, manages subscriptions, manages support tickets, and monitors service health.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/organization/basic/update",
@@ -1207,7 +1207,7 @@
     "RoleName": "Cloud App Security Administrator",
     "isPrivileged": false,
     "Categories": "collaboration,identity,securityAndCompliance",
-    "RichDescription":"Users with this role have full permissions in Cloud App Security. They can add admins, add MCAS policies and settings, upload logs and perform governance actions.",
+    "RichDescription": "Users with this role have full permissions in Cloud App Security. They can add admins, add MCAS policies and settings, upload logs and perform governance actions.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/cloudAppSecurity/allProperties/allTasks",
@@ -1232,7 +1232,7 @@
     "RoleName": "Cloud Application Administrator",
     "isPrivileged": true,
     "Categories": "identity",
-    "RichDescription":"Users in this role can add, manage, and configure enterprise applications, app registrations but will not be able to configure or manage on-premises like app proxy.",
+    "RichDescription": "Users in this role can add, manage, and configure enterprise applications, app registrations but will not be able to configure or manage on-premises like app proxy.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/adminConsentRequestPolicy/allProperties/allTasks",
@@ -1605,7 +1605,7 @@
     "RoleName": "Cloud Device Administrator",
     "isPrivileged": true,
     "Categories": "devices,identity",
-    "RichDescription":"Users in this role can enable, disable, and delete devices in Microsoft Entra ID and read Windows 10 BitLocker keys (if present) in the Azure portal. The role does not grant permissions to manage any other properties on the device.",
+    "RichDescription": "Users in this role can enable, disable, and delete devices in Microsoft Entra ID and read Windows 10 BitLocker keys (if present) in the Azure portal. The role does not grant permissions to manage any other properties on the device.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/bitlockerKeys/key/read",
@@ -1714,7 +1714,7 @@
     "RoleName": "Compliance Administrator",
     "isPrivileged": false,
     "Categories": "securityAndCompliance",
-    "RichDescription":"Users with this role have management permissions within in the Office 365 Security & Compliance Center and Exchange Admin Center.",
+    "RichDescription": "Users with this role have management permissions within in the Office 365 Security & Compliance Center and Exchange Admin Center.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.serviceHealth/allEntities/allTasks",
@@ -1769,7 +1769,7 @@
     "RoleName": "Compliance Data Administrator",
     "isPrivileged": false,
     "Categories": "securityAndCompliance",
-    "RichDescription":"Users with this role have permissions to protect and track data in the Microsoft 365 compliance center, Microsoft 365 admin center, and Azure. Users can also manage all features within the Exchange admin center, Compliance Manager, and Teams & Skype for Business admin center and create support tickets for Azure and Microsoft 365.",
+    "RichDescription": "Users with this role have permissions to protect and track data in the Microsoft 365 compliance center, Microsoft 365 admin center, and Azure. Users can also manage all features within the Exchange admin center, Compliance Manager, and Teams & Skype for Business admin center and create support tickets for Azure and Microsoft 365.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/cloudAppSecurity/allProperties/allTasks",
@@ -1836,7 +1836,7 @@
     "RoleName": "Conditional Access Administrator",
     "isPrivileged": true,
     "Categories": "identity,securityAndCompliance",
-    "RichDescription":"Users with this role have the ability to manage Microsoft Entra Conditional Access settings. Note: To deploy Exchange ActiveSync Conditional Access policy in Azure, the user must also be Global Administrator.",
+    "RichDescription": "Users with this role have the ability to manage Microsoft Entra Conditional Access settings. Note: To deploy Exchange ActiveSync Conditional Access policy in Azure, the user must also be Global Administrator.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/conditionalAccessPolicies/basic/update",
@@ -1927,7 +1927,7 @@
     "RoleName": "Customer LockBox Access Approver",
     "isPrivileged": false,
     "Categories": "securityAndCompliance",
-    "RichDescription":"User in this role can login to the Office Admin Center and view/approve/reject data access requests.",
+    "RichDescription": "User in this role can login to the Office Admin Center and view/approve/reject data access requests.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.webPortal/allEntities/standard/read",
@@ -1952,7 +1952,7 @@
     "RoleName": "Desktop Analytics Administrator",
     "isPrivileged": false,
     "Categories": "devices",
-    "RichDescription":"Users in this role will have access to manage Desktop Analytics and Office Customization & Policy Services.  For Desktop Analytics, this includes the ability to view asset inventory, create deployment plans, and view deployment and health status.  For Office Customization & Policies Services, this role will enable users to manage Office polices.",
+    "RichDescription": "Users in this role will have access to manage Desktop Analytics and Office Customization & Policy Services.  For Desktop Analytics, this includes the ability to view asset inventory, create deployment plans, and view deployment and health status.  For Office Customization & Policies Services, this role will enable users to manage Office polices.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.desktopAnalytics/allEntities/allTasks",
@@ -1989,7 +1989,7 @@
     "RoleName": "Device Join",
     "isPrivileged": false,
     "Categories": null,
-    "RichDescription":null,
+    "RichDescription": null,
     "RolePermissions": null,
     "Classification": null
   },
@@ -1998,7 +1998,7 @@
     "RoleName": "Device Managers",
     "isPrivileged": false,
     "Categories": "devices",
-    "RichDescription":null,
+    "RichDescription": null,
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/devices/basic/update",
@@ -2071,7 +2071,7 @@
     "RoleName": "Device Users",
     "isPrivileged": false,
     "Categories": null,
-    "RichDescription":null,
+    "RichDescription": null,
     "RolePermissions": null,
     "Classification": null
   },
@@ -2080,7 +2080,7 @@
     "RoleName": "Directory Readers",
     "isPrivileged": false,
     "Categories": "readOnly",
-    "RichDescription":"Users in this role can read basic directory information. This role should be used for:\n1. Granting a specific set of guest users read access instead of granting it to all guest users.\n1. Granting a specific set of non-admin users access to the administration portal when \"Restrict access to Microsoft Entra ID administration portal\" is set to \"Yes\".\n1. Granting service principals access to directory where Directory.Read.All is not an option.",
+    "RichDescription": "Users in this role can read basic directory information. This role should be used for:\n1. Granting a specific set of guest users read access instead of granting it to all guest users.\n1. Granting a specific set of non-admin users access to the administration portal when \"Restrict access to Microsoft Entra ID administration portal\" is set to \"Yes\".\n1. Granting service principals access to directory where Directory.Read.All is not an option.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/groups/settings/read",
@@ -2418,299 +2418,10 @@
   {
     "RoleId": "d29b2b05-8046-44ba-8758-1e26182fcf32",
     "RoleName": "Directory Synchronization Accounts",
-    "isPrivileged": true,
+    "isPrivileged": false,
     "Categories": "identity",
-    "RichDescription":"This role is automatically assigned to the Microsoft Entra Connect service, and is not intended or supported for any other use.",
-    "RolePermissions": [
-      {
-        "AuthorizedResourceAction": "microsoft.directory/applications/appRoles/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/applications/audience/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/applications/authentication/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/applications/create",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/applications/credentials/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/applications/delete",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/applications/notes/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/applications/owners/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/applications/permissions/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/applications/tag/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/appRoleAssignedTo/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/audience/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/authentication/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/create",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/credentials/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/delete",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/enable",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/getPasswordSingleSignOnCredentials",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/managePasswordSingleSignOnCredentials",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/notes/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/owners/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/permissions/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/policies/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/tag/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/hybridAuthenticationPolicy/allProperties/allTasks",
-        "Category": "Authentication",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/passwordHashSync/allProperties/allTasks",
-        "Category": "Authentication",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/applications/policies/update",
-        "Category": "Tenant Policy Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/policies/create",
-        "Category": "Tenant Policy Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/policies/delete",
-        "Category": "Tenant Policy Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/policies/owners/update",
-        "Category": "Tenant Policy Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/policies/tenantDefault/update",
-        "Category": "Tenant Policy Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/organization/dirSync/update",
-        "Category": "User Lifecycle and Provisioning Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/applications/basic/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/basic/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/disable",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/policies/basic/update",
-        "Category": "Tenant Configuration (Reader)",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/authorizationPolicy/standard/read",
-        "Category": "Default member",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/policies/owners/read",
-        "Category": "Default member",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/policies/policyAppliedTo/read",
-        "Category": "Default member",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/policies/standard/read",
-        "Category": "Default member",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/appRoleAssignedTo/read",
-        "Category": "Default member",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/appRoleAssignments/read",
-        "Category": "Default member",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/memberOf/read",
-        "Category": "Default member",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/oAuth2PermissionGrants/read",
-        "Category": "Default member",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/ownedObjects/read",
-        "Category": "Default member",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/owners/read",
-        "Category": "Default member",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/policies/read",
-        "Category": "Default member",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/standard/read",
-        "Category": "Default member",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      }
-    ],
+    "RichDescription": "This role is automatically assigned to the Microsoft Entra Connect service, and is not intended or supported for any other use.",
+    "RolePermissions": null,
     "Classification": {
       "EAMTierLevelName": "ControlPlane",
       "EAMTierLevelTagValue": "0"
@@ -2721,7 +2432,7 @@
     "RoleName": "Directory Writers",
     "isPrivileged": true,
     "Categories": "identity",
-    "RichDescription":"Users in this role can read and update basic information of users, groups, and service principals. Assign this role only to applications that don't support the Consent Framework. It should not be assigned to any users.",
+    "RichDescription": "Users in this role can read and update basic information of users, groups, and service principals. Assign this role only to applications that don't support the Consent Framework. It should not be assigned to any users.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/applications/extensionProperties/update",
@@ -2980,7 +2691,7 @@
     "RoleName": "Domain Name Administrator",
     "isPrivileged": true,
     "Categories": "identity",
-    "RichDescription":"For on-premises environments, users can configure domain names for federation so that associated users are always authenticated on-premises (these users can then sign into Microsoft Entra based services with their on-premises passwords via single sign-on). Federation settings need to be synced via AADConnect, so users also have permissions to manage AADConnect.",
+    "RichDescription": "For on-premises environments, users can configure domain names for federation so that associated users are always authenticated on-premises (these users can then sign into Microsoft Entra based services with their on-premises passwords via single sign-on). Federation settings need to be synced via AADConnect, so users also have permissions to manage AADConnect.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/domains/allProperties/allTasks",
@@ -3011,7 +2722,7 @@
     "RoleName": "Dynamics 365 Administrator",
     "isPrivileged": false,
     "Categories": "collaboration",
-    "RichDescription":"Users with this role have global permissions within Microsoft CRM Online, when the service is present, as well as the ability to manage support tickets and monitor service health.",
+    "RichDescription": "Users with this role have global permissions within Microsoft CRM Online, when the service is present, as well as the ability to manage support tickets and monitor service health.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.dynamics365/allEntities/allTasks",
@@ -3060,7 +2771,7 @@
     "RoleName": "Dynamics 365 Business Central Administrator",
     "isPrivileged": false,
     "Categories": "collaboration",
-    "RichDescription":"Assign the Dynamics 365 Business Central Administrator role to users who need to do the following tasks:\n* Access Dynamics 365 Business Central environments\n* Perform all administrative tasks on environments\n* Manage the lifecycle of customer's environments\n* Supervise the extensions installed on environments\n* Control upgrades of environments\n* Perform data exports of environments\n* Read and configure Azure and Microsoft 365 service health dashboards\nThis role does not provide any permissions for other Dynamics 365 products.",
+    "RichDescription": "Assign the Dynamics 365 Business Central Administrator role to users who need to do the following tasks:\n* Access Dynamics 365 Business Central environments\n* Perform all administrative tasks on environments\n* Manage the lifecycle of customer's environments\n* Supervise the extensions installed on environments\n* Control upgrades of environments\n* Perform data exports of environments\n* Read and configure Azure and Microsoft 365 service health dashboards\nThis role does not provide any permissions for other Dynamics 365 products.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.dynamics365.businessCentral/allEntities/allProperties/allTasks",
@@ -3124,7 +2835,7 @@
     "RoleName": "Edge Administrator",
     "isPrivileged": false,
     "Categories": "other",
-    "RichDescription":"Users in this role can create and manage the cloud hosted site list required for Internet Explorer mode on Microsoft Edge. This role grants permissions to create, edit and publish the site list and additionally allows access to manage support tickets.",
+    "RichDescription": "Users in this role can create and manage the cloud hosted site list required for Internet Explorer mode on Microsoft Edge. This role grants permissions to create, edit and publish the site list and additionally allows access to manage support tickets.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.supportTickets/allEntities/allTasks",
@@ -3155,8 +2866,38 @@
     "RoleName": "Exchange Administrator",
     "isPrivileged": false,
     "Categories": "collaboration",
-    "RichDescription":"Users with this role have global permissions within Microsoft Exchange Online, when the service is present.",
+    "RichDescription": "Users with this role have global permissions within Microsoft Exchange Online, when the service is present.",
     "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.backup/exchangeProtectionPolicies/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/exchangeRestoreSessions/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/restorePoints/userMailboxes/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/userMailboxProtectionUnits/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/userMailboxRestoreArtifacts/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
       {
         "AuthorizedResourceAction": "microsoft.directory/groups.unified/basic/update",
         "Category": "Microsoft 365 Group Management",
@@ -3258,7 +2999,7 @@
     "RoleName": "Exchange Recipient Administrator",
     "isPrivileged": false,
     "Categories": "collaboration",
-    "RichDescription":"Users with this role have read access to recipients and write access to the attributes of those recipients in Exchange Online.",
+    "RichDescription": "Users with this role have read access to recipients and write access to the attributes of those recipients in Exchange Online.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.exchange/migration/allProperties/allTasks",
@@ -3283,7 +3024,7 @@
     "RoleName": "Extended Directory User Administrator",
     "isPrivileged": false,
     "Categories": "collaboration,identity",
-    "RichDescription":null,
+    "RichDescription": null,
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/externalUserProfiles/basic/update",
@@ -3338,7 +3079,7 @@
     "RoleName": "External ID User Flow Administrator",
     "isPrivileged": false,
     "Categories": "identity",
-    "RichDescription":"Users with this role can create and manage user flows (also called \"built-in\" policies) in the Azure portal. These users can customize HTML/CSS/JavaScript content, change MFA requirements, select claims in the token, manage API connectors and their credentials, and configure session settings for all user flows in the Microsoft Entra organization. On the other hand, this role does not include the ability to review user data or make changes to the attributes that are included in the organization schema. Changes to Identity Experience Framework policies (also known as custom policies) are also outside the scope of this role.",
+    "RichDescription": "Users with this role can create and manage user flows (also called \"built-in\" policies) in the Azure portal. These users can customize HTML/CSS/JavaScript content, change MFA requirements, select claims in the token, manage API connectors and their credentials, and configure session settings for all user flows in the Microsoft Entra organization. On the other hand, this role does not include the ability to review user data or make changes to the attributes that are included in the organization schema. Changes to Identity Experience Framework policies (also known as custom policies) are also outside the scope of this role.",
     "RolePermissions": {
       "AuthorizedResourceAction": "microsoft.directory/b2cUserFlow/allProperties/allTasks",
       "Category": "External Identities",
@@ -3355,7 +3096,7 @@
     "RoleName": "External ID User Flow Attribute Administrator",
     "isPrivileged": false,
     "Categories": "identity",
-    "RichDescription":"Users with this role add or delete custom attributes available to all user flows in the tenant. As such, users with this role can change or add new elements to the end user schema and impact the behavior of all user flows and indirectly result in changes to what data may be asked of end users and ultimately sent as claims to applications. This role cannot edit user flows.",
+    "RichDescription": "Users with this role add or delete custom attributes available to all user flows in the tenant. As such, users with this role can change or add new elements to the end user schema and impact the behavior of all user flows and indirectly result in changes to what data may be asked of end users and ultimately sent as claims to applications. This role cannot edit user flows.",
     "RolePermissions": {
       "AuthorizedResourceAction": "microsoft.directory/b2cUserAttribute/allProperties/allTasks",
       "Category": "External Identities",
@@ -3372,7 +3113,7 @@
     "RoleName": "External Identity Provider Administrator",
     "isPrivileged": true,
     "Categories": "identity",
-    "RichDescription":"This administrator manages federation between Microsoft Entra tenants and external identity providers. With this role, users can add new identity providers and configure all available settings (e.g. authentication path, service id, assigned key containers). This user can enable the tenant to trust authentications from external identity providers. The resulting impact on end user experiences depends on the type of tenant: (1) Microsoft Entra tenants for employees and partners: The addition of a federation (e.g. with Gmail) will immediately impact all guest invitations not yet redeemed. (2) Azure Active Directory B2C tenants: The addition of a federation (e.g. with Facebook, or with another Microsoft Entra tenant) does not immediately impact end user flows until the identity provider is added as an option in a user flow (aka built-in policy). To change user flows, the limited role of \"External ID user flow administrator\" is required.",
+    "RichDescription": "This administrator manages federation between Microsoft Entra tenants and external identity providers. With this role, users can add new identity providers and configure all available settings (e.g. authentication path, service id, assigned key containers). This user can enable the tenant to trust authentications from external identity providers. The resulting impact on end user experiences depends on the type of tenant: (1) Microsoft Entra tenants for employees and partners: The addition of a federation (e.g. with Gmail) will immediately impact all guest invitations not yet redeemed. (2) Azure Active Directory B2C tenants: The addition of a federation (e.g. with Facebook, or with another Microsoft Entra tenant) does not immediately impact end user flows until the identity provider is added as an option in a user flow (aka built-in policy). To change user flows, the limited role of \"External ID user flow administrator\" is required.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/domains/federation/update",
@@ -3397,7 +3138,7 @@
     "RoleName": "Fabric Administrator",
     "isPrivileged": false,
     "Categories": "collaboration",
-    "RichDescription":"Users with this role have global permissions within Microsoft Fabric, when the service is present, as well as the ability to manage support tickets and monitor service health.",
+    "RichDescription": "Users with this role have global permissions within Microsoft Fabric, when the service is present, as well as the ability to manage support tickets and monitor service health.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.powerApps.powerBI/allEntities/allTasks",
@@ -3446,7 +3187,7 @@
     "RoleName": "Global Administrator",
     "isPrivileged": true,
     "Categories": "global",
-    "RichDescription":"Users with this role have access to all administrative features in Microsoft Entra ID, as well as services that federate to Microsoft Entra ID like Exchange Online, SharePoint Online, and Skype for Business Online. The person who signs up for the Microsoft Entra tenant becomes a global administrator. Only global administrators can assign other administrator roles. There can be more than one global administrator at your company. Global admins can reset the password for any user and all other administrators. Note: In Microsoft Graph API, Azure AD Graph API, and Azure AD PowerShell, this role is identified as \"Company Administrator\". It is \"Global Administrator\" in the Azure portal.",
+    "RichDescription": "Users with this role have access to all administrative features in Microsoft Entra ID, as well as services that federate to Microsoft Entra ID like Exchange Online, SharePoint Online, and Skype for Business Online. The person who signs up for the Microsoft Entra tenant becomes a global administrator. Only global administrators can assign other administrator roles. There can be more than one global administrator at your company. Global admins can reset the password for any user and all other administrators. Note: In Microsoft Graph API, Azure AD Graph API, and Azure AD PowerShell, this role is identified as \"Company Administrator\". It is \"Global Administrator\" in the Azure portal.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/adminConsentRequestPolicy/allProperties/allTasks",
@@ -4157,6 +3898,12 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "microsoft.backup/allEntities/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.commerce.billing/allEntities/allProperties/allTasks",
         "Category": "Microsoft 365 Billing Management",
         "EAMTierLevelName": "ManagementPlane",
@@ -4171,6 +3918,12 @@
       {
         "AuthorizedResourceAction": "microsoft.directory/subscribedSkus/allProperties/allTasks",
         "Category": "Microsoft 365 Billing Management",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.graph.dataConnect/allEntities/allProperties/allTasks",
+        "Category": "Microsoft 365 Platform Operations",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -4279,6 +4032,12 @@
       {
         "AuthorizedResourceAction": "microsoft.azure.informationProtection/allEntities/allTasks",
         "Category": "Microsoft Information Protection",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.fileStorageContainers/allEntities/allProperties/allTasks",
+        "Category": "Microsoft SharePoint",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -4623,18 +4382,6 @@
         ],
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.graph.dataConnect/allEntities/allProperties/allTasks",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.office365.fileStorageContainers/allEntities/allProperties/allTasks",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
       }
     ],
     "Classification": {
@@ -4647,7 +4394,7 @@
     "RoleName": "Global Reader",
     "isPrivileged": true,
     "Categories": "readOnly",
-    "RichDescription":"Users with this role can read everything that a Global Administrator can, but not update anything.",
+    "RichDescription": "Users with this role can read everything that a Global Administrator can, but not update anything.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/bitlockerKeys/key/read",
@@ -4670,6 +4417,12 @@
       {
         "AuthorizedResourceAction": "microsoft.permissionsManagement/allEntities/allProperties/read",
         "Category": "Cloud Infrastructure Entitlement Management",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/allEntities/allProperties/read",
+        "Category": "Microsoft 365 Backup",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -5218,7 +4971,7 @@
     "RoleName": "Global Secure Access Administrator",
     "isPrivileged": false,
     "Categories": "securityAndCompliance",
-    "RichDescription":"Users with this role have global permissions within Microsoft Global Secure network access solutions, including full read-write access to the admin portal for Global Secure Internet Access and Global Secure Private Access. This role does not grant the ability to manage enterprise applications, application registrations, and application proxy settings.",
+    "RichDescription": "Users with this role have global permissions within Microsoft Global Secure network access solutions, including full read-write access to the admin portal for Global Secure Internet Access and Global Secure Private Access. This role does not grant the ability to manage enterprise applications, application registrations, and application proxy settings.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.networkAccess/allEntities/allProperties/allTasks",
@@ -5351,7 +5104,7 @@
     "RoleName": "Groups Administrator",
     "isPrivileged": false,
     "Categories": "collaboration,identity",
-    "RichDescription":"Members of this role can create and manage groups, create and manage group settings like naming and expiration policies, and view groups activity and audit reports. It is important to understand that assigning a user to this role gives them the ability to manage all the groups in the tenants across various workloads like Teams, SharePoint, and Yammer in addition to Outlook. Also, the user will be able to manage the various group settings across various admin portals like Microsoft Admin Center and the Azure Portal, as well as workload specific ones like Teams and SharePoint admin centers.",
+    "RichDescription": "Members of this role can create and manage groups, create and manage group settings like naming and expiration policies, and view groups activity and audit reports. It is important to understand that assigning a user to this role gives them the ability to manage all the groups in the tenants across various workloads like Teams, SharePoint, and Yammer in addition to Outlook. Also, the user will be able to manage the various group settings across various admin portals like Microsoft Admin Center and the Azure Portal, as well as workload specific ones like Teams and SharePoint admin centers.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/deletedItems.groups/delete",
@@ -5496,7 +5249,7 @@
     "RoleName": "Guest Inviter",
     "isPrivileged": false,
     "Categories": "identity",
-    "RichDescription":"Users in this role can manage Microsoft Entra B2B guest user invitations when the \"Members can invite\" user setting is set to No. It does not include any other permissions.",
+    "RichDescription": "Users in this role can manage Microsoft Entra B2B guest user invitations when the \"Members can invite\" user setting is set to No. It does not include any other permissions.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/users/appRoleAssignments/read",
@@ -5605,7 +5358,7 @@
     "RoleName": "Guest User",
     "isPrivileged": false,
     "Categories": "identity",
-    "RichDescription":"Default role for guest users. Can read a limited set of directory information.",
+    "RichDescription": "Default role for guest users. Can read a limited set of directory information.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/domains/standard/read",
@@ -5765,7 +5518,7 @@
     "RoleName": "Helpdesk Administrator",
     "isPrivileged": true,
     "Categories": "identity",
-    "RichDescription":"Users with this role can change passwords, invalidate refresh tokens, manage service requests, and monitor service health. Invalidating a refresh token forces the user to sign in again. Helpdesk administrators can reset passwords and invalidate refresh tokens of other users who are non-administrators or assigned the following roles only:\n* Directory Readers\n* Guest Inviter\n* Helpdesk Administrator\n* Message Center Reader\n* Password Administrator\n* Reports Reader",
+    "RichDescription": "Users with this role can change passwords, invalidate refresh tokens, manage service requests, and monitor service health. Invalidating a refresh token forces the user to sign in again. Helpdesk administrators can reset passwords and invalidate refresh tokens of other users who are non-administrators or assigned the following roles only:\n* Directory Readers\n* Guest Inviter\n* Helpdesk Administrator\n* Message Center Reader\n* Password Administrator\n* Reports Reader",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/bitlockerKeys/key/read",
@@ -5832,7 +5585,7 @@
     "RoleName": "Hybrid Identity Administrator",
     "isPrivileged": true,
     "Categories": "identity",
-    "RichDescription":"Users in this role can create, manage, and deploy provisioning configuration setup from Active Directory to Microsoft Entra ID using Cloud Provisioning as well as manage federation settings. Users can also troubleshoot and monitor logs using this role.",
+    "RichDescription": "Users in this role can create, manage, and deploy provisioning configuration setup from Active Directory to Microsoft Entra ID using Cloud Provisioning as well as manage federation settings. Users can also troubleshoot and monitor logs using this role.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/applications/appRoles/update",
@@ -6193,7 +5946,7 @@
     "RoleName": "Identity Governance Administrator",
     "isPrivileged": false,
     "Categories": "collaboration,securityAndCompliance",
-    "RichDescription":"Users with this role can manage Microsoft Entra ID Governance configuration, including access packages, access reviews, catalogs and policies, ensuring access is approved and reviewed and guest users who no longer need access are removed.",
+    "RichDescription": "Users with this role can manage Microsoft Entra ID Governance configuration, including access packages, access reviews, catalogs and policies, ensuring access is approved and reviewed and guest users who no longer need access are removed.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/appRoleAssignedTo/update",
@@ -6266,7 +6019,7 @@
     "RoleName": "Insights Administrator",
     "isPrivileged": false,
     "Categories": "collaboration",
-    "RichDescription":"Users in this role can access the full set of administrative capabilities in the Insights application. This role has the ability to read directory information, monitor service health, file support tickets, and access the Insights admin settings aspects.",
+    "RichDescription": "Users in this role can access the full set of administrative capabilities in the Insights application. This role has the ability to read directory information, monitor service health, file support tickets, and access the Insights admin settings aspects.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.serviceHealth/allEntities/allTasks",
@@ -6315,7 +6068,7 @@
     "RoleName": "Insights Analyst",
     "isPrivileged": false,
     "Categories": "collaboration",
-    "RichDescription":"Users in this role can access various analytical capabilities including query tools within . Users in this role do not have access to product configuration settings, which is the responsibility of the Insights Administrator role.",
+    "RichDescription": "Users in this role can access various analytical capabilities including query tools within . Users in this role do not have access to product configuration settings, which is the responsibility of the Insights Administrator role.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.supportTickets/allEntities/allTasks",
@@ -6346,7 +6099,7 @@
     "RoleName": "Insights Business Leader",
     "isPrivileged": false,
     "Categories": "collaboration",
-    "RichDescription":"Users in this role can access a set of dashboards and insights via the M365 Insights app. This includes full access to all dashboards and presented insights and data exploration functionality. Users in this role do not have access to product configuration settings, which is the responsibility of the Insights administrator role.",
+    "RichDescription": "Users in this role can access a set of dashboards and insights via the M365 Insights app. This includes full access to all dashboards and presented insights and data exploration functionality. Users in this role do not have access to product configuration settings, which is the responsibility of the Insights administrator role.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.insights/programs/allProperties/update",
@@ -6371,7 +6124,7 @@
     "RoleName": "Intune Administrator",
     "isPrivileged": true,
     "Categories": "devices,identity",
-    "RichDescription":"Users with this role have global permissions within Microsoft Intune Online, when the service is present. Additionally, this role contains the ability to manage users and devices in order to associate policy, as well as create and manage groups.",
+    "RichDescription": "Users with this role have global permissions within Microsoft Intune Online, when the service is present. Additionally, this role contains the ability to manage users and devices in order to associate policy, as well as create and manage groups.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/bitlockerKeys/key/read",
@@ -6606,7 +6359,7 @@
     "RoleName": "Kaizala Administrator",
     "isPrivileged": false,
     "Categories": "collaboration",
-    "RichDescription":"Users with this role have global permissions to manage settings within Microsoft Kaizala, when the service is present, as well as the ability to manage support tickets and monitor service health.\nAdditionally, the user can access reports related to adoption & usage of Kaizala by Organization members and business reports generated using the Kaizala actions.",
+    "RichDescription": "Users with this role have global permissions to manage settings within Microsoft Kaizala, when the service is present, as well as the ability to manage support tickets and monitor service health.\nAdditionally, the user can access reports related to adoption & usage of Kaizala by Organization members and business reports generated using the Kaizala actions.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.serviceHealth/allEntities/allTasks",
@@ -6643,7 +6396,7 @@
     "RoleName": "Knowledge Administrator",
     "isPrivileged": false,
     "Categories": "collaboration",
-    "RichDescription":"Users in this role have full access to all knowledge, learning and intelligent features settings in the Microsoft 365 admin center. They have a general understanding of the suite of products, licensing details and responsibility to control access. They also can create and manage content, like topics, acronyms and learning resources. Additionally, these users can create content centers, monitor service health, and create service requests.",
+    "RichDescription": "Users in this role have full access to all knowledge, learning and intelligent features settings in the Microsoft 365 admin center. They have a general understanding of the suite of products, licensing details and responsibility to control access. They also can create and manage content, like topics, acronyms and learning resources. Additionally, these users can create content centers, monitor service health, and create service requests.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/groups.security/basic/update",
@@ -6734,7 +6487,7 @@
     "RoleName": "Knowledge Manager",
     "isPrivileged": false,
     "Categories": "collaboration",
-    "RichDescription":"Users in this role can create and manage content, like topics and acronyms. These users are primarily responsible for the quality and structure of knowledge. This user has full rights to topic management actions to confirm a topic, approve edits, or delete a topic. This role can also manage taxonomies as part of the term store management tool and create content centers.",
+    "RichDescription": "Users in this role can create and manage content, like topics and acronyms. These users are primarily responsible for the quality and structure of knowledge. This user has full rights to topic management actions to confirm a topic, approve edits, or delete a topic. This role can also manage taxonomies as part of the term store management tool and create content centers.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/groups.security/basic/update",
@@ -6813,7 +6566,7 @@
     "RoleName": "License Administrator",
     "isPrivileged": false,
     "Categories": "identity",
-    "RichDescription":"Users in this role can assign licenses, remove licenses and manage group license assignments.",
+    "RichDescription": "Users in this role can assign licenses, remove licenses and manage group license assignments.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/users/usageLocation/update",
@@ -6880,7 +6633,7 @@
     "RoleName": "Lifecycle Workflows Administrator",
     "isPrivileged": true,
     "Categories": "identity",
-    "RichDescription":"Users in this role can create and manage all aspects of workflows and tasks associated with Lifecycle Workflows in Microsoft Entra ID. This role also grants the ability to check the execution of scheduled workflows, launch on-demand workflow runs, and inspect workflow execution log.",
+    "RichDescription": "Users in this role can create and manage all aspects of workflows and tasks associated with Lifecycle Workflows in Microsoft Entra ID. This role also grants the ability to check the execution of scheduled workflows, launch on-demand workflow runs, and inspect workflow execution log.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/lifecycleWorkflows/workflows/allProperties/allTasks",
@@ -6911,7 +6664,7 @@
     "RoleName": "Message Center Privacy Reader",
     "isPrivileged": false,
     "Categories": "readOnly,securityAndCompliance",
-    "RichDescription":"Users in this role can monitor all notifications in the Message Center, including data privacy messages. Message Center Privacy Readers get email notifications including those related to data privacy and they can unsubscribe using Message Center Preferences. Only the Global Administrator and the Message Center Privacy Reader can read data privacy messages. Additionally, this role contains the ability to view groups, domains, and subscriptions. This role has no permission to view, create, or manage service requests.",
+    "RichDescription": "Users in this role can monitor all notifications in the Message Center, including data privacy messages. Message Center Privacy Readers get email notifications including those related to data privacy and they can unsubscribe using Message Center Preferences. Only the Global Administrator and the Message Center Privacy Reader can read data privacy messages. Additionally, this role contains the ability to view groups, domains, and subscriptions. This role has no permission to view, create, or manage service requests.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.messageCenter/messages/read",
@@ -6942,7 +6695,7 @@
     "RoleName": "Message Center Reader",
     "isPrivileged": false,
     "Categories": "readOnly",
-    "RichDescription":"User in this role can read messages and updates for their organization in Office 365 Message Center only.",
+    "RichDescription": "User in this role can read messages and updates for their organization in Office 365 Message Center only.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.messageCenter/messages/read",
@@ -6963,11 +6716,72 @@
     }
   },
   {
+    "RoleId": "1707125e-0aa2-4d4d-8655-a7c786c76a25",
+    "RoleName": "Microsoft 365 Backup Administrator",
+    "isPrivileged": false,
+    "Categories": "collaboration",
+    "RichDescription": "Assign the Microsoft 365 Backup Administrator role to users who need to do the following tasks:\n* Manage all aspects of Microsoft 365 Backup\n* Back up and restore content across SharePoint, OneDrive, and Exchange Online\n* Create, edit, and manage backup configuration policies for SharePoint, OneDrive, and Exchange Online\n* Perform restore operations for SharePoint, OneDrive, and Exchange Online",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.backup/allEntities/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.network/performance/allProperties/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.serviceHealth/allEntities/allTasks",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.supportTickets/allEntities/allTasks",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.usageReports/allEntities/allProperties/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.webPortal/allEntities/standard/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.azure.serviceHealth/allEntities/allTasks",
+        "Category": "Support and Service Health",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.azure.supportTickets/allEntities/allTasks",
+        "Category": "Support and Service Health",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
     "RoleId": "8c8b803f-96e1-4129-9349-20738d9f9652",
     "RoleName": "Microsoft 365 Migration Administrator",
     "isPrivileged": false,
     "Categories": "collaboration",
-    "RichDescription":"Assign the Microsoft 365 Migration Administrator role to users who need to do the following tasks:\n* Use Migration Manager in the Microsoft 365 admin center to manage content migration to Microsoft 365, including Teams, OneDrive for Business, and SharePoint sites, from Google Drive, Dropbox, Box, and Egnyte\n* Select migration sources, create migration inventories (such as Google Drive user lists), schedule and execute migrations, and download reports\n* Create new SharePoint sites if the destination sites don't already exist, create SharePoint lists under the SharePoint admin sites, and create and update items in SharePoint lists\n* Manage migration project settings and migration lifecycle for tasks\n* Manage permission mappings from source to destination\n**Note**: This role doesn't allow you to access Migration Manager from the SharePoint admin center. You can use the SharePoint Administrator role to migrate from network file shares.",
+    "RichDescription": "Assign the Microsoft 365 Migration Administrator role to users who need to do the following tasks:\n* Use Migration Manager in the Microsoft 365 admin center to manage content migration to Microsoft 365, including Teams, OneDrive for Business, and SharePoint sites, from Google Drive, Dropbox, Box, and Egnyte\n* Select migration sources, create migration inventories (such as Google Drive user lists), schedule and execute migrations, and download reports\n* Create new SharePoint sites if the destination sites don't already exist, create SharePoint lists under the SharePoint admin sites, and create and update items in SharePoint lists\n* Manage migration project settings and migration lifecycle for tasks\n* Manage permission mappings from source to destination\n**Note**: This role doesn't allow you to access Migration Manager from the SharePoint admin center. You can use the SharePoint Administrator role to migrate from network file shares.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.migrations/allEntities/allProperties/allTasks",
@@ -6998,7 +6812,7 @@
     "RoleName": "Microsoft Hardware Warranty Administrator",
     "isPrivileged": false,
     "Categories": "other",
-    "RichDescription":"Users with this role can do the following tasks:\n* Create new warranty claims for Microsoft manufactured hardware, like Surface and HoloLens\n* Search and read opened or closed warranty claims\n* Search and read warranty claims by serial number\n* Create, read, update, and delete shipping addresses\n* Read shipping status for open warranty claims\n* Create and manage service requests in the Microsoft 365 admin center\n* Read Message center announcements in the Microsoft 365 admin center",
+    "RichDescription": "Users with this role can do the following tasks:\n* Create new warranty claims for Microsoft manufactured hardware, like Surface and HoloLens\n* Search and read opened or closed warranty claims\n* Search and read warranty claims by serial number\n* Create, read, update, and delete shipping addresses\n* Read shipping status for open warranty claims\n* Create and manage service requests in the Microsoft 365 admin center\n* Read Message center announcements in the Microsoft 365 admin center",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.messageCenter/messages/read",
@@ -7047,7 +6861,7 @@
     "RoleName": "Microsoft Hardware Warranty Specialist",
     "isPrivileged": false,
     "Categories": "other",
-    "RichDescription":"Users with this role can do the following tasks:\n* Create new warranty claims for Microsoft manufactured hardware, like Surface and HoloLens\n* Read warranty claims that they created\n* Read and update existing shipping addresses\n* Read shipping status for open warranty claims they created\n* Create and manage service requests in the Microsoft 365 admin center",
+    "RichDescription": "Users with this role can do the following tasks:\n* Create new warranty claims for Microsoft manufactured hardware, like Surface and HoloLens\n* Read warranty claims that they created\n* Read and update existing shipping addresses\n* Read shipping status for open warranty claims they created\n* Create and manage service requests in the Microsoft 365 admin center",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.supportTickets/allEntities/allTasks",
@@ -7084,7 +6898,7 @@
     "RoleName": "Network Administrator",
     "isPrivileged": false,
     "Categories": "collaboration,securityAndCompliance",
-    "RichDescription":"Users with this role can review network perimeter architecture recommendations from Microsoft that are based on network telemetry from their user locations. Network performance for Office 365 relies on careful enterprise customer network perimeter architecture which is generally user location specific. This role allows for editing of discovered user locations and configuration of network parameters for those locations to facilitate improved telemetry measurements and design recommendations.",
+    "RichDescription": "Users with this role can review network perimeter architecture recommendations from Microsoft that are based on network telemetry from their user locations. Network performance for Office 365 relies on careful enterprise customer network perimeter architecture which is generally user location specific. This role allows for editing of discovered user locations and configuration of network parameters for those locations to facilitate improved telemetry measurements and design recommendations.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.network/locations/allProperties/allTasks",
@@ -7115,7 +6929,7 @@
     "RoleName": "Office Apps Administrator",
     "isPrivileged": false,
     "Categories": "collaboration",
-    "RichDescription":"Users in this role can manage Office 365 apps cloud settings. This includes managing cloud policies, self-service download management and the ability to view Office apps related report. This role additionally grants the ability to manage support tickets, and monitor service health within the main admin center. Users assigned to this role can also manage communication of new features in Office apps.",
+    "RichDescription": "Users in this role can manage Office 365 apps cloud settings. This includes managing cloud policies, self-service download management and the ability to view Office apps related report. This role additionally grants the ability to manage support tickets, and monitor service health within the main admin center. Users assigned to this role can also manage communication of new features in Office apps.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.userCommunication/allEntities/allTasks",
@@ -7170,16 +6984,19 @@
     "RoleName": "On Premises Directory Sync Account",
     "isPrivileged": false,
     "Categories": "identity",
-    "RichDescription":"This role is automatically assigned to the Microsoft Entra Connect Sync Account, and is not intended or supported for any other use.",
+    "RichDescription": "This role is automatically assigned to the Microsoft Entra Connect Sync Account, and is not intended or supported for any other use.",
     "RolePermissions": null,
-    "Classification": null
+    "Classification": {
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
+    }
   },
   {
     "RoleId": "92ed04bf-c94a-4b82-9729-b799a7a4c178",
     "RoleName": "Organizational Branding Administrator",
     "isPrivileged": false,
     "Categories": "identity",
-    "RichDescription":"Assign the Organizational Branding Administrator role to users who need to do the following tasks:\n- Manage all aspects of organizational branding in a tenant\n- Read, create, update, and delete branding themes\n- Manage the default branding theme and all branding localization themes",
+    "RichDescription": "Assign the Organizational Branding Administrator role to users who need to do the following tasks:\n- Manage all aspects of organizational branding in a tenant\n- Read, create, update, and delete branding themes\n- Manage the default branding theme and all branding localization themes",
     "RolePermissions": {
       "AuthorizedResourceAction": "microsoft.directory/loginOrganizationBranding/allProperties/allTasks",
       "Category": "Tenant Management",
@@ -7196,7 +7013,7 @@
     "RoleName": "Organizational Messages Approver",
     "isPrivileged": false,
     "Categories": "collaboration",
-    "RichDescription":"Assign the Organizational Messages Approver role to users who need to do the following tasks:\n* Review, approve, or reject new organizational messages for delivery in the Microsoft 365 admin center before they are sent to users using the Microsoft 365 Organizational Messages platform\n* Read all aspects of organizational messages\n* Read basic properties on all resources in the Microsoft 365 admin center",
+    "RichDescription": "Assign the Organizational Messages Approver role to users who need to do the following tasks:\n* Review, approve, or reject new organizational messages for delivery in the Microsoft 365 admin center before they are sent to users using the Microsoft 365 Organizational Messages platform\n* Read all aspects of organizational messages\n* Read basic properties on all resources in the Microsoft 365 admin center",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.organizationalMessages/allEntities/allProperties/read",
@@ -7227,7 +7044,7 @@
     "RoleName": "Organizational Messages Writer",
     "isPrivileged": false,
     "Categories": "collaboration",
-    "RichDescription":"Users with this role can write, publish, manage, and review the organizational messages for end-users through Microsoft product surfaces.",
+    "RichDescription": "Users with this role can write, publish, manage, and review the organizational messages for end-users through Microsoft product surfaces.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.organizationalMessages/allEntities/allProperties/allTasks",
@@ -7258,7 +7075,7 @@
     "RoleName": "Partner Tier1 Support",
     "isPrivileged": true,
     "Categories": "other",
-    "RichDescription":null,
+    "RichDescription": null,
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/applications/appRoles/update",
@@ -7505,7 +7322,7 @@
     "RoleName": "Partner Tier2 Support",
     "isPrivileged": true,
     "Categories": "other",
-    "RichDescription":null,
+    "RichDescription": null,
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/applications/appRoles/update",
@@ -7788,7 +7605,7 @@
     "RoleName": "Password Administrator",
     "isPrivileged": true,
     "Categories": "identity",
-    "RichDescription":"Users with this role have limited ability to manage passwords. This role does not grant the ability to manage service requests or monitor service health. Password administrators can reset passwords of other users who are non-administrators or members of the following roles only: \n* Directory readers\n* Guest inviter\n* Password administrator",
+    "RichDescription": "Users with this role have limited ability to manage passwords. This role does not grant the ability to manage service requests or monitor service health. Password administrators can reset passwords of other users who are non-administrators or members of the following roles only: \n* Directory readers\n* Guest inviter\n* Password administrator",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/users/password/update",
@@ -7813,7 +7630,7 @@
     "RoleName": "Permissions Management Administrator",
     "isPrivileged": false,
     "Categories": "securityAndCompliance",
-    "RichDescription":"Users with this role can manage all aspects of Entra Permissions Management, when the service is present.",
+    "RichDescription": "Users with this role can manage all aspects of Entra Permissions Management, when the service is present.",
     "RolePermissions": {
       "AuthorizedResourceAction": "microsoft.permissionsManagement/allEntities/allProperties/allTasks",
       "Category": "Cloud Infrastructure Entitlement Management",
@@ -7830,7 +7647,7 @@
     "RoleName": "Power Platform Administrator",
     "isPrivileged": false,
     "Categories": "collaboration",
-    "RichDescription":"Users in this role can create and manage all aspects of environments, PowerApps, Microsoft Flows, and Data Loss Prevent policies. Additionally, users with this role have the ability to manage support tickets and monitor service health.",
+    "RichDescription": "Users in this role can create and manage all aspects of environments, PowerApps, Microsoft Flows, and Data Loss Prevent policies. Additionally, users with this role have the ability to manage support tickets and monitor service health.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.flow/allEntities/allTasks",
@@ -7891,7 +7708,7 @@
     "RoleName": "Printer Administrator",
     "isPrivileged": false,
     "Categories": "devices,identity",
-    "RichDescription":"Users with this role can register printers and manage all aspects of all printer configurations in the Microsoft Universal Print solution, including the Universal Print Connector settings. They can consent to all delegated print permission requests. Printer administrators also have access to print reports.",
+    "RichDescription": "Users with this role can register printers and manage all aspects of all printer configurations in the Microsoft Universal Print solution, including the Universal Print Connector settings. They can consent to all delegated print permission requests. Printer administrators also have access to print reports.",
     "RolePermissions": {
       "AuthorizedResourceAction": "microsoft.azure.print/allEntities/allProperties/allTasks",
       "Category": "Printer Management",
@@ -7908,7 +7725,7 @@
     "RoleName": "Printer Technician",
     "isPrivileged": false,
     "Categories": "devices,identity",
-    "RichDescription":"Users with this role can register printers and manage printer status in the Microsoft Universal Print solution. They can also read all connector information. Key tasks a Printer technician cannot do are set user permissions on printers and sharing printers.",
+    "RichDescription": "Users with this role can register printers and manage printer status in the Microsoft Universal Print solution. They can also read all connector information. Key tasks a Printer technician cannot do are set user permissions on printers and sharing printers.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.azure.print/connectors/allProperties/read",
@@ -7951,7 +7768,7 @@
     "RoleName": "Privileged Authentication Administrator",
     "isPrivileged": true,
     "Categories": "identity",
-    "RichDescription":"Users with this role can view the current authentication method information and set or reset non-password credentials for all users, including global administrators. Privileged Authentication Administrators can force users to re-register against existing non-password credential (e.g. MFA, FIDO) and revoke 'remember MFA on the device', prompting for MFA on the next login of all users.",
+    "RichDescription": "Users with this role can view the current authentication method information and set or reset non-password credentials for all users, including global administrators. Privileged Authentication Administrators can force users to re-register against existing non-password credential (e.g. MFA, FIDO) and revoke 'remember MFA on the device', prompting for MFA on the next login of all users.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/deletedItems.users/restore",
@@ -8084,7 +7901,7 @@
     "RoleName": "Privileged Role Administrator",
     "isPrivileged": true,
     "Categories": "identity",
-    "RichDescription":"Users with this role can manage role assignments in Microsoft Entra ID, as well as within Microsoft Entra Privileged Identity Management. In addition, this role allows management of all aspects of Privileged Identity Management.",
+    "RichDescription": "Users with this role can manage role assignments in Microsoft Entra ID, as well as within Microsoft Entra Privileged Identity Management. In addition, this role allows management of all aspects of Privileged Identity Management.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/oAuth2PermissionGrants/allProperties/allTasks",
@@ -8265,7 +8082,7 @@
     "RoleName": "Reports Reader",
     "isPrivileged": false,
     "Categories": "readOnly,securityAndCompliance",
-    "RichDescription":"Users with this role can view usage reporting data and the reports dashboard in Office 365 admin center and the adoption context pack in Power BI. Additionally, the role provides access to sign-on reports and activity in Microsoft Entra ID and data returned by the Microsoft Graph reporting API. A user assigned to the Reports Reader role can access only relevant usage and adoption metrics. They don't have any admin permissions to configure settings or access the product specific admin centers like Exchange.",
+    "RichDescription": "Users with this role can view usage reporting data and the reports dashboard in Office 365 admin center and the adoption context pack in Power BI. Additionally, the role provides access to sign-on reports and activity in Microsoft Entra ID and data returned by the Microsoft Graph reporting API. A user assigned to the Reports Reader role can access only relevant usage and adoption metrics. They don't have any admin permissions to configure settings or access the product specific admin centers like Exchange.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.network/performance/allProperties/read",
@@ -8320,7 +8137,7 @@
     "RoleName": "Restricted Guest User",
     "isPrivileged": false,
     "Categories": "identity",
-    "RichDescription":null,
+    "RichDescription": null,
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/domains/standard/read",
@@ -8414,7 +8231,7 @@
     "RoleName": "Search Administrator",
     "isPrivileged": false,
     "Categories": "collaboration",
-    "RichDescription":"Users in this role have full access to all Microsoft Search management features in the Microsoft 365 admin center. Additionally, these users can view the message center, monitor service health, and create service requests.",
+    "RichDescription": "Users in this role have full access to all Microsoft Search management features in the Microsoft 365 admin center. Additionally, these users can view the message center, monitor service health, and create service requests.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.messageCenter/messages/read",
@@ -8457,7 +8274,7 @@
     "RoleName": "Search Editor",
     "isPrivileged": false,
     "Categories": "collaboration",
-    "RichDescription":"Users in this role can create, manage, and delete content for Microsoft Search in the Microsoft 365 admin center, including bookmarks, Q&As, and locations.",
+    "RichDescription": "Users in this role can create, manage, and delete content for Microsoft Search in the Microsoft 365 admin center, including bookmarks, Q&As, and locations.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.messageCenter/messages/read",
@@ -8488,7 +8305,7 @@
     "RoleName": "Security Administrator",
     "isPrivileged": true,
     "Categories": "securityAndCompliance",
-    "RichDescription":"Users with this role have all of the read-only permissions of the Security reader role, plus the ability to manage configuration for security-related services: Microsoft Entra ID Protection, Azure Information Protection, Privileged Identity Management, and Office 365 Security & Compliance Center.",
+    "RichDescription": "Users with this role have all of the read-only permissions of the Security reader role, plus the ability to manage configuration for security-related services: Microsoft Entra ID Protection, Azure Information Protection, Privileged Identity Management, and Office 365 Security & Compliance Center.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/policies/update",
@@ -8987,7 +8804,7 @@
     "RoleName": "Security Operator",
     "isPrivileged": true,
     "Categories": "securityAndCompliance",
-    "RichDescription":"Users with this role can manage alerts and have global read-only access on security-related feature, including all information in Microsoft 365 security center, Microsoft Entra ID Protection, Privileged Identity Management.",
+    "RichDescription": "Users with this role can manage alerts and have global read-only access on security-related feature, including all information in Microsoft 365 security center, Microsoft Entra ID Protection, Privileged Identity Management.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/cloudAppSecurity/allProperties/allTasks",
@@ -9078,7 +8895,7 @@
     "RoleName": "Security Reader",
     "isPrivileged": true,
     "Categories": "readOnly,securityAndCompliance",
-    "RichDescription":"Users with this role have global read-only access, including all information in Microsoft Entra ID Protection, Privileged Identity Management, as well as the ability to read Microsoft Entra sign-in reports and audit logs. The role also grants read-only permission in Office 365 Security & Compliance Center",
+    "RichDescription": "Users with this role have global read-only access, including all information in Microsoft Entra ID Protection, Privileged Identity Management, as well as the ability to read Microsoft Entra sign-in reports and audit logs. The role also grants read-only permission in Office 365 Security & Compliance Center",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/bitlockerKeys/key/read",
@@ -9289,7 +9106,7 @@
     "RoleName": "Service Support Administrator",
     "isPrivileged": false,
     "Categories": "other",
-    "RichDescription":"Users with this role can open support requests with Microsoft for Azure and Office 365 services, and view the service dashboard and message center in the Azure portal and Office 365 admin portal.",
+    "RichDescription": "Users with this role can open support requests with Microsoft for Azure and Office 365 services, and view the service dashboard and message center in the Azure portal and Office 365 admin portal.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.network/performance/allProperties/read",
@@ -9338,8 +9155,68 @@
     "RoleName": "SharePoint Administrator",
     "isPrivileged": false,
     "Categories": "collaboration",
-    "RichDescription":"Users with this role have global permissions within Microsoft SharePoint Online, when the service is present, as well as the ability to manage support tickets and monitor service health.",
+    "RichDescription": "Users with this role have global permissions within Microsoft SharePoint Online, when the service is present, as well as the ability to manage support tickets and monitor service health.",
     "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.backup/oneDriveForBusinessProtectionPolicies/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/oneDriveForBusinessRestoreSessions/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/restorePoints/sites/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/restorePoints/userDrives/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/sharePointProtectionPolicies/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/sharePointRestoreSessions/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/siteProtectionUnits/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/siteRestoreArtifacts/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/userDriveProtectionUnits/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/userDriveRestoreArtifacts/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
       {
         "AuthorizedResourceAction": "microsoft.directory/groups.unified/basic/update",
         "Category": "Microsoft 365 Group Management",
@@ -9447,7 +9324,7 @@
     "RoleName": "SharePoint Embedded Administrator",
     "isPrivileged": false,
     "Categories": "collaboration",
-    "RichDescription":"Assign the SharePoint Embedded Administrator role to users who need to do the following tasks:\n* Perform all tasks using PowerShell, Microsoft Graph API, or SharePoint admin center\n* Manage, configure, and maintain SharePoint Embedded containers\n* Enumerate and manage SharePoint Embedded containers\n* Enumerate and manage permissions for SharePoint Embedded containers\n* Manage storage of SharePoint Embedded containers in a tenant\n* Assign security and compliance policies on SharePoint Embedded containers\n* Apply security and compliance policies on SharePoint Embedded containers in a tenant",
+    "RichDescription": "Assign the SharePoint Embedded Administrator role to users who need to do the following tasks:\n* Perform all tasks using PowerShell, Microsoft Graph API, or SharePoint admin center\n* Manage, configure, and maintain SharePoint Embedded containers\n* Enumerate and manage SharePoint Embedded containers\n* Enumerate and manage permissions for SharePoint Embedded containers\n* Manage storage of SharePoint Embedded containers in a tenant\n* Assign security and compliance policies on SharePoint Embedded containers\n* Apply security and compliance policies on SharePoint Embedded containers in a tenant",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.network/performance/allProperties/read",
@@ -9481,9 +9358,9 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.office365.fileStorageContainers/allEntities/allProperties/allTasks",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Microsoft SharePoint",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
       }
     ],
     "Classification": {
@@ -9496,7 +9373,7 @@
     "RoleName": "Skype for Business Administrator",
     "isPrivileged": false,
     "Categories": "collaboration",
-    "RichDescription":"Users with this role have global permissions within Microsoft Skype for Business, when the service is present, as well as manage Skype-specific user attributes in Microsoft Entra ID. Additionally, this role grants the ability to manage support tickets and monitor service health. Note: In Microsoft Graph API, Azure AD Graph API and Azure AD PowerShell, this role is identified as \"Lync Service Administrator\". It is \"Skype for Business Service Administrator\" in the Azure portal.",
+    "RichDescription": "Users with this role have global permissions within Microsoft Skype for Business, when the service is present, as well as manage Skype-specific user attributes in Microsoft Entra ID. Additionally, this role grants the ability to manage support tickets and monitor service health. Note: In Microsoft Graph API, Azure AD Graph API and Azure AD PowerShell, this role is identified as \"Lync Service Administrator\". It is \"Skype for Business Service Administrator\" in the Azure portal.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.serviceHealth/allEntities/allTasks",
@@ -9551,7 +9428,7 @@
     "RoleName": "Teams Administrator",
     "isPrivileged": false,
     "Categories": "collaboration",
-    "RichDescription":"Users in this role can manage all aspects of the Microsoft Teams workload via the Microsoft Teams & Skype for Business admin center and the respective PowerShell modules.  This includes, among other areas, all management tools related to telephony, messaging, meetings, and the teams themselves. This role also grants the ability to manage O365 groups.",
+    "RichDescription": "Users in this role can manage all aspects of the Microsoft Teams workload via the Microsoft Teams & Skype for Business admin center and the respective PowerShell modules.  This includes, among other areas, all management tools related to telephony, messaging, meetings, and the teams themselves. This role also grants the ability to manage O365 groups.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/crossTenantAccessPolicy/allowedCloudEndpoints/update",
@@ -9756,7 +9633,7 @@
     "RoleName": "Teams Communications Administrator",
     "isPrivileged": false,
     "Categories": "collaboration",
-    "RichDescription":"Users in this role can manage aspects of the Microsoft Teams workload related to voice & telephony.  This includes the management tools for telephone number assignment, voice and meeting policies, and full access to the call analytics toolset.",
+    "RichDescription": "Users in this role can manage aspects of the Microsoft Teams workload related to voice & telephony.  This includes the management tools for telephone number assignment, voice and meeting policies, and full access to the call analytics toolset.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.serviceHealth/allEntities/allTasks",
@@ -9835,7 +9712,7 @@
     "RoleName": "Teams Communications Support Engineer",
     "isPrivileged": false,
     "Categories": "collaboration",
-    "RichDescription":"Users in this role can troubleshoot communication issues within Microsoft Teams & Skype for Business using the user call troubleshooting tools in the Microsoft Teams & Skype for Business admin center.  Users in this role can view full call record information for all participants involved.",
+    "RichDescription": "Users in this role can troubleshoot communication issues within Microsoft Teams & Skype for Business using the user call troubleshooting tools in the Microsoft Teams & Skype for Business admin center.  Users in this role can view full call record information for all participants involved.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.serviceHealth/allEntities/allTasks",
@@ -9884,7 +9761,7 @@
     "RoleName": "Teams Communications Support Specialist",
     "isPrivileged": false,
     "Categories": "collaboration",
-    "RichDescription":"Users in this role can troubleshoot communication issues within Microsoft Teams & Skype for Business using the user call troubleshooting tools in the Microsoft Teams & Skype for Business admin center.  Users in this role can only view user details in the call for the specific user they have looked up.",
+    "RichDescription": "Users in this role can troubleshoot communication issues within Microsoft Teams & Skype for Business using the user call troubleshooting tools in the Microsoft Teams & Skype for Business admin center.  Users in this role can only view user details in the call for the specific user they have looked up.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.serviceHealth/allEntities/allTasks",
@@ -9933,7 +9810,7 @@
     "RoleName": "Teams Devices Administrator",
     "isPrivileged": false,
     "Categories": "collaboration",
-    "RichDescription":"Users with this role can manage Teams certified devices from the Teams admin center. It allows for viewing all devices at a single glance or the ability to search and filter devices. They can check details of each device including the account that is signed in, and the make and model of the device. They can change the settings on the device, update the software, and restart the device remotely. This role doesn't grant the permissions to see Teams activity and call quality of the device.",
+    "RichDescription": "Users with this role can manage Teams certified devices from the Teams admin center. It allows for viewing all devices at a single glance or the ability to search and filter devices. They can check details of each device including the account that is signed in, and the make and model of the device. They can change the settings on the device, update the software, and restart the device remotely. This role doesn't grant the permissions to see Teams activity and call quality of the device.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.webPortal/allEntities/standard/read",
@@ -9958,7 +9835,7 @@
     "RoleName": "Teams Telephony Administrator",
     "isPrivileged": false,
     "Categories": "collaboration",
-    "RichDescription":"Assign the Teams Telephony Administrator role to users who need to do the following tasks: \n* Manage voice and telephony, including calling policies, phone number management and assignment, and voice applications\n* Troubleshoot user call quality issues using advanced tools\n* Access, monitor, and troubleshoot tenant call quality and reliability using data exposed in the Call Quality Dashboard (CQD), including the users who are impacted by poor call quality\n* View user profile page\n* Create and manage support tickets in Azure and the Microsoft 365 admin center",
+    "RichDescription": "Assign the Teams Telephony Administrator role to users who need to do the following tasks: \n* Manage voice and telephony, including calling policies, phone number management and assignment, and voice applications\n* Troubleshoot user call quality issues using advanced tools\n* Access, monitor, and troubleshoot tenant call quality and reliability using data exposed in the Call Quality Dashboard (CQD), including the users who are impacted by poor call quality\n* View user profile page\n* Create and manage support tickets in Azure and the Microsoft 365 admin center",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.serviceHealth/allEntities/allTasks",
@@ -10031,7 +9908,7 @@
     "RoleName": "Tenant Creator",
     "isPrivileged": false,
     "Categories": "identity",
-    "RichDescription":"Users in this role can create new Microsoft Entra and Azure AD B2C tenants using the Azure portal. Note that the creators will be assigned the Global Administrator role in the tenants they create.",
+    "RichDescription": "Users in this role can create new Microsoft Entra and Azure AD B2C tenants using the Azure portal. Note that the creators will be assigned the Global Administrator role in the tenants they create.",
     "RolePermissions": {
       "AuthorizedResourceAction": "microsoft.directory/tenantManagement/tenants/create",
       "Category": "Default member",
@@ -10048,7 +9925,7 @@
     "RoleName": "Usage Summary Reports Reader",
     "isPrivileged": false,
     "Categories": "readOnly",
-    "RichDescription":"Users with this role can access tenant level aggregated data and associated insights in Microsoft 365 Admin Center for Usage and Productivity Score but cannot access any user level details or insights. In Microsoft 365 Admin Center for the two reports, we differentiate between tenant level aggregated data and user level details. This role gives an extra layer of protection on individual user identifiable data, which was requested by both customers and legal teams.",
+    "RichDescription": "Users with this role can access tenant level aggregated data and associated insights in Microsoft 365 Admin Center for Usage and Productivity Score but cannot access any user level details or insights. In Microsoft 365 Admin Center for the two reports, we differentiate between tenant level aggregated data and user level details. This role gives an extra layer of protection on individual user identifiable data, which was requested by both customers and legal teams.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.usageReports/allEntities/standard/read",
@@ -10079,7 +9956,7 @@
     "RoleName": "User",
     "isPrivileged": false,
     "Categories": "identity",
-    "RichDescription":"Default role for member users. Can read all and write a limited set of directory information.",
+    "RichDescription": "Default role for member users. Can read all and write a limited set of directory information.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/administrativeUnits/members/read",
@@ -10479,7 +10356,7 @@
     "RoleName": "User Administrator",
     "isPrivileged": true,
     "Categories": "identity",
-    "RichDescription":"Users with this role can create and manage all aspects of users and groups. Additionally, this role includes the ability to manage support tickets and monitors service health. Some restrictions apply. For example, this role does not allow deleting a global administrator. User Account administrators can change passwords for users, Helpdesk administrators, and other User Account administrators only",
+    "RichDescription": "Users with this role can create and manage all aspects of users and groups. Additionally, this role includes the ability to manage support tickets and monitors service health. Some restrictions apply. For example, this role does not allow deleting a global administrator. User Account administrators can change passwords for users, Helpdesk administrators, and other User Account administrators only",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/oAuth2PermissionGrants/allProperties/allTasks",
@@ -10810,7 +10687,7 @@
     "RoleName": "User Experience Success Manager",
     "isPrivileged": false,
     "Categories": "other",
-    "RichDescription":"Users with this role can do the following tasks:\n* Read organizational-level usage reports for Microsoft 365 Apps and services, but not user details\n* View your organization's product feedback, Net Promoter Score (NPS) survey results, and help article views to identify communication and training opportunities\n* View Purchase services and your organization's products and licenses in the Microsoft 365 admin center, but can't make purchases or view user-level data\n* Read message center posts and service health data",
+    "RichDescription": "Users with this role can do the following tasks:\n* Read organizational-level usage reports for Microsoft 365 Apps and services, but not user details\n* View your organization's product feedback, Net Promoter Score (NPS) survey results, and help article views to identify communication and training opportunities\n* View Purchase services and your organization's products and licenses in the Microsoft 365 admin center, but can't make purchases or view user-level data\n* Read message center posts and service health data",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.commerce.billing/purchases/standard/read",
@@ -10865,7 +10742,7 @@
     "RoleName": "Virtual Visits Administrator",
     "isPrivileged": false,
     "Categories": "collaboration",
-    "RichDescription":"Users with this role can read usage reporting data for Virtual visits in the Teams admin center and the Microsoft 365 admin center. For example, usage reporting can show how sending SMS text messages before appointments can reduce the number of people who don't show for appointments. Users with this role can discover and try new virtual visit features available to their organization. Additionally, this role grants access virtual visits Power BI reports.",
+    "RichDescription": "Users with this role can read usage reporting data for Virtual visits in the Teams admin center and the Microsoft 365 admin center. For example, usage reporting can show how sending SMS text messages before appointments can reduce the number of people who don't show for appointments. Users with this role can discover and try new virtual visit features available to their organization. Additionally, this role grants access virtual visits Power BI reports.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.webPortal/allEntities/standard/read",
@@ -10890,7 +10767,7 @@
     "RoleName": "Viva Goals Administrator",
     "isPrivileged": false,
     "Categories": "collaboration",
-    "RichDescription":"Users with this role can do the following tasks:\n* Manage and configure all aspects of the Microsoft Viva Goals application\n* Configure Microsoft Viva Goals admin settings\n* Read Microsoft Entra tenant information\n* Monitor M365 service health\n* Create and manage Microsoft 365 service requests",
+    "RichDescription": "Users with this role can do the following tasks:\n* Manage and configure all aspects of the Microsoft Viva Goals application\n* Configure Microsoft Viva Goals admin settings\n* Read Microsoft Entra tenant information\n* Monitor M365 service health\n* Create and manage Microsoft 365 service requests",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.supportTickets/allEntities/allTasks",
@@ -10921,7 +10798,7 @@
     "RoleName": "Viva Pulse Administrator",
     "isPrivileged": false,
     "Categories": "collaboration",
-    "RichDescription":null,
+    "RichDescription": null,
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.messageCenter/messages/read",
@@ -10970,7 +10847,7 @@
     "RoleName": "Windows 365 Administrator",
     "isPrivileged": false,
     "Categories": "devices",
-    "RichDescription":"Users with this role have global permissions on Windows 365 resources, when the service is present. Additionally, this role contains the ability to manage users and devices in order to associate policy, as well as create and manage groups.",
+    "RichDescription": "Users with this role have global permissions on Windows 365 resources, when the service is present. Additionally, this role contains the ability to manage users and devices in order to associate policy, as well as create and manage groups.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/deletedItems.devices/delete",
@@ -11145,7 +11022,7 @@
     "RoleName": "Windows Update Deployment Administrator",
     "isPrivileged": false,
     "Categories": "collaboration,identity",
-    "RichDescription":"Users in this role can create and manage all aspects of Windows Update deployments through the Windows Update for Business deployment service. The deployment service enables users to define settings for when and how updates are deployed and specify which updates are offered to groups of devices in their tenant. It also allows users to monitor the update progress.",
+    "RichDescription": "Users in this role can create and manage all aspects of Windows Update deployments through the Windows Update for Business deployment service. The deployment service enables users to define settings for when and how updates are deployed and specify which updates are offered to groups of devices in their tenant. It also allows users to monitor the update progress.",
     "RolePermissions": {
       "AuthorizedResourceAction": "microsoft.windows.updatesDeployments/allEntities/allProperties/allTasks",
       "Category": "Global Endpoint Management",
@@ -11162,7 +11039,7 @@
     "RoleName": "Workplace Device Join",
     "isPrivileged": false,
     "Categories": null,
-    "RichDescription":null,
+    "RichDescription": null,
     "RolePermissions": null,
     "Classification": null
   },
@@ -11171,7 +11048,7 @@
     "RoleName": "Yammer Administrator",
     "isPrivileged": false,
     "Categories": "collaboration",
-    "RichDescription":"Users with this role have global permissions within Yammer, when the service is present, as well as the ability to create and manage all Microsoft 365 groups, manage support tickets, and monitor service health.",
+    "RichDescription": "Users with this role have global permissions within Yammer, when the service is present, as well as the ability to create and manage all Microsoft 365 groups, manage support tickets, and monitor service health.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/groups.unified/basic/update",
