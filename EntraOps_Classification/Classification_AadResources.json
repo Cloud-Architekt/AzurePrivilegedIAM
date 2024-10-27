@@ -326,7 +326,7 @@
       },
       {
         "Category": "Microsoft.AzureAD",
-        "Service": "Hybrid Identity Management",
+        "Service": "Hybrid Identity Synchronization",
         "RoleAssignmentScopeName": [
           "/"
         ],

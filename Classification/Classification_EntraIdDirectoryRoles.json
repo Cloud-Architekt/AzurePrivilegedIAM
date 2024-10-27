@@ -2423,7 +2423,7 @@
     "RichDescription": "This role is automatically assigned to the Microsoft Entra Connect service, and is not intended or supported for any other use.",
     "RolePermissions": {
       "AuthorizedResourceAction": "microsoft.directory/onPremisesSynchronization/standard/read",
-      "Category": "Hybrid Identity Management",
+      "Category": "Hybrid Identity Synchronization",
       "EAMTierLevelName": "ControlPlane",
       "EAMTierLevelTagValue": "0"
     },
@@ -3550,13 +3550,13 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/onPremisesSynchronization/basic/update",
-        "Category": "Hybrid Identity Management",
+        "Category": "Hybrid Identity Synchronization",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/onPremisesSynchronization/standard/read",
-        "Category": "Hybrid Identity Management",
+        "Category": "Hybrid Identity Synchronization",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
@@ -5804,13 +5804,13 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/onPremisesSynchronization/basic/update",
-        "Category": "Hybrid Identity Management",
+        "Category": "Hybrid Identity Synchronization",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/onPremisesSynchronization/standard/read",
-        "Category": "Hybrid Identity Management",
+        "Category": "Hybrid Identity Synchronization",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
@@ -7016,7 +7016,7 @@
     "RichDescription": "This role is automatically assigned to the Microsoft Entra Connect Sync Account, and is not intended or supported for any other use.",
     "RolePermissions": {
       "AuthorizedResourceAction": "microsoft.directory/onPremisesSynchronization/standard/read",
-      "Category": "Hybrid Identity Management",
+      "Category": "Hybrid Identity Synchronization",
       "EAMTierLevelName": "ControlPlane",
       "EAMTierLevelTagValue": "0"
     },
