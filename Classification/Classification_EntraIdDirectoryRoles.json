@@ -2421,7 +2421,12 @@
     "isPrivileged": false,
     "Categories": "identity",
     "RichDescription": "This role is automatically assigned to the Microsoft Entra Connect service, and is not intended or supported for any other use.",
-    "RolePermissions": null,
+    "RolePermissions": {
+      "AuthorizedResourceAction": "microsoft.directory/onPremisesSynchronization/standard/read",
+      "Category": "Hybrid Identity Management",
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
+    },
     "Classification": {
       "EAMTierLevelName": "ControlPlane",
       "EAMTierLevelTagValue": "0"
@@ -3540,6 +3545,18 @@
       {
         "AuthorizedResourceAction": "microsoft.directory/groupSettingTemplates/allProperties/allTasks",
         "Category": "Group Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/onPremisesSynchronization/basic/update",
+        "Category": "Hybrid Identity Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/onPremisesSynchronization/standard/read",
+        "Category": "Hybrid Identity Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
@@ -5786,6 +5803,18 @@
         "EAMTierLevelTagValue": "0"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/onPremisesSynchronization/basic/update",
+        "Category": "Hybrid Identity Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/onPremisesSynchronization/standard/read",
+        "Category": "Hybrid Identity Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/applications/policies/update",
         "Category": "Tenant Policy Management",
         "EAMTierLevelName": "ControlPlane",
@@ -6985,7 +7014,12 @@
     "isPrivileged": false,
     "Categories": "identity",
     "RichDescription": "This role is automatically assigned to the Microsoft Entra Connect Sync Account, and is not intended or supported for any other use.",
-    "RolePermissions": null,
+    "RolePermissions": {
+      "AuthorizedResourceAction": "microsoft.directory/onPremisesSynchronization/standard/read",
+      "Category": "Hybrid Identity Management",
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
+    },
     "Classification": {
       "EAMTierLevelName": "ControlPlane",
       "EAMTierLevelTagValue": "0"
