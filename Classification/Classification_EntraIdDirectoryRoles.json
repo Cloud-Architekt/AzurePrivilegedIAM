@@ -1,5 +1,78 @@
 [
   {
+    "RoleId": "d2562ede-74db-457e-a7b6-544e236ebb61",
+    "RoleName": "AI Administrator",
+    "isPrivileged": false,
+    "Categories": "collaboration,identity",
+    "RichDescription": "Assign the AI Administrator role to users who need to do the following tasks:\n* Manage all aspects of Microsoft 365 Copilot\n* Manage AI-related enterprise services, extensibility, and copilot agents from the Integrated apps page in the Microsoft 365 admin center\n* Approve and publish line-of-business copilot agents\n* Allow users to install an app or install an app for users in the organization if the app does not require permission\n* Read and configure Azure and Microsoft 365 service health dashboards\n* View usage reports, adoption insights, and organizational insight\n* Create and manage support tickets in Azure and the Microsoft 365 admin center",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.office365.messageCenter/messages/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.network/performance/allProperties/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.search/content/manage",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.serviceHealth/allEntities/allTasks",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.supportTickets/allEntities/allTasks",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.usageReports/allEntities/allProperties/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.webPortal/allEntities/standard/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.copilot/allEntities/allProperties/allTasks",
+        "Category": "Microsoft Copilot",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.azure.serviceHealth/allEntities/allTasks",
+        "Category": "Support and Service Health",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.azure.supportTickets/allEntities/allTasks",
+        "Category": "Support and Service Health",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
     "RoleId": "9b895d92-2cd3-44c7-9d02-a6ac2d5ea5c3",
     "RoleName": "Application Administrator",
     "isPrivileged": true,
@@ -743,6 +816,48 @@
     "Classification": {
       "EAMTierLevelName": "ManagementPlane",
       "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "ecb2c6bf-0ab6-418e-bd87-7986f8d63bbe",
+    "RoleName": "Attribute Provisioning Administrator",
+    "isPrivileged": true,
+    "Categories": "identity",
+    "RichDescription": null,
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/read",
+        "Category": "Application and Workload Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/update",
+        "Category": "Application and Workload Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
+    }
+  },
+  {
+    "RoleId": "422218e4-db15-4ef9-bbe0-8afb41546d79",
+    "RoleName": "Attribute Provisioning Reader",
+    "isPrivileged": true,
+    "Categories": "identity,readOnly",
+    "RichDescription": null,
+    "RolePermissions": {
+      "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/read",
+      "Category": "Application and Workload Identity",
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
+    },
+    "Classification": {
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
     }
   },
   {
@@ -1657,6 +1772,24 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/devices/enable",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/devices/permissions/update",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/deviceTemplates/owners/read",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/deviceTemplates/owners/update",
         "Category": "Global Endpoint Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
@@ -2988,10 +3121,28 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/contacts/allProperties/read",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/groups/hiddenMembers/read",
         "Category": "Tenant Configuration (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/contacts/memberOf/read",
+        "Category": "Default member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/contacts/standard/read",
+        "Category": "Default member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       }
     ],
     "Classification": {
@@ -3460,6 +3611,24 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/devices/allProperties/allTasks",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/devices/permissions/update",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/deviceTemplates/owners/read",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/deviceTemplates/owners/update",
         "Category": "Global Endpoint Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
@@ -4041,6 +4210,12 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "microsoft.office365.copilot/allEntities/allProperties/allTasks",
+        "Category": "Microsoft Copilot",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.office365.exchange/allEntities/basic/allTasks",
         "Category": "Microsoft Exchange Online",
         "EAMTierLevelName": "ManagementPlane",
@@ -4452,6 +4627,12 @@
       {
         "AuthorizedResourceAction": "microsoft.commerce.billing/purchases/standard/read",
         "Category": "Microsoft 365 Billing Management",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.copilot/allEntities/allProperties/read",
+        "Category": "Microsoft 365 Platform Operations",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -10709,6 +10890,12 @@
         "Category": "External Identities",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/users/lifeCycleInfo/read",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
       }
     ],
     "Classification": {

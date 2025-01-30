@@ -54,6 +54,8 @@
           "microsoft.directory/servicePrincipals/credentials/update",
           "microsoft.directory/servicePrincipals/customSecurityAttributes/read",
           "microsoft.directory/servicePrincipals/customSecurityAttributes/update",
+          "microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/read",
+          "microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/update",
           "microsoft.directory/servicePrincipals/delete",
           "microsoft.directory/servicePrincipals/enable",
           "microsoft.directory/servicePrincipals/getPasswordSingleSignOnCredentials",
@@ -216,15 +218,15 @@
           "microsoft.directory/devices/disable",
           "microsoft.directory/devices/enable",
           "microsoft.directory/devices/extensionAttributeSet1/update",
-          "microsoft.directory/devices/extensionAttributeSet1/update",
-          "microsoft.directory/devices/extensionAttributeSet2/update",
           "microsoft.directory/devices/extensionAttributeSet2/update",
           "microsoft.directory/devices/extensionAttributeSet3/update",
-          "microsoft.directory/devices/extensionAttributeSet3/update",
+          "microsoft.directory/devices/permissions/update",
           "microsoft.directory/devices/registeredOwners/update",
           "microsoft.directory/devices/registeredOwners/update",
           "microsoft.directory/devices/registeredUsers/update",
           "microsoft.directory/devices/registeredUsers/update",
+          "microsoft.directory/deviceTemplates/owners/read",
+          "microsoft.directory/deviceTemplates/owners/update",
           "microsoft.intune/allEntities/allTasks",
           "microsoft.intune/allEntities/read",
           "microsoft.windows.updatesDeployments/allEntities/allProperties/allTasks"
@@ -637,6 +639,7 @@
         ],
         "RoleDefinitionActions": [
           "microsoft.graph.dataConnect/allEntities/allProperties/allTasks",
+          "microsoft.office365.copilot/allEntities/allProperties/read",
           "microsoft.office365.knowledge/contentUnderstanding/allProperties/allTasks",
           "microsoft.office365.knowledge/contentUnderstanding/analytics/allProperties/read",
           "microsoft.office365.knowledge/knowledgeNetwork/allProperties/allTasks",
@@ -665,6 +668,16 @@
           "microsoft.office365.supportTickets/allEntities/allTasks",
           "microsoft.office365.usageReports/allEntities/allProperties/read",
           "microsoft.office365.webPortal/allEntities/standard/read"
+        ]
+      },
+      {
+        "Category": "Microsoft.AzureAD",
+        "Service": "Microsoft Copilot",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "microsoft.office365.copilot/allEntities/allProperties/allTasks"
         ]
       },
       {
