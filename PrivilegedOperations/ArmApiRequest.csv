@@ -1,0 +1,6 @@
+Uri
+Microsoft.Authorization/roleAssignments/write
+Microsoft.Authorization/roleAssignmentScheduleRequests/write
+Microsoft.Authorization/roleEligibilityScheduleRequests/write
+Microsoft.Authorization/roleManagementPolicies/write
+Microsoft.Storage/storageAccounts/listKeys/action
