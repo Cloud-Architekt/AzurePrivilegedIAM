@@ -206,6 +206,10 @@
           "/"
         ],
         "RoleDefinitionActions": [
+          "microsoft.directory/certificateBasedDeviceAuthConfigurations/create",
+          "microsoft.directory/certificateBasedDeviceAuthConfigurations/credentials/update",
+          "microsoft.directory/certificateBasedDeviceAuthConfigurations/delete",
+          "microsoft.directory/certificateBasedDeviceAuthConfigurations/standard/read",
           "microsoft.directory/deletedItems.devices/delete",
           "microsoft.directory/deletedItems.devices/restore",
           "microsoft.directory/deviceManagementPolicies/basic/update",
@@ -223,6 +227,10 @@
           "microsoft.directory/devices/permissions/update",
           "microsoft.directory/devices/registeredOwners/update",
           "microsoft.directory/devices/registeredUsers/update",
+          "microsoft.directory/deviceTemplates/create",
+          "microsoft.directory/deviceTemplates/createDeviceFromTemplate",
+          "microsoft.directory/deviceTemplates/delete",
+          "microsoft.directory/deviceTemplates/deviceInstances/read",
           "microsoft.directory/deviceTemplates/owners/read",
           "microsoft.directory/deviceTemplates/owners/update",
           "microsoft.intune/allEntities/allTasks",
@@ -237,6 +245,10 @@
           <ScopeNamePrivilegedDevices>
         ],
         "RoleDefinitionActions": [
+          "microsoft.directory/certificateBasedDeviceAuthConfigurations/create",
+          "microsoft.directory/certificateBasedDeviceAuthConfigurations/credentials/update",
+          "microsoft.directory/certificateBasedDeviceAuthConfigurations/delete",
+          "microsoft.directory/certificateBasedDeviceAuthConfigurations/standard/read",
           "microsoft.directory/deletedItems.devices/delete",
           "microsoft.directory/deletedItems.devices/restore",
           "microsoft.directory/deviceManagementPolicies/basic/update",
@@ -359,8 +371,7 @@
           "/"
         ],
         "RoleDefinitionActions": [
-          "microsoft.directory/onPremisesSynchronization/basic/update",
-          "microsoft.directory/onPremisesSynchronization/standard/read"
+          "microsoft.directory/onPremisesSynchronization/basic/update"
         ]
       },
       {
@@ -692,6 +703,10 @@
           "microsoft.directory/devices/registeredUsers/update",
           "microsoft.directory/devices/registeredUsers/update",
           "microsoft.directory/devices/registeredUsers/update",
+          "microsoft.directory/deviceTemplates/create",
+          "microsoft.directory/deviceTemplates/createDeviceFromTemplate",
+          "microsoft.directory/deviceTemplates/delete",
+          "microsoft.directory/deviceTemplates/deviceInstances/read",
           "microsoft.directory/deviceTemplates/owners/read",
           "microsoft.directory/deviceTemplates/owners/update",
           "microsoft.intune/allEntities/allTasks",
@@ -888,6 +903,7 @@
           "microsoft.office365.network/locations/allProperties/allTasks",
           "microsoft.office365.organizationalMessages/allEntities/allProperties/allTasks",
           "microsoft.office365.organizationalMessages/allEntities/allProperties/read",
+          "microsoft.office365.organizationalMessages/allEntities/allProperties/update",
           "microsoft.office365.usageReports/allEntities/standard/read",
           "microsoft.office365.userCommunication/allEntities/allTasks"
         ]
@@ -950,13 +966,12 @@
       },
       {
         "Category": "Microsoft.AzureAD",
-        "Service": "Microsoft SharePoint",
+        "Service": "Microsoft People",
         "RoleAssignmentScopeName": [
           "/"
         ],
         "RoleDefinitionActions": [
-          "microsoft.office365.sharePoint/allEntities/allTasks",
-          "microsoft.office365.fileStorageContainers/allEntities/allProperties/allTasks"
+          "microsoft.peopleAdmin/organization/allProperties/update"
         ]
       },
       {
@@ -986,6 +1001,7 @@
           "microsoft.directory/identityProtection/allProperties/read",
           "microsoft.directory/provisioningLogs/allProperties/read",
           "microsoft.directory/signInReports/allProperties/read",
+          "microsoft.networkAccess/trafficLogs/standard/read",
           "microsoft.office365.complianceManager/allEntities/allTasks",
           "microsoft.office365.lockbox/allEntities/allTasks",
           "microsoft.office365.protectionCenter/allEntities/allProperties/read",
@@ -998,6 +1014,17 @@
           "microsoft.office365.protectionCenter/sensitivityLabels/allProperties/read",
           "microsoft.office365.securityComplianceCenter/allEntities/read",
           "microsoft.windows.updatesDeployments/allEntities/allProperties/read"
+        ]
+      },
+      {
+        "Category": "Microsoft.AzureAD",
+        "Service": "Microsoft SharePoint",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "microsoft.office365.sharePoint/allEntities/allTasks",
+          "microsoft.office365.fileStorageContainers/allEntities/allProperties/allTasks"
         ]
       },
       {
@@ -1117,6 +1144,7 @@
           "microsoft.directory/multiTenantOrganization/tenants/organizationDetails/read",
           "microsoft.directory/namedLocations/standard/read",
           "microsoft.directory/oAuth2PermissionGrants/allProperties/read",
+          "microsoft.directory/onPremisesSynchronization/standard/read",
           "microsoft.directory/organization/allProperties/read",
           "microsoft.directory/organization/strongAuthentication/read",
           "microsoft.directory/organization/trustedCAsForPasswordlessAuth/read",
@@ -1172,6 +1200,8 @@
           "microsoft.insights/allEntities/allProperties/allTasks",
           "microsoft.insights/programs/allProperties/update",
           "microsoft.insights/queries/allProperties/allTasks",
+          "microsoft.viva.glint/allEntities/allProperties/allTasks",
+          "microsoft.viva.glint/allEntities/allProperties/read",
           "microsoft.viva.goals/allEntities/allProperties/allTasks",
           "microsoft.viva.goals/allEntities/allProperties/read",
           "microsoft.viva.pulse/allEntities/allProperties/allTasks",
@@ -1270,7 +1300,10 @@
           "microsoft.directory/users/registeredDevices/read",
           "microsoft.directory/users/scopedRoleMemberOf/read",
           "microsoft.directory/users/sponsors/read",
-          "microsoft.directory/users/standard/read"
+          "microsoft.directory/users/standard/read",
+          "microsoft.people/users/photo/read",
+          "microsoft.people/users/photo/update",
+          "microsoft.peopleAdmin/organization/allProperties/read"
         ]
       },
       {

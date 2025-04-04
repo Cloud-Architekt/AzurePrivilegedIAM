@@ -2556,9 +2556,9 @@
     "RichDescription": "This role is automatically assigned to the Microsoft Entra Connect service, and is not intended or supported for any other use.",
     "RolePermissions": {
       "AuthorizedResourceAction": "microsoft.directory/onPremisesSynchronization/standard/read",
-      "Category": "Hybrid Identity Synchronization",
-      "EAMTierLevelName": "ControlPlane",
-      "EAMTierLevelTagValue": "0"
+      "Category": "Tenant Configuration (Reader)",
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
     },
     "Classification": {
       "EAMTierLevelName": "ControlPlane",
@@ -3128,6 +3128,12 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/groups/hiddenMembers/read",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/onPremisesSynchronization/standard/read",
         "Category": "Tenant Configuration (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
@@ -3724,12 +3730,6 @@
         "EAMTierLevelTagValue": "0"
       },
       {
-        "AuthorizedResourceAction": "microsoft.directory/onPremisesSynchronization/standard/read",
-        "Category": "Hybrid Identity Synchronization",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
         "AuthorizedResourceAction": "microsoft.azure.advancedThreatProtection/allEntities/allTasks",
         "Category": "Identity Threat Detection and Response",
         "EAMTierLevelName": "ControlPlane",
@@ -4228,6 +4228,12 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "microsoft.peopleAdmin/organization/allProperties/update",
+        "Category": "Microsoft People",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.office365.fileStorageContainers/allEntities/allProperties/allTasks",
         "Category": "Microsoft SharePoint",
         "EAMTierLevelName": "ManagementPlane",
@@ -4241,6 +4247,12 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.insights/allEntities/allProperties/allTasks",
+        "Category": "Microsoft Viva",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.viva.glint/allEntities/allProperties/allTasks",
         "Category": "Microsoft Viva",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
@@ -4271,6 +4283,12 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/signInReports/allProperties/read",
+        "Category": "Security and Compliance",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.networkAccess/trafficLogs/standard/read",
         "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
@@ -4432,6 +4450,12 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/onPremisesSynchronization/standard/read",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/pendingExternalUserProfiles/basic/update",
         "Category": "Tenant Configuration (Reader)",
         "EAMTierLevelName": "ManagementPlane",
@@ -4558,6 +4582,24 @@
         "EAMTierLevelTagValue": "2"
       },
       {
+        "AuthorizedResourceAction": "microsoft.people/users/photo/read",
+        "Category": "Default member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.people/users/photo/update",
+        "Category": "Default member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.peopleAdmin/organization/allProperties/read",
+        "Category": "Default member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/multiTenantOrganization/standard/read",
         "Category": [
           "Default member",
@@ -4669,6 +4711,12 @@
       {
         "AuthorizedResourceAction": "microsoft.office365.webPortal/allEntities/standard/read",
         "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.viva.glint/allEntities/allProperties/read",
+        "Category": "Microsoft Viva",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -4962,6 +5010,12 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/oAuth2PermissionGrants/allProperties/read",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/onPremisesSynchronization/standard/read",
         "Category": "Tenant Configuration (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
@@ -5295,6 +5349,23 @@
     "Classification": {
       "EAMTierLevelName": "ControlPlane",
       "EAMTierLevelTagValue": "0"
+    }
+  },
+  {
+    "RoleId": "843318fb-79a6-4168-9e6f-aa9a07481cc4",
+    "RoleName": "Global Secure Access Log Reader",
+    "isPrivileged": false,
+    "Categories": "identity,readOnly",
+    "RichDescription": "Assign the Global Secure Access Log Reader role to users who need to do the following:\n* Read network traffic logs in Microsoft Entra Internet Access and Microsoft Entra Private Access for analysis by designated security personnel\n* View log details such as session, connection, and transaction\n* Filter logs based on criteria such as IP address and domain",
+    "RolePermissions": {
+      "AuthorizedResourceAction": "microsoft.networkAccess/trafficLogs/standard/read",
+      "Category": "Security and Compliance",
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    },
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
     }
   },
   {
@@ -5990,12 +6061,6 @@
         "EAMTierLevelTagValue": "0"
       },
       {
-        "AuthorizedResourceAction": "microsoft.directory/onPremisesSynchronization/standard/read",
-        "Category": "Hybrid Identity Synchronization",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
         "AuthorizedResourceAction": "microsoft.directory/applications/policies/update",
         "Category": "Tenant Policy Management",
         "EAMTierLevelName": "ControlPlane",
@@ -6135,6 +6200,12 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/domains/federationConfiguration/standard/read",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/onPremisesSynchronization/standard/read",
         "Category": "Tenant Configuration (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
@@ -6557,6 +6628,79 @@
         "Category": "User Virtual Endpoint Management",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
+    }
+  },
+  {
+    "RoleId": "2ea5ce4c-b2d8-4668-bd81-3680bd2d227a",
+    "RoleName": "IoT Device Administrator",
+    "isPrivileged": false,
+    "Categories": "devices,identity",
+    "RichDescription": "Assign the IoT Device Administrator role to users who need to do the following tasks:\n* Provision new IoT devices using device templates\n* Manage the lifecycle of IoT devices\n* Configure certificates used for IoT device authentication\n* Manage the lifecycle of IoT device templates",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.directory/certificateBasedDeviceAuthConfigurations/create",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/certificateBasedDeviceAuthConfigurations/credentials/update",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/certificateBasedDeviceAuthConfigurations/delete",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/certificateBasedDeviceAuthConfigurations/standard/read",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/deviceTemplates/create",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/deviceTemplates/createDeviceFromTemplate",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/deviceTemplates/delete",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/deviceTemplates/deviceInstances/read",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/deviceTemplates/owners/read",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/deviceTemplates/owners/update",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       }
     ],
     "Classification": {
@@ -7197,9 +7341,9 @@
     "RichDescription": "This role is automatically assigned to the Microsoft Entra Connect Sync Account, and is not intended or supported for any other use.",
     "RolePermissions": {
       "AuthorizedResourceAction": "microsoft.directory/onPremisesSynchronization/standard/read",
-      "Category": "Hybrid Identity Synchronization",
-      "EAMTierLevelName": "ControlPlane",
-      "EAMTierLevelTagValue": "0"
+      "Category": "Tenant Configuration (Reader)",
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
     },
     "Classification": {
       "EAMTierLevelName": "ControlPlane",
@@ -7237,16 +7381,16 @@
         "EAMTierLevelTagValue": "1"
       },
       {
-        "AuthorizedResourceAction": "microsoft.office365.webPortal/allEntities/standard/read",
-        "Category": "Microsoft 365 Support Operations",
+        "AuthorizedResourceAction": "microsoft.office365.organizationalMessages/allEntities/allProperties/update",
+        "Category": "Microsoft 365 Platform Operations",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
-        "AuthorizedResourceAction": "microsoft.office365.organizationalMessages/allEntities/allProperties/update",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "AuthorizedResourceAction": "microsoft.office365.webPortal/allEntities/standard/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
       }
     ],
     "Classification": {
@@ -7838,6 +7982,43 @@
     "Classification": {
       "EAMTierLevelName": "ControlPlane",
       "EAMTierLevelTagValue": "0"
+    }
+  },
+  {
+    "RoleId": "024906de-61e5-49c8-8572-40335f1e0e10",
+    "RoleName": "People Administrator",
+    "isPrivileged": false,
+    "Categories": "identity",
+    "RichDescription": "Assign the People Administrator role to users who need to do the following tasks:\n- Update profile photos for all users including administrators\n- Update people settings for all users, such as pronouns, name pronunciation, and profile card settings",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.peopleAdmin/organization/allProperties/update",
+        "Category": "Microsoft People",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.people/users/photo/read",
+        "Category": "Default member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.people/users/photo/update",
+        "Category": "Default member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.peopleAdmin/organization/allProperties/read",
+        "Category": "Default member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
     }
   },
   {
@@ -10880,6 +11061,12 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/onPremisesSynchronization/standard/read",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/policies/standard/read",
         "Category": "Default member",
         "EAMTierLevelName": "UserAccess",
@@ -10974,6 +11161,55 @@
       {
         "AuthorizedResourceAction": "microsoft.virtualVisits/allEntities/allProperties/allTasks",
         "Category": "Virtual Visits",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "0ec3f692-38d6-4d14-9e69-0377ca7797ad",
+    "RoleName": "Viva Glint Tenant Administrator",
+    "isPrivileged": false,
+    "Categories": "collaboration",
+    "RichDescription": "Assign the Viva Glint Tenant Administrator role to users who need to do the following tasks:\n- Read and configure Viva Glint settings in the Microsoft 365 admin center\n- Assign or remove Viva Glint service admins\n- Create and manage Viva Feature Access Management policies\n- View and manage Viva Glint experiences (if applicable)\n- Create and manage Azure support tickets",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.office365.messageCenter/messages/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.usageReports/allEntities/allProperties/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.webPortal/allEntities/standard/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.viva.glint/allEntities/allProperties/allTasks",
+        "Category": "Microsoft Viva",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.azure.serviceHealth/allEntities/allTasks",
+        "Category": "Support and Service Health",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.azure.supportTickets/allEntities/allTasks",
+        "Category": "Support and Service Health",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       }

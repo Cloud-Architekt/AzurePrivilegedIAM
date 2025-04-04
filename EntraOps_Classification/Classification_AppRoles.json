@@ -180,10 +180,13 @@
           "CustomDetection.ReadWrite.All",
           "Library.Manage",
           "Machine.LiveResponse",
+          "PartnerSecurity.ReadWrite.All",
           "SecurityActions.ReadWrite.All",
           "SecurityAlert.ReadWrite.All",
           "SecurityAnalyzedMessage.ReadWrite.All",
           "SecurityEvents.ReadWrite.All",
+          "SecurityIdentitiesHealth.Read.All",
+          "SecurityIdentitiesSensors.Read.All",          
           "SecurityIncident.ReadWrite.All",
           "ThreatIndicators.ReadWrite.OwnedBy",
           "ThreatSubmission.ReadWrite.All",
@@ -200,8 +203,12 @@
           "/"
         ],
         "RoleDefinitionActions": [
+          "LifecycleWorkflows-CustomExt.ReadWrite.All",
           "LifecycleWorkflows.ReadWrite.All",
+          "LifecycleWorkflows-Workflow.Activate",
+          "LifecycleWorkflows-Workflow.ReadWrite.All",
           "SynchronizationData-User.Upload",
+          "SynchronizationData-User.Upload.OwnedBy",
           "User-LifeCycleInfo.ReadWrite.All",
           "User-ConvertToInternal.ReadWrite.All",
           "User.EnableDisableAccount.All",
@@ -210,6 +217,7 @@
           "User.ManageIdentities.All",
           "User.ReadWrite",
           "User.ReadWrite.All",
+          "User.ReadWrite.CrossCloud",
           "User-Mail.ReadWrite.All",
           "User-PasswordProfile.ReadWrite.All",
           "User-Phone.ReadWrite.All",
@@ -241,9 +249,13 @@
         "RoleDefinitionActions": [
           "IdentityProvider.ReadWrite.All",
           "IdentityRiskEvent.ReadWrite.All",
+          "RiskPreventionProviders.ReadWrite.All",
           "IdentityRiskyServicePrincipal.ReadWrite.All",
           "IdentityRiskyUser.ReadWrite.All",
-          "SecurityIdentitiesUserActions.ReadWrite.All"
+          "SecurityIdentitiesHealth.ReadWrite.All",
+          "SecurityIdentitiesSensors.ReadWrite.All",
+          "SecurityIdentitiesUserActions.ReadWrite.All",
+          "User.RevokeSessions.All"
         ]
       },
       {
@@ -321,6 +333,7 @@
           "PrivilegedEligibilitySchedule.Remove.AzureADGroup",
           "RoleAssignmentSchedule.ReadWrite.Directory",
           "RoleEligibilitySchedule.ReadWrite.Directory",
+          "RoleEligibilitySchedule.Remove.Directory",
           "RoleManagement.ReadWrite.CloudPC",
           "RoleManagement.ReadWrite.Directory",
           "RoleManagement.ReadWrite.Exchange",
@@ -356,6 +369,7 @@
           "AdministrativeUnit.ReadWrite.All",
           "Agreement.ReadWrite.All",
           "BillingConfiguration.ReadWrite.All",
+          "ConfigurationMonitoring.ReadWrite.All",
           "DelegatedAdminRelationship.ReadWrite.All",
           "Directory.ReadWrite.All",
           "Directory.Write.Restricted",
@@ -490,6 +504,18 @@
       },
       {
         "Category": "Microsoft.Graph",
+        "Service": "Industry data",
+        "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+        "ResourceScope": "Application",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "IndustryData-Run.Start"
+        ]
+      },
+      {
+        "Category": "Microsoft.Graph",
         "Service": "Microsoft 365 Platform Management",
         "ResourceAppId": "00000003-0000-0000-c000-000000000000",
         "ResourceScope": "Application",
@@ -592,6 +618,7 @@
           "Sites.Manage.All",
           "Sites.Read.All",
           "Sites.ReadWrite.All",
+          "Sites.Archive.All",
           "Sites.Selected",
           "TermStore.Read.All",
           "TermStore.ReadWrite.All"
@@ -608,6 +635,8 @@
         "RoleDefinitionActions": [
           "AppCatalog.Read.All",
           "AppCatalog.ReadWrite.All",
+          "CallDelegation.Read.All",
+          "CallDelegation.ReadWrite.All",
           "CallEvents.Read.All",
           "CallEvents-Emergency.Read.All",
           "CallRecord-PstnCalls.Read.All",
@@ -696,6 +725,8 @@
           "TeamsTab.ReadWriteSelfForChat.All",
           "TeamsTab.ReadWriteSelfForTeam.All",
           "TeamsTab.ReadWriteSelfForUser.All",
+          "TeamsTelephoneNumber.ReadWrite.All",
+          "TeamsTelephoneNumber.Read.All",
           "TeamTemplates.Read.All",
           "Teamwork.Migrate.All",
           "Teamwork.Read.All",
@@ -718,7 +749,10 @@
         ],
         "RoleDefinitionActions": [
           "Community.Read.All",
-          "Community.ReadWrite.All"
+          "Community.ReadWrite.All",
+          "EngagementConversation.Migration.All",
+          "EngagementRole.Read.All",
+          "EngagementRole.ReadWrite.All"
         ]
       },
       {
@@ -817,6 +851,7 @@
           "Agreement.Read.All",
           "AgreementAcceptance.Read.All",
           "ConsentRequest.Read.All",
+          "ConfigurationMonitoring.Read.All",
           "CrossTenantInformation.ReadBasic.All",
           "CrossTenantUserProfileSharing.Read.All",
           "CustomAuthenticationExtension.Read.All",
@@ -826,7 +861,11 @@
           "EntitlementManagement.Read.All",
           "ExternalUserProfile.Read.All",
           "IdentityUserFlow.Read.All",
+          "LifecycleWorkflows-CustomExt.Read.All",
           "LifecycleWorkflows.Read.All",
+          "LifecycleWorkflows-Reports.Read.All",
+          "LifecycleWorkflows-Workflow.Read.All",
+          "LifecycleWorkflows-Workflow.ReadBasic.All",
           "NetworkAccess.Read.All",
           "NetworkAccessBranch.Read.All",
           "NetworkAccessPolicy.Read.All",
@@ -875,6 +914,7 @@
           "Domain.Read.All",
           "Group.Read.All",
           "GroupMember.Read.All",
+          "LicenseAssignment.Read.All",
           "Organization.Read.All",
           "RoleManagement.Read.All",
           "RoleManagement.Read.CloudPC",
