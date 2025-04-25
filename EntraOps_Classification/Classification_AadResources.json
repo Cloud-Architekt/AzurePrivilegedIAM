@@ -305,6 +305,7 @@
         "RoleDefinitionActions": [
           "microsoft.directory/deletedItems.groups/delete",
           "microsoft.directory/deletedItems.groups/restore",
+          "microsoft.directory/groups.security/assignedLabels/update",
           "microsoft.directory/groups.security/basic/update",
           "microsoft.directory/groups.security/classification/update",
           "microsoft.directory/groups.security/create",
@@ -313,6 +314,7 @@
           "microsoft.directory/groups.security/members/update",
           "microsoft.directory/groups.security/owners/update",
           "microsoft.directory/groups.security/visibility/update",
+          "microsoft.directory/groups/assignedLabels/update",
           "microsoft.directory/groups/basic/update",
           "microsoft.directory/groups/basic/update",
           "microsoft.directory/groups/classification/update",
@@ -633,6 +635,7 @@
           "microsoft.directory/groups.unified/basic/update",
           "microsoft.directory/groups.unified/create",
           "microsoft.directory/groups.unified/delete",
+          "microsoft.directory/groups.unified/assignedLabels/update",
           "microsoft.directory/groups.unified/members/update",
           "microsoft.directory/groups.unified/owners/update",
           "microsoft.directory/groups.unified/restore"

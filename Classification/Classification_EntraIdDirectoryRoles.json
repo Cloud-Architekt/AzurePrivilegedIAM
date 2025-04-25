@@ -2669,6 +2669,12 @@
         "EAMTierLevelTagValue": "0"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/groups/assignedLabels/update",
+        "Category": "Group Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/groups/basic/update",
         "Category": "Group Management",
         "EAMTierLevelName": "ControlPlane",
@@ -3033,6 +3039,12 @@
       {
         "AuthorizedResourceAction": "microsoft.backup/userMailboxRestoreArtifacts/allProperties/allTasks",
         "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/groups.unified/assignedLabels/update",
+        "Category": "Microsoft 365 Group Management",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -5388,6 +5400,12 @@
         "EAMTierLevelTagValue": "0"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/groups/assignedLabels/update",
+        "Category": "Group Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/groups/basic/update",
         "Category": "Group Management",
         "EAMTierLevelName": "ControlPlane",
@@ -6516,6 +6534,12 @@
         "EAMTierLevelTagValue": "0"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/groups.security/assignedLabels/update",
+        "Category": "Group Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/groups.security/basic/update",
         "Category": "Group Management",
         "EAMTierLevelName": "ControlPlane",
@@ -7623,6 +7647,12 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/groups.unified/assignedLabels/update",
+        "Category": "Microsoft 365 Group Management",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.office365.serviceHealth/allEntities/allTasks",
         "Category": "Microsoft 365 Support Operations",
         "EAMTierLevelName": "ManagementPlane",
@@ -7896,6 +7926,12 @@
       {
         "AuthorizedResourceAction": "microsoft.directory/applications/basic/update",
         "Category": "Application and Workload Identity",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/groups.unified/assignedLabels/update",
+        "Category": "Microsoft 365 Group Management",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -9614,6 +9650,12 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/groups.unified/assignedLabels/update",
+        "Category": "Microsoft 365 Group Management",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/groups.unified/basic/update",
         "Category": "Microsoft 365 Group Management",
         "EAMTierLevelName": "ManagementPlane",
@@ -9847,6 +9889,12 @@
       {
         "AuthorizedResourceAction": "microsoft.directory/crossTenantAccessPolicy/partners/crossCloudMeetings/update",
         "Category": "Cross Tenant Partner Management",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/groups.unified/assignedLabels/update",
+        "Category": "Microsoft 365 Group Management",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -11379,6 +11427,12 @@
         "EAMTierLevelTagValue": "0"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/groups.security/assignedLabels/update",
+        "Category": "Group Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/groups.security/basic/update",
         "Category": "Group Management",
         "EAMTierLevelName": "ControlPlane",
@@ -11507,6 +11561,12 @@
     "Categories": "collaboration",
     "RichDescription": "Users with this role have global permissions within Yammer, when the service is present, as well as the ability to create and manage all Microsoft 365 groups, manage support tickets, and monitor service health.",
     "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.directory/groups.unified/assignedLabels/update",
+        "Category": "Microsoft 365 Group Management",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
       {
         "AuthorizedResourceAction": "microsoft.directory/groups.unified/basic/update",
         "Category": "Microsoft 365 Group Management",

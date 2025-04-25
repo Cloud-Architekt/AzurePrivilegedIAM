@@ -4383,6 +4383,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "f10b94b9-37d1-4c88-8b7e-bf75a1152d39",
+    "AppRoleDisplayName": "WorkforceIntegration.Read.All",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "202bf709-e8e6-478e-bcfd-5d63c50b68e3",
     "AppRoleDisplayName": "WorkforceIntegration.ReadWrite.All",
     "Category": "Microsoft Teams",
