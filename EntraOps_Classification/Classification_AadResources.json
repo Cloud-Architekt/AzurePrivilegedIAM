@@ -303,6 +303,9 @@
           "/*"
         ],
         "RoleDefinitionActions": [
+          "microsoft.directory/bulkJobs.groups/basic/update",
+          "microsoft.directory/bulkJobs.groups/create",
+          "microsoft.directory/bulkJobs.groups/standard/read",
           "microsoft.directory/deletedItems.groups/delete",
           "microsoft.directory/deletedItems.groups/restore",
           "microsoft.directory/groups.security/assignedLabels/update",
@@ -446,6 +449,8 @@
         "RoleDefinitionActions": [
           "microsoft.directory/administrativeUnits/allProperties/allTasks",
           "microsoft.directory/authorizationPolicy/allProperties/allTasks",
+          "microsoft.directory/bulkJobs/basic/update",
+          "microsoft.directory/bulkJobs/create",
           "microsoft.directory/deletedItems/delete",
           "microsoft.directory/deletedItems/restore",
           "microsoft.directory/domains/allProperties/allTasks",
@@ -862,6 +867,7 @@
           "microsoft.directory/applications/applicationProxy/read",
           "microsoft.directory/applications/synchronization/standard/read",
           "microsoft.directory/azureManagedIdentities/customSecurityAttributes/read",
+          "microsoft.directory/bulkJobs/standard/read",
           "microsoft.directory/cloudAppSecurity/allProperties/read",
           "microsoft.directory/conditionalAccessPolicies/allProperties/read",
           "microsoft.directory/conditionalAccessPolicies/owners/read",

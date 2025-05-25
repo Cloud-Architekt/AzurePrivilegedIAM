@@ -73,7 +73,8 @@
           "CrossTenantUserProfileSharing.ReadWrite",
           "CrossTenantUserProfileSharing.ReadWrite.All",
           "Policy.ReadWrite.ConditionalAccess",
-          "Policy.ReadWrite.CrossTenantAccess"
+          "Policy.ReadWrite.CrossTenantAccess",
+          "Policy.ReadWrite.CrossTenantCapability"
         ]
       },
       {
@@ -176,7 +177,9 @@
           "/"
         ],
         "RoleDefinitionActions": [
+          "AuditActivity.Write",
           "AttackSimulation.ReadWrite.All",
+          "ContentActivity.Write",
           "CustomDetection.ReadWrite.All",
           "Library.Manage",
           "Machine.LiveResponse",
@@ -186,7 +189,7 @@
           "SecurityAnalyzedMessage.ReadWrite.All",
           "SecurityEvents.ReadWrite.All",
           "SecurityIdentitiesHealth.Read.All",
-          "SecurityIdentitiesSensors.Read.All",          
+          "SecurityIdentitiesSensors.Read.All",
           "SecurityIncident.ReadWrite.All",
           "ThreatIndicators.ReadWrite.OwnedBy",
           "ThreatSubmission.ReadWrite.All",
@@ -577,9 +580,16 @@
           "/"
         ],
         "RoleDefinitionActions": [
+          "Content.Process.All",
+          "Content.Process.User",
           "InformationProtectionContent.Sign.All",
           "InformationProtectionContent.Write.All",
+          "ProtectionScopes.Compute.All",
+          "ProtectionScopes.Compute.User",
           "RecordsManagement.Read.All",
+          "SensitivityLabel.Evaluate",
+          "SensitivityLabel.Read",
+          "SensitivityLabels.Read.All",
           "RecordsManagement.ReadWrite.All"
         ]
       },
@@ -752,7 +762,8 @@
           "Community.ReadWrite.All",
           "EngagementConversation.Migration.All",
           "EngagementRole.Read.All",
-          "EngagementRole.ReadWrite.All"
+          "EngagementRole.ReadWrite.All",
+          "Storyline.ReadWrite.All"
         ]
       },
       {
@@ -785,6 +796,7 @@
         ],
         "RoleDefinitionActions": [
           "AttackSimulation.Read.All",
+          "AuditActivity.Read",
           "AuditLog.Read.All",
           "AuditLogsQuery-CRM.Read.All",
           "AuditLogsQuery-Endpoint.Read.All",
@@ -794,6 +806,7 @@
           "AuditLogsQuery-SharePoint.Read.All",
           "AuditLogsQuery.Read.All",
           "CloudApp-Discovery.Read.All",
+          "ContentActivity.Read",
           "CustomDetection.Read.All",
           "CustomSecAttributeAuditLogs.Read.All",
           "eDiscovery.Read.All",
@@ -804,6 +817,7 @@
           "IdentityRiskyUser.Read.All",
           "InformationProtectionConfig.Read.All",
           "InformationProtectionPolicy.Read.All",
+          "ProvisioningLog.Read.All",
           "Reports.Read.All",
           "ReportSettings.Read.All",
           "Score.Read.All",

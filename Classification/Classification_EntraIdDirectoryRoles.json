@@ -3904,6 +3904,24 @@
         "EAMTierLevelTagValue": "0"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/bulkJobs/basic/update",
+        "Category": "Tenant Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/bulkJobs/create",
+        "Category": "Tenant Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/bulkJobs/standard/read",
+        "Category": "Tenant Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/deletedItems/delete",
         "Category": "Tenant Management",
         "EAMTierLevelName": "ControlPlane",
@@ -4649,6 +4667,12 @@
         "EAMTierLevelTagValue": "0"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/bulkJobs/standard/read",
+        "Category": "Tenant Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/applications/allProperties/read",
         "Category": "Application and Workload Identity",
         "EAMTierLevelName": "ManagementPlane",
@@ -5387,6 +5411,24 @@
     "Categories": "collaboration,identity",
     "RichDescription": "Members of this role can create and manage groups, create and manage group settings like naming and expiration policies, and view groups activity and audit reports. It is important to understand that assigning a user to this role gives them the ability to manage all the groups in the tenants across various workloads like Teams, SharePoint, and Yammer in addition to Outlook. Also, the user will be able to manage the various group settings across various admin portals like Microsoft Admin Center and the Azure Portal, as well as workload specific ones like Teams and SharePoint admin centers.",
     "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.directory/bulkJobs.groups/basic/update",
+        "Category": "Group Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/bulkJobs.groups/create",
+        "Category": "Group Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/bulkJobs.groups/standard/read",
+        "Category": "Group Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
       {
         "AuthorizedResourceAction": "microsoft.directory/deletedItems.groups/delete",
         "Category": "Group Management",
@@ -7186,6 +7228,61 @@
     }
   },
   {
+    "RoleId": "ee67aa9c-e510-4759-b906-227085a7fd4d",
+    "RoleName": "Microsoft Graph Data Connect Administrator",
+    "isPrivileged": false,
+    "Categories": "collaboration",
+    "RichDescription": "Assign the Microsoft Graph Data Connect Administrator role to users who need to do the following tasks:\n* Access the full set of administrative capabilities of Microsoft Graph Data Connect\n* Manage Microsoft Graph Data Connect settings in a tenant\n* Enable or disable the Microsoft Graph Data Connect service\n* Configure dataset workload selections in Microsoft Graph Data Connect\n* Configure cross-tenant data movement settings in Microsoft Graph Data Connect\n* View, approve, or deny application authorization requests for Microsoft Graph Data Connect\n* View, create, update, or delete application registrations for Microsoft Graph Data Connect",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.graph.dataConnect/allEntities/allProperties/allTasks",
+        "Category": "Microsoft 365 Platform Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.messageCenter/messages/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.serviceHealth/allEntities/allTasks",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.supportTickets/allEntities/allTasks",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.webPortal/allEntities/standard/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.azure.serviceHealth/allEntities/allTasks",
+        "Category": "Support and Service Health",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.azure.supportTickets/allEntities/allTasks",
+        "Category": "Support and Service Health",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
     "RoleId": "1501b917-7653-4ff9-a4b5-203eaf33784f",
     "RoleName": "Microsoft Hardware Warranty Administrator",
     "isPrivileged": false,
@@ -8027,6 +8124,12 @@
     "Categories": "identity",
     "RichDescription": "Assign the People Administrator role to users who need to do the following tasks:\n- Update profile photos for all users including administrators\n- Update people settings for all users, such as pronouns, name pronunciation, and profile card settings",
     "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.office365.webPortal/allEntities/standard/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
       {
         "AuthorizedResourceAction": "microsoft.peopleAdmin/organization/allProperties/update",
         "Category": "Microsoft People",
@@ -8968,6 +9071,12 @@
         "EAMTierLevelTagValue": "0"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/bulkJobs/standard/read",
+        "Category": "Tenant Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/applications/policies/update",
         "Category": "Tenant Policy Management",
         "EAMTierLevelName": "ControlPlane",
@@ -9275,6 +9384,12 @@
         "EAMTierLevelTagValue": "0"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/bulkJobs/standard/read",
+        "Category": "Tenant Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.office365.supportTickets/allEntities/allTasks",
         "Category": "Microsoft 365 Support Operations",
         "EAMTierLevelName": "ManagementPlane",
@@ -9332,6 +9447,12 @@
       {
         "AuthorizedResourceAction": "microsoft.directory/bitlockerKeys/key/read",
         "Category": "Global Endpoint Credential Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/bulkJobs/standard/read",
+        "Category": "Tenant Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
@@ -10264,6 +10385,31 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.teams/devices/standard/read",
+        "Category": "Teams",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "1076ac91-f3d9-41a7-a339-dcdf5f480acc",
+    "RoleName": "Teams Reader",
+    "isPrivileged": false,
+    "Categories": "collaboration,readOnly",
+    "RichDescription": "Assign the Teams Reader role to users who need to do the following tasks: \n* Read settings and administrative information in the Teams admin center, but not perform any management actions\n* Read the Microsoft Call Quality Dashboard (CQD), but not access any troubleshooting capabilities",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.office365.webPortal/allEntities/standard/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.teams/allEntities/allProperties/read",
         "Category": "Teams",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
@@ -11227,6 +11373,12 @@
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.messageCenter/messages/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.supportTickets/allEntities/allTasks",
         "Category": "Microsoft 365 Support Operations",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"

@@ -185,6 +185,22 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "99bc85fb-e857-4220-9f8c-3a1c83148d2e",
+    "AppRoleDisplayName": "AuditActivity.Read",
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "f6318678-2713-4bb6-b123-233e7336c1bd",
+    "AppRoleDisplayName": "AuditActivity.Write",
+    "Category": "Global Security and Compliance Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "b0afded3-3588-46d8-8b3d-9842eff778da",
     "AppRoleDisplayName": "AuditLog.Read.All",
     "Category": "Security and Compliance",
@@ -830,6 +846,38 @@
     "Category": "Exchange Online",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "5ad511bf-571c-4ef6-8c3c-85b94b85df98",
+    "AppRoleDisplayName": "Content.Process.All",
+    "Category": "Microsoft Purview",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "24ceb246-ad29-4680-90b4-3e91ffad15eb",
+    "AppRoleDisplayName": "Content.Process.User",
+    "Category": "Microsoft Purview",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "368425e7-6954-4f5a-9d92-90b75bd580c9",
+    "AppRoleDisplayName": "ContentActivity.Read",
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "2932e07a-3c29-44e4-bb36-6d0fc176387f",
+    "AppRoleDisplayName": "ContentActivity.Write",
+    "Category": "Global Security and Compliance Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -2639,6 +2687,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "a6325ae7-2b73-4dbd-abed-fbeacfbf8696",
+    "AppRoleDisplayName": "Policy.ReadWrite.CrossTenantCapability",
+    "Category": "Conditional Access",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "230fb2d5-aa21-49c1-bfa7-ae1be179d867",
     "AppRoleDisplayName": "Policy.ReadWrite.DeviceConfiguration",
     "Category": "Global Endpoint Management",
@@ -2916,6 +2972,30 @@
     "Category": "Entitlement Management",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "e5a76501-dbb0-492c-ab55-5d09e8837263",
+    "AppRoleDisplayName": "ProtectionScopes.Compute.All",
+    "Category": "Global Security and Compliance Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "fe696d63-5e1f-4515-8232-cccc316903c6",
+    "AppRoleDisplayName": "ProtectionScopes.Compute.User",
+    "Category": "Global Security and Compliance Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "091937d3-3e38-47a1-8649-b2f99d3035f1",
+    "AppRoleDisplayName": "ProvisioningLog.Read.All",
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -3367,6 +3447,30 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "57f0b71b-a759-45a0-9a0f-cc099fbd9a44",
+    "AppRoleDisplayName": "SensitivityLabel.Evaluate",
+    "Category": "Microsoft Purview",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "3b8e7aad-f6e3-4299-83f8-6fc6a5777f0b",
+    "AppRoleDisplayName": "SensitivityLabel.Read",
+    "Category": "Microsoft Purview",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "e46a01e9-b2cf-4d89-8424-bcdc6dd445ab",
+    "AppRoleDisplayName": "SensitivityLabels.Read.All",
+    "Category": "Microsoft Purview",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "2b655018-450a-4845-81e7-d603b1ebffdb",
     "AppRoleDisplayName": "ServiceActivity-Exchange.Read.All",
     "Category": "Support and Service Health",
@@ -3524,6 +3628,14 @@
     "Category": "Unclassified",
     "EAMTierLevelName": "Unclassified",
     "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "6eff534b-699e-44d9-af61-a4182f0ec37e",
+    "AppRoleDisplayName": "Storyline.ReadWrite.All",
+    "Category": "Microsoft Viva",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
