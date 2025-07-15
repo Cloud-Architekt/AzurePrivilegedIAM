@@ -333,6 +333,9 @@
           <ScopeNamePrivilegedGroups>
         ],
         "RoleDefinitionActions": [
+          "microsoft.directory/bulkJobs.groups/basic/update",
+          "microsoft.directory/bulkJobs.groups/create",
+          "microsoft.directory/bulkJobs.groups/standard/read",          
           "microsoft.directory/deletedItems.groups/delete",
           "microsoft.directory/deletedItems.groups/restore",
           "microsoft.directory/groups.security/assignedLabels/update",
@@ -909,6 +912,8 @@
           "microsoft.office365.knowledge/learningSources/allProperties/allTasks",
           "microsoft.office365.migrations/allEntities/allProperties/allTasks",
           "microsoft.office365.network/locations/allProperties/allTasks",
+          "microsoft.microsoft365.organizationalData/allEntities/allProperties/allTasks",
+          "microsoft.microsoft365.organizationalData/allEntities/allProperties/read",          
           "microsoft.office365.organizationalMessages/allEntities/allProperties/allTasks",
           "microsoft.office365.organizationalMessages/allEntities/allProperties/read",
           "microsoft.office365.organizationalMessages/allEntities/allProperties/update",
@@ -1179,6 +1184,7 @@
           "microsoft.directory/users/allProperties/read",
           "microsoft.directory/users/authenticationMethods/standard/read",
           "microsoft.directory/users/authenticationMethods/standard/restrictedread",
+          "microsoft.directory/users/lifeCycleInfo/read",          
           "microsoft.directory/verifiableCredentials/configuration/allProperties/read",
           "microsoft.directory/verifiableCredentials/configuration/contracts/allProperties/read",
           "microsoft.directory/verifiableCredentials/configuration/contracts/cards/allProperties/read",

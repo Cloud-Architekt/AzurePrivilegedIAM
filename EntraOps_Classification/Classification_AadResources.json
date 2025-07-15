@@ -226,8 +226,6 @@
           "microsoft.directory/devices/extensionAttributeSet3/update",
           "microsoft.directory/devices/permissions/update",
           "microsoft.directory/devices/registeredOwners/update",
-          "microsoft.directory/devices/registeredOwners/update",
-          "microsoft.directory/devices/registeredUsers/update",
           "microsoft.directory/devices/registeredUsers/update",
           "microsoft.directory/deviceTemplates/create",
           "microsoft.directory/deviceTemplates/createDeviceFromTemplate",
@@ -637,10 +635,10 @@
           "/"
         ],
         "RoleDefinitionActions": [
+          "microsoft.directory/groups.unified/assignedLabels/update",          
           "microsoft.directory/groups.unified/basic/update",
           "microsoft.directory/groups.unified/create",
           "microsoft.directory/groups.unified/delete",
-          "microsoft.directory/groups.unified/assignedLabels/update",
           "microsoft.directory/groups.unified/members/update",
           "microsoft.directory/groups.unified/owners/update",
           "microsoft.directory/groups.unified/restore"
@@ -662,6 +660,8 @@
           "microsoft.office365.knowledge/learningSources/allProperties/allTasks",
           "microsoft.office365.migrations/allEntities/allProperties/allTasks",
           "microsoft.office365.network/locations/allProperties/allTasks",
+          "microsoft.microsoft365.organizationalData/allEntities/allProperties/allTasks",
+          "microsoft.microsoft365.organizationalData/allEntities/allProperties/read",
           "microsoft.office365.organizationalMessages/allEntities/allProperties/allTasks",
           "microsoft.office365.organizationalMessages/allEntities/allProperties/read",
           "microsoft.office365.organizationalMessages/allEntities/allProperties/update",
@@ -932,6 +932,7 @@
           "microsoft.directory/users/allProperties/read",
           "microsoft.directory/users/authenticationMethods/standard/read",
           "microsoft.directory/users/authenticationMethods/standard/restrictedread",
+          "microsoft.directory/users/lifeCycleInfo/read",
           "microsoft.directory/verifiableCredentials/configuration/allProperties/read",
           "microsoft.directory/verifiableCredentials/configuration/contracts/allProperties/read",
           "microsoft.directory/verifiableCredentials/configuration/contracts/cards/allProperties/read",

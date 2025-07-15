@@ -3916,12 +3916,6 @@
         "EAMTierLevelTagValue": "0"
       },
       {
-        "AuthorizedResourceAction": "microsoft.directory/bulkJobs/standard/read",
-        "Category": "Tenant Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
         "AuthorizedResourceAction": "microsoft.directory/deletedItems/delete",
         "Category": "Tenant Management",
         "EAMTierLevelName": "ControlPlane",
@@ -4139,6 +4133,12 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.graph.dataConnect/allEntities/allProperties/allTasks",
+        "Category": "Microsoft 365 Platform Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.microsoft365.organizationalData/allEntities/allProperties/allTasks",
         "Category": "Microsoft 365 Platform Operations",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
@@ -4385,6 +4385,12 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/applications/synchronization/standard/read",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/bulkJobs/standard/read",
         "Category": "Tenant Configuration (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
@@ -4667,12 +4673,6 @@
         "EAMTierLevelTagValue": "0"
       },
       {
-        "AuthorizedResourceAction": "microsoft.directory/bulkJobs/standard/read",
-        "Category": "Tenant Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
         "AuthorizedResourceAction": "microsoft.directory/applications/allProperties/read",
         "Category": "Application and Workload Identity",
         "EAMTierLevelName": "ManagementPlane",
@@ -4705,6 +4705,12 @@
       {
         "AuthorizedResourceAction": "microsoft.commerce.billing/purchases/standard/read",
         "Category": "Microsoft 365 Billing Management",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.microsoft365.organizationalData/allEntities/allProperties/read",
+        "Category": "Microsoft 365 Platform Operations",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -4860,6 +4866,12 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/applications/synchronization/standard/read",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/bulkJobs/standard/read",
         "Category": "Tenant Configuration (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
@@ -7069,9 +7081,9 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/users/lifeCycleInfo/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
       }
     ],
     "Classification": {
@@ -7486,6 +7498,61 @@
     "Classification": {
       "EAMTierLevelName": "ControlPlane",
       "EAMTierLevelTagValue": "0"
+    }
+  },
+  {
+    "RoleId": "9d70768a-0cbc-4b4c-aea3-2e124b2477f4",
+    "RoleName": "Organizational Data Source Administrator",
+    "isPrivileged": false,
+    "Categories": "collaboration",
+    "RichDescription": "Assign the Organizational Data Source Administrator role to users who need to do the following tasks:\n* Manage settings related to ingesting and managing organizational data for Microsoft 365 and Microsoft Viva applications\n* Upload, update, and delete the ingested organizational data in Microsoft 365 and Microsoft Viva applications\n* Export organizational data from the authorized applications",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.microsoft365.organizationalData/allEntities/allProperties/allTasks",
+        "Category": "Microsoft 365 Platform Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.messageCenter/messages/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.serviceHealth/allEntities/allTasks",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.supportTickets/allEntities/allTasks",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.webPortal/allEntities/standard/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.azure.serviceHealth/allEntities/allTasks",
+        "Category": "Support and Service Health",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.azure.supportTickets/allEntities/allTasks",
+        "Category": "Support and Service Health",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
     }
   },
   {
@@ -9071,12 +9138,6 @@
         "EAMTierLevelTagValue": "0"
       },
       {
-        "AuthorizedResourceAction": "microsoft.directory/bulkJobs/standard/read",
-        "Category": "Tenant Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
         "AuthorizedResourceAction": "microsoft.directory/applications/policies/update",
         "Category": "Tenant Policy Management",
         "EAMTierLevelName": "ControlPlane",
@@ -9205,6 +9266,12 @@
       {
         "AuthorizedResourceAction": "microsoft.azure.supportTickets/allEntities/allTasks",
         "Category": "Support and Service Health",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/bulkJobs/standard/read",
+        "Category": "Tenant Configuration (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -9384,12 +9451,6 @@
         "EAMTierLevelTagValue": "0"
       },
       {
-        "AuthorizedResourceAction": "microsoft.directory/bulkJobs/standard/read",
-        "Category": "Tenant Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
         "AuthorizedResourceAction": "microsoft.office365.supportTickets/allEntities/allTasks",
         "Category": "Microsoft 365 Support Operations",
         "EAMTierLevelName": "ManagementPlane",
@@ -9416,6 +9477,12 @@
       {
         "AuthorizedResourceAction": "microsoft.azure.supportTickets/allEntities/allTasks",
         "Category": "Support and Service Health",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/bulkJobs/standard/read",
+        "Category": "Tenant Configuration (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -9447,12 +9514,6 @@
       {
         "AuthorizedResourceAction": "microsoft.directory/bitlockerKeys/key/read",
         "Category": "Global Endpoint Credential Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/bulkJobs/standard/read",
-        "Category": "Tenant Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
@@ -9524,6 +9585,12 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/accessReviews/definitions/allProperties/read",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/bulkJobs/standard/read",
         "Category": "Tenant Configuration (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
@@ -11261,6 +11328,12 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/users/lifeCycleInfo/read",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/policies/standard/read",
         "Category": "Default member",
         "EAMTierLevelName": "UserAccess",
@@ -11271,12 +11344,6 @@
         "Category": "External Identities",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/lifeCycleInfo/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
       }
     ],
     "Classification": {

@@ -1417,6 +1417,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "d746beae-b46e-446e-924a-5b805a5c4467",
+    "AppRoleDisplayName": "EngagementMeetingConversation.Read.All",
+    "Category": "Microsoft Viva",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "30614864-4114-45ef-bdd9-0dd7894a1cc4",
     "AppRoleDisplayName": "EngagementRole.Read.All",
     "Category": "Microsoft Viva",
@@ -1635,6 +1643,22 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "dbaae8cf-10b5-4b86-a4a1-f871c94c6695",
     "AppRoleDisplayName": "GroupMember.ReadWrite.All",
+    "Category": "Group Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "f3c4f514-c65a-43f5-bfce-1735872258dd",
+    "AppRoleDisplayName": "GroupSettings.Read.All",
+    "Category": "Default member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "546168c3-1183-4281-9491-fafb24dea37e",
+    "AppRoleDisplayName": "GroupSettings.ReadWrite.All",
     "Category": "Group Management",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
@@ -2588,6 +2612,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "8e3bc81b-d2f3-4b7b-838c-32c88218d2f0",
+    "AppRoleDisplayName": "Policy.Read.AuthenticationMethod",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "37730810-e9ba-4e46-b07e-8ca78d182097",
     "AppRoleDisplayName": "Policy.Read.ConditionalAccess",
     "Category": "Tenant Configuration (Reader)",
@@ -2977,17 +3009,17 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "e5a76501-dbb0-492c-ab55-5d09e8837263",
     "AppRoleDisplayName": "ProtectionScopes.Compute.All",
-    "Category": "Global Security and Compliance Management",
-    "EAMTierLevelName": "ControlPlane",
-    "EAMTierLevelTagValue": "0"
+    "Category": "Microsoft Purview",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "fe696d63-5e1f-4515-8232-cccc316903c6",
     "AppRoleDisplayName": "ProtectionScopes.Compute.User",
-    "Category": "Global Security and Compliance Management",
-    "EAMTierLevelName": "ControlPlane",
-    "EAMTierLevelTagValue": "0"
+    "Category": "Microsoft Purview",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -3455,6 +3487,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "986fa56a-6680-4aac-af09-4d1765376739",
+    "AppRoleDisplayName": "SensitivityLabel.Evaluate.All",
+    "Category": "Microsoft Purview",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "3b8e7aad-f6e3-4299-83f8-6fc6a5777f0b",
     "AppRoleDisplayName": "SensitivityLabel.Read",
     "Category": "Microsoft Purview",
@@ -3564,6 +3604,22 @@
     "Category": "Microsoft OneNote",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "28e1fe78-598f-4df4-b55e-18bf34218925",
+    "AppRoleDisplayName": "SignInIdentifier.Read.All",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "7fc588a2-ea2d-4d1f-bcf7-33c324b149b8",
+    "AppRoleDisplayName": "SignInIdentifier.ReadWrite.All",
+    "Category": "Tenant Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
