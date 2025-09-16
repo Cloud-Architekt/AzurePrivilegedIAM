@@ -635,7 +635,7 @@
           "/"
         ],
         "RoleDefinitionActions": [
-          "microsoft.directory/groups.unified/assignedLabels/update",          
+          "microsoft.directory/groups.unified/assignedLabels/update",
           "microsoft.directory/groups.unified/basic/update",
           "microsoft.directory/groups.unified/create",
           "microsoft.directory/groups.unified/delete",
@@ -698,6 +698,17 @@
       },
       {
         "Category": "Microsoft.AzureAD",
+        "Service": "Microsoft Dragon",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "microsoft.healthPlatform/allEntities/allProperties/allTasks",
+          "microsoft.healthPlatform/allEntities/allProperties/read"
+        ]
+      },
+      {
+        "Category": "Microsoft.AzureAD",
         "Service": "Microsoft Exchange Online",
         "RoleAssignmentScopeName": [
           "/"
@@ -733,6 +744,16 @@
         ],
         "RoleDefinitionActions": [
           "microsoft.peopleAdmin/organization/allProperties/update"
+        ]
+      },
+      {
+        "Category": "Microsoft.AzureAD",
+        "Service": "Microsoft Places",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "microsoft.places/allEntities/allProperties/allTasks"
         ]
       },
       {

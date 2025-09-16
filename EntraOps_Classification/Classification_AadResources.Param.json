@@ -335,7 +335,7 @@
         "RoleDefinitionActions": [
           "microsoft.directory/bulkJobs.groups/basic/update",
           "microsoft.directory/bulkJobs.groups/create",
-          "microsoft.directory/bulkJobs.groups/standard/read",          
+          "microsoft.directory/bulkJobs.groups/standard/read",
           "microsoft.directory/deletedItems.groups/delete",
           "microsoft.directory/deletedItems.groups/restore",
           "microsoft.directory/groups.security/assignedLabels/update",
@@ -832,6 +832,17 @@
       },
       {
         "Category": "Microsoft.AzureAD",
+        "Service": "Microsoft Dragon",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "microsoft.healthPlatform/allEntities/allProperties/allTasks",
+          "microsoft.healthPlatform/allEntities/allProperties/read"
+        ]
+      },
+      {
+        "Category": "Microsoft.AzureAD",
         "Service": "Dynamics 365",
         "RoleAssignmentScopeName": [
           "/"
@@ -913,7 +924,7 @@
           "microsoft.office365.migrations/allEntities/allProperties/allTasks",
           "microsoft.office365.network/locations/allProperties/allTasks",
           "microsoft.microsoft365.organizationalData/allEntities/allProperties/allTasks",
-          "microsoft.microsoft365.organizationalData/allEntities/allProperties/read",          
+          "microsoft.microsoft365.organizationalData/allEntities/allProperties/read",
           "microsoft.office365.organizationalMessages/allEntities/allProperties/allTasks",
           "microsoft.office365.organizationalMessages/allEntities/allProperties/read",
           "microsoft.office365.organizationalMessages/allEntities/allProperties/update",
@@ -985,6 +996,16 @@
         ],
         "RoleDefinitionActions": [
           "microsoft.peopleAdmin/organization/allProperties/update"
+        ]
+      },
+      {
+        "Category": "Microsoft.AzureAD",
+        "Service": "Microsoft Places",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "microsoft.places/allEntities/allProperties/allTasks"
         ]
       },
       {
@@ -1184,7 +1205,7 @@
           "microsoft.directory/users/allProperties/read",
           "microsoft.directory/users/authenticationMethods/standard/read",
           "microsoft.directory/users/authenticationMethods/standard/restrictedread",
-          "microsoft.directory/users/lifeCycleInfo/read",          
+          "microsoft.directory/users/lifeCycleInfo/read",
           "microsoft.directory/verifiableCredentials/configuration/allProperties/read",
           "microsoft.directory/verifiableCredentials/configuration/contracts/allProperties/read",
           "microsoft.directory/verifiableCredentials/configuration/contracts/cards/allProperties/read",

@@ -49,6 +49,22 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "2f479c7e-27df-4053-826b-57d8ce55be3e",
+    "AppRoleDisplayName": "AgentApplication.Create",
+    "Category": "Agent Identity",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "2c4c43c7-1903-4658-a911-b8f2bb31e32e",
+    "AppRoleDisplayName": "AgentIdentity.Create",
+    "Category": "Agent Identity",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "2f3e6f8c-093b-4c57-a58b-ba5ce494a169",
     "AppRoleDisplayName": "Agreement.Read.All",
     "Category": "Tenant Configuration (Reader)",
@@ -481,6 +497,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "792b782b-7822-4b92-8103-77e44f2f706c",
+    "AppRoleDisplayName": "CallAiInsights.Read.All",
+    "Category": "Microsoft Teams",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "5aa33e77-b893-495e-bdc5-4bf6f27d42a0",
     "AppRoleDisplayName": "CallDelegation.Read.All",
     "Category": "Microsoft Teams",
@@ -515,6 +539,14 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "a2611786-80b3-417e-adaa-707d4261a5f0",
     "AppRoleDisplayName": "CallRecord-PstnCalls.Read.All",
+    "Category": "Microsoft Teams",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "ce8fb1f1-5e1f-44a0-b102-4ec28454d0dc",
+    "AppRoleDisplayName": "CallRecordings.Read.All",
     "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
@@ -563,6 +595,14 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "fd7ccf6b-3d28-418b-9701-cd10f5cd2fd4",
     "AppRoleDisplayName": "Calls.JoinGroupCallAsGuest.All",
+    "Category": "Microsoft Teams",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "4cd61b6d-8692-40bf-9d90-7f38db5e5fce",
+    "AppRoleDisplayName": "CallTranscripts.Read.All",
     "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
@@ -830,6 +870,14 @@
     "Category": "Application and Workload Identity",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "c8948c23-e66b-42db-83fd-770b71ab78d2",
+    "AppRoleDisplayName": "Contacts-OnPremisesSyncBehavior.ReadWrite.All",
+    "Category": "Exchange Online",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -1257,6 +1305,22 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "c0e5a7b0-e8b7-40a7-b8e0-8249e6ea81d5",
+    "AppRoleDisplayName": "Domain-InternalFederation.Read.All",
+    "Category": "Default member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "64d40371-8d58-4270-bc8a-b4a66de36b9a",
+    "AppRoleDisplayName": "Domain-InternalFederation.ReadWrite.All",
+    "Category": "Tenant Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "dbb9058a-0e50-45d7-ae91-66909b5d4664",
     "AppRoleDisplayName": "Domain.Read.All",
     "Category": "Default member",
@@ -1411,6 +1475,22 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "e1d2136d-eaaf-427a-a7db-f97dbe847c27",
     "AppRoleDisplayName": "EngagementConversation.Migration.All",
+    "Category": "Microsoft Viva",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "2c495153-cd0e-41b4-9980-3bcecf1ca22f",
+    "AppRoleDisplayName": "EngagementConversation.Read.All",
+    "Category": "Microsoft Viva",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "bfbd4840-fba0-43a7-93a9-465b687e47d0",
+    "AppRoleDisplayName": "EngagementConversation.ReadWrite.All",
     "Category": "Microsoft Viva",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
@@ -1593,6 +1673,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "2dcc6599-bd30-442b-8f11-90f88ad441dc",
+    "AppRoleDisplayName": "FileStorageContainerTypeReg.Selected",
+    "Category": "Microsoft SharePoint",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "4f0a8235-6f6f-4ec7-9500-34b452a4a0c3",
     "AppRoleDisplayName": "Group-Conversation.Read.All",
     "Category": "Unclassified",
@@ -1606,6 +1694,14 @@
     "Category": "Unclassified",
     "EAMTierLevelName": "Unclassified",
     "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "2d9bd318-b883-40be-9df7-63ec4fcdc424",
+    "AppRoleDisplayName": "Group-OnPremisesSyncBehavior.ReadWrite.All",
+    "Category": "Group Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -2097,6 +2193,14 @@
     "Category": "Unclassified",
     "EAMTierLevelName": "Unclassified",
     "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "e118f1da-5c1c-46cf-bff6-8858d786f46f",
+    "AppRoleDisplayName": "Mail-Advanced.ReadWrite.All",
+    "Category": "Exchange Online",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -3415,6 +3519,22 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "c5bc96f5-b4a1-4cfc-8189-d5f0d772278f",
+    "AppRoleDisplayName": "SecurityIdentitiesAccount.Read.All",
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "af2bf46f-7bf1-4be3-8bad-e17e279e8462",
+    "AppRoleDisplayName": "SecurityIdentitiesActions.ReadWrite.All",
+    "Category": "Global Security and Compliance Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "f8dcd971-5d83-4e1e-aa95-ef44611ad351",
     "AppRoleDisplayName": "SecurityIdentitiesHealth.Read.All",
     "Category": "Global Security and Compliance Management",
@@ -4500,6 +4620,14 @@
     "Category": "Unclassified",
     "EAMTierLevelName": "Unclassified",
     "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "e227c591-dd64-4a8a-a033-816167f7c938",
+    "AppRoleDisplayName": "VerifiedId-Profile.Read.All",
+    "Category": "Default member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",

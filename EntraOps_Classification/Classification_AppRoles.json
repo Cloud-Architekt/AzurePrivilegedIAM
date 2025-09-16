@@ -29,6 +29,19 @@
       },
       {
         "Category": "Microsoft.Graph",
+        "Service": "Agent Identity",
+        "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+        "ResourceScope": "Application",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "AgentApplication.Create",
+          "AgentIdentity.Create"
+        ]
+      },
+      {
+        "Category": "Microsoft.Graph",
         "Service": "Authentication",
         "ResourceAppId": "00000003-0000-0000-c000-000000000000",
         "ResourceScope": "Application",
@@ -188,6 +201,7 @@
           "SecurityAlert.ReadWrite.All",
           "SecurityAnalyzedMessage.ReadWrite.All",
           "SecurityEvents.ReadWrite.All",
+          "SecurityIdentitiesActions.ReadWrite.All",
           "SecurityIdentitiesHealth.Read.All",
           "SecurityIdentitiesSensors.Read.All",
           "SecurityIncident.ReadWrite.All",
@@ -238,6 +252,7 @@
         "RoleDefinitionActions": [
           "Group.ReadWrite.All",
           "GroupMember.ReadWrite.All",
+          "Group-OnPremisesSyncBehavior.ReadWrite.All",
           "GroupSettings.ReadWrite.All",
           "Member.Read.Hidden"
         ]
@@ -379,6 +394,7 @@
           "Directory.Write.Restricted",
           "DirectoryRecommendations.ReadWrite.All",
           "Domain.ReadWrite.All",
+          "Domain-InternalFederation.ReadWrite.All",
           "EduRoster.ReadWrite.All",
           "IdentityProvider.ReadWrite.All",
           "ManagedTenant.ReadWrite.All",
@@ -493,11 +509,13 @@
           "Calendars.ReadWrite",
           "Contacts.Read",
           "Contacts.ReadWrite",
+          "Contacts-OnPremisesSyncBehavior.ReadWrite.All",
           "Mail.Read",
           "Mail.ReadBasic",
           "Mail.ReadBasic.All",
           "Mail.ReadWrite",
           "Mail.Send",
+          "Mail-Advanced.ReadWrite.All",
           "MailboxFolder.Read.All",
           "MailboxFolder.ReadWrite.All",
           "MailboxItem.ImportExport.All",
@@ -625,6 +643,7 @@
           "Files.ReadWrite.AppFolder",
           "FileIngestion.Ingest",
           "FileIngestionHybridOnboarding.Manage",
+          "FileStorageContainerTypeReg.Selected",
           "SharePointTenantSettings.Read.All",
           "SharePointTenantSettings.ReadWrite.All",
           "Sites.FullControl.All",
@@ -648,17 +667,20 @@
         "RoleDefinitionActions": [
           "AppCatalog.Read.All",
           "AppCatalog.ReadWrite.All",
+          "CallAiInsights.Read.All",
           "CallDelegation.Read.All",
           "CallDelegation.ReadWrite.All",
           "CallEvents.Read.All",
           "CallEvents-Emergency.Read.All",
           "CallRecord-PstnCalls.Read.All",
           "CallRecords.Read.All",
+          "CallRecordings.Read.All",
           "Calls.AccessMedia.All",
           "Calls.Initiate.All",
           "Calls.InitiateGroupCall.All",
           "Calls.JoinGroupCall.All",
           "Calls.JoinGroupCallAsGuest.All",
+          "CallTranscripts.Read.All",
           "Channel.Create",
           "Channel.Delete.All",
           "Channel.ReadBasic.All",
@@ -764,6 +786,8 @@
           "Community.Read.All",
           "Community.ReadWrite.All",
           "EngagementConversation.Migration.All",
+          "EngagementConversation.ReadWrite.All",
+          "EngagementConversation.Read.All",
           "EngagementMeetingConversation.Read.All",
           "EngagementRole.Read.All",
           "EngagementRole.ReadWrite.All",
@@ -829,6 +853,7 @@
           "SecurityAlert.Read.All",
           "SecurityAnalyzedMessage.Read.All",
           "SecurityEvents.Read.All",
+          "SecurityIdentitiesAccount.Read.All",
           "SecurityIdentitiesUserActions.Read.All",
           "SecurityIncident.Read.All",
           "SecurityRecommendation.Read.All",
@@ -932,6 +957,7 @@
           "Device.Read.All",
           "Directory.Read.All",
           "Domain.Read.All",
+          "Domain-InternalFederation.Read.All",
           "Group.Read.All",
           "GroupMember.Read.All",
           "GroupSettings.Read.All",
@@ -943,7 +969,8 @@
           "ServicePrincipalEndpoint.Read.All",
           "UserAuthMethod-Passkey.Read.All",
           "UserAuthenticationMethod.Read.All",
-          "User.Read.All"
+          "User.Read.All",
+          "VerifiedId-Profile.Read.All"
         ]
       },
       {

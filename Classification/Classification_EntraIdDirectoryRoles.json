@@ -2862,6 +2862,23 @@
     }
   },
   {
+    "RoleId": "e93e3737-fa85-474a-aee4-7d3fb86510f3",
+    "RoleName": "Dragon Administrator",
+    "isPrivileged": false,
+    "Categories": "collaboration",
+    "RichDescription": "Users with this role can manage all aspects of the administrative experience in the Dragon admin center. This includes provisioning products, creating the organizational hierarchy, managing experiences in the embedded versions of the Dragon Copilot application within electronic health records (EHRs), overseeing healthcare groups, and configuring the Dragon Copilot application—such as managing settings, viewing analytics, and handling library objects. Additionally, users with this role can create, manage, and view support tickets for their organization in the Dragon admin center. They can also create, view, manage, and monitor billing plans for licenses purchased by their organization through the Dragon admin center (additional roles may be required).",
+    "RolePermissions": {
+      "AuthorizedResourceAction": "microsoft.healthPlatform/allEntities/allProperties/allTasks",
+      "Category": "Microsoft Dragon",
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    },
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
     "RoleId": "44367163-eba1-44c3-98af-f5787879f96a",
     "RoleName": "Dynamics 365 Administrator",
     "isPrivileged": false,
@@ -4246,6 +4263,12 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "microsoft.healthPlatform/allEntities/allProperties/allTasks",
+        "Category": "Microsoft Dragon",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.office365.exchange/allEntities/basic/allTasks",
         "Category": "Microsoft Exchange Online",
         "EAMTierLevelName": "ManagementPlane",
@@ -4753,6 +4776,12 @@
       {
         "AuthorizedResourceAction": "microsoft.office365.webPortal/allEntities/standard/read",
         "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.healthPlatform/allEntities/allProperties/read",
+        "Category": "Microsoft Dragon",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -8242,6 +8271,23 @@
     "Classification": {
       "EAMTierLevelName": "ControlPlane",
       "EAMTierLevelTagValue": "0"
+    }
+  },
+  {
+    "RoleId": "78b0ccd1-afc2-4f92-9116-b41aedd09592",
+    "RoleName": "Places Administrator",
+    "isPrivileged": false,
+    "Categories": "collaboration",
+    "RichDescription": "Assign the Places Administrator role to users who need to do the following tasks:\n- Manage all aspects of the Microsoft Places service\n- Configure and manage buildings, floors, rooms, and desks\n- Oversee and manage associated booking policies",
+    "RolePermissions": {
+      "AuthorizedResourceAction": "microsoft.places/allEntities/allProperties/allTasks",
+      "Category": "Microsoft Places",
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    },
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
     }
   },
   {
