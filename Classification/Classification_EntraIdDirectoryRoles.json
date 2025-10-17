@@ -3186,6 +3186,91 @@
     }
   },
   {
+    "RoleId": "49eb8f75-97e9-4e37-9b2b-6c3ebfcffa31",
+    "RoleName": "Exchange Backup Administrator",
+    "isPrivileged": false,
+    "Categories": "collaboration",
+    "RichDescription": "Assign the Exchange Backup Administrator role to users who need to do the following tasks:\n- Manage all aspects of Microsoft 365 Backup for Exchange Online\n- Back up and restore content including granular restore for Exchange Online\n- Create, edit, and manage backup configuration policies for Exchange Online\n- Perform restore operations for Exchange Online",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.backup/exchangeProtectionPolicies/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/exchangeRestoreSessions/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/restorePoints/userMailboxes/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/userMailboxProtectionUnits/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/userMailboxRestoreArtifacts/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.network/performance/allProperties/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.serviceHealth/allEntities/allTasks",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.supportTickets/allEntities/allTasks",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.usageReports/allEntities/allProperties/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.webPortal/allEntities/standard/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.azure.serviceHealth/allEntities/allTasks",
+        "Category": "Support and Service Health",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.azure.supportTickets/allEntities/allTasks",
+        "Category": "Support and Service Health",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
     "RoleId": "31392ffb-586c-42d1-9346-e59415a2cc4e",
     "RoleName": "Exchange Recipient Administrator",
     "isPrivileged": false,
@@ -9982,6 +10067,121 @@
       {
         "AuthorizedResourceAction": "microsoft.directory/groups/hiddenMembers/read",
         "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "9d3e04ba-3ee4-4d1b-a3a7-9aef423a09be",
+    "RoleName": "SharePoint Backup Administrator",
+    "isPrivileged": false,
+    "Categories": "collaboration",
+    "RichDescription": "Assign the SharePoint Backup Administrator role to users who need to do the following tasks:\n- Manage all aspects of Microsoft 365 Backup for SharePoint and OneDrive\n- Back up and restore content including granular restore across SharePoint and OneDrive\n- Create, edit, and manage backup configuration policies for SharePoint and OneDrive\n- Perform restore operations for SharePoint and OneDrive",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.backup/oneDriveForBusinessProtectionPolicies/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/oneDriveForBusinessRestoreSessions/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/restorePoints/sites/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/restorePoints/userDrives/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/sharePointProtectionPolicies/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/sharePointRestoreSessions/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/siteProtectionUnits/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/siteRestoreArtifacts/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/userDriveProtectionUnits/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/userDriveRestoreArtifacts/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.network/performance/allProperties/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.serviceHealth/allEntities/allTasks",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.supportTickets/allEntities/allTasks",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.usageReports/allEntities/allProperties/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.webPortal/allEntities/standard/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.azure.serviceHealth/allEntities/allTasks",
+        "Category": "Support and Service Health",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.azure.supportTickets/allEntities/allTasks",
+        "Category": "Support and Service Health",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       }

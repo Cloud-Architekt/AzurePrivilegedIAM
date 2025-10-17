@@ -145,6 +145,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "fc023787-fd04-4e44-9bc7-d454f00c0f0a",
+    "AppRoleDisplayName": "Application.ReadUpdate.All",
+    "Category": "Application and Workload Identity",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "1bfefb4e-e0b5-418b-a88f-73c46d2cc8e9",
     "AppRoleDisplayName": "Application.ReadWrite.All",
     "Category": "Application and Workload Identity",
@@ -3159,6 +3167,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "abafe00f-ea87-4c63-b8a8-0e7bb0a88144",
+    "AppRoleDisplayName": "RealTimeActivityFeed.Read.All",
+    "Category": "Microsoft Purview",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "ac3a2b8e-03a3-4da9-9ce0-cbe28bf1accd",
     "AppRoleDisplayName": "RecordsManagement.Read.All",
     "Category": "Microsoft Purview",
@@ -3529,7 +3545,23 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "af2bf46f-7bf1-4be3-8bad-e17e279e8462",
     "AppRoleDisplayName": "SecurityIdentitiesActions.ReadWrite.All",
+    "Category": "Identity Threat Detection and Response",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "58971758-9844-4fe4-9fba-7e4ce7a659bf",
+    "AppRoleDisplayName": "SecurityIdentitiesAutoConfig.Read.All",
     "Category": "Global Security and Compliance Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "4f1f0deb-08d1-4ffb-8cca-21dfc362b7c0",
+    "AppRoleDisplayName": "SecurityIdentitiesAutoConfig.ReadWrite.All",
+    "Category": "Identity Threat Detection and Response",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
   },
@@ -3692,6 +3724,22 @@
     "Category": "Application and Workload Identity",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "a0521574-fcd8-4742-b29c-f796df57ea70",
+    "AppRoleDisplayName": "SharePointCrossTenantMigration.Manage.All",
+    "Category": "Microsoft SharePoint",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "f5fa52a5-b9ab-4dc3-885e-9e5b4a67068e",
+    "AppRoleDisplayName": "SharePointCrossTenantMigration.Read.All",
+    "Category": "Microsoft SharePoint",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -4463,6 +4511,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "a94a502d-0281-4d15-8cd2-682ac9362c4c",
+    "AppRoleDisplayName": "User-OnPremisesSyncBehavior.ReadWrite.All",
+    "Category": "Global User Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "cc117bb9-00cf-4eb8-b580-ea2a878fe8f7",
     "AppRoleDisplayName": "User-PasswordProfile.ReadWrite.All",
     "Category": "Global User Management",
@@ -4575,6 +4631,70 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "a1e58be0-1095-422b-b067-73434bd7d40f",
+    "AppRoleDisplayName": "UserAuthMethod-Email.Read.All",
+    "Category": "Default member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "e8ecb853-1435-4a49-95ba-ec5b31b11672",
+    "AppRoleDisplayName": "UserAuthMethod-Email.ReadWrite.All",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "d2c4289f-9f95-40da-ad43-eeb1506f0db7",
+    "AppRoleDisplayName": "UserAuthMethod-External.Read.All",
+    "Category": "Default member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "c7a22c2e-5b01-4129-8159-6c8be2c78f16",
+    "AppRoleDisplayName": "UserAuthMethod-External.ReadWrite.All",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "7b544555-7811-49ff-8223-a56be870e33a",
+    "AppRoleDisplayName": "UserAuthMethod-HardwareOATH.Read.All",
+    "Category": "Default member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "7e9ebcc1-90aa-4471-8051-e68d6b4e9c89",
+    "AppRoleDisplayName": "UserAuthMethod-HardwareOATH.ReadWrite.All",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "a9c5f16e-e5ca-4e33-89ad-903fcfc01c23",
+    "AppRoleDisplayName": "UserAuthMethod-MicrosoftAuthApp.Read.All",
+    "Category": "Default member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "c833c349-a1ab-4b6d-94a2-fa9a8674420c",
+    "AppRoleDisplayName": "UserAuthMethod-MicrosoftAuthApp.ReadWrite.All",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "72e00c1d-3e3d-43bb-a0b9-c435611bb1d2",
     "AppRoleDisplayName": "UserAuthMethod-Passkey.Read.All",
     "Category": "Default member",
@@ -4585,6 +4705,118 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "0400e371-7db1-4338-a269-96069eb65227",
     "AppRoleDisplayName": "UserAuthMethod-Passkey.ReadWrite.All",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "8d2c17ff-b93d-40d5-9def-d843680509cb",
+    "AppRoleDisplayName": "UserAuthMethod-Password.Read.All",
+    "Category": "Default member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "f6d38dfd-ec08-4995-8f07-23e929df0936",
+    "AppRoleDisplayName": "UserAuthMethod-Password.ReadWrite.All",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "f529a223-ea70-43ec-b268-5012de2fbaa2",
+    "AppRoleDisplayName": "UserAuthMethod-Phone.Read.All",
+    "Category": "Default member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "6e85d483-7092-4375-babe-0a94a8213a58",
+    "AppRoleDisplayName": "UserAuthMethod-Phone.ReadWrite.All",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "07c0b1e4-15bd-442f-834b-30f8291388d1",
+    "AppRoleDisplayName": "UserAuthMethod-PlatformCred.Read.All",
+    "Category": "Default member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "1a87acf4-a9ca-4576-a974-452ea265d5f6",
+    "AppRoleDisplayName": "UserAuthMethod-PlatformCred.ReadWrite.All",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "9a45bc50-cddd-4ebe-bd9c-4f2eacf646ae",
+    "AppRoleDisplayName": "UserAuthMethod-QR.Read.All",
+    "Category": "Default member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "4869299f-18c3-40c8-98f2-222657e67db1",
+    "AppRoleDisplayName": "UserAuthMethod-QR.ReadWrite.All",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "a6b423df-a0c8-411d-a809-a4a5985d2939",
+    "AppRoleDisplayName": "UserAuthMethod-SoftwareOATH.Read.All",
+    "Category": "Default member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "787442d4-3c6e-4e99-aa95-8ccca20a48ff",
+    "AppRoleDisplayName": "UserAuthMethod-SoftwareOATH.ReadWrite.All",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "bf82209c-b22b-4747-ac88-a68be99032cf",
+    "AppRoleDisplayName": "UserAuthMethod-TAP.Read.All",
+    "Category": "Default member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "627169a8-8c15-451c-861a-5b80e383de5c",
+    "AppRoleDisplayName": "UserAuthMethod-TAP.ReadWrite.All",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "9b8dd4c7-8cca-4ef5-a34a-9c2c75fcc934",
+    "AppRoleDisplayName": "UserAuthMethod-WindowsHello.Read.All",
+    "Category": "Default member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "f14eee8a-713e-45aa-8223-2ab74632db1a",
+    "AppRoleDisplayName": "UserAuthMethod-WindowsHello.ReadWrite.All",
     "Category": "Authentication",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
