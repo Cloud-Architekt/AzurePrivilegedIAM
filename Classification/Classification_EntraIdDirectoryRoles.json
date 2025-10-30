@@ -807,12 +807,14 @@
     "isPrivileged": false,
     "Categories": "identity",
     "RichDescription": "Assign the Attribute Log Reader role to users who need to do the following tasks:\n* Read audit logs for attribute set changes\n* Read audit logs for custom security attribute definition changes\n* Read audit logs for custom security attribute assignment changes\nUsers with this role *cannot* do the following tasks:\n* Configure diagnostic settings for custom security attributes\n* Read audit logs for other events\nBy default, Global Administrator and other administrator roles do not have permissions to read audit logs for custom security attributes. To read audit logs for custom security attributes, you must be assigned this role or the Attribute Log Administrator role.",
-    "RolePermissions": {
-      "AuthorizedResourceAction": "microsoft.directory/customSecurityAttributeAuditLogs/allProperties/read",
-      "Category": "Security and Compliance",
-      "EAMTierLevelName": "ManagementPlane",
-      "EAMTierLevelTagValue": "1"
-    },
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.directory/customSecurityAttributeAuditLogs/allProperties/read",
+        "Category": "Security and Compliance",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
     "Classification": {
       "EAMTierLevelName": "ManagementPlane",
       "EAMTierLevelTagValue": "1"
@@ -849,12 +851,14 @@
     "isPrivileged": true,
     "Categories": "identity,readOnly",
     "RichDescription": null,
-    "RolePermissions": {
-      "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/read",
-      "Category": "Application and Workload Identity",
-      "EAMTierLevelName": "ControlPlane",
-      "EAMTierLevelTagValue": "0"
-    },
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/read",
+        "Category": "Application and Workload Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      }
+    ],
     "Classification": {
       "EAMTierLevelName": "ControlPlane",
       "EAMTierLevelTagValue": "0"
@@ -993,12 +997,14 @@
     "isPrivileged": true,
     "Categories": "identity",
     "RichDescription": "Users with this role can create and manage all aspects of custom authentication extensions. A custom authentication extension is an API endpoint created by a developer for authentication events and is registered in Microsoft Entra ID. Application administrators and application owners can use custom authentication extensions to customize their application's authentication experiences such as sign in and sign up, or password reset. This role does not grant the ability to apply the custom authentication extensions to applications.",
-    "RolePermissions": {
-      "AuthorizedResourceAction": "microsoft.directory/customAuthenticationExtensions/allProperties/allTasks",
-      "Category": "Authentication",
-      "EAMTierLevelName": "ControlPlane",
-      "EAMTierLevelTagValue": "0"
-    },
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.directory/customAuthenticationExtensions/allProperties/allTasks",
+        "Category": "Authentication",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      }
+    ],
     "Classification": {
       "EAMTierLevelName": "ControlPlane",
       "EAMTierLevelTagValue": "0"
@@ -1162,12 +1168,14 @@
     "isPrivileged": false,
     "Categories": "collaboration",
     "RichDescription": "Users with this role can manage the Azure DevOps policy to restrict new Azure DevOps organization creation to a set of configurable users/AAD groups. Users in this role can manage this policy through any Azure DevOps organization that is backed by the company's Microsoft Entra ID.",
-    "RolePermissions": {
-      "AuthorizedResourceAction": "microsoft.azure.devOps/allEntities/allTasks",
-      "Category": "Azure DevOps",
-      "EAMTierLevelName": "ManagementPlane",
-      "EAMTierLevelTagValue": "1"
-    },
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.azure.devOps/allEntities/allTasks",
+        "Category": "Azure DevOps",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
     "Classification": {
       "EAMTierLevelName": "ManagementPlane",
       "EAMTierLevelTagValue": "1"
@@ -1234,12 +1242,14 @@
     "isPrivileged": true,
     "Categories": "identity",
     "RichDescription": "User can create and manage policy keys and secrets for token encryption, token signatures, and claim encryption/decryption. By adding new keys to existing key containers, this limited administrator can rollover secrets as needed without impacting existing applications. This user can see the full content of these secrets and their expiration dates even after their creation. This is a sensitive role. The Keyset administrator role should be carefully audited and assigned with care during preproduction and production.",
-    "RolePermissions": {
-      "AuthorizedResourceAction": "microsoft.directory/b2cTrustFrameworkKeySet/allProperties/allTasks",
-      "Category": "External Identities",
-      "EAMTierLevelName": "ControlPlane",
-      "EAMTierLevelTagValue": "0"
-    },
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.directory/b2cTrustFrameworkKeySet/allProperties/allTasks",
+        "Category": "External Identities",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      }
+    ],
     "Classification": {
       "EAMTierLevelName": "ControlPlane",
       "EAMTierLevelTagValue": "0"
@@ -1251,12 +1261,14 @@
     "isPrivileged": false,
     "Categories": "identity",
     "RichDescription": "Users in this role have the ability to create, read, update, and delete all custom policies in Azure AD B2C and therefore have full control over the Identity Experience Framework in the relevant Azure AD B2C tenant. By editing policies, this user can establish direct federation with external identity providers, change the directory schema, change all user-facing content (HTML, CSS, JavaScript) , change the requirements to complete an authentication, create new users, send user data to external systems including full migrations, and edit all user information including sensitive fields like passwords and phone numbers.    Conversely, this role cannot change the encryption keys or edit the secrets used for federation in the tenant. The B2C IEF Policy Administrator is a highly sensitive role, which should be assigned on a very limited basis for tenants in production.  Activities by these users should be closely audited, especially for tenants in production.",
-    "RolePermissions": {
-      "AuthorizedResourceAction": "microsoft.directory/b2cTrustFrameworkPolicy/allProperties/allTasks",
-      "Category": "External Identities",
-      "EAMTierLevelName": "ControlPlane",
-      "EAMTierLevelTagValue": "0"
-    },
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.directory/b2cTrustFrameworkPolicy/allProperties/allTasks",
+        "Category": "External Identities",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      }
+    ],
     "Classification": {
       "EAMTierLevelName": "ControlPlane",
       "EAMTierLevelTagValue": "0"
@@ -2123,7 +2135,7 @@
     "isPrivileged": false,
     "Categories": null,
     "RichDescription": null,
-    "RolePermissions": null,
+    "RolePermissions": [],
     "Classification": null
   },
   {
@@ -2205,7 +2217,7 @@
     "isPrivileged": false,
     "Categories": null,
     "RichDescription": null,
-    "RolePermissions": null,
+    "RolePermissions": [],
     "Classification": null
   },
   {
@@ -2554,12 +2566,14 @@
     "isPrivileged": false,
     "Categories": "identity",
     "RichDescription": "This role is automatically assigned to the Microsoft Entra Connect service, and is not intended or supported for any other use.",
-    "RolePermissions": {
-      "AuthorizedResourceAction": "microsoft.directory/onPremisesSynchronization/standard/read",
-      "Category": "Tenant Configuration (Reader)",
-      "EAMTierLevelName": "ManagementPlane",
-      "EAMTierLevelTagValue": "1"
-    },
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.directory/onPremisesSynchronization/standard/read",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
     "Classification": {
       "EAMTierLevelName": "ControlPlane",
       "EAMTierLevelTagValue": "0"
@@ -2867,12 +2881,56 @@
     "isPrivileged": false,
     "Categories": "collaboration",
     "RichDescription": "Users with this role can manage all aspects of the administrative experience in the Dragon admin center. This includes provisioning products, creating the organizational hierarchy, managing experiences in the embedded versions of the Dragon Copilot application within electronic health records (EHRs), overseeing healthcare groups, and configuring the Dragon Copilot application—such as managing settings, viewing analytics, and handling library objects. Additionally, users with this role can create, manage, and view support tickets for their organization in the Dragon admin center. They can also create, view, manage, and monitor billing plans for licenses purchased by their organization through the Dragon admin center (additional roles may be required).",
-    "RolePermissions": {
-      "AuthorizedResourceAction": "microsoft.healthPlatform/allEntities/allProperties/allTasks",
-      "Category": "Microsoft Dragon",
-      "EAMTierLevelName": "ManagementPlane",
-      "EAMTierLevelTagValue": "1"
-    },
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.office365.network/performance/allProperties/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.serviceHealth/allEntities/allTasks",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.supportTickets/allEntities/allTasks",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.usageReports/allEntities/allProperties/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.webPortal/allEntities/standard/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.healthPlatform/allEntities/allProperties/allTasks",
+        "Category": "Microsoft Dragon",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.azure.serviceHealth/allEntities/allTasks",
+        "Category": "Support and Service Health",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.azure.supportTickets/allEntities/allTasks",
+        "Category": "Support and Service Health",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
     "Classification": {
       "EAMTierLevelName": "ManagementPlane",
       "EAMTierLevelTagValue": "1"
@@ -3356,12 +3414,14 @@
     "isPrivileged": false,
     "Categories": "identity",
     "RichDescription": "Users with this role can create and manage user flows (also called \"built-in\" policies) in the Azure portal. These users can customize HTML/CSS/JavaScript content, change MFA requirements, select claims in the token, manage API connectors and their credentials, and configure session settings for all user flows in the Microsoft Entra organization. On the other hand, this role does not include the ability to review user data or make changes to the attributes that are included in the organization schema. Changes to Identity Experience Framework policies (also known as custom policies) are also outside the scope of this role.",
-    "RolePermissions": {
-      "AuthorizedResourceAction": "microsoft.directory/b2cUserFlow/allProperties/allTasks",
-      "Category": "External Identities",
-      "EAMTierLevelName": "ControlPlane",
-      "EAMTierLevelTagValue": "0"
-    },
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.directory/b2cUserFlow/allProperties/allTasks",
+        "Category": "External Identities",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      }
+    ],
     "Classification": {
       "EAMTierLevelName": "ControlPlane",
       "EAMTierLevelTagValue": "0"
@@ -3373,12 +3433,14 @@
     "isPrivileged": false,
     "Categories": "identity",
     "RichDescription": "Users with this role add or delete custom attributes available to all user flows in the tenant. As such, users with this role can change or add new elements to the end user schema and impact the behavior of all user flows and indirectly result in changes to what data may be asked of end users and ultimately sent as claims to applications. This role cannot edit user flows.",
-    "RolePermissions": {
-      "AuthorizedResourceAction": "microsoft.directory/b2cUserAttribute/allProperties/allTasks",
-      "Category": "External Identities",
-      "EAMTierLevelName": "ControlPlane",
-      "EAMTierLevelTagValue": "0"
-    },
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.directory/b2cUserAttribute/allProperties/allTasks",
+        "Category": "External Identities",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      }
+    ],
     "Classification": {
       "EAMTierLevelName": "ControlPlane",
       "EAMTierLevelTagValue": "0"
@@ -5519,12 +5581,14 @@
     "isPrivileged": false,
     "Categories": "identity,readOnly",
     "RichDescription": "Assign the Global Secure Access Log Reader role to users who need to do the following:\n* Read network traffic logs in Microsoft Entra Internet Access and Microsoft Entra Private Access for analysis by designated security personnel\n* View log details such as session, connection, and transaction\n* Filter logs based on criteria such as IP address and domain",
-    "RolePermissions": {
-      "AuthorizedResourceAction": "microsoft.networkAccess/trafficLogs/standard/read",
-      "Category": "Security and Compliance",
-      "EAMTierLevelName": "ManagementPlane",
-      "EAMTierLevelTagValue": "1"
-    },
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.networkAccess/trafficLogs/standard/read",
+        "Category": "Security and Compliance",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
     "Classification": {
       "EAMTierLevelName": "ManagementPlane",
       "EAMTierLevelTagValue": "1"
@@ -7586,12 +7650,14 @@
     "isPrivileged": false,
     "Categories": "identity",
     "RichDescription": "This role is automatically assigned to the Microsoft Entra Connect Sync Account, and is not intended or supported for any other use.",
-    "RolePermissions": {
-      "AuthorizedResourceAction": "microsoft.directory/onPremisesSynchronization/standard/read",
-      "Category": "Tenant Configuration (Reader)",
-      "EAMTierLevelName": "ManagementPlane",
-      "EAMTierLevelTagValue": "1"
-    },
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.directory/onPremisesSynchronization/standard/read",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
     "Classification": {
       "EAMTierLevelName": "ControlPlane",
       "EAMTierLevelTagValue": "0"
@@ -7603,12 +7669,14 @@
     "isPrivileged": false,
     "Categories": "identity",
     "RichDescription": "Assign the Organizational Branding Administrator role to users who need to do the following tasks:\n- Manage all aspects of organizational branding in a tenant\n- Read, create, update, and delete branding themes\n- Manage the default branding theme and all branding localization themes",
-    "RolePermissions": {
-      "AuthorizedResourceAction": "microsoft.directory/loginOrganizationBranding/allProperties/allTasks",
-      "Category": "Tenant Management",
-      "EAMTierLevelName": "ControlPlane",
-      "EAMTierLevelTagValue": "0"
-    },
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.directory/loginOrganizationBranding/allProperties/allTasks",
+        "Category": "Tenant Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      }
+    ],
     "Classification": {
       "EAMTierLevelName": "ControlPlane",
       "EAMTierLevelTagValue": "0"
@@ -8347,12 +8415,14 @@
     "isPrivileged": false,
     "Categories": "securityAndCompliance",
     "RichDescription": "Users with this role can manage all aspects of Entra Permissions Management, when the service is present.",
-    "RolePermissions": {
-      "AuthorizedResourceAction": "microsoft.permissionsManagement/allEntities/allProperties/allTasks",
-      "Category": "Cloud Infrastructure Entitlement Management",
-      "EAMTierLevelName": "ControlPlane",
-      "EAMTierLevelTagValue": "0"
-    },
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.permissionsManagement/allEntities/allProperties/allTasks",
+        "Category": "Cloud Infrastructure Entitlement Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      }
+    ],
     "Classification": {
       "EAMTierLevelName": "ControlPlane",
       "EAMTierLevelTagValue": "0"
@@ -8364,12 +8434,14 @@
     "isPrivileged": false,
     "Categories": "collaboration",
     "RichDescription": "Assign the Places Administrator role to users who need to do the following tasks:\n- Manage all aspects of the Microsoft Places service\n- Configure and manage buildings, floors, rooms, and desks\n- Oversee and manage associated booking policies",
-    "RolePermissions": {
-      "AuthorizedResourceAction": "microsoft.places/allEntities/allProperties/allTasks",
-      "Category": "Microsoft Places",
-      "EAMTierLevelName": "ManagementPlane",
-      "EAMTierLevelTagValue": "1"
-    },
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.places/allEntities/allProperties/allTasks",
+        "Category": "Microsoft Places",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
     "Classification": {
       "EAMTierLevelName": "ManagementPlane",
       "EAMTierLevelTagValue": "1"
@@ -8442,12 +8514,14 @@
     "isPrivileged": false,
     "Categories": "devices,identity",
     "RichDescription": "Users with this role can register printers and manage all aspects of all printer configurations in the Microsoft Universal Print solution, including the Universal Print Connector settings. They can consent to all delegated print permission requests. Printer administrators also have access to print reports.",
-    "RolePermissions": {
-      "AuthorizedResourceAction": "microsoft.azure.print/allEntities/allProperties/allTasks",
-      "Category": "Printer Management",
-      "EAMTierLevelName": "ManagementPlane",
-      "EAMTierLevelTagValue": "1"
-    },
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.azure.print/allEntities/allProperties/allTasks",
+        "Category": "Printer Management",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
     "Classification": {
       "EAMTierLevelName": "ManagementPlane",
       "EAMTierLevelTagValue": "1"
@@ -10812,12 +10886,14 @@
     "isPrivileged": false,
     "Categories": "identity",
     "RichDescription": "Users in this role can create new Microsoft Entra and Azure AD B2C tenants using the Azure portal. Note that the creators will be assigned the Global Administrator role in the tenants they create.",
-    "RolePermissions": {
-      "AuthorizedResourceAction": "microsoft.directory/tenantManagement/tenants/create",
-      "Category": "Default member",
-      "EAMTierLevelName": "UserAccess",
-      "EAMTierLevelTagValue": "2"
-    },
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.directory/tenantManagement/tenants/create",
+        "Category": "Default member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
     "Classification": {
       "EAMTierLevelName": "UserAccess",
       "EAMTierLevelTagValue": "2"
@@ -11502,6 +11578,12 @@
         "EAMTierLevelTagValue": "0"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/groups.unified/assignedLabels/update",
+        "Category": "Microsoft 365 Group Management",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.office365.serviceHealth/allEntities/allTasks",
         "Category": "Microsoft 365 Support Operations",
         "EAMTierLevelName": "ManagementPlane",
@@ -11999,12 +12081,14 @@
     "isPrivileged": false,
     "Categories": "collaboration,identity",
     "RichDescription": "Users in this role can create and manage all aspects of Windows Update deployments through the Windows Update for Business deployment service. The deployment service enables users to define settings for when and how updates are deployed and specify which updates are offered to groups of devices in their tenant. It also allows users to monitor the update progress.",
-    "RolePermissions": {
-      "AuthorizedResourceAction": "microsoft.windows.updatesDeployments/allEntities/allProperties/allTasks",
-      "Category": "Global Endpoint Management",
-      "EAMTierLevelName": "ControlPlane",
-      "EAMTierLevelTagValue": "0"
-    },
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.windows.updatesDeployments/allEntities/allProperties/allTasks",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      }
+    ],
     "Classification": {
       "EAMTierLevelName": "ControlPlane",
       "EAMTierLevelTagValue": "0"
@@ -12016,7 +12100,7 @@
     "isPrivileged": false,
     "Categories": null,
     "RichDescription": null,
-    "RolePermissions": null,
+    "RolePermissions": [],
     "Classification": null
   },
   {

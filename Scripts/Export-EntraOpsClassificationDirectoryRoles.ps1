@@ -34,7 +34,8 @@ function Export-EntraOpsClassificationDirectoryRoles {
     $DirectoryRoles = $DirectoryRoleDefinitions | foreach-object {
 
         $DirectoryRolePermissions = ($_.RolePermissions | Where-Object { $_.condition -notin $FilteredConditions }).allowedResourceActions
-        $ClassifiedDirectoryRolePermissions = foreach ($RolePermission in $DirectoryRolePermissions) {
+        $ClassifiedDirectoryRolePermissions = New-Object System.Collections.ArrayList
+        foreach ($RolePermission in $DirectoryRolePermissions) {
             # Apply Classification
             $EntraRolePermissionTierLevelClassification = $Classification | where-object { $_.TierLevelDefinition.RoleDefinitionActions -contains $($RolePermission) } | select-object EAMTierLevelName, EAMTierLevelTagValue
             $EntraRolePermissionServiceClassification = $Classification | select-object -ExpandProperty TierLevelDefinition | where-object { $_.RoleDefinitionActions -contains $($RolePermission) } | select-object Service
@@ -56,12 +57,15 @@ function Export-EntraOpsClassificationDirectoryRoles {
                 }
             }
 
-            [PSCustomObject]@{
-                "AuthorizedResourceAction" = $RolePermission
-                "Category"                 = $EntraRolePermissionServiceClassification.Service
-                "EAMTierLevelName"         = $EntraRolePermissionTierLevelClassification.EAMTierLevelName
-                "EAMTierLevelTagValue"     = $EntraRolePermissionTierLevelClassification.EAMTierLevelTagValue
-            }    
+            $ClassifiedDirectoryRolePermission = (
+                [PSCustomObject]@{
+                    "AuthorizedResourceAction" = $RolePermission
+                    "Category"                 = $EntraRolePermissionServiceClassification.Service
+                    "EAMTierLevelName"         = $EntraRolePermissionTierLevelClassification.EAMTierLevelName
+                    "EAMTierLevelTagValue"     = $EntraRolePermissionTierLevelClassification.EAMTierLevelTagValue
+                }
+            )
+            $ClassifiedDirectoryRolePermissions.Add($ClassifiedDirectoryRolePermission) | Out-Null
         }
         $ClassifiedDirectoryRolePermissions = $ClassifiedDirectoryRolePermissions | sort-object EAMTierLevelTagValue, Category, AuthorizedResourceAction
 
@@ -87,7 +91,7 @@ function Export-EntraOpsClassificationDirectoryRoles {
             "isPrivileged"    = $_.isPrivileged
             "Categories"      = $_.categories
             "RichDescription" = $_.richDescription
-            "RolePermissions" = $ClassifiedDirectoryRolePermissions
+            "RolePermissions" = @($ClassifiedDirectoryRolePermissions) 
             "Classification"  = $RoleDefinitionClassification
         }    
     }
