@@ -5,6 +5,16 @@
     "TierLevelDefinition": [
       {
         "Category": "Microsoft.AzureAD",
+        "Service": "Agent Identity",
+        "RoleAssignmentScopeName": [
+          "/*"
+        ],
+        "RoleDefinitionActions": [
+          "microsoft.agentRegistry/allEntities/allProperties/allTasks"
+        ]
+      },
+      {
+        "Category": "Microsoft.AzureAD",
         "Service": "Privileged Application and Workload Identity",
         "RoleAssignmentScopeName": [
           <ScopeNamePrivilegedServicePrincipals>
@@ -914,6 +924,7 @@
           "/"
         ],
         "RoleDefinitionActions": [
+          "microsoft.graph.dataConnect/allEntities/allProperties/read",
           "microsoft.graph.dataConnect/allEntities/allProperties/allTasks",
           "microsoft.office365.copilot/allEntities/allProperties/read",
           "microsoft.office365.knowledge/contentUnderstanding/allProperties/allTasks",
@@ -957,6 +968,17 @@
         ],
         "RoleDefinitionActions": [
           "microsoft.office365.copilot/allEntities/allProperties/allTasks"
+        ]
+      },
+      {
+        "Category": "Microsoft.AzureAD",
+        "Service": "Microsoft Dragon",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "microsoft.healthPlatform/allEntities/allProperties/allTasks",
+          "microsoft.healthPlatform/allEntities/allProperties/read"
         ]
       },
       {
@@ -1058,6 +1080,8 @@
         ],
         "RoleDefinitionActions": [
           "microsoft.office365.sharePoint/allEntities/allTasks",
+          "microsoft.office365.sharePointAdvancedManagement/allEntities/allProperties/allTasks",
+          "microsoft.office365.fileStorageContainers/allEntities/allProperties/read",
           "microsoft.office365.fileStorageContainers/allEntities/allProperties/allTasks"
         ]
       },
@@ -1127,6 +1151,7 @@
           "/"
         ],
         "RoleDefinitionActions": [
+          "microsoft.agentRegistry/allEntities/allProperties/read",
           "microsoft.directory/accessReviews/allProperties/read",
           "microsoft.directory/accessReviews/definitions.applications/allProperties/read",
           "microsoft.directory/accessReviews/definitions.directoryRoles/allProperties/read",
@@ -1326,6 +1351,7 @@
           "microsoft.directory/users/appRoleAssignments/read",
           "microsoft.directory/users/deviceForResourceAccount/read",
           "microsoft.directory/users/directReports/read",
+          "microsoft.directory/users/invitedBy/read",
           "microsoft.directory/users/licenseDetails/read",
           "microsoft.directory/users/manager/read",
           "microsoft.directory/users/memberOf/read",
@@ -1340,6 +1366,22 @@
           "microsoft.people/users/photo/read",
           "microsoft.people/users/photo/update",
           "microsoft.peopleAdmin/organization/allProperties/read"
+        ]
+      },
+      {
+        "Category": "Microsoft.AzureAD",
+        "Service": "Extended member",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "microsoft.directory/applications/createAsOwner",
+          "microsoft.directory/groups.security/createAsOwner",
+          "microsoft.directory/groups.unified/createAsOwner",
+          "microsoft.directory/servicePrincipals/createAsOwner",
+          "microsoft.directory/applications/createAsOwner",
+          "microsoft.directory/groups/createAsOwner",
+          "microsoft.directory/servicePrincipals/createAsOwner"
         ]
       },
       {
