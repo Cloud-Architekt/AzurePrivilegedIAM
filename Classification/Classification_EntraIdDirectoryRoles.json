@@ -1,5 +1,152 @@
 [
   {
+    "RoleId": "db506228-d27e-4b7d-95e5-295956d6615f",
+    "RoleName": "Agent ID Administrator",
+    "isPrivileged": false,
+    "Categories": "identity",
+    "RichDescription": "Manage all aspects of agents in a tenant including identity lifecycle operations for agent blueprints, agent service principals, agent identities, and agentic users.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.directory/accessReviews/definitions.applications/allProperties/allTasks",
+        "Category": "Entitlement Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/accessReviews/definitions.entitlementManagement/allProperties/allTasks",
+        "Category": "Entitlement Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/accessReviews/definitions.groups/allProperties/update",
+        "Category": "Entitlement Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/accessReviews/definitions.groups/create",
+        "Category": "Entitlement Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/accessReviews/definitions.groups/delete",
+        "Category": "Entitlement Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.serviceHealth/allEntities/allTasks",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.supportTickets/allEntities/allTasks",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.azure.serviceHealth/allEntities/allTasks",
+        "Category": "Support and Service Health",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.azure.supportTickets/allEntities/allTasks",
+        "Category": "Support and Service Health",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/accessReviews/definitions.directoryRoles/allProperties/read",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/accessReviews/definitions.groups/allProperties/read",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/externalUserProfiles/standard/read",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/groups/hiddenMembers/read",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/organization/standard/read",
+        "Category": "Default member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/policies/standard/read",
+        "Category": "Default member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/groups.unified/createAsOwner",
+        "Category": "Extended member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
+    }
+  },
+  {
+    "RoleId": "adb2368d-a9be-41b5-8667-d96778e081b0",
+    "RoleName": "Agent ID Developer",
+    "isPrivileged": false,
+    "Categories": "identity",
+    "RichDescription": "Assign the Agent ID Developer role to users who need to do the following tasks:\n- Create an agent blueprint and its service principal in a tenant. User will be added as an owner of the agent blueprint and its service principal.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/standard/read",
+        "Category": "Default member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "UserAccess",
+      "EAMTierLevelTagValue": "2"
+    }
+  },
+  {
+    "RoleId": "6b942400-691f-4bf0-9d12-d8a254a2baf5",
+    "RoleName": "Agent Registry Administrator",
+    "isPrivileged": false,
+    "Categories": "identity",
+    "RichDescription": "Assign the Agent Registry Administrator role to users who need to do the following tasks:\n- Manage metadata for AI agents in Microsoft Entra ID\n- Manage collections and visibility of agents\n- Assign Agent Registry-specific roles to other users or agents to access the registry",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.agentRegistry/allEntities/allProperties/allTasks",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
+    }
+  },
+  {
     "RoleId": "d2562ede-74db-457e-a7b6-544e236ebb61",
     "RoleName": "AI Administrator",
     "isPrivileged": false,
@@ -532,15 +679,15 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/applications/createAsOwner",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Extended member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/createAsOwner",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Extended member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       }
     ],
     "Classification": {
@@ -2474,6 +2621,12 @@
         "EAMTierLevelTagValue": "2"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/users/invitedBy/read",
+        "Category": "Default member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/users/licenseDetails/read",
         "Category": "Default member",
         "EAMTierLevelName": "UserAccess",
@@ -2547,12 +2700,6 @@
         ],
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/invitedBy/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
       }
     ],
     "Classification": {
@@ -3528,6 +3675,12 @@
     "RichDescription": "Users with this role have access to all administrative features in Microsoft Entra ID, as well as services that federate to Microsoft Entra ID like Exchange Online, SharePoint Online, and Skype for Business Online. The person who signs up for the Microsoft Entra tenant becomes a global administrator. Only global administrators can assign other administrator roles. There can be more than one global administrator at your company. Global admins can reset the password for any user and all other administrators. Note: In Microsoft Graph API, Azure AD Graph API, and Azure AD PowerShell, this role is identified as \"Company Administrator\". It is \"Global Administrator\" in the Azure portal.",
     "RolePermissions": [
       {
+        "AuthorizedResourceAction": "microsoft.agentRegistry/allEntities/allProperties/allTasks",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/adminConsentRequestPolicy/allProperties/allTasks",
         "Category": "Application and Workload Identity",
         "EAMTierLevelName": "ControlPlane",
@@ -4446,6 +4599,12 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "microsoft.office365.sharePointAdvancedManagement/allEntities/allProperties/allTasks",
+        "Category": "Microsoft SharePoint",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.insights/allEntities/allProperties/allTasks",
         "Category": "Microsoft Viva",
         "EAMTierLevelName": "ManagementPlane",
@@ -4879,6 +5038,12 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "microsoft.graph.dataConnect/allEntities/allProperties/read",
+        "Category": "Microsoft 365 Platform Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.microsoft365.organizationalData/allEntities/allProperties/read",
         "Category": "Microsoft 365 Platform Operations",
         "EAMTierLevelName": "ManagementPlane",
@@ -4929,6 +5094,12 @@
       {
         "AuthorizedResourceAction": "microsoft.healthPlatform/allEntities/allProperties/read",
         "Category": "Microsoft Dragon",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.fileStorageContainers/allEntities/allProperties/read",
+        "Category": "Microsoft SharePoint",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -5007,6 +5178,12 @@
       {
         "AuthorizedResourceAction": "microsoft.teams/allEntities/allProperties/read",
         "Category": "Teams",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.agentRegistry/allEntities/allProperties/read",
+        "Category": "Tenant Configuration (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -5423,18 +5600,6 @@
         ],
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.graph.dataConnect/allEntities/allProperties/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.office365.fileStorageContainers/allEntities/allProperties/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
       }
     ],
     "Classification": {
@@ -5789,6 +5954,12 @@
         "EAMTierLevelTagValue": "2"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/users/invitedBy/read",
+        "Category": "Default member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/users/licenseDetails/read",
         "Category": "Default member",
         "EAMTierLevelName": "UserAccess",
@@ -5859,12 +6030,6 @@
         "Category": "External Identities",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/invitedBy/read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
       }
     ],
     "Classification": {
@@ -7082,9 +7247,9 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/groups.security/createAsOwner",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Extended member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       }
     ],
     "Classification": {
@@ -7161,9 +7326,9 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/groups.security/createAsOwner",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Extended member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       }
     ],
     "Classification": {
@@ -10151,6 +10316,187 @@
     }
   },
   {
+    "RoleId": "99009c4a-3b3f-4957-82a9-9d35e12db77e",
+    "RoleName": "SharePoint Advanced Management Administrator",
+    "isPrivileged": false,
+    "Categories": "collaboration",
+    "RichDescription": "Assign the SharePoint Advanced Management Administrator role to users who need to do the following tasks:\n* Perform all actions available to SharePoint Administrators, including global management of SharePoint Online, support ticket handling, and service health monitoring\n* View names, paths, and URLs of files, folders, libraries, documents, and lists within SharePoint sites, without accessing file or item content\n* Remove permissions from files, folders, libraries, documents, and lists within SharePoint sites",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.backup/oneDriveForBusinessProtectionPolicies/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/oneDriveForBusinessRestoreSessions/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/restorePoints/sites/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/restorePoints/userDrives/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/sharePointProtectionPolicies/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/sharePointRestoreSessions/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/siteProtectionUnits/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/siteRestoreArtifacts/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/userDriveProtectionUnits/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.backup/userDriveRestoreArtifacts/allProperties/allTasks",
+        "Category": "Microsoft 365 Backup",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/groups.unified/assignedLabels/update",
+        "Category": "Microsoft 365 Group Management",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/groups.unified/basic/update",
+        "Category": "Microsoft 365 Group Management",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/groups.unified/create",
+        "Category": "Microsoft 365 Group Management",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/groups.unified/delete",
+        "Category": "Microsoft 365 Group Management",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/groups.unified/members/update",
+        "Category": "Microsoft 365 Group Management",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/groups.unified/owners/update",
+        "Category": "Microsoft 365 Group Management",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/groups.unified/restore",
+        "Category": "Microsoft 365 Group Management",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.migrations/allEntities/allProperties/allTasks",
+        "Category": "Microsoft 365 Platform Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.network/performance/allProperties/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.serviceHealth/allEntities/allTasks",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.supportTickets/allEntities/allTasks",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.usageReports/allEntities/allProperties/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.webPortal/allEntities/standard/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.sharePoint/allEntities/allTasks",
+        "Category": "Microsoft SharePoint",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.sharePointAdvancedManagement/allEntities/allProperties/allTasks",
+        "Category": "Microsoft SharePoint",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.azure.serviceHealth/allEntities/allTasks",
+        "Category": "Support and Service Health",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.azure.supportTickets/allEntities/allTasks",
+        "Category": "Support and Service Health",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/groups/hiddenMembers/read",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
     "RoleId": "9d3e04ba-3ee4-4d1b-a3a7-9aef423a09be",
     "RoleName": "SharePoint Backup Administrator",
     "isPrivileged": false,
@@ -11295,6 +11641,24 @@
         "EAMTierLevelTagValue": "2"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/applications/createAsOwner",
+        "Category": "Extended member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/groups/createAsOwner",
+        "Category": "Extended member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/createAsOwner",
+        "Category": "Extended member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/users/inviteGuest",
         "Category": "External Identities",
         "EAMTierLevelName": "UserAccess",
@@ -11302,24 +11666,6 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/applicationPolicies/createAsOwner",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/applications/createAsOwner",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/groups/createAsOwner",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/createAsOwner",
         "Category": "Unclassified",
         "EAMTierLevelName": "Unclassified",
         "EAMTierLevelTagValue": "Unclassified"

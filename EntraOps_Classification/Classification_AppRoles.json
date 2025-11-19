@@ -5,6 +5,25 @@
     "TierLevelDefinition": [
       {
         "Category": "Microsoft.Graph",
+        "Service": "Agent Identity",
+        "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+        "ResourceScope": "Application",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "AgentCard.ReadWrite.All",
+          "AgentCard.ReadWrite.ManagedBy",
+          "AgentCardManifest.ReadWrite.All",
+          "AgentCardManifest.ReadWrite.ManagedBy",
+          "AgentCollection.ReadWrite.All",
+          "AgentCollection.ReadWrite.ManagedBy",
+          "AgentInstance.ReadWrite.All",
+          "AgentInstance.ReadWrite.ManagedBy"
+        ]
+      },
+      {
+        "Category": "Microsoft.Graph",
         "Service": "Application and Workload Identity",
         "ResourceAppId": "00000003-0000-0000-c000-000000000000",
         "ResourceScope": "Application",
@@ -282,6 +301,7 @@
           "IdentityProvider.ReadWrite.All",
           "IdentityRiskEvent.ReadWrite.All",
           "RiskPreventionProviders.ReadWrite.All",
+          "IdentityRiskyAgent.ReadWrite.All",
           "IdentityRiskyServicePrincipal.ReadWrite.All",
           "IdentityRiskyUser.ReadWrite.All",
           "SecurityIdentitiesActions.ReadWrite.All",
@@ -531,6 +551,8 @@
           "Mail.ReadWrite",
           "Mail.Send",
           "Mail-Advanced.ReadWrite.All",
+          "MailboxConfigItem.Read",
+          "MailboxConfigItem.ReadWrite",
           "MailboxFolder.Read.All",
           "MailboxFolder.ReadWrite.All",
           "MailboxItem.ImportExport.All",
@@ -664,6 +686,7 @@
           "SharePointCrossTenantMigration.Read.All",
           "SharePointTenantSettings.Read.All",
           "SharePointTenantSettings.ReadWrite.All",
+          "Sites.Create.All",
           "Sites.FullControl.All",
           "Sites.Manage.All",
           "Sites.Read.All",
@@ -859,6 +882,7 @@
           "eDiscovery.ReadWrite.All",
           "IdentityProvider.Read.All",
           "IdentityRiskEvent.Read.All",
+          "IdentityRiskyAgent.Read.All",
           "IdentityRiskyServicePrincipal.Read.All",
           "IdentityRiskyUser.Read.All",
           "InformationProtectionConfig.Read.All",
@@ -969,6 +993,10 @@
           "/"
         ],
         "RoleDefinitionActions": [
+          "AgentCard.Read.All",
+          "AgentCardManifest.Read.All",
+          "AgentCollection.Read.All",
+          "AgentInstance.Read.All",
           "AdministrativeUnit.Read.All",
           "Application.Read.All",
           "Contact.Read.All",
