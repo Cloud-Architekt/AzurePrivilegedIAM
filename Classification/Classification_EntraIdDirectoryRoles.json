@@ -4,38 +4,8 @@
     "RoleName": "Agent ID Administrator",
     "isPrivileged": false,
     "Categories": "identity",
-    "RichDescription": "Manage all aspects of agents in a tenant including identity lifecycle operations for agent blueprints, agent service principals, agent identities, and agentic users.",
+    "RichDescription": "Manage all aspects of agents in a tenant including identity lifecycle operations for agent identities, agent identity blueprints, agent identity blueprint principals, and agent users.\nAssign the Agent ID Administrator role to users who need to do the following tasks:\n- Manage all aspects of agents in a tenant\n- Create, update, or delete agent users\n- Update properties for agent users\n- Enable or disable agent users\n- Restore deleted agent users\n- Invalidate refresh tokens for agent users\n- Revoke sign-in sessions for agent users\n- Manage identity lifecycle operations for agent users\n- Assign product licenses for agent users",
     "RolePermissions": [
-      {
-        "AuthorizedResourceAction": "microsoft.directory/accessReviews/definitions.applications/allProperties/allTasks",
-        "Category": "Entitlement Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/accessReviews/definitions.entitlementManagement/allProperties/allTasks",
-        "Category": "Entitlement Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/accessReviews/definitions.groups/allProperties/update",
-        "Category": "Entitlement Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/accessReviews/definitions.groups/create",
-        "Category": "Entitlement Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/accessReviews/definitions.groups/delete",
-        "Category": "Entitlement Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
       {
         "AuthorizedResourceAction": "microsoft.office365.serviceHealth/allEntities/allTasks",
         "Category": "Microsoft 365 Support Operations",
@@ -57,18 +27,6 @@
       {
         "AuthorizedResourceAction": "microsoft.azure.supportTickets/allEntities/allTasks",
         "Category": "Support and Service Health",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/accessReviews/definitions.directoryRoles/allProperties/read",
-        "Category": "Tenant Configuration (Reader)",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/accessReviews/definitions.groups/allProperties/read",
-        "Category": "Tenant Configuration (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -210,6 +168,12 @@
       {
         "AuthorizedResourceAction": "microsoft.azure.supportTickets/allEntities/allTasks",
         "Category": "Support and Service Health",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/entitlementManagement/allProperties/read",
+        "Category": "Tenant Configuration (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       }
@@ -5332,12 +5296,6 @@
         "EAMTierLevelTagValue": "1"
       },
       {
-        "AuthorizedResourceAction": "microsoft.directory/directoryRoleTemplates/allProperties/read",
-        "Category": "Tenant Configuration (Reader)",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
         "AuthorizedResourceAction": "microsoft.directory/domains/allProperties/read",
         "Category": "Tenant Configuration (Reader)",
         "EAMTierLevelName": "ManagementPlane",
@@ -5579,6 +5537,12 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/authorizationPolicy/standard/read",
+        "Category": "Default member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/directoryRoleTemplates/allProperties/read",
         "Category": "Default member",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
@@ -6044,6 +6008,12 @@
     "Categories": "identity",
     "RichDescription": "Default role for guest users. Can read a limited set of directory information.",
     "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.directory/directoryRoleTemplates/allProperties/read",
+        "Category": "Default member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
       {
         "AuthorizedResourceAction": "microsoft.directory/domains/standard/read",
         "Category": [
@@ -9112,6 +9082,12 @@
     "RichDescription": null,
     "RolePermissions": [
       {
+        "AuthorizedResourceAction": "microsoft.directory/directoryRoleTemplates/allProperties/read",
+        "Category": "Default member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/domains/standard/read",
         "Category": [
           "Default member",
@@ -11381,6 +11357,12 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/directoryRoles/standard/read",
+        "Category": "Default member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/directoryRoleTemplates/allProperties/read",
         "Category": "Default member",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
