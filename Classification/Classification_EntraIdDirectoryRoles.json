@@ -9020,6 +9020,42 @@
     }
   },
   {
+    "RoleId": "3f04f91a-4ad7-4bd3-bcfa-49882ea1a88a",
+    "RoleName": "Purview Workload Content Administrator",
+    "isPrivileged": false,
+    "Categories": "securityAndCompliance",
+    "RichDescription": "Assign the Purview Workload Content Administrator role to users who need to do the following tasks:\n- Manage or purge Microsoft 365 data (such as SharePoint, Teams, OneDrive, or Exchange) when accessing from the Microsoft Purview portal\nTo assign this role, you must use the Microsoft Purview portal. If you try to assign this role using the Microsoft Entra admin center, it might be overwritten.",
+    "RolePermissions": [],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "e07494ad-1654-4dd2-922e-6f81a71bf00f",
+    "RoleName": "Purview Workload Content Reader",
+    "isPrivileged": false,
+    "Categories": "securityAndCompliance",
+    "RichDescription": "Assign the Purview Workload Content Reader role to users who need to do the following tasks:\n- Read data from Microsoft 365 (such as SharePoint, Teams, OneDrive, or Exchange) when accessing from the Microsoft Purview portal\nTo assign this role, you must use the Microsoft Purview portal. If you try to assign this role using the Microsoft Entra admin center, it might be overwritten.",
+    "RolePermissions": [],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "02d5655b-c1cf-4e5f-98da-5fb919085bf6",
+    "RoleName": "Purview Workload Content Writer",
+    "isPrivileged": false,
+    "Categories": "securityAndCompliance",
+    "RichDescription": "Assign the Purview Workload Content Writer role to users who need to do the following tasks:\n- Read and edit Microsoft 365 data (such as SharePoint, Teams, OneDrive, or Exchange) when accessing from the Microsoft Purview portal\nTo assign this role, you must use the Microsoft Purview portal. If you try to assign this role using the Microsoft Entra admin center, it might be overwritten.",
+    "RolePermissions": [],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
     "RoleId": "4a5d8f65-41da-4de4-8968-e035b65339cf",
     "RoleName": "Reports Reader",
     "isPrivileged": false,

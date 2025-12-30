@@ -121,6 +121,166 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "ad25cc1d-84d8-47df-a08e-b34c2e800819",
+    "AppRoleDisplayName": "AgentIdentity.Create.All",
+    "Category": "Agent Identity",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "4c390976-b2b7-42e0-9187-c6be3bead001",
+    "AppRoleDisplayName": "AgentIdentity.CreateAsManager",
+    "Category": "Agent Identity",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "5b016f9b-18eb-41d4-869a-66931914d1c8",
+    "AppRoleDisplayName": "AgentIdentity.DeleteRestore.All",
+    "Category": "Agent Identity",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "69ee0943-4fa4-4ec8-8e52-d12e4ea661a3",
+    "AppRoleDisplayName": "AgentIdentity.EnableDisable.All",
+    "Category": "Agent Identity",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "b2b8f011-2898-4234-9092-5059f6c1ebfa",
+    "AppRoleDisplayName": "AgentIdentity.Read.All",
+    "Category": "Default member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "dcf7150a-88d4-4fe6-9be1-c2744c455397",
+    "AppRoleDisplayName": "AgentIdentity.ReadWrite.All",
+    "Category": "Agent Identity",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "0510736e-bdfb-4b37-9a1f-89b4a074763a",
+    "AppRoleDisplayName": "AgentIdentityBlueprint.AddRemoveCreds.All",
+    "Category": "Agent Identity",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "ea4b2453-ad2d-4d94-9155-10d5d9493ce9",
+    "AppRoleDisplayName": "AgentIdentityBlueprint.Create",
+    "Category": "Agent Identity",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "3f80b699-6405-4e36-a4df-4f19950ff91e",
+    "AppRoleDisplayName": "AgentIdentityBlueprint.DeleteRestore.All",
+    "Category": "Agent Identity",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "7547a7d1-36fa-4479-9c31-559a600eaa4f",
+    "AppRoleDisplayName": "AgentIdentityBlueprint.Read.All",
+    "Category": "Default member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "7fddd33b-d884-4ec0-8696-72cff90ff825",
+    "AppRoleDisplayName": "AgentIdentityBlueprint.ReadWrite.All",
+    "Category": "Agent Identity",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "19202363-278e-49c2-bf00-391e2ba00881",
+    "AppRoleDisplayName": "AgentIdentityBlueprint.UpdateAuthProperties.All",
+    "Category": "Agent Identity",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "76232daa-a1e4-4544-b664-495a006513bf",
+    "AppRoleDisplayName": "AgentIdentityBlueprint.UpdateBranding.All",
+    "Category": "Agent Identity",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "8959696d-d07e-4916-9b1e-3ba9ce459161",
+    "AppRoleDisplayName": "AgentIdentityBlueprintPrincipal.Create",
+    "Category": "Agent Identity",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "f86a2dd8-9298-4675-bd78-f5a3572da2d7",
+    "AppRoleDisplayName": "AgentIdentityBlueprintPrincipal.DeleteRestore.All",
+    "Category": "Agent Identity",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "a0bdd23d-8b19-4682-b428-574d96527c6f",
+    "AppRoleDisplayName": "AgentIdentityBlueprintPrincipal.EnableDisable.All",
+    "Category": "Agent Identity",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "9361dea9-4524-493d-941d-f1b65aaf6c7c",
+    "AppRoleDisplayName": "AgentIdentityBlueprintPrincipal.Read.All",
+    "Category": "Default member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "3bc933bc-8b4d-4cb6-ac49-b73774299250",
+    "AppRoleDisplayName": "AgentIdentityBlueprintPrincipal.ReadWrite.All",
+    "Category": "Agent Identity",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "b782c9ad-6f2b-4894-a21b-72bf22417f0a",
+    "AppRoleDisplayName": "AgentIdUser.ReadWrite.All",
+    "Category": "Agent Identity",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "4aa6e624-eee0-40ab-bdd8-f9639038a614",
+    "AppRoleDisplayName": "AgentIdUser.ReadWrite.IdentityParentedBy",
+    "Category": "Agent Identity",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "799a4732-85b8-4c67-b048-75f0e88a232b",
     "AppRoleDisplayName": "AgentInstance.Read.All",
     "Category": "Default member",
@@ -3802,6 +3962,14 @@
     "AppRoleId": "e46a01e9-b2cf-4d89-8424-bcdc6dd445ab",
     "AppRoleDisplayName": "SensitivityLabels.Read.All",
     "Category": "Microsoft Purview",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "84fa35c1-f997-4c1c-894c-bb52108cfbbf",
+    "AppRoleDisplayName": "SentimentSurvey.Export.All",
+    "Category": "Microsoft 365 Platform Management",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },

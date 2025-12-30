@@ -21,6 +21,12 @@ function Export-EntraOpsClassificationDirectoryRoles {
         'db506228-d27e-4b7d-95e5-295956d6615f' # Agent ID Administrator is sensitive but has no corresponding role action
     )
 
+    $ManagementPlaneRolesWithoutRoleActions = @(
+        '3f04f91a-4ad7-4bd3-bcfa-49882ea1a88a', # Purview Workload Content Administrator
+        'e07494ad-1654-4dd2-922e-6f81a71bf00f', # Purview Workload Content Reader
+        '02d5655b-c1cf-4e5f-98da-5fb919085bf6'  # Purview Workload Content Writer
+    )    
+
     # Get EntraOps Classification
     $Classification = Get-Content -Path ./EntraOps_Classification/Classification_AadResources.json | ConvertFrom-Json -Depth 10
 
@@ -85,6 +91,13 @@ function Export-EntraOpsClassificationDirectoryRoles {
                 "EAMTierLevelTagValue" = "0"
             }
         }
+
+        if ($ManagementPlaneRolesWithoutRoleActions -contains $_.templateId) {
+            $RoleDefinitionClassification = [PSCustomObject]@{
+                "EAMTierLevelName"     = "ManagementPlane"
+                "EAMTierLevelTagValue" = "1"
+            }
+        }        
 
         [PSCustomObject]@{
             "RoleId"          = $_.templateId
