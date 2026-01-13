@@ -132,8 +132,8 @@
     "AppRoleId": "4c390976-b2b7-42e0-9187-c6be3bead001",
     "AppRoleDisplayName": "AgentIdentity.CreateAsManager",
     "Category": "Agent Identity",
-    "EAMTierLevelName": "ManagementPlane",
-    "EAMTierLevelTagValue": "1"
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -276,8 +276,8 @@
     "AppRoleId": "4aa6e624-eee0-40ab-bdd8-f9639038a614",
     "AppRoleDisplayName": "AgentIdUser.ReadWrite.IdentityParentedBy",
     "Category": "Agent Identity",
-    "EAMTierLevelName": "ControlPlane",
-    "EAMTierLevelTagValue": "0"
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",

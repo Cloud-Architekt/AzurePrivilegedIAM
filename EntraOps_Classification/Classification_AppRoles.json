@@ -31,8 +31,7 @@
           "AgentIdentityBlueprintPrincipal.DeleteRestore.All",
           "AgentIdentityBlueprintPrincipal.EnableDisable.All",
           "AgentIdentityBlueprintPrincipal.ReadWrite.All",
-          "AgentIdUser.ReadWrite.All",
-          "AgentIdUser.ReadWrite.IdentityParentedBy"
+          "AgentIdUser.ReadWrite.All"
         ]
       },
       {
@@ -477,7 +476,6 @@
           "AgentApplication.Create",
           "AgentIdentity.Create.All",
           "AgentIdentity.Create",
-          "AgentIdentity.CreateAsManager",
           "AgentIdentityBlueprint.Create",
           "AgentIdentityBlueprintPrincipal.Create"
         ]
@@ -1077,10 +1075,16 @@
         "RoleDefinitionActions": [
           "Calendars.Read.Shared",
           "Calendars.ReadBasic",
+          "ChannelMessage.Send",
           "Device.Read",
+          "Directory.AccessAsUser.All",
+          "Files.ReadWrite",
           "email",
+          "offline_access",
           "openid",
           "profile",
+          "user_impersonation",
+          "User.Read",
           "User.ReadBasic.All"
         ]
       },
@@ -1094,6 +1098,19 @@
         ],
         "RoleDefinitionActions": [
           "User.Invite.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.Graph",
+        "Service": "Agent Identity",
+        "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+        "ResourceScope": "Application",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "AgentIdUser.ReadWrite.IdentityParentedBy",
+          "AgentIdentity.CreateAsManager"
         ]
       },
       {
