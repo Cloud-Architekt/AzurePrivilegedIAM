@@ -1122,6 +1122,25 @@
     }
   },
   {
+    "RoleId": "0b00bede-4072-4d22-b441-e7df02a1ef63",
+    "RoleName": "Authentication Extensibility Password Administrator",
+    "isPrivileged": true,
+    "Categories": "identity",
+    "RichDescription": "Assign the Authentication Extensibility Password Administrator role to users who need to do the following tasks:\n- Trigger a password submit event for custom authentication to migrate user passwords from an external identity system to Microsoft Entra External ID",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.directory/onPasswordSubmitCustomAuthenticationExtension/allProperties/allTasks",
+        "Category": "Authentication",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
+    }
+  },
+  {
     "RoleId": "0526716b-113d-4c15-b2c8-68e3c22b9f80",
     "RoleName": "Authentication Policy Administrator",
     "isPrivileged": false,
@@ -3731,6 +3750,36 @@
       {
         "AuthorizedResourceAction": "microsoft.directory/passwordHashSync/allProperties/allTasks",
         "Category": "Authentication",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/backup/preview/cancel",
+        "Category": "Backup and Recovery",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/backup/preview/create",
+        "Category": "Backup and Recovery",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/backup/recovery/cancel",
+        "Category": "Backup and Recovery",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/backup/recovery/create",
+        "Category": "Backup and Recovery",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/backup/standard/read",
+        "Category": "Backup and Recovery",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
@@ -11133,6 +11182,43 @@
         "Category": "Teams",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "2fe872fb-daa8-4afc-8f6c-53c4565cfef4",
+    "RoleName": "Teams External Collaboration Administrator",
+    "isPrivileged": false,
+    "Categories": "collaboration",
+    "RichDescription": "- Manage Teams external collaboration settings that govern the organization's interactions with external users in chats, meetings, and calls.\n- Configure external domains, including creating, editing, and deleting domain entries that specify how users engage with external organizations.\n- Establish and manage allowlist and blocklist policies for external collaboration at both the user and group levels.\n- Control which external domains and users can collaborate with the organization for secure and compliant external collaboration.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.office365.webPortal/allEntities/standard/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.azure.supportTickets/allEntities/allTasks",
+        "Category": "Support and Service Health",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/authorizationPolicy/standard/read",
+        "Category": "Default member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.teams/policies/externalAccessPolicy/allTasks",
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
       }
     ],
     "Classification": {
