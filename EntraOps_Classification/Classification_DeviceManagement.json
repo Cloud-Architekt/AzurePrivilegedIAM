@@ -111,7 +111,6 @@
           "Microsoft.Intune/ASRPolicy/Create",
           "Microsoft.Intune/ASRPolicy/Delete",
           "Microsoft.Intune/ASRPolicy/Update",
-          "Microsoft.Intune/ASRPolicy/ViewReports",
           "Microsoft.Intune/EDRPolicy/Assign",
           "Microsoft.Intune/EDRPolicy/Create",
           "Microsoft.Intune/EDRPolicy/Delete",
@@ -201,7 +200,7 @@
       },
       {
         "Category": "Microsoft.DeviceManagement",
-        "Service": "Global Endpoint Privileged Management",
+        "Service": "Global EPM Policy Management",
         "RoleAssignmentScopeName": [
           "/"
         ],
@@ -453,7 +452,7 @@
       },
       {
         "Category": "Microsoft.DeviceManagement",
-        "Service": "Privileged Endpoint Privileged Management",
+        "Service": "Privileged EPM Policy Management",
         "RoleAssignmentScopeName": [
           "<Tier0PrivilegedDeviceScopeTagId>",
           "<Tier1PrivilegedDeviceScopeTagId>"
@@ -633,7 +632,6 @@
           "Microsoft.Intune/ASRPolicy/Create",
           "Microsoft.Intune/ASRPolicy/Delete",
           "Microsoft.Intune/ASRPolicy/Update",
-          "Microsoft.Intune/ASRPolicy/ViewReports",
           "Microsoft.Intune/EDRPolicy/Assign",
           "Microsoft.Intune/EDRPolicy/Create",
           "Microsoft.Intune/EDRPolicy/Delete",
@@ -723,7 +721,7 @@
       },
       {
         "Category": "Microsoft.DeviceManagement",
-        "Service": "User Endpoint Privileged Management",
+        "Service": "User EPM Policy Management",
         "RoleAssignmentScopeName": [
           "<Tier2EnterpriseDeviceScopeTagId>"
         ],
@@ -797,13 +795,14 @@
         ],
         "RoleDefinitionActions": [
           "Microsoft.Intune/AdminTasks/Read",
-          "Microsoft.Intune/AppControlPolicy/ViewReports",
           "Microsoft.Intune/AndroidFota/Read",
           "Microsoft.Intune/AndroidSync/Read",
           "Microsoft.Intune/AppControlPolicy/Read",
+          "Microsoft.Intune/AppControlPolicy/ViewReports",
           "Microsoft.Intune/AppleDeviceSerialNumbers/Read",
           "Microsoft.Intune/AppleEnrollmentProfiles/Read",
           "Microsoft.Intune/ASRPolicy/Read",
+          "Microsoft.Intune/ASRPolicy/ViewReports",
           "Microsoft.Intune/AssignmentFilter/Read",
           "Microsoft.Intune/Audit/Read",
           "Microsoft.Intune/CertificateConnector/Read",
