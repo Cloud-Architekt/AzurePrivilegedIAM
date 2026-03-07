@@ -4703,6 +4703,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "b0cfd829-be18-4b31-bb0e-ec1df8197ba3",
+    "AppRoleDisplayName": "TeamworkTargetedMessage.Read.All",
+    "Category": "Microsoft Teams",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "ea047cc2-df29-4f3e-83a3-205de61501ca",
     "AppRoleDisplayName": "TermStore.Read.All",
     "Category": "Microsoft SharePoint",

@@ -841,6 +841,7 @@
           "TeamworkDevice.ReadWrite.All",
           "TeamworkTag.Read.All",
           "TeamworkTag.ReadWrite.All",
+          "TeamworkTargetedMessage.Read.All",
           "WorkforceIntegration.ReadWrite.All"
         ]
       },

@@ -4,7 +4,7 @@
     "RoleName": "Agent ID Administrator",
     "isPrivileged": false,
     "Categories": "identity",
-    "RichDescription": "Manage all aspects of agents in a tenant including identity lifecycle operations for agent identities, agent identity blueprints, agent identity blueprint principals, and agent users.\nAssign the Agent ID Administrator role to users who need to do the following tasks:\n- Manage all aspects of agents in a tenant\n- Create, update, or delete agent users\n- Update properties for agent users\n- Enable or disable agent users\n- Restore deleted agent users\n- Invalidate refresh tokens for agent users\n- Revoke sign-in sessions for agent users\n- Manage identity lifecycle operations for agent users\n- Assign product licenses for agent users",
+    "RichDescription": "Manage all aspects of agents in a tenant including identity lifecycle operations for agent identities, agent identity blueprints, agent identity blueprint principals, and agent users.\nAssign the Agent ID Administrator role to users who need to do the following tasks:\n- Manage all aspects of agents in a tenant\n- Create, update, or delete agent users\n- Update properties for agent users\n- Enable or disable agent users\n- Permanently delete agent users\n- Restore deleted agent users\n- Invalidate refresh tokens for agent users\n- Revoke sign-in sessions for agent users\n- Manage identity lifecycle operations for agent users\n- Assign product licenses for agent users",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.office365.serviceHealth/allEntities/allTasks",
@@ -276,6 +276,12 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/applications/delete",
+        "Category": "Application and Workload Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/applications/disablement/update",
         "Category": "Application and Workload Identity",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
@@ -1558,6 +1564,12 @@
         "EAMTierLevelTagValue": "0"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/applications/disablement/update",
+        "Category": "Application and Workload Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/applications/extensionProperties/update",
         "Category": "Application and Workload Identity",
         "EAMTierLevelName": "ControlPlane",
@@ -2664,6 +2676,12 @@
         "EAMTierLevelTagValue": "2"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/users/sponsorOf/read",
+        "Category": "Default member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/users/sponsors/read",
         "Category": "Default member",
         "EAMTierLevelName": "UserAccess",
@@ -3671,6 +3689,12 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/applications/allProperties/allTasks",
+        "Category": "Application and Workload Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/applications/disablement/update",
         "Category": "Application and Workload Identity",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
@@ -6022,6 +6046,12 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/users/scopedRoleMemberOf/read",
+        "Category": "Default member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/users/sponsorOf/read",
         "Category": "Default member",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
@@ -9701,6 +9731,12 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "microsoft.agentRegistry/allEntities/allProperties/read",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/bulkJobs/standard/read",
         "Category": "Tenant Configuration (Reader)",
         "EAMTierLevelName": "ManagementPlane",
@@ -10011,6 +10047,12 @@
       {
         "AuthorizedResourceAction": "microsoft.azure.serviceHealth/allEntities/allTasks",
         "Category": "Support and Service Health",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.agentRegistry/allEntities/allProperties/read",
+        "Category": "Tenant Configuration (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -11209,16 +11251,16 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "microsoft.teams/policies/externalAccessPolicy/allTasks",
+        "Category": "Teams",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/authorizationPolicy/standard/read",
         "Category": "Default member",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.teams/policies/externalAccessPolicy/allTasks",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
       }
     ],
     "Classification": {
@@ -11701,6 +11743,12 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/users/scopedRoleMemberOf/read",
+        "Category": "Default member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/users/sponsorOf/read",
         "Category": "Default member",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"

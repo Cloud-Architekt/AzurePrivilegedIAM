@@ -36,6 +36,7 @@
           "microsoft.directory/applications/create",
           "microsoft.directory/applications/credentials/update",
           "microsoft.directory/applications/delete",
+          "microsoft.directory/applications/disablement/update",
           "microsoft.directory/applications/extensionProperties/update",
           "microsoft.directory/applications/notes/update",
           "microsoft.directory/applications/owners/update",
@@ -346,6 +347,7 @@
           "microsoft.directory/users/password/update",
           "microsoft.directory/users/photo/update",
           "microsoft.directory/users/restore",
+          "microsoft.directory/users/sponsorOf/read",                    
           "microsoft.directory/users/sponsors/update",
           "microsoft.directory/users/usageLocation/update",
           "microsoft.directory/users/userPrincipalName/update"
@@ -610,6 +612,7 @@
           "microsoft.directory/applications/create",
           "microsoft.directory/applications/credentials/update",
           "microsoft.directory/applications/delete",
+          "microsoft.directory/applications/disablement/update",
           "microsoft.directory/applications/extensionProperties/update",
           "microsoft.directory/applications/notes/update",
           "microsoft.directory/applications/owners/update",
@@ -820,6 +823,7 @@
           "microsoft.directory/users/password/update",
           "microsoft.directory/users/photo/update",
           "microsoft.directory/users/restore",
+          "microsoft.directory/users/sponsorOf/read",
           "microsoft.directory/users/sponsors/update",
           "microsoft.directory/users/usageLocation/update",
           "microsoft.directory/users/userPrincipalName/update"
