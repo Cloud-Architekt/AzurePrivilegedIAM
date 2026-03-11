@@ -264,8 +264,8 @@
         "Category": "Microsoft.DeviceManagement",
         "Service": "Privileged Application Management",
         "RoleAssignmentScopeName": [
-          <Tier0PrivilegedDeviceScopeTagId>,
-          <Tier1PrivilegedDeviceScopeTagId>
+          <Tier0IncludedGroupIds>,
+          <Tier1IncludedGroupIds>
         ],
         "ExcludedRoleAssignmentScopeName": [],
         "RoleDefinitionActions": [
@@ -281,8 +281,8 @@
         "Category": "Microsoft.DeviceManagement",
         "Service": "Privileged Certificate Management",
         "RoleAssignmentScopeName": [
-          <Tier0PrivilegedDeviceScopeTagId>,
-          <Tier1PrivilegedDeviceScopeTagId>
+          <Tier0IncludedGroupIds>,
+          <Tier1IncludedGroupIds>
         ],
         "ExcludedRoleAssignmentScopeName": [],
         "RoleDefinitionActions": [
@@ -294,8 +294,8 @@
         "Category": "Microsoft.DeviceManagement",
         "Service": "Privileged Endpoint Management",
         "RoleAssignmentScopeName": [
-          <Tier0PrivilegedDeviceScopeTagId>,
-          <Tier1PrivilegedDeviceScopeTagId>
+          <Tier0IncludedGroupIds>,
+          <Tier1IncludedGroupIds>
         ],
         "ExcludedRoleAssignmentScopeName": [],
         "RoleDefinitionActions": [
@@ -349,8 +349,8 @@
         "Category": "Microsoft.DeviceManagement",
         "Service": "Privileged Endpoint Protection Management",
         "RoleAssignmentScopeName": [
-          <Tier0PrivilegedDeviceScopeTagId>,
-          <Tier1PrivilegedDeviceScopeTagId>
+          <Tier0IncludedGroupIds>,
+          <Tier1IncludedGroupIds>
         ],
         "ExcludedRoleAssignmentScopeName": [],
         "RoleDefinitionActions": [
@@ -369,8 +369,8 @@
         "Category": "Microsoft.DeviceManagement",
         "Service": "Privileged Endpoint Security Management",
         "RoleAssignmentScopeName": [
-          <Tier0PrivilegedDeviceScopeTagId>,
-          <Tier1PrivilegedDeviceScopeTagId>
+          <Tier0IncludedGroupIds>,
+          <Tier1IncludedGroupIds>
         ],
         "ExcludedRoleAssignmentScopeName": [],
         "RoleDefinitionActions": [
@@ -390,8 +390,8 @@
         "Category": "Microsoft.DeviceManagement",
         "Service": "Privileged Endpoint Policy Management",
         "RoleAssignmentScopeName": [
-          <Tier0PrivilegedDeviceScopeTagId>,
-          <Tier1PrivilegedDeviceScopeTagId>
+          <Tier0IncludedGroupIds>,
+          <Tier1IncludedGroupIds>
         ],
         "ExcludedRoleAssignmentScopeName": [],
         "RoleDefinitionActions": [
@@ -409,8 +409,8 @@
         "Category": "Microsoft.DeviceManagement",
         "Service": "Privileged Device Enrollment Management",
         "RoleAssignmentScopeName": [
-          <Tier0PrivilegedDeviceScopeTagId>,
-          <Tier1PrivilegedDeviceScopeTagId>
+          <Tier0IncludedGroupIds>,
+          <Tier1IncludedGroupIds>
         ],
         "ExcludedRoleAssignmentScopeName": [],
         "RoleDefinitionActions": [
@@ -435,8 +435,8 @@
         "Category": "Microsoft.DeviceManagement",
         "Service": "Privileged Mobile Device Management",
         "RoleAssignmentScopeName": [
-          <Tier0PrivilegedDeviceScopeTagId>,
-          <Tier1PrivilegedDeviceScopeTagId>
+          <Tier0IncludedGroupIds>,
+          <Tier1IncludedGroupIds>
         ],
         "ExcludedRoleAssignmentScopeName": [],
         "RoleDefinitionActions": [
@@ -454,8 +454,8 @@
         "Category": "Microsoft.DeviceManagement",
         "Service": "Privileged EPM Policy Management",
         "RoleAssignmentScopeName": [
-          <Tier0PrivilegedDeviceScopeTagId>,
-          <Tier1PrivilegedDeviceScopeTagId>
+          <Tier0IncludedGroupIds>,
+          <Tier1IncludedGroupIds>
         ],
         "ExcludedRoleAssignmentScopeName": [],
         "RoleDefinitionActions": [
@@ -470,8 +470,8 @@
         "Category": "Microsoft.DeviceManagement",
         "Service": "Privileged Remote Assistance",
         "RoleAssignmentScopeName": [
-          <Tier0PrivilegedDeviceScopeTagId>,
-          <Tier1PrivilegedDeviceScopeTagId>
+          <Tier0IncludedGroupIds>,
+          <Tier1IncludedGroupIds>
         ],
         "ExcludedRoleAssignmentScopeName": [],
         "RoleDefinitionActions": [
@@ -546,8 +546,8 @@
         ],
         "ExcludedRoleAssignmentScopeName": [
           "/",
-          <Tier0PrivilegedDeviceScopeTagId>,
-          <Tier1PrivilegedDeviceScopeTagId>
+          <Tier0IncludedGroupIds>,
+          <Tier1IncludedGroupIds>
         ],
         "RoleDefinitionActions": [
           "Microsoft.Intune/ManagedApps/Assign",
@@ -566,8 +566,8 @@
         ],
         "ExcludedRoleAssignmentScopeName": [
           "/",
-          <Tier0PrivilegedDeviceScopeTagId>,
-          <Tier1PrivilegedDeviceScopeTagId>
+          <Tier0IncludedGroupIds>,
+          <Tier1IncludedGroupIds>
         ],
         "RoleDefinitionActions": [
           "Microsoft.Intune/CertificateConnector/Modify",
@@ -582,8 +582,8 @@
         ],
         "ExcludedRoleAssignmentScopeName": [
           "/",
-          <Tier0PrivilegedDeviceScopeTagId>,
-          <Tier1PrivilegedDeviceScopeTagId>
+          <Tier0IncludedGroupIds>,
+          <Tier1IncludedGroupIds>
         ],
         "RoleDefinitionActions": [
           "Microsoft.Intune/AdminTasks/Create",
@@ -640,8 +640,8 @@
         ],
         "ExcludedRoleAssignmentScopeName": [
           "/",
-          <Tier0PrivilegedDeviceScopeTagId>,
-          <Tier1PrivilegedDeviceScopeTagId>
+          <Tier0IncludedGroupIds>,
+          <Tier1IncludedGroupIds>
         ],
         "RoleDefinitionActions": [
           "Microsoft.Intune/ASRPolicy/Assign",
@@ -662,8 +662,8 @@
         ],
         "ExcludedRoleAssignmentScopeName": [
           "/",
-          <Tier0PrivilegedDeviceScopeTagId>,
-          <Tier1PrivilegedDeviceScopeTagId>
+          <Tier0IncludedGroupIds>,
+          <Tier1IncludedGroupIds>
         ],
         "RoleDefinitionActions": [
           "Microsoft.Intune/AppControlPolicy/Assign",
@@ -686,8 +686,8 @@
         ],
         "ExcludedRoleAssignmentScopeName": [
           "/",
-          <Tier0PrivilegedDeviceScopeTagId>,
-          <Tier1PrivilegedDeviceScopeTagId>
+          <Tier0IncludedGroupIds>,
+          <Tier1IncludedGroupIds>
         ],
         "RoleDefinitionActions": [
           "Microsoft.Intune/DeviceCompliancePolices/Assign",
@@ -708,8 +708,8 @@
         ],
         "ExcludedRoleAssignmentScopeName": [
           "/",
-          <Tier0PrivilegedDeviceScopeTagId>,
-          <Tier1PrivilegedDeviceScopeTagId>
+          <Tier0IncludedGroupIds>,
+          <Tier1IncludedGroupIds>
         ],
         "RoleDefinitionActions": [
           "Microsoft.Intune/AppleDeviceSerialNumbers/Create",
@@ -737,8 +737,8 @@
         ],
         "ExcludedRoleAssignmentScopeName": [
           "/",
-          <Tier0PrivilegedDeviceScopeTagId>,
-          <Tier1PrivilegedDeviceScopeTagId>
+          <Tier0IncludedGroupIds>,
+          <Tier1IncludedGroupIds>
         ],
         "RoleDefinitionActions": [
           "Microsoft.Intune/AndroidSync/UpdateApps",
@@ -759,8 +759,8 @@
         ],
         "ExcludedRoleAssignmentScopeName": [
           "/",
-          <Tier0PrivilegedDeviceScopeTagId>,
-          <Tier1PrivilegedDeviceScopeTagId>
+          <Tier0IncludedGroupIds>,
+          <Tier1IncludedGroupIds>
         ],
         "RoleDefinitionActions": [
           "Microsoft.Intune/EpmPolicy/Assign",
@@ -778,8 +778,8 @@
         ],
         "ExcludedRoleAssignmentScopeName": [
           "/",
-          <Tier0PrivilegedDeviceScopeTagId>,
-          <Tier1PrivilegedDeviceScopeTagId>
+          <Tier0IncludedGroupIds>,
+          <Tier1IncludedGroupIds>
         ],
         "RoleDefinitionActions": [
           "Microsoft.Intune/RemoteAssistance/Update",

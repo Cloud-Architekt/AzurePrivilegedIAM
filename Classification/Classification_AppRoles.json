@@ -339,9 +339,9 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "b86848a7-d5b1-41eb-a9b4-54a4e6306e97",
     "AppRoleDisplayName": "APIConnectors.Read.All",
-    "Category": "Authentication",
-    "EAMTierLevelName": "ControlPlane",
-    "EAMTierLevelTagValue": "0"
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -2075,10 +2075,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "90db2b9a-d928-4d33-a4dd-8442ae3d41e4",
     "AppRoleDisplayName": "IdentityProvider.ReadWrite.All",
-    "Category": [
-      "Identity Threat Detection and Response",
-      "Tenant Management"
-    ],
+    "Category": "Tenant Management",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
   },
@@ -3078,10 +3075,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "be74164b-cff1-491c-8741-e671cb536e13",
     "AppRoleDisplayName": "Policy.ReadWrite.ApplicationConfiguration",
-    "Category": [
-      "Application and Workload Identity",
-      "Tenant Management"
-    ],
+    "Category": "Application and Workload Identity",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
   },
