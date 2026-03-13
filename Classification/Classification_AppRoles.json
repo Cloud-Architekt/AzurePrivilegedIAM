@@ -1801,6 +1801,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "56eda3c5-3834-4815-bd41-6f8fa1295247",
+    "AppRoleDisplayName": "EntraBackup.Read.All",
+    "Category": "Backup and Restore",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "b7f6385c-6ce6-4639-a480-e23c42ed9784",
     "AppRoleDisplayName": "EventListener.Read.All",
     "Category": "Unclassified",
@@ -3033,6 +3041,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "227900ff-df89-40f8-90e2-8157cf6995d5",
+    "AppRoleDisplayName": "Policy.Read.B2BManagementPolicy",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "37730810-e9ba-4e46-b07e-8ca78d182097",
     "AppRoleDisplayName": "Policy.Read.ConditionalAccess",
     "Category": "Tenant Configuration (Reader)",
@@ -3100,6 +3116,14 @@
     "AppRoleId": "fb221be6-99f2-473f-bd32-01c6a0e9ca3b",
     "AppRoleDisplayName": "Policy.ReadWrite.Authorization",
     "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "886bd2d9-5b8b-4b49-adea-ca75fb50d9ef",
+    "AppRoleDisplayName": "Policy.ReadWrite.B2BManagementPolicy",
+    "Category": "Application and Workload Identity",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
   },

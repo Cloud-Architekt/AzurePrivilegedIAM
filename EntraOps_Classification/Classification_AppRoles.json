@@ -52,6 +52,7 @@
           "DelegatedPermissionGrant.ReadWrite.All",
           "PermissionGrantPolicy.ReadWrite.All",
           "Policy.ReadWrite.ApplicationConfiguration",
+          "Policy.ReadWrite.B2BManagementPolicy",
           "Policy.ReadWrite.ConsentRequest",
           "Policy.ReadWrite.PermissionGrant",
           "ServicePrincipalEndpoint.ReadWrite.All",
@@ -492,6 +493,7 @@
           "/"
         ],
         "RoleDefinitionActions": [
+          "EntraBackup.Read.All",
           "BackupRestore-Control.Read.All",
           "BackupRestore-Control.ReadWrite.All"
         ]
@@ -982,6 +984,7 @@
           "PendingExternalUserProfile.Read.All",
           "Policy.Read.All",
           "Policy.Read.AuthenticationMethod",
+          "Policy.Read.B2BManagementPolicy",
           "Policy.Read.ConditionalAccess",
           "Policy.Read.DeviceConfiguration",
           "Policy.Read.IdentityProtection",
