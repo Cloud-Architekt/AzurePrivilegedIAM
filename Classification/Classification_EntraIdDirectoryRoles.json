@@ -3229,6 +3229,80 @@
     }
   },
   {
+    "RoleId": "b6a27b2b-f905-4b2e-81b5-0d90e0ef1fdb",
+    "RoleName": "Entra Backup Administrator",
+    "isPrivileged": false,
+    "Categories": "identity",
+    "RichDescription": "Assign the Entra Backup Administrator role to users who need to do the following tasks:\n- List all the snapshots in a tenant  \n- Create a difference report (preview job) of a backup in the past and optionally include scoping filters\n- Compare states of changed directory objects that are in backup and recovery scope \n- Filter directory objects with supported scoping filters \n- Read status of a job \n- List all the jobs including preview and recovery jobs \n- Trigger recovery jobs and optionally include scoping filters",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.directory/backup/preview/cancel",
+        "Category": "Backup and Recovery",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/backup/preview/create",
+        "Category": "Backup and Recovery",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/backup/recovery/cancel",
+        "Category": "Backup and Recovery",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/backup/recovery/create",
+        "Category": "Backup and Recovery",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/backup/standard/read",
+        "Category": "Backup and Recovery",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
+    }
+  },
+  {
+    "RoleId": "f42252d9-5400-4d7b-b9ef-cc582dbb8577",
+    "RoleName": "Entra Backup Reader",
+    "isPrivileged": false,
+    "Categories": "identity",
+    "RichDescription": "Assign the Entra Backup Reader role to users who need to do the following tasks:\n- List all the snapshots in a tenant  \n- Create a difference report (preview job) of a backup in the past and optionally include scoping filters\n- Compare states of changed directory objects that are in backup and recovery scope \n- Filter directory objects with supported scoping filters \n- Read status of a job \n- View all the jobs including preview and recovery jobs",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.directory/backup/preview/cancel",
+        "Category": "Backup and Recovery",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/backup/preview/create",
+        "Category": "Backup and Recovery",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/backup/standard/read",
+        "Category": "Backup and Recovery",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
+    }
+  },
+  {
     "RoleId": "29232cdf-9323-42fd-ade2-1d097af3e4de",
     "RoleName": "Exchange Administrator",
     "isPrivileged": false,
