@@ -107,7 +107,7 @@
   {
     "RoleId": "d2562ede-74db-457e-a7b6-544e236ebb61",
     "RoleName": "AI Administrator",
-    "isPrivileged": false,
+    "isPrivileged": true,
     "Categories": "collaboration,identity",
     "RichDescription": "Assign the AI Administrator role to users who need to do the following tasks:\n* Manage all aspects of Microsoft 365 Copilot\n* Manage AI-related enterprise services, extensibility, and copilot agents from the Integrated apps page in the Microsoft 365 admin center\n* Approve and publish line-of-business copilot agents\n* Allow users to install an app or install an app for users in the organization if the app does not require permission\n* Read and configure Azure and Microsoft 365 service health dashboards\n* View usage reports, adoption insights, and organizational insight\n* Create and manage support tickets in Azure and the Microsoft 365 admin center",
     "RolePermissions": [
@@ -176,6 +176,18 @@
         "Category": "Tenant Configuration (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/users/allProperties/read",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/subscribedSkus/standard/read",
+        "Category": "Default member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       }
     ],
     "Classification": {
