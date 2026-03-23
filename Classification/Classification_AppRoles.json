@@ -1177,6 +1177,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "f9af4646-98b0-4e9d-a53e-40d4f6452fc4",
+    "AppRoleDisplayName": "Contracts.Read.All",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "72f0655d-6228-4ddc-8e1b-164973b9213b",
     "AppRoleDisplayName": "CopilotPackages.Read.All",
     "Category": "Copilot",
@@ -3313,6 +3321,22 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "e7ebe2d9-6e26-487a-8286-191d623a6904",
+    "AppRoleDisplayName": "PrivilegedAccess-CustomExt.Read.All",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "124325f3-0c46-4c57-a050-d6d1a82510f6",
+    "AppRoleDisplayName": "PrivilegedAccess-CustomExt.ReadWrite.All",
+    "Category": "Privileged IAM",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "4cdc2547-9148-4295-8d11-be0db1391d6b",
     "AppRoleDisplayName": "PrivilegedAccess.Read.AzureAD",
     "Category": "Tenant Configuration (Reader)",
@@ -4724,6 +4748,54 @@
     "AppRoleId": "b0cfd829-be18-4b31-bb0e-ec1df8197ba3",
     "AppRoleDisplayName": "TeamworkTargetedMessage.Read.All",
     "Category": "Microsoft Teams",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "3f4f98e9-6faf-4e5f-814b-ed2ed8a4ec9e",
+    "AppRoleDisplayName": "TenantGovernance-Invitation.Read.All",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "eb9465d8-e7c0-4301-8e51-927f34ee3134",
+    "AppRoleDisplayName": "TenantGovernance-PolicyTemplate.Read.All",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "7ced9a83-8e7c-46df-b3e0-6b45a6ecedcd",
+    "AppRoleDisplayName": "TenantGovernance-RelatedTenant.Read.All",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "41c250d0-8793-44e1-a130-5fdbd5bccd0a",
+    "AppRoleDisplayName": "TenantGovernance-Relationship.Read.All",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "294294d5-2b81-4cf1-837c-28fc22bc3290",
+    "AppRoleDisplayName": "TenantGovernance-Request.Read.All",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "e2d1cac5-0317-4ae3-aca9-59737eb75317",
+    "AppRoleDisplayName": "TenantGovernance-Setting.Read.All",
+    "Category": "Tenant Configuration (Reader)",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
