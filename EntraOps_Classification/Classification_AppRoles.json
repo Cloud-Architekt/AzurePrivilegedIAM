@@ -620,7 +620,8 @@
           "OrgContact.Read.All",
           "PartnerBilling.Read.All",
           "SentimentSurvey.Export.All",
-          "User-LifeCycleInfo.Read.All"
+          "User-LifeCycleInfo.Read.All",
+          "WindowsUpdates.Read.All"
         ]
       },
       {
@@ -649,6 +650,18 @@
           "Notes.ReadWrite.All",
           "ShortNotes.Read.All",
           "ShortNotes.ReadWrite.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.Graph",
+        "Service": "Microsoft Places",
+        "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+        "ResourceScope": "Application",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "Place.ReadWrite.All"
         ]
       },
       {
@@ -833,6 +846,8 @@
           "TeamworkAppSettings.ReadWrite.All",
           "TeamworkDevice.Read.All",
           "TeamworkDevice.ReadWrite.All",
+          "TeamworkSection.Read.All",
+          "TeamworkSection.ReadWrite.All",
           "TeamworkTag.Read.All",
           "TeamworkTag.ReadWrite.All",
           "TeamworkTargetedMessage.Read.All",
@@ -853,6 +868,7 @@
           "EngagementConversation.Migration.All",
           "EngagementConversation.ReadWrite.All",
           "EngagementConversation.Read.All",
+          "EngagementExport.Read.All",
           "EngagementMeetingConversation.Read.All",
           "EngagementRole.Read.All",
           "EngagementRole.ReadWrite.All",

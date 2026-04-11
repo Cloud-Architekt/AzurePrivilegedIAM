@@ -2222,6 +2222,25 @@
     }
   },
   {
+    "RoleId": "fc8ad4e2-40e4-4724-8317-bcda7503ecbf",
+    "RoleName": "Customer Delegated Admin Relationship Administrator",
+    "isPrivileged": false,
+    "Categories": "securityAndCompliance",
+    "RichDescription": "Assign the Customer Delegated Admin Relationship Administrator role to users who need to do the following tasks:\n- Accept a granular delegated admin privileges (GDAP) relationship from a partner for their tenant.\n- List and view GDAP relationships with partners.\n- Terminate a GDAP relationship with a partner.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.commerce.tenantRelationships/customerDelegatedAdminPrivileges/allProperties/allTasks",
+        "Category": "Cross Tenant Relationship",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
+    }
+  },
+  {
     "RoleId": "5c4f9dcd-47dc-4cf7-8c9a-9e4207cbfc91",
     "RoleName": "Customer LockBox Access Approver",
     "isPrivileged": false,
@@ -4022,6 +4041,12 @@
       {
         "AuthorizedResourceAction": "microsoft.directory/resourceNamespaces/resourceActions/authenticationContext/update",
         "Category": "Conditional Access",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.commerce.tenantRelationships/customerDelegatedAdminPrivileges/allProperties/allTasks",
+        "Category": "Cross Tenant Relationship",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
@@ -6432,6 +6457,12 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/applications/delete",
+        "Category": "Application and Workload Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/applications/disablement/update",
         "Category": "Application and Workload Identity",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
@@ -11470,6 +11501,82 @@
       "EAMTierLevelName": "UserAccess",
       "EAMTierLevelTagValue": "2"
     }
+  },
+  {
+    "RoleId": "1981f584-96e9-4a6f-95b0-f522373f8fae",
+    "RoleName": "Tenant Governance Administrator",
+    "isPrivileged": false,
+    "Categories": "identity",
+    "RichDescription": "Can manage all aspects of tenant governance.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.directory/crossTenantAccessPolicy/basic/update",
+        "Category": "Conditional Access",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/crossTenantAccessPolicy/partners/delete",
+        "Category": "Conditional Access",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/crossTenantAccessPolicy/partners/create",
+        "Category": "Cross Tenant Partner Management",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/crossTenantAccessPolicy/default/standard/read",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/crossTenantAccessPolicy/partners/standard/read",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/crossTenantAccessPolicy/standard/read",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
+    }
+  },
+  {
+    "RoleId": "e0a4caa6-fe82-443f-b92f-d87341d17b2e",
+    "RoleName": "Tenant Governance Reader",
+    "isPrivileged": false,
+    "Categories": "identity",
+    "RichDescription": "Can read all aspects of tenant governance.",
+    "RolePermissions": [],
+    "Classification": null
+  },
+  {
+    "RoleId": "b8e31d83-1534-480f-9b10-0338ded51b7e",
+    "RoleName": "Tenant Governance Relationship Administrator",
+    "isPrivileged": false,
+    "Categories": "identity",
+    "RichDescription": "Can manage all aspects of tenant governance relationships, except accepting requests.",
+    "RolePermissions": [],
+    "Classification": null
+  },
+  {
+    "RoleId": "124577f8-48ed-456a-839f-13b419002e33",
+    "RoleName": "Tenant Governance Relationship Reader",
+    "isPrivileged": false,
+    "Categories": "identity",
+    "RichDescription": "Can read governance relationship related data.",
+    "RolePermissions": [],
+    "Classification": null
   },
   {
     "RoleId": "75934031-6c7e-415a-99d7-48dbd49e875e",

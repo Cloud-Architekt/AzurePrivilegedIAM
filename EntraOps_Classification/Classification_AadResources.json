@@ -177,6 +177,16 @@
       },
       {
         "Category": "Microsoft.AzureAD",
+        "Service": "Cross Tenant Management",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "microsoft.commerce.tenantRelationships/customerDelegatedAdminPrivileges/allProperties/allTasks"
+        ]
+      },
+      {
+        "Category": "Microsoft.AzureAD",
         "Service": "Entitlement Management",
         "RoleAssignmentScopeName": [
           "/"

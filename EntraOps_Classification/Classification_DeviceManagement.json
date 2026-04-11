@@ -259,6 +259,19 @@
           "Microsoft.Intune/RemoteTasks/WindowsDefender",
           "Microsoft.Intune/RemoteTasks/Wipe"
         ]
+      },
+      {
+        "Category": "Microsoft.DeviceManagement",
+        "Service": "Organization Management",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "ExcludedRoleAssignmentScopeName": [],
+        "RoleDefinitionActions": [
+          "Microsoft.Intune/Organization/Create",
+          "Microsoft.Intune/Organization/Delete",
+          "Microsoft.Intune/Organization/Update"
+        ]
       }
     ]
   },
@@ -296,6 +309,7 @@
         "RoleAssignmentScopeName": [
           "/"
         ],
+        "ExcludedRoleAssignmentScopeName": [],
         "RoleDefinitionActions": [
           "Microsoft.Intune/AdminTasks/Read",
           "Microsoft.Intune/AndroidFota/Read",
@@ -331,6 +345,7 @@
           "Microsoft.Intune/MicrosoftDefenderATP/Read",
           "Microsoft.Intune/MicrosoftStoreForBusiness/Read",
           "Microsoft.Intune/MobileApps/Read",
+          "Microsoft.Intune/MobileApps/ViewReports",
           "Microsoft.Intune/MobileThreatDefense/Read",
           "Microsoft.Intune/Organization/Read",
           "Microsoft.Intune/OrganizationalMessages/Read",

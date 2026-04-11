@@ -6,117 +6,141 @@
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Organization/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MobileApps/Create",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Mobile Device Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MobileApps/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MobileApps/Update",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Mobile Device Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MobileApps/Delete",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Mobile Device Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MobileApps/Assign",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Mobile Device Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MobileApps/Relate",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Mobile Device Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.Intune/ManagedDevices/Read",
+        "AuthorizedResourceAction": "Microsoft.Intune/DeploymentPlans/Read",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeploymentPlans/Create",
         "Category": "Global Endpoint Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Create",
+        "AuthorizedResourceAction": "Microsoft.Intune/DeploymentPlans/Update",
         "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeploymentPlans/Delete",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedDevices/Read",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Create",
+        "Category": "Global Application Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Update",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Application Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Delete",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Application Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Assign",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Application Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Wipe",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Application Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AndroidSync/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AndroidSync/UpdateApps",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Mobile Device Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Assign",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Create",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Delete",
@@ -126,15 +150,15 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Update",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AssignmentFilter/Create",
@@ -150,9 +174,9 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AssignmentFilter/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AssignmentFilter/Update",
@@ -162,93 +186,117 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MicrosoftDefenderATP/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MicrosoftStoreForBusiness/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/WindowsEnterpriseCertificate/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/PartnerDeviceManagement/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MobileThreatDefense/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CertificateConnector/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DerivedCredentials/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Customization/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/ResourceExplorer",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/ClientDetails",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Timeline",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Collections",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Applications",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/ApplicationActions",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/SoftwareUpdates",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AdminTasks/Read",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AdminTasks/Create",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AdminTasks/Update",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AdminTasks/Delete",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       }
     ],
     "Classification": {
@@ -263,57 +311,87 @@
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Organization/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/Create",
-        "Category": "Global Endpoint Management",
+        "Category": "Global EPM Policy Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/Update",
-        "Category": "Global Endpoint Management",
+        "Category": "Global EPM Policy Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/Delete",
-        "Category": "Global Endpoint Management",
+        "Category": "Global EPM Policy Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/Assign",
-        "Category": "Global Endpoint Management",
+        "Category": "Global EPM Policy Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/ViewElevationRequests",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/ModifyElevationRequests",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global EPM Policy Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/ViewReports",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedDevices/Read",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AdminTasks/Read",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AdminTasks/Create",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AdminTasks/Update",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AdminTasks/Delete",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       }
     ],
     "Classification": {
@@ -328,32 +406,44 @@
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Organization/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/ViewReports",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/ViewElevationRequests",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedDevices/Read",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AdminTasks/Read",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       }
     ],
     "Classification": {
-      "EAMTierLevelName": "Unclassified",
-      "EAMTierLevelTagValue": "Unclassified"
+      "EAMTierLevelName": "UserAccess",
+      "EAMTierLevelTagValue": "2"
     }
   },
   {
@@ -363,21 +453,21 @@
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MobileApps/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/TermsAndConditions/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/ManagedDevices/Delete",
@@ -387,9 +477,9 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/ManagedDevices/Read",
-        "Category": "Global Endpoint Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/ManagedDevices/Update",
@@ -405,405 +495,561 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/ManagedDevices/ViewReports",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeploymentPlans/Read",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeploymentPlans/Create",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeploymentPlans/Update",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeploymentPlans/Delete",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/ViewReports",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceCompliancePolices/Create",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Endpoint Policy Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceCompliancePolices/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceCompliancePolices/ViewReports",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceCompliancePolices/Update",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Endpoint Policy Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceCompliancePolices/Delete",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Endpoint Policy Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceCompliancePolices/Assign",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Endpoint Policy Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/TelecomExpenses/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistance/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistance/ViewReports",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Organization/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EndpointProtection/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EnrollmentProgramToken/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AppleEnrollmentProfiles/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AppleDeviceSerialNumbers/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceEnrollmentManagers/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CorporateDeviceIdentifiers/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Roles/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Reports/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AndroidSync/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Audit/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/ConfigurationManagerAction",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/GetFileVaultKey",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/RebootNow",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/RemoteLock",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/RotateBitLockerKeys",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/RotateFileVaultKey",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/ShutDown",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/SyncDevice",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/WindowsDefender",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/SecurityBaselines/Create",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Security Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/SecurityBaselines/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/SecurityBaselines/Update",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Security Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/SecurityBaselines/Delete",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Security Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/SecurityBaselines/Assign",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Security Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ASRPolicy/Create",
+        "Category": "Global Endpoint Protection Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ASRPolicy/Read",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ASRPolicy/Update",
+        "Category": "Global Endpoint Protection Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ASRPolicy/Delete",
+        "Category": "Global Endpoint Protection Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ASRPolicy/Assign",
+        "Category": "Global Endpoint Protection Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ASRPolicy/ViewReports",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EDRPolicy/Create",
+        "Category": "Global Endpoint Protection Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EDRPolicy/Read",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EDRPolicy/Update",
+        "Category": "Global Endpoint Protection Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EDRPolicy/Delete",
+        "Category": "Global Endpoint Protection Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EDRPolicy/Assign",
+        "Category": "Global Endpoint Protection Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EDRPolicy/ViewReports",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AppControlPolicy/Create",
+        "Category": "Global Endpoint Security Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AppControlPolicy/Read",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AppControlPolicy/Update",
+        "Category": "Global Endpoint Security Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AppControlPolicy/Delete",
+        "Category": "Global Endpoint Security Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AppControlPolicy/Assign",
+        "Category": "Global Endpoint Security Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AppControlPolicy/ViewReports",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/SecurityTasks/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/SecurityTasks/Update",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Endpoint Security Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AssignmentFilter/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EndpointAnalytics/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MicrosoftDefenderATP/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MicrosoftStoreForBusiness/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/WindowsEnterpriseCertificate/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/PartnerDeviceManagement/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MobileThreatDefense/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MobileThreatDefense/Modify",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Security Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CertificateConnector/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DerivedCredentials/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Customization/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AndroidFota/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/ResourceExplorer",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/ClientDetails",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Timeline",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Collections",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/CMPivot",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Scripts",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/SoftwareUpdates",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/Create",
-        "Category": "Global Endpoint Management",
+        "Category": "Global EPM Policy Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/Update",
-        "Category": "Global Endpoint Management",
+        "Category": "Global EPM Policy Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/Delete",
-        "Category": "Global Endpoint Management",
+        "Category": "Global EPM Policy Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/Assign",
-        "Category": "Global Endpoint Management",
+        "Category": "Global EPM Policy Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/ViewReports",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/ViewElevationRequests",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/ModifyElevationRequests",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global EPM Policy Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AdminTasks/Read",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AdminTasks/Create",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AdminTasks/Update",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AdminTasks/Delete",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       }
     ],
     "Classification": {
@@ -818,39 +1064,45 @@
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MobileApps/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MobileApps/Assign",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Mobile Device Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeploymentPlans/Read",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Assign",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Application Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Wipe",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Application Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/ManagedDevices/Read",
-        "Category": "Global Endpoint Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/ManagedDevices/Update",
@@ -866,465 +1118,501 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/ManagedDevices/ViewReports",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/Wipe",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/TemporarilySuspendManagedHomeScreen",
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/RestoreManagedHomeScreen",
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/Retire",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/RemoteLock",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/ResetPasscode",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/EnableLostMode",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/DisableLostMode",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/LocateDevice",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/PlayLostModeSound",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/SetDeviceName",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/RebootNow",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/ShutDown",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/RequestRemoteAssistance",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Remote Assistance",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/EnableWindowsIntuneAgent",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/CleanPC",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Remote Assistance",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/ManageSharedDeviceUsers",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/SyncDevice",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/WindowsDefender",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/RotateBitLockerKeys",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/UpdateDeviceAccount",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/RevokeAppleVppLicenses",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/CustomNotification",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/ActivateDeviceEsim",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/InitiateMDMKeyRecovery",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/InitiateDeviceAttestation",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/OnDemandProactiveRemediation",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/ChangeAssignments",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/ViewReports",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceCompliancePolices/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceCompliancePolices/ViewReports",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/TelecomExpenses/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistance/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistanceApp/ViewScreen",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Remote Assistance",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistanceApp/TakeFullControl",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Remote Assistance",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistanceApp/Elevation",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Remote Assistance",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistanceApp/Unattended",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Remote Assistance",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Organization/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EndpointProtection/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EnrollmentProgramToken/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AppleEnrollmentProfiles/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AppleDeviceSerialNumbers/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceEnrollmentManagers/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CorporateDeviceIdentifiers/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/TermsAndConditions/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Roles/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AndroidSync/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Audit/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/GetFileVaultKey",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/RotateFileVaultKey",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/SecurityBaselines/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ASRPolicy/Read",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EDRPolicy/Read",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AppControlPolicy/Read",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/ConfigurationManagerAction",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/DeviceLogs",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AssignmentFilter/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EndpointAnalytics/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MicrosoftDefenderATP/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MicrosoftStoreForBusiness/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/WindowsEnterpriseCertificate/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/PartnerDeviceManagement/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MobileThreatDefense/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CertificateConnector/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DerivedCredentials/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Customization/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AndroidFota/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/ResourceExplorer",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/ClientDetails",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Timeline",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Collections",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Applications",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/ApplicationActions",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/CMPivot",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Scripts",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/ScriptActions",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/SoftwareUpdates",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/EnrollNow",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/ServiceNow/ViewIncidents",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AdminTasks/Read",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       }
     ],
     "Classification": {
@@ -1339,9 +1627,9 @@
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Organization/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Roles/Create",
@@ -1351,9 +1639,9 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Roles/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Roles/Update",
@@ -1380,320 +1668,291 @@
     }
   },
   {
-    "RoleId": "80d7a9c3-b5d2-4e46-a681-6f3d16e623cc",
-    "RoleName": "Organizational Messages Manager",
-    "isPrivileged": null,
-    "RolePermissions": [
-      {
-        "AuthorizedResourceAction": "Microsoft.Intune/Organization/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Intune/OrganizationalMessages/Create",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Intune/OrganizationalMessages/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Intune/OrganizationalMessages/Update",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Intune/OrganizationalMessages/Delete",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Intune/OrganizationalMessages/Assign",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Intune/OrganizationalMessages/UpdateControl",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      }
-    ],
-    "Classification": {
-      "EAMTierLevelName": "Unclassified",
-      "EAMTierLevelTagValue": "Unclassified"
-    }
-  },
-  {
     "RoleId": "0bd113fe-6be5-400c-a28f-ae5553f9c0be",
     "RoleName": "Policy and Profile manager",
     "isPrivileged": null,
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Organization/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/Create",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Endpoint Policy Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/Update",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Endpoint Policy Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/Delete",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Endpoint Policy Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/Assign",
+        "Category": "Global Endpoint Policy Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeploymentPlans/Read",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeploymentPlans/Create",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeploymentPlans/Update",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeploymentPlans/Delete",
         "Category": "Global Endpoint Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/ViewReports",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceCompliancePolices/Create",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Endpoint Policy Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceCompliancePolices/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceCompliancePolices/ViewReports",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceCompliancePolices/Update",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Endpoint Policy Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceCompliancePolices/Delete",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Endpoint Policy Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceCompliancePolices/Assign",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Endpoint Policy Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EnrollmentProgramToken/Create",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Device Enrollment Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EnrollmentProgramToken/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EnrollmentProgramToken/Update",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Device Enrollment Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EnrollmentProgramToken/Delete",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Device Enrollment Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AppleEnrollmentProfiles/Create",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Device Enrollment Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AppleEnrollmentProfiles/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AppleEnrollmentProfiles/Update",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Device Enrollment Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AppleEnrollmentProfiles/Delete",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Device Enrollment Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AppleEnrollmentProfiles/Assign",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Device Enrollment Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EnrollmentProfiles/EnrollmentTimeMembershipAssign",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Device Enrollment Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AppleDeviceSerialNumbers/Create",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Device Enrollment Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AppleDeviceSerialNumbers/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AppleDeviceSerialNumbers/Update",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Device Enrollment Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AppleDeviceSerialNumbers/Delete",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Device Enrollment Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CorporateDeviceIdentifiers/Create",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Device Enrollment Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CorporateDeviceIdentifiers/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CorporateDeviceIdentifiers/Update",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Device Enrollment Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CorporateDeviceIdentifiers/Delete",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Device Enrollment Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Create",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Application Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Update",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Application Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Delete",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Application Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Assign",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Application Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AndroidSync/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AndroidSync/UpdateEnrollmentProfiles",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Mobile Device Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AndroidSync/UpdateOnboarding",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Mobile Device Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AndroidSync/UpdateApps",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Mobile Device Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Audit/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Assign",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Create",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Delete",
@@ -1703,15 +1962,15 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Update",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AssignmentFilter/Create",
@@ -1727,9 +1986,9 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AssignmentFilter/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AssignmentFilter/Update",
@@ -1739,147 +1998,171 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MicrosoftDefenderATP/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/PartnerDeviceManagement/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MobileThreatDefense/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CertificateConnector/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DerivedCredentials/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AndroidFota/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/QuietTimePolicies/Create",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/QuietTimePolicies/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/QuietTimePolicies/Update",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/QuietTimePolicies/Delete",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/QuietTimePolicies/Assign",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/QuietTimePolicies/ViewReports",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/ResourceExplorer",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/ClientDetails",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Timeline",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Collections",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Applications",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Scripts",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/SoftwareUpdates",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/WindowsOSRecovery/Create",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/WindowsOSRecovery/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/WindowsOSRecovery/Update",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/WindowsOSRecovery/Delete",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/WindowsOSRecovery/Assign",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AdminTasks/Read",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AdminTasks/Create",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AdminTasks/Update",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AdminTasks/Delete",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       }
     ],
     "Classification": {
@@ -1894,309 +2177,333 @@
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MobileApps/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeploymentPlans/Read",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/TermsAndConditions/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/ManagedDevices/Read",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ManagedDevices/ViewReports",
         "Category": "Global Endpoint Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.Intune/ManagedDevices/ViewReports",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/ViewReports",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceCompliancePolices/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceCompliancePolices/ViewReports",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/TelecomExpenses/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistance/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistance/ViewReports",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Organization/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EndpointProtection/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EnrollmentProgramToken/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AppleEnrollmentProfiles/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AppleDeviceSerialNumbers/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceEnrollmentManagers/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CorporateDeviceIdentifiers/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Roles/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Reports/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AndroidSync/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Audit/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/GetFileVaultKey",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/SecurityBaselines/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ASRPolicy/Read",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/EDRPolicy/Read",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AppControlPolicy/Read",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EndpointAnalytics/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AssignmentFilter/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MicrosoftDefenderATP/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Customization/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MicrosoftStoreForBusiness/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/WindowsEnterpriseCertificate/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/PartnerDeviceManagement/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MobileThreatDefense/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CertificateConnector/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DerivedCredentials/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AndroidFota/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/QuietTimePolicies/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/QuietTimePolicies/ViewReports",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/ResourceExplorer",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/ClientDetails",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Timeline",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Collections",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Applications",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Scripts",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/SoftwareUpdates",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Intune/OrganizationalMessages/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/ViewReports",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EpmPolicy/ViewElevationRequests",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/ServiceNow/ViewIncidents",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AdminTasks/Read",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       }
     ],
     "Classification": {
@@ -2211,151 +2518,175 @@
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AppleDeviceSerialNumbers/Delete",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Device Enrollment Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AppleDeviceSerialNumbers/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AppleDeviceSerialNumbers/Update",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Device Enrollment Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AppleEnrollmentProfiles/Assign",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Device Enrollment Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AppleEnrollmentProfiles/Create",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Device Enrollment Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AppleEnrollmentProfiles/Delete",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Device Enrollment Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AppleEnrollmentProfiles/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AppleEnrollmentProfiles/Update",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Device Enrollment Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EnrollmentProfiles/EnrollmentTimeMembershipAssign",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Device Enrollment Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Audit/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/Assign",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Endpoint Policy Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/Create",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Endpoint Policy Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/Delete",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Endpoint Policy Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceConfigurations/Update",
+        "Category": "Global Endpoint Policy Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeploymentPlans/Read",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeploymentPlans/Create",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeploymentPlans/Update",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/DeploymentPlans/Delete",
         "Category": "Global Endpoint Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceEnrollmentManagers/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DeviceEnrollmentManagers/Update",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Device Enrollment Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EnrollmentProgramToken/Create",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Device Enrollment Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EnrollmentProgramToken/Delete",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Device Enrollment Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EnrollmentProgramToken/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EnrollmentProgramToken/Update",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Device Enrollment Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Create",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Application Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Delete",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Application Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/ManagedApps/Update",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Application Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
@@ -2367,9 +2698,9 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/ManagedDevices/Read",
-        "Category": "Global Endpoint Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/ManagedDevices/Update",
@@ -2385,171 +2716,183 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MobileApps/Assign",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Mobile Device Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MobileApps/Create",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Mobile Device Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MobileApps/Delete",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Mobile Device Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MobileApps/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MobileApps/Update",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Mobile Device Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MobileApps/Relate",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Mobile Device Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Organization/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/CleanPC",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Remote Assistance",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/DisableLostMode",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/EnableLostMode",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/LocateDevice",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/PlayLostModeSound",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/RebootNow",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/RemoteLock",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/ResetPasscode",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/Retire",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/SetDeviceName",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/SyncDevice",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/Wipe",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/TemporarilySuspendManagedHomeScreen",
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/RestoreManagedHomeScreen",
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/ActivateDeviceEsim",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/RequestRemoteAssistance",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Remote Assistance",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/InitiateMDMKeyRecovery",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/InitiateDeviceAttestation",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/OnDemandProactiveRemediation",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/ChangeAssignments",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Reports/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Assign",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Create",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Delete",
@@ -2559,27 +2902,27 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/PolicySets/Update",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/ConfigurationManagerAction",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/DeviceLogs",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AssignmentFilter/Create",
@@ -2595,9 +2938,9 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AssignmentFilter/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AssignmentFilter/Update",
@@ -2607,255 +2950,279 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EndpointAnalytics/Create",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EndpointAnalytics/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EndpointAnalytics/Update",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/EndpointAnalytics/Delete",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MicrosoftStoreForBusiness/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MicrosoftStoreForBusiness/Modify",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Application Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MicrosoftDefenderATP/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/WindowsEnterpriseCertificate/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/WindowsEnterpriseCertificate/Modify",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Certificate Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CertificateConnector/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CertificateConnector/Modify",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Certificate Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Customization/Create",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Endpoint Customization",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Customization/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Customization/Update",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Endpoint Customization",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Customization/Delete",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Endpoint Customization",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Customization/Assign",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Endpoint Customization",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/TermsAndConditions/Create",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Endpoint Customization",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/TermsAndConditions/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/TermsAndConditions/Update",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Endpoint Customization",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/TermsAndConditions/Delete",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Endpoint Customization",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/TermsAndConditions/Assign",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Endpoint Customization",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/PartnerDeviceManagement/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MobileThreatDefense/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/DerivedCredentials/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistance/Read",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistance/Update",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistance/ViewReports",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistanceApp/ViewScreen",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Remote Assistance",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistanceApp/TakeFullControl",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Remote Assistance",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistanceApp/Elevation",
-        "Category": "Global Endpoint Management",
+        "Category": "Global Remote Assistance",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/ResourceExplorer",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/ClientDetails",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Timeline",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Collections",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Applications",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/ApplicationActions",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/CMPivot",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/Scripts",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/ScriptActions",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/SoftwareUpdates",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/CloudAttach/EnrollNow",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/ServiceNow/ViewIncidents",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AdminTasks/Read",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AdminTasks/Create",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AdminTasks/Update",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/AdminTasks/Delete",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
       }
     ],
     "Classification": {
