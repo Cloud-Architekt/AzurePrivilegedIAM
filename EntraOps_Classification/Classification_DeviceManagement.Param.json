@@ -29,7 +29,17 @@
           "Microsoft.Intune/ManagedApps/Create",
           "Microsoft.Intune/ManagedApps/Delete",
           "Microsoft.Intune/ManagedApps/Update",
-          "Microsoft.Intune/ManagedApps/Wipe",
+          "Microsoft.Intune/ManagedApps/Wipe"
+        ]
+      },
+      {
+        "Category": "Microsoft.DeviceManagement",
+        "Service": "Global Store Management",
+        "RoleAssignmentScopeName": [
+          "/*"
+        ],
+        "ExcludedRoleAssignmentScopeName": [],
+        "RoleDefinitionActions": [
           "Microsoft.Intune/MicrosoftStoreForBusiness/Modify"
         ]
       },
@@ -37,7 +47,7 @@
         "Category": "Microsoft.DeviceManagement",
         "Service": "Global Certificate Management",
         "RoleAssignmentScopeName": [
-          "/"
+          "/*"
         ],
         "ExcludedRoleAssignmentScopeName": [],
         "RoleDefinitionActions": [
@@ -133,7 +143,17 @@
           "Microsoft.Intune/SecurityBaselines/Create",
           "Microsoft.Intune/SecurityBaselines/Delete",
           "Microsoft.Intune/SecurityBaselines/Update",
-          "Microsoft.Intune/SecurityTasks/Update",
+          "Microsoft.Intune/SecurityTasks/Update"
+        ]
+      },
+      {
+        "Category": "Microsoft.DeviceManagement",
+        "Service": "Global Threat Defense Management",
+        "RoleAssignmentScopeName": [
+          "/*"
+        ],
+        "ExcludedRoleAssignmentScopeName": [],
+        "RoleDefinitionActions": [
           "Microsoft.Intune/MobileThreatDefense/Modify"
         ]
       },
@@ -159,17 +179,13 @@
         "Category": "Microsoft.DeviceManagement",
         "Service": "Global Device Enrollment Management",
         "RoleAssignmentScopeName": [
-          "/"
+          "/*"
         ],
         "ExcludedRoleAssignmentScopeName": [],
         "RoleDefinitionActions": [
           "Microsoft.Intune/AppleDeviceSerialNumbers/Create",
           "Microsoft.Intune/AppleDeviceSerialNumbers/Delete",
           "Microsoft.Intune/AppleDeviceSerialNumbers/Update",
-          "Microsoft.Intune/AppleEnrollmentProfiles/Assign",
-          "Microsoft.Intune/AppleEnrollmentProfiles/Create",
-          "Microsoft.Intune/AppleEnrollmentProfiles/Delete",
-          "Microsoft.Intune/AppleEnrollmentProfiles/Update",
           "Microsoft.Intune/CorporateDeviceIdentifiers/Create",
           "Microsoft.Intune/CorporateDeviceIdentifiers/Delete",
           "Microsoft.Intune/CorporateDeviceIdentifiers/Update",
@@ -182,20 +198,44 @@
       },
       {
         "Category": "Microsoft.DeviceManagement",
+        "Service": "Global Apple Enrollment Management",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "ExcludedRoleAssignmentScopeName": [],
+        "RoleDefinitionActions": [
+          "Microsoft.Intune/AppleEnrollmentProfiles/Assign",
+          "Microsoft.Intune/AppleEnrollmentProfiles/Create",
+          "Microsoft.Intune/AppleEnrollmentProfiles/Delete",
+          "Microsoft.Intune/AppleEnrollmentProfiles/Update"
+        ]
+      },
+      {
+        "Category": "Microsoft.DeviceManagement",
         "Service": "Global Mobile Device Management",
         "RoleAssignmentScopeName": [
           "/"
         ],
         "ExcludedRoleAssignmentScopeName": [],
         "RoleDefinitionActions": [
-          "Microsoft.Intune/AndroidSync/UpdateApps",
-          "Microsoft.Intune/AndroidSync/UpdateEnrollmentProfiles",
-          "Microsoft.Intune/AndroidSync/UpdateOnboarding",
           "Microsoft.Intune/MobileApps/Assign",
           "Microsoft.Intune/MobileApps/Create",
           "Microsoft.Intune/MobileApps/Delete",
           "Microsoft.Intune/MobileApps/Relate",
           "Microsoft.Intune/MobileApps/Update"
+        ]
+      },
+      {
+        "Category": "Microsoft.DeviceManagement",
+        "Service": "Global Android Sync Management",
+        "RoleAssignmentScopeName": [
+          "/*"
+        ],
+        "ExcludedRoleAssignmentScopeName": [],
+        "RoleDefinitionActions": [
+          "Microsoft.Intune/AndroidSync/UpdateApps",
+          "Microsoft.Intune/AndroidSync/UpdateEnrollmentProfiles",
+          "Microsoft.Intune/AndroidSync/UpdateOnboarding"
         ]
       },
       {
@@ -215,13 +255,23 @@
       },
       {
         "Category": "Microsoft.DeviceManagement",
+        "Service": "Global Remote Assistance Configuration",
+        "RoleAssignmentScopeName": [
+          "/*"
+        ],
+        "ExcludedRoleAssignmentScopeName": [],
+        "RoleDefinitionActions": [
+          "Microsoft.Intune/RemoteAssistance/Update"
+        ]
+      },
+      {
+        "Category": "Microsoft.DeviceManagement",
         "Service": "Global Remote Assistance",
         "RoleAssignmentScopeName": [
           "/"
         ],
         "ExcludedRoleAssignmentScopeName": [],
         "RoleDefinitionActions": [
-          "Microsoft.Intune/RemoteAssistance/Update",
           "Microsoft.Intune/RemoteAssistanceApp/Elevation",
           "Microsoft.Intune/RemoteAssistanceApp/TakeFullControl",
           "Microsoft.Intune/RemoteAssistanceApp/Unattended",
@@ -487,7 +537,7 @@
         "Category": "Microsoft.DeviceManagement",
         "Service": "Organization Management",
         "RoleAssignmentScopeName": [
-          "/"
+          "/*"
         ],
         "ExcludedRoleAssignmentScopeName": [],
         "RoleDefinitionActions": [
@@ -780,8 +830,7 @@
         "Category": "Microsoft.DeviceManagement",
         "Service": "Intune Configuration (Reader)",
         "RoleAssignmentScopeName": [
-          "/*",
-          "/"
+          "/*"
         ],
         "ExcludedRoleAssignmentScopeName": [],
         "RoleDefinitionActions": [
