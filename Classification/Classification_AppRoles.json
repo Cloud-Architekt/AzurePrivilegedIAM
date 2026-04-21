@@ -2633,6 +2633,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "22d2957f-3c5b-4db8-bc3e-d0bd8748a406",
+    "AppRoleDisplayName": "MS-RemoteTenantGroups.Read.All",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "4f994bc0-31bb-44bb-b480-7a7c1be8c02e",
     "AppRoleDisplayName": "MultiTenantOrganization.Read.All",
     "Category": "Microsoft 365 Platform Management",

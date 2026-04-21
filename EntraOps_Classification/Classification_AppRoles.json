@@ -994,6 +994,7 @@
           "LifecycleWorkflows-Reports.Read.All",
           "LifecycleWorkflows-Workflow.Read.All",
           "LifecycleWorkflows-Workflow.ReadBasic.All",
+          "MS-RemoteTenantGroups.Read.All",
           "NetworkAccess.Read.All",
           "NetworkAccessBranch.Read.All",
           "NetworkAccessPolicy.Read.All",
