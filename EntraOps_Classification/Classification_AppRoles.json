@@ -31,7 +31,8 @@
           "AgentIdentityBlueprintPrincipal.DeleteRestore.All",
           "AgentIdentityBlueprintPrincipal.EnableDisable.All",
           "AgentIdentityBlueprintPrincipal.ReadWrite.All",
-          "AgentIdUser.ReadWrite.All"
+          "AgentIdUser.ReadWrite.All",
+          "AgentRegistration.ReadWrite.All"
         ]
       },
       {
@@ -232,6 +233,7 @@
           "SecurityIdentitiesHealth.Read.All",
           "SecurityIdentitiesSensors.Read.All",
           "SecurityIncident.ReadWrite.All",
+          "SecurityIdentitiesMigration.ReadWrite.All",
           "ThreatIndicators.ReadWrite.OwnedBy",
           "ThreatSubmission.ReadWrite.All",
           "ThreatSubmissionPolicy.ReadWrite.All",
@@ -279,6 +281,7 @@
         "RoleDefinitionActions": [
           "Group.ReadWrite.All",
           "GroupMember.ReadWrite.All",
+          "Group-NestingSupport.ReadWrite.All",
           "Group-OnPremisesSyncBehavior.ReadWrite.All",
           "GroupSettings.ReadWrite.All",
           "Member.Read.Hidden"
@@ -380,6 +383,7 @@
           "PrivilegedAssignmentSchedule.Remove.AzureADGroup",
           "PrivilegedEligibilitySchedule.ReadWrite.AzureADGroup",
           "PrivilegedEligibilitySchedule.Remove.AzureADGroup",
+          "PrivilegedEligibilitySchedule.ReadWrite.EntraAppRole",
           "RoleAssignmentSchedule.ReadWrite.Directory",
           "RoleEligibilitySchedule.ReadWrite.Directory",
           "RoleEligibilitySchedule.Remove.Directory",
@@ -390,7 +394,8 @@
           "RoleAssignmentSchedule.Remove.Directory",
           "RoleManagementAlert.ReadWrite.Directory",
           "RoleManagementPolicy.ReadWrite.AzureADGroup",
-          "RoleManagementPolicy.ReadWrite.Directory"
+          "RoleManagementPolicy.ReadWrite.Directory",
+          "RoleManagementPolicy.ReadWrite.EntraAppRole"
         ]
       },
       {
@@ -521,7 +526,9 @@
         ],
         "RoleDefinitionActions": [
           "CopilotPackages.Read.All",
-          "CopilotPackages.ReadWrite.All"
+          "CopilotPackages.ReadWrite.All",
+          "CopilotPolicySettings.Read",
+          "CopilotPolicySettings.ReadWrite"
         ]
       },
       {
@@ -581,6 +588,7 @@
           "MailboxItem.Read.All",
           "MailboxSettings.Read",
           "MailboxSettings.ReadWrite",
+          "MailTips.ReadBasic.All",
           "Schedule-WorkingTime.ReadWrite.All"
         ]
       },
@@ -940,6 +948,7 @@
           "SecurityIdentitiesAccount.Read.All",
           "SecurityIdentitiesUserActions.Read.All",
           "SecurityIncident.Read.All",
+          "SecurityIdentitiesMigration.Read.All",
           "SecurityRecommendation.Read.All",
           "ThreatAssessment.Read.All",
           "ThreatHunting.Read.All",
@@ -1017,6 +1026,7 @@
           "TenantGovernance-Relationship.Read.All",
           "TenantGovernance-Request.Read.All",
           "TenantGovernance-Setting.Read.All",
+          "PrivilegedEligibilitySchedule.Read.EntraAppRole",
           "PrivilegedAssignmentSchedule.Read.AzureADGroup",
           "PrivilegedEligibilitySchedule.Read.AzureADGroup",
           "RoleAssignmentSchedule.Read.Directory",
@@ -1026,6 +1036,7 @@
           "RoleManagementPolicy.Read.AzureADGroup",
           "RoleManagement.Read.Defender",
           "RoleManagementPolicy.Read.Directory",
+          "RoleManagementPolicy.Read.EntraAppRole",
           "SignInIdentifier.Read.All",
           "Synchronization.Read.All"
         ]
@@ -1052,6 +1063,7 @@
           "AgentIdentityBlueprint.Read.All",
           "AgentIdentityBlueprintPrincipal.Read.All",
           "AgentInstance.Read.All",
+          "AgentRegistration.Read.All",
           "AdministrativeUnit.Read.All",
           "Application.Read.All",
           "Contact.Read.All",
