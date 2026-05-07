@@ -2,10 +2,112 @@
   {
     "RoleId": "db506228-d27e-4b7d-95e5-295956d6615f",
     "RoleName": "Agent ID Administrator",
-    "isPrivileged": false,
+    "isPrivileged": true,
     "Categories": "identity",
-    "RichDescription": "Manage all aspects of agents in a tenant including identity lifecycle operations for agent identities, agent identity blueprints, agent identity blueprint principals, and agent users.\nAssign the Agent ID Administrator role to users who need to do the following tasks:\n- Manage all aspects of agents in a tenant\n- Create and delete agent identity blueprints\n- Read and update all properties of agent identity blueprints\n- Update agent identity blueprint app roles, audience, and basic settings\n- Update agent identity blueprint credentials, owners, and permissions\n- Update agent identity blueprint tags and verification settings\n- Create, update, or delete agent users\n- Update properties for agent users\n- Enable or disable agent users\n- Permanently delete agent users\n- Restore deleted agent users\n- Invalidate refresh tokens for agent users\n- Revoke sign-in sessions for agent users\n- Manage identity lifecycle operations for agent users\n- Assign product licenses for agent users",
+    "RichDescription": "Assign the Agent ID Administrator role to users who need to do the following tasks:\n- Manage all aspects of agents in a tenant\n- Create, read, update, and delete agent identities, agent identity blueprint principals, agent identity blueprints, and agent users\n- Enable or disable agent identities, agent identity blueprint principals, and agent users\n- Update owners, app role assignments, credentials, permissions, tags, and verification settings on agent resources\n- Permanently delete and restore deleted agent users\n- Update manager, sponsors, usage location, user principal name, and photo on agent users\n- Assign and reprocess product licenses for agent users\n- Read and update lifecycle information for agent users\n- Invalidate refresh tokens and revoke sign-in sessions for agent users\n- Read all properties of audit logs\n- Read standard properties of organization, policies, external user profiles, hidden group members, and bulk jobs for users\n- Create Microsoft 365 groups as owner\n- Read and configure Azure and Microsoft 365 Service Health\n- Create and manage Azure and Microsoft 365 support tickets",
     "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentUsers/assignLicense",
+        "Category": "Global Agent User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentUsers/basic/update",
+        "Category": "Global Agent User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentUsers/create",
+        "Category": "Global Agent User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentUsers/delete",
+        "Category": "Global Agent User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentUsers/disable",
+        "Category": "Global Agent User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentUsers/enable",
+        "Category": "Global Agent User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentUsers/invalidateAllRefreshTokens",
+        "Category": "Global Agent User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentUsers/lifeCycleInfo/read",
+        "Category": "Global Agent User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentUsers/lifeCycleInfo/update",
+        "Category": "Global Agent User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentUsers/manager/update",
+        "Category": "Global Agent User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentUsers/photo/update",
+        "Category": "Global Agent User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentUsers/reprocessLicenseAssignment",
+        "Category": "Global Agent User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentUsers/restore",
+        "Category": "Global Agent User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentUsers/revokeSignInSessions",
+        "Category": "Global Agent User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentUsers/sponsors/update",
+        "Category": "Global Agent User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentUsers/usageLocation/update",
+        "Category": "Global Agent User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentUsers/userPrincipalName/update",
+        "Category": "Global Agent User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
       {
         "AuthorizedResourceAction": "microsoft.office365.serviceHealth/allEntities/allTasks",
         "Category": "Microsoft 365 Support Operations",
@@ -77,7 +179,7 @@
     "RoleName": "Agent ID Developer",
     "isPrivileged": false,
     "Categories": "identity",
-    "RichDescription": "Assign the Agent ID Developer role to users who need to do the following tasks:\n- Create an agent blueprint and its service principal in a tenant. User will be added as an owner of the agent blueprint and its service principal.",
+    "RichDescription": "Assign the Agent ID Developer role to users who need to do the following tasks:\n- Create an agent identity blueprint and its agent identity blueprint principal in a tenant. User will be added as an owner of the created agent identity blueprint and its agent identity blueprint principal.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/standard/read",
@@ -117,6 +219,108 @@
     "Categories": "collaboration,identity",
     "RichDescription": "Assign the AI Administrator role to users who need to do the following tasks:\n* Manage all aspects of Microsoft 365 Copilot\n* Manage AI-related enterprise services, extensibility, and copilot agents from the Integrated apps page in the Microsoft 365 admin center\n* Approve and publish line-of-business copilot agents\n* Allow users to install an app or install an app for users in the organization if the app does not require permission\n* Read and configure Azure and Microsoft 365 service health dashboards\n* View usage reports, adoption insights, and organizational insight\n* Create and manage support tickets in Azure and the Microsoft 365 admin center",
     "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentUsers/assignLicense",
+        "Category": "Global Agent User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentUsers/basic/update",
+        "Category": "Global Agent User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentUsers/create",
+        "Category": "Global Agent User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentUsers/delete",
+        "Category": "Global Agent User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentUsers/disable",
+        "Category": "Global Agent User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentUsers/enable",
+        "Category": "Global Agent User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentUsers/invalidateAllRefreshTokens",
+        "Category": "Global Agent User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentUsers/lifeCycleInfo/read",
+        "Category": "Global Agent User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentUsers/lifeCycleInfo/update",
+        "Category": "Global Agent User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentUsers/manager/update",
+        "Category": "Global Agent User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentUsers/photo/update",
+        "Category": "Global Agent User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentUsers/reprocessLicenseAssignment",
+        "Category": "Global Agent User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentUsers/restore",
+        "Category": "Global Agent User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentUsers/revokeSignInSessions",
+        "Category": "Global Agent User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentUsers/sponsors/update",
+        "Category": "Global Agent User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentUsers/usageLocation/update",
+        "Category": "Global Agent User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentUsers/userPrincipalName/update",
+        "Category": "Global Agent User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
       {
         "AuthorizedResourceAction": "microsoft.office365.messageCenter/messages/read",
         "Category": "Microsoft 365 Support Operations",
@@ -197,8 +401,8 @@
       }
     ],
     "Classification": {
-      "EAMTierLevelName": "ManagementPlane",
-      "EAMTierLevelTagValue": "1"
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
     }
   },
   {
@@ -206,8 +410,14 @@
     "RoleName": "AI Reader",
     "isPrivileged": true,
     "Categories": "collaboration,identity",
-    "RichDescription": "Assign the AI Reader role to users who need to do the following tasks:\n* Read all aspects of Microsoft 365 Copilot\n* Read AI-related enterprise services, extensibility, and copilot agents\n* Read and configure Azure and Microsoft 365 service health dashboards\n* View usage reports, adoption insights, and organizational insight",
+    "RichDescription": "Assign the AI Reader role to users who need to do the following tasks:\n* Read all aspects of Microsoft 365 Copilot\n* Read AI-related enterprise services, extensibility, and copilot agents\n* Read all properties of agent identities, agent identity blueprint principals, and agent identity blueprints\n* Read and configure Azure and Microsoft 365 service health dashboards\n* View usage reports, adoption insights, and organizational insight",
     "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentUsers/lifeCycleInfo/read",
+        "Category": "Global Agent User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
       {
         "AuthorizedResourceAction": "microsoft.office365.copilot/allEntities/allProperties/read",
         "Category": "Microsoft 365 Platform Operations",
@@ -459,8 +669,8 @@
       }
     ],
     "Classification": {
-      "EAMTierLevelName": "ManagementPlane",
-      "EAMTierLevelTagValue": "1"
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
     }
   },
   {
@@ -2501,6 +2711,12 @@
         "Category": "Cross Tenant Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.office365.webPortal/allEntities/standard/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
       }
     ],
     "Classification": {
@@ -12254,6 +12470,12 @@
         "EAMTierLevelTagValue": "2"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/applicationPolicies/createAsOwner",
+        "Category": "Extended member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/applications/createAsOwner",
         "Category": "Extended member",
         "EAMTierLevelName": "UserAccess",
@@ -12276,12 +12498,6 @@
         "Category": "External Identities",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/applicationPolicies/createAsOwner",
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
       }
     ],
     "Classification": {

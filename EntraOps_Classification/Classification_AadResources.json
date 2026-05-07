@@ -296,6 +296,32 @@
       },
       {
         "Category": "Microsoft.AzureAD",
+        "Service": "Global Agent User Management",
+        "RoleAssignmentScopeName": [
+          "/*"
+        ],
+        "RoleDefinitionActions": [
+          "microsoft.directory/agentUsers/assignLicense",
+          "microsoft.directory/agentUsers/basic/update",
+          "microsoft.directory/agentUsers/create",
+          "microsoft.directory/agentUsers/delete",
+          "microsoft.directory/agentUsers/disable",
+          "microsoft.directory/agentUsers/enable",
+          "microsoft.directory/agentUsers/invalidateAllRefreshTokens",
+          "microsoft.directory/agentUsers/lifeCycleInfo/read",
+          "microsoft.directory/agentUsers/lifeCycleInfo/update",
+          "microsoft.directory/agentUsers/manager/update",
+          "microsoft.directory/agentUsers/photo/update",
+          "microsoft.directory/agentUsers/reprocessLicenseAssignment",
+          "microsoft.directory/agentUsers/restore",
+          "microsoft.directory/agentUsers/revokeSignInSessions",
+          "microsoft.directory/agentUsers/sponsors/update",
+          "microsoft.directory/agentUsers/usageLocation/update",
+          "microsoft.directory/agentUsers/userPrincipalName/update"
+        ]
+      },
+      {
+        "Category": "Microsoft.AzureAD",
         "Service": "Global User Management",
         "RoleAssignmentScopeName": [
           "/*"
@@ -1131,6 +1157,7 @@
           "/"
         ],
         "RoleDefinitionActions": [
+          "microsoft.directory/applicationPolicies/createAsOwner",
           "microsoft.directory/applications/createAsOwner",
           "microsoft.directory/groups.security/createAsOwner",
           "microsoft.directory/groups.unified/createAsOwner",
