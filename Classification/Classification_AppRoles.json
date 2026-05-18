@@ -72,6 +72,14 @@
     "EAMTierLevelTagValue": "0"
   },
   {
+    "AppId": "6bf85cfa-ac8a-4be5-b5de-425a0d0dc016",
+    "AppRoleId": "ab43b826-2c7a-4aff-9ecd-d0629d0ca6a9",
+    "AppRoleDisplayName": "ADSynchronization.ReadWrite.All",
+    "Category": "Directory Synchronization",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
     "AppId": "fc780465-2017-40d4-a0c5-307022471b92",
     "AppRoleId": "93489bf5-0fbc-4f2d-b901-33f2fe08ff05",
     "AppRoleDisplayName": "AdvancedQuery.Read.All",
@@ -472,16 +480,16 @@
     "EAMTierLevelTagValue": "0"
   },
   {
-    "AppId": "00000002-0000-0000-c000-000000000000",
-    "AppRoleId": "1cda74f2-2616-4834-b122-5cb1b07f8a59",
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "1bfefb4e-e0b5-418b-a88f-73c46d2cc8e9",
     "AppRoleDisplayName": "Application.ReadWrite.All",
     "Category": "Application and Workload Identity",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
   },
   {
-    "AppId": "00000003-0000-0000-c000-000000000000",
-    "AppRoleId": "1bfefb4e-e0b5-418b-a88f-73c46d2cc8e9",
+    "AppId": "00000002-0000-0000-c000-000000000000",
+    "AppRoleId": "1cda74f2-2616-4834-b122-5cb1b07f8a59",
     "AppRoleDisplayName": "Application.ReadWrite.All",
     "Category": "Application and Workload Identity",
     "EAMTierLevelName": "ControlPlane",
@@ -1728,16 +1736,16 @@
     "EAMTierLevelTagValue": "2"
   },
   {
-    "AppId": "00000003-0000-0000-c000-000000000000",
-    "AppRoleId": "19dbc75e-c2e2-444c-a770-ec69d8559fc7",
+    "AppId": "00000002-0000-0000-c000-000000000000",
+    "AppRoleId": "78c8a3c8-a07e-4b9e-af1b-b5ccab50a175",
     "AppRoleDisplayName": "Directory.ReadWrite.All",
     "Category": "Tenant Management",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
   },
   {
-    "AppId": "00000002-0000-0000-c000-000000000000",
-    "AppRoleId": "78c8a3c8-a07e-4b9e-af1b-b5ccab50a175",
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "19dbc75e-c2e2-444c-a770-ec69d8559fc7",
     "AppRoleDisplayName": "Directory.ReadWrite.All",
     "Category": "Tenant Management",
     "EAMTierLevelName": "ControlPlane",
@@ -3360,6 +3368,30 @@
     "EAMTierLevelTagValue": "0"
   },
   {
+    "AppId": "93625bc8-bfe2-437a-97e0-3d0060024faa",
+    "AppRoleId": "69201c67-737b-4a20-8f16-e0c8c64e0b0e",
+    "AppRoleDisplayName": "PasswordWriteback.OffboardClient.All",
+    "Category": "Password Reset",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "93625bc8-bfe2-437a-97e0-3d0060024faa",
+    "AppRoleId": "fc7e8088-95b5-453e-8bef-b17ecfec5ba3",
+    "AppRoleDisplayName": "PasswordWriteback.RefreshClient.All",
+    "Category": "Password Reset",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "93625bc8-bfe2-437a-97e0-3d0060024faa",
+    "AppRoleId": "e006e431-a65b-4f3e-8808-77d29d4c5f1a",
+    "AppRoleDisplayName": "PasswordWriteback.RegisterClientVersion.All",
+    "Category": "Password Reset",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "bdfb26d9-bb36-49be-9b4c-b8cbf4b05808",
     "AppRoleDisplayName": "PendingExternalUserProfile.Read.All",
@@ -3448,16 +3480,16 @@
     "EAMTierLevelTagValue": "1"
   },
   {
-    "AppId": "00000002-0000-0000-c000-000000000000",
-    "AppRoleId": "6c2d1b1d-a490-4178-ba6b-7efceda9129b",
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "246dd0d5-5bd0-4def-940b-0421030a5b68",
     "AppRoleDisplayName": "Policy.Read.All",
     "Category": "Tenant Configuration (Reader)",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
   {
-    "AppId": "00000003-0000-0000-c000-000000000000",
-    "AppRoleId": "246dd0d5-5bd0-4def-940b-0421030a5b68",
+    "AppId": "00000002-0000-0000-c000-000000000000",
+    "AppRoleId": "6c2d1b1d-a490-4178-ba6b-7efceda9129b",
     "AppRoleDisplayName": "Policy.Read.All",
     "Category": "Tenant Configuration (Reader)",
     "EAMTierLevelName": "ManagementPlane",

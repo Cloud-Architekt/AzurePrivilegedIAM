@@ -772,6 +772,44 @@
           "vso.variablegroups_manage",
           "vso.code_full"
         ]
+      },
+      {
+        "Category": "Microsoft.EntraADSynchronizationService",
+        "Service": "Directory Synchronization",
+        "ResourceAppId": "6bf85cfa-ac8a-4be5-b5de-425a0d0dc016",
+        "ResourceScope": "All",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "ADSynchronization.ReadWrite.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.PasswordResetService",
+        "Service": "Password Reset",
+        "ResourceAppId": "93625bc8-bfe2-437a-97e0-3d0060024faa",
+        "ResourceScope": "Delegation",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "Directory.AccessAsUser.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.PasswordResetService",
+        "Service": "Password Reset",
+        "ResourceAppId": "93625bc8-bfe2-437a-97e0-3d0060024faa",
+        "ResourceScope": "Application",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "PasswordWriteback.OffboardClient.All",
+          "PasswordWriteback.RefreshClient.All",
+          "PasswordWriteback.RegisterClientVersion.All"
+        ]
       }
     ]
   },

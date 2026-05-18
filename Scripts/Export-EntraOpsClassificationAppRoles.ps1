@@ -37,7 +37,9 @@ function Export-EntraOpsClassificationAppRoles {
                 "499b84ac-1321-427f-aa17-267ca6975798", # Azure DevOps
                 "688413c8-5319-43e1-9a0e-42f49da53686", # Verified ID STS Controller
                 "58c746b0-a0b0-4647-a8f6-12dde5981638", # Azure AD Identity Governance Insights
-                "7b7531ad-5926-4f2d-8a1d-38495ad33e17"  # Azure Advanced Threat Protection
+                "7b7531ad-5926-4f2d-8a1d-38495ad33e17", # Azure Advanced Threat Protection
+                "93625bc8-bfe2-437a-97e0-3d0060024faa", # Microsoft password reset service
+                "6bf85cfa-ac8a-4be5-b5de-425a0d0dc016"  # Microsoft Entra AD Synchronization Service
             )
         }
     }

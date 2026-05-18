@@ -72,6 +72,14 @@
     "EAMTierLevelTagValue": "0"
   },
   {
+    "AppId": "6bf85cfa-ac8a-4be5-b5de-425a0d0dc016",
+    "AppRoleId": "0b41ed4d-5f52-442b-8952-ea7d90719860",
+    "AppRoleDisplayName": "ADSynchronization.ReadWrite.All",
+    "Category": "Directory Synchronization",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
     "AppId": "fc780465-2017-40d4-a0c5-307022471b92",
     "AppRoleId": "1fb6e712-1bd9-4184-b1c0-5e71e759196b",
     "AppRoleDisplayName": "AdvancedQuery.Read",
@@ -1710,16 +1718,24 @@
     "EAMTierLevelTagValue": "0"
   },
   {
-    "AppId": "00000002-0000-0000-c000-000000000000",
-    "AppRoleId": "a42657d6-7f20-40e3-b6f0-cee03008a62a",
+    "AppId": "93625bc8-bfe2-437a-97e0-3d0060024faa",
+    "AppRoleId": "7757dd34-1b17-4123-afba-9bdbeeb48d1a",
+    "AppRoleDisplayName": "Directory.AccessAsUser.All",
+    "Category": "Password Reset",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "0e263e50-5827-48a4-b97c-d940288653c7",
     "AppRoleDisplayName": "Directory.AccessAsUser.All",
     "Category": "Default member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
   {
-    "AppId": "00000003-0000-0000-c000-000000000000",
-    "AppRoleId": "0e263e50-5827-48a4-b97c-d940288653c7",
+    "AppId": "00000002-0000-0000-c000-000000000000",
+    "AppRoleId": "a42657d6-7f20-40e3-b6f0-cee03008a62a",
     "AppRoleDisplayName": "Directory.AccessAsUser.All",
     "Category": "Default member",
     "EAMTierLevelName": "UserAccess",
@@ -2302,14 +2318,6 @@
     "EAMTierLevelTagValue": "0"
   },
   {
-    "AppId": "00000003-0000-0000-c000-000000000000",
-    "AppRoleId": "5f8c59db-677d-491f-a6b8-5f174b11ec1d",
-    "AppRoleDisplayName": "Group.Read.All",
-    "Category": "Default member",
-    "EAMTierLevelName": "UserAccess",
-    "EAMTierLevelTagValue": "2"
-  },
-  {
     "AppId": "00000002-0000-0000-c000-000000000000",
     "AppRoleId": "6234d376-f627-4f0f-90e0-dff25c5211a3",
     "AppRoleDisplayName": "Group.Read.All",
@@ -2319,15 +2327,23 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
-    "AppRoleId": "4e46008b-f24c-477d-8fff-7bb4ec7aafe0",
+    "AppRoleId": "5f8c59db-677d-491f-a6b8-5f174b11ec1d",
+    "AppRoleDisplayName": "Group.Read.All",
+    "Category": "Default member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000002-0000-0000-c000-000000000000",
+    "AppRoleId": "970d6fa6-214a-4a9b-8513-08fad511e2fd",
     "AppRoleDisplayName": "Group.ReadWrite.All",
     "Category": "Group Management",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
   },
   {
-    "AppId": "00000002-0000-0000-c000-000000000000",
-    "AppRoleId": "970d6fa6-214a-4a9b-8513-08fad511e2fd",
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "4e46008b-f24c-477d-8fff-7bb4ec7aafe0",
     "AppRoleDisplayName": "Group.ReadWrite.All",
     "Category": "Group Management",
     "EAMTierLevelName": "ControlPlane",
@@ -3097,16 +3113,16 @@
     "EAMTierLevelTagValue": "0"
   },
   {
-    "AppId": "00000002-0000-0000-c000-000000000000",
-    "AppRoleId": "2d05a661-f651-4d57-a595-489c91eda336",
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "f6a3db3e-f7e8-4ed2-a414-557c8c9830be",
     "AppRoleDisplayName": "Member.Read.Hidden",
     "Category": "Group Management",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
   },
   {
-    "AppId": "00000003-0000-0000-c000-000000000000",
-    "AppRoleId": "f6a3db3e-f7e8-4ed2-a414-557c8c9830be",
+    "AppId": "00000002-0000-0000-c000-000000000000",
+    "AppRoleId": "2d05a661-f651-4d57-a595-489c91eda336",
     "AppRoleDisplayName": "Member.Read.Hidden",
     "Category": "Group Management",
     "EAMTierLevelName": "ControlPlane",
@@ -3577,16 +3593,16 @@
     "EAMTierLevelTagValue": "1"
   },
   {
-    "AppId": "00000003-0000-0000-c000-000000000000",
-    "AppRoleId": "572fea84-0151-49b2-9301-11cb16974376",
+    "AppId": "00000002-0000-0000-c000-000000000000",
+    "AppRoleId": "80e5b1bf-3ad0-4365-943a-0ec983009b67",
     "AppRoleDisplayName": "Policy.Read.All",
     "Category": "Tenant Configuration (Reader)",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
   {
-    "AppId": "00000002-0000-0000-c000-000000000000",
-    "AppRoleId": "80e5b1bf-3ad0-4365-943a-0ec983009b67",
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "572fea84-0151-49b2-9301-11cb16974376",
     "AppRoleDisplayName": "Policy.Read.All",
     "Category": "Tenant Configuration (Reader)",
     "EAMTierLevelName": "ManagementPlane",
@@ -5849,8 +5865,8 @@
     "EAMTierLevelTagValue": "1"
   },
   {
-    "AppId": "797f4846-ba00-4fd7-ba43-dac1f8f63013",
-    "AppRoleId": "41094075-9dad-400e-a0bd-54e686782033",
+    "AppId": "499b84ac-1321-427f-aa17-267ca6975798",
+    "AppRoleId": "ee69721e-6c3a-468f-a9ec-302d16a4c599",
     "AppRoleDisplayName": "user_impersonation",
     "Category": "Default member",
     "EAMTierLevelName": "UserAccess",
@@ -5865,8 +5881,8 @@
     "EAMTierLevelTagValue": "2"
   },
   {
-    "AppId": "499b84ac-1321-427f-aa17-267ca6975798",
-    "AppRoleId": "ee69721e-6c3a-468f-a9ec-302d16a4c599",
+    "AppId": "797f4846-ba00-4fd7-ba43-dac1f8f63013",
+    "AppRoleId": "41094075-9dad-400e-a0bd-54e686782033",
     "AppRoleDisplayName": "user_impersonation",
     "Category": "Default member",
     "EAMTierLevelName": "UserAccess",
@@ -5969,6 +5985,14 @@
     "EAMTierLevelTagValue": "0"
   },
   {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "e1fe6dd8-ba31-4d61-89e7-88639da4683d",
+    "AppRoleDisplayName": "User.Read",
+    "Category": "Default member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
     "AppId": "00000002-0000-0000-c000-000000000000",
     "AppRoleId": "311a71cc-e848-46a1-bdf8-97ff7156d8e6",
     "AppRoleDisplayName": "User.Read",
@@ -5977,9 +6001,9 @@
     "EAMTierLevelTagValue": "2"
   },
   {
-    "AppId": "00000003-0000-0000-c000-000000000000",
-    "AppRoleId": "e1fe6dd8-ba31-4d61-89e7-88639da4683d",
-    "AppRoleDisplayName": "User.Read",
+    "AppId": "00000002-0000-0000-c000-000000000000",
+    "AppRoleId": "c582532d-9d9e-43bd-a97c-2667a28ce295",
+    "AppRoleDisplayName": "User.Read.All",
     "Category": "Default member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
@@ -5993,25 +6017,9 @@
     "EAMTierLevelTagValue": "1"
   },
   {
-    "AppId": "00000002-0000-0000-c000-000000000000",
-    "AppRoleId": "c582532d-9d9e-43bd-a97c-2667a28ce295",
-    "AppRoleDisplayName": "User.Read.All",
-    "Category": "Default member",
-    "EAMTierLevelName": "UserAccess",
-    "EAMTierLevelTagValue": "2"
-  },
-  {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "a154be20-db9c-4678-8ab7-66f6cc099a59",
     "AppRoleDisplayName": "User.Read.All",
-    "Category": "Default member",
-    "EAMTierLevelName": "UserAccess",
-    "EAMTierLevelTagValue": "2"
-  },
-  {
-    "AppId": "00000002-0000-0000-c000-000000000000",
-    "AppRoleId": "cba73afc-7f69-4d86-8450-4978e04ecd1a",
-    "AppRoleDisplayName": "User.ReadBasic.All",
     "Category": "Default member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
@@ -6032,6 +6040,14 @@
       "2",
       "2"
     ]
+  },
+  {
+    "AppId": "00000002-0000-0000-c000-000000000000",
+    "AppRoleId": "cba73afc-7f69-4d86-8450-4978e04ecd1a",
+    "AppRoleDisplayName": "User.ReadBasic.All",
+    "Category": "Default member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
