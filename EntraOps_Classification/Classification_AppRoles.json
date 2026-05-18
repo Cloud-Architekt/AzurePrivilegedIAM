@@ -810,6 +810,73 @@
           "PasswordWriteback.RefreshClient.All",
           "PasswordWriteback.RegisterClientVersion.All"
         ]
+      },
+      {
+        "Category": "Microsoft.ExchangeOnline",
+        "Service": "Exchange Administration",
+        "ResourceAppId": "00000002-0000-0ff1-ce00-000000000000",
+        "ResourceScope": "Application",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "full_access_as_app",
+          "Exchange.ManageAsApp",
+          "Exchange.ManageAsAppV2",
+          "Mailbox.Migration"
+        ]
+      },
+      {
+        "Category": "Microsoft.ExchangeOnline",
+        "Service": "Exchange Administration",
+        "ResourceAppId": "00000002-0000-0ff1-ce00-000000000000",
+        "ResourceScope": "Delegation",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "Exchange.Manage",
+          "Exchange.ManageV2",
+          "EWS.AccessAsUser.All",
+          "EAS.AccessAsUser.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.SharePointOnline",
+        "Service": "SharePoint Administration",
+        "ResourceAppId": "00000003-0000-0ff1-ce00-000000000000",
+        "ResourceScope": "Application",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "Sites.FullControl.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.SharePointOnline",
+        "Service": "SharePoint Administration",
+        "ResourceAppId": "00000003-0000-0ff1-ce00-000000000000",
+        "ResourceScope": "Delegation",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "AllSites.FullControl",
+          "ProjectWebApp.FullControl"
+        ]
+      },
+      {
+        "Category": "Microsoft.Windows365",
+        "Service": "Cloud PC Administration",
+        "ResourceAppId": "0af06dc6-e4b5-4f28-818e-e78e62d137a5",
+        "ResourceScope": "Application",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "CloudPC.PartnerReadWrite.All"
+        ]
       }
     ]
   },
@@ -2267,6 +2334,250 @@
           "vso.dashboards_manage",
           "vso.code_manage"
         ]
+      },
+      {
+        "Category": "Microsoft.ExchangeOnline",
+        "Service": "Mail and Messaging",
+        "ResourceAppId": "00000002-0000-0ff1-ce00-000000000000",
+        "ResourceScope": "All",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "Mail.ReadWrite",
+          "Mail.Send",
+          "Organization.ReadWrite.All",
+          "PeopleSettings.ReadWrite.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.ExchangeOnline",
+        "Service": "Mail and Messaging",
+        "ResourceAppId": "00000002-0000-0ff1-ce00-000000000000",
+        "ResourceScope": "Application",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "ReportingWebService.Read.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.ExchangeOnline",
+        "Service": "Mail and Messaging",
+        "ResourceAppId": "00000002-0000-0ff1-ce00-000000000000",
+        "ResourceScope": "Delegation",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "Mail.ReadWrite.All",
+          "Mail.ReadWrite.Shared",
+          "Mail.Send.All",
+          "Mail.Read.All",
+          "Group.ReadWrite.All",
+          "User.ReadWrite.All",
+          "IMAP.AccessAsUser.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.SharePointOnline",
+        "Service": "SharePoint Operations",
+        "ResourceAppId": "00000003-0000-0ff1-ce00-000000000000",
+        "ResourceScope": "All",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "Migration.Read.All",
+          "Migration.ReadWrite.All",
+          "SharePointCrossTenantMigration.Manage.All",
+          "SharePointCrossTenantMigration.Read.All",
+          "Sites.Selected",
+          "SitesMetadataAdmin.Read.All",
+          "SitesMetadataAdmin.ReadWrite.All",
+          "TenantReports.Read.All",
+          "TenantReports.ReadWrite.All",
+          "TermStore.Read.All",
+          "TermStore.ReadWrite.All",
+          "User.Read.All",
+          "User.ReadWrite.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.SharePointOnline",
+        "Service": "SharePoint Operations",
+        "ResourceAppId": "00000003-0000-0ff1-ce00-000000000000",
+        "ResourceScope": "Application",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "Sites.Manage.All",
+          "Sites.Read.All",
+          "Sites.ReadWrite.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.SharePointOnline",
+        "Service": "SharePoint Operations",
+        "ResourceAppId": "00000003-0000-0ff1-ce00-000000000000",
+        "ResourceScope": "Delegation",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "AllSites.Manage",
+          "AllSites.Read",
+          "AllSites.Write",
+          "EnterpriseResource.Read",
+          "EnterpriseResource.Write",
+          "Project.Read",
+          "Project.Write",
+          "ProjectWebAppReporting.Read",
+          "Sites.Search.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.Teams",
+        "Service": "Teams Administration",
+        "ResourceAppId": "cc15fd57-2c6c-4117-a88c-83b1d56b4bbe",
+        "ResourceScope": "All",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "user_impersonation",
+          "User.Read.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.Teams",
+        "Service": "Teams Administration",
+        "ResourceAppId": "cc15fd57-2c6c-4117-a88c-83b1d56b4bbe",
+        "ResourceScope": "Application",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "AdminAppCatalog.Read.All",
+          "Region.Read.All",
+          "Region.ReadWrite.All",
+          "UserLicense.Read.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.Teams",
+        "Service": "Teams Administration",
+        "ResourceAppId": "cc15fd57-2c6c-4117-a88c-83b1d56b4bbe",
+        "ResourceScope": "Delegation",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "Authorization.ReadWrite",
+          "Region.ReadWrite",
+          "apps.read.all"
+        ]
+      },
+      {
+        "Category": "Microsoft.PowerBI",
+        "Service": "Power BI Administration",
+        "ResourceAppId": "00000009-0000-0000-c000-000000000000",
+        "ResourceScope": "All",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "Tenant.Read.All",
+          "Tenant.ReadWrite.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.PowerBI",
+        "Service": "Power BI Administration",
+        "ResourceAppId": "00000009-0000-0000-c000-000000000000",
+        "ResourceScope": "Delegation",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "Capacity.Read.All",
+          "Capacity.ReadWrite.All",
+          "Gateway.Read.All",
+          "Gateway.ReadWrite.All",
+          "Item.Audit.All",
+          "Item.ExternalDataShare.All",
+          "OneLake.Read.All",
+          "OneLake.ReadWrite.All",
+          "Pipeline.Deploy",
+          "Pipeline.Read.All",
+          "Pipeline.ReadWrite.All",
+          "StorageAccount.Read.All",
+          "StorageAccount.ReadWrite.All",
+          "UserState.ReadWrite.All",
+          "Workspace.GitCommit.All",
+          "Workspace.GitUpdate.All",
+          "Workspace.Read.All",
+          "Workspace.ReadWrite.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.Yammer",
+        "Service": "Viva Engage",
+        "ResourceAppId": "00000005-0000-0ff1-ce00-000000000000",
+        "ResourceScope": "All",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "Community.Read.All",
+          "Community.ReadWrite.All",
+          "EngagementConversation.Read.All",
+          "EngagementConversation.ReadWrite.All",
+          "Storyline.ReadWrite.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.Yammer",
+        "Service": "Viva Engage",
+        "ResourceAppId": "00000005-0000-0ff1-ce00-000000000000",
+        "ResourceScope": "Application",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "Analytics.Read.All",
+          "EngagementConversation.Migration.All",
+          "EngagementRole.Read",
+          "EngagementRole.Read.All",
+          "EngagementRole.ReadWrite.All",
+          "Notification.Send.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.Windows365",
+        "Service": "Cloud PC Administration",
+        "ResourceAppId": "0af06dc6-e4b5-4f28-818e-e78e62d137a5",
+        "ResourceScope": "All",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "EndUser.Access"
+        ]
+      },
+      {
+        "Category": "Microsoft.AzureLogAnalytics",
+        "Service": "Log Analytics",
+        "ResourceAppId": "ca7f3f0b-7d91-482c-8e09-c5d840d0eac5",
+        "ResourceScope": "All",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "Data.Read"
+        ]
       }
     ]
   },
@@ -2467,6 +2778,329 @@
           "vso.work",
           "vso.work_full",
           "vso.work_write"
+        ]
+      },
+      {
+        "Category": "Microsoft.ExchangeOnline",
+        "Service": "Default member",
+        "ResourceAppId": "00000002-0000-0ff1-ce00-000000000000",
+        "ResourceScope": "All",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "Calendars.Read",
+          "Calendars.Read.All",
+          "Calendars.ReadWrite.All",
+          "Contacts.Read",
+          "Contacts.ReadWrite",
+          "Mail.Read",
+          "MailboxSettings.Read",
+          "MailboxSettings.ReadWrite",
+          "Organization.Read.All",
+          "PeopleSettings.Read.All",
+          "Place.Read.All",
+          "Tasks.Read",
+          "Tasks.ReadWrite",
+          "User.Read.All",
+          "User.ReadBasic.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.ExchangeOnline",
+        "Service": "Default member",
+        "ResourceAppId": "00000002-0000-0ff1-ce00-000000000000",
+        "ResourceScope": "Application",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "IMAP.AccessAsApp",
+          "POP.AccessAsApp",
+          "SMTP.SendAsApp"
+        ]
+      },
+      {
+        "Category": "Microsoft.ExchangeOnline",
+        "Service": "Default member",
+        "ResourceAppId": "00000002-0000-0ff1-ce00-000000000000",
+        "ResourceScope": "Delegation",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "Calendars.Read.Shared",
+          "Calendars.ReadWrite",
+          "Calendars.ReadWrite.Shared",
+          "Contacts.Read.All",
+          "Contacts.Read.Shared",
+          "Contacts.ReadWrite.All",
+          "Contacts.ReadWrite.Shared",
+          "Group.Read.All",
+          "Mail.Read.Shared",
+          "Mail.ReadBasic",
+          "Mail.Send.Shared",
+          "Notes.Read",
+          "Notes.ReadWrite",
+          "OPX.MyDay",
+          "OPX.MyDay.All",
+          "OPX.MyDay.Shared",
+          "People.Read",
+          "People.ReadWrite",
+          "POP.AccessAsUser.All",
+          "ReportingWebService.Read",
+          "SMTP.Send",
+          "Tasks.Read.Shared",
+          "Tasks.ReadWrite.Shared",
+          "User.Read",
+          "User.ReadWrite"
+        ]
+      },
+      {
+        "Category": "Microsoft.SharePointOnline",
+        "Service": "Default member",
+        "ResourceAppId": "00000003-0000-0ff1-ce00-000000000000",
+        "ResourceScope": "Delegation",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "MyFiles.Read",
+          "MyFiles.Write",
+          "TaskStatus.Submit"
+        ]
+      },
+      {
+        "Category": "Microsoft.PowerBI",
+        "Service": "Default member",
+        "ResourceAppId": "00000009-0000-0000-c000-000000000000",
+        "ResourceScope": "Delegation",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "App.Read.All",
+          "Catalog.Read.All",
+          "CatalogMirroring.Read.All",
+          "Code.AccessAzureDataExplorer.All",
+          "Code.AccessAzureDataLake.All",
+          "Code.AccessAzureKeyvault.All",
+          "Code.AccessFabric.All",
+          "Code.AccessSQL.All",
+          "Code.AccessStorage.All",
+          "Connection.Read.All",
+          "Connection.ReadWrite.All",
+          "Connection.Reshare.All",
+          "Content.Create",
+          "CopyJob.Execute.All",
+          "CopyJob.Read.All",
+          "CopyJob.ReadWrite.All",
+          "CopyJob.Reshare.All",
+          "Dashboard.Execute.All",
+          "Dashboard.Read.All",
+          "Dashboard.ReadWrite.All",
+          "Dashboard.Reshare.All",
+          "DataAgent.Execute.All",
+          "DataAgent.Read.All",
+          "DataAgent.ReadWrite.All",
+          "DataAgent.Reshare.All",
+          "DatabricksCatalog.Read.All",
+          "Dataflow.Execute.All",
+          "Dataflow.Read.All",
+          "Dataflow.ReadWrite.All",
+          "Dataflow.Reshare.All",
+          "Datamart.Execute.All",
+          "Datamart.Read.All",
+          "Datamart.ReadWrite.All",
+          "Datamart.Reshare.All",
+          "DataPipeline.Execute.All",
+          "DataPipeline.Read.All",
+          "DataPipeline.ReadWrite.All",
+          "DataPipeline.Reshare.All",
+          "Dataset.Read.All",
+          "Dataset.ReadWrite.All",
+          "DevX.ReadWrite.All",
+          "Environment.Execute.All",
+          "Environment.Read.All",
+          "Environment.ReadWrite.All",
+          "Environment.Reshare.All",
+          "Eventhouse.Execute.All",
+          "Eventhouse.Read.All",
+          "Eventhouse.ReadWrite.All",
+          "Eventhouse.Reshare.All",
+          "Eventstream.Execute.All",
+          "Eventstream.Read.All",
+          "Eventstream.ReadWrite.All",
+          "Eventstream.Reshare.All",
+          "ExternalDataShare.Accept.All",
+          "Fabric.Embed",
+          "Fabric.Extend",
+          "Fabric.Extend.IframeSandbox",
+          "GraphInstance.Execute.All",
+          "GraphInstance.Read.All",
+          "GraphInstance.ReadWrite.All",
+          "GraphInstance.Reshare.All",
+          "GraphQL.Execute.All",
+          "GraphQLApi.Execute.All",
+          "GraphQLApi.Read.All",
+          "GraphQLApi.ReadWrite.All",
+          "GraphQLApi.Reshare.All",
+          "Item.Execute.All",
+          "Item.Read.All",
+          "Item.ReadWrite.All",
+          "Item.Reshare.All",
+          "ItemMetadata.Read.All",
+          "ItemMetadata.ReadWrite.All",
+          "KQLDashboard.Execute.All",
+          "KQLDashboard.Read.All",
+          "KQLDashboard.ReadWrite.All",
+          "KQLDashboard.Reshare.All",
+          "KQLDatabase.Execute.All",
+          "KQLDatabase.ExternalDataShare.All",
+          "KQLDatabase.Read.All",
+          "KQLDatabase.ReadWrite.All",
+          "KQLDatabase.Reshare.All",
+          "KQLDataConnection.Execute.All",
+          "KQLDataConnection.Read.All",
+          "KQLDataConnection.ReadWrite.All",
+          "KQLDataConnection.Reshare.All",
+          "KQLQueryset.Execute.All",
+          "KQLQueryset.Read.All",
+          "KQLQueryset.ReadWrite.All",
+          "KQLQueryset.Reshare.All",
+          "Lakehouse.Execute.All",
+          "Lakehouse.ExternalDataShare.All",
+          "Lakehouse.Read.All",
+          "Lakehouse.ReadWrite.All",
+          "Lakehouse.Reshare.All",
+          "MetricSet.Execute.All",
+          "MetricSet.Read.All",
+          "MetricSet.ReadWrite.All",
+          "MetricSet.Reshare.All",
+          "MirroredAzureDatabricksCatalog.Execute.All",
+          "MirroredAzureDatabricksCatalog.Read.All",
+          "MirroredAzureDatabricksCatalog.ReadWrite.All",
+          "MirroredAzureDatabricksCatalog.Reshare.All",
+          "MirroredDatabase.Execute.All",
+          "MirroredDatabase.ExternalDataShare.All",
+          "MirroredDatabase.Read.All",
+          "MirroredDatabase.ReadWrite.All",
+          "MirroredDatabase.Reshare.All",
+          "MLExperiment.Execute.All",
+          "MLExperiment.Read.All",
+          "MLExperiment.ReadWrite.All",
+          "MLExperiment.Reshare.All",
+          "MLModel.Execute.All",
+          "MLModel.Read.All",
+          "MLModel.ReadWrite.All",
+          "MLModel.Reshare.All",
+          "MountedDataFactory.Execute.All",
+          "MountedDataFactory.Read.All",
+          "MountedDataFactory.ReadWrite.All",
+          "MountedDataFactory.Reshare.All",
+          "Notebook.Execute.All",
+          "Notebook.Read.All",
+          "Notebook.ReadWrite.All",
+          "Notebook.Reshare.All",
+          "OrgApp.Read.All",
+          "OrgApp.ReadWrite.All",
+          "OrgApp.Reshare.All",
+          "PaginatedReport.Execute.All",
+          "PaginatedReport.Read.All",
+          "PaginatedReport.ReadWrite.All",
+          "PaginatedReport.Reshare.All",
+          "PrincipalDetails.ReadBasic.All",
+          "Reflex.Execute.All",
+          "Reflex.Read.All",
+          "Reflex.ReadWrite.All",
+          "Reflex.Reshare.All",
+          "Report.Execute.All",
+          "Report.Read.All",
+          "Report.ReadWrite.All",
+          "Report.Reshare.All",
+          "RetailDataManager.Execute.All",
+          "RetailDataManager.Read.All",
+          "RetailDataManager.ReadWrite.All",
+          "RetailDataManager.Reshare.All",
+          "Scorecard.Execute.All",
+          "Scorecard.Read.All",
+          "Scorecard.ReadWrite.All",
+          "Scorecard.Reshare.All",
+          "SemanticModel.Execute.All",
+          "SemanticModel.ExternalDataShare.All",
+          "SemanticModel.Read.All",
+          "SemanticModel.ReadWrite.All",
+          "SemanticModel.Reshare.All",
+          "SparkJobDefinition.Execute.All",
+          "SparkJobDefinition.Read.All",
+          "SparkJobDefinition.ReadWrite.All",
+          "SparkJobDefinition.Reshare.All",
+          "SQLDatabase.Execute.All",
+          "SQLDatabase.ExternalDataShare.All",
+          "SQLDatabase.Read.All",
+          "SQLDatabase.ReadWrite.All",
+          "SQLDatabase.Reshare.All",
+          "SQLEndpoint.Execute.All",
+          "SQLEndpoint.Read.All",
+          "SQLEndpoint.ReadWrite.All",
+          "SQLEndpoint.Reshare.All",
+          "UserDataFunction.Execute.All",
+          "UserDataFunction.Read.All",
+          "UserDataFunction.ReadWrite.All",
+          "VariableLibrary.Execute.All",
+          "VariableLibrary.Read.All",
+          "VariableLibrary.ReadWrite.All",
+          "VariableLibrary.Reshare.All",
+          "Warehouse.Execute.All",
+          "Warehouse.ExternalDataShare.All",
+          "Warehouse.Read.All",
+          "Warehouse.ReadWrite.All",
+          "Warehouse.Reshare.All",
+          "Warehouse.Restore.All",
+          "WarehouseSnapshot.Execute.All",
+          "WarehouseSnapshot.Read.All",
+          "WarehouseSnapshot.ReadWrite.All",
+          "WarehouseSnapshot.Reshare.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.Yammer",
+        "Service": "Default member",
+        "ResourceAppId": "00000005-0000-0ff1-ce00-000000000000",
+        "ResourceScope": "Delegation",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "access_as_user",
+          "engage_access",
+          "user_impersonation",
+          "StorylineSettings.Read.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.PowerPlatform",
+        "Service": "Default member",
+        "ResourceAppId": "475226c6-020e-4fb2-8a90-7a972cbfc1d4",
+        "ResourceScope": "Delegation",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "User"
+        ]
+      },
+      {
+        "Category": "Microsoft.DynamicsCRM",
+        "Service": "Default member",
+        "ResourceAppId": "00000007-0000-0000-c000-000000000000",
+        "ResourceScope": "Delegation",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "mcp.tools",
+          "user_impersonation"
         ]
       }
     ]

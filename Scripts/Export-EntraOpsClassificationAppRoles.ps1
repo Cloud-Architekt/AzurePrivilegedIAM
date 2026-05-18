@@ -39,7 +39,17 @@ function Export-EntraOpsClassificationAppRoles {
                 "58c746b0-a0b0-4647-a8f6-12dde5981638", # Azure AD Identity Governance Insights
                 "7b7531ad-5926-4f2d-8a1d-38495ad33e17", # Azure Advanced Threat Protection
                 "93625bc8-bfe2-437a-97e0-3d0060024faa", # Microsoft password reset service
-                "6bf85cfa-ac8a-4be5-b5de-425a0d0dc016"  # Microsoft Entra AD Synchronization Service
+                "6bf85cfa-ac8a-4be5-b5de-425a0d0dc016", # Microsoft Entra AD Synchronization Service
+                "00000002-0000-0ff1-ce00-000000000000", # Exchange Online
+                "00000003-0000-0ff1-ce00-000000000000", # SharePoint Online
+                "cc15fd57-2c6c-4117-a88c-83b1d56b4bbe", # Microsoft Teams
+                "00000009-0000-0000-c000-000000000000", # Power BI Service
+                "00000007-0000-0000-c000-000000000000", # Dynamics CRM
+                "ca7f3f0b-7d91-482c-8e09-c5d840d0eac5", # Azure Log Analytics
+                "475226c6-020e-4fb2-8a90-7a972cbfc1d4", # Power Platform / Power Apps Admin
+                "0af06dc6-e4b5-4f28-818e-e78e62d137a5", # Windows 365
+                "b46c3ac5-9da6-418f-a849-0a07a10b3c6c", # Microsoft Entra Permissions Management
+                "00000005-0000-0ff1-ce00-000000000000"  # Yammer / Viva Engage
             )
         }
     }
