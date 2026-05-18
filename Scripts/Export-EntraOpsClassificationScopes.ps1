@@ -1,4 +1,4 @@
-function Export-EntraOpsClassificationAppRoles {
+function Export-EntraOpsClassificationScopes {
 
     [cmdletbinding()]
     param
@@ -46,31 +46,31 @@ function Export-EntraOpsClassificationAppRoles {
     }
 
     # Collect warnings during processing
-    $UnclassifiedAppRoles = [System.Collections.Generic.List[PSCustomObject]]::new()
+    $UnclassifiedScopes = [System.Collections.Generic.List[PSCustomObject]]::new()
 
-    # Process application permissions (appRoles) → Classification_AppRoles ('Application' or 'All')
-    $AppRolesOutput = $AppRoleProviders | foreach-object {
+    # Process delegated permissions (publishedPermissionScopes) → Classification_AppRoles ('Delegation' or 'All')
+    $ScopesOutput = $AppRoleProviders | foreach-object {
         $CurrentAppId = $_.appId
 
-        foreach ($AppRole in $_.AppRoles) {
+        foreach ($Scope in $_.publishedPermissionScopes) {
 
-            # Apply Classification (Application permissions match ResourceScope 'Application' or 'All')
-            $AppRoleTierLevelClassification = $ClassificationAppRoles | where-object { ($_.TierLevelDefinition | where-object { $_.ResourceScope -in @("Application", "All") -and $_.ResourceAppId -eq $CurrentAppId }).RoleDefinitionActions -contains $($AppRole.value) } | select-object EAMTierLevelName, EAMTierLevelTagValue
-            $AppRoleServiceClassification = $ClassificationAppRoles | select-object -ExpandProperty TierLevelDefinition | where-object { $_.ResourceScope -in @("Application", "All") -and $_.ResourceAppId -eq $CurrentAppId -and $_.RoleDefinitionActions -contains $($AppRole.value) } | select-object Service
+            # Apply Classification (Delegated permissions match ResourceScope 'Delegation' or 'All')
+            $AppRoleTierLevelClassification = $ClassificationAppRoles | where-object { ($_.TierLevelDefinition | where-object { $_.ResourceScope -in @("Delegation", "All") -and $_.ResourceAppId -eq $CurrentAppId }).RoleDefinitionActions -contains $($Scope.value) } | select-object EAMTierLevelName, EAMTierLevelTagValue
+            $AppRoleServiceClassification = $ClassificationAppRoles | select-object -ExpandProperty TierLevelDefinition | where-object { $_.ResourceScope -in @("Delegation", "All") -and $_.ResourceAppId -eq $CurrentAppId -and $_.RoleDefinitionActions -contains $($Scope.value) } | select-object Service
             if ($IncludeAuthorizedApiCalls -eq $True -and $_.appId -eq "00000003-0000-0000-c000-000000000000") {
                 # Apply Autorized Graph Calls if AppRoleProvider is Microsoft Graph
-                $AppRoleAuthorizedApiCalls = $AllAuthorizedApiCalls | where-object { $_.PermissionName -contains $($AppRole.value) } | select-object -ExpandProperty API
+                $AppRoleAuthorizedApiCalls = $AllAuthorizedApiCalls | where-object { $_.PermissionName -contains $($Scope.value) } | select-object -ExpandProperty API
             }
 
             if ($AppRoleTierLevelClassification.Count -gt 1 -and $AppRoleServiceClassification.Count -gt 1) {
-                Write-Warning "Multiple Tier Level Classification found for $($AppRole.value)"
+                Write-Warning "Multiple Tier Level Classification found for $($Scope.value)"
             }
 
             if ($null -eq $AppRoleTierLevelClassification) {
-                $UnclassifiedAppRoles.Add([PSCustomObject]@{
+                $UnclassifiedScopes.Add([PSCustomObject]@{
                         AppId              = $_.appId
-                        AppRoleDisplayName = $AppRole.value
-                        PermissionType     = "Application"
+                        AppRoleDisplayName = $Scope.value
+                        PermissionType     = "Delegation"
                     })
                 $AppRoleTierLevelClassification = [PSCustomObject]@{
                     "EAMTierLevelName"     = "Unclassified"
@@ -87,8 +87,8 @@ function Export-EntraOpsClassificationAppRoles {
             if ($IncludeAuthorizedApiCalls -eq $True) {
                 [PSCustomObject]@{
                     "AppId"                = $_.appId
-                    "AppRoleId"            = $AppRole.id
-                    "AppRoleDisplayName"   = $AppRole.value
+                    "AppRoleId"            = $Scope.id
+                    "AppRoleDisplayName"   = $Scope.value
                     "AuthorizedApiCalls"   = $AppRoleAuthorizedApiCalls
                     "Category"             = $AppRoleServiceClassification.Service
                     "EAMTierLevelName"     = $AppRoleTierLevelClassification.EAMTierLevelName
@@ -97,8 +97,8 @@ function Export-EntraOpsClassificationAppRoles {
             } else {
                 [PSCustomObject]@{
                     "AppId"                = $_.appId
-                    "AppRoleId"            = $AppRole.id
-                    "AppRoleDisplayName"   = $AppRole.value
+                    "AppRoleId"            = $Scope.id
+                    "AppRoleDisplayName"   = $Scope.value
                     "Category"             = $AppRoleServiceClassification.Service
                     "EAMTierLevelName"     = $AppRoleTierLevelClassification.EAMTierLevelName
                     "EAMTierLevelTagValue" = $AppRoleTierLevelClassification.EAMTierLevelTagValue
@@ -107,15 +107,15 @@ function Export-EntraOpsClassificationAppRoles {
         }
     }
 
-    # Identify appRole permissions in Classification_AppRoles (Application/'All') not returned by API
-    $ExistingAppRoleNames = $AppRolesOutput | Select-Object -ExpandProperty AppRoleDisplayName
-    $MissingAppRolesInApi = [System.Collections.Generic.List[PSCustomObject]]::new()
+    # Identify scope permissions in Classification_AppRoles ('Delegation'/'All') not returned by API
+    $ExistingScopeNames = $ScopesOutput | Select-Object -ExpandProperty AppRoleDisplayName
+    $MissingScopesInApi = [System.Collections.Generic.List[PSCustomObject]]::new()
     foreach ($TierLevel in $ClassificationAppRoles) {
         foreach ($TierDef in $TierLevel.TierLevelDefinition) {
-            if ($TierDef.ResourceScope -in @("Application", "All") -and $TierDef.ResourceAppId -in $AppRoleProviderIds) {
+            if ($TierDef.ResourceScope -in @("Delegation", "All") -and $TierDef.ResourceAppId -in $AppRoleProviderIds) {
                 foreach ($Action in $TierDef.RoleDefinitionActions) {
-                    if ($Action -notin $ExistingAppRoleNames) {
-                        $MissingAppRolesInApi.Add([PSCustomObject]@{
+                    if ($Action -notin $ExistingScopeNames) {
+                        $MissingScopesInApi.Add([PSCustomObject]@{
                                 AppId              = $TierDef.ResourceAppId
                                 AppRoleDisplayName = $Action
                                 ResourceScope      = $TierDef.ResourceScope
@@ -128,25 +128,25 @@ function Export-EntraOpsClassificationAppRoles {
         }
     }
 
-    $AppRolesOutput = $AppRolesOutput | Sort-Object AppRoleDisplayName
-    $AppRolesOutput | ConvertTo-Json -Depth 10 | Out-File .\Classification\Classification_AppRoles.json -Force
+    $ScopesOutput = $ScopesOutput | Sort-Object AppRoleDisplayName
+    $ScopesOutput | ConvertTo-Json -Depth 10 | Out-File .\Classification\Classification_Scopes.json -Force
 
     # ── Warning Summary ───────────────────────────────────────────────────────────
-    if ($MissingAppRolesInApi.Count -gt 0) {
-        $missingTable = $MissingAppRolesInApi | Sort-Object ResourceScope, EAMTierLevelName, AppRoleDisplayName |
+    if ($MissingScopesInApi.Count -gt 0) {
+        $missingTable = $MissingScopesInApi | Sort-Object ResourceScope, EAMTierLevelName, AppRoleDisplayName |
         Format-Table AppRoleDisplayName, ResourceScope, EAMTierLevelName, Category, AppId -AutoSize |
         Out-String -Width 220
-        Write-Warning "[$($MissingAppRolesInApi.Count) appRoles] CLASSIFIED IN Classification_AppRoles BUT NOT FOUND IN API"
-        Write-Warning "Entries defined in EntraOps_Classification/Classification_AppRoles.json (ResourceScope: Application or All) with no matching appRole on the queried service principals."
+        Write-Warning "[$($MissingScopesInApi.Count) scopes] CLASSIFIED IN Classification_AppRoles BUT NOT FOUND IN API"
+        Write-Warning "Entries defined in EntraOps_Classification/Classification_AppRoles.json (ResourceScope: Delegation or All) with no matching publishedPermissionScope on the queried service principals."
         Write-Warning $missingTable
     }
 
-    if ($UnclassifiedAppRoles.Count -gt 0) {
-        $unclassifiedTable = $UnclassifiedAppRoles | Sort-Object AppRoleDisplayName |
+    if ($UnclassifiedScopes.Count -gt 0) {
+        $unclassifiedTable = $UnclassifiedScopes | Sort-Object AppRoleDisplayName |
         Format-Table AppRoleDisplayName, PermissionType, AppId -AutoSize |
         Out-String -Width 220
-        Write-Warning "[$($UnclassifiedAppRoles.Count) appRoles] IN API BUT NOT COVERED IN Classification_AppRoles"
-        Write-Warning "appRoles returned by the API with no matching entry in EntraOps_Classification/Classification_AppRoles.json (or only defined under a different ResourceScope)."
+        Write-Warning "[$($UnclassifiedScopes.Count) scopes] IN API BUT NOT COVERED IN Classification_AppRoles"
+        Write-Warning "publishedPermissionScopes returned by the API with no matching entry in EntraOps_Classification/Classification_AppRoles.json (ResourceScope: Delegation or All)."
         Write-Warning $unclassifiedTable
     }
 }
