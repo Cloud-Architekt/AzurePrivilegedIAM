@@ -142,6 +142,7 @@ function Export-EntraOpsClassificationAppRoles {
 
     $AppRolesOutput = $AppRolesOutput | Sort-Object AppRoleDisplayName
     $AppRolesOutput | ConvertTo-Json -Depth 10 | Out-File .\Classification\Classification_AppRoles.json -Force
+    $AppRolesOutput | Where-Object { $_.AppId -eq "00000003-0000-0000-c000-000000000000" } | ConvertTo-Json -Depth 10 | Out-File .\Classification\Classification_MsGraphAppRoles.json -Force
 
     # ── Warning Summary ───────────────────────────────────────────────────────────
     if ($MissingAppRolesInApi.Count -gt 0) {
