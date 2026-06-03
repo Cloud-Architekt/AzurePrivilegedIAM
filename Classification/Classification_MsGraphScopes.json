@@ -2199,6 +2199,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "f7c0661b-4247-48ac-a371-05ff047614c6",
+    "AppRoleDisplayName": "Group-XTenantIdentitySync.Read.All",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "5f8c59db-677d-491f-a6b8-5f174b11ec1d",
     "AppRoleDisplayName": "Group.Read.All",
     "Category": "Default Member",
@@ -2276,6 +2284,25 @@
     "Category": "Health Monitoring",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "59cd3e28-aa9c-4f72-a734-1b592eb06853",
+    "AppRoleDisplayName": "IdentityNotifications.Read.All",
+    "Category": [
+      "Security and Compliance",
+      "Tenant Configuration (Reader)"
+    ],
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "c9c9fdea-4ecc-4d82-a2ea-3feff3489275",
+    "AppRoleDisplayName": "IdentityNotifications.ReadWrite.All",
+    "Category": "Tenant Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -5578,6 +5605,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "d8ce6a2a-46ff-438e-96bc-020f23870a55",
+    "AppRoleDisplayName": "User.Create",
+    "Category": "Global User Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "4bb440cd-2cf2-4f90-8004-aa2acd2537c5",
     "AppRoleDisplayName": "User.DeleteRestore.All",
     "Category": "Global User Management",
@@ -5642,6 +5677,14 @@
     ],
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "f8b099f1-a6ce-4e00-8fff-5f783ff4faeb",
+    "AppRoleDisplayName": "User.ReadUpdate.All",
+    "Category": "Global User Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
