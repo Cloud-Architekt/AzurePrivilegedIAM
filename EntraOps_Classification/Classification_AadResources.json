@@ -222,12 +222,21 @@
       },
       {
         "Category": "Microsoft.AzureAD",
-        "Service": "Global Endpoint Credential Management",
+        "Service": "Global Endpoint Bitlocker Recovery Key",
         "RoleAssignmentScopeName": [
           "/*"
         ],
         "RoleDefinitionActions": [
-          "microsoft.directory/bitlockerKeys/key/read",
+          "microsoft.directory/bitlockerKeys/key/read"
+        ]
+      },
+      {
+        "Category": "Microsoft.AzureAD",
+        "Service": "Global Endpoint Local Admin",
+        "RoleAssignmentScopeName": [
+          "/*"
+        ],
+        "RoleDefinitionActions": [
           "microsoft.directory/deviceLocalCredentials/password/read"
         ]
       },

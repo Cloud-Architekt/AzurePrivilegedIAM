@@ -4,7 +4,7 @@
     "RoleName": "Agent ID Administrator",
     "isPrivileged": true,
     "Categories": "identity",
-    "RichDescription": "Assign the Agent ID Administrator role to users who need to do the following tasks:\n- Manage all aspects of agents in a tenant\n- Create, read, update, and delete agent identities, agent identity blueprint principals, agent identity blueprints, and agent users\n- Enable or disable agent identities, agent identity blueprint principals, and agent users\n- Update owners, app role assignments, credentials, permissions, tags, and verification settings on agent resources\n- Permanently delete and restore deleted agent users\n- Update manager, sponsors, usage location, user principal name, and photo on agent users\n- Assign and reprocess product licenses for agent users\n- Read and update lifecycle information for agent users\n- Invalidate refresh tokens and revoke sign-in sessions for agent users\n- Read all properties of audit logs\n- Read standard properties of organization, policies, external user profiles, hidden group members, and bulk jobs for users\n- Create Microsoft 365 groups as owner\n- Read and configure Azure and Microsoft 365 Service Health\n- Create and manage Azure and Microsoft 365 support tickets",
+    "RichDescription": "Assign the Agent ID Administrator role to users who need to do the following tasks:\n- Manage the full lifecycle of agent identities, agent identity blueprint principals, agent identity blueprints, and agent users in a tenant\n- Permanently delete and restore deleted agent identities, agent identity blueprint principals, agent identity blueprints, and agent users\n- Manage licenses, invalidate refresh tokens, and revoke sign-in sessions for agent users\n- Read all properties of audit logs and sign-in reports\n- Read standard properties of organization, policies, external user profiles, hidden group members, and bulk jobs for users\n- Create Microsoft 365 groups as owner\n- Read and configure Azure and Microsoft 365 service health and support tickets\n- Create and manage Azure and Microsoft 365 service health and support tickets",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/agentUsers/assignLicense",
@@ -122,6 +122,12 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/auditLogs/allProperties/read",
+        "Category": "Security and Compliance",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/signInReports/allProperties/read",
         "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
@@ -2368,13 +2374,13 @@
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/bitlockerKeys/key/read",
-        "Category": "Global Endpoint Credential Management",
+        "Category": "Global Endpoint Bitlocker Recovery Key",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/deviceLocalCredentials/password/read",
-        "Category": "Global Endpoint Credential Management",
+        "Category": "Global Endpoint Local Admin",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
@@ -4554,13 +4560,13 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/bitlockerKeys/key/read",
-        "Category": "Global Endpoint Credential Management",
+        "Category": "Global Endpoint Bitlocker Recovery Key",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/deviceLocalCredentials/password/read",
-        "Category": "Global Endpoint Credential Management",
+        "Category": "Global Endpoint Local Admin",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
@@ -5629,7 +5635,7 @@
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/bitlockerKeys/key/read",
-        "Category": "Global Endpoint Credential Management",
+        "Category": "Global Endpoint Bitlocker Recovery Key",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
@@ -6850,7 +6856,7 @@
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/bitlockerKeys/key/read",
-        "Category": "Global Endpoint Credential Management",
+        "Category": "Global Endpoint Bitlocker Recovery Key",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
@@ -7290,7 +7296,7 @@
   {
     "RoleId": "45d8d3c5-c802-45c6-b32a-1d70b5e1e86e",
     "RoleName": "Identity Governance Administrator",
-    "isPrivileged": false,
+    "isPrivileged": true,
     "Categories": "collaboration,securityAndCompliance",
     "RichDescription": "Users with this role can manage Microsoft Entra ID Governance configuration, including access packages, access reviews, catalogs and policies, ensuring access is approved and reviewed and guest users who no longer need access are removed.",
     "RolePermissions": [
@@ -7474,13 +7480,13 @@
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/bitlockerKeys/key/read",
-        "Category": "Global Endpoint Credential Management",
+        "Category": "Global Endpoint Bitlocker Recovery Key",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/deviceLocalCredentials/password/read",
-        "Category": "Global Endpoint Credential Management",
+        "Category": "Global Endpoint Local Admin",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
@@ -10141,7 +10147,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/bitlockerKeys/key/read",
-        "Category": "Global Endpoint Credential Management",
+        "Category": "Global Endpoint Bitlocker Recovery Key",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
@@ -10581,7 +10587,7 @@
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/bitlockerKeys/key/read",
-        "Category": "Global Endpoint Credential Management",
+        "Category": "Global Endpoint Bitlocker Recovery Key",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
