@@ -248,7 +248,7 @@
       },
       {
         "Category": "Microsoft.AzureAD",
-        "Service": "Global Endpoint Bitlocker Recovery Key",
+        "Service": "Global Endpoint Bitlocker Recovery",
         "RoleAssignmentScopeName": [
           "/"
         ],
@@ -307,7 +307,7 @@
       },
       {
         "Category": "Microsoft.AzureAD",
-        "Service": "Privileged Endpoint Bitlocker Recovery Key",
+        "Service": "Privileged Endpoint Bitlocker Recovery",
         "RoleAssignmentScopeName": [
           <ScopeNamePrivilegedDevices>
         ],
@@ -808,7 +808,7 @@
       },
       {
         "Category": "Microsoft.AzureAD",
-        "Service": "Endpoint Bitlocker Recovery Key",
+        "Service": "Endpoint Bitlocker Recovery",
         "RoleAssignmentScopeName": [
           "/*"
         ],
