@@ -2370,7 +2370,7 @@
     "RoleName": "Cloud Device Administrator",
     "isPrivileged": true,
     "Categories": "devices,identity",
-    "RichDescription": "Users in this role can enable, disable, and delete devices in Microsoft Entra ID and read Windows 10 BitLocker keys (if present) in the Azure portal. The role does not grant permissions to manage any other properties on the device.",
+    "RichDescription": "Users in this role can enable, disable, and delete devices in Microsoft Entra ID and read Windows 10 Bitlocker Recovery Keys (if present) in the Azure portal. The role does not grant permissions to manage any other properties on the device.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/bitlockerKeys/key/read",

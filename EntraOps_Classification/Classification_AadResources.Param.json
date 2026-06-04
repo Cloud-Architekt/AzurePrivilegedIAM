@@ -248,12 +248,21 @@
       },
       {
         "Category": "Microsoft.AzureAD",
-        "Service": "Global Endpoint Credential Management",
+        "Service": "Global Endpoint Bitlocker Recovery Key",
         "RoleAssignmentScopeName": [
           "/"
         ],
         "RoleDefinitionActions": [
-          "microsoft.directory/bitlockerKeys/key/read",
+          "microsoft.directory/bitlockerKeys/key/read"
+        ]
+      },
+      {
+        "Category": "Microsoft.AzureAD",
+        "Service": "Global Endpoint Local Admin",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
           "microsoft.directory/deviceLocalCredentials/password/read"
         ]
       },
@@ -294,6 +303,26 @@
           "microsoft.intune/allEntities/allTasks",
           "microsoft.intune/allEntities/read",
           "microsoft.windows.updatesDeployments/allEntities/allProperties/allTasks"
+        ]
+      },
+      {
+        "Category": "Microsoft.AzureAD",
+        "Service": "Privileged Endpoint Bitlocker Recovery Key",
+        "RoleAssignmentScopeName": [
+          <ScopeNamePrivilegedDevices>
+        ],
+        "RoleDefinitionActions": [
+          "microsoft.directory/bitlockerKeys/key/read"
+        ]
+      },
+      {
+        "Category": "Microsoft.AzureAD",
+        "Service": "Privileged Endpoint Local Admin",
+        "RoleAssignmentScopeName": [
+          <ScopeNamePrivilegedDevices>
+        ],
+        "RoleDefinitionActions": [
+          "microsoft.directory/deviceLocalCredentials/password/read"
         ]
       },
       {
@@ -775,6 +804,32 @@
           "microsoft.directory/crossTenantAccessPolicy/default/crossCloudMeetings/update",
           "microsoft.directory/crossTenantAccessPolicy/partners/crossCloudMeetings/update",
           "microsoft.directory/crossTenantAccessPolicy/partners/create"
+        ]
+      },
+      {
+        "Category": "Microsoft.AzureAD",
+        "Service": "Endpoint Bitlocker Recovery Key",
+        "RoleAssignmentScopeName": [
+          "/*"
+        ],
+        "ExcludedRoleAssignmentScopeName": [
+          <ScopeNamePrivilegedDevices>
+        ],
+        "RoleDefinitionActions": [
+          "microsoft.directory/bitlockerKeys/key/read"
+        ]
+      },
+      {
+        "Category": "Microsoft.AzureAD",
+        "Service": "Endpoint Local Admin",
+        "RoleAssignmentScopeName": [
+          "/*"
+        ],
+        "ExcludedRoleAssignmentScopeName": [
+          <ScopeNamePrivilegedDevices>
+        ],
+        "RoleDefinitionActions": [
+          "microsoft.directory/deviceLocalCredentials/password/read"
         ]
       },
       {
