@@ -35,7 +35,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "134fd756-38ce-4afd-ba33-e9623dbe66c2",
     "AppRoleDisplayName": "AdministrativeUnit.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -51,7 +51,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "aec9e0a0-6f46-4150-a9f7-05e9e3e87399",
     "AppRoleDisplayName": "AgentCard.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -75,7 +75,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "3ee18438-e6e5-4858-8f1c-d7b723b45213",
     "AppRoleDisplayName": "AgentCardManifest.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -99,7 +99,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "e65ee1da-d1d5-467b-bdd0-3e9bb94e6e0c",
     "AppRoleDisplayName": "AgentCollection.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -155,7 +155,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "b2b8f011-2898-4234-9092-5059f6c1ebfa",
     "AppRoleDisplayName": "AgentIdentity.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -195,7 +195,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "7547a7d1-36fa-4479-9c31-559a600eaa4f",
     "AppRoleDisplayName": "AgentIdentityBlueprint.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -251,7 +251,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "9361dea9-4524-493d-941d-f1b65aaf6c7c",
     "AppRoleDisplayName": "AgentIdentityBlueprintPrincipal.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -283,7 +283,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "799a4732-85b8-4c67-b048-75f0e88a232b",
     "AppRoleDisplayName": "AgentInstance.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -307,7 +307,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "d3acceb6-4673-47c0-aeac-582f2c7cf72c",
     "AppRoleDisplayName": "AgentRegistration.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -347,9 +347,9 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "839c90ab-5771-41ee-aef8-a562e8487c1e",
     "AppRoleDisplayName": "AiEnterpriseInteraction.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "AI Interaction",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -395,7 +395,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "9a5d68dd-52b0-4cc2-bd40-abcf44ac3a30",
     "AppRoleDisplayName": "Application.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -435,17 +435,17 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "9f265de7-8d5e-4e9a-a805-5e8bbc49656f",
     "AppRoleDisplayName": "ApprovalSolution.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Approval Workflows",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "45583558-1113-4d06-8969-e79a28edc9ad",
     "AppRoleDisplayName": "ApprovalSolution.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Approval Workflows",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -563,17 +563,17 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "5fbb5982-3230-4882-93c0-2167523ce0c2",
     "AppRoleDisplayName": "BackupRestore-Configuration.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Backup and Restore",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "18133149-5489-40ac-80f0-4b6fa85f6cdc",
     "AppRoleDisplayName": "BackupRestore-Configuration.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Backup and Restore",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -595,33 +595,33 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "ecae8511-f2d7-4be4-bdbf-91f244d45986",
     "AppRoleDisplayName": "BackupRestore-Monitor.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Backup and Restore",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "87853aa5-0372-4710-b34b-cef27bb7156e",
     "AppRoleDisplayName": "BackupRestore-Restore.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Backup and Restore",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "bebd0841-a3d8-4313-a51d-731112c8ee41",
     "AppRoleDisplayName": "BackupRestore-Restore.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Backup and Restore",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "f6135c51-c766-4be1-9638-ed90c2ed2443",
     "AppRoleDisplayName": "BackupRestore-Search.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Backup and Restore",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -651,7 +651,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "6b22000a-1228-42ec-88db-b8c00399aecb",
     "AppRoleDisplayName": "Bookings.Manage.All",
-    "Category": "Customer booking",
+    "Category": "Customer Booking",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -659,7 +659,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "6e98f277-b046-4193-a4f2-6bf6a78cd491",
     "AppRoleDisplayName": "Bookings.Read.All",
-    "Category": "Customer booking",
+    "Category": "Customer Booking",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -667,7 +667,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "0c4b2d20-7919-468d-8668-c54b09d4dee8",
     "AppRoleDisplayName": "Bookings.ReadWrite.All",
-    "Category": "Customer booking",
+    "Category": "Customer Booking",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -675,7 +675,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "9769393e-5a9f-4302-9e3d-7e018ecb64a7",
     "AppRoleDisplayName": "BookingsAppointment.ReadWrite.All",
-    "Category": "Customer booking",
+    "Category": "Customer Booking",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -707,33 +707,33 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "acc0fc4d-2cd6-4194-8700-1768d8423d86",
     "AppRoleDisplayName": "BusinessScenarioConfig.Read.OwnedBy",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Business Scenarios",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "bbea195a-4c47-4a4f-bff2-cba399e11698",
     "AppRoleDisplayName": "BusinessScenarioConfig.ReadWrite.OwnedBy",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Business Scenarios",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "6c0257fd-cffe-415b-8239-2d0d70fdaa9c",
     "AppRoleDisplayName": "BusinessScenarioData.Read.OwnedBy",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Business Scenarios",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "f2d21f22-5d80-499e-91cc-0a8a4ce16f54",
     "AppRoleDisplayName": "BusinessScenarioData.ReadWrite.OwnedBy",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Business Scenarios",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -875,9 +875,9 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "418dae40-2b65-4819-900c-519a04e4d278",
     "AppRoleDisplayName": "ChangeManagement.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -1195,9 +1195,9 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "f9af4646-98b0-4e9d-a53e-40d4f6452fc4",
     "AppRoleDisplayName": "Contracts.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -1355,17 +1355,17 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "ab8a5872-7c88-47a6-8141-7becce939190",
     "AppRoleDisplayName": "CustomTags.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "2f503208-e509-4e39-974c-8cc16e5785c9",
     "AppRoleDisplayName": "CustomTags.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -1403,7 +1403,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "7438b122-aefc-4978-80ed-43db9fcc7715",
     "AppRoleDisplayName": "Device.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -1579,7 +1579,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "7ab1d382-f21e-4acd-a863-ba3e13f7da61",
     "AppRoleDisplayName": "Directory.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -1611,7 +1611,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "c0e5a7b0-e8b7-40a7-b8e0-8249e6ea81d5",
     "AppRoleDisplayName": "Domain-InternalFederation.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -1627,7 +1627,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "dbb9058a-0e50-45d7-ae91-66909b5d4664",
     "AppRoleDisplayName": "Domain.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -1659,113 +1659,113 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "7c9db06a-ec2d-4e7b-a592-5a1e30992566",
     "AppRoleDisplayName": "EduAdministration.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Education",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "9bc431c3-b8bc-4a8d-a219-40f10f92eff6",
     "AppRoleDisplayName": "EduAdministration.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Education",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "4c37e1b6-35a1-43bf-926a-6f30f2cdf585",
     "AppRoleDisplayName": "EduAssignments.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Education",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "6e0a958b-b7fc-4348-b7c4-a6ab9fd3dd0e",
     "AppRoleDisplayName": "EduAssignments.ReadBasic.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Education",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "0d22204b-6cad-4dd0-8362-3e3f2ae699d9",
     "AppRoleDisplayName": "EduAssignments.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Education",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "f431cc63-a2de-48c4-8054-a34bc093af84",
     "AppRoleDisplayName": "EduAssignments.ReadWriteBasic.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Education",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "6cdb464c-3a03-40f8-900b-4cb7ea1da9c0",
     "AppRoleDisplayName": "EduCurricula.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Education",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "6a0c2318-d59d-4c7d-bf2e-5f3902dc2593",
     "AppRoleDisplayName": "EduCurricula.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Education",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "ad248c30-1919-40c8-b3d2-304481894e88",
     "AppRoleDisplayName": "EduReports-Reading.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Education",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "040330d7-be7e-4130-b349-a6eb3a56e2f8",
     "AppRoleDisplayName": "EduReports-Reading.ReadAnonymous.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Education",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "c5debf73-bdc8-473d-bf07-f4074ad05f71",
     "AppRoleDisplayName": "EduReports-Reflect.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Education",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "f5d05dba-7ef0-46fc-b62c-a7282555f428",
     "AppRoleDisplayName": "EduReports-Reflect.ReadAnonymous.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Education",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "e0ac9e1b-cb65-4fc5-87c5-1a8bc181f648",
     "AppRoleDisplayName": "EduRoster.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Education",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "0d412a8c-a06c-439f-b3ec-8abcf54d2f96",
     "AppRoleDisplayName": "EduRoster.ReadBasic.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Education",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -1859,17 +1859,17 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "b7f6385c-6ce6-4639-a480-e23c42ed9784",
     "AppRoleDisplayName": "EventListener.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "0edf5e9e-4ce8-468a-8432-d08631d18c43",
     "AppRoleDisplayName": "EventListener.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -1883,49 +1883,49 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "1914711b-a1cb-4793-b019-c2ce0ed21b8c",
     "AppRoleDisplayName": "ExternalConnection.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "External Connectors",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "34c37bc0-2b40-4d5e-85e1-2365cd256d79",
     "AppRoleDisplayName": "ExternalConnection.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "External Connectors",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "f431331c-49a6-499f-be1c-62af19c34a9d",
     "AppRoleDisplayName": "ExternalConnection.ReadWrite.OwnedBy",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "External Connectors",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "7a7cffad-37d2-4f48-afa4-c6ab129adcc2",
     "AppRoleDisplayName": "ExternalItem.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "External Connectors",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "38c3d6ee-69ee-422f-b954-e17819665354",
     "AppRoleDisplayName": "ExternalItem.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "External Connectors",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "8116ae0f-55c2-452d-9944-d18420f5b2c8",
     "AppRoleDisplayName": "ExternalItem.ReadWrite.OwnedBy",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "External Connectors",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -1987,17 +1987,17 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "bd61925e-3bf4-4d62-bc0b-06b06c96d95c",
     "AppRoleDisplayName": "Files.SelectedOperations.Selected",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Microsoft SharePoint",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "40dc41bc-0f7e-42ff-89bd-d9516947e474",
     "AppRoleDisplayName": "FileStorageContainer.Selected",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Microsoft SharePoint",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -2011,17 +2011,17 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "4f0a8235-6f6f-4ec7-9500-34b452a4a0c3",
     "AppRoleDisplayName": "Group-Conversation.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Microsoft Teams",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "6679c91b-820a-4900-ab47-e97b197a89c4",
     "AppRoleDisplayName": "Group-Conversation.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Microsoft Teams",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -2041,6 +2041,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "35b96aac-d839-4362-abd4-7381f2b27ccd",
+    "AppRoleDisplayName": "Group-XTenantIdentitySync.Read.All",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "bf7b1a76-6e77-406b-b258-bf5c7720e98f",
     "AppRoleDisplayName": "Group.Create",
     "Category": "Group Management",
@@ -2051,7 +2059,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "5b567255-7703-4780-807c-7be8301ae99b",
     "AppRoleDisplayName": "Group.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -2067,7 +2075,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "98830695-27a2-44f7-8c18-0c3ebc9698f6",
     "AppRoleDisplayName": "GroupMember.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -2083,7 +2091,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "f3c4f514-c65a-43f5-bfce-1735872258dd",
     "AppRoleDisplayName": "GroupSettings.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -2099,33 +2107,52 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "5183ed5d-b7f8-4e9a-915e-dafb46b9cb62",
     "AppRoleDisplayName": "HealthMonitoringAlert.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Health Monitoring",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "ac29eb50-f2f9-4518-a117-4bef18e84c7d",
     "AppRoleDisplayName": "HealthMonitoringAlert.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Health Monitoring",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "bb424d73-e898-4c97-9d42-688c32810003",
     "AppRoleDisplayName": "HealthMonitoringAlertConfig.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Health Monitoring",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "432e76f0-8af6-4315-a853-66ab9538f480",
     "AppRoleDisplayName": "HealthMonitoringAlertConfig.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Health Monitoring",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "52ced3dd-dbb6-41a0-9ce5-61a056be97b8",
+    "AppRoleDisplayName": "IdentityNotifications.Read.All",
+    "Category": [
+      "Security and Compliance",
+      "Tenant Configuration (Reader)"
+    ],
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "d9fe7b9f-cb27-4289-9cb4-54debd9d3c25",
+    "AppRoleDisplayName": "IdentityNotifications.ReadWrite.All",
+    "Category": "Tenant Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -2227,87 +2254,87 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "7ab52c2f-a2ee-4d98-9ebc-725e3934aae2",
     "AppRoleDisplayName": "IndustryData-DataConnector.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Industry Data",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "eda0971c-482e-4345-b28f-69c309cb8a34",
     "AppRoleDisplayName": "IndustryData-DataConnector.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Industry Data",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "9334c44b-a7c6-4350-8036-6bf8e02b4c1f",
     "AppRoleDisplayName": "IndustryData-DataConnector.Upload",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Industry Data",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "305f6ba2-049a-4b1b-88bb-fe7e08758a00",
     "AppRoleDisplayName": "IndustryData-InboundFlow.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Industry Data",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "e688c61f-d4c6-4d64-a197-3bcf6ba1d6ad",
     "AppRoleDisplayName": "IndustryData-InboundFlow.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Industry Data",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "61d0354c-5d88-483c-b974-a37ec3395a2c",
     "AppRoleDisplayName": "IndustryData-OutboundFlow.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Industry Data",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "24a65b4a-e501-47e2-8849-d679517887f0",
     "AppRoleDisplayName": "IndustryData-OutboundFlow.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Industry Data",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "6ee891c3-74a4-4148-8463-0c834375dfaf",
     "AppRoleDisplayName": "IndustryData-ReferenceDefinition.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Industry Data",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "bda16293-63d3-45b7-b16b-833841d27d56",
     "AppRoleDisplayName": "IndustryData-ReferenceDefinition.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Industry Data",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "f6f5d10b-3024-4d1d-b674-aae4df4a1a73",
     "AppRoleDisplayName": "IndustryData-Run.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Industry Data",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "7e429772-5b5e-47c0-8fd6-7279294c8033",
     "AppRoleDisplayName": "IndustryData-Run.Start",
-    "Category": "Industry data",
+    "Category": "Industry Data",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -2315,41 +2342,41 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "bc167a60-39fe-4865-8b44-78400fc6ed03",
     "AppRoleDisplayName": "IndustryData-SourceSystem.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Industry Data",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "7d866958-e06e-4dd6-91c6-a086b3f5cfeb",
     "AppRoleDisplayName": "IndustryData-SourceSystem.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Industry Data",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "7c55c952-b095-4c23-a522-022bce4cc1e3",
     "AppRoleDisplayName": "IndustryData-TimePeriod.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Industry Data",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "7afa7744-a782-4a32-b8c2-e3db637e8de7",
     "AppRoleDisplayName": "IndustryData-TimePeriod.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Industry Data",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "4f5ac95f-62fd-472c-b60f-125d24ca0bc5",
     "AppRoleDisplayName": "IndustryData.ReadBasic.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Industry Data",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -2395,55 +2422,55 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "535e6066-2894-49ef-ab33-e2c6d064bb81",
     "AppRoleDisplayName": "LearningAssignedCourse.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Learning",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "236c1cbd-1187-427f-b0f5-b1852454973b",
     "AppRoleDisplayName": "LearningAssignedCourse.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Learning",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "8740813e-d8aa-4204-860e-2a0f8f84dbc8",
     "AppRoleDisplayName": "LearningContent.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Learning",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "444d6fcb-b738-41e5-b103-ac4f2a2628a3",
     "AppRoleDisplayName": "LearningContent.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Learning",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "467524fc-ed22-4356-a910-af61191e3503",
     "AppRoleDisplayName": "LearningSelfInitiatedCourse.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Learning",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "7654ed61-8965-4025-846a-0856ec02b5b0",
     "AppRoleDisplayName": "LearningSelfInitiatedCourse.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Learning",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "e2f98668-2877-4f38-a2f4-8202e0717aa1",
     "AppRoleDisplayName": "LicenseAssignment.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -2531,17 +2558,17 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "de4e4161-a10a-4dfd-809c-e328d89aefeb",
     "AppRoleDisplayName": "ListItems.SelectedOperations.Selected",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Microsoft SharePoint",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "23c5a9bd-d900-4ecf-be26-a0689755d9e5",
     "AppRoleDisplayName": "Lists.SelectedOperations.Selected",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Microsoft SharePoint",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -2707,17 +2734,17 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "6daaff82-2880-496d-9d80-57e8e31195e2",
     "AppRoleDisplayName": "MutualTlsOauthConfiguration.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "78bbf8cf-07d8-45ba-b0eb-1a7b48efbcf1",
     "AppRoleDisplayName": "MutualTlsOauthConfiguration.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Application and Workload Identity",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -2875,7 +2902,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "498476ce-e0fe-48b0-b801-37ba7e2685c6",
     "AppRoleDisplayName": "Organization.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -2891,9 +2918,9 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "eb76ac34-0d62-4454-b97c-185e4250dc20",
     "AppRoleDisplayName": "OrganizationalBranding.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -2915,81 +2942,81 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "56c84fa9-ea1f-4a15-90f2-90ef41ece2c9",
     "AppRoleDisplayName": "OrgSettings-AppsAndServices.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "4a8e4191-c1c8-45f8-b801-f9a1a5ee6ad3",
     "AppRoleDisplayName": "OrgSettings-AppsAndServices.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Tenant Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "c18ae2dc-d9f3-4495-a93f-18980a0e159f",
     "AppRoleDisplayName": "OrgSettings-DynamicsVoice.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "c3f1cc32-8bbd-4ab6-bd33-f270e0d9e041",
     "AppRoleDisplayName": "OrgSettings-DynamicsVoice.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Tenant Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "434d7c66-07c6-4b1f-ab21-417cf2cdaaca",
     "AppRoleDisplayName": "OrgSettings-Forms.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "2cb92fee-97a3-4034-8702-24a6f5d0d1e9",
     "AppRoleDisplayName": "OrgSettings-Forms.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Tenant Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "6cdf1fb1-b46f-424f-9493-07247caa22e2",
     "AppRoleDisplayName": "OrgSettings-Microsoft365Install.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "83f7232f-763c-47b2-a097-e35d2cbe1da5",
     "AppRoleDisplayName": "OrgSettings-Microsoft365Install.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Tenant Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "e4d9cd09-d858-4363-9410-abb96737f0cf",
     "AppRoleDisplayName": "OrgSettings-Todo.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "5febc9da-e0d0-4576-bd13-ae70b2179a39",
     "AppRoleDisplayName": "OrgSettings-Todo.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Tenant Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -3003,9 +3030,9 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "21ffa320-2e7f-47d3-a466-7ff04d2dd68d",
     "AppRoleDisplayName": "PartnerSecurity.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -3035,33 +3062,33 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "b528084d-ad10-4598-8b93-929746b4d7d6",
     "AppRoleDisplayName": "People.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "People",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "ef02f2e7-e22d-4c77-8614-8f765683b86e",
     "AppRoleDisplayName": "PeopleSettings.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "People",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "b6890674-9dd5-4e42-bb15-5af07f541ae1",
     "AppRoleDisplayName": "PeopleSettings.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "People",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "913b9306-0ce1-42b8-9137-6a7df690a760",
     "AppRoleDisplayName": "Place.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Microsoft Places",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -3075,25 +3102,25 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "8b724a84-ceac-4fd9-897e-e31ba8f2d7a3",
     "AppRoleDisplayName": "PlaceDevice.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Microsoft Places",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "2d510721-5c4e-43cd-bfdb-ac0f8819fb92",
     "AppRoleDisplayName": "PlaceDevice.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Microsoft Places",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "27fc435f-44e2-4b30-bf3c-e0ce74aed618",
     "AppRoleDisplayName": "PlaceDeviceTelemetry.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Microsoft Places",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -3299,9 +3326,9 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "a70e0c2d-e793-494c-94c4-118fa0a67f42",
     "AppRoleDisplayName": "Presence.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "People",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -3459,9 +3486,9 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "3a728f2e-df1d-4294-9899-86f601fae70a",
     "AppRoleDisplayName": "PrivilegedAssignmentSchedule.Read.EntraAppRole",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -3475,9 +3502,9 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "81adad77-a25a-489d-ac43-321115620139",
     "AppRoleDisplayName": "PrivilegedAssignmentSchedule.ReadWrite.EntraAppRole",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Privileged IAM",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -3531,17 +3558,17 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "e24d31aa-e1ab-4c80-85fe-23018690335d",
     "AppRoleDisplayName": "ProfilePhoto.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "People",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "27baa7f6-5dfb-4ba8-b1d3-1e812c143013",
     "AppRoleDisplayName": "ProfilePhoto.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "People",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -3603,9 +3630,9 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "ee49e170-1dd1-4030-b44c-61ad6e98f743",
     "AppRoleDisplayName": "QnA.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Microsoft Search",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -3651,9 +3678,9 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "2a60023f-3219-47ad-baa4-40e17cd02a1d",
     "AppRoleDisplayName": "ReportSettings.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -3675,17 +3702,17 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "acfca4d5-f49f-40ed-9648-84068b474c73",
     "AppRoleDisplayName": "ResourceSpecificPermissionGrant.ReadForUser.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Microsoft Teams",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "2a6baefd-edea-4ff6-b24e-bebcaa27a50d",
     "AppRoleDisplayName": "RiskPreventionProviders.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -3747,7 +3774,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "c7fbd983-d9aa-4fa7-84b8-17382c103bc4",
     "AppRoleDisplayName": "RoleManagement.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -3755,7 +3782,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "031a549a-bb80-49b6-8032-2068448c6a3c",
     "AppRoleDisplayName": "RoleManagement.Read.CloudPC",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -3771,7 +3798,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "483bed4a-2ad3-4361-a73b-c83ccdbdc53c",
     "AppRoleDisplayName": "RoleManagement.Read.Directory",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -3907,9 +3934,9 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "7239b71d-b402-4150-b13d-78ecfe8df441",
     "AppRoleDisplayName": "SchedulePermissions.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Microsoft Teams",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -4195,7 +4222,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "5256681e-b7f6-40c0-8447-2d9db68797a0",
     "AppRoleDisplayName": "ServicePrincipalEndpoint.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -4331,17 +4358,17 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "dcdfc277-41fd-4d68-ad0c-c3057235bd8e",
     "AppRoleDisplayName": "SpiffeTrustDomain.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "17b78cfd-eeff-447d-8bab-2795af00055a",
     "AppRoleDisplayName": "SpiffeTrustDomain.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Application and Workload Identity",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -4355,17 +4382,17 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "ee1460f0-368b-4153-870a-4e1ca7e72c42",
     "AppRoleDisplayName": "SubjectRightsRequest.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "8387eaa4-1a3c-41f5-b261-f888138e6041",
     "AppRoleDisplayName": "SubjectRightsRequest.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -4403,17 +4430,17 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "f10e1f91-74ed-437f-a6fd-d6ae88e26c1f",
     "AppRoleDisplayName": "Tasks.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Tasks and Planner",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "44e666d1-d276-445b-a5fc-8815eeb81d55",
     "AppRoleDisplayName": "Tasks.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Tasks and Planner",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -4499,9 +4526,9 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "0fdf35a5-82f8-41ff-9ded-0b761cc73512",
     "AppRoleDisplayName": "TeamsAppInstallation.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Microsoft Teams",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -4795,9 +4822,9 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "a91eadaf-2c3c-4362-908b-fb172d208fc6",
     "AppRoleDisplayName": "TeamsUserConfiguration.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Microsoft Teams",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -5097,6 +5124,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "4240f680-4f73-4082-a766-aa916a2dc9b3",
+    "AppRoleDisplayName": "User.Create",
+    "Category": "Global User Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "eccc023d-eccf-4e7b-9683-8813ab36cecc",
     "AppRoleDisplayName": "User.DeleteRestore.All",
     "Category": "Global User Management",
@@ -5139,7 +5174,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "df021288-bdef-4463-88db-98f22de89214",
     "AppRoleDisplayName": "User.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -5147,9 +5182,17 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "97235f07-e226-4f63-ace3-39588e11d3a1",
     "AppRoleDisplayName": "User.ReadBasic.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "5639c449-cfd9-4088-bc48-3e16da108bf8",
+    "AppRoleDisplayName": "User.ReadUpdate.All",
+    "Category": "Global User Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -5179,7 +5222,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "38d9df27-64da-44fd-b7c5-a6fbac20248f",
     "AppRoleDisplayName": "UserAuthenticationMethod.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -5195,7 +5238,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "a1e58be0-1095-422b-b067-73434bd7d40f",
     "AppRoleDisplayName": "UserAuthMethod-Email.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -5211,7 +5254,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "d2c4289f-9f95-40da-ad43-eeb1506f0db7",
     "AppRoleDisplayName": "UserAuthMethod-External.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -5227,7 +5270,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "7b544555-7811-49ff-8223-a56be870e33a",
     "AppRoleDisplayName": "UserAuthMethod-HardwareOATH.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -5243,7 +5286,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "a9c5f16e-e5ca-4e33-89ad-903fcfc01c23",
     "AppRoleDisplayName": "UserAuthMethod-MicrosoftAuthApp.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -5259,7 +5302,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "72e00c1d-3e3d-43bb-a0b9-c435611bb1d2",
     "AppRoleDisplayName": "UserAuthMethod-Passkey.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -5275,7 +5318,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "8d2c17ff-b93d-40d5-9def-d843680509cb",
     "AppRoleDisplayName": "UserAuthMethod-Password.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -5291,7 +5334,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "f529a223-ea70-43ec-b268-5012de2fbaa2",
     "AppRoleDisplayName": "UserAuthMethod-Phone.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -5307,7 +5350,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "07c0b1e4-15bd-442f-834b-30f8291388d1",
     "AppRoleDisplayName": "UserAuthMethod-PlatformCred.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -5323,7 +5366,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "9a45bc50-cddd-4ebe-bd9c-4f2eacf646ae",
     "AppRoleDisplayName": "UserAuthMethod-QR.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -5339,7 +5382,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "a6b423df-a0c8-411d-a809-a4a5985d2939",
     "AppRoleDisplayName": "UserAuthMethod-SoftwareOATH.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -5355,7 +5398,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "bf82209c-b22b-4747-ac88-a68be99032cf",
     "AppRoleDisplayName": "UserAuthMethod-TAP.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -5371,7 +5414,7 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "9b8dd4c7-8cca-4ef5-a34a-9c2c75fcc934",
     "AppRoleDisplayName": "UserAuthMethod-WindowsHello.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -5387,39 +5430,39 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "4e774092-a092-48d1-90bd-baad67c7eb47",
     "AppRoleDisplayName": "UserNotification.ReadWrite.CreatedByApp",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Microsoft Teams",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "de023814-96df-4f53-9376-1e2891ef5a18",
     "AppRoleDisplayName": "UserShiftPreferences.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Microsoft Teams",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "d1eec298-80f3-49b0-9efb-d90e224798ac",
     "AppRoleDisplayName": "UserShiftPreferences.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Microsoft Teams",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "fbcd7ef1-df0d-4e05-bb28-93424a89c6df",
     "AppRoleDisplayName": "UserTeamwork.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Microsoft Teams",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "e227c591-dd64-4a8a-a033-816167f7c938",
     "AppRoleDisplayName": "VerifiedId-Profile.Read.All",
-    "Category": "Default member",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -5427,41 +5470,41 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "d4f67ec2-59b5-4bdc-b4af-d78f6f9c1954",
     "AppRoleDisplayName": "VirtualAppointment.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Microsoft Teams",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "bf46a256-f47d-448f-ab78-f226fff08d40",
     "AppRoleDisplayName": "VirtualAppointment.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Microsoft Teams",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "97e45b36-1250-48e4-bd70-2df6dab7e94a",
     "AppRoleDisplayName": "VirtualAppointmentNotification.Send",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Microsoft Teams",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "1dccb351-c4e4-4e09-a8d1-7a9ecbf027cc",
     "AppRoleDisplayName": "VirtualEvent.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Microsoft Teams",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "23211fc1-f9d1-4e8e-8e9e-08a5d0a109bb",
     "AppRoleDisplayName": "VirtualEventRegistration-Anon.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Microsoft Teams",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -5483,9 +5526,9 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "f10b94b9-37d1-4c88-8b7e-bf75a1152d39",
     "AppRoleDisplayName": "WorkforceIntegration.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Microsoft Teams",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
