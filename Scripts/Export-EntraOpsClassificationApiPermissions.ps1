@@ -13,6 +13,7 @@ function Export-EntraOpsClassificationApiPermissions {
         EntraOps tier-level and category classifications using a straightforward lookup join:
 
             let ApiPermissions = externaldata(
+                PermissionId: string,
                 PermissionValue: string,
                 PermissionType: string,
                 TargetAppDisplayName: string,
@@ -135,6 +136,7 @@ function Export-EntraOpsClassificationApiPermissions {
     # ── Map Application permissions (Classification_AppRoles.json) ───────────────
     $ApplicationEntries = foreach ($Entry in $ClassificationAppRoles) {
         [PSCustomObject]@{
+            PermissionId         = $Entry.AppRoleId
             PermissionValue      = $Entry.AppRoleDisplayName
             PermissionType       = "Application"
             TargetAppDisplayName = Resolve-DisplayName -AppId $Entry.AppId
@@ -148,6 +150,7 @@ function Export-EntraOpsClassificationApiPermissions {
     # ── Map Delegated permissions (Classification_Scopes.json) ───────────────────
     $DelegatedEntries = foreach ($Entry in $ClassificationScopes) {
         [PSCustomObject]@{
+            PermissionId         = $Entry.ScopeId
             PermissionValue      = $Entry.ScopeDisplayName
             PermissionType       = "Delegated"
             TargetAppDisplayName = Resolve-DisplayName -AppId $Entry.AppId
@@ -161,14 +164,16 @@ function Export-EntraOpsClassificationApiPermissions {
     # ── Merge and deduplicate ────────────────────────────────────────────────────
     # A permission with the same value, type and target app is considered identical.
     $MergedOutput = @($ApplicationEntries) + @($DelegatedEntries) |
-        Sort-Object TargetAppDisplayName, PermissionType, PermissionValue |
-        Group-Object -Property PermissionValue, PermissionType, TargetAppId |
+        Group-Object -Property PermissionId, PermissionValue, PermissionType, TargetAppId |
         ForEach-Object {
             if ($_.Count -gt 1) {
                 Write-Warning "Duplicate entry for PermissionValue='$($_.Group[0].PermissionValue)', PermissionType='$($_.Group[0].PermissionType)', TargetAppId='$($_.Group[0].TargetAppId)' — keeping first occurrence."
             }
             $_.Group | Select-Object -First 1
         }
+
+    # ── Sort final output ────────────────────────────────────────────────────────
+    $MergedOutput = $MergedOutput | Sort-Object TargetAppDisplayName, PermissionValue, PermissionType
 
     # ── Write output ─────────────────────────────────────────────────────────────
     $OutputPath = ".\Classification\Classification_ApiPermissions.json"
