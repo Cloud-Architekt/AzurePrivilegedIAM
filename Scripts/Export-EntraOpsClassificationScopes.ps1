@@ -81,7 +81,7 @@ function Export-EntraOpsClassificationScopes {
             if ($null -eq $AppRoleTierLevelClassification) {
                 $UnclassifiedScopes.Add([PSCustomObject]@{
                         AppId              = $_.appId
-                        AppRoleDisplayName = $Scope.value
+                        ScopeDisplayName   = $Scope.value
                         PermissionType     = "Delegation"
                     })
                 $AppRoleTierLevelClassification = [PSCustomObject]@{
@@ -99,8 +99,8 @@ function Export-EntraOpsClassificationScopes {
             if ($IncludeAuthorizedApiCalls -eq $True) {
                 [PSCustomObject]@{
                     "AppId"                = $_.appId
-                    "AppRoleId"            = $Scope.id
-                    "AppRoleDisplayName"   = $Scope.value
+                    "ScopeId"              = $Scope.id
+                    "ScopeDisplayName"     = $Scope.value
                     "AuthorizedApiCalls"   = $AppRoleAuthorizedApiCalls
                     "Category"             = $AppRoleServiceClassification.Service
                     "EAMTierLevelName"     = $AppRoleTierLevelClassification.EAMTierLevelName
@@ -109,8 +109,8 @@ function Export-EntraOpsClassificationScopes {
             } else {
                 [PSCustomObject]@{
                     "AppId"                = $_.appId
-                    "AppRoleId"            = $Scope.id
-                    "AppRoleDisplayName"   = $Scope.value
+                    "ScopeId"              = $Scope.id
+                    "ScopeDisplayName"     = $Scope.value
                     "Category"             = $AppRoleServiceClassification.Service
                     "EAMTierLevelName"     = $AppRoleTierLevelClassification.EAMTierLevelName
                     "EAMTierLevelTagValue" = $AppRoleTierLevelClassification.EAMTierLevelTagValue
@@ -120,7 +120,7 @@ function Export-EntraOpsClassificationScopes {
     }
 
     # Identify scope permissions in Classification_AppRoles ('Delegation'/'All') not returned by API
-    $ExistingScopeNames = $ScopesOutput | Select-Object -ExpandProperty AppRoleDisplayName
+    $ExistingScopeNames = $ScopesOutput | Select-Object -ExpandProperty ScopeDisplayName
     $MissingScopesInApi = [System.Collections.Generic.List[PSCustomObject]]::new()
     foreach ($TierLevel in $ClassificationAppRoles) {
         foreach ($TierDef in $TierLevel.TierLevelDefinition) {
@@ -129,7 +129,7 @@ function Export-EntraOpsClassificationScopes {
                     if ($Action -notin $ExistingScopeNames) {
                         $MissingScopesInApi.Add([PSCustomObject]@{
                                 AppId              = $TierDef.ResourceAppId
-                                AppRoleDisplayName = $Action
+                                ScopeDisplayName   = $Action
                                 ResourceScope      = $TierDef.ResourceScope
                                 EAMTierLevelName   = $TierLevel.EAMTierLevelName
                                 Category           = $TierDef.Service
@@ -140,14 +140,14 @@ function Export-EntraOpsClassificationScopes {
         }
     }
 
-    $ScopesOutput = $ScopesOutput | Sort-Object AppRoleDisplayName
+    $ScopesOutput = $ScopesOutput | Sort-Object ScopeDisplayName
     $ScopesOutput | ConvertTo-Json -Depth 10 | Out-File .\Classification\Classification_Scopes.json -Force
     $ScopesOutput | Where-Object { $_.AppId -eq "00000003-0000-0000-c000-000000000000" } | ConvertTo-Json -Depth 10 | Out-File .\Classification\Classification_MsGraphScopes.json -Force
 
     # ── Warning Summary ───────────────────────────────────────────────────────────
     if ($MissingScopesInApi.Count -gt 0) {
-        $missingTable = $MissingScopesInApi | Sort-Object ResourceScope, EAMTierLevelName, AppRoleDisplayName |
-        Format-Table AppRoleDisplayName, ResourceScope, EAMTierLevelName, Category, AppId -AutoSize |
+        $missingTable = $MissingScopesInApi | Sort-Object ResourceScope, EAMTierLevelName, ScopeDisplayName |
+        Format-Table ScopeDisplayName, ResourceScope, EAMTierLevelName, Category, AppId -AutoSize |
         Out-String -Width 220
         Write-Warning "[$($MissingScopesInApi.Count) scopes] CLASSIFIED IN Classification_AppRoles BUT NOT FOUND IN API"
         Write-Warning "Entries defined in EntraOps_Classification/Classification_AppRoles.json (ResourceScope: Delegation or All) with no matching publishedPermissionScope on the queried service principals."
@@ -155,8 +155,8 @@ function Export-EntraOpsClassificationScopes {
     }
 
     if ($UnclassifiedScopes.Count -gt 0) {
-        $unclassifiedTable = $UnclassifiedScopes | Sort-Object AppRoleDisplayName |
-        Format-Table AppRoleDisplayName, PermissionType, AppId -AutoSize |
+        $unclassifiedTable = $UnclassifiedScopes | Sort-Object ScopeDisplayName |
+        Format-Table ScopeDisplayName, PermissionType, AppId -AutoSize |
         Out-String -Width 220
         Write-Warning "[$($UnclassifiedScopes.Count) scopes] IN API BUT NOT COVERED IN Classification_AppRoles"
         Write-Warning "publishedPermissionScopes returned by the API with no matching entry in EntraOps_Classification/Classification_AppRoles.json (ResourceScope: Delegation or All)."
