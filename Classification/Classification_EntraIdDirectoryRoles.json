@@ -7,6 +7,216 @@
     "RichDescription": "Assign the Agent ID Administrator role to users who need to do the following tasks:\n- Manage the full lifecycle of agent identities, agent identity blueprint principals, agent identity blueprints, and agent users in a tenant\n- Permanently delete and restore deleted agent identities, agent identity blueprint principals, agent identity blueprints, and agent users\n- Manage licenses, invalidate refresh tokens, and revoke sign-in sessions for agent users\n- Read all properties of audit logs and sign-in reports\n- Read standard properties of organization, policies, external user profiles, hidden group members, and bulk jobs for users\n- Create Microsoft 365 groups as owner\n- Read and configure Azure and Microsoft 365 service health and support tickets\n- Create and manage Azure and Microsoft 365 service health and support tickets",
     "RolePermissions": [
       {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentities/appRoleAssignedTo/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentities/authentication/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentities/basic/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentities/create",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentities/delete",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentities/disable",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentities/enable",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentities/owners/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentities/tag/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprintPrincipals/appRoleAssignedTo/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprintPrincipals/authentication/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprintPrincipals/basic/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprintPrincipals/create",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprintPrincipals/delete",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprintPrincipals/disable",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprintPrincipals/enable",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprintPrincipals/owners/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprintPrincipals/tag/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprints/allProperties/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprints/appRoles/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprints/audience/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprints/authentication/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprints/basic/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprints/create",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprints/credentials/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprints/delete",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprints/owners/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprints/permissions/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprints/tag/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/deletedItems.agentIdentities/delete",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/deletedItems.agentIdentities/restore",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/deletedItems.agentIdentityBlueprintPrincipals/delete",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/deletedItems.agentIdentityBlueprintPrincipals/restore",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/deletedItems.agentIdentityBlueprints/delete",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/deletedItems.agentIdentityBlueprints/restore",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/agentUsers/assignLicense",
         "Category": "Global Agent User Management",
         "EAMTierLevelName": "ControlPlane",
@@ -188,6 +398,12 @@
     "RichDescription": "Assign the Agent ID Developer role to users who need to do the following tasks:\n- Create an agent identity blueprint and its agent identity blueprint principal in a tenant. User will be added as an owner of the created agent identity blueprint and its agent identity blueprint principal.",
     "RolePermissions": [
       {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprints/createAsOwner",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/standard/read",
         "Category": "Default member",
         "EAMTierLevelName": "UserAccess",
@@ -195,8 +411,8 @@
       }
     ],
     "Classification": {
-      "EAMTierLevelName": "UserAccess",
-      "EAMTierLevelTagValue": "2"
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
     }
   },
   {
@@ -4277,6 +4493,180 @@
         "EAMTierLevelTagValue": "0"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentities/appRoleAssignedTo/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentities/authentication/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentities/basic/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentities/create",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentities/delete",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentities/disable",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentities/enable",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentities/owners/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentities/tag/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprintPrincipals/appRoleAssignedTo/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprintPrincipals/authentication/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprintPrincipals/basic/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprintPrincipals/create",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprintPrincipals/delete",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprintPrincipals/disable",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprintPrincipals/enable",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprintPrincipals/owners/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprintPrincipals/tag/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprints/allProperties/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprints/appRoles/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprints/audience/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprints/authentication/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprints/basic/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprints/create",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprints/credentials/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprints/delete",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprints/owners/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprints/permissions/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprints/tag/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/adminConsentRequestPolicy/allProperties/allTasks",
         "Category": "Application and Workload Identity",
         "EAMTierLevelName": "ControlPlane",
@@ -4884,6 +5274,12 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/domains/allProperties/allTasks",
+        "Category": "Tenant Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/lockbox/requests/update",
         "Category": "Tenant Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
@@ -12018,6 +12414,12 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "microsoft.office365.webPortal/allEntities/standard/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/crossTenantAccessPolicy/default/standard/read",
         "Category": "Tenant Configuration (Reader)",
         "EAMTierLevelName": "ManagementPlane",
@@ -12047,8 +12449,18 @@
     "isPrivileged": false,
     "Categories": "identity",
     "RichDescription": "Can read all aspects of tenant governance.",
-    "RolePermissions": [],
-    "Classification": null
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.office365.webPortal/allEntities/standard/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
   },
   {
     "RoleId": "b8e31d83-1534-480f-9b10-0338ded51b7e",
@@ -12056,8 +12468,18 @@
     "isPrivileged": false,
     "Categories": "identity",
     "RichDescription": "Can manage all aspects of tenant governance relationships, except accepting requests.",
-    "RolePermissions": [],
-    "Classification": null
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.office365.webPortal/allEntities/standard/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
   },
   {
     "RoleId": "124577f8-48ed-456a-839f-13b419002e33",
@@ -12065,8 +12487,18 @@
     "isPrivileged": false,
     "Categories": "identity",
     "RichDescription": "Can read governance relationship related data.",
-    "RolePermissions": [],
-    "Classification": null
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.office365.webPortal/allEntities/standard/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
   },
   {
     "RoleId": "75934031-6c7e-415a-99d7-48dbd49e875e",
@@ -12114,6 +12546,36 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/administrativeUnits/standard/read",
+        "Category": "Default member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentities/createAsOwner",
+        "Category": "Default member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentities/standard/read",
+        "Category": "Default member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprintPrincipals/createAsOwner",
+        "Category": "Default member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprintPrincipals/standard/read",
+        "Category": "Default member",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprints/standard/read",
         "Category": "Default member",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
