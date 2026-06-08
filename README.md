@@ -5,12 +5,12 @@ Docs, resources and samples to implement a secure privileged identity and access
 I've created an approach to automate classification of role actions based on Microsoft's Enterprise Access Model. Samples of the classification file which I've created for the implementation in EntraOps can be found here:
 
 * [EntraOps - Defined Classification of Entra ID Role Actions in JSON](https://github.com/Cloud-Architekt/AzurePrivilegedIAM/blob/main/EntraOps_Classification/Classification_AadResources.json)
-* [EntraOps - Defined Classification of Microsoft Graph API Permissions in JSON](https://github.com/Cloud-Architekt/AzurePrivilegedIAM/blob/main/EntraOps_Classification/Classification_AppRoles.json)
+* [EntraOps - Defined Classification of Microsoft Graph API Permissions in JSON](https://github.com/Cloud-Architekt/AzurePrivilegedIAM/blob/main/EntraOps_Classification/Classification_ApiPermissions.json)
 
 The generated classification (based on the previous definition files) are also available and can be used as lookup in analytics rules (in Microsoft Sentinel) or to built your own automation and/or entity enrichment:
 
 * [Classified Entra ID Roles in JSON](https://github.com/Cloud-Architekt/AzurePrivilegedIAM/blob/main/Classification/Classification_EntraIdDirectoryRoles.json)
-* [Classified Microsoft Graph API Permissions in JSON](https://raw.githubusercontent.com/Cloud-Architekt/AzurePrivilegedIAM/main/Classification/Classification_AppRoles.json)
+* [Classified Microsoft Graph API Permissions in JSON](https://raw.githubusercontent.com/Cloud-Architekt/AzurePrivilegedIAM/main/Classification/Classification_ApiPermissions.json)
 
 Sample queries to use classification in KQL queries in Microsoft Sentinel can be found here:
 

@@ -1,5 +1,23 @@
 function Export-EntraOpsClassificationAppRoles {
 
+    <#
+    .SYNOPSIS
+        Get a JSON file with all classified API Permissions in Entra ID.
+
+    .DESCRIPTION
+        Read JSON classification file and match API permissions in Entra ID tenant to export it as JSON.
+
+    .PARAMETER IncludeAuthorizedApiCalls
+        Include authorized Graph API calls for each API permission.
+
+    .PARAMETER AppRoleProvider
+        Filter the service principals to query for API permissions. Use "MicrosoftGraph" to only query Microsoft Graph or "All" to query all configured providers.
+
+    .EXAMPLE
+        Export all classified API permissions with list of authorized Graph API calls to the path "Classification\Classification_ApiPermissions.json".
+        Export-EntraOpsClassificationAppRoles -IncludeAuthorizedApiCalls $true
+    #>
+
     [cmdletbinding()]
     param
     (
@@ -12,7 +30,7 @@ function Export-EntraOpsClassificationAppRoles {
     )
 
     # Get EntraOps Classifications
-    $ClassificationAppRoles = Get-Content -Path ./EntraOps_Classification/Classification_AppRoles.json | ConvertFrom-Json -Depth 10
+    $ClassificationAppRoles = Get-Content -Path ./EntraOps_Classification/Classification_ApiPermissions.json | ConvertFrom-Json -Depth 10
 
     # Get Graph API actions
     if ($IncludeAuthorizedApiCalls -eq $true) {
@@ -149,8 +167,8 @@ function Export-EntraOpsClassificationAppRoles {
         $missingTable = $MissingAppRolesInApi | Sort-Object ResourceScope, EAMTierLevelName, AppRoleDisplayName |
         Format-Table AppRoleDisplayName, ResourceScope, EAMTierLevelName, Category, AppId -AutoSize |
         Out-String -Width 220
-        Write-Warning "[$($MissingAppRolesInApi.Count) appRoles] CLASSIFIED IN Classification_AppRoles BUT NOT FOUND IN API"
-        Write-Warning "Entries defined in EntraOps_Classification/Classification_AppRoles.json (ResourceScope: Application or All) with no matching appRole on the queried service principals."
+        Write-Warning "[$($MissingAppRolesInApi.Count) appRoles] CLASSIFIED IN Classification_ApiPermissions BUT NOT FOUND IN API"
+        Write-Warning "Entries defined in EntraOps_Classification/Classification_ApiPermissions.json (ResourceScope: Application or All) with no matching appRole on the queried service principals."
         Write-Warning $missingTable
     }
 
@@ -158,8 +176,8 @@ function Export-EntraOpsClassificationAppRoles {
         $unclassifiedTable = $UnclassifiedAppRoles | Sort-Object AppRoleDisplayName |
         Format-Table AppRoleDisplayName, PermissionType, AppId -AutoSize |
         Out-String -Width 220
-        Write-Warning "[$($UnclassifiedAppRoles.Count) appRoles] IN API BUT NOT COVERED IN Classification_AppRoles"
-        Write-Warning "appRoles returned by the API with no matching entry in EntraOps_Classification/Classification_AppRoles.json (or only defined under a different ResourceScope)."
+        Write-Warning "[$($UnclassifiedAppRoles.Count) appRoles] IN API BUT NOT COVERED IN Classification_ApiPermissions"
+        Write-Warning "appRoles returned by the API with no matching entry in EntraOps_Classification/Classification_ApiPermissions.json (or only defined under a different ResourceScope)."
         Write-Warning $unclassifiedTable
     }
 }

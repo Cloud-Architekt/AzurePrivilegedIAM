@@ -1,5 +1,23 @@
 function Export-EntraOpsClassificationScopes {
 
+    <#
+    .SYNOPSIS
+        Get a JSON file with all classified delegated permission scopes in Entra ID.
+
+    .DESCRIPTION
+        Read JSON classification file and match delegated permission scopes (OAuth2 permissions) in Entra ID tenant to export it as JSON.
+
+    .PARAMETER IncludeAuthorizedApiCalls
+        Include authorized Graph API calls for each delegated permission scope.
+
+    .PARAMETER AppRoleProvider
+        Filter the service principals to query for delegated scopes. Use "MicrosoftGraph" to only query Microsoft Graph or "All" to query all configured providers.
+
+    .EXAMPLE
+        Export all classified delegated permission scopes with list of authorized Graph API calls to the path "Classification\Classification_Scopes.json".
+        Export-EntraOpsClassificationScopes -IncludeAuthorizedApiCalls $true
+    #>
+
     [cmdletbinding()]
     param
     (
@@ -12,7 +30,7 @@ function Export-EntraOpsClassificationScopes {
     )
 
     # Get EntraOps Classifications
-    $ClassificationAppRoles = Get-Content -Path ./EntraOps_Classification/Classification_AppRoles.json | ConvertFrom-Json -Depth 10
+    $ClassificationAppRoles = Get-Content -Path ./EntraOps_Classification/Classification_ApiPermissions.json | ConvertFrom-Json -Depth 10
 
     # Get Graph API actions
     if ($IncludeAuthorizedApiCalls -eq $true) {
@@ -80,9 +98,9 @@ function Export-EntraOpsClassificationScopes {
 
             if ($null -eq $AppRoleTierLevelClassification) {
                 $UnclassifiedScopes.Add([PSCustomObject]@{
-                        AppId              = $_.appId
-                        ScopeDisplayName   = $Scope.value
-                        PermissionType     = "Delegation"
+                        AppId            = $_.appId
+                        ScopeDisplayName = $Scope.value
+                        PermissionType   = "Delegation"
                     })
                 $AppRoleTierLevelClassification = [PSCustomObject]@{
                     "EAMTierLevelName"     = "Unclassified"
@@ -128,11 +146,11 @@ function Export-EntraOpsClassificationScopes {
                 foreach ($Action in $TierDef.RoleDefinitionActions) {
                     if ($Action -notin $ExistingScopeNames) {
                         $MissingScopesInApi.Add([PSCustomObject]@{
-                                AppId              = $TierDef.ResourceAppId
-                                ScopeDisplayName   = $Action
-                                ResourceScope      = $TierDef.ResourceScope
-                                EAMTierLevelName   = $TierLevel.EAMTierLevelName
-                                Category           = $TierDef.Service
+                                AppId            = $TierDef.ResourceAppId
+                                ScopeDisplayName = $Action
+                                ResourceScope    = $TierDef.ResourceScope
+                                EAMTierLevelName = $TierLevel.EAMTierLevelName
+                                Category         = $TierDef.Service
                             })
                     }
                 }
@@ -149,8 +167,8 @@ function Export-EntraOpsClassificationScopes {
         $missingTable = $MissingScopesInApi | Sort-Object ResourceScope, EAMTierLevelName, ScopeDisplayName |
         Format-Table ScopeDisplayName, ResourceScope, EAMTierLevelName, Category, AppId -AutoSize |
         Out-String -Width 220
-        Write-Warning "[$($MissingScopesInApi.Count) scopes] CLASSIFIED IN Classification_AppRoles BUT NOT FOUND IN API"
-        Write-Warning "Entries defined in EntraOps_Classification/Classification_AppRoles.json (ResourceScope: Delegation or All) with no matching publishedPermissionScope on the queried service principals."
+        Write-Warning "[$($MissingScopesInApi.Count) scopes] CLASSIFIED IN Classification_ApiPermissions BUT NOT FOUND IN API"
+        Write-Warning "Entries defined in EntraOps_Classification/Classification_ApiPermissions.json (ResourceScope: Delegation or All) with no matching publishedPermissionScope on the queried service principals."
         Write-Warning $missingTable
     }
 
@@ -158,8 +176,8 @@ function Export-EntraOpsClassificationScopes {
         $unclassifiedTable = $UnclassifiedScopes | Sort-Object ScopeDisplayName |
         Format-Table ScopeDisplayName, PermissionType, AppId -AutoSize |
         Out-String -Width 220
-        Write-Warning "[$($UnclassifiedScopes.Count) scopes] IN API BUT NOT COVERED IN Classification_AppRoles"
-        Write-Warning "publishedPermissionScopes returned by the API with no matching entry in EntraOps_Classification/Classification_AppRoles.json (ResourceScope: Delegation or All)."
+        Write-Warning "[$($UnclassifiedScopes.Count) scopes] IN API BUT NOT COVERED IN Classification_ApiPermissions"
+        Write-Warning "publishedPermissionScopes returned by the API with no matching entry in EntraOps_Classification/Classification_ApiPermissions.json (ResourceScope: Delegation or All)."
         Write-Warning $unclassifiedTable
     }
 }
