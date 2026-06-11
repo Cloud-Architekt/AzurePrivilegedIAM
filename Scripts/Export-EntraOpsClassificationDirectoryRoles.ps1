@@ -1,5 +1,30 @@
 function Export-EntraOpsClassificationDirectoryRoles {
 
+    <#
+    .SYNOPSIS
+        Get a JSON file with all classified Entra ID Directory roles.
+
+    .DESCRIPTION
+        Read JSON classification file and match Entra ID directory role definitions to export it as JSON.
+
+    .PARAMETER SingleClassification
+        Use the highest tier level classification only for each role definition. Default is $True.
+
+    .PARAMETER FilteredConditions
+        List of role permission conditions to exclude from classification. Default filters out '$ResourceIsSelf' and '$SubjectIsOwner'.
+
+    .PARAMETER IncludeCustomRoles
+        Include custom role definitions in addition to built-in roles.
+
+    .EXAMPLE
+        Export all classified Entra ID Directory roles to "Classification\Classification_EntraIdDirectoryRoles.json".
+        Export-EntraOpsClassificationDirectoryRoles
+
+    .EXAMPLE
+        Export all classified Entra ID Directory roles including custom roles.
+        Export-EntraOpsClassificationDirectoryRoles -IncludeCustomRoles $true
+    #>
+
     [cmdletbinding()]
     param
     (
