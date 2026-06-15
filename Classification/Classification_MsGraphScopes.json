@@ -129,6 +129,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "e75eeac6-d759-4ba3-ae5c-773a27efafba",
+    "ScopeDisplayName": "AgentIdentity.Create.All",
+    "Category": "Agent Identity",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "c8ee41e5-35e7-4fe9-8ecb-93493adcac5b",
     "ScopeDisplayName": "AgentIdentity.DeleteRestore.All",
     "Category": "Agent Identity",

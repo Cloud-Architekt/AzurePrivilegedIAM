@@ -1830,7 +1830,7 @@
     "EAMTierLevelTagValue": "2"
   },
   {
-    "PermissionId": "9b005f11-86f0-45f7-8c27-4fff5d849916",
+    "PermissionId": "6222dbab-a24c-4210-9d91-2f47cf565614",
     "PermissionValue": "User.ReadBasic.All",
     "PermissionType": "Delegated",
     "TargetAppDisplayName": "Exchange Online",
@@ -1840,7 +1840,7 @@
     "EAMTierLevelTagValue": "2"
   },
   {
-    "PermissionId": "6222dbab-a24c-4210-9d91-2f47cf565614",
+    "PermissionId": "9b005f11-86f0-45f7-8c27-4fff5d849916",
     "PermissionValue": "User.ReadBasic.All",
     "PermissionType": "Delegated",
     "TargetAppDisplayName": "Exchange Online",
@@ -2193,6 +2193,16 @@
     "PermissionId": "ad25cc1d-84d8-47df-a08e-b34c2e800819",
     "PermissionValue": "AgentIdentity.Create.All",
     "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Agent Identity",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "e75eeac6-d759-4ba3-ae5c-773a27efafba",
+    "PermissionValue": "AgentIdentity.Create.All",
+    "PermissionType": "Delegated",
     "TargetAppDisplayName": "Microsoft Graph",
     "TargetAppId": "00000003-0000-0000-c000-000000000000",
     "Category": "Agent Identity",

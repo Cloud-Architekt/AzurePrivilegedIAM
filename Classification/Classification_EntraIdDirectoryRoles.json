@@ -4040,6 +4040,25 @@
     }
   },
   {
+    "RoleId": "d35481f7-cda1-4fa2-8344-5a21f7f3724d",
+    "RoleName": "Entra Customer Lockbox Approver",
+    "isPrivileged": false,
+    "Categories": "identity",
+    "RichDescription": "Users with this role can approve Customer Lockbox requests for accessing customer data in Microsoft Entra ID. This role grants the ability to review and approve or deny lockbox requests submitted by Microsoft support engineers who need temporary access to tenant data for troubleshooting purposes.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.directory/lockbox/requests/update",
+        "Category": "Tenant Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
+    }
+  },
+  {
     "RoleId": "29232cdf-9323-42fd-ade2-1d097af3e4de",
     "RoleName": "Exchange Administrator",
     "isPrivileged": false,
@@ -10905,6 +10924,30 @@
       {
         "AuthorizedResourceAction": "microsoft.windows.defenderAdvancedThreatProtection/allEntities/allTasks",
         "Category": "Global Security and Compliance Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/users/disable",
+        "Category": "Global User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/users/enable",
+        "Category": "Global User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/users/invalidateAllRefreshTokens",
+        "Category": "Global User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/users/password/update",
+        "Category": "Global User Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },

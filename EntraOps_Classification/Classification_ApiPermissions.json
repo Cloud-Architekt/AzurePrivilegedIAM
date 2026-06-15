@@ -871,7 +871,7 @@
         "Category": "Microsoft.Graph",
         "Service": "Agent Identity",
         "ResourceAppId": "00000003-0000-0000-c000-000000000000",
-        "ResourceScope": "Application",
+        "ResourceScope": "All",
         "RoleAssignmentScopeName": [
           "/"
         ],
