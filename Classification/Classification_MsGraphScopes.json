@@ -4349,6 +4349,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "7417b8c6-a088-4c4c-99c7-bca9ab3eb9ba",
+    "ScopeDisplayName": "SecurityAlert.Create.All",
+    "Category": "Global Security and Compliance Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "bc257fb8-46b4-4b15-8713-01e91bfbe4ea",
     "ScopeDisplayName": "SecurityAlert.Read.All",
     "Category": "Security and Compliance",

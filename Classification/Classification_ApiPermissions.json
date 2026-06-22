@@ -1830,7 +1830,7 @@
     "EAMTierLevelTagValue": "2"
   },
   {
-    "PermissionId": "6222dbab-a24c-4210-9d91-2f47cf565614",
+    "PermissionId": "9b005f11-86f0-45f7-8c27-4fff5d849916",
     "PermissionValue": "User.ReadBasic.All",
     "PermissionType": "Delegated",
     "TargetAppDisplayName": "Exchange Online",
@@ -1840,7 +1840,7 @@
     "EAMTierLevelTagValue": "2"
   },
   {
-    "PermissionId": "9b005f11-86f0-45f7-8c27-4fff5d849916",
+    "PermissionId": "6222dbab-a24c-4210-9d91-2f47cf565614",
     "PermissionValue": "User.ReadBasic.All",
     "PermissionType": "Delegated",
     "TargetAppDisplayName": "Exchange Online",
@@ -12275,6 +12275,26 @@
     "EAMTierLevelTagValue": "0"
   },
   {
+    "PermissionId": "06870c4c-7370-4a2a-ad10-239a337af816",
+    "PermissionValue": "SecurityAlert.Create.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Global Security and Compliance Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "PermissionId": "7417b8c6-a088-4c4c-99c7-bca9ab3eb9ba",
+    "PermissionValue": "SecurityAlert.Create.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Global Security and Compliance Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
     "PermissionId": "472e4a4d-bb4a-4026-98d1-0b0d74cb74a5",
     "PermissionValue": "SecurityAlert.Read.All",
     "PermissionType": "Application",
@@ -19793,6 +19813,16 @@
     "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
+  },
+  {
+    "PermissionId": "7689db6e-2939-41b4-98b7-13c05a52bcd6",
+    "PermissionValue": "OneDrive.Provision.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "SharePoint Online",
+    "TargetAppId": "00000003-0000-0ff1-ce00-000000000000",
+    "Category": "SharePoint Administration",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "PermissionId": "2beb830c-70d1-4f5b-a983-79cbdb0c6c6a",

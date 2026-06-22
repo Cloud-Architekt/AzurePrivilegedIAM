@@ -3972,6 +3972,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "06870c4c-7370-4a2a-ad10-239a337af816",
+    "AppRoleDisplayName": "SecurityAlert.Create.All",
+    "Category": "Global Security and Compliance Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "472e4a4d-bb4a-4026-98d1-0b0d74cb74a5",
     "AppRoleDisplayName": "SecurityAlert.Read.All",
     "Category": "Security and Compliance",

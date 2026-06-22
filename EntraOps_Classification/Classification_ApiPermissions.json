@@ -495,6 +495,7 @@
           "CustomDetection.ReadWrite.All",
           "PartnerSecurity.ReadWrite.All",
           "SecurityActions.ReadWrite.All",
+          "SecurityAlert.Create.All",
           "SecurityAlert.ReadWrite.All",
           "SecurityAnalyzedMessage.ReadWrite.All",
           "SecurityEvents.ReadWrite.All",
@@ -1768,6 +1769,7 @@
           "/"
         ],
         "RoleDefinitionActions": [
+          "OneDrive.Provision.All",
           "Sites.FullControl.All"
         ]
       },
