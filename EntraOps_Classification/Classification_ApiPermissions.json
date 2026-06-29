@@ -491,6 +491,7 @@
         "RoleDefinitionActions": [
           "AttackSimulation.ReadWrite.All",
           "AuditActivity.Write",
+          "CaseManagement.ReadWrite.All",
           "ContentActivity.Write",
           "CustomDetection.ReadWrite.All",
           "PartnerSecurity.ReadWrite.All",
@@ -1348,6 +1349,8 @@
           "/"
         ],
         "RoleDefinitionActions": [
+          "Calendars.Read.All",
+          "Calendars.ReadWrite.All",
           "Calendars.Read",
           "Calendars.ReadWrite",
           "Contacts-OnPremisesSyncBehavior.ReadWrite.All",
@@ -1379,6 +1382,7 @@
           "MailboxFolder.ReadWrite.All",
           "MailboxItem.ImportExport.All",
           "MailboxItem.Read.All",
+          "MailboxItem.ReadWrite.All",
           "MailTips.ReadBasic.All",
           "Schedule-WorkingTime.ReadWrite.All"
         ]
@@ -1899,6 +1903,7 @@
           "Calls.InitiateGroupCall.All",
           "Calls.JoinGroupCall.All",
           "Calls.JoinGroupCallAsGuest.All",
+          "Calls.ReportSyntheticMedia.All",
           "ChannelMessage.UpdatePolicyViolation.All",
           "Chat.Read.All",
           "Chat.Read.WhereInstalled",
@@ -2191,6 +2196,7 @@
           "AuditLogsQuery-OneDrive.Read.All",
           "AuditLogsQuery-SharePoint.Read.All",
           "AuditLogsQuery.Read.All",
+          "CaseManagement.Read.All",
           "ChangeManagement.Read.All",
           "CloudApp-Discovery.Read.All",
           "ContentActivity.Read",
@@ -2411,6 +2417,8 @@
           "AdminAppCatalog.Read.All",
           "Region.Read.All",
           "Region.ReadWrite.All",
+          "Team.ReadWrite.All",
+          "TeamMember.ReadWrite.All",
           "UserLicense.Read.All"
         ]
       },
@@ -3199,9 +3207,11 @@
           "MailboxItem.Export",
           "MailboxItem.ImportExport",
           "MailboxItem.Read",
+          "MailboxItem.ReadWrite",
           "MailTips.ReadBasic.Shared",
           "POP.AccessAsUser.All",
-          "SMTP.Send"
+          "SMTP.Send",
+          "SubjectNameRegistration.ReadWrite"
         ]
       },
       {

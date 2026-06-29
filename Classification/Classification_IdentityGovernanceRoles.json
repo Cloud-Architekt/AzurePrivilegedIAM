@@ -1,0 +1,104 @@
+[
+  {
+    "RoleId": "e2182095-804a-4656-ae11-64734e9b7ae5",
+    "RoleName": "AccessPackage assignment manager",
+    "isPrivileged": null,
+    "RichDescription": "AccessPackage assignment manager",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.entitlementManagement/AccessPackageCatalog/AccessPackage/GrantRequests/allTasks",
+        "Category": "Entitlement Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.entitlementManagement/AccessPackageCatalog/AccessPackage/Grants/allTasks",
+        "Category": "Entitlement Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.entitlementManagement/AccessPackageCatalog/allEntities/Read",
+        "Category": "Entitlement Management",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
+    }
+  },
+  {
+    "RoleId": "7f480852-ebdc-47d4-87de-0d8498384a83",
+    "RoleName": "AccessPackages manager",
+    "isPrivileged": null,
+    "RichDescription": "AccessPackages manager",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.entitlementManagement/AccessPackageCatalog/AccessPackage/allTasks",
+        "Category": "Entitlement Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.entitlementManagement/AccessPackageCatalog/allEntities/Read",
+        "Category": "Entitlement Management",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
+    }
+  },
+  {
+    "RoleId": "ba92d953-d8e0-4e39-a797-0cbedb0a89e8",
+    "RoleName": "Catalog creator",
+    "isPrivileged": null,
+    "RichDescription": "Catalog creator",
+    "RolePermissions": {
+      "AuthorizedResourceAction": "microsoft.entitlementManagement/AccessPackageCatalog/Create",
+      "Category": "Entitlement Management",
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    },
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "ae79f266-94d4-4dab-b730-feca7e132178",
+    "RoleName": "Catalog owner",
+    "isPrivileged": null,
+    "RichDescription": "Catalog owner",
+    "RolePermissions": {
+      "AuthorizedResourceAction": "microsoft.entitlementManagement/allEntities/allTasks",
+      "Category": "Entitlement Management",
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
+    },
+    "Classification": {
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
+    }
+  },
+  {
+    "RoleId": "44272f93-9762-48e8-af59-1b5351b1d6b3",
+    "RoleName": "Catalog reader",
+    "isPrivileged": null,
+    "RichDescription": "Catalog reader",
+    "RolePermissions": {
+      "AuthorizedResourceAction": "microsoft.entitlementManagement/allEntities/Read",
+      "Category": "Entitlement Management",
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    },
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  }
+]

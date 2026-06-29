@@ -876,6 +876,22 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "7bdc421c-99cd-4b67-a749-aa8e92775f7e",
+    "ScopeDisplayName": "CaseManagement.Read.All",
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "363a0763-d7eb-40bc-9457-6be55acd81e2",
+    "ScopeDisplayName": "CaseManagement.ReadWrite.All",
+    "Category": "Global Security and Compliance Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "4628dff5-c33e-4fde-b17a-b64e7acb1bed",
     "ScopeDisplayName": "ChangeManagement.Read.All",
     "Category": "Security and Compliance",
@@ -2874,6 +2890,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "ec1ade38-5268-4bc8-87fa-b230e42f7a88",
+    "ScopeDisplayName": "MailboxItem.ReadWrite",
+    "Category": "Exchange Online",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "87f447af-9fa4-4c32-9dfa-4a57a73d18ce",
     "ScopeDisplayName": "MailboxSettings.Read",
     "Category": "Exchange Online",
@@ -4786,6 +4810,14 @@
     "Category": "Microsoft Viva",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "fb0d7592-1943-4141-a7bc-b7ae45b84ecf",
+    "ScopeDisplayName": "SubjectNameRegistration.ReadWrite",
+    "Category": "Exchange Online",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",

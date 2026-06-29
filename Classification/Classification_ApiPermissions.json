@@ -1830,7 +1830,7 @@
     "EAMTierLevelTagValue": "2"
   },
   {
-    "PermissionId": "9b005f11-86f0-45f7-8c27-4fff5d849916",
+    "PermissionId": "6222dbab-a24c-4210-9d91-2f47cf565614",
     "PermissionValue": "User.ReadBasic.All",
     "PermissionType": "Delegated",
     "TargetAppDisplayName": "Exchange Online",
@@ -1840,7 +1840,7 @@
     "EAMTierLevelTagValue": "2"
   },
   {
-    "PermissionId": "6222dbab-a24c-4210-9d91-2f47cf565614",
+    "PermissionId": "9b005f11-86f0-45f7-8c27-4fff5d849916",
     "PermissionValue": "User.ReadBasic.All",
     "PermissionType": "Delegated",
     "TargetAppDisplayName": "Exchange Online",
@@ -3803,6 +3803,16 @@
     "EAMTierLevelTagValue": "1"
   },
   {
+    "PermissionId": "470229df-a15a-4b08-9d95-8c534862b362",
+    "PermissionValue": "Calendars.Read.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Exchange Online",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
     "PermissionId": "2b9c4092-424d-4249-948d-b43879977640",
     "PermissionValue": "Calendars.Read.Shared",
     "PermissionType": "Delegated",
@@ -3846,6 +3856,16 @@
     "PermissionId": "1ec239c2-d7c9-4623-a91a-a9775856bb36",
     "PermissionValue": "Calendars.ReadWrite",
     "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Exchange Online",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "d91697b0-a708-4c11-a712-8fb2dc081aa2",
+    "PermissionValue": "Calendars.ReadWrite.All",
+    "PermissionType": "Application",
     "TargetAppDisplayName": "Microsoft Graph",
     "TargetAppId": "00000003-0000-0000-c000-000000000000",
     "Category": "Exchange Online",
@@ -4043,6 +4063,16 @@
     "EAMTierLevelTagValue": "1"
   },
   {
+    "PermissionId": "050b0d28-840a-4ff6-bdf9-cc6221acbc1f",
+    "PermissionValue": "Calls.ReportSyntheticMedia.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Microsoft Teams",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
     "PermissionId": "4cd61b6d-8692-40bf-9d90-7f38db5e5fce",
     "PermissionValue": "CallTranscripts.Read.All",
     "PermissionType": "Application",
@@ -4061,6 +4091,46 @@
     "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "b328f35f-712c-40d6-b6b4-95449d77b352",
+    "PermissionValue": "CaseManagement.Read.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "7bdc421c-99cd-4b67-a749-aa8e92775f7e",
+    "PermissionValue": "CaseManagement.Read.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "57ac77a0-bb98-4ba8-bf9a-7af06dcdcc1f",
+    "PermissionValue": "CaseManagement.ReadWrite.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Global Security and Compliance Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "PermissionId": "363a0763-d7eb-40bc-9457-6be55acd81e2",
+    "PermissionValue": "CaseManagement.ReadWrite.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Global Security and Compliance Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
   },
   {
     "PermissionId": "418dae40-2b65-4819-900c-519a04e4d278",
@@ -8812,6 +8882,26 @@
     "EAMTierLevelTagValue": "1"
   },
   {
+    "PermissionId": "ec1ade38-5268-4bc8-87fa-b230e42f7a88",
+    "PermissionValue": "MailboxItem.ReadWrite",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Exchange Online",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "PermissionId": "1583d471-fede-4e7c-b062-57e9d60cfb49",
+    "PermissionValue": "MailboxItem.ReadWrite.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Exchange Online",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
     "PermissionId": "40f97065-369a-49f4-947c-6a255697ae91",
     "PermissionValue": "MailboxSettings.Read",
     "PermissionType": "Application",
@@ -13345,6 +13435,16 @@
     "EAMTierLevelTagValue": "1"
   },
   {
+    "PermissionId": "fb0d7592-1943-4141-a7bc-b7ae45b84ecf",
+    "PermissionValue": "SubjectNameRegistration.ReadWrite",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Exchange Online",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
     "PermissionId": "ee1460f0-368b-4153-870a-4e1ca7e72c42",
     "PermissionValue": "SubjectRightsRequest.Read.All",
     "PermissionType": "Application",
@@ -16867,6 +16967,26 @@
   {
     "PermissionId": "3ed42bc3-d6ed-4cf4-9531-d521e361223e",
     "PermissionValue": "Region.ReadWrite.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Teams",
+    "TargetAppId": "cc15fd57-2c6c-4117-a88c-83b1d56b4bbe",
+    "Category": "Teams Administration",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "400ef46e-3c0a-45d4-bb3d-4eb2d94f832a",
+    "PermissionValue": "Team.ReadWrite.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Teams",
+    "TargetAppId": "cc15fd57-2c6c-4117-a88c-83b1d56b4bbe",
+    "Category": "Teams Administration",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "eb12f503-edcc-4d03-93d7-3462546aeace",
+    "PermissionValue": "TeamMember.ReadWrite.All",
     "PermissionType": "Application",
     "TargetAppDisplayName": "Microsoft Teams",
     "TargetAppId": "cc15fd57-2c6c-4117-a88c-83b1d56b4bbe",

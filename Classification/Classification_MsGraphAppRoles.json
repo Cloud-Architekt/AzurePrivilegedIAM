@@ -745,6 +745,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "470229df-a15a-4b08-9d95-8c534862b362",
+    "AppRoleDisplayName": "Calendars.Read.All",
+    "Category": "Exchange Online",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "8ba4a692-bc31-4128-9094-475872af8a53",
     "AppRoleDisplayName": "Calendars.ReadBasic.All",
     "Category": "Exchange Online",
@@ -755,6 +763,14 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "ef54d2bf-783f-4e0f-bca1-3210c0444d99",
     "AppRoleDisplayName": "Calendars.ReadWrite",
+    "Category": "Exchange Online",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "d91697b0-a708-4c11-a712-8fb2dc081aa2",
+    "AppRoleDisplayName": "Calendars.ReadWrite.All",
     "Category": "Exchange Online",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
@@ -865,11 +881,35 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "050b0d28-840a-4ff6-bdf9-cc6221acbc1f",
+    "AppRoleDisplayName": "Calls.ReportSyntheticMedia.All",
+    "Category": "Microsoft Teams",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "4cd61b6d-8692-40bf-9d90-7f38db5e5fce",
     "AppRoleDisplayName": "CallTranscripts.Read.All",
     "Category": "Microsoft Teams",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "b328f35f-712c-40d6-b6b4-95449d77b352",
+    "AppRoleDisplayName": "CaseManagement.Read.All",
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "57ac77a0-bb98-4ba8-bf9a-7af06dcdcc1f",
+    "AppRoleDisplayName": "CaseManagement.ReadWrite.All",
+    "Category": "Global Security and Compliance Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -2670,6 +2710,14 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "7d9f353d-a7bd-4fbb-822a-26d5dd39a3ce",
     "AppRoleDisplayName": "MailboxItem.Read.All",
+    "Category": "Exchange Online",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "1583d471-fede-4e7c-b062-57e9d60cfb49",
+    "AppRoleDisplayName": "MailboxItem.ReadWrite.All",
     "Category": "Exchange Online",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
