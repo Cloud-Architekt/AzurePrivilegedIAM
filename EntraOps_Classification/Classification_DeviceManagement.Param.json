@@ -19,6 +19,19 @@
       },
       {
         "Category": "Microsoft.DeviceManagement",
+        "Service": "Multi Admin Approval Management",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "ExcludedRoleAssignmentScopeName": [],
+        "RoleDefinitionActions": [
+          "Microsoft.Intune/MultiAdminApproval/CreateAccessPolicy",
+          "Microsoft.Intune/MultiAdminApproval/DeleteAccessPolicy",
+          "Microsoft.Intune/MultiAdminApproval/UpdateAccessPolicy"
+        ]
+      },
+      {
+        "Category": "Microsoft.DeviceManagement",
         "Service": "Global Application Management",
         "RoleAssignmentScopeName": [
           "/"
@@ -63,6 +76,7 @@
         ],
         "ExcludedRoleAssignmentScopeName": [],
         "RoleDefinitionActions": [
+          "Microsoft.Intune/MultiAdminApproval/ApprovalForMultiAdminApproval",
           "Microsoft.Intune/AdminTasks/Create",
           "Microsoft.Intune/AdminTasks/Delete",
           "Microsoft.Intune/AdminTasks/Update",
@@ -294,6 +308,7 @@
           "Microsoft.Intune/RemoteTasks/PlayLostModeSound",
           "Microsoft.Intune/RemoteTasks/RebootNow",
           "Microsoft.Intune/RemoteTasks/RemoteLock",
+          "Microsoft.Intune/RemoteTasks/RemoveDeviceEsim",
           "Microsoft.Intune/RemoteTasks/RequestRemoteAssistance",
           "Microsoft.Intune/RemoteTasks/ResetPasscode",
           "Microsoft.Intune/RemoteTasks/RestoreManagedHomeScreen",
@@ -517,6 +532,7 @@
           "Microsoft.Intune/RemoteTasks/PlayLostModeSound",
           "Microsoft.Intune/RemoteTasks/RebootNow",
           "Microsoft.Intune/RemoteTasks/RemoteLock",
+          "Microsoft.Intune/RemoteTasks/RemoveDeviceEsim",
           "Microsoft.Intune/RemoteTasks/RequestRemoteAssistance",
           "Microsoft.Intune/RemoteTasks/ResetPasscode",
           "Microsoft.Intune/RemoteTasks/RestoreManagedHomeScreen",
@@ -804,6 +820,7 @@
           "Microsoft.Intune/RemoteTasks/PlayLostModeSound",
           "Microsoft.Intune/RemoteTasks/RebootNow",
           "Microsoft.Intune/RemoteTasks/RemoteLock",
+          "Microsoft.Intune/RemoteTasks/RemoveDeviceEsim",
           "Microsoft.Intune/RemoteTasks/RequestRemoteAssistance",
           "Microsoft.Intune/RemoteTasks/ResetPasscode",
           "Microsoft.Intune/RemoteTasks/RestoreManagedHomeScreen",
@@ -870,6 +887,7 @@
           "Microsoft.Intune/MobileApps/Read",
           "Microsoft.Intune/MobileApps/ViewReports",
           "Microsoft.Intune/MobileThreatDefense/Read",
+          "Microsoft.Intune/MultiAdminApproval/ReadAccessPolicy",
           "Microsoft.Intune/Organization/Read",
           "Microsoft.Intune/OrganizationalMessages/Read",
           "Microsoft.Intune/PartnerDeviceManagement/Read",

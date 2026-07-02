@@ -1693,6 +1693,7 @@
         "RoleDefinitionActions": [
           "Content.Process.All",
           "Content.Process.User",
+          "Group.ManageProtection.All",
           "ProtectionScopes.Compute.All",
           "ProtectionScopes.Compute.User",
           "RealTimeActivityFeed.Read.All",
@@ -2495,6 +2496,7 @@
           "Policy.Read.AuthenticationMethod",
           "Policy.Read.B2BManagementPolicy",
           "Policy.Read.ConditionalAccess",
+          "Policy.Read.CrossTenantAccess",
           "Policy.Read.DeviceConfiguration",
           "Policy.Read.IdentityProtection",
           "Policy.Read.PermissionGrant",
@@ -2505,6 +2507,7 @@
           "PrivilegedAssignmentSchedule.Read.AzureADGroup",
           "PrivilegedEligibilitySchedule.Read.AzureADGroup",
           "PrivilegedEligibilitySchedule.Read.EntraAppRole",
+          "RemoteTenantGroups.Read.All",
           "RoleAssignmentSchedule.Read.Directory",
           "RoleEligibilitySchedule.Read.Directory",
           "RoleManagement.Read.Defender",

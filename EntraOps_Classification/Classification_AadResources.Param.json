@@ -46,7 +46,28 @@
           "microsoft.directory/deletedItems.agentIdentityBlueprintPrincipals/delete",
           "microsoft.directory/deletedItems.agentIdentityBlueprintPrincipals/restore",
           "microsoft.directory/deletedItems.agentIdentityBlueprints/delete",
-          "microsoft.directory/deletedItems.agentIdentityBlueprints/restore"
+          "microsoft.directory/deletedItems.agentIdentityBlueprints/restore",
+          "microsoft.directory/agentIdentityBlueprints/verification/update"
+        ]
+      },
+      {
+        "Category": "Microsoft.AzureAD",
+        "Service": "Tenant Governance",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "microsoft.directory/tenantGovernance/invitations/create",
+          "microsoft.directory/tenantGovernance/invitations/delete",
+          "microsoft.directory/tenantGovernance/policyTemplates/allProperties/update",
+          "microsoft.directory/tenantGovernance/policyTemplates/create",
+          "microsoft.directory/tenantGovernance/policyTemplates/delete",
+          "microsoft.directory/tenantGovernance/relatedTenants/refresh",
+          "microsoft.directory/tenantGovernance/relationships/allProperties/update",
+          "microsoft.directory/tenantGovernance/relationships/create",
+          "microsoft.directory/tenantGovernance/requests/allProperties/update",
+          "microsoft.directory/tenantGovernance/requests/create",
+          "microsoft.directory/tenantGovernance/settings/allProperties/update"
         ]
       },
       {
@@ -1228,6 +1249,7 @@
         ],
         "RoleDefinitionActions": [
           "microsoft.directory/auditLogs/allProperties/read",
+          "microsoft.directory/auditLogs/standard/read",
           "microsoft.directory/customSecurityAttributeAuditLogs/allProperties/read",
           "microsoft.directory/identityProtection/allProperties/read",
           "microsoft.directory/provisioningLogs/allProperties/read",
@@ -1412,7 +1434,16 @@
           "microsoft.edge/allEntities/allProperties/read",
           "microsoft.insights/allEntities/allProperties/read",
           "microsoft.insights/reports/allProperties/read",
-          "microsoft.networkAccess/allEntities/allProperties/read"
+          "microsoft.networkAccess/allEntities/allProperties/read",
+          "microsoft.directory/agentIdentities/allProperties/read",
+          "microsoft.directory/agentIdentityBlueprintPrincipals/allProperties/read",
+          "microsoft.directory/agentIdentityBlueprints/allProperties/read",
+          "microsoft.directory/tenantGovernance/invitations/standard/read",
+          "microsoft.directory/tenantGovernance/policyTemplates/standard/read",
+          "microsoft.directory/tenantGovernance/relatedTenants/standard/read",
+          "microsoft.directory/tenantGovernance/relationships/standard/read",
+          "microsoft.directory/tenantGovernance/requests/standard/read",
+          "microsoft.directory/tenantGovernance/settings/standard/read"
         ]
       },
       {
