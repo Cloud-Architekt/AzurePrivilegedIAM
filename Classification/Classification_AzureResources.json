@@ -41817,6 +41817,40 @@
     }
   },
   {
+    "RoleId": "11b23f7a-6229-4518-88db-0576f10dd2a0",
+    "RoleName": "Container Apps SandboxGroup Contributor",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "RichDescription": "Full management of Container Apps Sandbox Groups, including creation, deletion, and updates.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.App/sandboxGroups/*/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.App/sandboxGroups/*/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.App/sandboxGroups/*/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
     "RoleId": "c24cf47c-5077-412d-a19c-45202126392c",
     "RoleName": "Container Apps SandboxGroup Data Owner",
     "IsCustom": false,
@@ -55665,13 +55699,6 @@
     "isPrivileged": false,
     "RichDescription": "Allows interacting with Foundry agents at runtime.",
     "RolePermissions": [
-      {
-        "AuthorizedResourceAction": "Microsoft.CognitiveServices/accounts/AIServices/applications/invoke/action",
-        "ActionType": "DataAction",
-        "Category": "General Management Plane Operations",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
       {
         "AuthorizedResourceAction": "Microsoft.CognitiveServices/accounts/AIServices/endpoints/interact/action",
         "ActionType": "DataAction",

@@ -21,7 +21,7 @@ function Export-EntraOpsClassificationAzureRoles {
         When the parameterized file (Classification_Azure.Param.json) is used, the scope placeholders are substituted with the values from Tier0IncludedResourceScope and Tier1IncludedResourceScope.
 
     .PARAMETER Tier0IncludedResourceScope
-        List of Azure scopes (management groups, subscriptions, resource groups) which are treated as Control Plane (Tier 0). Used to substitute the <Tier0IncludedResourceScope> placeholder in the parameterized classification file.
+        List of Azure scopes (management groups, subscriptions, resource groups) which are treated as Control Plane (Tier 0). Used to substitute the <Tier0IncludedResourceScope> placeholder in the parameterized classification file. The tenant root scope ("/") is always included as Control Plane in addition to the scopes provided here.
 
     .PARAMETER Tier1IncludedResourceScope
         List of Azure scopes (management groups, subscriptions, resource groups) which are treated as Management Plane (Tier 1). Used to substitute the <Tier1IncludedResourceScope> placeholder in the parameterized classification file.
@@ -203,8 +203,12 @@ function Export-EntraOpsClassificationAzureRoles {
     }
 
     # Get EntraOps Classification (substitute scope placeholders when a parameterized classification file is used)
+    # The tenant root scope ("/") is always treated as Control Plane (Tier 0), regardless of the caller-provided
+    # Tier0IncludedResourceScope, since it is used both to include it on Control Plane definitions and to exclude
+    # it from Management Plane definitions (via <Tier0IncludedResourceScope> in ExcludedRoleAssignmentScopeName).
     $ClassificationContent = Get-Content -Path $ClassificationFile -Raw
-    $Tier0ScopeReplacement = (($Tier0IncludedResourceScope | ForEach-Object { '"' + $_ + '"' }) -join ", ")
+    $EffectiveTier0IncludedResourceScope = @("/") + @($Tier0IncludedResourceScope | Where-Object { $_ -ne "/" })
+    $Tier0ScopeReplacement = (($EffectiveTier0IncludedResourceScope | ForEach-Object { '"' + $_ + '"' }) -join ", ")
     $Tier1ScopeReplacement = (($Tier1IncludedResourceScope | ForEach-Object { '"' + $_ + '"' }) -join ", ")
     $ClassificationContent = $ClassificationContent.Replace("<Tier0IncludedResourceScope>", $Tier0ScopeReplacement)
     $ClassificationContent = $ClassificationContent.Replace("<Tier1IncludedResourceScope>", $Tier1ScopeReplacement)

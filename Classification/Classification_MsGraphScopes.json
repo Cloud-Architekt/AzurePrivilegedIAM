@@ -2231,6 +2231,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "36263ed6-285e-4f84-b25a-62ec2ba17d29",
+    "ScopeDisplayName": "Group.ManageProtection.All",
+    "Category": "Microsoft Purview",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "5f8c59db-677d-491f-a6b8-5f174b11ec1d",
     "ScopeDisplayName": "Group.Read.All",
     "Category": "Default Member",
@@ -3445,6 +3453,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "b337372a-8b4d-428d-9cd8-3d7363865736",
+    "ScopeDisplayName": "Policy.Read.CrossTenantAccess",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "3616a4b0-6746-49c4-a678-4c237599074d",
     "ScopeDisplayName": "Policy.Read.DeviceConfiguration",
     "Category": "Tenant Configuration (Reader)",
@@ -4064,6 +4080,14 @@
     "ScopeId": "f2833d75-a4e6-40ab-86d4-6dfe73c97605",
     "ScopeDisplayName": "RecordsManagement.ReadWrite.All",
     "Category": "Microsoft Purview",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "d207fff0-6e36-4360-a23b-495e23b60385",
+    "ScopeDisplayName": "RemoteTenantGroups.Read.All",
+    "Category": "Tenant Configuration (Reader)",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },

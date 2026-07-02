@@ -45,7 +45,7 @@ function Get-AzEARoleMembers {
     Connect-AzAccount -Tenant $TenantName | Out-Null
 
     # Get Token and connect to MgGraph
-    $AccessToken = (Get-AzAccessToken -ResourceTypeName "MSGraph").Token
+    $AccessToken = (Get-AzAccessToken -ResourceTypeName "MSGraph").Token | ConvertTo-SecureString -AsPlainText -Force
     Connect-MgGraph -AccessToken $AccessToken | Out-Null
     $TenantId = (Get-AzContext).Tenant.Id
 

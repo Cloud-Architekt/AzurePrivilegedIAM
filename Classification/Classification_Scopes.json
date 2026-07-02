@@ -1486,6 +1486,14 @@
     "EAMTierLevelTagValue": "2"
   },
   {
+    "AppId": "00000002-0000-0ff1-ce00-000000000000",
+    "ScopeId": "d6aa6fa9-3360-416a-b8db-021249d58e86",
+    "ScopeDisplayName": "Contacts.Read.Shared",
+    "Category": "Default Member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "242b9d9e-ed24-4d09-9a52-f43769beb9d4",
     "ScopeDisplayName": "Contacts.Read.Shared",
@@ -1495,8 +1503,8 @@
   },
   {
     "AppId": "00000002-0000-0ff1-ce00-000000000000",
-    "ScopeId": "d6aa6fa9-3360-416a-b8db-021249d58e86",
-    "ScopeDisplayName": "Contacts.Read.Shared",
+    "ScopeId": "32253599-e142-4cf0-810d-4827eedd1cfa",
+    "ScopeDisplayName": "Contacts.ReadWrite",
     "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
@@ -1511,24 +1519,8 @@
   },
   {
     "AppId": "00000002-0000-0ff1-ce00-000000000000",
-    "ScopeId": "32253599-e142-4cf0-810d-4827eedd1cfa",
-    "ScopeDisplayName": "Contacts.ReadWrite",
-    "Category": "Default Member",
-    "EAMTierLevelName": "UserAccess",
-    "EAMTierLevelTagValue": "2"
-  },
-  {
-    "AppId": "00000002-0000-0ff1-ce00-000000000000",
     "ScopeId": "44882612-f346-430a-b938-4f00ee1c77a7",
     "ScopeDisplayName": "Contacts.ReadWrite.All",
-    "Category": "Default Member",
-    "EAMTierLevelName": "UserAccess",
-    "EAMTierLevelTagValue": "2"
-  },
-  {
-    "AppId": "00000002-0000-0ff1-ce00-000000000000",
-    "ScopeId": "c54cba4f-60fe-4332-b0de-b5990fd1999e",
-    "ScopeDisplayName": "Contacts.ReadWrite.Shared",
     "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
@@ -1538,6 +1530,14 @@
     "ScopeId": "afb6c84b-06be-49af-80bb-8f3f77004eab",
     "ScopeDisplayName": "Contacts.ReadWrite.Shared",
     "Category": "Exchange Online",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000002-0000-0ff1-ce00-000000000000",
+    "ScopeId": "c54cba4f-60fe-4332-b0de-b5990fd1999e",
+    "ScopeDisplayName": "Contacts.ReadWrite.Shared",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -2302,16 +2302,16 @@
     "EAMTierLevelTagValue": "2"
   },
   {
-    "AppId": "00000002-0000-0000-c000-000000000000",
-    "ScopeId": "78c8a3c8-a07e-4b9e-af1b-b5ccab50a175",
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "c5366453-9fb0-48a5-a156-24f0c49a4b84",
     "ScopeDisplayName": "Directory.ReadWrite.All",
     "Category": "Tenant Management",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
   },
   {
-    "AppId": "00000003-0000-0000-c000-000000000000",
-    "ScopeId": "c5366453-9fb0-48a5-a156-24f0c49a4b84",
+    "AppId": "00000002-0000-0000-c000-000000000000",
+    "ScopeId": "78c8a3c8-a07e-4b9e-af1b-b5ccab50a175",
     "ScopeDisplayName": "Directory.ReadWrite.All",
     "Category": "Tenant Management",
     "EAMTierLevelName": "ControlPlane",
@@ -2526,18 +2526,18 @@
     "EAMTierLevelTagValue": "1"
   },
   {
-    "AppId": "00000005-0000-0ff1-ce00-000000000000",
-    "ScopeId": "7bedefb8-2ade-4b30-a48d-d656c8e9d314",
-    "ScopeDisplayName": "EngagementConversation.ReadWrite.All",
-    "Category": "Viva Engage",
-    "EAMTierLevelName": "ManagementPlane",
-    "EAMTierLevelTagValue": "1"
-  },
-  {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "ebbfd079-1634-4640-8618-68b19ebbed1d",
     "ScopeDisplayName": "EngagementConversation.ReadWrite.All",
     "Category": "Microsoft Viva",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000005-0000-0ff1-ce00-000000000000",
+    "ScopeId": "7bedefb8-2ade-4b30-a48d-d656c8e9d314",
+    "ScopeDisplayName": "EngagementConversation.ReadWrite.All",
+    "Category": "Viva Engage",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -2750,20 +2750,20 @@
     "EAMTierLevelTagValue": "2"
   },
   {
-    "AppId": "00000003-0000-0000-c000-000000000000",
-    "ScopeId": "9769c687-087d-48ac-9cb3-c37dde652038",
-    "ScopeDisplayName": "EWS.AccessAsUser.All",
-    "Category": "Exchange Online",
-    "EAMTierLevelName": "UserAccess",
-    "EAMTierLevelTagValue": "2"
-  },
-  {
     "AppId": "00000002-0000-0ff1-ce00-000000000000",
     "ScopeId": "3b5f3d61-589b-4a3c-a359-5dd4b5ee5bd5",
     "ScopeDisplayName": "EWS.AccessAsUser.All",
     "Category": "Exchange Administration",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "9769c687-087d-48ac-9cb3-c37dde652038",
+    "ScopeDisplayName": "EWS.AccessAsUser.All",
+    "Category": "Exchange Online",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
   },
   {
     "AppId": "00000002-0000-0ff1-ce00-000000000000",
@@ -3170,6 +3170,14 @@
     "ScopeId": "f7c0661b-4247-48ac-a371-05ff047614c6",
     "ScopeDisplayName": "Group-XTenantIdentitySync.Read.All",
     "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "36263ed6-285e-4f84-b25a-62ec2ba17d29",
+    "ScopeDisplayName": "Group.ManageProtection.All",
+    "Category": "Microsoft Purview",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -4105,20 +4113,20 @@
     "EAMTierLevelTagValue": "2"
   },
   {
-    "AppId": "00000002-0000-0ff1-ce00-000000000000",
-    "ScopeId": "185758ba-798d-4b72-9e54-429a413a2510",
-    "ScopeDisplayName": "Mail.Read",
-    "Category": "Default Member",
-    "EAMTierLevelName": "UserAccess",
-    "EAMTierLevelTagValue": "2"
-  },
-  {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "570282fd-fa5c-430d-a7fd-fc8dc98a9dca",
     "ScopeDisplayName": "Mail.Read",
     "Category": "Exchange Online",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000002-0000-0ff1-ce00-000000000000",
+    "ScopeId": "185758ba-798d-4b72-9e54-429a413a2510",
+    "ScopeDisplayName": "Mail.Read",
+    "Category": "Default Member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
   },
   {
     "AppId": "00000002-0000-0ff1-ce00-000000000000",
@@ -4145,20 +4153,20 @@
     "EAMTierLevelTagValue": "2"
   },
   {
-    "AppId": "00000003-0000-0000-c000-000000000000",
-    "ScopeId": "a4b8392a-d8d1-4954-a029-8e668a39a170",
-    "ScopeDisplayName": "Mail.ReadBasic",
-    "Category": "Exchange Online",
-    "EAMTierLevelName": "ManagementPlane",
-    "EAMTierLevelTagValue": "1"
-  },
-  {
     "AppId": "00000002-0000-0ff1-ce00-000000000000",
     "ScopeId": "dab085de-3e14-432f-a47f-84b6457059c4",
     "ScopeDisplayName": "Mail.ReadBasic",
     "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "a4b8392a-d8d1-4954-a029-8e668a39a170",
+    "ScopeDisplayName": "Mail.ReadBasic",
+    "Category": "Exchange Online",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -4956,16 +4964,16 @@
     "EAMTierLevelTagValue": "2"
   },
   {
-    "AppId": "00000002-0000-0ff1-ce00-000000000000",
-    "ScopeId": "1d490c92-d2ca-4a30-b52e-6edf5f279f4d",
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "4908d5b9-3fb2-4b1e-9336-1888b7937185",
     "ScopeDisplayName": "Organization.Read.All",
     "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
   {
-    "AppId": "00000003-0000-0000-c000-000000000000",
-    "ScopeId": "4908d5b9-3fb2-4b1e-9336-1888b7937185",
+    "AppId": "00000002-0000-0ff1-ce00-000000000000",
+    "ScopeId": "1d490c92-d2ca-4a30-b52e-6edf5f279f4d",
     "ScopeDisplayName": "Organization.Read.All",
     "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
@@ -5188,16 +5196,16 @@
     "EAMTierLevelTagValue": "0"
   },
   {
-    "AppId": "00000003-0000-0000-c000-000000000000",
-    "ScopeId": "ba47897c-39ec-4d83-8086-ee8256fa737d",
+    "AppId": "00000002-0000-0ff1-ce00-000000000000",
+    "ScopeId": "9478ac54-3753-4543-b95a-4fad24978902",
     "ScopeDisplayName": "People.Read",
     "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
   {
-    "AppId": "00000002-0000-0ff1-ce00-000000000000",
-    "ScopeId": "9478ac54-3753-4543-b95a-4fad24978902",
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "ba47897c-39ec-4d83-8086-ee8256fa737d",
     "ScopeDisplayName": "People.Read",
     "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
@@ -5220,20 +5228,20 @@
     "EAMTierLevelTagValue": "2"
   },
   {
-    "AppId": "00000003-0000-0000-c000-000000000000",
-    "ScopeId": "ec762c5f-388b-4b16-8693-ac1efbc611bc",
-    "ScopeDisplayName": "PeopleSettings.Read.All",
-    "Category": "People",
-    "EAMTierLevelName": "ManagementPlane",
-    "EAMTierLevelTagValue": "1"
-  },
-  {
     "AppId": "00000002-0000-0ff1-ce00-000000000000",
     "ScopeId": "e1eeeffa-b5a5-4b80-ae8f-ccb93d4b75eb",
     "ScopeDisplayName": "PeopleSettings.Read.All",
     "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "ec762c5f-388b-4b16-8693-ac1efbc611bc",
+    "ScopeDisplayName": "PeopleSettings.Read.All",
+    "Category": "People",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000002-0000-0ff1-ce00-000000000000",
@@ -5276,20 +5284,20 @@
     "EAMTierLevelTagValue": "1"
   },
   {
-    "AppId": "00000002-0000-0ff1-ce00-000000000000",
-    "ScopeId": "43ed0a33-2264-4716-b3bd-c5d8e248eebf",
-    "ScopeDisplayName": "Place.Read.All",
-    "Category": "Default Member",
-    "EAMTierLevelName": "UserAccess",
-    "EAMTierLevelTagValue": "2"
-  },
-  {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "cb8f45a0-5c2e-4ea1-b803-84b870a7d7ec",
     "ScopeDisplayName": "Place.Read.All",
     "Category": "Microsoft Places",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000002-0000-0ff1-ce00-000000000000",
+    "ScopeId": "43ed0a33-2264-4716-b3bd-c5d8e248eebf",
+    "ScopeDisplayName": "Place.Read.All",
+    "Category": "Default Member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -5351,6 +5359,14 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "633e0fce-8c58-4cfb-9495-12bbd5a24f7c",
     "ScopeDisplayName": "Policy.Read.ConditionalAccess",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "b337372a-8b4d-428d-9cd8-3d7363865736",
+    "ScopeDisplayName": "Policy.Read.CrossTenantAccess",
     "Category": "Tenant Configuration (Reader)",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
@@ -5532,18 +5548,18 @@
     "EAMTierLevelTagValue": "0"
   },
   {
-    "AppId": "00000003-0000-0000-c000-000000000000",
-    "ScopeId": "d7b7f2d9-0f45-4ea1-9d42-e50810c06991",
-    "ScopeDisplayName": "POP.AccessAsUser.All",
-    "Category": "Exchange Online",
-    "EAMTierLevelName": "UserAccess",
-    "EAMTierLevelTagValue": "2"
-  },
-  {
     "AppId": "00000002-0000-0ff1-ce00-000000000000",
     "ScopeId": "fb698133-92fa-453e-a9ed-688e10f2e5ac",
     "ScopeDisplayName": "POP.AccessAsUser.All",
     "Category": "Default Member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "d7b7f2d9-0f45-4ea1-9d42-e50810c06991",
+    "ScopeDisplayName": "POP.AccessAsUser.All",
+    "Category": "Exchange Online",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -6080,6 +6096,14 @@
     "ScopeId": "19956c04-168f-4f44-b471-48c8f50dc0c8",
     "ScopeDisplayName": "RemediationTasks.Read",
     "Category": "Endpoint Detection and Response",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "d207fff0-6e36-4360-a23b-495e23b60385",
+    "ScopeDisplayName": "RemoteTenantGroups.Read.All",
+    "Category": "Tenant Configuration (Reader)",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -6892,18 +6916,18 @@
     "EAMTierLevelTagValue": "1"
   },
   {
-    "AppId": "00000003-0000-0ff1-ce00-000000000000",
-    "ScopeId": "8d11884e-6820-4673-a5d6-64d2a68b311e",
-    "ScopeDisplayName": "SharePointCrossTenantMigration.Read.All",
-    "Category": "SharePoint Operations",
-    "EAMTierLevelName": "ManagementPlane",
-    "EAMTierLevelTagValue": "1"
-  },
-  {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "00dcb678-f9af-4e73-acb1-4f1657364629",
     "ScopeDisplayName": "SharePointCrossTenantMigration.Read.All",
     "Category": "Microsoft SharePoint",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0ff1-ce00-000000000000",
+    "ScopeId": "8d11884e-6820-4673-a5d6-64d2a68b311e",
+    "ScopeDisplayName": "SharePointCrossTenantMigration.Read.All",
+    "Category": "SharePoint Operations",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -7036,18 +7060,18 @@
     "EAMTierLevelTagValue": "1"
   },
   {
-    "AppId": "00000002-0000-0ff1-ce00-000000000000",
-    "ScopeId": "76faac2a-0f20-42f1-928a-50de5b9dbe52",
-    "ScopeDisplayName": "SMTP.Send",
-    "Category": "Default Member",
-    "EAMTierLevelName": "UserAccess",
-    "EAMTierLevelTagValue": "2"
-  },
-  {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "258f6531-6087-4cc4-bb90-092c5fb3ed3f",
     "ScopeDisplayName": "SMTP.Send",
     "Category": "Exchange Online",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000002-0000-0ff1-ce00-000000000000",
+    "ScopeId": "76faac2a-0f20-42f1-928a-50de5b9dbe52",
+    "ScopeDisplayName": "SMTP.Send",
+    "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -7196,18 +7220,18 @@
     "EAMTierLevelTagValue": "1"
   },
   {
-    "AppId": "00000005-0000-0ff1-ce00-000000000000",
-    "ScopeId": "d472d143-85dd-45b2-8114-a295534d2140",
-    "ScopeDisplayName": "Storyline.ReadWrite.All",
-    "Category": "Viva Engage",
-    "EAMTierLevelName": "ManagementPlane",
-    "EAMTierLevelTagValue": "1"
-  },
-  {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "fd1d61cb-4e4b-4d15-a6d2-161348681d84",
     "ScopeDisplayName": "Storyline.ReadWrite.All",
     "Category": "Microsoft Viva",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000005-0000-0ff1-ce00-000000000000",
+    "ScopeId": "d472d143-85dd-45b2-8114-a295534d2140",
+    "ScopeDisplayName": "Storyline.ReadWrite.All",
+    "Category": "Viva Engage",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -7308,18 +7332,18 @@
     "EAMTierLevelTagValue": "2"
   },
   {
-    "AppId": "00000003-0000-0000-c000-000000000000",
-    "ScopeId": "2219042f-cab5-40cc-b0d2-16b1540b4c5f",
-    "ScopeDisplayName": "Tasks.ReadWrite",
-    "Category": "Tasks and Planner",
-    "EAMTierLevelName": "UserAccess",
-    "EAMTierLevelTagValue": "2"
-  },
-  {
     "AppId": "00000002-0000-0ff1-ce00-000000000000",
     "ScopeId": "6b49b74d-642f-4417-a6b4-820576845707",
     "ScopeDisplayName": "Tasks.ReadWrite",
     "Category": "Default Member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "2219042f-cab5-40cc-b0d2-16b1540b4c5f",
+    "ScopeDisplayName": "Tasks.ReadWrite",
+    "Category": "Tasks and Planner",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
@@ -8124,24 +8148,8 @@
     "EAMTierLevelTagValue": "2"
   },
   {
-    "AppId": "00000012-0000-0000-c000-000000000000",
-    "ScopeId": "c9c9a04d-3b66-4ca8-a00c-fca953e2afd3",
-    "ScopeDisplayName": "user_impersonation",
-    "Category": "Default Member",
-    "EAMTierLevelName": "UserAccess",
-    "EAMTierLevelTagValue": "2"
-  },
-  {
     "AppId": "00000007-0000-0000-c000-000000000000",
     "ScopeId": "78ce3f0f-a1ce-49c2-8cde-64b5c0896db4",
-    "ScopeDisplayName": "user_impersonation",
-    "Category": "Default Member",
-    "EAMTierLevelName": "UserAccess",
-    "EAMTierLevelTagValue": "2"
-  },
-  {
-    "AppId": "499b84ac-1321-427f-aa17-267ca6975798",
-    "ScopeId": "ee69721e-6c3a-468f-a9ec-302d16a4c599",
     "ScopeDisplayName": "user_impersonation",
     "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
@@ -8156,8 +8164,8 @@
     "EAMTierLevelTagValue": "1"
   },
   {
-    "AppId": "797f4846-ba00-4fd7-ba43-dac1f8f63013",
-    "ScopeId": "41094075-9dad-400e-a0bd-54e686782033",
+    "AppId": "499b84ac-1321-427f-aa17-267ca6975798",
+    "ScopeId": "ee69721e-6c3a-468f-a9ec-302d16a4c599",
     "ScopeDisplayName": "user_impersonation",
     "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
@@ -8166,6 +8174,22 @@
   {
     "AppId": "00000005-0000-0ff1-ce00-000000000000",
     "ScopeId": "5db81a03-0de0-432b-b31e-71d57c8d2e0b",
+    "ScopeDisplayName": "user_impersonation",
+    "Category": "Default Member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "797f4846-ba00-4fd7-ba43-dac1f8f63013",
+    "ScopeId": "41094075-9dad-400e-a0bd-54e686782033",
+    "ScopeDisplayName": "user_impersonation",
+    "Category": "Default Member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000012-0000-0000-c000-000000000000",
+    "ScopeId": "c9c9a04d-3b66-4ca8-a00c-fca953e2afd3",
     "ScopeDisplayName": "user_impersonation",
     "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
@@ -8276,14 +8300,6 @@
     "EAMTierLevelTagValue": "0"
   },
   {
-    "AppId": "00000002-0000-0ff1-ce00-000000000000",
-    "ScopeId": "6223a6d3-53ef-4f8f-982a-895b39483c61",
-    "ScopeDisplayName": "User.Read",
-    "Category": "Default Member",
-    "EAMTierLevelName": "UserAccess",
-    "EAMTierLevelTagValue": "2"
-  },
-  {
     "AppId": "00000002-0000-0000-c000-000000000000",
     "ScopeId": "311a71cc-e848-46a1-bdf8-97ff7156d8e6",
     "ScopeDisplayName": "User.Read",
@@ -8300,10 +8316,26 @@
     "EAMTierLevelTagValue": "2"
   },
   {
-    "AppId": "fc780465-2017-40d4-a0c5-307022471b92",
-    "ScopeId": "ffd6563e-842b-4cfc-b349-06006e0473a3",
+    "AppId": "00000002-0000-0ff1-ce00-000000000000",
+    "ScopeId": "6223a6d3-53ef-4f8f-982a-895b39483c61",
+    "ScopeDisplayName": "User.Read",
+    "Category": "Default Member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "a154be20-db9c-4678-8ab7-66f6cc099a59",
     "ScopeDisplayName": "User.Read.All",
-    "Category": "Endpoint Detection and Response",
+    "Category": "Default Member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000003-0000-0ff1-ce00-000000000000",
+    "ScopeId": "0cea5a30-f6f8-42b5-87a0-84cc26822e02",
+    "ScopeDisplayName": "User.Read.All",
+    "Category": "SharePoint Operations",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -8324,18 +8356,10 @@
     "EAMTierLevelTagValue": "2"
   },
   {
-    "AppId": "00000003-0000-0000-c000-000000000000",
-    "ScopeId": "a154be20-db9c-4678-8ab7-66f6cc099a59",
+    "AppId": "fc780465-2017-40d4-a0c5-307022471b92",
+    "ScopeId": "ffd6563e-842b-4cfc-b349-06006e0473a3",
     "ScopeDisplayName": "User.Read.All",
-    "Category": "Default Member",
-    "EAMTierLevelName": "UserAccess",
-    "EAMTierLevelTagValue": "2"
-  },
-  {
-    "AppId": "00000003-0000-0ff1-ce00-000000000000",
-    "ScopeId": "0cea5a30-f6f8-42b5-87a0-84cc26822e02",
-    "ScopeDisplayName": "User.Read.All",
-    "Category": "SharePoint Operations",
+    "Category": "Endpoint Detection and Response",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -8380,16 +8404,16 @@
     "EAMTierLevelTagValue": "0"
   },
   {
-    "AppId": "00000003-0000-0000-c000-000000000000",
-    "ScopeId": "b4e74841-8e56-480b-be8b-910348b18b4c",
+    "AppId": "00000002-0000-0ff1-ce00-000000000000",
+    "ScopeId": "f9408c03-bd3d-48c4-8bee-17a72d20bd9c",
     "ScopeDisplayName": "User.ReadWrite",
     "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
   },
   {
-    "AppId": "00000002-0000-0ff1-ce00-000000000000",
-    "ScopeId": "f9408c03-bd3d-48c4-8bee-17a72d20bd9c",
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "b4e74841-8e56-480b-be8b-910348b18b4c",
     "ScopeDisplayName": "User.ReadWrite",
     "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",

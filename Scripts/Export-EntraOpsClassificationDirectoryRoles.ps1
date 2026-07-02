@@ -53,7 +53,7 @@ function Export-EntraOpsClassificationDirectoryRoles {
     )    
 
     # Get EntraOps Classification
-    $Classification = Get-Content -Path ./EntraOps_Classification/Classification_AadResources.json | ConvertFrom-Json -Depth 10
+    $Classification = Get-Content -Path ./EntraOps_Classification/Classification_AadResources.json -Encoding UTF8 | ConvertFrom-Json -Depth 10
 
     # Single classifcation (highest tier level only)
     Write-Output "Query directory role templates for mapping ID to name and further details"

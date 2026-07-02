@@ -17,7 +17,7 @@ function Export-EntraOpsClassificationIdentityGovernanceRoles {
         Default scope used for classification lookup. Default is "/AccessPackageCatalog/*".
 
     .PARAMETER Exportfile
-        Path to the JSON file which should be exported. Default is ".\Classification\Classification_IdentityGovernanceRoles.json".
+        Path to the JSON file which should be exported. Default is ".\Classification\Classification_IdentityGovernance.json".
 
     .EXAMPLE
         Export all classified Identity Governance roles to the default export path.
@@ -41,7 +41,7 @@ function Export-EntraOpsClassificationIdentityGovernanceRoles {
         $DefaultScope = "/AccessPackageCatalog/*"
         ,
         [Parameter(Mandatory = $false)]
-        $Exportfile = ".\Classification\Classification_IdentityGovernanceRoles.json"
+        $Exportfile = ".\Classification\Classification_IdentityGovernance.json"
     )
 
     # Get EntraOps Classification

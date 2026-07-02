@@ -1267,6 +1267,12 @@
         "EAMTierLevelTagValue": "0"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/RemoveDeviceEsim",
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/InitiateMDMKeyRecovery",
         "Category": "Global Remote Assistance",
         "EAMTierLevelName": "ControlPlane",
@@ -1658,6 +1664,53 @@
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Roles/Assign",
         "Category": "Privileged IAM",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
+    }
+  },
+  {
+    "RoleId": "5500eb3c-d329-45fd-b3a9-5f87c2cc5e03",
+    "RoleName": "Multi Admin Approval Policy Manager",
+    "isPrivileged": null,
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Organization/Read",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MultiAdminApproval/CreateAccessPolicy",
+        "Category": "Multi Admin Approval Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MultiAdminApproval/ReadAccessPolicy",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MultiAdminApproval/UpdateAccessPolicy",
+        "Category": "Multi Admin Approval Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MultiAdminApproval/DeleteAccessPolicy",
+        "Category": "Multi Admin Approval Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/MultiAdminApproval/ApprovalForMultiAdminApproval",
+        "Category": "Global Endpoint Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       }
@@ -2842,6 +2895,12 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/ActivateDeviceEsim",
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/RemoveDeviceEsim",
         "Category": "Global Remote Assistance",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"

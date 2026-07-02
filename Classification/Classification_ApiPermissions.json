@@ -7286,6 +7286,26 @@
     "EAMTierLevelTagValue": "2"
   },
   {
+    "PermissionId": "60f8cea0-2476-45c9-ab18-70e79e60ad14",
+    "PermissionValue": "Group.ManageProtection.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Microsoft Purview",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "36263ed6-285e-4f84-b25a-62ec2ba17d29",
+    "PermissionValue": "Group.ManageProtection.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Microsoft Purview",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
     "PermissionId": "5b567255-7703-4780-807c-7be8301ae99b",
     "PermissionValue": "Group.Read.All",
     "PermissionType": "Application",
@@ -10185,6 +10205,26 @@
     "EAMTierLevelTagValue": "1"
   },
   {
+    "PermissionId": "8fc84b9a-5c21-479b-ba9d-02d252d062aa",
+    "PermissionValue": "Policy.Read.CrossTenantAccess",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "b337372a-8b4d-428d-9cd8-3d7363865736",
+    "PermissionValue": "Policy.Read.CrossTenantAccess",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
     "PermissionId": "bdba4817-6ba1-4a7c-8a01-be9bc7c242dd",
     "PermissionValue": "Policy.Read.DeviceConfiguration",
     "PermissionType": "Application",
@@ -11591,6 +11631,26 @@
     "TargetAppDisplayName": "Microsoft Graph",
     "TargetAppId": "00000003-0000-0000-c000-000000000000",
     "Category": "Microsoft Purview",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "faa08cc0-0dcd-4ea9-9f9c-8b16f842b36e",
+    "PermissionValue": "RemoteTenantGroups.Read.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "d207fff0-6e36-4360-a23b-495e23b60385",
+    "PermissionValue": "RemoteTenantGroups.Read.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Tenant Configuration (Reader)",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
