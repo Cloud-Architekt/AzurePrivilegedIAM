@@ -82073,9 +82073,23 @@
     "RoleId": "c8a487a2-c85b-4487-83a1-9f04cde10293",
     "RoleName": "Storage File Backup Contributor",
     "IsCustom": false,
-    "isPrivileged": false,
+    "isPrivileged": true,
     "RichDescription": "Lets you perform file share backup operations using Azure Backup on the storage account",
     "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.Authorization/locks/delete",
+        "ActionType": "Action",
+        "Category": "Authorization",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Authorization/locks/write",
+        "ActionType": "Action",
+        "Category": "Authorization",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
       {
         "AuthorizedResourceAction": "Microsoft.Storage/storageAccounts/fileServices/readFileBackupSemantics/action",
         "ActionType": "DataAction",
@@ -82112,28 +82126,7 @@
         "EAMTierLevelTagValue": "1"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.Authorization/denyAssignments/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Authorization/permissions/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Authorization/roleAssignments/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Authorization/roleDefinitions/read",
+        "AuthorizedResourceAction": "Microsoft.Authorization/*/read",
         "ActionType": "Action",
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",
@@ -82169,8 +82162,8 @@
       }
     ],
     "Classification": {
-      "EAMTierLevelName": "ManagementPlane",
-      "EAMTierLevelTagValue": "1"
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
     }
   },
   {
@@ -82564,28 +82557,7 @@
         "EAMTierLevelTagValue": "1"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.Authorization/denyAssignments/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Authorization/permissions/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Authorization/roleAssignments/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Authorization/roleDefinitions/read",
+        "AuthorizedResourceAction": "Microsoft.Authorization/*/read",
         "ActionType": "Action",
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",
