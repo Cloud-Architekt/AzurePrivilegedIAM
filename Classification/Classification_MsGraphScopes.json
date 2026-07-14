@@ -3485,6 +3485,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "61faa1e9-0931-4f9a-94ba-bc2e3505c685",
+    "ScopeDisplayName": "Policy.Read.Recovery",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "4f5bc9c8-ea54-4772-973a-9ca119cb0409",
     "ScopeDisplayName": "Policy.ReadWrite.AccessReview",
     "Category": "Entitlement Management",
@@ -3616,6 +3624,14 @@
     "ScopeId": "2672f8bb-fd5e-42e0-85e1-ec764dd2614e",
     "ScopeDisplayName": "Policy.ReadWrite.PermissionGrant",
     "Category": "Application and Workload Identity",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "1e7a2f4c-e602-4b1b-9547-304dd65c4cc2",
+    "ScopeDisplayName": "Policy.ReadWrite.Recovery",
+    "Category": "Tenant Policy Management",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
   },
@@ -5333,6 +5349,22 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "72464cd4-58fd-4116-8a9e-b74757574757",
+    "ScopeDisplayName": "TeamworkCustomEmoji.Create",
+    "Category": "Microsoft Teams",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "89b231b1-414e-4dd4-bb87-d59906da4e05",
+    "ScopeDisplayName": "TeamworkCustomEmoji.Read",
+    "Category": "Microsoft Teams",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "b659488b-9d28-4208-b2be-1c6652b3c970",
     "ScopeDisplayName": "TeamworkDevice.Read.All",
     "Category": "Microsoft Teams",
@@ -6103,6 +6135,22 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "db39086a-da7d-4cbd-9ac0-6816f9a80c95",
     "ScopeDisplayName": "UserAuthMethod-QR.ReadWrite.All",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "c86e40fc-66fd-4d68-802e-b90e3038f5e8",
+    "ScopeDisplayName": "UserAuthMethod-ResourceKey.Read.All",
+    "Category": "Default Member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "e71dec0d-02b4-429d-a49a-030950d45faa",
+    "ScopeDisplayName": "UserAuthMethod-ResourceKey.ReadWrite.All",
     "Category": "Authentication",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"

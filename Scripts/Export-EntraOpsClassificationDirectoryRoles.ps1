@@ -16,6 +16,12 @@ function Export-EntraOpsClassificationDirectoryRoles {
     .PARAMETER IncludeCustomRoles
         Include custom role definitions in addition to built-in roles.
 
+    .PARAMETER IncludeInheritedPermissions
+        When a role definition has "inheritsPermissionsFrom" set (e.g. a custom role based on a built-in role
+        template), also resolve and include all role actions of the referenced role definition(s) for classification
+        and as role actions of the inheriting role. Resolution is recursive (inherited roles may themselves inherit
+        from another role) and protected against circular references. Default is $True.
+
     .EXAMPLE
         Export all classified Entra ID Directory roles to "Classification\Classification_EntraIdDirectoryRoles.json".
         Export-EntraOpsClassificationDirectoryRoles
@@ -36,7 +42,42 @@ function Export-EntraOpsClassificationDirectoryRoles {
         ,
         [Parameter(Mandatory = $false)]
         $IncludeCustomRoles = $False
+        ,
+        [Parameter(Mandatory = $false)]
+        $IncludeInheritedPermissions = $True
     )
+
+    # Resolve role actions inherited via "inheritsPermissionsFrom" (e.g. a custom role based on a built-in role
+    # template). Recursively follows nested inheritance and guards against circular references.
+    function Resolve-EntraOpsInheritedRoleActions {
+        param
+        (
+            [Parameter(Mandatory = $true)] [string[]] $InheritedRoleIds,
+            [Parameter(Mandatory = $true)] $RoleActionsLookup,
+            [Parameter(Mandatory = $true)] [System.Collections.Generic.HashSet[string]] $VisitedRoleIds
+        )
+
+        $InheritedActions = New-Object System.Collections.Generic.List[string]
+        foreach ($InheritedRoleId in $InheritedRoleIds) {
+            if (-not $VisitedRoleIds.Add($InheritedRoleId)) {
+                continue # already visited, avoid circular inheritance
+            }
+
+            if (-not $RoleActionsLookup.ContainsKey($InheritedRoleId)) {
+                Write-Warning "inheritsPermissionsFrom references unknown role template ID '$InheritedRoleId'; unable to resolve inherited permissions."
+                continue
+            }
+
+            $InheritedActions.AddRange([string[]]$RoleActionsLookup[$InheritedRoleId].Actions)
+
+            if (@($RoleActionsLookup[$InheritedRoleId].InheritsFrom).Count -gt 0) {
+                $NestedActions = Resolve-EntraOpsInheritedRoleActions -InheritedRoleIds $RoleActionsLookup[$InheritedRoleId].InheritsFrom -RoleActionsLookup $RoleActionsLookup -VisitedRoleIds $VisitedRoleIds
+                $InheritedActions.AddRange($NestedActions)
+            }
+        }
+
+        return $InheritedActions
+    }
 
     # Define sensitive role definitions without actions to classify
     $ControlPlaneRolesWithoutRoleActions = @(
@@ -57,7 +98,17 @@ function Export-EntraOpsClassificationDirectoryRoles {
 
     # Single classifcation (highest tier level only)
     Write-Output "Query directory role templates for mapping ID to name and further details"
-    $DirectoryRoleDefinitions = (Invoke-MgGraphRequest -Uri "https://graph.microsoft.com/beta/roleManagement/directory/roleDefinitions").value | select-object displayName, templateId, isBuiltin, isPrivileged, rolePermissions, categories, richDescription
+    $DirectoryRoleDefinitions = (Invoke-MgGraphRequest -Uri "https://graph.microsoft.com/beta/roleManagement/directory/roleDefinitions").value | select-object displayName, templateId, isBuiltin, isPrivileged, rolePermissions, categories, richDescription, inheritsPermissionsFrom, assignmentMode
+
+    # Build a lookup of role actions (and further inheritance) by templateId from the full, unfiltered role
+    # definitions list so inherited permissions can be resolved even when IncludeCustomRoles is $False.
+    $RoleActionsLookup = @{}
+    foreach ($RoleDef in $DirectoryRoleDefinitions) {
+        $RoleActionsLookup[$RoleDef.templateId] = [PSCustomObject]@{
+            Actions      = @(($RoleDef.RolePermissions | Where-Object { $_.condition -notin $FilteredConditions }).allowedResourceActions)
+            InheritsFrom = @($RoleDef.inheritsPermissionsFrom | Select-Object -ExpandProperty id)
+        }
+    }
 
     if ($IncludeCustomRoles -eq $False) {
         $DirectoryRoleDefinitions = $DirectoryRoleDefinitions | where-object { $_.isBuiltin -eq "True" }
@@ -65,7 +116,17 @@ function Export-EntraOpsClassificationDirectoryRoles {
 
     $DirectoryRoles = $DirectoryRoleDefinitions | foreach-object {
 
-        $DirectoryRolePermissions = ($_.RolePermissions | Where-Object { $_.condition -notin $FilteredConditions }).allowedResourceActions
+        $DirectoryRolePermissions = @(($_.RolePermissions | Where-Object { $_.condition -notin $FilteredConditions }).allowedResourceActions)
+
+        # Include role actions inherited via inheritsPermissionsFrom (e.g. custom roles based on a built-in template)
+        $InheritsPermissionsFromIds = @($_.inheritsPermissionsFrom | Select-Object -ExpandProperty id)
+        if ($IncludeInheritedPermissions -eq $True -and $InheritsPermissionsFromIds.Count -gt 0) {
+            $VisitedRoleIds = [System.Collections.Generic.HashSet[string]]::new()
+            $VisitedRoleIds.Add($_.templateId) | Out-Null
+            $InheritedActions = Resolve-EntraOpsInheritedRoleActions -InheritedRoleIds $InheritsPermissionsFromIds -RoleActionsLookup $RoleActionsLookup -VisitedRoleIds $VisitedRoleIds
+            $DirectoryRolePermissions = @($DirectoryRolePermissions + $InheritedActions | Select-Object -Unique)
+        }
+
         $ClassifiedDirectoryRolePermissions = New-Object System.Collections.ArrayList
         foreach ($RolePermission in $DirectoryRolePermissions) {
             # Apply Classification
@@ -125,13 +186,15 @@ function Export-EntraOpsClassificationDirectoryRoles {
         }        
 
         [PSCustomObject]@{
-            "RoleId"          = $_.templateId
-            "RoleName"        = $_.displayName
-            "isPrivileged"    = $_.isPrivileged
-            "Categories"      = $_.categories
-            "RichDescription" = $_.richDescription
-            "RolePermissions" = @($ClassifiedDirectoryRolePermissions) 
-            "Classification"  = $RoleDefinitionClassification
+            "RoleId"                  = $_.templateId
+            "RoleName"                = $_.displayName
+            "isPrivileged"            = $_.isPrivileged
+            "AssignmentMode"          = $_.assignmentMode
+            "InheritsPermissionsFrom" = $InheritsPermissionsFromIds
+            "Categories"              = $_.categories
+            "RichDescription"         = $_.richDescription
+            "RolePermissions"         = @($ClassifiedDirectoryRolePermissions) 
+            "Classification"          = $RoleDefinitionClassification
         }    
     }
 

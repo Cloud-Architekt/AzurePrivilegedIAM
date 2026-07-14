@@ -317,13 +317,15 @@ function Export-EntraOpsClassificationAzureRoles {
             })
 
         [PSCustomObject]@{
-            "RoleId"          = $_.Id
-            "RoleName"        = $_.Name
-            "IsCustom"        = $_.IsCustom
-            "isPrivileged"    = $isPrivileged
-            "RichDescription" = $_.Description
-            "RolePermissions" = @($ClassifiedAzureRolePermissions)
-            "Classification"  = $RoleDefinitionClassification
+            "RoleId"                  = $_.Id
+            "RoleName"                = $_.Name
+            "IsCustom"                = $_.IsCustom
+            "isPrivileged"            = $isPrivileged
+            "AssignmentMode"          = $null
+            "InheritsPermissionsFrom" = $null
+            "RichDescription"         = $_.Description
+            "RolePermissions"         = @($ClassifiedAzureRolePermissions)
+            "Classification"          = $RoleDefinitionClassification
         }
     }
 

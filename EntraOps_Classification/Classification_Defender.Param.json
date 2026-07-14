@@ -73,6 +73,36 @@
                 "RoleDefinitionActions": [
                     "microsoft.xdr/configuration/authorization/manage"
                 ]
+            },
+            {
+                "Category": "Microsoft.Defender",
+                "Service": "Privileged Security Analytics",
+                "RoleAssignmentScopeName": [
+                    <Tier0IncludedResourceScope>,
+                    <Tier1IncludedResourceScope>
+                ],
+                "ExcludedRoleAssignmentScopeName": [],
+                "RoleDefinitionActions": [
+                    "microsoft.xdr/securityposture/*/read",
+                    "microsoft.xdr/securityposture/posturemanagement/*/read",
+                    "microsoft.xdr/securityposture/posturemanagement/vulnerabilitymanagement/read"
+                ]
+            },
+            {
+                "Category": "Microsoft.Defender",
+                "Service": "Privileged Security and Compliance Management",
+                "RoleAssignmentScopeName": [
+                    <Tier0IncludedResourceScope>,
+                    <Tier1IncludedResourceScope>
+                ],
+                "RoleDefinitionActions": [
+                    "microsoft.xdr/securityposture/*/manage",
+                    "microsoft.xdr/securityposture/posturemanagement/applicationhandling/manage",
+                    "microsoft.xdr/securityposture/posturemanagement/baselineassessmentprofiles/manage",
+                    "microsoft.xdr/securityposture/posturemanagement/exceptionhandling/manage",
+                    "microsoft.xdr/securityposture/posturemanagement/remediationhandling/manage",
+                    "microsoft.xdr/securityposture/posturemanagement/securescore/manage"
+                ]
             }
         ]
     },
@@ -109,6 +139,35 @@
                     "microsoft.xdr/secops/securitydata/response/manage",
                     "microsoft.xdr/secops/rawdata/emailcontent/read",
                     "microsoft.xdr/secops/rawdata/quarantineemailcontent/read"
+                ]
+            },
+            {
+                "Category": "Microsoft.Defender",
+                "Service": "Cloud Security Analytics",
+                "RoleAssignmentScopeName": [
+                    <Tier2IncludedSubscriptionScope>
+                ],
+                "ExcludedRoleAssignmentScopeName": [],
+                "RoleDefinitionActions": [
+                    "microsoft.xdr/securityposture/*/read",
+                    "microsoft.xdr/securityposture/posturemanagement/*/read",
+                    "microsoft.xdr/securityposture/posturemanagement/vulnerabilitymanagement/read"
+                ]
+            },
+            {
+                "Category": "Microsoft.Defender",
+                "Service": "Cloud Security and Compliance Management",
+                "RoleAssignmentScopeName": [
+                    <Tier2IncludedSubscriptionScope>
+                ],
+                "ExcludedRoleAssignmentScopeName": [],
+                "RoleDefinitionActions": [
+                    "microsoft.xdr/securityposture/*/manage",
+                    "microsoft.xdr/securityposture/posturemanagement/applicationhandling/manage",
+                    "microsoft.xdr/securityposture/posturemanagement/baselineassessmentprofiles/manage",
+                    "microsoft.xdr/securityposture/posturemanagement/exceptionhandling/manage",
+                    "microsoft.xdr/securityposture/posturemanagement/remediationhandling/manage",
+                    "microsoft.xdr/securityposture/posturemanagement/securescore/manage"
                 ]
             }
         ]

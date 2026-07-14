@@ -58,9 +58,9 @@ function Get-EntraOpsClassificationDirectoryRolesMissmatchFromMsftDocs {
 
     #region Index roles by RoleId for fast lookup
     $GraphRolesById = @{}
-    foreach ($Role in $GraphRoles) { $GraphRolesById[$Role.RoleId] = $Role }
+    foreach ($Role in $GraphRoles) { if ($Role.RoleId) { $GraphRolesById[$Role.RoleId] = $Role } }
     $DocsRolesById = @{}
-    foreach ($Role in $DocsRoles) { $DocsRolesById[$Role.RoleId] = $Role }
+    foreach ($Role in $DocsRoles) { if ($Role.RoleId) { $DocsRolesById[$Role.RoleId] = $Role } }
     #endregion
 
     $AllRoleIds = ($GraphRolesById.Keys + $DocsRolesById.Keys | Sort-Object -Unique)
@@ -125,6 +125,7 @@ function Get-EntraOpsClassificationDirectoryRolesMissmatchFromMsftDocs {
         foreach ($Role in $SourceDefinition.Roles) {
             foreach ($Permission in ($Role.RolePermissions | Where-Object { $_.EAMTierLevelName -eq "Unclassified" })) {
                 $Action = $Permission.AuthorizedResourceAction
+                if ([string]::IsNullOrEmpty($Action)) { continue }
                 if (-not $UnclassifiedLookup.ContainsKey($Action)) {
                     $UnclassifiedLookup[$Action] = [PSCustomObject]@{
                         Action  = $Action

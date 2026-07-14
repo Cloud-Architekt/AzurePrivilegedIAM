@@ -145,6 +145,7 @@
           "UserAuthMethod-Phone.ReadWrite.All",
           "UserAuthMethod-PlatformCred.ReadWrite.All",
           "UserAuthMethod-QR.ReadWrite.All",
+          "UserAuthMethod-ResourceKey.ReadWrite.All",
           "UserAuthMethod-SoftwareOATH.ReadWrite.All",
           "UserAuthMethod-TAP.ReadWrite.All",
           "UserAuthMethod-WindowsHello.ReadWrite.All"
@@ -833,6 +834,7 @@
         "RoleDefinitionActions": [
           "Policy.ReadWrite.FedTokenValidation",
           "Policy.ReadWrite.IdentityProtection",
+          "Policy.ReadWrite.Recovery",
           "Policy.ReadWrite.SecurityDefaults"
         ]
       },
@@ -1876,6 +1878,10 @@
           "Teamwork.Read.All",
           "TeamworkAppSettings.Read.All",
           "TeamworkAppSettings.ReadWrite.All",
+          "TeamworkCustomEmoji.Create",
+          "TeamworkCustomEmoji.Create.All",
+          "TeamworkCustomEmoji.Read",
+          "TeamworkCustomEmoji.Read.All",
           "TeamworkDevice.Read.All",
           "TeamworkDevice.ReadWrite.All",
           "UserNotification.ReadWrite.CreatedByApp",
@@ -2500,6 +2506,7 @@
           "Policy.Read.DeviceConfiguration",
           "Policy.Read.IdentityProtection",
           "Policy.Read.PermissionGrant",
+          "Policy.Read.Recovery",
           "PrivilegedAccess-CustomExt.Read.All",
           "PrivilegedAccess.Read.AzureAD",
           "PrivilegedAccess.Read.AzureADGroup",
@@ -2904,6 +2911,7 @@
           "UserAuthMethod-Phone.Read.All",
           "UserAuthMethod-PlatformCred.Read.All",
           "UserAuthMethod-QR.Read.All",
+          "UserAuthMethod-ResourceKey.Read.All",
           "UserAuthMethod-SoftwareOATH.Read.All",
           "UserAuthMethod-TAP.Read.All",
           "UserAuthMethod-WindowsHello.Read.All",

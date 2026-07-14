@@ -263,13 +263,15 @@ function Export-EntraOpsClassificationDirectoryRolesFromMsftDocs {
 
         $DirectoryRoles.Add(
             [PSCustomObject]@{
-                "RoleId"          = $RoleMetadata.RoleId
-                "RoleName"        = $RoleMetadata.RoleName
-                "isPrivileged"    = $RoleMetadata.isPrivileged
-                "Categories"      = $Categories
-                "RichDescription" = $RichDescription
-                "RolePermissions" = @($ClassifiedDirectoryRolePermissions)
-                "Classification"  = $RoleDefinitionClassification
+                "RoleId"                  = $RoleMetadata.RoleId
+                "RoleName"                = $RoleMetadata.RoleName
+                "isPrivileged"            = $RoleMetadata.isPrivileged
+                "AssignmentMode"          = $null
+                "InheritsPermissionsFrom" = $null
+                "Categories"              = $Categories
+                "RichDescription"         = $RichDescription
+                "RolePermissions"         = @($ClassifiedDirectoryRolePermissions)
+                "Classification"          = $RoleDefinitionClassification
             }
         ) | Out-Null
     }

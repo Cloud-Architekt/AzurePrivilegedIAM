@@ -3244,6 +3244,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "447f996a-7c58-4ce7-9a9e-da80381a45ab",
+    "AppRoleDisplayName": "Policy.Read.Recovery",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "77c863fd-06c0-47ce-a7eb-49773e89d319",
     "AppRoleDisplayName": "Policy.ReadWrite.AccessReview",
     "Category": "Entitlement Management",
@@ -4948,6 +4956,22 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "85643b08-0e25-4d99-9d68-04ba0fef9740",
+    "AppRoleDisplayName": "TeamworkCustomEmoji.Create.All",
+    "Category": "Microsoft Teams",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "1efa3d37-1703-4685-9a59-baf6296fb956",
+    "AppRoleDisplayName": "TeamworkCustomEmoji.Read.All",
+    "Category": "Microsoft Teams",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "0591bafd-7c1c-4c30-a2a5-2b9aacb1dfe8",
     "AppRoleDisplayName": "TeamworkDevice.Read.All",
     "Category": "Microsoft Teams",
@@ -5454,6 +5478,22 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "4869299f-18c3-40c8-98f2-222657e67db1",
     "AppRoleDisplayName": "UserAuthMethod-QR.ReadWrite.All",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "94ed018c-a499-47e0-beef-803b93873ece",
+    "AppRoleDisplayName": "UserAuthMethod-ResourceKey.Read.All",
+    "Category": "Default Member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "1bf7461f-222a-4525-9760-f7739228d0f4",
+    "AppRoleDisplayName": "UserAuthMethod-ResourceKey.ReadWrite.All",
     "Category": "Authentication",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"

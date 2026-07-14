@@ -1830,7 +1830,7 @@
     "EAMTierLevelTagValue": "2"
   },
   {
-    "PermissionId": "6222dbab-a24c-4210-9d91-2f47cf565614",
+    "PermissionId": "9b005f11-86f0-45f7-8c27-4fff5d849916",
     "PermissionValue": "User.ReadBasic.All",
     "PermissionType": "Delegated",
     "TargetAppDisplayName": "Exchange Online",
@@ -1840,7 +1840,7 @@
     "EAMTierLevelTagValue": "2"
   },
   {
-    "PermissionId": "9b005f11-86f0-45f7-8c27-4fff5d849916",
+    "PermissionId": "6222dbab-a24c-4210-9d91-2f47cf565614",
     "PermissionValue": "User.ReadBasic.All",
     "PermissionType": "Delegated",
     "TargetAppDisplayName": "Exchange Online",
@@ -10285,6 +10285,26 @@
     "EAMTierLevelTagValue": "1"
   },
   {
+    "PermissionId": "447f996a-7c58-4ce7-9a9e-da80381a45ab",
+    "PermissionValue": "Policy.Read.Recovery",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "61faa1e9-0931-4f9a-94ba-bc2e3505c685",
+    "PermissionValue": "Policy.Read.Recovery",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
     "PermissionId": "77c863fd-06c0-47ce-a7eb-49773e89d319",
     "PermissionValue": "Policy.ReadWrite.AccessReview",
     "PermissionType": "Application",
@@ -10611,6 +10631,16 @@
     "TargetAppDisplayName": "Microsoft Graph",
     "TargetAppId": "00000003-0000-0000-c000-000000000000",
     "Category": "Application and Workload Identity",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "PermissionId": "1e7a2f4c-e602-4b1b-9547-304dd65c4cc2",
+    "PermissionValue": "Policy.ReadWrite.Recovery",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Tenant Policy Management",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
   },
@@ -14725,6 +14755,46 @@
     "EAMTierLevelTagValue": "1"
   },
   {
+    "PermissionId": "72464cd4-58fd-4116-8a9e-b74757574757",
+    "PermissionValue": "TeamworkCustomEmoji.Create",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Microsoft Teams",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "85643b08-0e25-4d99-9d68-04ba0fef9740",
+    "PermissionValue": "TeamworkCustomEmoji.Create.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Microsoft Teams",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "89b231b1-414e-4dd4-bb87-d59906da4e05",
+    "PermissionValue": "TeamworkCustomEmoji.Read",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Microsoft Teams",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "1efa3d37-1703-4685-9a59-baf6296fb956",
+    "PermissionValue": "TeamworkCustomEmoji.Read.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Microsoft Teams",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
     "PermissionId": "0591bafd-7c1c-4c30-a2a5-2b9aacb1dfe8",
     "PermissionValue": "TeamworkDevice.Read.All",
     "PermissionType": "Application",
@@ -16327,6 +16397,46 @@
   {
     "PermissionId": "db39086a-da7d-4cbd-9ac0-6816f9a80c95",
     "PermissionValue": "UserAuthMethod-QR.ReadWrite.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "PermissionId": "94ed018c-a499-47e0-beef-803b93873ece",
+    "PermissionValue": "UserAuthMethod-ResourceKey.Read.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Default Member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "PermissionId": "c86e40fc-66fd-4d68-802e-b90e3038f5e8",
+    "PermissionValue": "UserAuthMethod-ResourceKey.Read.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Default Member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "PermissionId": "1bf7461f-222a-4525-9760-f7739228d0f4",
+    "PermissionValue": "UserAuthMethod-ResourceKey.ReadWrite.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "PermissionId": "e71dec0d-02b4-429d-a49a-030950d45faa",
+    "PermissionValue": "UserAuthMethod-ResourceKey.ReadWrite.All",
     "PermissionType": "Delegated",
     "TargetAppDisplayName": "Microsoft Graph",
     "TargetAppId": "00000003-0000-0000-c000-000000000000",

@@ -3,6 +3,8 @@
     "RoleId": "db506228-d27e-4b7d-95e5-295956d6615f",
     "RoleName": "Agent ID Administrator",
     "isPrivileged": true,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Agent Identity",
       "Default member",
@@ -409,6 +411,8 @@
     "RoleId": "adb2368d-a9be-41b5-8667-d96778e081b0",
     "RoleName": "Agent ID Developer",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Agent Identity",
       "Default member"
@@ -437,6 +441,8 @@
     "RoleId": "6b942400-691f-4bf0-9d12-d8a254a2baf5",
     "RoleName": "Agent Registry Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": "Agent Identity",
     "RichDescription": "Assign the Agent Registry Administrator role to users who need to do the following tasks:\n- Manage metadata for AI agents in Microsoft Entra ID\n- Manage collections and visibility of agents\n- Assign Agent Registry-specific roles to other users or agents to access the registry",
     "RolePermissions": [
@@ -456,6 +462,8 @@
     "RoleId": "d2562ede-74db-457e-a7b6-544e236ebb61",
     "RoleName": "AI Administrator",
     "isPrivileged": true,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Agent Identity",
       "Application and Workload Identity",
@@ -898,6 +906,8 @@
     "RoleId": "1fe13547-53f6-408d-ac04-7f8eed167b38",
     "RoleName": "AI Reader",
     "isPrivileged": true,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Default member",
       "Global Agent User Management",
@@ -1192,6 +1202,8 @@
     "RoleId": "9b895d92-2cd3-44c7-9d02-a6ac2d5ea5c3",
     "RoleName": "Application Administrator",
     "isPrivileged": true,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Application and Workload Identity",
       "Authentication",
@@ -1654,6 +1666,8 @@
     "RoleId": "cf1c38e5-3621-4004-a7cb-879624dced7c",
     "RoleName": "Application Developer",
     "isPrivileged": true,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Application and Workload Identity",
       "Extended member"
@@ -1688,6 +1702,8 @@
     "RoleId": "9c6df0f2-1e7c-4dc3-b195-66dfbd24aa8f",
     "RoleName": "Attack Payload Author",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": "Security and Compliance",
     "RichDescription": "Users in this role can create attack payloads but not actually launch or schedule them. Attack payloads are then available to all administrators in the tenant who can use them to create a simulation. Access to reports is limited to simulations executed by the user, and this role doesn't grant access to aggregate reports such as Training efficacy, Repeat offenders, Training completion, or User coverage.\n\nFor more information, see these articles:\n\n- [Get started using Attack simulation training](/defender-office-365/attack-simulation-training-get-started)\n- [Microsoft Defender for Office 365 permissions in the Microsoft Defender portal](/microsoft-365/security/office-365-security/mdo-portal-permissions)\n- [Permissions in the Microsoft Purview portal](/purview/purview-permissions)",
     "RolePermissions": [
@@ -1713,6 +1729,8 @@
     "RoleId": "c430b396-e693-46cc-96f3-db01bf8bb62a",
     "RoleName": "Attack Simulation Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": "Security and Compliance",
     "RichDescription": "Users in this role can create and manage all aspects of attack simulation creation, launch/scheduling of a simulation, and the review of simulation results. Members of this role have this access for all simulations in the tenant.\n\nFor more information, see these articles:\n\n- [Microsoft Defender for Office 365 permissions in the Microsoft Defender portal](/microsoft-365/security/office-365-security/mdo-portal-permissions)\n- [Permissions in the Microsoft Purview portal](/purview/purview-permissions)",
     "RolePermissions": [
@@ -1744,6 +1762,8 @@
     "RoleId": "58a13ea3-c632-46ae-9ee0-9c0d43cd7f3d",
     "RoleName": "Attribute Assignment Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Application and Workload Identity",
       "Global Endpoint Management",
@@ -1823,6 +1843,8 @@
     "RoleId": "ffd52fa5-98dc-465c-991d-fc073eb59f8f",
     "RoleName": "Attribute Assignment Reader",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Application and Workload Identity",
       "Global Endpoint Management",
@@ -1878,6 +1900,8 @@
     "RoleId": "8424c6f0-a189-499e-bbd0-26c1753c96d4",
     "RoleName": "Attribute Definition Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": "Privileged ABAC",
     "RichDescription": "Users with this role can define a valid set of custom security attributes that can be assigned to supported Microsoft Entra objects. This role can also activate and deactivate custom security attributes.\n\n[!INCLUDE [security-attributes-roles](../../../includes/security-attributes-roles.md)]\n\nFor more information, see [Manage access to custom security attributes in Microsoft Entra ID](../../../fundamentals/custom-security-attributes-manage.md).",
     "RolePermissions": [
@@ -1903,6 +1927,8 @@
     "RoleId": "1d336d2c-4ae8-42ef-9711-b3604ce3fc2c",
     "RoleName": "Attribute Definition Reader",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": "Privileged ABAC",
     "RichDescription": "Users with this role can read the definition of custom security attributes.\n\n[!INCLUDE [security-attributes-roles](../../../includes/security-attributes-roles.md)]\n\nFor more information, see [Manage access to custom security attributes in Microsoft Entra ID](../../../fundamentals/custom-security-attributes-manage.md).",
     "RolePermissions": [
@@ -1928,6 +1954,8 @@
     "RoleId": "5b784334-f94b-471a-a387-e7219fc49ca2",
     "RoleName": "Attribute Log Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Global Security and Compliance Management",
       "Security and Compliance"
@@ -1956,6 +1984,8 @@
     "RoleId": "9c99539d-8186-4804-835f-fd51ef9e2dcd",
     "RoleName": "Attribute Log Reader",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": "Security and Compliance",
     "RichDescription": "Assign the Attribute Log Reader role to users who need to do the following tasks:\n\n- Read audit logs for custom security attribute value changes\n- Read audit logs for custom security attribute definition changes and assignments\n\nUsers with this role **cannot** do the following tasks:\n\n- Configure diagnostic settings for custom security attributes\n- Read audit logs for other events\n\n[!INCLUDE [security-attributes-roles](../../../includes/security-attributes-roles.md)]\n\nFor more information, see [Manage access to custom security attributes in Microsoft Entra ID](../../../fundamentals/custom-security-attributes-manage.md).",
     "RolePermissions": [
@@ -1975,6 +2005,8 @@
     "RoleId": "ecb2c6bf-0ab6-418e-bd87-7986f8d63bbe",
     "RoleName": "Attribute Provisioning Administrator",
     "isPrivileged": true,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": "Application and Workload Identity",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Assign the Attribute Provisioning Administrator role to users who need to do the following tasks:\n\n- Read and write attribute mappings for custom security attributes when provisioning in an application.\n- Read and write provisioning and auditing logs for custom security attributes when provisioning in an application.\n\nUsers with this role cannot read audit logs for other events. This role must be used in conjunction with the Cloud Application Administrator or Application Administrator roles (from least to most privileged) to read provisioning configurations.\n\n> [!IMPORTANT]\n> This role does not have the ability to create custom security attribute sets or to directly assign or update custom security attribute values for the user object. This role can only configure the flow of the custom security attributes in the provisioning app.\n\n[Learn more](../../app-provisioning/provision-custom-security-attributes.md)",
     "RolePermissions": [
@@ -2000,6 +2032,8 @@
     "RoleId": "422218e4-db15-4ef9-bbe0-8afb41546d79",
     "RoleName": "Attribute Provisioning Reader",
     "isPrivileged": true,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": "Application and Workload Identity",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Assign the Attribute Provisioning Reader role to users who need to do the following tasks:\n\n- Read the attribute mappings for custom security attributes when provisioning in an application.\n- Read the provisioning and auditing logs for custom security attributes when provisioning in an application.\n\nUsers with this role can't read audit logs for other events. This role must be used with the Cloud Application Administrator or Application Administrator roles (from least to most privileged) to read provisioning configurations.\n\n[Learn more](../../app-provisioning/provision-custom-security-attributes.md)",
     "RolePermissions": [
@@ -2019,6 +2053,8 @@
     "RoleId": "c4e39bd9-1100-46d3-8c65-fb160da0071f",
     "RoleName": "Authentication Administrator",
     "isPrivileged": true,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Global User Management",
       "Microsoft 365 Support Operations",
@@ -2151,6 +2187,8 @@
     "RoleId": "25a516ed-2fa0-40ea-a2d0-12923a21473a",
     "RoleName": "Authentication Extensibility Administrator",
     "isPrivileged": true,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": "Authentication",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Assign the Authentication Extensibility Administrator role to users who need to do the following tasks:\n\n- Create and manage all aspects of custom authentication extensions.\n\nUsers with this role **can't** do the following:\n\n- Can't assign custom authentication extensions to applications to modify the authentication experiences, and can't consent to application permissions or create app registrations associated with the custom authentication extension. Instead, you must use the Application Administrator, Application Developer, or Cloud Application Administrator roles.\n\nA custom authentication extension is an API endpoint created by a developer for authentication events and is registered in Microsoft Entra ID. Application administrators and application owners can use custom authentication extensions to customize their application's authentication experiences, such as sign in and sign up, or password reset.\n\n[Learn more](../../../identity-platform/custom-extension-tokenissuancestart-configuration.md)",
     "RolePermissions": [
@@ -2170,6 +2208,8 @@
     "RoleId": "0b00bede-4072-4d22-b441-e7df02a1ef63",
     "RoleName": "Authentication Extensibility Password Administrator",
     "isPrivileged": true,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": "Authentication",
     "RichDescription": "Assign the Authentication Extensibility Password Administrator role to users who need to do the following tasks:\n\n- Trigger a password submit event for custom authentication to migrate user passwords from an external identity system to Microsoft Entra External ID.",
     "RolePermissions": [
@@ -2189,6 +2229,8 @@
     "RoleId": "0526716b-113d-4c15-b2c8-68e3c22b9f80",
     "RoleName": "Authentication Policy Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Authentication",
       "Support and Service Health",
@@ -2321,6 +2363,8 @@
     "RoleId": "e3973bdf-4987-49ae-837a-ba8e231c7286",
     "RoleName": "Azure DevOps Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": "Azure DevOps",
     "RichDescription": "Users with this role can manage all enterprise Azure DevOps policies, applicable to all Azure DevOps organizations backed by Microsoft Entra ID. Users in this role can manage these policies by navigating to any Azure DevOps organization that is backed by the company's Microsoft Entra ID. Additionally, users in this role can claim ownership of orphaned Azure DevOps organizations. This role grants no other Azure DevOps-specific permissions (for example, Project Collection Administrators) inside any of the Azure DevOps organizations backed by the company's Microsoft Entra organization.",
     "RolePermissions": [
@@ -2340,6 +2384,8 @@
     "RoleId": "7495fdc4-34c4-4d15-a289-98788ce399fd",
     "RoleName": "Azure Information Protection Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Default member",
       "Microsoft 365 Support Operations",
@@ -2400,6 +2446,8 @@
     "RoleId": "aaf43236-0c0d-4d5f-883a-6955382ac081",
     "RoleName": "B2C IEF Keyset Administrator",
     "isPrivileged": true,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": "External Identities",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Users assigned to this role can create and manage policy keys and secrets used for token encryption, token signing, and claim encryption/decryption. They can add new keys to existing key containers, enabling secret rollover without affecting existing applications. Additionally, users in this role can view the complete details of these secrets, including their expiration dates, even after creation.\n\n> [!IMPORTANT]\n> This is a sensitive role. The keyset administrator role should be carefully audited and assigned with care during preproduction and production.",
     "RolePermissions": [
@@ -2419,6 +2467,8 @@
     "RoleId": "3edaf663-341e-4475-9f94-5c398ef6c070",
     "RoleName": "B2C IEF Policy Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": "External Identities",
     "RichDescription": "Users in this role have the ability to create, read, update, and delete all custom policies in Azure AD B2C and therefore have full control over the Identity Experience Framework in the relevant Azure AD B2C organization. By editing policies, this user can establish direct federation with external identity providers, change the directory schema, change all user-facing content (HTML, CSS, JavaScript), change the requirements to complete an authentication, create new users, send user data to external systems including full migrations, and edit all user information including sensitive fields like passwords and phone numbers. Conversely, this role cannot change the encryption keys or edit the secrets used for federation in the organization.\n\n> [!IMPORTANT]\n> The B2 IEF Policy Administrator is a highly sensitive role that should be assigned on a very limited basis for organizations in production. Activities by these users should be closely audited, especially for organizations in production.",
     "RolePermissions": [
@@ -2438,6 +2488,8 @@
     "RoleId": "b0f54661-2d74-4c50-afa3-1ec803f12efe",
     "RoleName": "Billing Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Billing Management",
       "Microsoft 365 Support Operations",
@@ -2498,6 +2550,8 @@
     "RoleId": "892c5842-a9a6-463a-8041-72aa08ca3cf6",
     "RoleName": "Cloud App Security Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Cloud Access Security Broker",
       "Microsoft 365 Support Operations"
@@ -2526,6 +2580,8 @@
     "RoleId": "158c047a-c907-4556-b7ef-446551a6b5f7",
     "RoleName": "Cloud Application Administrator",
     "isPrivileged": true,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Application and Workload Identity",
       "Default member",
@@ -2914,6 +2970,8 @@
     "RoleId": "7698a772-787b-4ac8-901f-60d6b08affd2",
     "RoleName": "Cloud Device Administrator",
     "isPrivileged": true,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Default member",
       "Global Endpoint Bitlocker Recovery",
@@ -3050,6 +3108,8 @@
     "RoleId": "17315797-102d-40b4-93e0-432062caca18",
     "RoleName": "Compliance Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Support Operations",
       "Security and Compliance",
@@ -3110,6 +3170,8 @@
     "RoleId": "e6d1a23a-da11-4be4-9570-befc86d067a7",
     "RoleName": "Compliance Data Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Cloud Access Security Broker",
       "Default member",
@@ -3184,6 +3246,8 @@
     "RoleId": "b1be1c3e-b65d-4f19-8427-f6fa0d97feb9",
     "RoleName": "Conditional Access Administrator",
     "isPrivileged": true,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Conditional Access",
       "Tenant Configuration (Reader)"
@@ -3278,6 +3342,8 @@
     "RoleId": "fc8ad4e2-40e4-4724-8317-bcda7503ecbf",
     "RoleName": "Customer Delegated Admin Relationship Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Cross Tenant Management",
       "Microsoft 365 Support Operations"
@@ -3306,6 +3372,8 @@
     "RoleId": "5c4f9dcd-47dc-4cf7-8c9a-9e4207cbfc91",
     "RoleName": "Customer Lockbox Access Approver",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Support Operations",
       "Security and Compliance"
@@ -3334,6 +3402,8 @@
     "RoleId": "38a96431-2bdf-4b4c-8b6e-5d3d8abac1a4",
     "RoleName": "Desktop Analytics Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Default member",
       "Microsoft 365 Support Operations",
@@ -3375,6 +3445,8 @@
     "RoleId": "88d8e3e3-8f55-4a1e-953a-9b9898b8876b",
     "RoleName": "Directory Readers",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Default member",
       "Guest user",
@@ -3725,6 +3797,8 @@
     "RoleId": "d29b2b05-8046-44ba-8758-1e26182fcf32",
     "RoleName": "Directory Synchronization Accounts",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": "Tenant Configuration (Reader)",
     "RichDescription": "Do not use. This role is automatically assigned to the Microsoft Entra Connect service, and is not intended or supported for any other use.",
     "RolePermissions": [
@@ -3744,6 +3818,8 @@
     "RoleId": "9360feb5-f418-4baa-8175-e2a00bac4301",
     "RoleName": "Directory Writers",
     "isPrivileged": true,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Application and Workload Identity",
       "External Identities",
@@ -4017,6 +4093,8 @@
     "RoleId": "8329153b-31d0-4727-b945-745eb3bc5f31",
     "RoleName": "Domain Name Administrator",
     "isPrivileged": true,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Support Operations",
       "Tenant Management"
@@ -4051,6 +4129,8 @@
     "RoleId": "e93e3737-fa85-474a-aee4-7d3fb86510f3",
     "RoleName": "Dragon Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Support Operations",
       "Microsoft Dragon",
@@ -4116,6 +4196,8 @@
     "RoleId": "44367163-eba1-44c3-98af-f5787879f96a",
     "RoleName": "Dynamics 365 Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Dynamics 365",
       "Microsoft 365 Support Operations",
@@ -4169,6 +4251,8 @@
     "RoleId": "963797fb-eb3b-4cde-8ce3-5878b3f32a3f",
     "RoleName": "Dynamics 365 Business Central Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Default member",
       "Dynamics 365",
@@ -4239,6 +4323,8 @@
     "RoleId": "3f1acade-1e04-4fbc-9b69-f0302cd84aef",
     "RoleName": "Edge Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Support Operations",
       "User Virtual Endpoint Management"
@@ -4273,6 +4359,8 @@
     "RoleId": "b6a27b2b-f905-4b2e-81b5-0d90e0ef1fdb",
     "RoleName": "Entra Backup Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Backup and Recovery",
       "Security and Compliance"
@@ -4325,6 +4413,8 @@
     "RoleId": "f42252d9-5400-4d7b-b9ef-cc582dbb8577",
     "RoleName": "Entra Backup Reader",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Backup and Recovery",
       "Security and Compliance"
@@ -4365,6 +4455,8 @@
     "RoleId": "29232cdf-9323-42fd-ade2-1d097af3e4de",
     "RoleName": "Exchange Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Default member",
       "Microsoft 365 Backup",
@@ -4536,6 +4628,8 @@
     "RoleId": "49eb8f75-97e9-4e37-9b2b-6c3ebfcffa31",
     "RoleName": "Exchange Backup Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Backup",
       "Microsoft 365 Support Operations",
@@ -4625,6 +4719,8 @@
     "RoleId": "31392ffb-586c-42d1-9346-e59415a2cc4e",
     "RoleName": "Exchange Recipient Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": "Microsoft Exchange Online",
     "RichDescription": "Users with this role have read access to recipients and write access to the attributes of those recipients in Exchange Online. For more information, see [Recipients in Exchange Server](/exchange/recipients/recipients).",
     "RolePermissions": [
@@ -4650,6 +4746,8 @@
     "RoleId": "dd13091a-6207-4fc0-82ba-3641e056ab95",
     "RoleName": "Extended Directory User Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Teams",
       "Tenant Configuration (Reader)"
@@ -4708,6 +4806,8 @@
     "RoleId": "6e591065-9bad-43ed-90f3-e9424366d2f0",
     "RoleName": "External ID User Flow Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": "External Identities",
     "RichDescription": "Users with this role can create and manage user flows (also called \"built-in\" policies) in the Azure portal. These users can customize HTML/CSS/JavaScript content, change MFA requirements, select claims in the token, manage API connectors and their credentials, and configure session settings for all user flows in the Microsoft Entra organization. On the other hand, this role does not include the ability to review user data or make changes to the attributes that are included in the organization schema. Changes to Identity Experience Framework policies (also known as custom policies) are also outside the scope of this role.",
     "RolePermissions": [
@@ -4727,6 +4827,8 @@
     "RoleId": "0f971eea-41eb-4569-a71e-57bb8a3eff1e",
     "RoleName": "External ID User Flow Attribute Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": "External Identities",
     "RichDescription": "Users with this role add or delete custom attributes available to all user flows in the Microsoft Entra organization. As such, users with this role can change or add new elements to the end-user schema and impact the behavior of all user flows, and indirectly result in changes to what data may be asked of end users and ultimately sent as claims to applications. This role can't edit user flows.",
     "RolePermissions": [
@@ -4746,6 +4848,8 @@
     "RoleId": "be2f45a1-457d-42af-a067-6ec1fa63bc45",
     "RoleName": "External Identity Provider Administrator",
     "isPrivileged": true,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Authentication",
       "External Identities"
@@ -4774,6 +4878,8 @@
     "RoleId": "a9ea8996-122f-4c74-9520-8edcd192826c",
     "RoleName": "Fabric Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Business Apps Management",
       "Microsoft 365 Support Operations",
@@ -4827,6 +4933,8 @@
     "RoleId": "62e90394-69f5-4237-9190-012177145e10",
     "RoleName": "Global Administrator",
     "isPrivileged": true,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Agent Identity",
       "Application and Workload Identity",
@@ -6409,6 +6517,8 @@
     "RoleId": "f2ef992c-3afb-46b9-b7cf-a126ee74c451",
     "RoleName": "Global Reader",
     "isPrivileged": true,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Application and Workload Identity",
       "Cloud Infrastructure Entitlement Management",
@@ -7043,6 +7153,8 @@
     "RoleId": "ac434307-12b9-4fa1-a708-88bf58caabc1",
     "RoleName": "Global Secure Access Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Default member",
       "Global Secure Access Management",
@@ -7183,6 +7295,8 @@
     "RoleId": "843318fb-79a6-4168-9e6f-aa9a07481cc4",
     "RoleName": "Global Secure Access Log Reader",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": "Security and Compliance",
     "RichDescription": "Assign the Global Secure Access Log Reader role to users who need to do the following:\n\n- Read network traffic logs in Microsoft Entra Internet Access and Microsoft Entra Private Access for analysis by designated security personnel\n- View log details such as session, connection, and transaction\n- Filter logs based on criteria such as IP address and domain\n\n[Learn more](../../../global-secure-access/reference-role-based-permissions.md)",
     "RolePermissions": [
@@ -7202,6 +7316,8 @@
     "RoleId": "fdd7a751-b60b-444a-984c-02652fe8fa1c",
     "RoleName": "Groups Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Group Management",
       "License Management",
@@ -7377,6 +7493,8 @@
     "RoleId": "95e79109-95c0-4d8e-aee3-d01accf2d47b",
     "RoleName": "Guest Inviter",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Default member",
       "External Identities"
@@ -7495,6 +7613,8 @@
     "RoleId": "729827e3-9c14-49f7-bb1b-9608f156bbb8",
     "RoleName": "Helpdesk Administrator",
     "isPrivileged": true,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Global Endpoint Bitlocker Recovery",
       "Global User Management",
@@ -7568,6 +7688,8 @@
     "RoleId": "8ac3fc64-6eca-42ea-9e69-59f4c7b60eb2",
     "RoleName": "Hybrid Identity Administrator",
     "isPrivileged": true,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Application and Workload Identity",
       "Authentication",
@@ -7958,6 +8080,8 @@
     "RoleId": "45d8d3c5-c802-45c6-b32a-1d70b5e1e86e",
     "RoleName": "Identity Governance Administrator",
     "isPrivileged": true,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Application and Workload Identity",
       "Entitlement Management",
@@ -8036,6 +8160,8 @@
     "RoleId": "eb1f4a8d-243a-41f0-9fbd-c7cdf6c5ef7c",
     "RoleName": "Insights Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Support Operations",
       "Microsoft Viva",
@@ -8089,6 +8215,8 @@
     "RoleId": "25df335f-86eb-4119-b717-0ff02de207e9",
     "RoleName": "Insights Analyst",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Support Operations",
       "Microsoft Viva"
@@ -8123,6 +8251,8 @@
     "RoleId": "31e939ad-9672-4796-9c2e-873181342d2d",
     "RoleName": "Insights Business Leader",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft Viva",
       "Tenant Configuration (Reader)"
@@ -8151,6 +8281,8 @@
     "RoleId": "3a2c62db-5318-420d-8d74-23affee5d9d5",
     "RoleName": "Intune Administrator",
     "isPrivileged": true,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Global Endpoint Bitlocker Recovery",
       "Global Endpoint Local Admin",
@@ -8404,6 +8536,8 @@
     "RoleId": "2ea5ce4c-b2d8-4668-bd81-3680bd2d227a",
     "RoleName": "IoT Device Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": "Global Endpoint Management",
     "RichDescription": "Assign the IoT Device Administrator role to users who need to do the following tasks:\n\n- Provision new IoT devices using device templates\n- Manage the lifecycle of IoT devices\n- Configure certificates used for IoT device authentication\n- Manage the lifecycle of IoT device templates\n\n[Learn more](/graph/api/resources/devicetemplate)",
     "RolePermissions": [
@@ -8477,6 +8611,8 @@
     "RoleId": "74ef975b-6605-40af-a5d2-b9539d836353",
     "RoleName": "Kaizala Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Default member",
       "Microsoft 365 Support Operations"
@@ -8517,6 +8653,8 @@
     "RoleId": "b5a8dcf3-09d5-43a9-a639-8e29ef291470",
     "RoleName": "Knowledge Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Extended member",
       "Group Management",
@@ -8615,6 +8753,8 @@
     "RoleId": "744ec460-397e-42ad-a462-8b3f9747a02c",
     "RoleName": "Knowledge Manager",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Extended member",
       "Group Management",
@@ -8700,6 +8840,8 @@
     "RoleId": "4d6ac14f-3453-41d0-bef9-a3e0c569773a",
     "RoleName": "License Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Default member",
       "Global User Management",
@@ -8773,6 +8915,8 @@
     "RoleId": "59d46f88-662b-457b-bceb-5c3809e5908f",
     "RoleName": "Lifecycle Workflows Administrator",
     "isPrivileged": true,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Tenant Configuration (Reader)",
       "User Lifecycle and Provisioning Management"
@@ -8807,6 +8951,8 @@
     "RoleId": "ac16e43d-7b2d-40e0-ac05-243ff356ab5b",
     "RoleName": "Message Center Privacy Reader",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Support Operations",
       "Support and Service Health"
@@ -8841,6 +8987,8 @@
     "RoleId": "790c1fb9-7f7d-4f88-86a1-ef1f95c05c1b",
     "RoleName": "Message Center Reader",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": "Microsoft 365 Support Operations",
     "RichDescription": "Users in this role can monitor notifications and advisory health updates in [Message center](/microsoft-365/admin/manage/message-center) for their organization on configured services such as Exchange, Intune, and Microsoft Teams. Message Center Readers receive weekly email digests of posts, updates, and can share message center posts in Microsoft 365. In Microsoft Entra ID, users assigned to this role will only have read-only access on Microsoft Entra services such as users and groups. This role has no access to view, create, or manage support tickets.",
     "RolePermissions": [
@@ -8866,6 +9014,8 @@
     "RoleId": "1707125e-0aa2-4d4d-8655-a7c786c76a25",
     "RoleName": "Microsoft 365 Backup Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Backup",
       "Microsoft 365 Support Operations",
@@ -8931,6 +9081,8 @@
     "RoleId": "8c8b803f-96e1-4129-9349-20738d9f9652",
     "RoleName": "Microsoft 365 Migration Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Platform Operations",
       "Microsoft 365 Support Operations"
@@ -8965,6 +9117,8 @@
     "RoleId": "9f06204d-73c1-4d4c-880a-6edb90606fd8",
     "RoleName": "Microsoft Entra Joined Device Local Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": "Tenant Configuration (Reader)",
     "RichDescription": "This role is available for assignment only as an additional local administrator in [Device settings](~/identity/devices/assign-local-admin.md). Users with this role become local machine administrators on all Windows 10 or newer devices that are joined to Microsoft Entra ID. They do not have the ability to manage device objects in Microsoft Entra ID.",
     "RolePermissions": [
@@ -8990,6 +9144,8 @@
     "RoleId": "ee67aa9c-e510-4759-b906-227085a7fd4d",
     "RoleName": "Microsoft Graph Data Connect Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Platform Operations",
       "Microsoft 365 Support Operations",
@@ -9049,6 +9205,8 @@
     "RoleId": "1501b917-7653-4ff9-a4b5-203eaf33784f",
     "RoleName": "Microsoft Hardware Warranty Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Support Operations",
       "User Hardware Management"
@@ -9101,6 +9259,8 @@
     "RoleId": "281fe777-fb20-4fbb-b7a3-ccebce5b0d96",
     "RoleName": "Microsoft Hardware Warranty Specialist",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Support Operations",
       "User Hardware Management"
@@ -9153,6 +9313,8 @@
     "RoleId": "d37c8bed-0711-4417-ba38-b4abe66ce4c2",
     "RoleName": "Network Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Platform Operations",
       "Microsoft 365 Support Operations"
@@ -9187,6 +9349,8 @@
     "RoleId": "2b745bdf-0803-4d80-aa65-822c4493daac",
     "RoleName": "Office Apps Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Platform Operations",
       "Microsoft 365 Support Operations",
@@ -9246,6 +9410,8 @@
     "RoleId": "92ed04bf-c94a-4b82-9729-b799a7a4c178",
     "RoleName": "Organizational Branding Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": "Tenant Management",
     "RichDescription": "Assign the Organizational Branding Administrator role to users who need to do the following tasks:\n\n- Manage all aspects of organizational branding in a tenant\n- Read, create, update, and delete branding themes\n- Manage the default branding theme and all branding localization themes",
     "RolePermissions": [
@@ -9265,6 +9431,8 @@
     "RoleId": "9d70768a-0cbc-4b4c-aea3-2e124b2477f4",
     "RoleName": "Organizational Data Source Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Platform Operations",
       "Microsoft 365 Support Operations",
@@ -9324,6 +9492,8 @@
     "RoleId": "e48398e2-f4bb-4074-8f31-4586725e205b",
     "RoleName": "Organizational Messages Approver",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Platform Operations",
       "Microsoft 365 Support Operations"
@@ -9358,6 +9528,8 @@
     "RoleId": "507f53e4-4e52-4077-abd3-d2e1558b6ea2",
     "RoleName": "Organizational Messages Writer",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Platform Operations",
       "Microsoft 365 Support Operations"
@@ -9392,6 +9564,8 @@
     "RoleId": "4ba39ca4-527c-499a-b93d-d9b492c50246",
     "RoleName": "Partner Tier1 Support",
     "isPrivileged": true,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Application and Workload Identity",
       "Global User Management",
@@ -9655,6 +9829,8 @@
     "RoleId": "e00e864a-17c5-4a4b-9c06-f5b95a8d5bd8",
     "RoleName": "Partner Tier2 Support",
     "isPrivileged": true,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Application and Workload Identity",
       "Default member",
@@ -9957,6 +10133,8 @@
     "RoleId": "966707d0-3269-4727-9be2-8c3a10f19b9d",
     "RoleName": "Password Administrator",
     "isPrivileged": true,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Global User Management",
       "Microsoft 365 Support Operations"
@@ -9985,6 +10163,8 @@
     "RoleId": "024906de-61e5-49c8-8572-40335f1e0e10",
     "RoleName": "People Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Default member",
       "Microsoft 365 Support Operations",
@@ -10032,6 +10212,8 @@
     "RoleId": "af78dc32-cf4d-46f9-ba4e-4428526346b5",
     "RoleName": "Permissions Management Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": "Cloud Infrastructure Entitlement Management",
     "RichDescription": "Assign the Permissions Management Administrator role to users who need to do the following tasks:\n\n- Manage all aspects of Microsoft Entra Permissions Management, when the service is present\n\nLearn more about Permissions Management roles and polices at [View information about roles/policies](~/permissions-management/how-to-view-role-policy.md).",
     "RolePermissions": [
@@ -10051,6 +10233,8 @@
     "RoleId": "78b0ccd1-afc2-4f92-9116-b41aedd09592",
     "RoleName": "Places Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": "Microsoft Places",
     "RichDescription": "Assign the Places Administrator role to users who need to do the following tasks:\n\n- Manage all aspects of the Microsoft Places service\n- Configure and manage buildings, floors, rooms, and desks\n- Oversee and manage associated booking policies\n\n[Learn more](/microsoft-365/places/configure-admin-roles)",
     "RolePermissions": [
@@ -10070,6 +10254,8 @@
     "RoleId": "11648597-926c-4cf3-9c36-bcebb0ba8dcc",
     "RoleName": "Power Platform Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Business Apps Management",
       "Dynamics 365",
@@ -10136,6 +10322,8 @@
     "RoleId": "644ef478-e28f-4e28-b9dc-3fdde9aa0b1f",
     "RoleName": "Printer Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": "Printer Management",
     "RichDescription": "Users in this role can register printers and manage all aspects of all printer configurations in the Microsoft Universal Print solution, including the Universal Print Connector settings. They can consent to all delegated print permission requests. Printer Administrators also have access to print reports.",
     "RolePermissions": [
@@ -10155,6 +10343,8 @@
     "RoleId": "e8cef6f1-e4bd-4ea8-bc07-4b8d950f4477",
     "RoleName": "Printer Technician",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": "Printer Management",
     "RichDescription": "Users with this role can register printers and manage printer status in the Microsoft Universal Print solution. They can also read all connector information. Key task a Printer Technician cannot do is set user permissions on printers and sharing printers.",
     "RolePermissions": [
@@ -10198,6 +10388,8 @@
     "RoleId": "7be44c8a-adaf-4e2a-84d6-ab2649e08a13",
     "RoleName": "Privileged Authentication Administrator",
     "isPrivileged": true,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Global User Management",
       "Microsoft 365 Support Operations",
@@ -10336,6 +10528,8 @@
     "RoleId": "e8611ab8-c189-46e8-94e1-60213ab1f814",
     "RoleName": "Privileged Role Administrator",
     "isPrivileged": true,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Application and Workload Identity",
       "Entitlement Management",
@@ -10525,6 +10719,8 @@
     "RoleId": "3f04f91a-4ad7-4bd3-bcfa-49882ea1a88a",
     "RoleName": "Purview Workload Content Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": "Unclassified",
     "RichDescription": "Assign the Purview Workload Content Administrator role to users who need to do the following tasks:\n- Manage or purge Microsoft 365 data (such as SharePoint, Teams, OneDrive, or Exchange) when accessing from the Microsoft Purview portal\n\n> [!IMPORTANT]\n> Assign this role through the Microsoft Purview portal. If you try to assign this role using the Microsoft Entra admin center, it might be overwritten.\n\nMicrosoft Purview uses role groups to limit tasks that users can perform in the Microsoft Purview portal. To learn more about how the Purview Workload Content Administrator role maps to the roles on the Microsoft Purview portal, see [Purview Role Assignment Migrator](/purview/purview-role-assignment-migrator).",
     "RolePermissions": [],
@@ -10537,6 +10733,8 @@
     "RoleId": "e07494ad-1654-4dd2-922e-6f81a71bf00f",
     "RoleName": "Purview Workload Content Reader",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": "Unclassified",
     "RichDescription": "Assign the Purview Workload Content Reader role to users who need to do the following tasks:\n- Read data from Microsoft 365 (such as SharePoint, Teams, OneDrive, or Exchange) when processing long-running operations submitted from the Microsoft Purview portal.\n\n> [!IMPORTANT]\n> Assign this role through the Microsoft Purview portal. If you try to assign this role using the Microsoft Entra admin center, it might be overwritten.\n\nMicrosoft Purview uses role groups to limit tasks that users can perform in the Microsoft Purview portal. To learn more about how the Purview Workload Content Reader role maps to the roles on the Microsoft Purview portal, see [Purview Role Assignment Migrator](/purview/purview-role-assignment-migrator).",
     "RolePermissions": [],
@@ -10549,6 +10747,8 @@
     "RoleId": "02d5655b-c1cf-4e5f-98da-5fb919085bf6",
     "RoleName": "Purview Workload Content Writer",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": "Unclassified",
     "RichDescription": "Assign the Purview Workload Content Writer role to users who need to do the following tasks:\n- Read and edit Microsoft 365 data (such as SharePoint, Teams, OneDrive, or Exchange) when accessing from the Microsoft Purview portal\n\n> [!IMPORTANT]\n> Assign this role through the Microsoft Purview portal. If you try to assign this role using the Microsoft Entra admin center, it might be overwritten.\n\nMicrosoft Purview uses role groups to limit tasks that users can perform in the Microsoft Purview portal. To learn more about how the Purview Workload Content Writer role maps to the roles on the Microsoft Purview portal, see [Purview Role Assignment Migrator](/purview/purview-role-assignment-migrator).",
     "RolePermissions": [],
@@ -10561,6 +10761,8 @@
     "RoleId": "4a5d8f65-41da-4de4-8968-e035b65339cf",
     "RoleName": "Reports Reader",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Support Operations",
       "Security and Compliance",
@@ -10620,6 +10822,8 @@
     "RoleId": "0964bb5e-9bdb-4d7b-ac29-58e794862a40",
     "RoleName": "Search Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": "Microsoft 365 Support Operations",
     "RichDescription": "Users in this role have full access to all Microsoft Search management features in the Microsoft 365 admin center. Additionally, these users can view the message center, monitor service health, and create service requests.",
     "RolePermissions": [
@@ -10663,6 +10867,8 @@
     "RoleId": "8835291a-918c-4fd7-a9ce-faa49f0cf7d9",
     "RoleName": "Search Editor",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": "Microsoft 365 Support Operations",
     "RichDescription": "Users in this role can create, manage, and delete content for Microsoft Search in the Microsoft 365 admin center, including bookmarks, Q&As, and locations.",
     "RolePermissions": [
@@ -10694,6 +10900,8 @@
     "RoleId": "194ae4cb-b126-40b2-bd5b-6091b380977d",
     "RoleName": "Security Administrator",
     "isPrivileged": true,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Application and Workload Identity",
       "Authentication",
@@ -11216,6 +11424,8 @@
     "RoleId": "5f2222b1-57c3-48ba-8ad5-d4759f1fde6f",
     "RoleName": "Security Operator",
     "isPrivileged": true,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Cloud Access Security Broker",
       "Default member",
@@ -11228,7 +11438,7 @@
       "Support and Service Health",
       "Tenant Configuration (Reader)"
     ],
-    "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Users with this role can manage alerts and have global read-only access on security-related features, including all information in Microsoft Defender portal, Microsoft Entra ID Protection, Privileged Identity Management, and Microsoft Purview portal. For more information about Office 365 permissions, see [Roles and role groups in Microsoft Defender for Office 365 and Microsoft Purview compliance](/microsoft-365/security/office-365-security/scc-permissions).\n\n| In | Can do |\n| --- | --- |\n| [Microsoft Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) | All permissions of the Security Reader role<br/>View, investigate, and respond to security threats alerts<br/>Manage security settings in Microsoft Defender portal |\n| [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) | All permissions of the Security Reader role<br>Perform all ID Protection operations except for configuring or changing risk-based policies, resetting passwords, and configuring alert e-mails. |\n| [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md) | All permissions of the Security Reader role |\n| [Microsoft Purview portal](/purview/purview-portal) | All permissions of the Security Reader role<br>View, investigate, and respond to security alerts |\n| [Microsoft Defender for Endpoint](/microsoft-365/security/defender-endpoint/prepare-deployment) | All permissions of the Security Reader role<br/>View, investigate, and respond to security alerts<br/>When you turn on role-based access control in Microsoft Defender for Endpoint, users with read-only permissions such as the Security Reader role lose access until they're assigned a Microsoft Defender for Endpoint role. |\n| [Intune](/mem/intune/fundamentals/role-based-access-control) | All permissions of the Security Reader role |\n| [Microsoft Defender for Cloud Apps](/defender-cloud-apps/manage-admins) | All permissions of the Security Reader role<br>View, investigate, and respond to security alerts |\n| [Microsoft 365 service health](/microsoft-365/enterprise/view-service-health) | View the health of Microsoft 365 services |",
+    "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Users with this role can manage alerts, perform identity containment actions during security incidents and have global read-only access on security-related features, including all information in Microsoft Defender portal, Microsoft Entra ID Protection, Privileged Identity Management, and Microsoft Purview portal. For more information about Office 365 permissions, see [Roles and role groups in Microsoft Defender for Office 365 and Microsoft Purview compliance](/microsoft-365/security/office-365-security/scc-permissions).\n\n| In | Can do |\n| --- | --- |\n| [Microsoft Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) | All permissions of the Security Reader role<br/>View, investigate, and respond to security threats alerts<br/>Perform identity containment actions for security incidents <br/> Manage security settings in Microsoft Defender portal |\n| [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) | All permissions of the Security Reader role<br>Perform all ID Protection operations except for configuring or changing risk-based policies, resetting passwords, and configuring alert e-mails. |\n| [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md) | All permissions of the Security Reader role |\n| [Microsoft Purview portal](/purview/purview-portal) | All permissions of the Security Reader role<br>View, investigate, and respond to security alerts |\n| [Microsoft Defender for Endpoint](/microsoft-365/security/defender-endpoint/prepare-deployment) | All permissions of the Security Reader role<br/>View, investigate, and respond to security alerts<br/>When you turn on role-based access control in Microsoft Defender for Endpoint, users with read-only permissions such as the Security Reader role lose access until they're assigned a Microsoft Defender for Endpoint role. |\n| [Intune](/mem/intune/fundamentals/role-based-access-control) | All permissions of the Security Reader role |\n| [Microsoft Defender for Cloud Apps](/defender-cloud-apps/manage-admins) | All permissions of the Security Reader role<br>View, investigate, and respond to security alerts |\n| [Microsoft 365 service health](/microsoft-365/enterprise/view-service-health) | View the health of Microsoft 365 services |",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/cloudAppSecurity/allProperties/allTasks",
@@ -11342,6 +11552,8 @@
     "RoleId": "5d6b6bb7-de71-4623-b4af-96380a352509",
     "RoleName": "Security Reader",
     "isPrivileged": true,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Default member",
       "Global Endpoint Bitlocker Recovery",
@@ -11567,6 +11779,8 @@
     "RoleId": "f023fd81-a637-4b56-95fd-791ac0226033",
     "RoleName": "Service Support Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Support Operations",
       "Support and Service Health"
@@ -11619,6 +11833,8 @@
     "RoleId": "f28a1f50-f6e7-4571-818b-6a12f2af6b6c",
     "RoleName": "SharePoint Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Backup",
       "Microsoft 365 Group Management",
@@ -11802,6 +12018,8 @@
     "RoleId": "99009c4a-3b3f-4957-82a9-9d35e12db77e",
     "RoleName": "SharePoint Advanced Management Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Backup",
       "Microsoft 365 Group Management",
@@ -11991,6 +12209,8 @@
     "RoleId": "9d3e04ba-3ee4-4d1b-a3a7-9aef423a09be",
     "RoleName": "SharePoint Backup Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Backup",
       "Microsoft 365 Support Operations",
@@ -12110,6 +12330,8 @@
     "RoleId": "1a7d78b6-429f-476b-b8eb-35fb715fffd4",
     "RoleName": "SharePoint Embedded Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Support Operations",
       "Microsoft SharePoint"
@@ -12162,6 +12384,8 @@
     "RoleId": "75941009-915a-4869-abe7-691bff18279e",
     "RoleName": "Skype for Business Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Support Operations",
       "Support and Service Health",
@@ -12221,6 +12445,8 @@
     "RoleId": "69091246-20e8-4a56-aa4d-066075b2a7a8",
     "RoleName": "Teams Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Cross Tenant Partner Management",
       "Default member",
@@ -12440,6 +12666,8 @@
     "RoleId": "baf37b3a-610e-45da-9e62-d9d1e5e8914b",
     "RoleName": "Teams Communications Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Default member",
       "Microsoft 365 Support Operations",
@@ -12524,6 +12752,8 @@
     "RoleId": "f70938a0-fc10-4177-9e90-2178f8765737",
     "RoleName": "Teams Communications Support Engineer",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Default member",
       "Microsoft 365 Support Operations",
@@ -12578,6 +12808,8 @@
     "RoleId": "fcf91098-03e3-41a9-b5ba-6f0ec8188a12",
     "RoleName": "Teams Communications Support Specialist",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Default member",
       "Microsoft 365 Support Operations",
@@ -12632,6 +12864,8 @@
     "RoleId": "3d762c5a-1b6c-493f-843e-55a3b42923d4",
     "RoleName": "Teams Devices Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Support Operations",
       "Teams"
@@ -12660,6 +12894,8 @@
     "RoleId": "2fe872fb-daa8-4afc-8f6c-53c4565cfef4",
     "RoleName": "Teams External Collaboration Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Default member",
       "Microsoft 365 Support Operations",
@@ -12702,6 +12938,8 @@
     "RoleId": "1076ac91-f3d9-41a7-a339-dcdf5f480acc",
     "RoleName": "Teams Reader",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Support Operations",
       "Teams"
@@ -12730,6 +12968,8 @@
     "RoleId": "aa38014f-0993-46e9-9b45-30501a20909d",
     "RoleName": "Teams Telephony Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Default member",
       "Microsoft 365 Support Operations",
@@ -12808,6 +13048,8 @@
     "RoleId": "112ca1a2-15ad-4102-995e-45b0bc479a6a",
     "RoleName": "Tenant Creator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": "Default member",
     "RichDescription": "Assign the Tenant Creator role to users who need to do the following tasks:\n-\tCreate both Microsoft Entra and Azure Active Directory B2C tenants even if the tenant creation toggle is turned off in the user settings\n> [!NOTE]\n>The tenant creators will be assigned the Global Administrator role on the new tenants they create.",
     "RolePermissions": [
@@ -12827,6 +13069,8 @@
     "RoleId": "1981f584-96e9-4a6f-95b0-f522373f8fae",
     "RoleName": "Tenant Governance Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Conditional Access",
       "Cross Tenant Partner Management",
@@ -12990,6 +13234,8 @@
     "RoleId": "e0a4caa6-fe82-443f-b92f-d87341d17b2e",
     "RoleName": "Tenant Governance Reader",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Support Operations",
       "Tenant Configuration (Reader)"
@@ -13048,6 +13294,8 @@
     "RoleId": "b8e31d83-1534-480f-9b10-0338ded51b7e",
     "RoleName": "Tenant Governance Relationship Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Support Operations",
       "Tenant Configuration (Reader)",
@@ -13143,6 +13391,8 @@
     "RoleId": "124577f8-48ed-456a-839f-13b419002e33",
     "RoleName": "Tenant Governance Relationship Reader",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Support Operations",
       "Tenant Configuration (Reader)"
@@ -13195,6 +13445,8 @@
     "RoleId": "75934031-6c7e-415a-99d7-48dbd49e875e",
     "RoleName": "Usage Summary Reports Reader",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Platform Operations",
       "Microsoft 365 Support Operations"
@@ -13229,6 +13481,8 @@
     "RoleId": "fe930be7-5e62-47db-91af-98c3a49a38b1",
     "RoleName": "User Administrator",
     "isPrivileged": true,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Application and Workload Identity",
       "Default member",
@@ -13591,6 +13845,8 @@
     "RoleId": "27460883-1df1-4691-b032-3b79643e5e63",
     "RoleName": "User Experience Success Manager",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Billing Management",
       "Microsoft 365 Platform Operations",
@@ -13650,6 +13906,8 @@
     "RoleId": "e300d9e7-4a2b-4295-9eff-f1c78b36cc98",
     "RoleName": "Virtual Visits Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Support Operations",
       "Virtual Visits"
@@ -13678,6 +13936,8 @@
     "RoleId": "0ec3f692-38d6-4d14-9e69-0377ca7797ad",
     "RoleName": "Viva Glint Tenant Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Support Operations",
       "Microsoft Viva",
@@ -13737,6 +13997,8 @@
     "RoleId": "92b086b3-e367-4ef2-b869-1de128fb986e",
     "RoleName": "Viva Goals Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Support Operations",
       "Microsoft Viva"
@@ -13771,6 +14033,8 @@
     "RoleId": "87761b17-1ed2-4af3-9acd-92a150038160",
     "RoleName": "Viva Pulse Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Support Operations",
       "Microsoft Viva"
@@ -13823,6 +14087,8 @@
     "RoleId": "11451d60-acb2-45eb-a7d6-43d0f0125c13",
     "RoleName": "Windows 365 Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Global Endpoint Management",
       "Group Management",
@@ -14011,6 +14277,8 @@
     "RoleId": "32696413-001a-46ae-978c-ce0f6b3620d2",
     "RoleName": "Windows Update Deployment Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": "Global Endpoint Management",
     "RichDescription": "UUsers in this role can create and manage all aspects of Windows Update deployments through the Windows Update for Business deployment service. The deployment service enables users to define  settings for when and how updates are deployed, and specify which updates are offered to groups of devices in their tenant. It also allows users to monitor the update progress.",
     "RolePermissions": [
@@ -14030,6 +14298,8 @@
     "RoleId": "810a2642-a034-447f-a5e8-41beaa378541",
     "RoleName": "Yammer Administrator",
     "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
     "Categories": [
       "Microsoft 365 Group Management",
       "Microsoft 365 Support Operations",

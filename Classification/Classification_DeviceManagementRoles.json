@@ -3,6 +3,8 @@
     "RoleId": "c1d9fcbb-cba5-40b0-bf6b-527006585f4b",
     "RoleName": "Application Manager",
     "isPrivileged": null,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": [],
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Organization/Read",
@@ -308,6 +310,8 @@
     "RoleId": "e9a9f614-7527-44e2-a61a-1879747ccfd7",
     "RoleName": "Endpoint Privilege Manager",
     "isPrivileged": null,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": [],
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Organization/Read",
@@ -403,6 +407,8 @@
     "RoleId": "9553af24-bd83-4ac3-a339-0e58f9e5478e",
     "RoleName": "Endpoint Privilege Reader",
     "isPrivileged": null,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": [],
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Organization/Read",
@@ -450,6 +456,8 @@
     "RoleId": "c56d53a2-73d0-4502-b6bd-4a9d3dba28d5",
     "RoleName": "Endpoint Security Manager",
     "isPrivileged": null,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": [],
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MobileApps/Read",
@@ -1061,6 +1069,8 @@
     "RoleId": "9e0cc482-82df-4ab2-a24c-0c23a3f52e1e",
     "RoleName": "Help Desk Operator",
     "isPrivileged": null,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": [],
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MobileApps/Read",
@@ -1630,6 +1640,8 @@
     "RoleId": "fb2603eb-3c87-4be3-8b5b-d58a5b4a0bc0",
     "RoleName": "Intune Role Administrator",
     "isPrivileged": null,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": [],
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Organization/Read",
@@ -1677,6 +1689,8 @@
     "RoleId": "5500eb3c-d329-45fd-b3a9-5f87c2cc5e03",
     "RoleName": "Multi Admin Approval Policy Manager",
     "isPrivileged": null,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": [],
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Organization/Read",
@@ -1724,6 +1738,8 @@
     "RoleId": "0bd113fe-6be5-400c-a28f-ae5553f9c0be",
     "RoleName": "Policy and Profile manager",
     "isPrivileged": null,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": [],
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.Intune/Organization/Read",
@@ -2227,6 +2243,8 @@
     "RoleId": "fa1d7878-e8cb-41a1-8254-0142355c9f84",
     "RoleName": "Read Only Operator",
     "isPrivileged": null,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": [],
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MobileApps/Read",
@@ -2568,6 +2586,8 @@
     "RoleId": "2f9f4f7e-2d13-427b-adf2-361a1eef7ae8",
     "RoleName": "School Administrator",
     "isPrivileged": null,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": [],
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AppleDeviceSerialNumbers/Delete",

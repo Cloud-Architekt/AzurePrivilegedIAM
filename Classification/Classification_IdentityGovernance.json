@@ -3,6 +3,8 @@
     "RoleId": "e2182095-804a-4656-ae11-64734e9b7ae5",
     "RoleName": "AccessPackage assignment manager",
     "isPrivileged": null,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": [],
     "RichDescription": "AccessPackage assignment manager",
     "RolePermissions": [
       {
@@ -33,6 +35,8 @@
     "RoleId": "7f480852-ebdc-47d4-87de-0d8498384a83",
     "RoleName": "AccessPackages manager",
     "isPrivileged": null,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": [],
     "RichDescription": "AccessPackages manager",
     "RolePermissions": [
       {
@@ -57,6 +61,8 @@
     "RoleId": "ba92d953-d8e0-4e39-a797-0cbedb0a89e8",
     "RoleName": "Catalog creator",
     "isPrivileged": null,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": [],
     "RichDescription": "Catalog creator",
     "RolePermissions": {
       "AuthorizedResourceAction": "microsoft.entitlementManagement/AccessPackageCatalog/Create",
@@ -73,6 +79,8 @@
     "RoleId": "ae79f266-94d4-4dab-b730-feca7e132178",
     "RoleName": "Catalog owner",
     "isPrivileged": null,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": [],
     "RichDescription": "Catalog owner",
     "RolePermissions": {
       "AuthorizedResourceAction": "microsoft.entitlementManagement/allEntities/allTasks",
@@ -89,6 +97,8 @@
     "RoleId": "44272f93-9762-48e8-af59-1b5351b1d6b3",
     "RoleName": "Catalog reader",
     "isPrivileged": null,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": [],
     "RichDescription": "Catalog reader",
     "RolePermissions": {
       "AuthorizedResourceAction": "microsoft.entitlementManagement/allEntities/Read",
