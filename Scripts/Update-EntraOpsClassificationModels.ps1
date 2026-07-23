@@ -1,3 +1,4 @@
+#Requires -Version 7.0
 function Update-EntraOpsClassificationModels {
 
     <#
@@ -16,7 +17,10 @@ function Update-EntraOpsClassificationModels {
           * Lane "AzureRoles":           Export-EntraOpsClassificationAzureRoles
 
         All five lanes run in parallel (Start-ThreadJob); the two multi-step lanes keep their internal order.
-        After every lane has finished, Update-ClassificationData regenerates the Classification Explorer bundle.
+        After every lane has finished, Update-EntraOpsClassificationExplorerData (-Mode Standalone) regenerates the Classification Explorer
+        bundle (embedded classification data, attack paths, EAM Map dataset and the git-log-based change history for
+        the History view; the history part is best effort - it needs 'git' and a non-shallow clone - and never fails
+        the overall run).
 
         A live progress bar and streamed per-lane output are shown during processing. At the end a clean summary is
         printed (and returned) that lists every unclassified action/permission per source and the Microsoft Docs
@@ -45,7 +49,16 @@ function Update-EntraOpsClassificationModels {
         Resolve service principal display names from Microsoft Graph in the API permissions export.
 
     .PARAMETER SkipClassificationExplorerUpdate
-        Do not run Update-ClassificationData at the end.
+        Do not run Update-EntraOpsClassificationExplorerData at the end.
+
+    .PARAMETER SkipEntraOpsRepoSync
+        Do not prompt to sync the Classification Explorer app source into the EntraOps repository
+        (Sync-EntraOpsClassificationExplorerSource) at the end of the run.
+
+    .PARAMETER SkipHistoryUpdate
+        Do not refresh the Classification Explorer's git-log-based change history (data/history-data.js,
+        used by the History view) as part of the Update-EntraOpsClassificationExplorerData run. Has no effect when
+        -SkipClassificationExplorerUpdate is set. Useful to skip the (slower) git-log walk when iterating quickly.
 
     .PARAMETER Sequential
         Run the lanes one after another instead of in parallel (useful for troubleshooting).
@@ -85,6 +98,12 @@ function Update-EntraOpsClassificationModels {
         [switch]$SkipClassificationExplorerUpdate
         ,
         [Parameter(Mandatory = $false)]
+        [switch]$SkipEntraOpsRepoSync
+        ,
+        [Parameter(Mandatory = $false)]
+        [switch]$SkipHistoryUpdate
+        ,
+        [Parameter(Mandatory = $false)]
         [switch]$Sequential
     )
 
@@ -99,7 +118,8 @@ function Update-EntraOpsClassificationModels {
     $RepoRoot = (Resolve-Path $RepoRoot).Path
     $ScriptsPath = Join-Path $RepoRoot "Scripts"
     $ClassificationPath = Join-Path $RepoRoot "Classification"
-    $ExplorerScript = Join-Path $RepoRoot "ClassificationExplorer/Update-ClassificationData.ps1"
+    $ExplorerScript = Join-Path $RepoRoot "Scripts/Update-EntraOpsClassificationExplorerData.ps1"
+    $SyncScript = Join-Path $RepoRoot "Scripts/Sync-EntraOpsClassificationExplorerSource.ps1"
 
     if (-not (Test-Path $ScriptsPath)) { throw "Scripts folder not found at '$ScriptsPath'. Provide -RepoRoot." }
     #endregion
@@ -133,13 +153,13 @@ function Update-EntraOpsClassificationModels {
         . (Join-Path $ScriptsPath "Export-EntraOpsClassificationScopes.ps1")
         . (Join-Path $ScriptsPath "Export-EntraOpsClassificationApiPermissions.ps1")
 
-        try { Write-Output "Step 1/3 Export-EntraOpsClassificationAppRoles"; Export-EntraOpsClassificationAppRoles } catch { Write-Warning "AppRoles failed: $($_.Exception.Message)" }
-        try { Write-Output "Step 2/3 Export-EntraOpsClassificationScopes"; Export-EntraOpsClassificationScopes } catch { Write-Warning "Scopes failed: $($_.Exception.Message)" }
+        try { Write-Output "Step 1/3 Export-EntraOpsClassificationAppRoles"; Export-EntraOpsClassificationAppRoles } catch { throw "AppRoles failed: $($_.Exception.Message)" }
+        try { Write-Output "Step 2/3 Export-EntraOpsClassificationScopes"; Export-EntraOpsClassificationScopes } catch { throw "Scopes failed: $($_.Exception.Message)" }
         try {
             Write-Output "Step 3/3 Export-EntraOpsClassificationApiPermissions"
             if ($Options.ResolveApiPermissionDisplayNames) { Export-EntraOpsClassificationApiPermissions -ResolveDisplayNames }
             else { Export-EntraOpsClassificationApiPermissions }
-        } catch { Write-Warning "ApiPermissions failed: $($_.Exception.Message)" }
+        } catch { throw "ApiPermissions failed: $($_.Exception.Message)" }
         Write-Output "Lane complete"
     }
 
@@ -150,13 +170,13 @@ function Update-EntraOpsClassificationModels {
         . (Join-Path $ScriptsPath "Export-EntraOpsClassificationDirectoryRolesFromMsftDocs.ps1")
         . (Join-Path $ScriptsPath "Get-EntraOpsClassificationDirectoryRolesMissmatchFromMsftDocs.ps1")
 
-        try { Write-Output "Step 1/3 Export-EntraOpsClassificationDirectoryRoles"; Export-EntraOpsClassificationDirectoryRoles -IncludeCustomRoles $Options.IncludeCustomRoles } catch { Write-Warning "DirectoryRoles failed: $($_.Exception.Message)" }
-        try { Write-Output "Step 2/3 Export-EntraOpsClassificationDirectoryRolesFromMsftDocs"; Export-EntraOpsClassificationDirectoryRolesFromMsftDocs } catch { Write-Warning "DirectoryRolesFromMsftDocs failed: $($_.Exception.Message)" }
+        try { Write-Output "Step 1/3 Export-EntraOpsClassificationDirectoryRoles"; Export-EntraOpsClassificationDirectoryRoles -IncludeCustomRoles $Options.IncludeCustomRoles } catch { throw "DirectoryRoles failed: $($_.Exception.Message)" }
+        try { Write-Output "Step 2/3 Export-EntraOpsClassificationDirectoryRolesFromMsftDocs"; Export-EntraOpsClassificationDirectoryRolesFromMsftDocs } catch { throw "DirectoryRolesFromMsftDocs failed: $($_.Exception.Message)" }
         try {
             Write-Output "Step 3/3 Get-EntraOpsClassificationDirectoryRolesMissmatchFromMsftDocs"
             $mm = Get-EntraOpsClassificationDirectoryRolesMissmatchFromMsftDocs -ShowSummaryOnly $true
             $mm | ConvertTo-Json -Depth 8 | Out-File -FilePath $Options.MismatchTempFile -Force
-        } catch { Write-Warning "Mismatch comparison failed: $($_.Exception.Message)" }
+        } catch { throw "Mismatch comparison failed: $($_.Exception.Message)" }
         Write-Output "Lane complete"
     }
 
@@ -164,7 +184,7 @@ function Update-EntraOpsClassificationModels {
         param($RepoRoot, $ScriptsPath, $Options)
         Set-Location $RepoRoot
         . (Join-Path $ScriptsPath "Export-EntraOpsClassificationIdentityGovernanceRoles.ps1")
-        try { Write-Output "Export-EntraOpsClassificationIdentityGovernanceRoles"; Export-EntraOpsClassificationIdentityGovernanceRoles -IncludeCustomRoles $Options.IncludeCustomRoles } catch { Write-Warning "IdentityGovernanceRoles failed: $($_.Exception.Message)" }
+        try { Write-Output "Export-EntraOpsClassificationIdentityGovernanceRoles"; Export-EntraOpsClassificationIdentityGovernanceRoles -IncludeCustomRoles $Options.IncludeCustomRoles } catch { throw "IdentityGovernanceRoles failed: $($_.Exception.Message)" }
         Write-Output "Lane complete"
     }
 
@@ -172,7 +192,7 @@ function Update-EntraOpsClassificationModels {
         param($RepoRoot, $ScriptsPath, $Options)
         Set-Location $RepoRoot
         . (Join-Path $ScriptsPath "Export-EntraOpsClassificationDeviceManagementRoles.ps1")
-        try { Write-Output "Export-EntraOpsClassificationDeviceManagementRoles"; Export-EntraOpsClassificationDeviceManagementRoles -IncludeCustomRoles $Options.IncludeCustomRoles } catch { Write-Warning "DeviceManagementRoles failed: $($_.Exception.Message)" }
+        try { Write-Output "Export-EntraOpsClassificationDeviceManagementRoles"; Export-EntraOpsClassificationDeviceManagementRoles -IncludeCustomRoles $Options.IncludeCustomRoles } catch { throw "DeviceManagementRoles failed: $($_.Exception.Message)" }
         Write-Output "Lane complete"
     }
 
@@ -185,7 +205,7 @@ function Update-EntraOpsClassificationModels {
         if ($Options.Tier1IncludedResourceScope.Count -gt 0) { $azParams.Tier1IncludedResourceScope = $Options.Tier1IncludedResourceScope }
         if ($Options.AzureClassificationFile) { $azParams.ClassificationFile = $Options.AzureClassificationFile }
         if ($Options.AzureRoleDefinitionScope) { $azParams.RoleDefinitionScope = $Options.AzureRoleDefinitionScope }
-        try { Write-Output "Export-EntraOpsClassificationAzureRoles"; Export-EntraOpsClassificationAzureRoles @azParams } catch { Write-Warning "AzureRoles failed: $($_.Exception.Message)" }
+        try { Write-Output "Export-EntraOpsClassificationAzureRoles"; Export-EntraOpsClassificationAzureRoles @azParams } catch { throw "AzureRoles failed: $($_.Exception.Message)" }
         Write-Output "Lane complete"
     }
 
@@ -231,18 +251,24 @@ function Update-EntraOpsClassificationModels {
             Write-Progress -Activity "Updating EntraOps classification models" -Status "$Completed of $TotalLanes lanes complete | running: $Running" -PercentComplete (($Completed / $TotalLanes) * 100)
         } while (@($Jobs | Where-Object { $_.State -eq 'Running' }).Count -gt 0)
 
-        # Drain remaining output and report failures
+        # Drain remaining output and retain failures before removing the jobs.
+        $LaneFailures = [System.Collections.Generic.List[string]]::new()
         foreach ($Job in $Jobs) {
             $NewOutput = Receive-Job -Job $Job
             foreach ($Line in $NewOutput) {
                 Write-Host ("[{0,-18}] {1}" -f $Job.Name, $Line) -ForegroundColor DarkGray
             }
-            if ($Job.State -eq 'Failed') {
-                Write-Warning ("Lane '{0}' failed: {1}" -f $Job.Name, $Job.ChildJobs[0].JobStateInfo.Reason.Message)
+            if ($Job.State -in 'Failed', 'Stopped') {
+                $Reason = $Job.ChildJobs[0].JobStateInfo.Reason
+                $Message = if ($Reason) { $Reason.Message } else { "Job ended in state '$($Job.State)'" }
+                $LaneFailures.Add(("{0}: {1}" -f $Job.Name, $Message))
             }
         }
         $Jobs | Remove-Job -Force
         Write-Progress -Activity "Updating EntraOps classification models" -Completed
+        if ($LaneFailures.Count -gt 0) {
+            throw ("Classification update failed in {0} lane(s): {1}" -f $LaneFailures.Count, ($LaneFailures -join '; '))
+        }
     } else {
         $TotalLanes = $Lanes.Count
         $Index = 0
@@ -260,12 +286,39 @@ function Update-EntraOpsClassificationModels {
     if (-not $SkipClassificationExplorerUpdate) {
         if (Test-Path $ExplorerScript) {
             Write-Host ""
-            Write-Host "=== Updating Classification Explorer (Update-ClassificationData) ===" -ForegroundColor Cyan
+            Write-Host "=== Updating Classification Explorer (Update-EntraOpsClassificationExplorerData -Mode Standalone) ===" -ForegroundColor Cyan
             Write-Progress -Activity "Updating EntraOps classification models" -Status "Refreshing Classification Explorer bundle" -PercentComplete 95
-            try { & $ExplorerScript -RepoRoot $RepoRoot } catch { Write-Warning "Update-ClassificationData failed: $($_.Exception.Message)" }
+            try {
+                . $ExplorerScript
+                $explorerParams = @{ RepoRoot = $RepoRoot; Mode = 'Standalone' }
+                if ($SkipHistoryUpdate) { $explorerParams.SkipHistory = $true }
+                Update-EntraOpsClassificationExplorerData @explorerParams
+            } catch { throw "Update-EntraOpsClassificationExplorerData failed: $($_.Exception.Message)" }
             Write-Progress -Activity "Updating EntraOps classification models" -Completed
         } else {
-            Write-Warning "Classification Explorer update script not found at '$ExplorerScript'."
+            throw "Classification Explorer update script not found at '$ExplorerScript'."
+        }
+    }
+    #endregion
+
+    #region Sync Classification Explorer source to EntraOps repository
+    if (-not $SkipEntraOpsRepoSync) {
+        if (Test-Path $SyncScript) {
+            $DefaultEntraOpsRoot = "../entraops"
+            Write-Host ""
+            Write-Host "=== Sync Classification Explorer source to EntraOps repository ===" -ForegroundColor Cyan
+            $EntraOpsRootAnswer = Read-Host ("Update Classification Explorer in EntraOps repository as well? Default EntraOpsRoot: '{0}' (press Enter to accept, type a custom path, or 'n' to skip)" -f $DefaultEntraOpsRoot)
+            if ($EntraOpsRootAnswer -notin @('n', 'N', 'no', 'No')) {
+                $EntraOpsRootToUse = if ([string]::IsNullOrWhiteSpace($EntraOpsRootAnswer)) { $DefaultEntraOpsRoot } else { $EntraOpsRootAnswer }
+                try {
+                    . $SyncScript
+                    Sync-EntraOpsClassificationExplorerSource -RepoRoot $RepoRoot -EntraOpsRoot $EntraOpsRootToUse
+                } catch { throw "Sync-EntraOpsClassificationExplorerSource failed: $($_.Exception.Message)" }
+            } else {
+                Write-Host "Skipped syncing Classification Explorer source to EntraOps repository." -ForegroundColor DarkGray
+            }
+        } else {
+            throw "Sync-EntraOpsClassificationExplorerSource script not found at '$SyncScript'."
         }
     }
     #endregion
@@ -276,6 +329,10 @@ function Update-EntraOpsClassificationModels {
         $items = New-Object System.Collections.Generic.List[string]
         if (-not (Test-Path $Path)) { return $items }
         try { $data = Get-Content -Path $Path -Raw | ConvertFrom-Json -Depth 20 } catch { return $items }
+        # ConvertFrom-Json collapses a JSON '[]' to $null and a single-element JSON array to a
+        # bare object rather than a one-item array - normalize both back to a real array so the
+        # foreach below always sees the same shape regardless of how many entries the file has.
+        $data = @(if ($null -ne $data) { $data })
         foreach ($item in $data) {
             $props = $item.PSObject.Properties.Name
             if ($props -contains 'RolePermissions') {

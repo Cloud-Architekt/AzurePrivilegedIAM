@@ -1,5 +1,20 @@
-function Get-AADObjectsFromAzureRBAC {
- 
+function Get-EntraOpsAadObjectsFromAzureRBAC {
+
+    <#
+    .SYNOPSIS
+        Get eligible (PIM) and permanent Azure RBAC role assignments for objects synced from Microsoft Entra ID.
+
+    .DESCRIPTION
+        Connects to Azure and returns both eligible (via the "MS-PIM" service principal's role eligibility
+        schedule requests) and permanent/direct Azure RBAC role assignments, normalized into a single list.
+
+    .EXAMPLE
+        Get-EntraOpsAadObjectsFromAzureRBAC
+    #>
+
+    [cmdletbinding()]
+    param ()
+
     # Module
     Import-Module Az.Accounts, Az.Resources
 
@@ -70,4 +85,3 @@ function Get-AADObjectsFromAzureRBAC {
     $Result += $AzRBACDirectAssignments
     return $Result
 }
-Get-AADObjectsFromAzureRBAC

@@ -13068,7 +13068,7 @@
   {
     "RoleId": "1981f584-96e9-4a6f-95b0-f522373f8fae",
     "RoleName": "Tenant Governance Administrator",
-    "isPrivileged": false,
+    "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
     "Categories": [
@@ -13078,7 +13078,7 @@
       "Tenant Configuration (Reader)",
       "Tenant Governance"
     ],
-    "RichDescription": "Assign the Tenant Governance Administrator role to users who need to do the following tasks:\n\n- Manage all capabilities in the Microsoft Entra Tenant Governance service",
+    "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nAssign the Tenant Governance Administrator role to users who need to do the following tasks:\n\n- Manage all capabilities in the Microsoft Entra Tenant Governance service",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/crossTenantAccessPolicy/basic/update",

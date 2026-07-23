@@ -147,7 +147,17 @@
           "Microsoft.Intune/SecurityBaselines/Create",
           "Microsoft.Intune/SecurityBaselines/Delete",
           "Microsoft.Intune/SecurityBaselines/Update",
-          "Microsoft.Intune/SecurityTasks/Update",
+          "Microsoft.Intune/SecurityTasks/Update"
+        ]
+      },
+      {
+        "Category": "Microsoft.DeviceManagement",
+        "Service": "Global Threat Defense Management",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "ExcludedRoleAssignmentScopeName": [],
+        "RoleDefinitionActions": [
           "Microsoft.Intune/MobileThreatDefense/Modify"
         ]
       },
@@ -180,10 +190,6 @@
           "Microsoft.Intune/AppleDeviceSerialNumbers/Create",
           "Microsoft.Intune/AppleDeviceSerialNumbers/Delete",
           "Microsoft.Intune/AppleDeviceSerialNumbers/Update",
-          "Microsoft.Intune/AppleEnrollmentProfiles/Assign",
-          "Microsoft.Intune/AppleEnrollmentProfiles/Create",
-          "Microsoft.Intune/AppleEnrollmentProfiles/Delete",
-          "Microsoft.Intune/AppleEnrollmentProfiles/Update",
           "Microsoft.Intune/CorporateDeviceIdentifiers/Create",
           "Microsoft.Intune/CorporateDeviceIdentifiers/Delete",
           "Microsoft.Intune/CorporateDeviceIdentifiers/Update",
@@ -196,7 +202,36 @@
       },
       {
         "Category": "Microsoft.DeviceManagement",
+        "Service": "Global Apple Enrollment Management",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "ExcludedRoleAssignmentScopeName": [],
+        "RoleDefinitionActions": [
+          "Microsoft.Intune/AppleEnrollmentProfiles/Assign",
+          "Microsoft.Intune/AppleEnrollmentProfiles/Create",
+          "Microsoft.Intune/AppleEnrollmentProfiles/Delete",
+          "Microsoft.Intune/AppleEnrollmentProfiles/Update"
+        ]
+      },
+      {
+        "Category": "Microsoft.DeviceManagement",
         "Service": "Global Mobile Device Management",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "ExcludedRoleAssignmentScopeName": [],
+        "RoleDefinitionActions": [
+          "Microsoft.Intune/MobileApps/Assign",
+          "Microsoft.Intune/MobileApps/Create",
+          "Microsoft.Intune/MobileApps/Delete",
+          "Microsoft.Intune/MobileApps/Relate",
+          "Microsoft.Intune/MobileApps/Update"
+        ]
+      },
+      {
+        "Category": "Microsoft.DeviceManagement",
+        "Service": "Global Android Sync Management",
         "RoleAssignmentScopeName": [
           "/"
         ],
@@ -204,12 +239,7 @@
         "RoleDefinitionActions": [
           "Microsoft.Intune/AndroidSync/UpdateApps",
           "Microsoft.Intune/AndroidSync/UpdateEnrollmentProfiles",
-          "Microsoft.Intune/AndroidSync/UpdateOnboarding",
-          "Microsoft.Intune/MobileApps/Assign",
-          "Microsoft.Intune/MobileApps/Create",
-          "Microsoft.Intune/MobileApps/Delete",
-          "Microsoft.Intune/MobileApps/Relate",
-          "Microsoft.Intune/MobileApps/Update"
+          "Microsoft.Intune/AndroidSync/UpdateOnboarding"
         ]
       },
       {
@@ -241,6 +271,7 @@
           "Microsoft.Intune/RemoteAssistanceApp/Unattended",
           "Microsoft.Intune/RemoteAssistanceApp/ViewScreen",
           "Microsoft.Intune/RemoteTasks/ActivateDeviceEsim",
+          "Microsoft.Intune/RemoteTasks/CancelEnhancedLogCollection",
           "Microsoft.Intune/RemoteTasks/ChangeAssignments",
           "Microsoft.Intune/RemoteTasks/CleanPC",
           "Microsoft.Intune/RemoteTasks/ConfigurationManagerAction",
@@ -257,8 +288,8 @@
           "Microsoft.Intune/RemoteTasks/OnDemandProactiveRemediation",
           "Microsoft.Intune/RemoteTasks/PlayLostModeSound",
           "Microsoft.Intune/RemoteTasks/RebootNow",
-          "Microsoft.Intune/RemoteTasks/RemoteLock",
           "Microsoft.Intune/RemoteTasks/RemoveDeviceEsim",
+          "Microsoft.Intune/RemoteTasks/RemoteLock",
           "Microsoft.Intune/RemoteTasks/RequestRemoteAssistance",
           "Microsoft.Intune/RemoteTasks/ResetPasscode",
           "Microsoft.Intune/RemoteTasks/RestoreManagedHomeScreen",
@@ -270,6 +301,7 @@
           "Microsoft.Intune/RemoteTasks/SetDeviceName",
           "Microsoft.Intune/RemoteTasks/ShutDown",
           "Microsoft.Intune/RemoteTasks/SyncDevice",
+          "Microsoft.Intune/RemoteTasks/TriggerEnhancedLogCollection",
           "Microsoft.Intune/RemoteTasks/UpdateDeviceAccount",
           "Microsoft.Intune/RemoteTasks/WindowsDefender",
           "Microsoft.Intune/RemoteTasks/Wipe"

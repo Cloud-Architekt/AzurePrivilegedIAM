@@ -386,12 +386,23 @@
           "APIConnectors.ReadWrite.All",
           "ExternalUserProfile.ReadWrite.All",
           "IdentityUserFlow.ReadWrite.All",
-          "LifecyclePolicies-Guests.ReadWrite.All",
           "PendingExternalUserProfile.ReadWrite.All",
           "Policy.ReadWrite.ExternalIdentities",
           "Policy.ReadWrite.TrustFramework",
           "TrustFrameworkKeySet.Read.All",
           "TrustFrameworkKeySet.ReadWrite.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.Graph",
+        "Service": "External Identities",
+        "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+        "ResourceScope": "Delegation",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "LifecyclePolicies-Guests.ReadWrite.All"
         ]
       },
       {
@@ -789,7 +800,6 @@
           "DirectoryRecommendations.ReadWrite.All",
           "Domain-InternalFederation.ReadWrite.All",
           "Domain.ReadWrite.All",
-          "EduRoster.ReadWrite.All",
           "IdentityNotifications.ReadWrite.All",
           "IdentityProvider.ReadWrite.All",
           "OnPremDirectorySynchronization.ReadWrite.All",
@@ -803,6 +813,18 @@
           "OrgSettings-Todo.ReadWrite.All",
           "Policy.ReadWrite.FeatureRollout",
           "SignInIdentifier.ReadWrite.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.Graph",
+        "Service": "Tenant Management",
+        "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+        "ResourceScope": "Application",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "EduRoster.ReadWrite.All"
         ]
       },
       {
@@ -834,8 +856,19 @@
         "RoleDefinitionActions": [
           "Policy.ReadWrite.FedTokenValidation",
           "Policy.ReadWrite.IdentityProtection",
-          "Policy.ReadWrite.Recovery",
           "Policy.ReadWrite.SecurityDefaults"
+        ]
+      },
+      {
+        "Category": "Microsoft.Graph",
+        "Service": "Tenant Policy Management",
+        "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+        "ResourceScope": "Delegation",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "Policy.ReadWrite.Recovery"
         ]
       },
       {
@@ -1777,6 +1810,8 @@
         ],
         "RoleDefinitionActions": [
           "OneDrive.Provision.All",
+          "SharePointTenantSettings.Read.All",
+          "SharePointTenantSettings.ReadWrite.All",
           "Sites.FullControl.All"
         ]
       },
@@ -1822,7 +1857,9 @@
         ],
         "RoleDefinitionActions": [
           "AllSites.FullControl",
-          "ProjectWebApp.FullControl"
+          "ProjectWebApp.FullControl",
+          "SharePointTenantSettings.Read.All",
+          "SharePointTenantSettings.ReadWrite.All"
         ]
       },
       {
@@ -1878,10 +1915,6 @@
           "Teamwork.Read.All",
           "TeamworkAppSettings.Read.All",
           "TeamworkAppSettings.ReadWrite.All",
-          "TeamworkCustomEmoji.Create",
-          "TeamworkCustomEmoji.Create.All",
-          "TeamworkCustomEmoji.Read",
-          "TeamworkCustomEmoji.Read.All",
           "TeamworkDevice.Read.All",
           "TeamworkDevice.ReadWrite.All",
           "UserNotification.ReadWrite.CreatedByApp",
@@ -1964,6 +1997,8 @@
           "TeamsTab.ReadWriteSelfForUser.All",
           "TeamTemplates.Read.All",
           "Teamwork.Migrate.All",
+          "TeamworkCustomEmoji.Create.All",
+          "TeamworkCustomEmoji.Read.All",
           "TeamworkSection.Read.All",
           "TeamworkSection.ReadWrite.All",
           "TeamworkTag.Read.All",
@@ -2022,6 +2057,8 @@
           "TeamsTab.ReadWriteSelfForTeam",
           "TeamsTab.ReadWriteSelfForUser",
           "TeamTemplates.Read",
+          "TeamworkCustomEmoji.Create",
+          "TeamworkCustomEmoji.Read",
           "TeamworkSection.Read",
           "TeamworkSection.ReadWrite",
           "TeamworkTag.Read",
@@ -2158,12 +2195,23 @@
         "RoleDefinitionActions": [
           "Printer.Read.All",
           "Printer.ReadWrite.All",
-          "PrintJob.Manage.All",
           "PrintJob.Read.All",
           "PrintJob.ReadBasic.All",
           "PrintJob.ReadWrite.All",
           "PrintJob.ReadWriteBasic.All",
-          "PrintSettings.Read.All",
+          "PrintSettings.Read.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.Graph",
+        "Service": "Printer Management",
+        "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+        "ResourceScope": "Application",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "PrintJob.Manage.All",
           "PrintTaskDefinition.ReadWrite.All"
         ]
       },
@@ -2482,7 +2530,6 @@
           "Group-XTenantIdentitySync.Read.All",
           "IdentityUserFlow.Read.All",
           "IdentityNotifications.Read.All",
-          "LifecyclePolicies-Guests.Read.All",
           "LifecycleWorkflows-CustomExt.Read.All",
           "LifecycleWorkflows-Reports.Read.All",
           "LifecycleWorkflows-Workflow.Read.All",
@@ -2546,6 +2593,7 @@
           "AppCertTrustConfiguration.Read.All",
           "ConsentRequest.Read",
           "CrossTenantUserProfileSharing.Read",
+          "LifecyclePolicies-Guests.Read.All",
           "ManagedTenants.Read.All",
           "Subscription.Read.All"
         ]
@@ -2596,6 +2644,33 @@
           "EngagementRole.Read.All",
           "EngagementRole.ReadWrite.All",
           "Notification.Send.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.EntraVerifiedId",
+        "Service": "Verified ID",
+        "ResourceAppId": "3db474b9-6a0c-4840-96ac-1fceb342124f",
+        "ResourceScope": "Application",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "VerifiableCredential.Create.All",
+          "VerifiableCredential.Create.IssueRequest",
+          "VerifiableCredential.Create.PresentRequest"
+        ]
+      },
+      {
+        "Category": "Microsoft.EntraVerifiedId",
+        "Service": "Verified ID",
+        "ResourceAppId": "3db474b9-6a0c-4840-96ac-1fceb342124f",
+        "ResourceScope": "Delegation",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "VerifiableCredential.Create.IssueRequest",
+          "VerifiableCredential.Create.IssueRequest.User"
         ]
       }
     ]

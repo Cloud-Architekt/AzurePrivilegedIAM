@@ -7,7 +7,7 @@
                 "Category": "Microsoft.Azure",
                 "Service": "Authorization",
                 "RoleAssignmentScopeName": [
-                    "/*"
+                    <Tier0IncludedResourceScope>
                 ],
                 "ExcludedRoleAssignmentScopeName": [],
                 "RoleDefinitionActions": [
@@ -36,7 +36,7 @@
                 "Category": "Microsoft.Azure",
                 "Service": "Management Groups",
                 "RoleAssignmentScopeName": [
-                    "/*"
+                    <Tier0IncludedResourceScope>
                 ],
                 "ExcludedRoleAssignmentScopeName": [],
                 "RoleDefinitionActions": [
@@ -53,7 +53,7 @@
                 "Category": "Microsoft.Azure",
                 "Service": "Subscription Management",
                 "RoleAssignmentScopeName": [
-                    "/*"
+                    <Tier0IncludedResourceScope>
                 ],
                 "ExcludedRoleAssignmentScopeName": [],
                 "RoleDefinitionActions": [
@@ -75,7 +75,7 @@
                 "Category": "Microsoft.Azure",
                 "Service": "Billing",
                 "RoleAssignmentScopeName": [
-                    "/*"
+                    <Tier0IncludedResourceScope>
                 ],
                 "ExcludedRoleAssignmentScopeName": [],
                 "RoleDefinitionActions": [
@@ -93,7 +93,7 @@
                 "Category": "Microsoft.Azure",
                 "Service": "Reservations and Capacity",
                 "RoleAssignmentScopeName": [
-                    "/*"
+                    <Tier0IncludedResourceScope>
                 ],
                 "ExcludedRoleAssignmentScopeName": [],
                 "RoleDefinitionActions": [
@@ -108,7 +108,7 @@
                 "Category": "Microsoft.Azure",
                 "Service": "Azure Lighthouse",
                 "RoleAssignmentScopeName": [
-                    "/*"
+                    <Tier0IncludedResourceScope>
                 ],
                 "ExcludedRoleAssignmentScopeName": [],
                 "RoleDefinitionActions": [
@@ -124,7 +124,7 @@
                 "Category": "Microsoft.Azure",
                 "Service": "Blueprints",
                 "RoleAssignmentScopeName": [
-                    "/*"
+                    <Tier0IncludedResourceScope>
                 ],
                 "ExcludedRoleAssignmentScopeName": [],
                 "RoleDefinitionActions": [
@@ -156,7 +156,7 @@
                 "Category": "Microsoft.Azure",
                 "Service": "Custom Providers",
                 "RoleAssignmentScopeName": [
-                    "/*"
+                    <Tier0IncludedResourceScope>
                 ],
                 "ExcludedRoleAssignmentScopeName": [],
                 "RoleDefinitionActions": [
@@ -169,7 +169,7 @@
                 "Category": "Microsoft.Azure",
                 "Service": "Privileged Secret and Key Access",
                 "RoleAssignmentScopeName": [
-                    "/*"
+                    <Tier0IncludedResourceScope>
                 ],
                 "ExcludedRoleAssignmentScopeName": [],
                 "RoleDefinitionActions": [
@@ -257,7 +257,7 @@
                 "Category": "Microsoft.Azure",
                 "Service": "Privileged Control Plane Resources",
                 "RoleAssignmentScopeName": [
-          <Tier0IncludedResourceScope>
+                    <Tier0IncludedResourceScope>
                 ],
                 "ExcludedRoleAssignmentScopeName": [],
                 "RoleDefinitionActions": [
@@ -296,6 +296,167 @@
         "TierLevelDefinition": [
             {
                 "Category": "Microsoft.Azure",
+                "Service": "Authorization",
+                "RoleAssignmentScopeName": [
+                    <Tier1IncludedResourceScope>
+                ],
+                "ExcludedRoleAssignmentScopeName": [
+                    <Tier0IncludedResourceScope>
+                ],
+                "RoleDefinitionActions": [
+                    "Microsoft.Authorization/*/write",
+                    "Microsoft.Authorization/*/delete",
+                    "Microsoft.Authorization/elevateAccess/action",
+                    "Microsoft.Authorization/classicAdministrators/write",
+                    "Microsoft.Authorization/classicAdministrators/delete",
+                    "Microsoft.Authorization/roleAssignments/write",
+                    "Microsoft.Authorization/roleAssignments/delete",
+                    "Microsoft.Authorization/roleDefinitions/write",
+                    "Microsoft.Authorization/roleDefinitions/delete",
+                    "Microsoft.Authorization/denyAssignments/write",
+                    "Microsoft.Authorization/denyAssignments/delete",
+                    "Microsoft.Authorization/roleAssignmentScheduleRequests/write",
+                    "Microsoft.Authorization/roleAssignmentScheduleRequests/cancel/action",
+                    "Microsoft.Authorization/roleEligibilityScheduleRequests/write",
+                    "Microsoft.Authorization/roleEligibilityScheduleRequests/cancel/action",
+                    "Microsoft.Authorization/roleManagementPolicies/write",
+                    "Microsoft.Authorization/roleManagementPolicyAssignments/write",
+                    "Microsoft.Authorization/roleManagementPolicyAssignments/delete"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Management Groups",
+                "RoleAssignmentScopeName": [
+                    <Tier1IncludedResourceScope>
+                ],
+                "ExcludedRoleAssignmentScopeName": [
+                    <Tier0IncludedResourceScope>
+                ],
+                "RoleDefinitionActions": [
+                    "Microsoft.Management/managementGroups/write",
+                    "Microsoft.Management/managementGroups/delete",
+                    "Microsoft.Management/managementGroups/subscriptions/write",
+                    "Microsoft.Management/managementGroups/subscriptions/delete",
+                    "Microsoft.Management/managementGroups/settings/write",
+                    "Microsoft.Management/managementGroups/settings/delete"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Subscription Management",
+                "RoleAssignmentScopeName": [
+                <Tier1IncludedResourceScope>
+                ],
+                "ExcludedRoleAssignmentScopeName": [
+                <Tier0IncludedResourceScope>
+                ],
+                "RoleDefinitionActions": [
+                    "Microsoft.Subscription/*/write",
+                    "Microsoft.Subscription/*/delete",
+                    "Microsoft.Subscription/aliases/write",
+                    "Microsoft.Subscription/aliases/delete",
+                    "Microsoft.Subscription/rename/action",
+                    "Microsoft.Subscription/cancel/action",
+                    "Microsoft.Subscription/enable/action",
+                    "Microsoft.Subscription/changeTenant/action",
+                    "Microsoft.Subscription/acceptOwnership/action",
+                    "Microsoft.Resources/subscriptions/providers/write",
+                    "Microsoft.Resources/tenants/register/action"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Billing",
+                "RoleAssignmentScopeName": [
+                    <Tier1IncludedResourceScope>
+                ],
+                "ExcludedRoleAssignmentScopeName": [
+                    <Tier0IncludedResourceScope>
+                ],
+                "RoleDefinitionActions": [
+                    "Microsoft.Billing/*/write",
+                    "Microsoft.Billing/*/delete",
+                    "Microsoft.Billing/billingAccounts/write",
+                    "Microsoft.Billing/billingAccounts/billingProfiles/write",
+                    "Microsoft.Billing/billingAccounts/createBillingRoleAssignment/action",
+                    "Microsoft.Billing/billingAccounts/billingRoleAssignments/write",
+                    "Microsoft.Billing/billingAccounts/billingRoleAssignments/delete"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Reservations and Capacity",
+                "RoleAssignmentScopeName": [
+                    <Tier1IncludedResourceScope>
+                ],
+                "ExcludedRoleAssignmentScopeName": [
+                    <Tier0IncludedResourceScope>
+                ],
+                "RoleDefinitionActions": [
+                    "Microsoft.Capacity/*/write",
+                    "Microsoft.Capacity/*/delete",
+                    "Microsoft.Capacity/reservationorders/write",
+                    "Microsoft.Capacity/reservationorders/reservations/write"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Azure Lighthouse",
+                "RoleAssignmentScopeName": [
+                    <Tier1IncludedResourceScope>
+                ],
+                "ExcludedRoleAssignmentScopeName": [
+                    <Tier0IncludedResourceScope>
+                ],
+                "RoleDefinitionActions": [
+                    "Microsoft.ManagedServices/*/write",
+                    "Microsoft.ManagedServices/*/delete",
+                    "Microsoft.ManagedServices/registrationDefinitions/write",
+                    "Microsoft.ManagedServices/registrationAssignments/write",
+                    "Microsoft.ManagedServices/registrationAssignments/delete"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Blueprints",
+                "RoleAssignmentScopeName": [
+                    <Tier1IncludedResourceScope>
+                ],
+                "ExcludedRoleAssignmentScopeName": [
+                    <Tier0IncludedResourceScope>
+                ],
+                "RoleDefinitionActions": [
+                    "Microsoft.Blueprint/blueprints/write",
+                    "Microsoft.Blueprint/blueprints/delete",
+                    "Microsoft.Blueprint/blueprintAssignments/write",
+                    "Microsoft.Blueprint/blueprintAssignments/delete"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Custom Providers",
+                "RoleAssignmentScopeName": [
+                    <Tier1IncludedResourceScope>
+                ],
+                "ExcludedRoleAssignmentScopeName": [
+                    <Tier0IncludedResourceScope>
+                ],
+                "RoleDefinitionActions": [
+                    "Microsoft.CustomProviders/resourceProviders/write",
+                    "Microsoft.CustomProviders/resourceProviders/delete"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
                 "Service": "Azure Policy",
                 "RoleAssignmentScopeName": [
                     <Tier1IncludedResourceScope>
@@ -327,6 +488,64 @@
                 "RoleDefinitionActions": [
                     "Microsoft.Authorization/locks/write",
                     "Microsoft.Authorization/locks/delete"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Secret and Key Access",
+                "RoleAssignmentScopeName": [
+                    "/*"
+                ],
+                "ExcludedRoleAssignmentScopeName": [
+                    <Tier0IncludedResourceScope>
+                ],
+                "RoleDefinitionActions": [
+                    "Microsoft.KeyVault/vaults/accessPolicies/write",
+                    "Microsoft.KeyVault/vaults/secrets/read",
+                    "Microsoft.KeyVault/vaults/secrets/write",
+                    "Microsoft.KeyVault/vaults/keys/read",
+                    "Microsoft.KeyVault/locations/deletedVaults/purge/action",
+                    "Microsoft.KeyVault/vaults/secrets/getSecret/action",
+                    "Microsoft.KeyVault/vaults/secrets/setSecret/action",
+                    "Microsoft.KeyVault/vaults/keys/encrypt/action",
+                    "Microsoft.KeyVault/vaults/keys/decrypt/action",
+                    "Microsoft.KeyVault/vaults/keys/sign/action",
+                    "Microsoft.KeyVault/vaults/keys/unwrap/action",
+                    "Microsoft.KeyVault/vaults/keys/wrap/action",
+                    "Microsoft.KeyVault/managedHSMs/keys/read",
+                    "Microsoft.KeyVault/managedHSMs/keys/decrypt/action",
+                    "Microsoft.Storage/storageAccounts/listkeys/action",
+                    "Microsoft.Storage/storageAccounts/listAccountSas/action",
+                    "Microsoft.Storage/storageAccounts/listServiceSas/action",
+                    "Microsoft.Storage/storageAccounts/regeneratekey/action",
+                    "Microsoft.DocumentDB/databaseAccounts/listKeys/action",
+                    "Microsoft.DocumentDB/databaseAccounts/readonlykeys/action",
+                    "Microsoft.DocumentDB/databaseAccounts/regenerateKey/action",
+                    "Microsoft.Web/sites/config/list/action",
+                    "Microsoft.Web/sites/publishxml/action",
+                    "Microsoft.Web/sites/publish/action",
+                    "Microsoft.Web/sites/host/listkeys/action",
+                    "Microsoft.Web/sites/functions/listkeys/action",
+                    "Microsoft.ContainerRegistry/registries/listCredentials/action",
+                    "Microsoft.ContainerService/managedClusters/listClusterAdminCredential/action",
+                    "Microsoft.ContainerService/managedClusters/accessProfiles/listCredential/action",
+                    "Microsoft.Cache/redis/listKeys/action",
+                    "Microsoft.Cache/redis/regenerateKey/action",
+                    "Microsoft.EventHub/namespaces/authorizationRules/listkeys/action",
+                    "Microsoft.ServiceBus/namespaces/authorizationRules/listkeys/action",
+                    "Microsoft.Batch/batchAccounts/listkeys/action",
+                    "Microsoft.Automation/automationAccounts/listKeys/action",
+                    "Microsoft.Devices/iotHubs/listkeys/action",
+                    "Microsoft.Devices/iotHubs/iotHubKeys/listkeys/action",
+                    "Microsoft.AppConfiguration/configurationStores/ListKeys/action",
+                    "Microsoft.CognitiveServices/accounts/listKeys/action",
+                    "Microsoft.Search/searchServices/listAdminKeys/action",
+                    "Microsoft.Search/searchServices/listQueryKeys/action",
+                    "Microsoft.SignalRService/signalR/listkeys/action",
+                    "Microsoft.Maps/accounts/listKeys/action",
+                    "Microsoft.NotificationHubs/namespaces/notificationHubs/authorizationRules/listKeys/action",
+                    "Microsoft.Relay/namespaces/authorizationRules/listkeys/action"
                 ],
                 "ExcludedRoleDefinitionActions": []
             },

@@ -1,0 +1,1047 @@
+#Requires -Version 7.0
+function Update-EntraOpsClassificationExplorerData {
+
+    <#
+    .SYNOPSIS
+        Refreshes the embedded classification data for the Classification Explorer static web
+        app, for either the standalone (AzurePrivilegedIAM) or the EntraOps-embedded deployment.
+
+    .DESCRIPTION
+        This is the single, canonical generator for the Classification Explorer app source that
+        lives (byte-identical, apart from js/mode.js) in two repositories:
+
+            * AzurePrivilegedIAM/ClassificationExplorer                (standalone deployment)
+            * <EntraOps repo>/Reports/ClassificationExplorer            (entraops deployment)
+
+        -Mode selects which deployment is being refreshed:
+
+            Standalone (default) - reads classification-logic templates from the flat
+                EntraOps_Classification/ folder of -RepoRoot. No tenant-specific classification
+                variants. Also (re)generates the git-log-based change history for the History
+                view (skip with -SkipHistory).
+
+            EntraOps - reads the RBAC system outputs (classified roles) from the AzurePrivilegedIAM
+                repository (-RepoRoot, auto-detected as a sibling folder when omitted) and the
+                classification-logic templates from Classification/Templates of the EntraOps
+                repository (-EntraOpsRoot), plus any tenant-specific parameterized copies written
+                by Update-EntraOpsClassificationControlPlaneScope to Classification/<TenantName>/
+                (embedded as window.EOCE_TENANTS for the variant picker / Template Comparison
+                view). Missing/optional template files are embedded as an empty array with a
+                warning instead of failing generation. Does not generate change history (the
+                History view is hidden in this mode - see js/config.js EOCE.isEntraOpsMode()).
+
+        The web app is fully self-contained in both modes: it loads its data exclusively from the
+        embedded bundle data/classification-data.js (window.EOCE_DATA) - there is no runtime fetch
+        fallback, so the app works from the file:// protocol with no web server. Regenerates:
+
+            * data/classification-data.js  - the embedded bundle (window.EOCE_DATA), plus
+                                              window.EOCE_TENANTS (entraops mode only).
+            * data-manifest.json           - timestamp, size, SHA-256 hash and item count per
+                                              source file (traceability only - never read by the
+                                              app itself).
+            * data/attack-paths.js         - attack-path catalog, from content/attack-paths/*.md.
+            * data/tier-map.js             - Overview (Enterprise Access Model Map) Sankey dataset.
+            * data/history-data.js         - standalone mode only: change history (git log) for
+                                              the History view.
+
+        Each file is validated (the *.Param.json files contain EntraOps scope placeholder tokens
+        such as <Tier0IncludedResourceScope>, which are sanitized the same way the app does before
+        validation).
+
+    .PARAMETER Mode
+        'Standalone' (default) or 'EntraOps'. See DESCRIPTION.
+
+    .PARAMETER RepoRoot
+        Path to the AzurePrivilegedIAM repository root (contains 'Classification' and, in
+        Standalone mode, 'EntraOps_Classification'). Defaults to the parent of this script's
+        folder in Standalone mode; auto-detected as a sibling folder of -EntraOpsRoot named
+        'AzurePrivilegedIAM*' in EntraOps mode.
+
+    .PARAMETER EntraOpsRoot
+        EntraOps mode only. Path to the EntraOps repository root (contains 'Classification/Templates'
+        and any 'Classification/<TenantName>' tenant-specific copies). Defaults to the parent of
+        this script's folder.
+
+    .PARAMETER AppRoot
+        Path to the ClassificationExplorer app folder (where the generated content is written).
+        Defaults to 'ClassificationExplorer' next to -RepoRoot (Standalone) or
+        'Reports/ClassificationExplorer' under -EntraOpsRoot (EntraOps).
+
+    .PARAMETER SkipManifest
+        Do not write data-manifest.json.
+
+    .PARAMETER SkipEmbed
+        Do not write data/classification-data.js (and data/tier-map.js). By default the script
+        generates this embedded bundle, which lets the app run with no web server.
+
+    .PARAMETER SkipHistory
+        Standalone mode only. Do not write data/history-data.js (the History view's git-log-based
+        change history). Useful while iterating locally, since walking the commit history of every
+        tracked file is the slowest part of this script. Has no effect in EntraOps mode (history is
+        never generated there).
+
+    .PARAMETER PassThru
+        Emit the result objects (one per source file) to the pipeline.
+
+    .EXAMPLE
+        . ./Scripts/Update-EntraOpsClassificationExplorerData.ps1
+        Update-EntraOpsClassificationExplorerData
+
+        Refreshes the standalone app (AzurePrivilegedIAM/ClassificationExplorer), inferring
+        -RepoRoot from this script's location.
+
+    .EXAMPLE
+        . ./Scripts/Update-EntraOpsClassificationExplorerData.ps1
+        Update-EntraOpsClassificationExplorerData -Mode EntraOps -Verbose -WhatIf
+
+        Shows what would be generated for the EntraOps-embedded app without changing any files.
+
+    .NOTES
+        Cross-platform on PowerShell 7+. This file is synced verbatim
+        between the two repositories by Sync-EntraOpsClassificationExplorerSource (to
+        <EntraOpsRoot>/EntraOps/Public/Reportings/, where it is loaded as a public function of the
+        EntraOps module, same as every Export-EntraOps* cmdlet in this repository) - edit only the
+        canonical copy in AzurePrivilegedIAM/Scripts.
+    #>
+    [CmdletBinding(SupportsShouldProcess = $true)]
+    param(
+        [ValidateSet('Standalone', 'EntraOps')]
+        [string]$Mode = 'Standalone',
+
+        [string]$RepoRoot,
+        [string]$EntraOpsRoot,
+        [string]$AppRoot,
+
+        [switch]$SkipManifest,
+        [switch]$SkipEmbed,
+        [switch]$SkipHistory,
+        [switch]$PassThru
+    )
+
+    Set-StrictMode -Version Latest
+    $ErrorActionPreference = 'Stop'
+
+    function Resolve-FullPath {
+        param([string]$Path)
+        return [System.IO.Path]::GetFullPath($Path)
+    }
+
+    # Mirror the app's sanitizer: replace <Token> with "«param:Token»" so *.Param.json
+    # files (which embed placeholder tokens) parse as valid JSON. Uses [char] codes so it
+    # works on both Windows PowerShell 5.1 and PowerShell 7+.
+    function ConvertTo-SanitizedJsonText {
+        param([string]$Text)
+        return [regex]::Replace($Text, '<([A-Za-z0-9_]+)>', {
+                param($m)
+                '"' + [char]0x00AB + 'param:' + $m.Groups[1].Value + [char]0x00BB + '"'
+            })
+    }
+
+    function Get-Sha256 {
+        param([string]$Path)
+        return (Get-FileHash -Path $Path -Algorithm SHA256).Hash.ToLowerInvariant()
+    }
+
+    # Strict-mode safe property accessor for the parsed classification objects.
+    function Get-JsonProp {
+        param($Object, [string]$Name)
+        if ($null -ne $Object -and ($Object.PSObject.Properties.Name -contains $Name)) { return $Object.$Name }
+        return $null
+    }
+
+    $ValidTiers = @('ControlPlane', 'ManagementPlane', 'UserAccess', 'Unclassified')
+
+    function Get-TierName {
+        param($Value)
+        if ($Value -and ($ValidTiers -contains [string]$Value)) { return [string]$Value }
+        return 'Unclassified'
+    }
+
+    # The role/permission catalogs browsable in the History view (data/history-data.js,
+    # standalone mode only) - kept in sync with EOCE.RBAC_SYSTEMS[*].file /
+    # EOCE.PERMISSION_SETS[*].file in js/config.js.
+    $HistorySources = [ordered]@{
+        EntraID            = [ordered]@{ label = 'Microsoft Entra ID Directory Roles'; kind = 'roles'; file = 'Classification/Classification_EntraIdDirectoryRoles.json' }
+        IdentityGovernance = [ordered]@{ label = 'Microsoft Entra Identity Governance'; kind = 'roles'; file = 'Classification/Classification_IdentityGovernance.json' }
+        Azure              = [ordered]@{ label = 'Azure Resource Roles'; kind = 'roles'; file = 'Classification/Classification_AzureResources.json' }
+        DeviceManagement   = [ordered]@{ label = 'Intune Device Management Roles'; kind = 'roles'; file = 'Classification/Classification_DeviceManagementRoles.json' }
+        ApiPermissions     = [ordered]@{ label = 'API Permissions'; kind = 'permissions'; file = 'Classification/Classification_ApiPermissions.json' }
+    }
+
+    # Flattens a parsed classification array (at one point in git history) into an ordered
+    # dictionary keyed by a stable item id, for cheap diffing between commits (History view).
+    function ConvertTo-HistoryIndex {
+        param($Parsed, [string]$Kind)
+
+        $index = [ordered]@{}
+        if ($null -eq $Parsed) { return $index }
+        if ($Parsed -isnot [System.Array]) { $Parsed = @($Parsed) }
+
+        $rolesById = @{}
+        if ($Kind -ne 'permissions') {
+            foreach ($role in $Parsed) {
+                $roleId = [string](Get-JsonProp $role 'RoleId')
+                if (-not [string]::IsNullOrEmpty($roleId)) { $rolesById[$roleId] = $role }
+            }
+        }
+
+        function Add-InheritedActionKeys {
+            param([string]$RoleId, [hashtable]$Seen, [hashtable]$ActionKeys)
+            if ([string]::IsNullOrEmpty($RoleId) -or $Seen.ContainsKey($RoleId) -or -not $rolesById.ContainsKey($RoleId)) { return }
+            $Seen[$RoleId] = $true
+
+            $inheritedRole = $rolesById[$RoleId]
+            $inheritedPermissions = Get-JsonProp $inheritedRole 'RolePermissions'
+            if ($null -ne $inheritedPermissions) {
+                if ($inheritedPermissions -isnot [System.Array]) { $inheritedPermissions = @($inheritedPermissions) }
+                foreach ($permission in $inheritedPermissions) {
+                    $action = [string](Get-JsonProp $permission 'AuthorizedResourceAction')
+                    if ([string]::IsNullOrEmpty($action)) { continue }
+                    $category = [string](Get-JsonProp $permission 'Category')
+                    $ActionKeys[$action + '|' + $category] = $true
+                }
+            }
+
+            $parents = Get-JsonProp $inheritedRole 'InheritsPermissionsFrom'
+            if ($null -ne $parents) {
+                if ($parents -isnot [System.Array]) { $parents = @($parents) }
+                foreach ($parentId in $parents) { Add-InheritedActionKeys -RoleId ([string]$parentId) -Seen $Seen -ActionKeys $ActionKeys }
+            }
+        }
+
+        foreach ($item in $Parsed) {
+            if ($null -eq $item) { continue }
+            if ($Kind -eq 'permissions') {
+                $id = [string](Get-JsonProp $item 'PermissionId')
+                if ([string]::IsNullOrEmpty($id)) { $id = [string](Get-JsonProp $item 'PermissionValue') + '|' + [string](Get-JsonProp $item 'TargetAppId') }
+                if ([string]::IsNullOrEmpty($id)) { continue }
+                $index[$id] = [ordered]@{
+                    id       = $id
+                    name     = [string](Get-JsonProp $item 'PermissionValue')
+                    tier     = Get-TierName (Get-JsonProp $item 'EAMTierLevelName')
+                    app      = [string](Get-JsonProp $item 'TargetAppDisplayName')
+                    category = [string](Get-JsonProp $item 'Category')
+                    type     = [string](Get-JsonProp $item 'PermissionType')
+                }
+            } else {
+                $id = [string](Get-JsonProp $item 'RoleId')
+                if ([string]::IsNullOrEmpty($id)) { $id = [string](Get-JsonProp $item 'RoleName') }
+                if ([string]::IsNullOrEmpty($id)) { continue }
+                $cls = Get-JsonProp $item 'Classification'
+                $tier = 'Unclassified'
+                if ($cls) { $tier = Get-TierName (Get-JsonProp $cls 'EAMTierLevelName') }
+                $actions = [ordered]@{}
+                $perms = Get-JsonProp $item 'RolePermissions'
+                if ($null -ne $perms) {
+                    if ($perms -isnot [System.Array]) { $perms = @($perms) }
+                    foreach ($p in $perms) {
+                        $act = [string](Get-JsonProp $p 'AuthorizedResourceAction')
+                        if ([string]::IsNullOrEmpty($act)) { continue }
+                        $cat = [string](Get-JsonProp $p 'Category')
+                        $key = $act + '|' + $cat
+                        $actions[$key] = [ordered]@{ action = $act; category = $cat; tier = Get-TierName (Get-JsonProp $p 'EAMTierLevelName') }
+                    }
+                }
+                $inheritedActionKeys = @{}
+                $parents = Get-JsonProp $item 'InheritsPermissionsFrom'
+                if ($null -ne $parents) {
+                    if ($parents -isnot [System.Array]) { $parents = @($parents) }
+                    $seenParents = @{}
+                    foreach ($parentId in $parents) { Add-InheritedActionKeys -RoleId ([string]$parentId) -Seen $seenParents -ActionKeys $inheritedActionKeys }
+                }
+                foreach ($key in $inheritedActionKeys.Keys) { $actions.Remove($key) }
+                $index[$id] = [ordered]@{
+                    id           = $id
+                    name         = [string](Get-JsonProp $item 'RoleName')
+                    tier         = $tier
+                    isPrivileged = ((Get-JsonProp $item 'isPrivileged') -eq $true)
+                    actionCount  = $actions.Count
+                    actions      = $actions
+                }
+            }
+        }
+        return $index
+    }
+
+    # Compares two consecutive snapshots (ordered dictionaries from ConvertTo-HistoryIndex)
+    # and returns the added / removed / changed items for that commit (History view).
+    function Compare-HistoryIndex {
+        param([System.Collections.IDictionary]$Previous, [System.Collections.IDictionary]$Current, [string]$Kind)
+
+        $added = New-Object System.Collections.Generic.List[object]
+        $removed = New-Object System.Collections.Generic.List[object]
+        $changed = New-Object System.Collections.Generic.List[object]
+
+        foreach ($id in $Current.Keys) {
+            $curr = $Current[$id]
+            if (-not $Previous.Contains($id)) {
+                $addedEntry = [ordered]@{ id = $id; name = $curr.name; tier = $curr.tier }
+                if ($Kind -ne 'permissions') {
+                    $addedEntry.actions = @($curr.actions.Values | ForEach-Object { $_.action } | Sort-Object)
+                } else {
+                    $addedEntry.category = $curr.category
+                }
+                $added.Add($addedEntry) | Out-Null
+                continue
+            }
+            $prev = $Previous[$id]
+            if ($Kind -eq 'permissions') {
+                if ($prev.tier -ne $curr.tier -or $prev.category -ne $curr.category) {
+                    $changed.Add([ordered]@{
+                            id          = $id
+                            name        = $curr.name
+                            oldTier     = $prev.tier
+                            newTier     = $curr.tier
+                            oldCategory = $prev.category
+                            newCategory = $curr.category
+                        }) | Out-Null
+                }
+            } else {
+                $actAdded = @()
+                $actRemoved = @()
+                foreach ($ak in $curr.actions.Keys) { if (-not $prev.actions.Contains($ak)) { $actAdded += $curr.actions[$ak].action } }
+                foreach ($ak in $prev.actions.Keys) { if (-not $curr.actions.Contains($ak)) { $actRemoved += $prev.actions[$ak].action } }
+                if ($actAdded.Count -gt 0 -and $actRemoved.Count -gt 0) {
+                    $common = @($actAdded | Where-Object { $actRemoved -contains $_ } | Select-Object -Unique)
+                    if ($common.Count -gt 0) {
+                        $actAdded = @($actAdded | Where-Object { $common -notcontains $_ })
+                        $actRemoved = @($actRemoved | Where-Object { $common -notcontains $_ })
+                    }
+                }
+                if ($prev.tier -ne $curr.tier -or $actAdded.Count -gt 0 -or $actRemoved.Count -gt 0) {
+                    $changed.Add([ordered]@{
+                            id             = $id
+                            name           = $curr.name
+                            oldTier        = $prev.tier
+                            newTier        = $curr.tier
+                            actionsAdded   = @($actAdded | Sort-Object)
+                            actionsRemoved = @($actRemoved | Sort-Object)
+                        }) | Out-Null
+                }
+            }
+        }
+        foreach ($id in $Previous.Keys) {
+            if (-not $Current.Contains($id)) {
+                $prev = $Previous[$id]
+                $removedEntry = [ordered]@{ id = $id; name = $prev.name; tier = $prev.tier }
+                if ($Kind -ne 'permissions') {
+                    $removedEntry.actions = @($prev.actions.Values | ForEach-Object { $_.action } | Sort-Object)
+                }
+                $removed.Add($removedEntry) | Out-Null
+            }
+        }
+
+        return [ordered]@{
+            added   = @($added.ToArray() | Sort-Object { $_.name })
+            removed = @($removed.ToArray() | Sort-Object { $_.name })
+            changed = @($changed.ToArray() | Sort-Object { $_.name })
+        }
+    }
+
+    # Build the flat path dataset that powers the Overview (Enterprise Access Model Map) Sankey:
+    #   role system -> role -> service -> role action -> tier level.
+    function ConvertTo-TierMapPaths {
+        param([System.Collections.IDictionary]$Embed)
+
+        $sysByFile = [ordered]@{
+            'Classification/Classification_EntraIdDirectoryRoles.json' = 'EntraID'
+            'Classification/Classification_IdentityGovernance.json'    = 'IdentityGovernance'
+            'Classification/Classification_AzureResources.json'        = 'Azure'
+            'Classification/Classification_DeviceManagementRoles.json' = 'DeviceManagement'
+        }
+        $docsFile = 'Classification/Classification_EntraIdDirectoryRolesFromMsftDocs.json'
+        $validTiers = @('ControlPlane', 'ManagementPlane', 'UserAccess', 'Unclassified')
+        $paths = New-Object System.Collections.Generic.List[object]
+
+        function Add-RolePaths {
+            param($Role, [string]$Sys, [bool]$DocsOnly, [hashtable]$MismatchActions = $null, $List)
+            $roleId = [string](Get-JsonProp $Role 'RoleId')
+            if ([string]::IsNullOrEmpty($roleId)) { return }
+            $cls = Get-JsonProp $Role 'Classification'
+            $roleClass = 'Unclassified'
+            if ($cls) { $cv = Get-JsonProp $cls 'EAMTierLevelName'; if ($cv -and ($validTiers -contains [string]$cv)) { $roleClass = [string]$cv } }
+            $priv = ((Get-JsonProp $Role 'isPrivileged') -eq $true)
+            $cats = [string](Get-JsonProp $Role 'Categories')
+            $roleName = [string](Get-JsonProp $Role 'RoleName')
+            $perms = Get-JsonProp $Role 'RolePermissions'
+            if ($null -eq $perms) { return }
+            if ($perms -isnot [System.Array]) { $perms = @($perms) }
+            foreach ($p in $perms) {
+                $action = Get-JsonProp $p 'AuthorizedResourceAction'
+                if ([string]::IsNullOrEmpty([string]$action)) { continue }
+                $tv = Get-JsonProp $p 'EAMTierLevelName'
+                $tier = if ($tv -and ($validTiers -contains [string]$tv)) { [string]$tv } else { 'Unclassified' }
+                $svc = [string](Get-JsonProp $p 'Category')
+                if ([string]::IsNullOrEmpty($svc)) { $svc = '(uncategorized)' }
+                $graphOnlyDiff = $false
+                if ($null -ne $MismatchActions) {
+                    $graphOnlyDiff = $MismatchActions.ContainsKey([string]$action.ToLowerInvariant())
+                }
+                $List.Add([ordered]@{
+                        sys           = $Sys
+                        roleId        = $roleId
+                        role          = $roleName
+                        priv          = $priv
+                        roleClass     = $roleClass
+                        cats          = $cats
+                        service       = $svc
+                        action        = [string]$action
+                        tier          = $tier
+                        docsOnly      = $DocsOnly
+                        graphOnlyDiff = $graphOnlyDiff
+                    }) | Out-Null
+            }
+        }
+
+        $docsActionsByRole = @{}
+        $docsRoleObjects = @{}
+        if ($Embed.Contains($docsFile)) {
+            foreach ($role in $Embed[$docsFile]) {
+                $rid = [string](Get-JsonProp $role 'RoleId')
+                if ([string]::IsNullOrEmpty($rid)) { continue }
+                $acts = @{}
+                $rp = Get-JsonProp $role 'RolePermissions'
+                if ($null -ne $rp) {
+                    if ($rp -isnot [System.Array]) { $rp = @($rp) }
+                    foreach ($p in $rp) {
+                        $a = [string](Get-JsonProp $p 'AuthorizedResourceAction')
+                        if (-not [string]::IsNullOrEmpty($a)) { $acts[$a.ToLowerInvariant()] = $true }
+                    }
+                }
+                $docsActionsByRole[$rid] = $acts
+                $docsRoleObjects[$rid] = $role
+            }
+        }
+
+        $graphActionsByRole = @{}
+        foreach ($file in $sysByFile.Keys) {
+            if (-not $Embed.Contains($file)) { continue }
+            $sys = $sysByFile[$file]
+            foreach ($role in $Embed[$file]) {
+                $rid = [string](Get-JsonProp $role 'RoleId')
+                $mismatchActions = $null
+                if ($sys -eq 'EntraID' -and -not [string]::IsNullOrEmpty($rid)) {
+                    $graphActs = @{}
+                    $rp = Get-JsonProp $role 'RolePermissions'
+                    if ($null -ne $rp) {
+                        if ($rp -isnot [System.Array]) { $rp = @($rp) }
+                        foreach ($p in $rp) {
+                            $a = [string](Get-JsonProp $p 'AuthorizedResourceAction')
+                            if (-not [string]::IsNullOrEmpty($a)) { $graphActs[$a.ToLowerInvariant()] = $true }
+                        }
+                    }
+                    $graphActionsByRole[$rid] = $graphActs
+                    if ($docsActionsByRole.ContainsKey($rid)) {
+                        $docsActs = $docsActionsByRole[$rid]
+                        $mismatchActions = @{}
+                        foreach ($la in $graphActs.Keys) {
+                            if (-not $docsActs.ContainsKey($la)) { $mismatchActions[$la] = $true }
+                        }
+                    }
+                }
+                Add-RolePaths -Role $role -Sys $sys -DocsOnly $false -MismatchActions $mismatchActions -List $paths
+            }
+        }
+
+        foreach ($rid in $docsRoleObjects.Keys) {
+            $role = $docsRoleObjects[$rid]
+            $graphActs = if ($graphActionsByRole.ContainsKey($rid)) { $graphActionsByRole[$rid] } else { $null }
+            $roleClass = 'Unclassified'
+            $cls = Get-JsonProp $role 'Classification'
+            if ($cls) { $cv = Get-JsonProp $cls 'EAMTierLevelName'; if ($cv -and ($validTiers -contains [string]$cv)) { $roleClass = [string]$cv } }
+            $priv = ((Get-JsonProp $role 'isPrivileged') -eq $true)
+            $cats = [string](Get-JsonProp $role 'Categories')
+            $roleName = [string](Get-JsonProp $role 'RoleName')
+            $perms = Get-JsonProp $role 'RolePermissions'
+            if ($null -eq $perms) { continue }
+            if ($perms -isnot [System.Array]) { $perms = @($perms) }
+            foreach ($p in $perms) {
+                $action = Get-JsonProp $p 'AuthorizedResourceAction'
+                if ([string]::IsNullOrEmpty([string]$action)) { continue }
+                if ($null -ne $graphActs -and $graphActs.ContainsKey([string]$action.ToLowerInvariant())) { continue }
+                $tv = Get-JsonProp $p 'EAMTierLevelName'
+                $tier = if ($tv -and ($validTiers -contains [string]$tv)) { [string]$tv } else { 'Unclassified' }
+                $svc = [string](Get-JsonProp $p 'Category')
+                if ([string]::IsNullOrEmpty($svc)) { $svc = '(uncategorized)' }
+                $paths.Add([ordered]@{
+                        sys           = 'EntraID'
+                        roleId        = $rid
+                        role          = $roleName
+                        priv          = $priv
+                        roleClass     = $roleClass
+                        cats          = $cats
+                        service       = $svc
+                        action        = [string]$action
+                        tier          = $tier
+                        docsOnly      = $true
+                        graphOnlyDiff = $false
+                    }) | Out-Null
+            }
+        }
+
+        return , $paths.ToArray()
+    }
+
+    # --- Mode-specific path resolution -------------------------------------------------------
+    # Basenames of classification-logic definition/param templates are identical between the two
+    # repositories, only the containing folder differs (kept in sync with EOCE.TEMPLATE_BASE in
+    # js/config.js).
+    $TemplateBase = if ($Mode -eq 'EntraOps') { 'Classification/Templates' } else { 'EntraOps_Classification' }
+
+    if ($Mode -eq 'EntraOps') {
+        # This function lives at <EntraOpsRoot>/EntraOps/Public/Reportings/Update-EntraOpsClassificationExplorerData.ps1
+        # (synced verbatim from AzurePrivilegedIAM/Scripts by Sync-EntraOpsClassificationExplorerSource) once
+        # copied into the EntraOps repository, where it is dot-sourced and exported as a public function by
+        # the module loader (EntraOps.psm1). Prefer the module's own ModuleBase (always populated once the
+        # module is imported) over $PSScriptRoot, which can be empty depending on how this function was invoked.
+        if ([string]::IsNullOrWhiteSpace($EntraOpsRoot)) {
+            $ModuleRoot = $MyInvocation.MyCommand.Module.ModuleBase
+            if ([string]::IsNullOrWhiteSpace($ModuleRoot) -and -not [string]::IsNullOrWhiteSpace($PSScriptRoot)) {
+                $ModuleRoot = Split-Path -Parent (Split-Path -Parent $PSScriptRoot)
+            }
+            if ([string]::IsNullOrWhiteSpace($ModuleRoot)) {
+                throw "Unable to resolve the EntraOps repository location. Pass -EntraOpsRoot explicitly."
+            }
+            $EntraOpsRoot = Split-Path -Parent $ModuleRoot
+        }
+        $EntraOpsRoot = Resolve-FullPath $EntraOpsRoot
+        if ([string]::IsNullOrWhiteSpace($AppRoot)) { $AppRoot = Join-Path $EntraOpsRoot 'Reports/ClassificationExplorer' }
+
+        if ([string]::IsNullOrWhiteSpace($RepoRoot)) {
+            $SentinelFile = 'Classification/Classification_EntraIdDirectoryRoles.json'
+            $Candidates = @((Split-Path -Parent $AppRoot), $EntraOpsRoot)
+            $CodingRoot = Split-Path -Parent $EntraOpsRoot
+            if ($CodingRoot -and (Test-Path -LiteralPath $CodingRoot -PathType Container)) {
+                $Candidates += @(Get-ChildItem -LiteralPath $CodingRoot -Directory -Filter 'AzurePrivilegedIAM*' | ForEach-Object { $_.FullName })
+            }
+            $RepoRoot = $Candidates | Where-Object { Test-Path -LiteralPath (Join-Path $_ $SentinelFile) -PathType Leaf } | Select-Object -First 1
+            if (-not $RepoRoot) {
+                throw "Could not auto-detect the AzurePrivilegedIAM repository (looked for '$SentinelFile' in: $($Candidates -join ', ')). Pass -RepoRoot pointing at your AzurePrivilegedIAM clone."
+            }
+            Write-Verbose "Auto-detected RepoRoot: $RepoRoot"
+        }
+    } else {
+        if ([string]::IsNullOrWhiteSpace($RepoRoot)) {
+            $RepoRoot = if ($PSScriptRoot) { Join-Path $PSScriptRoot '..' } else { (Get-Location).Path }
+        }
+        if ([string]::IsNullOrWhiteSpace($AppRoot)) { $AppRoot = Join-Path (Resolve-FullPath $RepoRoot) 'ClassificationExplorer' }
+    }
+
+    $RepoRoot = Resolve-FullPath $RepoRoot
+    $AppRoot = Resolve-FullPath $AppRoot
+
+    Write-Verbose "Mode            : $Mode"
+    Write-Verbose "Repository root : $RepoRoot"
+    if ($Mode -eq 'EntraOps') { Write-Verbose "EntraOps root   : $EntraOpsRoot" }
+    Write-Verbose "App folder      : $AppRoot"
+
+    if (-not (Test-Path -LiteralPath $RepoRoot -PathType Container)) {
+        throw "Repository root not found: $RepoRoot"
+    }
+    if ($Mode -eq 'EntraOps' -and -not (Test-Path -LiteralPath (Join-Path $EntraOpsRoot 'Classification/Templates') -PathType Container)) {
+        throw "EntraOps classification templates not found: $(Join-Path $EntraOpsRoot 'Classification/Templates'). Pass -EntraOpsRoot pointing at the EntraOps repository root."
+    }
+    if (-not (Test-Path -LiteralPath $AppRoot -PathType Container)) {
+        throw "App folder not found: $AppRoot"
+    }
+    if ((Resolve-FullPath $RepoRoot) -eq (Resolve-FullPath $AppRoot)) {
+        throw "RepoRoot and AppRoot must differ (the app folder is the output target, not the source)."
+    }
+
+    # --- Required / optional source files (relative paths, kept in sync with js/config.js) ----
+    $RequiredFiles = @(
+        # RBAC system outputs (classified roles + role actions) - always from -RepoRoot
+        'Classification/Classification_EntraIdDirectoryRoles.json',
+        'Classification/Classification_EntraIdDirectoryRolesFromMsftDocs.json',
+        'Classification/Classification_IdentityGovernance.json',
+        'Classification/Classification_AzureResources.json',
+        'Classification/Classification_DeviceManagementRoles.json',
+        # Permission catalogs - always from -RepoRoot
+        'Classification/Classification_ApiPermissions.json',
+        'Classification/Classification_AppRoles.json',
+        'Classification/Classification_Scopes.json',
+        # Classification-logic definitions and scope-aware parameter files - from $TemplateBase
+        # (EntraOps_Classification/ in Standalone mode, Classification/Templates/ in EntraOps mode,
+        # the latter from -EntraOpsRoot)
+        "$TemplateBase/Classification_AadResources.json",
+        "$TemplateBase/Classification_AadResources.Param.json",
+        "$TemplateBase/Classification_IdentityGovernance.json",
+        "$TemplateBase/Classification_Azure.json",
+        "$TemplateBase/Classification_Azure.Param.json",
+        "$TemplateBase/Classification_DeviceManagement.json",
+        "$TemplateBase/Classification_DeviceManagement.Param.json",
+        "$TemplateBase/Classification_Defender.json",
+        "$TemplateBase/Classification_Defender.Param.json"
+    )
+
+    # Optional in EntraOps mode only: embedded when present, otherwise embedded as an empty array
+    # instead of failing generation (partial multi-source availability is expected there).
+    # Required (must exist) in Standalone mode, matching this app's original single-source behavior.
+    $OptionalFiles = @()
+    if ($Mode -eq 'EntraOps') {
+        $OptionalFiles = @(
+            "$TemplateBase/Classification_RoleDefinitionOverwrites.json",
+            # Built-in role action / API permission overwrites templates + API permission catalog:
+            # consumed by the Customize Overwrites view (action/permission picker / load-template source).
+            "$TemplateBase/Classification_RoleActionOverwrites.json",
+            "$TemplateBase/Classification_ApiPermissionOverwrites.json",
+            "$TemplateBase/Classification_ApiPermissions.json"
+        )
+    } else {
+        $RequiredFiles += "$TemplateBase/Classification_RoleDefinitionOverwrites.json"
+    }
+
+    # --- Discover tenant-specific classification folders (EntraOps mode only) -----------------
+    # Update-EntraOpsClassificationControlPlaneScope writes parameterized, tenant-specific copies
+    # of the classification-logic files to Classification/<TenantName>/. Every such folder (any
+    # subfolder of Classification other than Templates that contains Classification_*.json files)
+    # is embedded so the app can switch between the built-in template and the tenant-specific
+    # variant, and diff the two (Template Comparison view).
+    $TenantFileSet = [System.Collections.Generic.HashSet[string]]::new()
+    $Tenants = @()
+    if ($Mode -eq 'EntraOps') {
+        $EntraOpsClassificationRoot = Join-Path $EntraOpsRoot 'Classification'
+        foreach ($TenantDir in @(Get-ChildItem -LiteralPath $EntraOpsClassificationRoot -Directory | Where-Object { $_.Name -ne 'Templates' } | Sort-Object Name)) {
+            $TenantJsonFiles = @(Get-ChildItem -LiteralPath $TenantDir.FullName -Filter 'Classification_*.json' -File | Sort-Object Name)
+            if ($TenantJsonFiles.Count -eq 0) { continue }
+            $TenantRelPaths = @($TenantJsonFiles | ForEach-Object { "Classification/$($TenantDir.Name)/$($_.Name)" })
+            foreach ($TenantRelPath in $TenantRelPaths) { [void]$TenantFileSet.Add($TenantRelPath) }
+            $Tenants += [pscustomobject]@{ name = $TenantDir.Name; files = @($TenantRelPaths) }
+            Write-Verbose ("Tenant variant  : {0} ({1} file(s))" -f $TenantDir.Name, $TenantRelPaths.Count)
+        }
+    }
+
+    function Get-SourcePath {
+        param([string]$Rel)
+        if ($Mode -eq 'EntraOps' -and ($Rel -like "$TemplateBase/*" -or $TenantFileSet.Contains($Rel))) {
+            return Join-Path $EntraOpsRoot $Rel
+        }
+        return Join-Path $RepoRoot $Rel
+    }
+
+    # --- Pre-flight: check which required source files exist ---------------------------------
+    $missing = @()
+    foreach ($rel in $RequiredFiles) {
+        $src = Get-SourcePath -Rel $rel
+        if (-not (Test-Path -LiteralPath $src -PathType Leaf)) { $missing += $rel }
+    }
+    if ($Mode -eq 'EntraOps') {
+        # A missing file usually means an RBAC system hasn't been classified/exported yet rather
+        # than a broken environment, so this only warns and embeds an empty array (below) - unless
+        # *none* of the required files are found, which reliably indicates a wrong -RepoRoot /
+        # -EntraOpsRoot rather than a handful of not-yet-available files.
+        if ($missing.Count -eq $RequiredFiles.Count) {
+            throw "None of the required classification source files were found under RepoRoot '$RepoRoot' / EntraOpsRoot '$EntraOpsRoot'. Pass -RepoRoot pointing at your AzurePrivilegedIAM clone if the auto-detected path is wrong."
+        }
+        if ($missing.Count -gt 0) {
+            Write-Warning ("Missing source file(s) under RepoRoot '$RepoRoot' / EntraOpsRoot '$EntraOpsRoot' - these will be embedded as empty data so generation can continue (affected views may show no data for the corresponding RBAC system):`n  - " + ($missing -join "`n  - "))
+        }
+    } elseif ($missing.Count -gt 0) {
+        throw "Missing source file(s) under '$RepoRoot':`n  - " + ($missing -join "`n  - ")
+    }
+
+    $results = New-Object System.Collections.Generic.List[object]
+    $errors = 0
+    $embed = [ordered]@{}
+
+    $AllSourceFiles = @($RequiredFiles) + @($TenantFileSet | Sort-Object)
+    foreach ($rel in $AllSourceFiles) {
+        $src = Get-SourcePath -Rel $rel
+        $isParam = $rel -match '\.Param\.json$'
+
+        if ($Mode -eq 'EntraOps' -and -not (Test-Path -LiteralPath $src -PathType Leaf)) {
+            $embed[($rel -replace '\\', '/')] = @()
+            continue
+        }
+
+        $itemCount = $null
+        try {
+            $raw = Get-Content -LiteralPath $src -Raw -Encoding UTF8
+            $jsonText = if ($isParam) { ConvertTo-SanitizedJsonText $raw } else { $raw }
+            # PowerShell's ConvertFrom-Json collapses a JSON '[]' to $null and a single-element
+            # JSON array to a bare object (not an array). @() around the *entire* if/else
+            # normalizes both back to a real array - every classification file here is a JSON
+            # array and the app calls .forEach()/.map() on the embedded value.
+            $parsedRaw = $jsonText | ConvertFrom-Json
+            $parsed = @(if ($null -ne $parsedRaw) { $parsedRaw })
+            if ($parsed -is [System.Array]) { $itemCount = $parsed.Count }
+        } catch {
+            Write-Error "Invalid JSON in '$rel': $($_.Exception.Message)"
+            $errors++
+            continue
+        }
+
+        $embed[($rel -replace '\\', '/')] = $parsed
+
+        $bytes = (Get-Item -LiteralPath $src).Length
+        $hash = Get-Sha256 -Path $src
+        Write-Verbose ("Read {0} ({1:N0} bytes{2})" -f $rel, $bytes, $(if ($null -ne $itemCount) { ", $itemCount items" } else { '' }))
+
+        $results.Add([pscustomobject]@{
+                Path      = ($rel -replace '\\', '/')
+                Bytes     = $bytes
+                Items     = $itemCount
+                IsParam   = [bool]$isParam
+                Sha256    = $hash
+                UpdatedAt = (Get-Date).ToUniversalTime().ToString('o')
+            }) | Out-Null
+    }
+
+    # --- Optional source files (EntraOps mode): embed when present, embed an empty array otherwise
+    foreach ($rel in $OptionalFiles) {
+        $src = Get-SourcePath -Rel $rel
+        $relKey = $rel -replace '\\', '/'
+        if (-not (Test-Path -LiteralPath $src -PathType Leaf)) {
+            Write-Verbose "Optional source file not found, embedding empty array: $rel"
+            $embed[$relKey] = @()
+            continue
+        }
+
+        $itemCount = $null
+        try {
+            $raw = Get-Content -LiteralPath $src -Raw -Encoding UTF8
+            $parsedRaw = $raw | ConvertFrom-Json
+            $parsed = @(if ($null -ne $parsedRaw) { $parsedRaw })
+            if ($parsed -is [System.Array]) { $itemCount = $parsed.Count }
+        } catch {
+            Write-Error "Invalid JSON in '$rel': $($_.Exception.Message)"
+            $errors++
+            continue
+        }
+
+        $embed[$relKey] = $parsed
+        $bytes = (Get-Item -LiteralPath $src).Length
+        $hash = Get-Sha256 -Path $src
+        Write-Verbose ("Read {0} ({1:N0} bytes{2})" -f $rel, $bytes, $(if ($null -ne $itemCount) { ", $itemCount items" } else { '' }))
+        $results.Add([pscustomobject]@{
+                Path      = $relKey
+                Bytes     = $bytes
+                Items     = $itemCount
+                IsParam   = $false
+                Sha256    = $hash
+                UpdatedAt = (Get-Date).ToUniversalTime().ToString('o')
+            }) | Out-Null
+    }
+
+    if ($errors -gt 0) {
+        throw "$errors source file(s) failed JSON validation. No manifest written."
+    }
+
+    # --- Validate attack-path mappings against the embedded classification data ----------------
+    # Attack-path markdown is intentionally descriptive, but Actions, Roles and Permissions are
+    # machine-linked by the Explorer. Warn about stale or misspelled declarations without blocking
+    # data generation so contributors can iterate on new paths before classifications are updated.
+    function Test-AttackPathIds {
+        param([string]$Directory)
+
+        if (-not (Test-Path -LiteralPath $Directory -PathType Container)) { return }
+
+        $ids = @{}
+        foreach ($file in Get-ChildItem -LiteralPath $Directory -Filter '*.md') {
+            $idLine = Get-Content -LiteralPath $file.FullName -Encoding UTF8 | Where-Object { $_ -match '^id:\s*(.+)$' } | Select-Object -First 1
+            if (-not $idLine) { throw "Attack-path frontmatter is missing an id: $($file.Name)" }
+            $id = [regex]::Match($idLine, '^id:\s*(.+)$').Groups[1].Value.Trim()
+            if ($ids.ContainsKey($id)) {
+                throw "Duplicate attack-path id '$id' in '$($ids[$id])' and '$($file.Name)'."
+            }
+            $ids[$id] = $file.Name
+        }
+    }
+
+    function Test-AttackPathMappings {
+        param([string]$Directory, [hashtable]$Data)
+
+        if (-not (Test-Path -LiteralPath $Directory -PathType Container)) { return }
+
+        $sourceFiles = [ordered]@{
+            EntraID            = 'Classification/Classification_EntraIdDirectoryRoles.json'
+            IdentityGovernance = 'Classification/Classification_IdentityGovernance.json'
+            Azure              = 'Classification/Classification_AzureResources.json'
+            DeviceManagement   = 'Classification/Classification_DeviceManagementRoles.json'
+        }
+        $roleNames = @{}
+        $actions = @{}
+        foreach ($system in $sourceFiles.Keys) {
+            $items = @($Data[$sourceFiles[$system]])
+            $roleNames[$system] = @($items | ForEach-Object { Get-JsonProp $_ 'RoleName' })
+            $actions[$system] = @($items | ForEach-Object { Get-JsonProp $_ 'RolePermissions' } | ForEach-Object { Get-JsonProp $_ 'AuthorizedResourceAction' })
+        }
+        $permissions = @($Data['Classification/Classification_ApiPermissions.json'])
+
+        foreach ($file in Get-ChildItem -LiteralPath $Directory -Filter '*.md') {
+            $section = ''
+            $lineNumber = 0
+            foreach ($line in Get-Content -LiteralPath $file.FullName -Encoding UTF8) {
+                $lineNumber++
+                if ($line -match '^## (Actions|Roles|Permissions)$') { $section = $Matches[1]; continue }
+                if ($line -match '^## ') { $section = ''; continue }
+                if ([string]::IsNullOrEmpty($section) -or $line -notmatch '^[-*]\s+(.+)$') { continue }
+
+                $parts = @($Matches[1].Split('|') | ForEach-Object { $_.Trim() })
+                if (($section -eq 'Actions' -or $section -eq 'Roles') -and $parts.Count -eq 2 -and $sourceFiles.Contains($parts[0])) {
+                    $isKnown = if ($section -eq 'Actions') {
+                        $knownActions = $actions[$parts[0]]
+                        ($knownActions -contains $parts[1]) -or @($knownActions | Where-Object {
+                                $_ -and $_.Contains('*') -and $parts[1] -like $_
+                            }).Count -gt 0
+                    } else {
+                        $roleNames[$parts[0]] -contains $parts[1]
+                    }
+                    if (-not $isKnown) {
+                        Write-Warning ("Attack-path mapping unresolved: {0}:{1} [{2}] {3} | {4}" -f $file.Name, $lineNumber, $section, $parts[0], $parts[1])
+                    }
+                    continue
+                }
+                if ($section -eq 'Permissions' -and $parts.Count -eq 3 -and $permissions.Count -gt 0) {
+                    $isKnown = @($permissions | Where-Object {
+                            (Get-JsonProp $_ 'TargetAppDisplayName') -eq $parts[0] -and
+                            (Get-JsonProp $_ 'PermissionValue') -eq $parts[1] -and
+                            (Get-JsonProp $_ 'PermissionType') -eq $parts[2]
+                        }).Count -gt 0
+                    if (-not $isKnown) {
+                        Write-Warning ("Attack-path mapping unresolved: {0}:{1} [Permissions] {2} | {3} | {4}" -f $file.Name, $lineNumber, $parts[0], $parts[1], $parts[2])
+                    }
+                }
+            }
+        }
+    }
+
+    $attackPathDirectory = Join-Path $AppRoot 'content/attack-paths'
+    Test-AttackPathIds -Directory $attackPathDirectory
+    Test-AttackPathMappings -Directory $attackPathDirectory -Data $embed
+
+    # --- Write the data manifest ---------------------------------------------------------------
+    if (-not $SkipManifest) {
+        $manifestPath = Join-Path $AppRoot 'data-manifest.json'
+        $manifest = [ordered]@{
+            generatedUtc = (Get-Date).ToUniversalTime().ToString('o')
+            mode         = $Mode
+            repoRoot     = Split-Path -Leaf $RepoRoot
+            fileCount    = $results.Count
+            files        = @($results | ForEach-Object {
+                    [ordered]@{ path = $_.Path; bytes = $_.Bytes; items = $_.Items; param = $_.IsParam; sha256 = $_.Sha256 }
+                })
+        }
+        if ($PSCmdlet.ShouldProcess($manifestPath, 'Write data-manifest.json')) {
+            ($manifest | ConvertTo-Json -Depth 5) | Set-Content -LiteralPath $manifestPath -Encoding UTF8
+            Write-Verbose "Wrote manifest: $manifestPath"
+        }
+    }
+
+    # --- Write the embedded JS bundle (lets the app run with no web server, file://) -----------
+    $embedBytes = 0
+    if (-not $SkipEmbed) {
+        $embedDir = Join-Path $AppRoot 'data'
+        $embedPath = Join-Path $embedDir 'classification-data.js'
+        if (-not (Test-Path -LiteralPath $embedDir)) {
+            if ($PSCmdlet.ShouldProcess($embedDir, 'Create directory')) {
+                New-Item -ItemType Directory -Path $embedDir -Force | Out-Null
+            }
+        }
+
+        # Escape angle brackets so a stray '</script>' in any value can never break out of the
+        # surrounding <script> tag.
+        $jsonData = ($embed | ConvertTo-Json -Depth 100 -Compress)
+        $jsonData = $jsonData.Replace('<', '\u003c').Replace('>', '\u003e')
+
+        $embedMeta = [ordered]@{
+            generatedUtc = (Get-Date).ToUniversalTime().ToString('o')
+            mode         = $Mode
+            fileCount    = $results.Count
+            files        = @($results | ForEach-Object { [ordered]@{ path = $_.Path; items = $_.Items; sha256 = $_.Sha256 } })
+        }
+        $metaJson = ($embedMeta | ConvertTo-Json -Depth 5 -Compress)
+
+        # Tenant-specific classification variants (EntraOps mode only) - consumed by the app's
+        # variant selector and the Template Comparison view. Always emitted (empty array in
+        # Standalone mode) so js/config.js can read window.EOCE_TENANTS unconditionally.
+        $tenantsJson = ConvertTo-Json -InputObject ([object[]]$Tenants) -Depth 5 -Compress
+        if ([string]::IsNullOrEmpty($tenantsJson)) { $tenantsJson = '[]' }
+        $tenantsJson = $tenantsJson.Replace('<', '\u003c').Replace('>', '\u003e')
+
+        $header = "/* Classification Explorer ($Mode mode) - embedded classification data.`n" +
+        "   Auto-generated by Scripts/Update-EntraOpsClassificationExplorerData.ps1 on $((Get-Date).ToUniversalTime().ToString('o')).`n" +
+        "   Do not edit by hand - re-run the script to refresh. */"
+        $content = "$header`nwindow.EOCE_DATA = $jsonData;`nwindow.EOCE_DATA_MANIFEST = $metaJson;`nwindow.EOCE_TENANTS = $tenantsJson;`n"
+
+        if ($PSCmdlet.ShouldProcess($embedPath, 'Write classification-data.js')) {
+            Set-Content -LiteralPath $embedPath -Value $content -Encoding UTF8
+            $embedBytes = (Get-Item -LiteralPath $embedPath).Length
+            Write-Verbose ("Wrote embedded bundle: {0} ({1:N0} bytes)" -f $embedPath, $embedBytes)
+        }
+    }
+
+    # --- Build the attack-path catalog from markdown (content/attack-paths/*.md) ---------------
+    $attackBytes = 0
+    $attackDir = Join-Path $AppRoot 'content/attack-paths'
+    if (Test-Path -LiteralPath $attackDir -PathType Container) {
+        $mdFiles = Get-ChildItem -LiteralPath $attackDir -Filter '*.md' | Sort-Object Name
+        $indexPath = Join-Path $attackDir 'index.json'
+        if (Test-Path -LiteralPath $indexPath -PathType Leaf) {
+            $order = Get-Content -LiteralPath $indexPath -Raw | ConvertFrom-Json
+            $ordered = @()
+            foreach ($id in $order) { $f = $mdFiles | Where-Object { $_.BaseName -eq $id }; if ($f) { $ordered += $f } }
+            foreach ($f in $mdFiles) { if ($order -notcontains $f.BaseName) { $ordered += $f } }
+            $mdFiles = $ordered
+        }
+        $mdTexts = @($mdFiles | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw -Encoding UTF8 })
+        $attackJson = ($mdTexts | ConvertTo-Json -Depth 3 -Compress)
+        if ($mdTexts.Count -eq 1) { $attackJson = "[$attackJson]" }
+        $attackJson = $attackJson.Replace('<', '\u003c').Replace('>', '\u003e')
+        $attackPath = Join-Path $AppRoot 'data/attack-paths.js'
+        $attackHeader = "/* Classification Explorer ($Mode mode) - embedded attack-path catalog.`n" +
+        "   Auto-generated by Scripts/Update-EntraOpsClassificationExplorerData.ps1 from content/attack-paths/*.md on $((Get-Date).ToUniversalTime().ToString('o')).`n" +
+        "   Do not edit by hand - edit the markdown files and re-run the script. */"
+        $attackContent = "$attackHeader`nwindow.EOCE_ATTACK_PATHS_MD = $attackJson;`n"
+        if ($PSCmdlet.ShouldProcess($attackPath, 'Write data/attack-paths.js')) {
+            Set-Content -LiteralPath $attackPath -Value $attackContent -Encoding UTF8
+            $attackBytes = (Get-Item -LiteralPath $attackPath).Length
+            Write-Verbose ("Wrote attack-path catalog: {0} ({1} paths, {2:N0} bytes)" -f $attackPath, $mdTexts.Count, $attackBytes)
+        }
+    }
+
+    # --- Build the Enterprise Access Model Map (Overview Sankey) dataset -----------------------
+    $tierMapBytes = 0
+    $tierMapCount = 0
+    if (-not $SkipEmbed) {
+        $tierMapPaths = ConvertTo-TierMapPaths -Embed $embed
+        $tierMapCount = @($tierMapPaths).Count
+        $tierMapObj = [ordered]@{
+            generatedUtc = (Get-Date).ToUniversalTime().ToString('o')
+            pathCount    = $tierMapCount
+            paths        = @($tierMapPaths)
+        }
+        $tierMapJson = ($tierMapObj | ConvertTo-Json -Depth 10 -Compress)
+        $tierMapJson = $tierMapJson.Replace('<', '\u003c').Replace('>', '\u003e')
+        $tierMapPath = Join-Path $AppRoot 'data/tier-map.js'
+        $tierMapHeader = "/* Classification Explorer ($Mode mode) - embedded Enterprise Access Model Map (Overview Sankey) dataset.`n" +
+        "   Auto-generated by Scripts/Update-EntraOpsClassificationExplorerData.ps1 on $((Get-Date).ToUniversalTime().ToString('o')).`n" +
+        "   Do not edit by hand - re-run the script to refresh. */"
+        $tierMapContent = "$tierMapHeader`nwindow.EOCE_TIER_MAP = $tierMapJson;`n"
+        if ($PSCmdlet.ShouldProcess($tierMapPath, 'Write data/tier-map.js')) {
+            Set-Content -LiteralPath $tierMapPath -Value $tierMapContent -Encoding UTF8
+            $tierMapBytes = (Get-Item -LiteralPath $tierMapPath).Length
+            Write-Verbose ("Wrote EAM Map dataset: {0} ({1} paths, {2:N0} bytes)" -f $tierMapPath, $tierMapCount, $tierMapBytes)
+        }
+    }
+
+    # --- Build the change history (git log) for the History view - Standalone mode only --------
+    # The History view is hidden in EntraOps mode (see js/config.js EOCE.isEntraOpsMode()), so
+    # this (relatively slow) step is skipped entirely there regardless of -SkipHistory.
+    $historyBytes = 0
+    $historySummary = @()
+    if ($Mode -eq 'Standalone' -and -not $SkipHistory) {
+        $gitOk = $true
+        try {
+            $null = & git -C $RepoRoot rev-parse --is-inside-work-tree 2>$null
+            if ($LASTEXITCODE -ne 0) { $gitOk = $false }
+        } catch {
+            $gitOk = $false
+        }
+        if (-not $gitOk) {
+            Write-Warning "git is unavailable or '$RepoRoot' is not a git working tree - writing empty history data."
+        }
+
+        $historyResultSources = [ordered]@{}
+        foreach ($key in $HistorySources.Keys) {
+            $src = $HistorySources[$key]
+            $commits = New-Object System.Collections.Generic.List[object]
+
+            if ($gitOk) {
+                $sep = [char]0x1f
+                $format = "%H${sep}%ad${sep}%an${sep}%s"
+                $logLines = & git -C $RepoRoot log --reverse --date=iso-strict "--format=$format" -- $src.file 2>$null
+                if ($LASTEXITCODE -ne 0) { $logLines = @() }
+                if ($null -eq $logLines) { $logLines = @() }
+                if ($logLines -isnot [System.Array]) { $logLines = @($logLines) }
+
+                $prevIndex = [ordered]@{}
+                foreach ($line in $logLines) {
+                    if ([string]::IsNullOrWhiteSpace($line)) { continue }
+                    $parts = $line -split [string][char]0x1f, 4
+                    if ($parts.Count -lt 4) { continue }
+                    $sha = $parts[0]; $date = $parts[1]; $author = $parts[2]; $subject = $parts[3]
+
+                    $content = $null
+                    try { $content = & git -C $RepoRoot show "${sha}:$($src.file)" 2>$null } catch { $content = $null }
+                    $parsedHist = $null
+                    if ($content -and $LASTEXITCODE -eq 0) {
+                        $text = ($content -join "`n")
+                        try { $parsedHist = $text | ConvertFrom-Json } catch { $parsedHist = $null }
+                    }
+                    $currIndex = ConvertTo-HistoryIndex -Parsed $parsedHist -Kind $src.kind
+                    $diff = Compare-HistoryIndex -Previous $prevIndex -Current $currIndex -Kind $src.kind
+
+                    if ($diff.added.Count -gt 0 -or $diff.removed.Count -gt 0 -or $diff.changed.Count -gt 0) {
+                        $commits.Add([ordered]@{
+                                sha     = $sha.Substring(0, 10)
+                                date    = $date
+                                author  = $author
+                                subject = $subject
+                                added   = $diff.added
+                                removed = $diff.removed
+                                changed = $diff.changed
+                            }) | Out-Null
+                    }
+                    $prevIndex = $currIndex
+                }
+            }
+
+            $historyResultSources[$key] = [ordered]@{
+                label       = $src.label
+                kind        = $src.kind
+                file        = $src.file
+                commitCount = $commits.Count
+                commits     = @($commits.ToArray())
+            }
+            $historySummary += [pscustomobject]@{ Source = $key; Commits = $commits.Count }
+            Write-Verbose ("History {0}: {1} commit(s) with changes" -f $key, $commits.Count)
+        }
+
+        $historyObj = [ordered]@{
+            generatedUtc = (Get-Date).ToUniversalTime().ToString('o')
+            sources      = $historyResultSources
+        }
+        $historyJson = ($historyObj | ConvertTo-Json -Depth 12 -Compress)
+        $historyJson = $historyJson.Replace('<', '\u003c').Replace('>', '\u003e')
+
+        $historyPath = Join-Path $AppRoot 'data/history-data.js'
+        $historyHeader = "/* Classification Explorer (Standalone mode) - embedded classification change history (git log).`n" +
+        "   Auto-generated by Scripts/Update-EntraOpsClassificationExplorerData.ps1 on $((Get-Date).ToUniversalTime().ToString('o')).`n" +
+        "   Do not edit by hand - re-run the script to refresh. */"
+        $historyContent = "$historyHeader`nwindow.EOCE_HISTORY = $historyJson;`n"
+        if ($PSCmdlet.ShouldProcess($historyPath, 'Write data/history-data.js')) {
+            Set-Content -LiteralPath $historyPath -Value $historyContent -Encoding UTF8
+            $historyBytes = (Get-Item -LiteralPath $historyPath).Length
+            Write-Verbose ("Wrote change history: {0} ({1:N0} bytes)" -f $historyPath, $historyBytes)
+        }
+    }
+
+    # --- Summary ---------------------------------------------------------------------------
+    $totalBytes = ($results | Measure-Object -Property Bytes -Sum).Sum
+    Write-Host ("Classification Explorer ($Mode mode) - data refresh complete.") -ForegroundColor Green
+    Write-Host ("  Source files  : {0}" -f $results.Count)
+    Write-Host ("  Total size    : {0:N0} KB" -f ([math]::Round($totalBytes / 1KB)))
+    Write-Host ("  Output folder : {0}" -f $AppRoot)
+    if (-not $SkipManifest) {
+        Write-Host ("  Manifest      : data-manifest.json")
+    }
+    if (-not $SkipEmbed) {
+        Write-Host ("  Embedded data : data/classification-data.js ({0:N0} KB) - app runs with no web server" -f ([math]::Round($embedBytes / 1KB)))
+    }
+    if ($attackBytes -gt 0) {
+        Write-Host ("  Attack paths  : data/attack-paths.js ({0:N0} KB) - from content/attack-paths/*.md" -f ([math]::Round($attackBytes / 1KB)))
+    }
+    if ($tierMapBytes -gt 0) {
+        Write-Host ("  EAM Map       : data/tier-map.js ({0:N0} KB, {1} paths) - Overview Sankey" -f ([math]::Round($tierMapBytes / 1KB)), $tierMapCount)
+    }
+    if ($Mode -eq 'EntraOps') {
+        Write-Host ("  Tenants       : {0} tenant-specific variant(s)" -f $Tenants.Count)
+    }
+    if ($Mode -eq 'Standalone' -and -not $SkipHistory) {
+        Write-Host ("  History       : data/history-data.js ({0:N0} KB) - git log per source:" -f ([math]::Round($historyBytes / 1KB)))
+        foreach ($s in $historySummary) { Write-Host ("    {0,-20} {1} commit(s)" -f $s.Source, $s.Commits) }
+    }
+
+    if ($PassThru) { $results }
+}

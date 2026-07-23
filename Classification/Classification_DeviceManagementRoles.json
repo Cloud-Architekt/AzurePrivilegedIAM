@@ -122,7 +122,7 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AndroidSync/UpdateApps",
-        "Category": "Global Mobile Device Management",
+        "Category": "Global Android Sync Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
@@ -917,7 +917,7 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/MobileThreatDefense/Modify",
-        "Category": "Global Endpoint Security Management",
+        "Category": "Global Threat Defense Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
@@ -1487,6 +1487,18 @@
         "EAMTierLevelTagValue": "0"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/TriggerEnhancedLogCollection",
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/CancelEnhancedLogCollection",
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.Intune/AssignmentFilter/Read",
         "Category": "Intune Configuration (Reader)",
         "EAMTierLevelName": "UserAccess",
@@ -1869,7 +1881,7 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AppleEnrollmentProfiles/Create",
-        "Category": "Global Device Enrollment Management",
+        "Category": "Global Apple Enrollment Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
@@ -1881,19 +1893,19 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AppleEnrollmentProfiles/Update",
-        "Category": "Global Device Enrollment Management",
+        "Category": "Global Apple Enrollment Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AppleEnrollmentProfiles/Delete",
-        "Category": "Global Device Enrollment Management",
+        "Category": "Global Apple Enrollment Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AppleEnrollmentProfiles/Assign",
-        "Category": "Global Device Enrollment Management",
+        "Category": "Global Apple Enrollment Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
@@ -1989,19 +2001,19 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AndroidSync/UpdateEnrollmentProfiles",
-        "Category": "Global Mobile Device Management",
+        "Category": "Global Android Sync Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AndroidSync/UpdateOnboarding",
-        "Category": "Global Mobile Device Management",
+        "Category": "Global Android Sync Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AndroidSync/UpdateApps",
-        "Category": "Global Mobile Device Management",
+        "Category": "Global Android Sync Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
@@ -2609,19 +2621,19 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AppleEnrollmentProfiles/Assign",
-        "Category": "Global Device Enrollment Management",
+        "Category": "Global Apple Enrollment Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AppleEnrollmentProfiles/Create",
-        "Category": "Global Device Enrollment Management",
+        "Category": "Global Apple Enrollment Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AppleEnrollmentProfiles/Delete",
-        "Category": "Global Device Enrollment Management",
+        "Category": "Global Apple Enrollment Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
@@ -2633,7 +2645,7 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/AppleEnrollmentProfiles/Update",
-        "Category": "Global Device Enrollment Management",
+        "Category": "Global Apple Enrollment Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
@@ -2999,6 +3011,18 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/DeviceLogs",
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/TriggerEnhancedLogCollection",
+        "Category": "Global Remote Assistance",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/RemoteTasks/CancelEnhancedLogCollection",
         "Category": "Global Remote Assistance",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"

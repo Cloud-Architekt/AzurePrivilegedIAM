@@ -44,7 +44,7 @@ function Export-EntraOpsClassificationDirectoryRoles {
         $IncludeCustomRoles = $False
         ,
         [Parameter(Mandatory = $false)]
-        $IncludeInheritedPermissions = $True
+        $IncludeInheritedPermissions = $false
     )
 
     # Resolve role actions inherited via "inheritsPermissionsFrom" (e.g. a custom role based on a built-in role
@@ -164,8 +164,7 @@ function Export-EntraOpsClassificationDirectoryRoles {
 
         if ($SingleClassification -eq $True) {
             $RoleDefinitionClassification = ($ClassifiedDirectoryRolePermissions | select-object -ExcludeProperty AuthorizedResourceAction, Category -Unique | Sort-Object EAMTierLevelTagValue | select-object -First 1)
-        }
-        else {
+        } else {
             $FilteredRoleClassifications = ($ClassifiedDirectoryRolePermissions | select-object -ExcludeProperty AuthorizedResourceAction -Unique | Sort-Object EAMTierLevelTagValue )
             $RoleDefinitionClassification = [System.Collections.Generic.List[object]]::new()
             $RoleDefinitionClassification.Add($FilteredRoleClassifications)        

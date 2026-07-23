@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'self';">
+    <title>EntraOps Classification Explorer</title>
+    <meta name="description"
+        content="Explore, navigate and understand the EntraOps Enterprise Access Model classification of roles, role actions and permissions across Microsoft Entra ID, Azure and Intune RBAC systems." />
+    <link rel="icon" href="assets/EntraOps.png" />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+    <!-- Top app bar -->
+    <header class="appbar">
+        <button class="btn nav-toggle" id="navToggle" aria-label="Toggle navigation"
+            style="background:transparent;border:none;color:#fff;font-size:18px;">&#9776;</button>
+        <div class="brand">
+            <img src="assets/EntraOps.png" alt="EntraOps logo" />
+            <span>EntraOps Classification Explorer</span>
+            <span class="sub">Enterprise Access Model</span>
+        </div>
+        <div class="spacer"></div>
+        <label class="variant-picker" id="variantPicker" data-mode="entraops" hidden>
+            <span>Classification source</span>
+            <select id="variantSelect" aria-label="Classification source"></select>
+        </label>
+        <a class="appbar-link" id="docsLink" target="_blank" rel="noopener noreferrer">Enterprise Access Model docs
+            &#8599;</a>
+        <a class="appbar-link" id="repoLink" target="_blank" rel="noopener noreferrer">EntraOps on GitHub &#8599;</a>
+    </header>
+
+    <div class="layout">
+        <!-- Left navigation rail -->
+        <nav class="nav" id="nav">
+            <button type="button" class="nav-collapse-toggle" id="navCollapseToggle" title="Collapse navigation"
+                aria-label="Collapse navigation" aria-expanded="true">&#171;</button>
+            <div class="nav-group-label">Insights</div>
+            <div class="nav-item" data-route="dashboard"><span class="ico">&#9632;</span><span>Dashboard</span></div>
+            <div class="nav-item" data-route="model"><span class="ico">&#9650;</span><span>Enterprise Access
+                    Model</span></div>
+
+            <div class="nav-group-label">Explore</div>
+            <div class="nav-item" data-route="overview"><span class="ico">&#8862;</span><span>Overview</span></div>
+            <div class="nav-item" data-route="roles"><span class="ico">&#9737;</span><span>Roles</span><span
+                    class="count" id="cnt-roles"></span></div>
+            <div class="nav-item" data-route="actions"><span class="ico">&#8801;</span><span>Role Actions</span><span
+                    class="count" id="cnt-actions"></span></div>
+            <div class="nav-item" data-route="permissions"><span class="ico">&#9919;</span><span>API
+                    Permissions</span><span class="count" id="cnt-perms"></span></div>
+
+            <div class="nav-group-label">Threat insights</div>
+            <div class="nav-item" data-route="attackpaths"><span class="ico">&#9888;</span><span>Attack
+                    Paths</span><span class="count" id="cnt-attack"></span></div>
+
+            <div class="nav-group-label">Classification logic</div>
+            <div class="nav-item" data-route="scoped"><span class="ico">&#10227;</span><span>Scope-aware Tiering</span>
+            </div>
+            <div class="nav-item" data-route="overwrites"><span class="ico">&#9998;</span><span>Role
+                    Overwrites</span><span class="count" id="cnt-ovr"></span></div>
+            <div class="nav-item" data-route="customize" data-mode="entraops"><span class="ico">&#9881;</span><span>Customize
+                    Overwrites</span></div>
+            <div class="nav-item" data-route="compare" data-mode="entraops"><span class="ico">&#8646;</span><span>Template
+                    Comparison</span></div>
+
+            <div class="nav-group-label" data-mode="standalone">History</div>
+            <div class="nav-item" data-route="history" data-mode="standalone"><span class="ico">&#8635;</span><span>Change
+                    History</span></div>
+        </nav>
+
+        <main class="main" id="app">
+            <div class="loading">
+                <div class="spinner"></div>Loading classification data&hellip;
+            </div>
+        </main>
+    </div>
+
+    <!-- Detail drawer -->
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+    <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle"
+        aria-hidden="true">
+        <div class="drawer-head">
+            <div style="min-width:0;">
+                <div id="drawerEyebrow" class="breadcrumb" style="margin:0 0 4px;"></div>
+                <h2 class="title" id="drawerTitle"></h2>
+            </div>
+            <button class="close" id="drawerClose" aria-label="Close details">&times;</button>
+        </div>
+        <div class="drawer-body" id="drawerBody"></div>
+    </aside>
+
+    <!-- Role Comparison blade (contextual, triggered from the Roles table's
+         compare checkboxes or the role details drawer) -->
+    <div class="eo-cmp-backdrop" id="cmpBackdrop"></div>
+    <div class="eo-cmp-modal" id="cmpModal" role="dialog" aria-modal="true" aria-labelledby="cmpTitle">
+        <div class="eo-cmp-head">
+            <span class="title" id="cmpTitle">&#8644; Role Comparison</span>
+            <button class="close" id="cmpClose" aria-label="Close comparison">&#10005;</button>
+        </div>
+        <div class="eo-cmp-body" id="cmpBody"></div>
+    </div>
+
+    <!-- Scripts (classic, ordered) -->
+    <!-- Deployment mode: sets window.EOCE_MODE ('standalone' | 'entraops'). The only file
+         in this app that intentionally differs between the two deployments - never synced
+         by Scripts/Sync-EntraOpsClassificationExplorerSource.ps1. -->
+    <script src="js/mode.js"></script>
+    <!-- Embedded classification data, always generated by Scripts/Update-EntraOpsClassificationExplorerData.ps1
+         (-Mode Standalone|EntraOps). The app runs fully client-side from file:// with no web server
+         and no runtime fetch fallback. In entraops mode this bundle also sets window.EOCE_TENANTS
+         (tenant-specific classification variants). -->
+    <script src="data/classification-data.js"></script>
+    <script src="data/attack-paths.js"></script>
+    <!-- Optional embedded tier-map dataset. When absent the Overview view derives the same data
+         from the embedded classification bundle. -->
+    <script src="data/tier-map.js"></script>
+    <!-- Optional embedded change history (standalone mode only, from `git log`, skip with
+         -SkipHistory). When absent the History view shows an empty state. -->
+    <script src="data/history-data.js"></script>
+    <!-- d3 + d3-sankey power the Overview (Enterprise Access Model Map) Sankey diagram.
+         Vendored locally so the app stays fully self-contained and works from file:// with no internet. -->
+    <script src="assets/vendor/d3.min.js"></script>
+    <script src="assets/vendor/d3-sankey.min.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/review.js"></script>
+    <script src="js/navCollapse.js"></script>
+    <script src="js/views/overview.js"></script>
+    <script src="js/views/tiermap.js"></script>
+    <script src="js/views/roles.js"></script>
+    <script src="js/views/actions.js"></script>
+    <script src="js/views/permissions.js"></script>
+    <script src="js/views/scoped.js"></script>
+    <script src="js/views/overwrites.js"></script>
+    <script src="js/views/history.js"></script>
+    <script src="js/views/customize.js"></script>
+    <script src="js/views/compare.js"></script>
+    <script src="js/views/attackpaths.js"></script>
+    <script src="js/roleCompare.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

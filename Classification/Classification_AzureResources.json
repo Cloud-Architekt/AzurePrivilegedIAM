@@ -7721,6 +7721,280 @@
     }
   },
   {
+    "RoleId": "82b2f1a9-9593-4498-a824-c209343a28ec",
+    "RoleName": "Azure AI Manager and Namespace RBAC Inference Operator",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Allows read access to all objects in an Azure AI Manager namespace, plus the ability to read Secrets and invoke inference against AI models deployed in that namespace. This role does not allow modifying objects, roles, or role bindings. However, the ability to read Secrets allows the holder to obtain ServiceAccount tokens in the namespace. Applying this role at the AI Manager scope will give access across all namespaces.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/inference/action",
+        "ActionType": "DataAction",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Authorization/*/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/apps/controllerrevisions/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/apps/daemonsets/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/apps/deployments/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/apps/replicasets/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/apps/statefulsets/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/autoscaling/horizontalpodautoscalers/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/batch/cronjobs/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/batch/jobs/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/configmaps/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/discovery.k8s.io/endpointslices/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/endpoints/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/events.k8s.io/events/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/events/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/extensions/daemonsets/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/extensions/deployments/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/extensions/ingresses/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/extensions/networkpolicies/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/extensions/replicasets/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/limitranges/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/metrics.k8s.io/nodes/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/metrics.k8s.io/pods/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/namespaces/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/networking.k8s.io/ingresses/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/networking.k8s.io/networkpolicies/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/persistentvolumeclaims/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/pods/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/policy/poddisruptionbudgets/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/replicationcontrollers/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/resourcequotas/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/secrets/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/serviceaccounts/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/services/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Resources/subscriptions/operationresults/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Resources/subscriptions/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
     "RoleId": "11102f94-c441-49e6-a78b-ef80e0188abc",
     "RoleName": "Azure AI Safety Evaluator",
     "IsCustom": false,
@@ -31002,6 +31276,13 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.Insights/dataCollectionRuleAssociations/write",
+        "ActionType": "Action",
+        "Category": "Monitor",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.Resources/deployments/*",
         "ActionType": "Action",
         "Category": "Resource Management",
@@ -31213,6 +31494,13 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Insights/AlertRules/Read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Insights/dataCollectionRuleAssociations/read",
         "ActionType": "Action",
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",
@@ -36212,6 +36500,13 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.ChangeSafety/changeRecords/verifyChangeValidity/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.ChangeSafety/changeRecords/write",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
@@ -36234,6 +36529,13 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.ChangeSafety/changeStates/stageProgressions/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ChangeSafety/changeStates/verifyChangeValidity/action",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
@@ -44643,6 +44945,20 @@
         "Category": "General Management Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.DocumentDB/databaseAccounts/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.DocumentDB/locations/operationsStatus/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       }
     ],
     "Classification": {
@@ -54092,6 +54408,13 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Mission/approvals/initiatorCallback/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Mission/approvals/notifyInitiator/action",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
@@ -68709,6 +69032,28 @@
     }
   },
   {
+    "RoleId": "5e523d62-66de-4912-99be-6b009b7839cc",
+    "RoleName": "Microsoft Discovery Chat Model Reader - Preview",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Read-only access to Discovery chat model deployments: allows listing chat model deployments and reading their details. Does not allow creating, modifying, or deleting deployments. Intended to be assigned alongside Discovery project roles so users can view and select the models available to them (e.g. in the agent-create model picker). This role is in preview and subject to change.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.Discovery/workspaces/chatModelDeployments/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "UserAccess",
+      "EAMTierLevelTagValue": "2"
+    }
+  },
+  {
     "RoleId": "7a2b6e6c-472e-4b39-8878-a26eb63d75c6",
     "RoleName": "Microsoft Discovery Platform Administrator (Preview)",
     "IsCustom": false,
@@ -69036,6 +69381,120 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "UserAccess",
+      "EAMTierLevelTagValue": "2"
+    }
+  },
+  {
+    "RoleId": "c883607b-5c40-4930-b09a-19f58ae1c538",
+    "RoleName": "Microsoft Discovery Project Contributor - Preview",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Full operational control over an existing Discovery project: investigations and conversations (read/write/delete) plus project settings update and deletion. Does not allow creating new projects, assigning roles, or managing tools or knowledge bases. This role is in preview and subject to change.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.Discovery/workspaces/conversations/delete",
+        "ActionType": "DataAction",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Discovery/workspaces/conversations/write",
+        "ActionType": "DataAction",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Discovery/workspaces/projects/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Discovery/workspaces/projects/investigations/delete",
+        "ActionType": "DataAction",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Discovery/workspaces/projects/investigations/write",
+        "ActionType": "DataAction",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Discovery/workspaces/projects/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Discovery/workspaces/conversations/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Discovery/workspaces/projects/investigations/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Discovery/workspaces/projects/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "ac7d1e6d-3070-4d7d-9cd9-7adbf5cdd579",
+    "RoleName": "Microsoft Discovery Project Reader - Preview",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Read-only access to an existing Discovery project and its contents, including its investigations and conversations. Does not allow creating, modifying, or deleting any resources, nor assigning roles. This role is in preview and subject to change.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.Discovery/workspaces/conversations/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Discovery/workspaces/projects/investigations/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Discovery/workspaces/projects/read",
         "ActionType": "Action",
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",
@@ -76044,6 +76503,79 @@
     }
   },
   {
+    "RoleId": "97922edc-56af-49a9-8996-4679a6e10e68",
+    "RoleName": "Provisioned Machine Admin",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Grants full access to Azure Stack HCI Provisioned Machine resources, including disk management, device reset, deletion, and the ability to assign others as Provisioned Machine Reader and/or Contributor",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.AzureStackHCI/edgeMachines/*",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "dab09fbf-28d0-4b30-b97e-d2a0f680847a",
+    "RoleName": "Provisioned Machine Contributor",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Grants permissions to manage Azure Stack HCI Provisioned Machine resources, excluding disk management, device reset, and resource deletion",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.AzureStackHCI/edgeMachines/*",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "cc733c34-b633-4850-8d77-77aa26638325",
+    "RoleName": "Provisioned Machine Reader",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Grants read-only access to Azure Stack HCI Provisioned Machine resources",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.AzureStackHCI/EdgeMachines/jobs/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.AzureStackHCI/EdgeMachines/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "UserAccess",
+      "EAMTierLevelTagValue": "2"
+    }
+  },
+  {
     "RoleId": "a2425b74-61f3-4bff-97cb-d0e3bc906777",
     "RoleName": "Pure Storage Cloud VM Volume Group Mount Reader",
     "IsCustom": false,
@@ -76257,6 +76789,70 @@
     "Classification": {
       "EAMTierLevelName": "ManagementPlane",
       "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "27af9d98-85b7-4dad-bc1b-df53a7fc8877",
+    "RoleName": "Quantum Workspace Data Reader",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Read jobs and other Workspace data.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.Authorization/*/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Insights/alertRules/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Quantum/locations/offerings/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Quantum/Workspaces/jobs/read",
+        "ActionType": "DataAction",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Quantum/Workspaces/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Resources/deployments/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "UserAccess",
+      "EAMTierLevelTagValue": "2"
     }
   },
   {
@@ -82325,8 +82921,22 @@
     "RichDescription": "Full control of the agent—manage chats, incident response plans, and agent run modes; approve and execute commands.",
     "RolePermissions": [
       {
+        "AuthorizedResourceAction": "Microsoft.App/agents/*/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.App/agents/*/delete",
         "ActionType": "DataAction",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.App/agents/*/listSecrets/action",
+        "ActionType": "Action",
         "Category": "General Management Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"

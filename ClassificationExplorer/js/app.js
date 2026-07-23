@@ -1,0 +1,259 @@
+/*
+ * EntraOps Classification Explorer - App shell, router and drawer
+ */
+window.EOCE = window.EOCE || {};
+
+EOCE.app = (function () {
+    var appEl, drawerEl, backdropEl, titleEl, bodyEl, eyebrowEl;
+    var current = null;
+    var drawerReturnFocus = null;
+
+    // ---- Drawer ----------------------------------------------------------
+    function openDrawer(eyebrow, title, html) {
+        drawerReturnFocus = document.activeElement;
+        eyebrowEl.innerHTML = eyebrow || '';
+        titleEl.innerHTML = title || '';
+        bodyEl.innerHTML = html || '';
+        drawerEl.classList.add('open');
+        drawerEl.setAttribute('aria-hidden', 'false');
+        backdropEl.classList.add('open');
+        bodyEl.scrollTop = 0;
+        document.getElementById('drawerClose').focus();
+    }
+    function closeDrawer() {
+        var wasOpen = drawerEl.classList.contains('open');
+        drawerEl.classList.remove('open');
+        drawerEl.setAttribute('aria-hidden', 'true');
+        backdropEl.classList.remove('open');
+        if (wasOpen && drawerReturnFocus && document.contains(drawerReturnFocus)) drawerReturnFocus.focus();
+        drawerReturnFocus = null;
+    }
+
+    // ---- Rendering helpers ----------------------------------------------
+    function setLoading(msg) {
+        appEl.innerHTML = '<div class="loading"><div class="spinner"></div>' + (msg || 'Loading&hellip;') + '</div>';
+    }
+    function setError(err) {
+        appEl.innerHTML =
+            '<div class="error-box"><strong>Unable to load data.</strong><br>' +
+            EOCE.util.escapeHtml(err && err.message ? err.message : String(err)) +
+            '<br><br>This app runs entirely from the classification data embedded in data/classification-data.js. ' +
+            'Re-run the generator script (<code>Scripts/Update-EntraOpsClassificationExplorerData.ps1</code>) to refresh it.</div>';
+    }
+
+    // ---- Routing ---------------------------------------------------------
+    var routes = {
+        dashboard: function () { return EOCE.views.overview; },
+        overview: function () { return EOCE.views.tiermap; },
+        model: function () { return EOCE.views.model; },
+        roles: function () { return EOCE.views.roles; },
+        actions: function () { return EOCE.views.actions; },
+        permissions: function () { return EOCE.views.permissions; },
+        scoped: function () { return EOCE.views.scoped; },
+        overwrites: function () { return EOCE.views.overwrites; },
+        // Standalone mode only.
+        history: function () { return EOCE.isEntraOpsMode() ? null : EOCE.views.history; },
+        // Entraops mode only.
+        customize: function () { return EOCE.isEntraOpsMode() ? EOCE.views.customize : null; },
+        compare: function () { return EOCE.isEntraOpsMode() ? EOCE.views.compare : null; },
+        attackpaths: function () { return EOCE.views.attackpaths; }
+    };
+
+    function parseHash() {
+        var h = (location.hash || '#dashboard').replace(/^#/, '');
+        var parts = h.split('/');
+        var params = parts.slice(1).map(function (part) {
+            try { return decodeURIComponent(part); } catch (e) { return part; }
+        });
+        return { route: parts[0] || 'dashboard', params: params };
+    }
+
+    function setActiveNav(route) {
+        var items = document.querySelectorAll('.nav-item[data-route]');
+        items.forEach(function (el) {
+            var active = el.getAttribute('data-route') === route;
+            el.classList.toggle('active', active);
+            if (active) el.setAttribute('aria-current', 'page');
+            else el.removeAttribute('aria-current');
+        });
+    }
+
+    function navigate() {
+        closeDrawer();
+        var parsed = parseHash();
+        // Role Comparison is a contextual blade on top of the Roles page, not a
+        // dedicated route: '#rolecompare/<sysKey>:<roleId>/...' opens it directly
+        // when Roles is already the active view (the common case - triggered from
+        // the Roles table's compare checkboxes or a role's details drawer), or
+        // renders Roles first on a cold load / bookmarked deep link.
+        if (parsed.route === 'rolecompare') {
+            if (current === EOCE.views.roles && EOCE.views.roles.all && EOCE.views.roles.all.length && window.EOCE.roleCompare) {
+                EOCE.roleCompare.open(parsed.params);
+                return;
+            }
+            setActiveNav('roles');
+            document.getElementById('nav').classList.remove('open');
+            current = EOCE.views.roles;
+            setLoading();
+            Promise.resolve()
+                .then(function () { return EOCE.views.roles.render(appEl, []); })
+                .then(function () { if (window.EOCE.roleCompare) EOCE.roleCompare.open(parsed.params); })
+                .catch(setError);
+            window.scrollTo(0, 0);
+            return;
+        }
+        var factory = routes[parsed.route] || routes.dashboard;
+        var view = factory();
+        if (!view) { setError(new Error('View not found: ' + parsed.route)); return; }
+        setActiveNav(parsed.route);
+        document.getElementById('nav').classList.remove('open');
+        current = view;
+        setLoading();
+        Promise.resolve()
+            .then(function () { return view.render(appEl, parsed.params); })
+            .catch(setError);
+        window.scrollTo(0, 0);
+    }
+
+    function go(hash) {
+        if (location.hash === '#' + hash) navigate();
+        else location.hash = hash;
+    }
+
+    // ---- Sidebar counts --------------------------------------------------
+    function updateCounts() {
+        var elA = document.getElementById('cnt-attack');
+        if (elA && EOCE.ATTACK_PATHS) elA.textContent = EOCE.util.formatNumber(EOCE.ATTACK_PATHS.length);
+
+        var rolePaths = EOCE.rolesSystemKeys().map(function (k) { return EOCE.RBAC_SYSTEMS[k].file; });
+        Promise.all([
+            EOCE.data.loadAll(rolePaths),
+            EOCE.data.load(EOCE.RBAC_SYSTEMS.Defender.definition)
+        ]).then(function (res) {
+            var sets = res[0], defenderDef = res[1];
+            var roles = 0, actions = 0;
+            sets.forEach(function (s) {
+                roles += s.length;
+                s.forEach(function (r) { actions += EOCE.rolePerms(r).length; });
+            });
+            // Defender contributes derived role actions (distinct microsoft.xdr/* operations).
+            var defActions = {};
+            (defenderDef || []).forEach(function (tierObj) {
+                (tierObj.TierLevelDefinition || []).forEach(function (def) {
+                    (def.RoleDefinitionActions || []).forEach(function (a) { defActions[a] = true; });
+                });
+            });
+            actions += Object.keys(defActions).length;
+            var el1 = document.getElementById('cnt-roles');
+            var el2 = document.getElementById('cnt-actions');
+            if (el1) el1.textContent = EOCE.util.formatNumber(roles);
+            if (el2) el2.textContent = EOCE.util.formatNumber(actions);
+        }).catch(function () { });
+
+        var permPaths = Object.keys(EOCE.PERMISSION_SETS).map(function (k) { return EOCE.PERMISSION_SETS[k].file; });
+        EOCE.data.loadAll(permPaths).then(function (sets) {
+            var n = 0; sets.forEach(function (s) { n += s.length; });
+            var el = document.getElementById('cnt-perms');
+            if (el) el.textContent = EOCE.util.formatNumber(n);
+        }).catch(function () { });
+
+        EOCE.data.load(EOCE.OVERWRITES_FILE).then(function (o) {
+            var el = document.getElementById('cnt-ovr');
+            if (el) el.textContent = EOCE.util.formatNumber(o.length);
+        }).catch(function () { });
+    }
+
+    // ---- Init ------------------------------------------------------------
+    function init() {
+        if (window.EOReview) {
+            EOReview.init({ app: 'ClassificationExplorer', appLabel: 'Classification Explorer' });
+        }
+        appEl = document.getElementById('app');
+        drawerEl = document.getElementById('drawer');
+        backdropEl = document.getElementById('drawerBackdrop');
+        titleEl = document.getElementById('drawerTitle');
+        bodyEl = document.getElementById('drawerBody');
+        eyebrowEl = document.getElementById('drawerEyebrow');
+
+        document.getElementById('drawerClose').addEventListener('click', closeDrawer);
+        backdropEl.addEventListener('click', closeDrawer);
+        document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeDrawer(); });
+
+        document.querySelectorAll('.nav-item[data-route]').forEach(function (el) {
+            el.setAttribute('role', 'link');
+            el.setAttribute('tabindex', '0');
+            el.addEventListener('click', function () { go(el.getAttribute('data-route')); });
+            el.addEventListener('keydown', function (e) {
+                if (e.key !== 'Enter' && e.key !== ' ') return;
+                e.preventDefault();
+                go(el.getAttribute('data-route'));
+            });
+        });
+        document.getElementById('navToggle').addEventListener('click', function () {
+            document.getElementById('nav').classList.toggle('open');
+        });
+
+        // Mode-gated elements: any element (nav item, group label, appbar control, ...)
+        // tagged data-mode="standalone" / data-mode="entraops" is hidden outside that
+        // mode. Lets index.html stay byte-identical between the two deployments.
+        document.querySelectorAll('[data-mode]').forEach(function (el) {
+            if (el.getAttribute('data-mode') !== EOCE.MODE) el.hidden = true;
+        });
+
+        document.getElementById('docsLink').href = EOCE.DOCS.enterpriseAccessModel;
+        document.getElementById('repoLink').href = EOCE.DOCS.entraOpsRepo;
+
+        // Entraops mode only: classification source selector (built-in template vs
+        // tenant-specific variant) and portal-wide navigation (sibling reporting apps).
+        if (EOCE.isEntraOpsMode()) {
+            var variantPicker = document.getElementById('variantPicker');
+            var variantSelect = document.getElementById('variantSelect');
+            if (variantPicker && variantSelect) {
+                var options = EOCE.variantOptions();
+                if (options.length > 1) {
+                    options.forEach(function (o) {
+                        var opt = document.createElement('option');
+                        opt.value = o.key;
+                        opt.textContent = o.label;
+                        variantSelect.appendChild(opt);
+                    });
+                    variantSelect.value = EOCE.getVariant();
+                    variantSelect.addEventListener('change', function () {
+                        EOCE.setVariant(variantSelect.value);
+                        navigate();
+                        updateCounts();
+                    });
+                    variantPicker.hidden = false;
+                }
+            }
+            renderPortalNav();
+        }
+
+        window.addEventListener('hashchange', navigate);
+        navigate();
+        updateCounts();
+    }
+
+    // Portal-wide navigation: when embedded in the EntraOps reporting portal, sibling
+    // apps live in sibling folders under Reports/ (see EOCE.PORTAL_NAV in config.js).
+    // Injected client-side (rather than hardcoded in index.html) so index.html stays
+    // byte-identical between the standalone and entraops copies of this app.
+    function renderPortalNav() {
+        var nav = document.getElementById('nav');
+        var anchor = document.getElementById('navCollapseToggle');
+        if (!nav || !anchor || !EOCE.PORTAL_NAV || !EOCE.PORTAL_NAV.length) return;
+        var html = '<div class="nav-group-label">' + EOCE.util.escapeHtml(EOCE.PORTAL_NAV_LABEL || 'Privileged EAM Reporting') + '</div>';
+        EOCE.PORTAL_NAV.forEach(function (item) {
+            if (item.current) {
+                html += '<div class="nav-item active"><span class="ico">' + item.icon + '</span><span>' + EOCE.util.escapeHtml(item.label) + '</span></div>';
+            } else {
+                html += '<a class="nav-item" href="' + EOCE.util.escapeHtml(item.href) + '"><span class="ico">' + item.icon + '</span><span>' + EOCE.util.escapeHtml(item.label) + '</span></a>';
+            }
+        });
+        anchor.insertAdjacentHTML('afterend', html);
+    }
+
+    document.addEventListener('DOMContentLoaded', init);
+
+    return { openDrawer: openDrawer, closeDrawer: closeDrawer, go: go, setError: setError };
+})();

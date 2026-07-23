@@ -1,4 +1,4 @@
-function Get-AzEARoleMembers {
+function Get-EntraOpsAzEARoleMembers {
     <#    
     .SYNOPSIS
         Get a list of all role assignments from Enterprise Agreement (EA) management with relation to the user account and assigned classic administrator roles in subscriptions.
@@ -8,7 +8,7 @@ function Get-AzEARoleMembers {
         Get a list of all role assignments from Enterprise Agreement (EA) management with relation to the user account and assigned classic administrator roles in subscriptions.
 
     .EXAMPLE
-        Get-AzEARoleMembers -TenantName "contoso.onmicrosoft.com"
+        Get-EntraOpsAzEARoleMembers -TenantName "contoso.onmicrosoft.com"
     #>
 
     [cmdletbinding()]
