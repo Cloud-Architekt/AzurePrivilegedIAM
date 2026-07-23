@@ -1,7 +1,7 @@
 ---
 id: entra-federated-domain-takeover
 name: Federated domain modification backdoor
-source: AADInternals | https://o365blog.com/post/aad-federation/
+source: Dr. Nestori Syynimaa | https://aadinternals.com/post/aad-deepdive/
 severity: Critical
 targetTier: ControlPlane
 ---
@@ -27,4 +27,4 @@ Administrative access allowing the modification of domain authentication types a
 
 ## References
 - MITRE ATT&CK T1484.002 — Domain Policy Modification: Domain Trust Modification | https://attack.mitre.org/techniques/T1484/002/
-- Nestori Syynimaa (AADInternals) — Exploiting Entra ID Identity Federation | https://o365blog.com/post/aad-federation/
+- Nestori Syynimaa (AADInternals) — Exploiting Entra ID Identity Federation | https://aadinternals.com/post/aad-deepdive/

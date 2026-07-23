@@ -1,7 +1,7 @@
 ---
 id: intune-compliance-policy-conditional-access-bypass
 name: Intune compliance policy tampering (Conditional Access bypass)
-source: Dr. Nestori Syynimaa (AADInternals) | https://o365blog.com/post/mdm/
+source: Dr. Nestori Syynimaa (AADInternals) | https://aadinternals.com/post/mdm/
 severity: High
 targetTier: UserAccess
 ---
@@ -29,6 +29,6 @@ Administrative access to manage Intune Endpoint Security rules or device complia
 - DeviceManagement | Intune Role Administrator
 
 ## References
-- Dr. Nestori Syynimaa (AADInternals) — Bypassing Conditional Access device compliance | https://o365blog.com/post/mdm/
+- Dr. Nestori Syynimaa (AADInternals) — Bypassing Conditional Access device compliance | https://aadinternals.com/post/mdm/
 - cloudbrothers — Azure Attack Paths: Intune | https://cloudbrothers.info/en/azure-attack-paths/
 - MITRE ATT&CK T1562.001 — Impair Defenses: Disable or Modify Tools | https://attack.mitre.org/techniques/T1562/001/

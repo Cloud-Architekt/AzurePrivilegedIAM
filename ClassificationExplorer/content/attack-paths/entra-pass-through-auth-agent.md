@@ -1,7 +1,7 @@
 ---
 id: entra-pass-through-auth-agent
 name: Pass-Through Authentication (PTA) Agent takeover
-source: Nestori Syynimaa (AADInternals) | https://o365blog.com/post/pta/
+source: Dr. Nestori Syynimaa (AADInternals) | https://aadinternals.com/post/pta/
 severity: Critical
 targetTier: ControlPlane
 ---
@@ -26,7 +26,7 @@ Local Administrator (SYSTEM) access to an on-premises server running the Microso
 - EntraID | Hybrid Identity Administrator
 
 ## References
-- Nestori Syynimaa (AADInternals) — Exploiting Azure AD PTA vulnerabilities: Creating backdoor and harvesting credentials | https://o365blog.com/post/pta/
+- Nestori Syynimaa (AADInternals) — Exploiting Azure AD PTA vulnerabilities: Creating backdoor and harvesting credentials | https://aadinternals.com/post/pta/
 - Secureworks — Azure Active Directory Pass-Through Authentication Flaws | https://www.secureworks.com/research/azure-active-directory-pass-through-authentication-flaws
 - Adam Chester (xpn) — Azure AD Connect for Red Teamers | https://blog.xpnsec.com/azuread-connect-for-redteam/
 - MITRE ATT&CK T1556 — Modify Authentication Process | https://attack.mitre.org/techniques/T1556/

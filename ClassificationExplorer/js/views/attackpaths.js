@@ -178,7 +178,7 @@ EOCE.views.attackpaths = {
         { name: 'Emilien Socchi (AzTier / aztier.com)', url: 'https://github.com/emiliensocchi/azure-tiering' },
         { name: 'Microsoft \u2014 Azure Threat Research Matrix (ATRM)', url: 'https://microsoft.github.io/Azure-Threat-Research-Matrix/' },
         { name: 'Dirk-jan Mollema (dirkjanm.io)', url: 'https://dirkjanm.io/azure-ad-privilege-escalation-application-admin/' },
-        { name: 'Dr. Nestori Syynimaa (o365blog / AADInternals)', url: 'https://o365blog.com/post/on-prem_admin/' },
+        { name: 'Dr. Nestori Syynimaa (o365blog / AADInternals)', url: 'https://aadinternals.com/post/on-prem_admin/' },
         { name: 'Karl Fosaaen (NetSPI)', url: 'https://www.netspi.com/blog/technical/cloud-penetration-testing/abusing-azure-hybrid-workers-for-privilege-escalation/' },
         { name: 'Shaked Reiner (CyberArk)', url: 'https://www.cyberark.com/resources/threat-research-blog/golden-saml-newly-discovered-attack-technique-forges-authentication-to-cloud-apps' },
         { name: 'Sami Lamppu & Thomas Naunheim (AzureAD-Attack-Defense)', url: 'https://github.com/Cloud-Architekt/AzureAD-Attack-Defense' },

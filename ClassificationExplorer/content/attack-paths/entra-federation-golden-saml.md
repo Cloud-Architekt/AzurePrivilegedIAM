@@ -29,5 +29,5 @@ A role that can update domain federation / authentication configuration.
 
 ## References
 - Shaked Reiner (CyberArk) — Golden SAML: Forging authentication to cloud apps | https://www.cyberark.com/resources/threat-research-blog/golden-saml-newly-discovered-attack-technique-forges-authentication-to-cloud-apps
-- Dr. Nestori Syynimaa — Unnoticed sidekick: Getting access to cloud as an on-prem admin | https://o365blog.com/post/on-prem_admin/
+- Dr. Nestori Syynimaa — Unnoticed sidekick: Getting access to cloud as an on-prem admin | https://aadinternals.com/post/on-prem_admin/
 - MITRE ATT&CK T1606.002 — Forge Web Credentials: SAML Tokens | https://attack.mitre.org/techniques/T1606/002/

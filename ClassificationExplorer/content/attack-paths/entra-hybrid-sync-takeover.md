@@ -1,7 +1,7 @@
 ---
 id: entra-hybrid-sync-takeover
 name: Hybrid identity / Entra Connect sync account abuse
-source: Dr. Nestori Syynimaa (o365blog) | https://o365blog.com/post/on-prem_admin/
+source: Dr. Nestori Syynimaa (o365blog) | https://aadinternals.com/post/on-prem_admin/
 severity: Critical
 targetTier: ControlPlane
 ---
@@ -26,6 +26,6 @@ Admin access to the Entra Connect / sync server, or a role holding the hybrid id
 - EntraID | Partner Tier2 Support
 
 ## References
-- Dr. Nestori Syynimaa — Unnoticed sidekick: Getting access to cloud as an on-prem admin | https://o365blog.com/post/on-prem_admin/
+- Dr. Nestori Syynimaa — Unnoticed sidekick: Getting access to cloud as an on-prem admin | https://aadinternals.com/post/on-prem_admin/
 - Fabian Bader (cloudbrothers) — From on-prem to Global Admin without password reset | https://cloudbrothers.info/en/prem-global-admin-password-reset/
 - Sami Lamppu & Thomas Naunheim — Abuse of Entra Connect Sync Service Account | https://github.com/Cloud-Architekt/AzureAD-Attack-Defense/blob/main/AADCSyncServiceAccount.md
