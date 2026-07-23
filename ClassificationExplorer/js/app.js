@@ -42,7 +42,10 @@ EOCE.app = (function () {
     }
 
     // ---- Routing ---------------------------------------------------------
-    var routes = {
+    // Object.create(null) avoids inherited Object.prototype properties
+    // (e.g. 'constructor', 'toString') being picked up when looking up a
+    // route name that comes straight from the user-controlled URL hash.
+    var routes = Object.assign(Object.create(null), {
         dashboard: function () { return EOCE.views.overview; },
         overview: function () { return EOCE.views.tiermap; },
         model: function () { return EOCE.views.model; },
@@ -57,7 +60,7 @@ EOCE.app = (function () {
         customize: function () { return EOCE.isEntraOpsMode() ? EOCE.views.customize : null; },
         compare: function () { return EOCE.isEntraOpsMode() ? EOCE.views.compare : null; },
         attackpaths: function () { return EOCE.views.attackpaths; }
-    };
+    });
 
     function parseHash() {
         var h = (location.hash || '#dashboard').replace(/^#/, '');
@@ -102,7 +105,8 @@ EOCE.app = (function () {
             window.scrollTo(0, 0);
             return;
         }
-        var factory = routes[parsed.route] || routes.dashboard;
+        var factory = routes[parsed.route];
+        if (typeof factory !== 'function') factory = routes.dashboard;
         var view = factory();
         if (!view) { setError(new Error('View not found: ' + parsed.route)); return; }
         setActiveNav(parsed.route);
@@ -202,6 +206,9 @@ EOCE.app = (function () {
 
         document.getElementById('docsLink').href = EOCE.DOCS.enterpriseAccessModel;
         document.getElementById('repoLink').href = EOCE.DOCS.entraOpsRepo;
+        document.getElementById('footerAuthorLink').href = EOCE.DOCS.blog;
+        document.getElementById('footerLicenseLink').href = EOCE.DOCS.license;
+        document.getElementById('footerDisclosureLink').href = EOCE.DOCS.disclosure;
 
         // Entraops mode only: classification source selector (built-in template vs
         // tenant-specific variant) and portal-wide navigation (sibling reporting apps).

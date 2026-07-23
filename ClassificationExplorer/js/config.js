@@ -933,5 +933,7 @@ EOCE.DOCS = {
     entraOpsTiering:
         'https://github.com/Cloud-Architekt/EntraOps/blob/main/docs/EnterpriseAccessModel.md',
     privilegedIamRepo: 'https://github.com/Cloud-Architekt/AzurePrivilegedIAM',
-    blog: 'https://www.cloud-architekt.net/'
+    blog: 'https://www.cloud-architekt.net/',
+    disclosure: 'https://www.cloud-architekt.net/disclosure/',
+    license: 'https://github.com/Cloud-Architekt/AzurePrivilegedIAM/blob/main/LICENSE'
 };

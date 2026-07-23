@@ -160,7 +160,7 @@
         var btn = document.createElement("button");
         btn.type = "button";
         btn.className = "eo-review-btn";
-        btn.innerHTML = '&#9733; Review list <span class="eo-review-count" id="eoReviewCount">0</span>';
+        btn.innerHTML = '&#9733; <span class="eo-review-label">Review list</span> <span class="eo-review-count" id="eoReviewCount">0</span>';
         btn.addEventListener("click", function (e) {
             e.stopPropagation();
             openPanel();

@@ -258,6 +258,29 @@ a.nav-item:hover {
     max-width: 1500px;
 }
 
+/* ---------- App footer ---------------------------------------------------- */
+.app-footer {
+    padding: 14px 20px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--neutral-fg-secondary);
+    border-top: 1px solid var(--neutral-stroke);
+    background: var(--neutral-surface);
+}
+
+.app-footer a {
+    color: var(--neutral-fg-secondary);
+    text-decoration: underline;
+}
+
+.app-footer a:hover {
+    color: var(--brand);
+}
+
+.app-footer-sep {
+    margin: 0 8px;
+}
+
 /* ---------- Page header -------------------------------------------------- */
 .page-head {
     margin-bottom: 20px;
@@ -1636,6 +1659,17 @@ table.grid-table tbody tr.selected {
         overflow-x: auto;
         overscroll-behavior-inline: contain;
     }
+}
+
+@media (max-width: 480px) {
+    .eo-review-btn {
+        gap: 4px;
+        padding: 4px 8px;
+    }
+
+    .eo-review-label {
+        display: none;
+    }
 
     table.grid-table {
         min-width: 680px;
@@ -2015,6 +2049,8 @@ table.grid-table tbody tr.selected {
     display: inline-flex;
     align-items: center;
     gap: 7px;
+    flex-shrink: 0;
+    white-space: nowrap;
     background: transparent;
     border: 1px solid #4a4948;
     border-radius: 4px;
