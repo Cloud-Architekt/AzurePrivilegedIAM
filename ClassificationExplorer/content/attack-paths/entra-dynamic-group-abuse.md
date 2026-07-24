@@ -1,7 +1,7 @@
 ---
 id: entra-dynamic-group-abuse
 name: Dynamic Group membership rule manipulation
-source: Dirk-jan Mollema (Concepts) | https://dirkjanm.io/azure-ad-privilege-escalation-application-admin/
+source: Microsoft Learn | https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership
 severity: High
 targetTier: ControlPlane
 ---

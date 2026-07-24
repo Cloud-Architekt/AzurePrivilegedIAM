@@ -7,7 +7,7 @@ targetTier: ControlPlane
 ---
 
 ## Summary
-The Microsoft Graph application permission RoleManagement.ReadWrite.Directory grants read/write over /roleManagement/directory/*, letting the holder add or remove members of any Entra directory role — including Global Administrator — and manage PIM role assignments. A workload identity (or user) that holds it can grant itself or any principal full tenant-admin rights with a single role assignment and no further consent, which is why it is one of the most frequently cited Tier 0 application permissions.
+The Microsoft Graph application permission RoleManagement.ReadWrite.Directory grants read/write over /roleManagement/directory/*, letting the holder add or remove members of any Entra directory role — including Global Administrator — and manage PIM role assignments. A service principal granted this application permission can assign itself or any principal full tenant-admin rights with a single role assignment and no further consent, which is why it is one of the most frequently cited Tier 0 application permissions.
 
 ## Prerequisite
 Control of a service principal that has been consented RoleManagement.ReadWrite.Directory (for example via a stolen client secret / certificate, or a compromised application owner).

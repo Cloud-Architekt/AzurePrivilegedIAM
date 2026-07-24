@@ -1,21 +1,21 @@
 ---
 id: azure-app-service-scm-code-execution
 name: Azure App Service/Functions SCM deployment credential abuse
-source: Karl Fosaaen (NetSPI) | https://www.netspi.com/blog/technical/cloud-penetration-testing/extracting-azure-managed-identity-tokens-from-app-services/
+source: Karl Fosaaen (NetSPI) | https://www.youtube.com/watch?v=CUTwkuiRgqg
 severity: High
-targetTier: ControlPlane
+targetTier: ManagementPlane
 ---
 
 ## Summary
-Retrieving the deployment profile or configuration for an App Service or Function App allows an actor to extract the Kudu (SCM) deployment credentials. Using these credentials, the actor can access the diagnostic SCM console, upload malicious code, and extract Managed Identity tokens or sensitive application secrets.
+Retrieving an App Service or Function App publishing profile, usable publishing credential, or a deployment/code-write capability can allow an actor to access the Kudu (SCM) endpoint and deploy code. Reading configuration exposes sensitive application settings, but does not by itself guarantee SCM deployment credentials. Code execution can expose Managed Identity tokens or sensitive application secrets.
 
 ## Prerequisite
-Write or action permissions over the specific Azure App Service or Function App.
+`Microsoft.Web/sites/publishxml/action`, configuration read access that exposes usable publishing credentials, or another deployment/code-write permission over a specific Azure App Service or Function App.
 
 ## Steps
 1. Find an App Service or Function App with an attached, privileged Managed Identity.
-2. Exploit a role containing list-action permissions (e.g. `publishxml/action` or `config/list/action`) to retrieve the SCM deployment credentials.
-3. Authenticate to the Kudu SCM endpoint (`https://<app-name>.scm.azurewebsites.net`).
+2. Use the available permission to retrieve a publishing profile or usable publishing credential, or to deploy attacker-controlled code.
+3. Authenticate to the Kudu SCM endpoint (`https://<app-name>.scm.azurewebsites.net`) when a publishing credential is available.
 4. Execute commands in the console to manually query the local identity endpoint or deploy a web shell.
 5. Extract the Managed Identity token and use its privileges (e.g. Contributor or Owner) to escalate access.
 

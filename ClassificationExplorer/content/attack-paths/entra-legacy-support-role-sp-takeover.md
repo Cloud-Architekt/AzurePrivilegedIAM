@@ -1,7 +1,7 @@
 ---
 id: entra-legacy-support-role-sp-takeover
 name: Service principal takeover via legacy/hidden support roles
-source: Andy Robbins (SpecterOps) | https://posts.specterops.io/azure-privilege-escalation-via-service-principal-abuse-210ae2be2a5
+source: Andy Robbins (SpecterOps) | https://specterops.io/blog/2021/10/12/azure-privilege-escalation-via-service-principal-abuse/
 severity: Critical
 targetTier: ControlPlane
 ---
@@ -23,11 +23,10 @@ Assignment of one of the legacy/hidden directory roles below, scoped to the tena
 - EntraID | microsoft.directory/servicePrincipals/credentials/update
 
 ## Roles
-- EntraID | Directory Synchronization Accounts
 - EntraID | Partner Tier1 Support
 - EntraID | Partner Tier2 Support
 
 ## References
-- Andy Robbins (SpecterOps) — Azure Privilege Escalation via Service Principal Abuse | https://posts.specterops.io/azure-privilege-escalation-via-service-principal-abuse-210ae2be2a5
+- Andy Robbins (SpecterOps) — Azure Privilege Escalation via Service Principal Abuse | https://specterops.io/blog/2021/10/12/azure-privilege-escalation-via-service-principal-abuse/
 - Microsoft Learn — Microsoft Entra built-in roles | https://learn.microsoft.com/entra/identity/role-based-access-control/permissions-reference
 - MITRE ATT&CK T1098.001 — Additional Cloud Credentials | https://attack.mitre.org/techniques/T1098/001/

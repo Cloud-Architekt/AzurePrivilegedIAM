@@ -32,5 +32,5 @@ One of the following over the role-assignable group:
 
 ## References
 - Microsoft Learn — Use Microsoft Entra groups to manage role assignments | https://learn.microsoft.com/entra/identity/role-based-access-control/groups-concept
-- Microsoft Learn — Assign eligibility for a group in Privileged Identity Management | https://learn.microsoft.com/entra/id-governance/privileged-identity-management/pim-for-groups-assign-member-owner-eligibility
+- Microsoft Learn — Assign eligibility for a group in Privileged Identity Management | https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/groups-assign-member-owner
 - MITRE ATT&CK T1098 — Account Manipulation | https://attack.mitre.org/techniques/T1098/

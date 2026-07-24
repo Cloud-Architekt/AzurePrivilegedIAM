@@ -28,6 +28,6 @@ A service principal holding Application.ReadWrite.All, or a role that can add cr
 
 ## References
 - Andy Robbins (SpecterOps) — Azure Privilege Escalation via Azure API Permissions Abuse | https://posts.specterops.io/azure-privilege-escalation-via-azure-api-permissions-abuse-74aee1006f48
-- Emilien Socchi (AzTier) — Microsoft Graph application permissions tiering | https://github.com/emiliensocchi/azure-tiering/tree/main/Microsoft%20Graph%20application%20permissions
+- Emilien Socchi — Microsoft Graph application permissions tiering | https://github.com/emiliensocchi/azure-tiering/tree/main/Microsoft%20Graph%20application%20permissions
 - Microsoft Learn — Microsoft Graph permissions reference | https://learn.microsoft.com/graph/permissions-reference
 - MITRE ATT&CK T1098.001 — Additional Cloud Credentials | https://attack.mitre.org/techniques/T1098/001/

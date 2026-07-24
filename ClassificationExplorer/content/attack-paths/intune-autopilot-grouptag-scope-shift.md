@@ -1,7 +1,7 @@
 ---
 id: intune-autopilot-grouptag-scope-shift
 name: Autopilot Group Tag manipulation causes Intune scope tag/tier shift
-source: Thomas Naunheim & Martin Sohn Christensen (TROOPERS26) | https://www.troopers.de/troopers26/agenda/
+source: Thomas Naunheim & Martin Sohn Christensen | https://www.troopers.de/troopers26/agenda/
 severity: Critical
 targetTier: ControlPlane
 ---
@@ -51,6 +51,5 @@ An administrator with scoped, Tier2-level Intune enrollment permissions can chan
 - Microsoft Learn - Manually register devices with Windows Autopilot | https://learn.microsoft.com/en-us/autopilot/add-devices
 - Microsoft Learn - Manage rules for dynamic membership groups in Microsoft Entra ID | https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership
 - Microsoft Learn - Use RBAC and scope tags for distributed IT | https://learn.microsoft.com/en-us/intune/fundamentals/role-based-access-control/scope-tags
-- Janic Verboon (Medium) — A deep dive into the new Intune RBAC Scoped permissions | https://medium.com/@janicverboon/a-deep-dive-into-the-new-intune-rbac-scoped-permissions-1234567890ab
 - EntraOps — https://entraops.com | https://github.com/Cloud-Architekt/EntraOps
 - SpecterOps — BloodHound OpenGraph | https://specterops.io/opengraph

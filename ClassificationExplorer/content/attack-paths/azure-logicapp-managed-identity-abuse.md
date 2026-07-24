@@ -10,7 +10,7 @@ targetTier: ControlPlane
 Azure RBAC control over a Logic App (Owner, Contributor or Logic App Contributor) lets an actor edit its workflow definition to add an HTTP action that authenticates to a target resource using the Logic App's managed identity, then exfiltrates the resulting bearer token to an attacker-controlled endpoint. If the identity holds privileged Azure or Microsoft Graph permissions, the actor inherits them entirely outside the workflow — the same managed-identity token-theft pattern documented for Automation Account runbooks, but reachable via Logic Apps' lower-friction visual designer.
 
 ## Prerequisite
-The Owner, Contributor or Logic App Contributor Azure role (or User Access Administrator to self-grant one of these — see the RBAC role assignment escalation path) over a Logic App with an enabled system- or user-assigned managed identity that holds privileged Azure or Graph permissions.
+The Owner, Contributor or Logic App Contributor Azure role (or User Access Administrator to self-grant one of these — see the RBAC role assignment escalation path) over a Logic App with an enabled system- or user-assigned managed identity that holds high-privileged Azure or Graph permissions.
 
 ## Steps
 1. Enumerate Logic Apps with an enabled managed identity and check the identity's assigned Azure roles / Microsoft Graph app roles for privilege.

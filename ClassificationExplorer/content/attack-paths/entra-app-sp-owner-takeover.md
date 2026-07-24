@@ -1,7 +1,7 @@
 ---
 id: entra-app-sp-owner-takeover
 name: Application / service principal owner takeover
-source: Andy Robbins (SpecterOps) | https://posts.specterops.io/azure-privilege-escalation-via-service-principal-abuse-210ae2be2a5
+source: Andy Robbins (SpecterOps) | https://specterops.io/blog/2021/10/12/azure-privilege-escalation-via-service-principal-abuse/
 severity: Critical
 targetTier: ControlPlane
 ---
@@ -28,6 +28,6 @@ Ownership of — or a role that can set owners on — a privileged application o
 - EntraID | Hybrid Identity Administrator
 
 ## References
-- Andy Robbins (SpecterOps) — Azure Privilege Escalation via Service Principal Abuse | https://posts.specterops.io/azure-privilege-escalation-via-service-principal-abuse-210ae2be2a5
+- Andy Robbins (SpecterOps) — Azure Privilege Escalation via Service Principal Abuse | https://specterops.io/blog/2021/10/12/azure-privilege-escalation-via-service-principal-abuse/
 - Dirk-jan Mollema — Taking over default application permissions as Application Admin | https://dirkjanm.io/azure-ad-privilege-escalation-application-admin/
 - Fabian Bader (cloudbrothers) — Azure Attack Paths: API Permissions | https://cloudbrothers.info/en/azure-attack-paths/

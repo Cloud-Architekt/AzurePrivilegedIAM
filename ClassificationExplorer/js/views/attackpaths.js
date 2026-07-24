@@ -287,7 +287,7 @@ EOCE.views.attackpaths = {
         html += '<div class="card-pad">';
 
         if (p.source) {
-            html += '<div class="attack-byline">Research by ' +
+            html += '<div class="attack-byline">Source: ' +
                 '<a href="' + EOCE.util.safeUrl(p.source.url) + '" target="_blank" rel="noopener noreferrer">' + esc(p.source.name) + ' &#8599;</a></div>';
         }
 

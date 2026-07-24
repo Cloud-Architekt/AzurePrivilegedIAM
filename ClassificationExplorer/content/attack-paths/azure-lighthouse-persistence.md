@@ -3,7 +3,7 @@ id: azure-lighthouse-persistence
 name: Azure Lighthouse delegated-access persistence (AZT507.1)
 source: Microsoft (Azure Threat Research Matrix) | https://microsoft.github.io/Azure-Threat-Research-Matrix/Persistence/AZT507/AZT507-1/
 severity: High
-targetTier: ControlPlane
+targetTier: ManagementPlane
 ---
 
 ## Summary

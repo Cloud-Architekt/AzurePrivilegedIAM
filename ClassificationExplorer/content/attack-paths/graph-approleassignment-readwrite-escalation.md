@@ -26,6 +26,6 @@ A role or workload identity that can create Microsoft Graph app role assignments
 
 ## References
 - Andy Robbins (SpecterOps) — Azure Privilege Escalation via Azure API Permissions Abuse | https://posts.specterops.io/azure-privilege-escalation-via-azure-api-permissions-abuse-74aee1006f48
-- Emilien Socchi (AzTier) — Microsoft Graph application permissions tiering | https://github.com/emiliensocchi/azure-tiering/tree/main/Microsoft%20Graph%20application%20permissions
+- Emilien Socchi — Microsoft Graph application permissions tiering | https://github.com/emiliensocchi/azure-tiering/tree/main/Microsoft%20Graph%20application%20permissions
 - Dirk-jan Mollema — Entra ID privilege escalation: Application Admin | https://dirkjanm.io/azure-ad-privilege-escalation-application-admin/
 - MITRE ATT&CK T1098.003 — Additional Cloud Roles | https://attack.mitre.org/techniques/T1098/003/

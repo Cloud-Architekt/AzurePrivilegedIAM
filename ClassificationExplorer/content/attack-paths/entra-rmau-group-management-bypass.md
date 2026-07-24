@@ -1,7 +1,7 @@
 ---
 id: entra-rmau-group-management-bypass
 name: Group / user management escalation on objects unprotected by RMAU
-source: Thomas Naunheim (cloud-architekt) | https://www.cloud-architekt.net/restricted-management-administrative-unit/
+source: Thomas Naunheim | https://www.cloud-architekt.net/restricted-management-administrative-unit/
 severity: High
 targetTier: ControlPlane
 ---

@@ -1,7 +1,7 @@
 ---
 id: azure-inhibit-backup-recovery
 name: Inhibit system recovery (Azure Backup deletion)
-source: Microsoft Azure Threat Research Matrix | https://microsoft.github.io/Azure-Threat-Research-Matrix/Impact/DataDestruction/
+source: Microsoft Learn | https://learn.microsoft.com/en-us/azure/backup/secure-by-default
 severity: Critical
 targetTier: ManagementPlane
 ---
@@ -30,5 +30,4 @@ Azure RBAC permissions to manage the relevant Recovery Services vault configurat
 
 ## References
 - MITRE ATT&CK T1490 — Inhibit System Recovery | https://attack.mitre.org/techniques/T1490/
-- Azure Threat Research Matrix — Impact: Data Destruction | https://microsoft.github.io/Azure-Threat-Research-Matrix/Impact/DataDestruction/
 - Microsoft Learn - Secure by Default with Soft Delete for Azure Backup | https://learn.microsoft.com/en-us/azure/backup/secure-by-default

@@ -41668,6 +41668,20 @@
     "RichDescription": "Read and manage compute limits using compute limit operations.",
     "RolePermissions": [
       {
+        "AuthorizedResourceAction": "Microsoft.ComputeLimit/locations/features/disable/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ComputeLimit/locations/features/enable/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.ComputeLimit/locations/guestSubscriptions/delete",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
@@ -41676,6 +41690,34 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.ComputeLimit/locations/guestSubscriptions/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ComputeLimit/locations/sharedLimitCaps/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ComputeLimit/locations/sharedLimitCaps/memberCapOverrides/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ComputeLimit/locations/sharedLimitCaps/memberCapOverrides/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ComputeLimit/locations/sharedLimitCaps/write",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
@@ -41717,7 +41759,35 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.ComputeLimit/locations/features/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.ComputeLimit/locations/guestSubscriptions/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ComputeLimit/locations/operationResults/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ComputeLimit/locations/sharedLimitCaps/memberCapOverrides/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ComputeLimit/locations/sharedLimitCaps/read",
         "ActionType": "Action",
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",
@@ -62395,6 +62465,20 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.InferenceService/inferenceAccounts/listKeys/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.InferenceService/inferenceAccounts/regenerateKeys/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.InferenceService/inferenceAccounts/write",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
@@ -69495,6 +69579,28 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Discovery/workspaces/projects/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "UserAccess",
+      "EAMTierLevelTagValue": "2"
+    }
+  },
+  {
+    "RoleId": "84c36cf8-7fcd-4453-af30-5f5b52b86732",
+    "RoleName": "Microsoft Discovery Tools Reader - Preview",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Read-only access to Discovery tool definitions: allows listing tools and reading their definitions. Does not allow creating, modifying, deleting, or running tools. Intended to be assigned alongside Discovery project roles so users can view the tools available to them. This role is in preview and subject to change.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.Discovery/tools/read",
         "ActionType": "Action",
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",

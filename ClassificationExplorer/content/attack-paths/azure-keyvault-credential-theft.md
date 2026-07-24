@@ -10,7 +10,7 @@ targetTier: ControlPlane
 A principal with data-plane read access to a Key Vault can dump stored secrets and certificates. Vaults frequently hold service-principal client secrets, certificates and connection strings for privileged workload identities — reading them lets an actor authenticate as those identities and inherit their (often control-plane) permissions.
 
 ## Prerequisite
-A role granting Key Vault data-plane read (Key Vault Administrator or Key Vault Secrets User) on an RBAC-model vault.
+A role granting Key Vault data-plane read (Key Vault Administrator or Key Vault Secrets User) on an RBAC-model vault and containing secrets or certificates for a high-privileged workload identity.
 
 ## Steps
 1. Enumerate accessible Key Vaults and the secrets / certificates they contain.

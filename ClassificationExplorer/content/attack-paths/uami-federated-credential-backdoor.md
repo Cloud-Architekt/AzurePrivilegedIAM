@@ -1,7 +1,7 @@
 ---
 id: uami-federated-credential-backdoor
 name: User-assigned managed identity federated credential backdoor
-source: Thomas Naunheim (cloud-architekt) | https://www.cloud-architekt.net/identify-prevent-abuse-uami-fedcreds/
+source: Thomas Naunheim | https://www.cloud-architekt.net/identify-prevent-abuse-uami-fedcreds/
 severity: High
 targetTier: ControlPlane
 ---

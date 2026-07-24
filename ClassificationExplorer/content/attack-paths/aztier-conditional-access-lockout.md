@@ -1,7 +1,7 @@
 ---
 id: aztier-conditional-access-lockout
 name: Conditional Access lockout & tenant extortion
-source: Emilien Socchi (AzTier) | https://github.com/emiliensocchi/azure-tiering
+source: Emilien Socchi | https://github.com/emiliensocchi/azure-tiering
 severity: Critical
 targetTier: ControlPlane
 ---
@@ -27,6 +27,6 @@ A role that can create or modify Conditional Access policies (Conditional Access
 - EntraID | Security Administrator
 
 ## References
-- Emilien Socchi (AzTier) — Entra roles tiering (Conditional Access Administrator, Tier 0) | https://github.com/emiliensocchi/azure-tiering/blob/main/Entra%20roles/tiered-entra-roles.json
+- Emilien Socchi — Entra roles tiering (Conditional Access Administrator, Tier 0) | https://github.com/emiliensocchi/azure-tiering/blob/main/Entra%20roles/tiered-entra-roles.json
 - Emilien Socchi — Tiering Entra roles and application permissions based on attack paths | https://www.emiliensocchi.io/tiering-entra-roles-and-application-permissions-based-on-attack-paths/
 - MITRE ATT&CK T1531 — Account Access Removal | https://attack.mitre.org/techniques/T1531/
