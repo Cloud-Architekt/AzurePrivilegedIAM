@@ -1196,8 +1196,8 @@
     "TargetAppDisplayName": "Exchange Online",
     "TargetAppId": "00000002-0000-0ff1-ce00-000000000000",
     "Category": "Exchange Administration",
-    "EAMTierLevelName": "ControlPlane",
-    "EAMTierLevelTagValue": "0"
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "PermissionId": "3b5f3d61-589b-4a3c-a359-5dd4b5ee5bd5",
@@ -1206,8 +1206,8 @@
     "TargetAppDisplayName": "Exchange Online",
     "TargetAppId": "00000002-0000-0ff1-ce00-000000000000",
     "Category": "Exchange Administration",
-    "EAMTierLevelName": "ControlPlane",
-    "EAMTierLevelTagValue": "0"
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "PermissionId": "9f021f4d-e924-4317-bf46-8db5e8340c6c",
@@ -1216,8 +1216,8 @@
     "TargetAppDisplayName": "Exchange Online",
     "TargetAppId": "00000002-0000-0ff1-ce00-000000000000",
     "Category": "Exchange Administration",
-    "EAMTierLevelName": "ControlPlane",
-    "EAMTierLevelTagValue": "0"
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "PermissionId": "95930782-af91-4e2e-89b7-e34ce33a0450",
@@ -1226,8 +1226,8 @@
     "TargetAppDisplayName": "Exchange Online",
     "TargetAppId": "00000002-0000-0ff1-ce00-000000000000",
     "Category": "Exchange Administration",
-    "EAMTierLevelName": "ControlPlane",
-    "EAMTierLevelTagValue": "0"
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "PermissionId": "ab4f2b77-0b06-4fc1-a9de-02113fc2ab7c",
@@ -1236,8 +1236,8 @@
     "TargetAppDisplayName": "Exchange Online",
     "TargetAppId": "00000002-0000-0ff1-ce00-000000000000",
     "Category": "Exchange Administration",
-    "EAMTierLevelName": "ControlPlane",
-    "EAMTierLevelTagValue": "0"
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "PermissionId": "dc50a0fb-09a3-484d-be87-e023b12c6440",
@@ -1246,8 +1246,8 @@
     "TargetAppDisplayName": "Exchange Online",
     "TargetAppId": "00000002-0000-0ff1-ce00-000000000000",
     "Category": "Exchange Administration",
-    "EAMTierLevelName": "ControlPlane",
-    "EAMTierLevelTagValue": "0"
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "PermissionId": "ea3d980d-ebc7-4be4-8298-a167e5b8797c",
@@ -1256,8 +1256,8 @@
     "TargetAppDisplayName": "Exchange Online",
     "TargetAppId": "00000002-0000-0ff1-ce00-000000000000",
     "Category": "Exchange Administration",
-    "EAMTierLevelName": "ControlPlane",
-    "EAMTierLevelTagValue": "0"
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "PermissionId": "44d6b5f2-d42b-4fa7-b999-1c5fcab98e4d",
@@ -1266,8 +1266,8 @@
     "TargetAppDisplayName": "Exchange Online",
     "TargetAppId": "00000002-0000-0ff1-ce00-000000000000",
     "Category": "Exchange Administration",
-    "EAMTierLevelName": "ControlPlane",
-    "EAMTierLevelTagValue": "0"
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "PermissionId": "dc890d15-9560-4a4c-9b7f-a736ec74ec40",
@@ -1276,8 +1276,8 @@
     "TargetAppDisplayName": "Exchange Online",
     "TargetAppId": "00000002-0000-0ff1-ce00-000000000000",
     "Category": "Exchange Administration",
-    "EAMTierLevelName": "ControlPlane",
-    "EAMTierLevelTagValue": "0"
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "PermissionId": "b5c79e22-9bf2-42d7-b60d-1b95c11ebc66",
@@ -1456,8 +1456,8 @@
     "TargetAppDisplayName": "Exchange Online",
     "TargetAppId": "00000002-0000-0ff1-ce00-000000000000",
     "Category": "Exchange Administration",
-    "EAMTierLevelName": "ControlPlane",
-    "EAMTierLevelTagValue": "0"
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "PermissionId": "d45fa9f8-36e5-4cd2-b601-b063c7cf9ac2",

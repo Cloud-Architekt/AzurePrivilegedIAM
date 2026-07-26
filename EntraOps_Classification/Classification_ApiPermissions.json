@@ -343,38 +343,6 @@
         ]
       },
       {
-        "Category": "Microsoft.ExchangeOnline",
-        "Service": "Exchange Administration",
-        "ResourceAppId": "00000002-0000-0ff1-ce00-000000000000",
-        "ResourceScope": "Application",
-        "RoleAssignmentScopeName": [
-          "/"
-        ],
-        "RoleDefinitionActions": [
-          "Exchange.AdminAPI.ManageAsApp",
-          "Exchange.ManageAsApp",
-          "Exchange.ManageAsAppV2",
-          "full_access_as_app",
-          "Mailbox.Migration"
-        ]
-      },
-      {
-        "Category": "Microsoft.ExchangeOnline",
-        "Service": "Exchange Administration",
-        "ResourceAppId": "00000002-0000-0ff1-ce00-000000000000",
-        "ResourceScope": "Delegation",
-        "RoleAssignmentScopeName": [
-          "/"
-        ],
-        "RoleDefinitionActions": [
-          "EAS.AccessAsUser.All",
-          "EWS.AccessAsUser.All",
-          "Exchange.AdminAPI.Manage",
-          "Exchange.Manage",
-          "Exchange.ManageV2"
-        ]
-      },
-      {
         "Category": "Microsoft.Graph",
         "Service": "External Identities",
         "ResourceAppId": "00000003-0000-0000-c000-000000000000",
@@ -1373,6 +1341,38 @@
         ],
         "RoleDefinitionActions": [
           "EntitlementMgmt-SubjectAccess.ReadWrite"
+        ]
+      },
+      {
+        "Category": "Microsoft.ExchangeOnline",
+        "Service": "Exchange Administration",
+        "ResourceAppId": "00000002-0000-0ff1-ce00-000000000000",
+        "ResourceScope": "Application",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "Exchange.AdminAPI.ManageAsApp",
+          "Exchange.ManageAsApp",
+          "Exchange.ManageAsAppV2",
+          "full_access_as_app",
+          "Mailbox.Migration"
+        ]
+      },
+      {
+        "Category": "Microsoft.ExchangeOnline",
+        "Service": "Exchange Administration",
+        "ResourceAppId": "00000002-0000-0ff1-ce00-000000000000",
+        "ResourceScope": "Delegation",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "EAS.AccessAsUser.All",
+          "EWS.AccessAsUser.All",
+          "Exchange.AdminAPI.Manage",
+          "Exchange.Manage",
+          "Exchange.ManageV2"
         ]
       },
       {

@@ -2236,24 +2236,24 @@
     "AppRoleId": "95930782-af91-4e2e-89b7-e34ce33a0450",
     "AppRoleDisplayName": "Exchange.AdminAPI.ManageAsApp",
     "Category": "Exchange Administration",
-    "EAMTierLevelName": "ControlPlane",
-    "EAMTierLevelTagValue": "0"
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000002-0000-0ff1-ce00-000000000000",
     "AppRoleId": "dc50a0fb-09a3-484d-be87-e023b12c6440",
     "AppRoleDisplayName": "Exchange.ManageAsApp",
     "Category": "Exchange Administration",
-    "EAMTierLevelName": "ControlPlane",
-    "EAMTierLevelTagValue": "0"
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000002-0000-0ff1-ce00-000000000000",
     "AppRoleId": "ea3d980d-ebc7-4be4-8298-a167e5b8797c",
     "AppRoleDisplayName": "Exchange.ManageAsAppV2",
     "Category": "Exchange Administration",
-    "EAMTierLevelName": "ControlPlane",
-    "EAMTierLevelTagValue": "0"
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -2404,8 +2404,8 @@
     "AppRoleId": "dc890d15-9560-4a4c-9b7f-a736ec74ec40",
     "AppRoleDisplayName": "full_access_as_app",
     "Category": "Exchange Administration",
-    "EAMTierLevelName": "ControlPlane",
-    "EAMTierLevelTagValue": "0"
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "c161e42e-d4df-4a3d-9b42-e7a3c31f59d4",
@@ -3215,8 +3215,8 @@
     "AppRoleId": "f7264778-fba9-422d-8e9e-2675a2c4b513",
     "AppRoleDisplayName": "Mailbox.Migration",
     "Category": "Exchange Administration",
-    "EAMTierLevelName": "ControlPlane",
-    "EAMTierLevelTagValue": "0"
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",

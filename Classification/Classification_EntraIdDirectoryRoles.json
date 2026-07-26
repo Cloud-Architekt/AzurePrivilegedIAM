@@ -933,6 +933,12 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "microsoft.office365.usageReports/allEntities/allProperties/read",
+        "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.office365.webPortal/allEntities/standard/read",
         "Category": "Microsoft 365 Support Operations",
         "EAMTierLevelName": "ManagementPlane",
@@ -13376,6 +13382,12 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/signInReports/allProperties/read",
+        "Category": "Security and Compliance",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/crossTenantAccessPolicy/default/standard/read",
         "Category": "Tenant Configuration (Reader)",
         "EAMTierLevelName": "ManagementPlane",
@@ -13413,6 +13425,12 @@
       {
         "AuthorizedResourceAction": "microsoft.office365.webPortal/allEntities/standard/read",
         "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/signInReports/allProperties/read",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       }
@@ -13460,6 +13478,12 @@
       {
         "AuthorizedResourceAction": "microsoft.office365.webPortal/allEntities/standard/read",
         "Category": "Microsoft 365 Support Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/signInReports/allProperties/read",
+        "Category": "Security and Compliance",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       }

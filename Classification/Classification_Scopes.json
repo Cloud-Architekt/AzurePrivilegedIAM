@@ -2378,8 +2378,8 @@
     "ScopeId": "266d2589-20b5-4f91-9a03-89247d1be8da",
     "ScopeDisplayName": "EAS.AccessAsUser.All",
     "Category": "Exchange Administration",
-    "EAMTierLevelName": "ControlPlane",
-    "EAMTierLevelTagValue": "0"
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -2754,8 +2754,8 @@
     "ScopeId": "3b5f3d61-589b-4a3c-a359-5dd4b5ee5bd5",
     "ScopeDisplayName": "EWS.AccessAsUser.All",
     "Category": "Exchange Administration",
-    "EAMTierLevelName": "ControlPlane",
-    "EAMTierLevelTagValue": "0"
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -2770,24 +2770,24 @@
     "ScopeId": "9f021f4d-e924-4317-bf46-8db5e8340c6c",
     "ScopeDisplayName": "Exchange.AdminAPI.Manage",
     "Category": "Exchange Administration",
-    "EAMTierLevelName": "ControlPlane",
-    "EAMTierLevelTagValue": "0"
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000002-0000-0ff1-ce00-000000000000",
     "ScopeId": "ab4f2b77-0b06-4fc1-a9de-02113fc2ab7c",
     "ScopeDisplayName": "Exchange.Manage",
     "Category": "Exchange Administration",
-    "EAMTierLevelName": "ControlPlane",
-    "EAMTierLevelTagValue": "0"
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000002-0000-0ff1-ce00-000000000000",
     "ScopeId": "44d6b5f2-d42b-4fa7-b999-1c5fcab98e4d",
     "ScopeDisplayName": "Exchange.ManageV2",
     "Category": "Exchange Administration",
-    "EAMTierLevelName": "ControlPlane",
-    "EAMTierLevelTagValue": "0"
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
