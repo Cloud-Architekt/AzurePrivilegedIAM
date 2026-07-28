@@ -1,7 +1,7 @@
 ---
 id: graph-privilegedaccess-readwrite-azureadgroup
 name: Escalation through PIM for Groups (PrivilegedAccess.ReadWrite.AzureADGroup)
-source: Emilien Socchi | https://www.emiliensocchi.io/abusing-pim-related-application-permissions-in-microsoft-graph-part-1/
+basedOn: Emilien Socchi | https://www.emiliensocchi.io/abusing-pim-related-application-permissions-in-microsoft-graph-part-1/
 severity: Critical
 targetTier: ControlPlane
 ---

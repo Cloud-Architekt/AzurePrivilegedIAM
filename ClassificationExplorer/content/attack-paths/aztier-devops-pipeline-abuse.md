@@ -1,7 +1,7 @@
 ---
 id: aztier-devops-pipeline-abuse
 name: Azure DevOps pipeline identity abuse
-source: Emilien Socchi | https://github.com/emiliensocchi/azure-tiering
+basedOn: Emilien Socchi | https://github.com/emiliensocchi/azure-tiering
 severity: High
 targetTier: ControlPlane
 ---

@@ -33,6 +33,7 @@ EOCE.views.roles = {
             self.docsIndex = {};
             docsKeys.forEach(function (k, i) { self.docsIndex[k] = EOCE.buildDocsIndex(res[2][i]); });
             var scopeAwareActions = res[3];
+            self.scopeAwareActionsBySystem = scopeAwareActions;
 
             var all = [];
             sysKeys.forEach(function (k, i) {
@@ -41,7 +42,7 @@ EOCE.views.roles = {
                     var actionNames = [];
                     EOCE.rolePerms(r).forEach(function (p) {
                         if (p.Category) catSet[p.Category] = true;
-                        if (p.AuthorizedResourceAction) actionNames.push(p.AuthorizedResourceAction);
+                        if (p.AuthorizedResourceAction) actionNames.push({ action: p.AuthorizedResourceAction, actionType: p.ActionType });
                     });
                     all.push({
                         sysKey: k,
@@ -76,7 +77,7 @@ EOCE.views.roles = {
                     var actionNames = [];
                     EOCE.rolePerms(r).forEach(function (p) {
                         if (p.Category) catSet[p.Category] = true;
-                        if (p.AuthorizedResourceAction) actionNames.push(p.AuthorizedResourceAction);
+                        if (p.AuthorizedResourceAction) actionNames.push({ action: p.AuthorizedResourceAction, actionType: p.ActionType });
                     });
                     all.push({
                         sysKey: k,
@@ -407,6 +408,12 @@ EOCE.views.roles = {
         var dist = EOCE.charts.emptyDist();
         perms.forEach(function (p) { EOCE.charts.addToDist(dist, p.EAMTierLevelName); });
 
+        // Only offer the Actions / Data actions plane filter when this role actually
+        // mixes both (most systems have no ActionType at all, or are Actions-only).
+        var hasAction = perms.some(function (p) { return self.planeOf(p) === 'Action'; });
+        var hasDataAction = perms.some(function (p) { return self.planeOf(p) === 'DataAction'; });
+        var showsPlaneFilter = hasAction && hasDataAction;
+
         var body = '';
         body += '<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:14px;">' +
             EOCE.util.tierBadge(r.classification) +
@@ -434,7 +441,24 @@ EOCE.views.roles = {
             EOCE.util.formatNumber(perms.length) + ' role action' + (perms.length === 1 ? '' : 's') + '. ' +
             EOCE.util.escapeHtml(t.description) + '</div>';
 
-        if (r.scopeAware) body += EOCE.scopeAwareCallout(r.sysKey);
+        if (r.scopeAware) {
+            body += EOCE.scopeAwareCallout(r.sysKey);
+            // Attribution: WHICH of this role's own actions actually triggered the scope-aware
+            // flag - a role can be flagged because of a single unrelated action (e.g. Key Vault
+            // Data Access Administrator is scope-aware via Microsoft.Authorization/roleAssignments/
+            // write, not its Key Vault secrets/keys access), so don't leave it as a blanket claim.
+            var actionEntries = perms.map(function (p) { return { action: p.AuthorizedResourceAction, actionType: p.ActionType }; });
+            var scopeAwareMatches = EOCE.scopeAwareMatchesForRole(r.sysKey, actionEntries, self.scopeAwareActionsBySystem);
+            if (scopeAwareMatches.length) {
+                body += '<div class="callout scope" style="margin-top:-4px;"><div class="callout-title">Scope-aware because of</div>' +
+                    'This role’s classification depends on scope specifically because it grants:' +
+                    '<ul style="margin:8px 0 0;padding-left:18px;">' +
+                    scopeAwareMatches.slice(0, 8).map(function (a) { return '<li class="cell-mono" style="font-size:12px;">' + EOCE.util.escapeHtml(a) + '</li>'; }).join('') +
+                    '</ul>' +
+                    (scopeAwareMatches.length > 8 ? '<div class="muted" style="margin-top:4px;font-size:12px;">+' + (scopeAwareMatches.length - 8) + ' more</div>' : '') +
+                    '</div>';
+            }
+        }
 
         if (r.learnOnly) {
             var docsCfg = EOCE.DOCS_COMPARE[r.sysKey] || {};
@@ -499,8 +523,10 @@ EOCE.views.roles = {
         body += '<div class="toolbar" style="margin-bottom:10px;"><div class="search" style="min-width:auto;"><span class="search-ico">&#128269;</span>' +
             '<input id="roleActionFilter" type="text" placeholder="Filter actions\u2026"></div>' +
             '<select class="filter" id="roleActionMode"><option value="all">All actions</option>' +
-            '<option value="privileged">IsPrivileged only</option>' + docModeOptions + '</select></div>';
-        body += '<div id="roleActionList">' + this.renderActionGroups(groups, '', r.docDiff, r.sysKey, 'all') + '</div>'
+            '<option value="privileged">IsPrivileged only</option>' + docModeOptions + '</select>' +
+            (showsPlaneFilter ? '<select class="filter" id="roleActionPlane" title="Azure RBAC keeps control/management plane Actions and data plane DataActions in separate namespaces \u2014 matches the Actions / Data actions split shown in the Azure Portal and Microsoft Learn"><option value="all">Actions + Data actions</option><option value="action">Actions only</option><option value="dataaction">Data actions only</option></select>' : '') +
+            '</div>';
+        body += '<div id="roleActionList">' + this.renderActionGroups(groups, '', r.docDiff, r.sysKey, 'all', 'all') + '</div>'
         body += '<div style="margin-top:18px;"><a href="' + sys.docs + '" target="_blank" rel="noopener noreferrer" class="inline-link">' + EOCE.util.escapeHtml(sys.short) + ' permissions reference &#8599;</a></div>';
 
         EOCE.app.openDrawer(EOCE.util.escapeHtml(sys.short) + ' role', EOCE.util.escapeHtml(r.name), body);
@@ -547,10 +573,10 @@ EOCE.views.roles = {
             }
         }
 
-        var actionState = { q: '', mode: 'all' };
+        var actionState = { q: '', mode: 'all', plane: 'all' };
         function rerenderActions() {
             document.getElementById('roleActionList').innerHTML =
-                self.renderActionGroups(groups, actionState.q, r.docDiff, r.sysKey, actionState.mode);
+                self.renderActionGroups(groups, actionState.q, r.docDiff, r.sysKey, actionState.mode, actionState.plane);
         }
         var fi = document.getElementById('roleActionFilter');
         if (fi) fi.addEventListener('input', EOCE.util.debounce(function (e) {
@@ -560,11 +586,35 @@ EOCE.views.roles = {
         if (mi) mi.addEventListener('change', function (e) {
             actionState.mode = e.target.value; rerenderActions();
         });
+        var pi = document.getElementById('roleActionPlane');
+        if (pi) pi.addEventListener('change', function (e) {
+            actionState.plane = e.target.value; rerenderActions();
+        });
+    },
+
+    // Azure RBAC keeps control/management plane Actions and data plane DataActions in
+    // entirely separate namespaces (see Get-EntraOpsPrivilegedEAMAzure.ps1) - this mirrors
+    // Microsoft's own role-definition view (Portal / Learn show "Actions" and "Data Actions"
+    // as separate lists), defaulting an absent/unrecognised ActionType to "Action".
+    planeOf: function (p) { return p.ActionType === 'DataAction' ? 'DataAction' : 'Action'; },
+
+    // Single action row, shared by the flat and plane-split rendering paths below.
+    renderActionRow: function (p, tk, filter, graphOnly) {
+        var t = EOCE.tier(tk);
+        var name = EOCE.util.highlight(EOCE.util.escapeHtml(p.AuthorizedResourceAction), filter);
+        var isGraphOnly = graphOnly[String(p.AuthorizedResourceAction).toLowerCase()] === true;
+        var flag = isGraphOnly ? '<span class="a-flag" title="Present in the live Microsoft Graph role definition but not documented in the Microsoft Learn permissions reference">not in docs</span>' : '';
+        return '<div class="action-row' + (isGraphOnly ? ' mismatch' : '') + '" style="border-left:3px solid ' + t.color + ';">' +
+            '<div style="min-width:0;"><div class="a-name">' + name + flag + '</div>' +
+            (p.Category ? '<div class="a-cat">' + EOCE.util.escapeHtml(p.Category) + (p.ActionType ? ' &middot; ' + EOCE.util.escapeHtml(p.ActionType) : '') + '</div>' : '') +
+            '</div>' + EOCE.util.tierBadge(tk, { short: true }) + '</div>';
     },
 
     // mode: 'all' | 'privileged' (ControlPlane only) | 'mismatch' (any doc diff)
     //       'notindocs' (in Graph, absent from MS Learn) | 'notinroledef' (in MS Learn, absent from Graph)
-    renderActionGroups: function (groups, filter, docDiff, sysKey, mode) {
+    // planeFilter: 'all' | 'action' (control/management plane only) | 'dataaction' (data plane only)
+    renderActionGroups: function (groups, filter, docDiff, sysKey, mode, planeFilter) {
+        var self = this;
         var html = '';
         var any = false;
         var graphOnly = (docDiff && docDiff.graphOnlyLower) || {};
@@ -578,22 +628,30 @@ EOCE.views.roles = {
                 if (mode === 'privileged' && tk !== 'ControlPlane') return;
                 var shown = list.filter(function (p) {
                     if ((mode === 'mismatch' || mode === 'notindocs') && graphOnly[String(p.AuthorizedResourceAction).toLowerCase()] !== true) return false;
+                    if (planeFilter === 'action' && self.planeOf(p) !== 'Action') return false;
+                    if (planeFilter === 'dataaction' && self.planeOf(p) !== 'DataAction') return false;
                     if (filter && (p.AuthorizedResourceAction + ' ' + (p.Category || '')).toLowerCase().indexOf(filter) === -1) return false;
                     return true;
                 });
                 if (!shown.length) return;
                 any = true;
-                var t = EOCE.tier(tk);
                 html += '<div class="group-head">' + EOCE.util.tierBadge(tk) + '<span class="g-count">' + shown.length + ' action' + (shown.length === 1 ? '' : 's') + '</span></div>';
-                shown.forEach(function (p) {
-                    var name = EOCE.util.highlight(EOCE.util.escapeHtml(p.AuthorizedResourceAction), filter);
-                    var isGraphOnly = graphOnly[String(p.AuthorizedResourceAction).toLowerCase()] === true;
-                    var flag = isGraphOnly ? '<span class="a-flag" title="Present in the live Microsoft Graph role definition but not documented in the Microsoft Learn permissions reference">not in docs</span>' : '';
-                    html += '<div class="action-row' + (isGraphOnly ? ' mismatch' : '') + '" style="border-left:3px solid ' + t.color + ';">' +
-                        '<div style="min-width:0;"><div class="a-name">' + name + flag + '</div>' +
-                        (p.Category ? '<div class="a-cat">' + EOCE.util.escapeHtml(p.Category) + (p.ActionType ? ' &middot; ' + EOCE.util.escapeHtml(p.ActionType) : '') + '</div>' : '') +
-                        '</div>' + EOCE.util.tierBadge(tk, { short: true }) + '</div>';
-                });
+
+                // Only split into "Actions" / "Data actions" sub-groups when this tier
+                // actually mixes both planes (most systems have no ActionType at all, or
+                // are Actions-only, and get the plain flat list as before).
+                var planes = {};
+                shown.forEach(function (p) { planes[self.planeOf(p)] = true; });
+                if (planes.Action && planes.DataAction) {
+                    var actionItems = shown.filter(function (p) { return self.planeOf(p) === 'Action'; });
+                    var dataItems = shown.filter(function (p) { return self.planeOf(p) === 'DataAction'; });
+                    html += '<div class="group-subhead"><span class="chip">Actions</span><span class="g-count">' + actionItems.length + ' control/management plane action' + (actionItems.length === 1 ? '' : 's') + '</span></div>';
+                    actionItems.forEach(function (p) { html += self.renderActionRow(p, tk, filter, graphOnly); });
+                    html += '<div class="group-subhead"><span class="chip dataplane" title="Azure RBAC data plane operations - a separate permission namespace from control/management plane Actions, matching how the Azure Portal and Microsoft Learn present role definitions">Data actions</span><span class="g-count">' + dataItems.length + ' data plane action' + (dataItems.length === 1 ? '' : 's') + '</span></div>';
+                    dataItems.forEach(function (p) { html += self.renderActionRow(p, tk, filter, graphOnly); });
+                } else {
+                    shown.forEach(function (p) { html += self.renderActionRow(p, tk, filter, graphOnly); });
+                }
             });
         }
 

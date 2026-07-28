@@ -1,7 +1,7 @@
 ---
 id: graph-rolemanagement-readwrite-directory
 name: Global Admin self-assignment via RoleManagement.ReadWrite.Directory
-source: Emilien Socchi (AzTier) | https://www.emiliensocchi.io/tiering-entra-roles-and-application-permissions-based-on-attack-paths/
+basedOn: Emilien Socchi (AzTier) | https://www.emiliensocchi.io/tiering-entra-roles-and-application-permissions-based-on-attack-paths/
 severity: Critical
 targetTier: ControlPlane
 ---

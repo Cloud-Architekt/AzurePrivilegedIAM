@@ -174,19 +174,7 @@
                 "ExcludedRoleAssignmentScopeName": [],
                 "RoleDefinitionActions": [
                     "Microsoft.KeyVault/vaults/accessPolicies/write",
-                    "Microsoft.KeyVault/vaults/secrets/read",
-                    "Microsoft.KeyVault/vaults/secrets/write",
-                    "Microsoft.KeyVault/vaults/keys/read",
                     "Microsoft.KeyVault/locations/deletedVaults/purge/action",
-                    "Microsoft.KeyVault/vaults/secrets/getSecret/action",
-                    "Microsoft.KeyVault/vaults/secrets/setSecret/action",
-                    "Microsoft.KeyVault/vaults/keys/encrypt/action",
-                    "Microsoft.KeyVault/vaults/keys/decrypt/action",
-                    "Microsoft.KeyVault/vaults/keys/sign/action",
-                    "Microsoft.KeyVault/vaults/keys/unwrap/action",
-                    "Microsoft.KeyVault/vaults/keys/wrap/action",
-                    "Microsoft.KeyVault/managedHSMs/keys/read",
-                    "Microsoft.KeyVault/managedHSMs/keys/decrypt/action",
                     "Microsoft.Storage/storageAccounts/listkeys/action",
                     "Microsoft.Storage/storageAccounts/listAccountSas/action",
                     "Microsoft.Storage/storageAccounts/listServiceSas/action",
@@ -218,6 +206,30 @@
                     "Microsoft.Maps/accounts/listKeys/action",
                     "Microsoft.NotificationHubs/namespaces/notificationHubs/authorizationRules/listKeys/action",
                     "Microsoft.Relay/namespaces/authorizationRules/listkeys/action"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Privileged Secret and Key Data Access",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [
+                    <Tier0IncludedResourceScope>
+                ],
+                "ExcludedRoleAssignmentScopeName": [],
+                "RoleDefinitionActions": [
+                    "Microsoft.KeyVault/vaults/secrets/read",
+                    "Microsoft.KeyVault/vaults/secrets/write",
+                    "Microsoft.KeyVault/vaults/keys/read",
+                    "Microsoft.KeyVault/vaults/secrets/getSecret/action",
+                    "Microsoft.KeyVault/vaults/secrets/setSecret/action",
+                    "Microsoft.KeyVault/vaults/keys/encrypt/action",
+                    "Microsoft.KeyVault/vaults/keys/decrypt/action",
+                    "Microsoft.KeyVault/vaults/keys/sign/action",
+                    "Microsoft.KeyVault/vaults/keys/unwrap/action",
+                    "Microsoft.KeyVault/vaults/keys/wrap/action",
+                    "Microsoft.KeyVault/managedHSMs/keys/read",
+                    "Microsoft.KeyVault/managedHSMs/keys/decrypt/action"
                 ],
                 "ExcludedRoleDefinitionActions": []
             },
@@ -502,19 +514,7 @@
                 ],
                 "RoleDefinitionActions": [
                     "Microsoft.KeyVault/vaults/accessPolicies/write",
-                    "Microsoft.KeyVault/vaults/secrets/read",
-                    "Microsoft.KeyVault/vaults/secrets/write",
-                    "Microsoft.KeyVault/vaults/keys/read",
                     "Microsoft.KeyVault/locations/deletedVaults/purge/action",
-                    "Microsoft.KeyVault/vaults/secrets/getSecret/action",
-                    "Microsoft.KeyVault/vaults/secrets/setSecret/action",
-                    "Microsoft.KeyVault/vaults/keys/encrypt/action",
-                    "Microsoft.KeyVault/vaults/keys/decrypt/action",
-                    "Microsoft.KeyVault/vaults/keys/sign/action",
-                    "Microsoft.KeyVault/vaults/keys/unwrap/action",
-                    "Microsoft.KeyVault/vaults/keys/wrap/action",
-                    "Microsoft.KeyVault/managedHSMs/keys/read",
-                    "Microsoft.KeyVault/managedHSMs/keys/decrypt/action",
                     "Microsoft.Storage/storageAccounts/listkeys/action",
                     "Microsoft.Storage/storageAccounts/listAccountSas/action",
                     "Microsoft.Storage/storageAccounts/listServiceSas/action",
@@ -546,6 +546,32 @@
                     "Microsoft.Maps/accounts/listKeys/action",
                     "Microsoft.NotificationHubs/namespaces/notificationHubs/authorizationRules/listKeys/action",
                     "Microsoft.Relay/namespaces/authorizationRules/listkeys/action"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Secret and Key Data Access",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [
+                    "/*"
+                ],
+                "ExcludedRoleAssignmentScopeName": [
+                    <Tier0IncludedResourceScope>
+                ],
+                "RoleDefinitionActions": [
+                    "Microsoft.KeyVault/vaults/secrets/read",
+                    "Microsoft.KeyVault/vaults/secrets/write",
+                    "Microsoft.KeyVault/vaults/keys/read",
+                    "Microsoft.KeyVault/vaults/secrets/getSecret/action",
+                    "Microsoft.KeyVault/vaults/secrets/setSecret/action",
+                    "Microsoft.KeyVault/vaults/keys/encrypt/action",
+                    "Microsoft.KeyVault/vaults/keys/decrypt/action",
+                    "Microsoft.KeyVault/vaults/keys/sign/action",
+                    "Microsoft.KeyVault/vaults/keys/unwrap/action",
+                    "Microsoft.KeyVault/vaults/keys/wrap/action",
+                    "Microsoft.KeyVault/managedHSMs/keys/read",
+                    "Microsoft.KeyVault/managedHSMs/keys/decrypt/action"
                 ],
                 "ExcludedRoleDefinitionActions": []
             },
@@ -876,6 +902,21 @@
                 "ExcludedRoleDefinitionActions": [
                     "*/read"
                 ]
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "General Data Plane Operations",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [
+                    "/*"
+                ],
+                "ExcludedRoleAssignmentScopeName": [],
+                "RoleDefinitionActions": [
+                    "*/*"
+                ],
+                "ExcludedRoleDefinitionActions": [
+                    "*/read"
+                ]
             }
         ]
     },
@@ -886,6 +927,7 @@
             {
                 "Category": "Microsoft.Azure",
                 "Service": "Storage Data Access",
+                "ActionType": "DataAction",
                 "RoleAssignmentScopeName": [
                     "/*"
                 ],
@@ -912,6 +954,19 @@
                     "Microsoft.Authorization/*/read",
                     "Microsoft.Insights/alertRules/read",
                     "Microsoft.Support/*"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Reader Data Access",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [
+                    "/*"
+                ],
+                "ExcludedRoleAssignmentScopeName": [],
+                "RoleDefinitionActions": [
+                    "*/read"
                 ],
                 "ExcludedRoleDefinitionActions": []
             }

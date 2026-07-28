@@ -1,7 +1,7 @@
 ---
 id: idgov-assignment-manager-direct-grant
 name: Access package assignment manager direct grant
-source: Microsoft Security | https://learn.microsoft.com/entra/id-governance/entitlement-management-delegate
+basedOn: Microsoft Security | https://learn.microsoft.com/entra/id-governance/entitlement-management-delegate
 severity: High
 targetTier: ControlPlane
 ---
@@ -28,5 +28,5 @@ The AccessPackage assignment manager delegated role over a catalog that publishe
 ## References
 - Microsoft Learn — Delegate access governance to access package managers | https://learn.microsoft.com/entra/id-governance/entitlement-management-delegate
 - Microsoft Learn — View, add, and remove access package assignments | https://learn.microsoft.com/entra/id-governance/entitlement-management-access-package-assignments
-- Thomas Naunheim (EntraOps) — Classification of Identity Governance delegation and roles | https://github.com/Cloud-Architekt/EntraOps
+- Thomas Naunheim — Classification of Identity Governance delegation and roles | https://github.com/Cloud-Architekt/EntraOps
 - MITRE ATT&CK T1098.003 — Additional Cloud Roles | https://attack.mitre.org/techniques/T1098/003/

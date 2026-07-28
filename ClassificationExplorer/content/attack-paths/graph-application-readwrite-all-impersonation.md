@@ -1,7 +1,7 @@
 ---
 id: graph-application-readwrite-all-impersonation
 name: Microsoft Graph Application.ReadWrite.All credential injection
-source: Andy Robbins (SpecterOps) | https://posts.specterops.io/azure-privilege-escalation-via-azure-api-permissions-abuse-74aee1006f48
+basedOn: Andy Robbins (SpecterOps) | https://posts.specterops.io/azure-privilege-escalation-via-azure-api-permissions-abuse-74aee1006f48
 severity: Critical
 targetTier: ControlPlane
 ---

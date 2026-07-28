@@ -1,7 +1,7 @@
 ---
 id: graph-domain-readwrite-all
 name: Federated-domain backdoor / forged SAML via Domain.ReadWrite.All
-source: Nestori Syynimaa (AADInternals) | https://aadinternals.com/post/aadbackdoor/
+basedOn: Nestori Syynimaa (AADInternals) | https://aadinternals.com/post/aadbackdoor/
 severity: Critical
 targetTier: ControlPlane
 ---

@@ -1,7 +1,7 @@
 ---
 id: entra-agentid-blueprint-cross-tenant-takeover
 name: Agent ID blueprint credential cross-tenant takeover
-source: Katie Knowles (Datadog Security Labs) | https://securitylabs.datadoghq.com/articles/agent-id-inside-agent-compromise/
+basedOn: Katie Knowles (Datadog Security Labs) | https://securitylabs.datadoghq.com/articles/agent-id-inside-agent-compromise/
 severity: Critical
 targetTier: ControlPlane
 ---

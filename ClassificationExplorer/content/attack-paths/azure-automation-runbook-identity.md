@@ -1,7 +1,7 @@
 ---
 id: azure-automation-runbook-identity
 name: Azure Automation runbook & managed identity abuse
-source: Karl Fosaaen (NetSPI) | https://www.netspi.com/blog/technical/cloud-penetration-testing/abusing-azure-hybrid-workers-for-privilege-escalation/
+basedOn: Karl Fosaaen (NetSPI) | https://www.netspi.com/blog/technical/cloud-penetration-testing/abusing-azure-hybrid-workers-for-privilege-escalation/
 severity: High
 targetTier: ControlPlane
 ---

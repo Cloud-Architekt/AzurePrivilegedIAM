@@ -1,7 +1,7 @@
 ---
 id: aztier-identity-governance-accesspackage
 name: Access package assignment policy abuse (Identity Governance)
-source: Emilien Socchi | https://github.com/emiliensocchi/azure-tiering
+basedOn: Emilien Socchi | https://github.com/emiliensocchi/azure-tiering
 severity: Critical
 targetTier: ControlPlane
 ---

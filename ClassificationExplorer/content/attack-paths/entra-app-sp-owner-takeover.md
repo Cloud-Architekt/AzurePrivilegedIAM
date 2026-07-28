@@ -1,7 +1,7 @@
 ---
 id: entra-app-sp-owner-takeover
 name: Application / service principal owner takeover
-source: Andy Robbins (SpecterOps) | https://specterops.io/blog/2021/10/12/azure-privilege-escalation-via-service-principal-abuse/
+basedOn: Andy Robbins (SpecterOps) | https://specterops.io/blog/2021/10/12/azure-privilege-escalation-via-service-principal-abuse/
 severity: Critical
 targetTier: ControlPlane
 ---

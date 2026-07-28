@@ -1,7 +1,7 @@
 ---
 id: entra-legacy-support-role-sp-takeover
 name: Service principal takeover via legacy/hidden support roles
-source: Andy Robbins (SpecterOps) | https://specterops.io/blog/2021/10/12/azure-privilege-escalation-via-service-principal-abuse/
+basedOn: Andy Robbins (SpecterOps) | https://specterops.io/blog/2021/10/12/azure-privilege-escalation-via-service-principal-abuse/
 severity: Critical
 targetTier: ControlPlane
 ---

@@ -1,7 +1,7 @@
 ---
 id: azure-runbook-webhook-abuse
 name: Webhook trigger abuse on Automation Runbooks
-source: Microsoft Learn | https://learn.microsoft.com/en-us/azure/automation/automation-webhooks
+basedOn: Microsoft Learn | https://learn.microsoft.com/en-us/azure/automation/automation-webhooks
 severity: Medium
 targetTier: ManagementPlane
 ---
@@ -13,7 +13,7 @@ Azure Automation runbooks can be triggered externally by webhooks. If an attacke
 Discovery or theft of a valid Webhook URL for an Azure Automation Runbook.
 
 ## Steps
-1. Retrieve or intercept a Webhook URI associated with an Azure Automation runbook (e.g., from source code, exposed logs, or previously exported ARM templates).
+1. Retrieve or intercept a Webhook URI associated with an Azure Automation runbook (e.g., from basedOn: code, exposed logs, or previously exported ARM templates).
 2. Construct a POST request to the Webhook URI.
 3. Supply input in the request body. Its impact depends on how the runbook validates and processes `$WebhookData`.
 4. If the runbook performs sensitive operations with an Automation Account managed identity or stored credentials, the attacker can cause those permitted operations to execute.

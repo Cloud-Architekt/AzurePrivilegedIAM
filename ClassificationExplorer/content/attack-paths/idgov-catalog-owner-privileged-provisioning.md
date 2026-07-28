@@ -1,7 +1,7 @@
 ---
 id: idgov-catalog-owner-privileged-provisioning
 name: Entitlement Management catalog owner privileged provisioning
-source: Thomas Naunheim (EntraOps) | https://github.com/Cloud-Architekt/EntraOps
+basedOn: Thomas Naunheim | https://github.com/Cloud-Architekt/EntraOps
 severity: Critical
 targetTier: ControlPlane
 ---
@@ -26,7 +26,7 @@ A delegated Identity Governance role over a catalog containing privileged object
 - IdentityGovernance | AccessPackages manager
 
 ## References
-- Thomas Naunheim (EntraOps) — Classification of Identity Governance delegation and roles | https://github.com/Cloud-Architekt/EntraOps
+- Thomas Naunheim — Classification of Identity Governance delegation and roles | https://github.com/Cloud-Architekt/EntraOps
 - Microsoft Learn — Delegate access governance to access package managers | https://learn.microsoft.com/entra/id-governance/entitlement-management-delegate
 - Emilien Socchi — Tiering Entra roles and application permissions based on attack paths | https://www.emiliensocchi.io/tiering-entra-roles-and-application-permissions-based-on-attack-paths/
 - MITRE ATT&CK T1098.003 — Additional Cloud Roles | https://attack.mitre.org/techniques/T1098/003/

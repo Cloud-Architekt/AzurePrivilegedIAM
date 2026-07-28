@@ -1,7 +1,7 @@
 ---
 id: entra-dynamic-group-abuse
 name: Dynamic Group membership rule manipulation
-source: Microsoft Learn | https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership
+basedOn: Microsoft Learn | https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership
 severity: High
 targetTier: ControlPlane
 ---

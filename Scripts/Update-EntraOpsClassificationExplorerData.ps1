@@ -566,6 +566,7 @@ function Update-EntraOpsClassificationExplorerData {
         "$TemplateBase/Classification_AadResources.json",
         "$TemplateBase/Classification_AadResources.Param.json",
         "$TemplateBase/Classification_IdentityGovernance.json",
+        "$TemplateBase/Classification_IdentityGovernance.Param.json",
         "$TemplateBase/Classification_Azure.json",
         "$TemplateBase/Classification_Azure.Param.json",
         "$TemplateBase/Classification_DeviceManagement.json",

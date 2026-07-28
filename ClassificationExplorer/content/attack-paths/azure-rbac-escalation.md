@@ -1,7 +1,7 @@
 ---
 id: azure-rbac-escalation
 name: Azure RBAC role assignment escalation
-source: Fabian Bader (cloudbrothers) | https://cloudbrothers.info/en/azure-attack-paths/
+basedOn: Fabian Bader (cloudbrothers) | https://cloudbrothers.info/en/azure-attack-paths/
 severity: Critical
 targetTier: ControlPlane
 ---
@@ -10,11 +10,11 @@ targetTier: ControlPlane
 Write access to role assignments (User Access Administrator or Owner) lets a principal grant itself Owner over subscriptions and resources, including Tier 0 resources.
 
 ## Prerequisite
-A role containing Microsoft.Authorization/roleAssignments/write at the target scope.
+A principal with Microsoft.Authorization/roleAssignments/write at the intended scope, without an Azure RBAC condition or deny assignment that prevents the desired role assignment.
 
 ## Steps
 1. Identify the scope (management group, subscription, resource) where you hold roleAssignments/write.
-2. Create a role assignment granting a controlled principal the Owner (or another privileged) role.
+2. Create a role assignment granting a controlled principal the Owner role, or another role that provides the required control-plane permissions.
 3. Use the new Owner rights to manage resources and any attached managed identities.
 
 ## Actions

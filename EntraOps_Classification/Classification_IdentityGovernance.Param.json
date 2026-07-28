@@ -1,0 +1,87 @@
+[
+    {
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0",
+        "TierLevelDefinition": [
+            {
+                "Category": "Microsoft.IdentityGovernance",
+                "Service": "Entitlement Management",
+                "RoleAssignmentScopeName": [
+                    "/AccessPackageCatalog/*",
+                    "/AccessPackage/*"
+                ],
+                "ExcludedRoleAssignmentScopeName": [
+                    <Tier0ExcludedIdGovScope>
+                ],
+                "RoleDefinitionActions": [
+                    "microsoft.entitlementManagement/allEntities/allTasks",
+                    "microsoft.entitlementManagement/AccessPackageCatalog/AccessPackage/allTasks",
+                    "microsoft.entitlementManagement/AccessPackageCatalog/AccessPackage/GrantRequests/allTasks",
+                    "microsoft.entitlementManagement/AccessPackageCatalog/AccessPackage/Grants/allTasks"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            }
+        ]
+    },
+    {
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1",
+        "TierLevelDefinition": [
+            {
+                "Category": "Microsoft.IdentityGovernance",
+                "Service": "Entitlement Management",
+                "RoleAssignmentScopeName": [
+                    <Tier1IncludedIdGovScope>
+                ],
+                "ExcludedRoleAssignmentScopeName": [],
+                "RoleDefinitionActions": [
+                    "microsoft.entitlementManagement/allEntities/allTasks",
+                    "microsoft.entitlementManagement/AccessPackageCatalog/AccessPackage/allTasks",
+                    "microsoft.entitlementManagement/AccessPackageCatalog/AccessPackage/GrantRequests/allTasks",
+                    "microsoft.entitlementManagement/AccessPackageCatalog/AccessPackage/Grants/allTasks"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.IdentityGovernance",
+                "Service": "Entitlement Management",
+                "RoleAssignmentScopeName": [
+                    "/AccessPackageCatalog/*",
+                    "/AccessPackage/*"
+                ],
+                "ExcludedRoleAssignmentScopeName": [
+                    <Tier2IncludedIdGovScope>
+                ],
+                "RoleDefinitionActions": [
+                    "microsoft.entitlementManagement/AccessPackageCatalog/Create",
+                    "microsoft.entitlementManagement/AccessPackageCatalog/allEntities/Read",
+                    "microsoft.entitlementManagement/allEntities/Read"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            }
+        ]
+    },
+    {
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2",
+        "TierLevelDefinition": [
+            {
+                "Category": "Microsoft.IdentityGovernance",
+                "Service": "Entitlement Management",
+                "RoleAssignmentScopeName": [
+                    <Tier2IncludedIdGovScope>
+                ],
+                "ExcludedRoleAssignmentScopeName": [],
+                "RoleDefinitionActions": [
+                    "microsoft.entitlementManagement/allEntities/allTasks",
+                    "microsoft.entitlementManagement/AccessPackageCatalog/AccessPackage/allTasks",
+                    "microsoft.entitlementManagement/AccessPackageCatalog/AccessPackage/GrantRequests/allTasks",
+                    "microsoft.entitlementManagement/AccessPackageCatalog/AccessPackage/Grants/allTasks",
+                    "microsoft.entitlementManagement/AccessPackageCatalog/allEntities/Read",
+                    "microsoft.entitlementManagement/allEntities/Read"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            }
+        ]
+    }
+]

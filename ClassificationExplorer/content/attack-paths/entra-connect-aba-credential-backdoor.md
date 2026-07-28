@@ -1,7 +1,7 @@
 ---
 id: entra-connect-aba-credential-backdoor
 name: Entra Connect application-based auth (ABA) credential backdoor
-source: Sami Lamppu & Thomas Naunheim | https://github.com/Cloud-Architekt/AzureAD-Attack-Defense/blob/main/EntraSyncAba.md
+basedOn: Sami Lamppu & Thomas Naunheim | https://github.com/Cloud-Architekt/AzureAD-Attack-Defense/blob/main/EntraSyncAba.md
 severity: Critical
 targetTier: ControlPlane
 ---

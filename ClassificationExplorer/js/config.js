@@ -207,7 +207,7 @@ EOCE.RBAC_SYSTEMS = {
         kind: 'roles',
         file: 'Classification/Classification_IdentityGovernance.json',
         definition: EOCE.templateFile('Classification_IdentityGovernance.json'),
-        param: EOCE.templateFile('Classification_IdentityGovernance.json'),
+        param: EOCE.templateFile('Classification_IdentityGovernance.Param.json'),
         actionLabel: 'Role action',
         description:
             'Microsoft Entra Identity Governance / Entitlement Management roles (microsoft.entitlementManagement/*) for delegated access-package and catalog administration, classified against the Enterprise Access Model.',
@@ -230,7 +230,7 @@ EOCE.RBAC_SYSTEMS = {
                 },
                 {
                     tag: 'AssignedCatalogObjects',
-                    text: 'At runtime EntraOps reads the objects assigned inside a catalog (for example a role-assignable or privileged group) and applies their classification to any delegation scoped to that catalog - so a Catalog owner over a catalog that grants Tier 0 access becomes Control Plane automatically.'
+                    text: 'At runtime EntraOps reads the objects assigned inside a catalog (for example a role-assignable or privileged group) and applies their classification to any delegation scoped to that catalog - so a Catalog owner over a catalog that grants Tier 0 access becomes Control Plane automatically. Because catalogs are objects a delegated admin can create at any time, this resolution fails safe: a catalog only leaves Control Plane once it is affirmatively proven to be Management Plane or User Access - anything unresolved, unclassified or newly created between classification runs stays Control Plane by default.'
                 }
             ],
             docsLabel: 'Entitlement Management delegation reference',
@@ -406,7 +406,7 @@ EOCE.scopeParamOf = function (arr) {
 };
 
 // Keys of RBAC systems whose Param/definition file carries scope placeholders.
-EOCE.SCOPE_PARAM_SYSTEMS = ['EntraID', 'Azure', 'DeviceManagement', 'Defender'];
+EOCE.SCOPE_PARAM_SYSTEMS = ['EntraID', 'Azure', 'DeviceManagement', 'Defender', 'IdentityGovernance'];
 
 // True when a system's classification is scope-aware for every role/action regardless
 // of the specific action (currently only Identity Governance's catalog-scoped model).
@@ -415,11 +415,36 @@ EOCE.isFullyScopeAwareSystem = function (sysKey) {
     return !!(sys && sys.scopeAware && sys.scopeAware.allActionsScopeAware);
 };
 
-// Loads (once) the set of role-action strings that are scope-aware per RBAC system,
-// keyed by sysKey -> { action -> true }, for the placeholder-based systems
-// (EOCE.SCOPE_PARAM_SYSTEMS). Used by the Roles / Role Actions views to determine,
-// per role or per action, whether its classification actually depends on scope -
-// unlike Identity Governance, only some actions within these systems are scope-aware.
+// Wildcard-aware, case-insensitive match between two action strings, EITHER of which may
+// contain '*' (e.g. a role granting "Microsoft.Compute/*", or a classified pattern like
+// "Microsoft.Authorization/*/write"). Mirrors the PowerShell classification engine's own
+// Test-EntraOpsAzureActionMatch (Export-EntraOpsClassificationAzureRoles.ps1) so this
+// re-derivation agrees with how roles are actually classified server-side, instead of only
+// recognising exact literal-string matches (which silently misses any role whose actions are
+// expressed as a wildcard not spelled out verbatim in the Param file, e.g. Key Vault
+// Certificates Officer's "Microsoft.KeyVault/vaults/certificates/*").
+EOCE.actionMatch = function (a, b) {
+    if (!a || !b) return false;
+    if (a === b) return true;
+    var la = String(a).toLowerCase(), lb = String(b).toLowerCase();
+    if (la === lb) return true;
+    function toRegex(pattern) {
+        var escaped = pattern.replace(/[.+?^${}()|[\]\\]/g, '\\$&').replace(/\*/g, '.*');
+        return new RegExp('^' + escaped + '$');
+    }
+    if (lb.indexOf('*') !== -1 && toRegex(lb).test(la)) return true;
+    if (la.indexOf('*') !== -1 && toRegex(la).test(lb)) return true;
+    return false;
+};
+
+// Loads (once) the scope-aware action PATTERNS per RBAC system, keyed by
+// sysKey -> [{ pattern, actionType }], for the placeholder-based systems
+// (EOCE.SCOPE_PARAM_SYSTEMS). Used by the Roles / Role Actions views to determine, per role or
+// per action, whether its classification actually depends on scope - unlike Identity
+// Governance, only some actions within these systems are scope-aware. actionType defaults to
+// "Action" (see Get-EntraOpsTierDefinitionActionType) - only Azure's Param file uses "DataAction",
+// and control/management plane Actions and data plane DataActions are separate namespaces, so a
+// pattern from one plane must never match an action from the other.
 EOCE._scopeAwareActionsPromise = null;
 EOCE.loadScopeAwareActions = function () {
     if (EOCE._scopeAwareActionsPromise) return EOCE._scopeAwareActionsPromise;
@@ -428,32 +453,66 @@ EOCE.loadScopeAwareActions = function () {
     EOCE._scopeAwareActionsPromise = EOCE.data.loadAll(paths).then(function (params) {
         var bySystem = {};
         keys.forEach(function (sysKey, idx) {
-            var actions = {};
+            var patterns = [];
             (params[idx] || []).forEach(function (tierObj) {
                 (tierObj.TierLevelDefinition || []).forEach(function (def) {
                     var scopeAware = EOCE.scopeParamOf(def.RoleAssignmentScopeName) || EOCE.scopeParamOf(def.ExcludedRoleAssignmentScopeName);
                     if (!scopeAware) return;
-                    (def.RoleDefinitionActions || []).forEach(function (a) { actions[a] = true; });
+                    var actionType = def.ActionType === 'DataAction' ? 'DataAction' : 'Action';
+                    (def.RoleDefinitionActions || []).forEach(function (a) { patterns.push({ pattern: a, actionType: actionType }); });
                 });
             });
-            bySystem[sysKey] = actions;
+            bySystem[sysKey] = patterns;
         });
         return bySystem;
     });
     return EOCE._scopeAwareActionsPromise;
 };
 
-// Whether a role/action in the given system is scope-aware: fully scope-aware
-// systems (Identity Governance) always are; placeholder-based systems are
-// scope-aware only if at least one action in actionList carries a scope placeholder.
+// Normalizes an actionList entry (plain action string, or { action, actionType }) to
+// { action, actionType } with actionType defaulting to 'Action'.
+EOCE._normalizeScopeAwareEntry = function (item) {
+    if (item && typeof item === 'object') return { action: item.action, actionType: item.actionType === 'DataAction' ? 'DataAction' : 'Action' };
+    return { action: item, actionType: 'Action' };
+};
+
+// Whether a role/action in the given system is scope-aware: fully scope-aware systems
+// (Identity Governance) always are; placeholder-based systems are scope-aware only if at
+// least one action in actionList wildcard-matches a scope-aware pattern of the same plane
+// (Action/DataAction). actionList entries may be plain action strings or { action, actionType }.
 EOCE.roleIsScopeAware = function (sysKey, actionList, scopeAwareActionsBySystem) {
     if (EOCE.isFullyScopeAwareSystem(sysKey)) return true;
-    var set = scopeAwareActionsBySystem && scopeAwareActionsBySystem[sysKey];
-    if (!set) return false;
+    var patterns = scopeAwareActionsBySystem && scopeAwareActionsBySystem[sysKey];
+    if (!patterns || !patterns.length) return false;
     for (var i = 0; i < actionList.length; i++) {
-        if (set[actionList[i]]) return true;
+        var entry = EOCE._normalizeScopeAwareEntry(actionList[i]);
+        for (var j = 0; j < patterns.length; j++) {
+            if (patterns[j].actionType === entry.actionType && EOCE.actionMatch(entry.action, patterns[j].pattern)) return true;
+        }
     }
     return false;
+};
+
+// The specific action(s) in actionList that make this role scope-aware (for attribution in the
+// UI - e.g. "Key Vault Data Access Administrator" is scope-aware because it grants
+// Microsoft.Authorization/roleAssignments/write, not because of its Key Vault data actions).
+// Returns [] for fully scope-aware systems (there every action is scope-aware by the catalog
+// delegation model itself, not by a specific matched pattern) or when nothing matches.
+EOCE.scopeAwareMatchesForRole = function (sysKey, actionList, scopeAwareActionsBySystem) {
+    if (EOCE.isFullyScopeAwareSystem(sysKey)) return [];
+    var patterns = scopeAwareActionsBySystem && scopeAwareActionsBySystem[sysKey];
+    if (!patterns || !patterns.length) return [];
+    var seen = {}, matches = [];
+    actionList.forEach(function (item) {
+        var entry = EOCE._normalizeScopeAwareEntry(item);
+        for (var j = 0; j < patterns.length; j++) {
+            if (patterns[j].actionType === entry.actionType && EOCE.actionMatch(entry.action, patterns[j].pattern)) {
+                if (!seen[entry.action]) { seen[entry.action] = true; matches.push(entry.action); }
+                break;
+            }
+        }
+    });
+    return matches;
 };
 
 // --- Microsoft Learn documentation comparison ----------------------------
@@ -717,7 +776,7 @@ EOCE.parseAttackPathMarkdown = function (md) {
         permissions: EOCE.isEntraOpsMode() ? [] : pipe('permissions').map(function (r) { return { app: r[0], value: r[1], type: r[2] || '' }; }),
         references: pipe('references').map(function (r) { return { title: r[0], url: r[1] }; })
     };
-    if (fm.source) { var sp = fm.source.split('|'); p.source = { name: sp[0].trim(), url: (sp[1] || '').trim() }; }
+    if (fm.basedOn) { var basedOn = fm.basedOn.split('|'); p.basedOn = { name: basedOn[0].trim(), url: (basedOn[1] || '').trim() }; }
     return p;
 };
 // Authored as markdown in content/attack-paths/<id>.md and embedded into
@@ -899,6 +958,33 @@ EOCE.SCOPE_PLACEHOLDERS = {
         system: 'Azure',
         label: 'Tier 1 Resource Scope',
         description: 'Azure scopes designated as Management Plane (Tier 1). Also reused by Defender for Cloud scoping of microsoft.xdr/securityposture/* actions.'
+    },
+    // --- Microsoft Entra Identity Governance (Entitlement Management catalogs) ---
+    // Unlike the placeholder-based systems above (a single fixed action set that shifts plane by
+    // scope, anchored to a stable, customer-curated Tier 0 allow-list), every Identity Governance
+    // catalog action is delegated per access-package catalog - and catalogs are dynamic objects a
+    // delegated admin can create at any time, including between classification runs. EntraOps
+    // (Get-EntraOpsIdGovScopeClassification) therefore classifies each catalog by inspecting what is
+    // actually assigned inside it and fails safe: a catalog only leaves Control Plane once it is
+    // AFFIRMATIVELY proven to be Management Plane or User Access - anything unresolved, unclassified,
+    // or newly created stays Control Plane by default (same conservative posture used throughout that
+    // function for unclassifiable groups, roles and resources). There is deliberately no
+    // "Tier0IncludedIdGovScope": Tier 0 is the residual bucket, not a positive list, so
+    // Tier0ExcludedIdGovScope is simply the union of the two lists below - not an independent input.
+    '<Tier0ExcludedIdGovScope>': {
+        system: 'IdentityGovernance',
+        label: 'Catalogs excluded from Control Plane',
+        description: 'The union of the Tier 1 and Tier 2 catalog lists below - the only catalogs carved out of the Control Plane default. Everything else (including unresolved or brand-new catalogs) stays Control Plane until affirmatively proven otherwise.'
+    },
+    '<Tier1IncludedIdGovScope>': {
+        system: 'IdentityGovernance',
+        label: 'Management Plane catalogs',
+        description: 'Access-package catalogs affirmatively classified as Management Plane, because the most-privileged resource assigned inside them (a group, directory role, API permission or Azure resource) resolved to Management Plane.'
+    },
+    '<Tier2IncludedIdGovScope>': {
+        system: 'IdentityGovernance',
+        label: 'User Access catalogs',
+        description: 'Access-package catalogs affirmatively classified as User Access, because every resource assigned inside them (or the absence of any assigned resource) resolved no higher than User Access.'
     },
     // --- Intune device management (assigned group IDs) ---
     '<Tier0IncludedGroupIds>': {

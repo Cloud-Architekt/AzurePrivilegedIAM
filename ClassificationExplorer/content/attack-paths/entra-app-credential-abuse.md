@@ -1,7 +1,7 @@
 ---
 id: entra-app-credential-abuse
 name: Application & service principal credential abuse
-source: Dirk-jan Mollema | https://dirkjanm.io/azure-ad-privilege-escalation-application-admin/
+basedOn: Dirk-jan Mollema | https://dirkjanm.io/azure-ad-privilege-escalation-application-admin/
 severity: Critical
 targetTier: ControlPlane
 ---

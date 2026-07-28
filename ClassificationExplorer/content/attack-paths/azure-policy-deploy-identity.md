@@ -1,7 +1,7 @@
 ---
 id: azure-policy-deploy-identity
 name: Azure Policy deployIfNotExists identity abuse (AZT508)
-source: Microsoft (Azure Threat Research Matrix) | https://microsoft.github.io/Azure-Threat-Research-Matrix/Persistence/AZT508/AZT508/
+basedOn: Microsoft (Azure Threat Research Matrix) | https://microsoft.github.io/Azure-Threat-Research-Matrix/Persistence/AZT508/AZT508/
 severity: High
 targetTier: ControlPlane
 ---

@@ -1750,7 +1750,7 @@
       {
         "AuthorizedResourceAction": "*/read",
         "ActionType": "Action",
-        "Category": "Key Vault",
+        "Category": "Key Vault Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -1884,7 +1884,7 @@
       {
         "AuthorizedResourceAction": "*/read",
         "ActionType": "Action",
-        "Category": "Key Vault",
+        "Category": "Key Vault Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       }
@@ -27944,7 +27944,7 @@
       {
         "AuthorizedResourceAction": "*/read",
         "ActionType": "Action",
-        "Category": "Key Vault",
+        "Category": "Key Vault Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -28064,7 +28064,7 @@
       {
         "AuthorizedResourceAction": "*/read",
         "ActionType": "Action",
-        "Category": "Key Vault",
+        "Category": "Key Vault Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -48069,6 +48069,13 @@
     "RichDescription": "Grants Microsoft Defender for Cloud access to Defender Settings",
     "RolePermissions": [
       {
+        "AuthorizedResourceAction": "microsoft.security/pricings/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.security/pricings/write",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
@@ -62422,6 +62429,20 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.InferenceService/inferenceAccounts/listKeys/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.InferenceService/inferenceAccounts/regenerateKeys/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.InferenceService/inferenceAccounts/write",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
@@ -62940,7 +62961,7 @@
       {
         "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/*/read",
         "ActionType": "Action",
-        "Category": "Key Vault",
+        "Category": "Key Vault Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -63018,14 +63039,14 @@
       {
         "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/keys/read",
         "ActionType": "DataAction",
-        "Category": "Key Vault",
+        "Category": "Key Vault Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/secrets/getSecret/action",
         "ActionType": "DataAction",
-        "Category": "Key Vault",
+        "Category": "Key Vault Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -63089,7 +63110,7 @@
       {
         "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/*/read",
         "ActionType": "Action",
-        "Category": "Key Vault",
+        "Category": "Key Vault Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -63238,14 +63259,14 @@
       {
         "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/*/read",
         "ActionType": "Action",
-        "Category": "Key Vault",
+        "Category": "Key Vault Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/keys/*",
         "ActionType": "DataAction",
-        "Category": "Key Vault",
+        "Category": "Key Vault Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -63330,14 +63351,14 @@
       {
         "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/keys/read",
         "ActionType": "DataAction",
-        "Category": "Key Vault",
+        "Category": "Key Vault Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/keys/unwrap/action",
         "ActionType": "DataAction",
-        "Category": "Key Vault",
+        "Category": "Key Vault Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -63423,35 +63444,35 @@
       {
         "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/keys/decrypt/action",
         "ActionType": "DataAction",
-        "Category": "Key Vault",
+        "Category": "Key Vault Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/keys/encrypt/action",
         "ActionType": "DataAction",
-        "Category": "Key Vault",
+        "Category": "Key Vault Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/keys/read",
         "ActionType": "DataAction",
-        "Category": "Key Vault",
+        "Category": "Key Vault Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/keys/sign/action",
         "ActionType": "DataAction",
-        "Category": "Key Vault",
+        "Category": "Key Vault Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/keys/unwrap/action",
         "ActionType": "DataAction",
-        "Category": "Key Vault",
+        "Category": "Key Vault Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       }
@@ -63494,7 +63515,7 @@
       {
         "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/*/read",
         "ActionType": "Action",
-        "Category": "Key Vault",
+        "Category": "Key Vault Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -63650,14 +63671,14 @@
       {
         "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/*/read",
         "ActionType": "Action",
-        "Category": "Key Vault",
+        "Category": "Key Vault Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/*/read",
         "ActionType": "DataAction",
-        "Category": "Key Vault",
+        "Category": "Key Vault Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -63735,14 +63756,14 @@
       {
         "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/*/read",
         "ActionType": "Action",
-        "Category": "Key Vault",
+        "Category": "Key Vault Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/secrets/*",
         "ActionType": "DataAction",
-        "Category": "Key Vault",
+        "Category": "Key Vault Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -63820,7 +63841,7 @@
       {
         "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/secrets/getSecret/action",
         "ActionType": "DataAction",
-        "Category": "Key Vault",
+        "Category": "Key Vault Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       }
@@ -67079,7 +67100,7 @@
       {
         "AuthorizedResourceAction": "*/read",
         "ActionType": "Action",
-        "Category": "Key Vault",
+        "Category": "Key Vault Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -67193,7 +67214,7 @@
       {
         "AuthorizedResourceAction": "*/read",
         "ActionType": "Action",
-        "Category": "Key Vault",
+        "Category": "Key Vault Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       }
@@ -68174,7 +68195,7 @@
       {
         "AuthorizedResourceAction": "*/read",
         "ActionType": "Action",
-        "Category": "Key Vault",
+        "Category": "Key Vault Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -68217,7 +68238,7 @@
       {
         "AuthorizedResourceAction": "*/read",
         "ActionType": "Action",
-        "Category": "Key Vault",
+        "Category": "Key Vault Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -68253,7 +68274,7 @@
       {
         "AuthorizedResourceAction": "*/read",
         "ActionType": "Action",
-        "Category": "Key Vault",
+        "Category": "Key Vault Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -71139,7 +71160,7 @@
       {
         "AuthorizedResourceAction": "*/read",
         "ActionType": "Action",
-        "Category": "Key Vault",
+        "Category": "Key Vault Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -71548,7 +71569,7 @@
       {
         "AuthorizedResourceAction": "*/read",
         "ActionType": "Action",
-        "Category": "Key Vault",
+        "Category": "Key Vault Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -71626,7 +71647,7 @@
       {
         "AuthorizedResourceAction": "*/read",
         "ActionType": "Action",
-        "Category": "Key Vault",
+        "Category": "Key Vault Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       }
@@ -77086,7 +77107,7 @@
       {
         "AuthorizedResourceAction": "*/read",
         "ActionType": "Action",
-        "Category": "Key Vault",
+        "Category": "Key Vault Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       }
@@ -77669,7 +77690,7 @@
       {
         "AuthorizedResourceAction": "*/read",
         "ActionType": "Action",
-        "Category": "Key Vault",
+        "Category": "Key Vault Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -77719,7 +77740,7 @@
       {
         "AuthorizedResourceAction": "*/read",
         "ActionType": "Action",
-        "Category": "Key Vault",
+        "Category": "Key Vault Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       }
@@ -86227,7 +86248,7 @@
       {
         "AuthorizedResourceAction": "*/read",
         "ActionType": "Action",
-        "Category": "Key Vault",
+        "Category": "Key Vault Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       }

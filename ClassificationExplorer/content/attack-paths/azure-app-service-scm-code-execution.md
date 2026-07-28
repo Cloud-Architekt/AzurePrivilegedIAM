@@ -1,7 +1,7 @@
 ---
 id: azure-app-service-scm-code-execution
 name: Azure App Service/Functions SCM deployment credential abuse
-source: Karl Fosaaen (NetSPI) | https://www.youtube.com/watch?v=CUTwkuiRgqg
+basedOn: Karl Fosaaen (NetSPI) | https://www.youtube.com/watch?v=CUTwkuiRgqg
 severity: High
 targetTier: ManagementPlane
 ---
@@ -28,5 +28,4 @@ Retrieving an App Service or Function App publishing profile, usable publishing 
 - Azure | Contributor
 
 ## References
-- NetSPI (Karl Fosaaen) — Extracting Managed Identity Tokens from Azure App Services | https://www.netspi.com/blog/technical/cloud-penetration-testing/extracting-azure-managed-identity-tokens-from-app-services/
 - MITRE ATT&CK T1648 — Serverless Execution | https://attack.mitre.org/techniques/T1648/

@@ -286,9 +286,9 @@ EOCE.views.attackpaths = {
             '<span class="hint">' + self.systemsOf(p).map(function (s) { return esc(self.sysShort(s)); }).join(' &middot; ') + '</span></div>';
         html += '<div class="card-pad">';
 
-        if (p.source) {
-            html += '<div class="attack-byline">Source: ' +
-                '<a href="' + EOCE.util.safeUrl(p.source.url) + '" target="_blank" rel="noopener noreferrer">' + esc(p.source.name) + ' &#8599;</a></div>';
+        if (p.basedOn) {
+            html += '<div class="attack-byline">Based on: ' +
+                '<a href="' + EOCE.util.safeUrl(p.basedOn.url) + '" target="_blank" rel="noopener noreferrer">' + esc(p.basedOn.name) + ' &#8599;</a></div>';
         }
 
         html += '<div class="attack-meta">' +
@@ -566,7 +566,7 @@ EOCE.views.attackpaths = {
             add(targetId, tier.label, tier.label + ' (Tier ' + tier.tag + ')', 'tier', { tier: p.targetTier });
 
             var techId = 'tech:' + p.id;
-            add(techId, p.name, p.name + ' \u2014 ' + p.severity + (p.source ? ' \u00b7 by ' + p.source.name : ''), 'technique', { path: p, severity: p.severity });
+            add(techId, p.name, p.name + ' \u2014 ' + p.severity + (p.basedOn ? ' \u00b7 based on ' + p.basedOn.name : ''), 'technique', { path: p, severity: p.severity });
 
             var roleNodes = self.visibleRoles(p).map(function (r) {
                 var id = 'role:' + r.sys + '|' + String(r.name).toLowerCase();

@@ -1,7 +1,7 @@
 ---
 id: azure-elevated-access-toggle
 name: Elevated Access toggle to Azure root scope (AZT402)
-source: Microsoft (Azure Threat Research Matrix) | https://microsoft.github.io/Azure-Threat-Research-Matrix/PrivilegeEscalation/AZT402/AZT402/
+basedOn: Microsoft (Azure Threat Research Matrix) | https://microsoft.github.io/Azure-Threat-Research-Matrix/PrivilegeEscalation/AZT402/AZT402/
 severity: Critical
 targetTier: ControlPlane
 ---

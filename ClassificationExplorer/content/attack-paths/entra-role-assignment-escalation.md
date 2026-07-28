@@ -1,7 +1,7 @@
 ---
 id: entra-role-assignment-escalation
 name: Directory role assignment self-escalation
-source: Microsoft Security | https://learn.microsoft.com/entra/identity/role-based-access-control/privileged-roles-permissions
+basedOn: Microsoft Security | https://learn.microsoft.com/entra/identity/role-based-access-control/privileged-roles-permissions
 severity: Critical
 targetTier: ControlPlane
 ---

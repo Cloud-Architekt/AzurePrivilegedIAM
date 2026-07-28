@@ -1,27 +1,28 @@
 ---
 id: intune-endpoint-code-execution
 name: Endpoint management code execution (Intune)
-source: Microsoft Security | https://learn.microsoft.com/mem/intune/fundamentals/role-based-access-control
+basedOn: Microsoft Security | https://learn.microsoft.com/mem/intune/fundamentals/role-based-access-control
 severity: High
 targetTier: ControlPlane
 ---
 
 ## Summary
-Deploying apps, scripts or configuration profiles through Intune runs code as SYSTEM on managed devices; targeting privileged / Tier 0 endpoints yields control-plane access to those hosts.
+Deploying a suitable app installer or a script configured for SYSTEM context in Intune can yield code execution on managed Windows devices. Configuration profiles change device settings but do not themselves execute arbitrary code. Targeting privileged or Tier 0 endpoints can yield control-plane access to those hosts.
 
 ## Prerequisite
 An Intune (or Entra) role that can create/assign apps, scripts or device configuration, with scope over privileged devices.
 
 ## Steps
 1. Identify device groups that contain privileged or Tier 0 endpoints (for example admin workstations).
-2. Create a malicious app, PowerShell script or configuration profile in Intune.
-3. Assign it to the privileged device group — it executes as SYSTEM on those endpoints.
+2. Create a malicious app or a PowerShell script configured for SYSTEM context in Intune.
+3. Assign it to the privileged device group.
 4. Harvest credentials / tokens from the compromised privileged endpoints.
 
 ## Actions
 - DeviceManagement | Microsoft.Intune/MobileApps/Create
 - DeviceManagement | Microsoft.Intune/MobileApps/Update
 - DeviceManagement | Microsoft.Intune/MobileApps/Assign
+- DeviceManagement | Microsoft.Intune/RemoteTasks/OnDemandProactiveRemediation
 - EntraID | microsoft.intune/allEntities/allTasks
 
 ## Roles

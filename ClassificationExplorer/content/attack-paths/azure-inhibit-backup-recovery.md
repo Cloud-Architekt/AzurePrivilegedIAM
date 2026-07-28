@@ -1,7 +1,7 @@
 ---
 id: azure-inhibit-backup-recovery
 name: Inhibit system recovery (Azure Backup deletion)
-source: Microsoft Learn | https://learn.microsoft.com/en-us/azure/backup/secure-by-default
+basedOn: Microsoft Learn | https://learn.microsoft.com/en-us/azure/backup/secure-by-default
 severity: Critical
 targetTier: ManagementPlane
 ---

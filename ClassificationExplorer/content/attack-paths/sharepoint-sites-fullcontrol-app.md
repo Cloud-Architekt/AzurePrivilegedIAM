@@ -1,7 +1,7 @@
 ---
 id: sharepoint-sites-fullcontrol-app
 name: Tenant-wide SharePoint & OneDrive control via Sites.FullControl.All
-source: Martin Lingstuyl (blimped.nl) | https://www.blimped.nl/running-application-with-limited-sharepoint-permissions/
+basedOn: Martin Lingstuyl (blimped.nl) | https://www.blimped.nl/running-application-with-limited-sharepoint-permissions/
 severity: High
 targetTier: ManagementPlane
 ---

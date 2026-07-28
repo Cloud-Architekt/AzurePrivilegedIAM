@@ -1,7 +1,7 @@
 ---
 id: graph-userauthenticationmethod-readwrite-all
 name: Account takeover via Temporary Access Pass (UserAuthenticationMethod.ReadWrite.All)
-source: Dirk-jan Mollema (dirkjanm.io) | https://dirkjanm.io/lateral-movement-and-hash-dumping-with-temporary-access-passes-microsoft-entra/
+basedOn: Dirk-jan Mollema (dirkjanm.io) | https://dirkjanm.io/lateral-movement-and-hash-dumping-with-temporary-access-passes-microsoft-entra/
 severity: Critical
 targetTier: ControlPlane
 ---

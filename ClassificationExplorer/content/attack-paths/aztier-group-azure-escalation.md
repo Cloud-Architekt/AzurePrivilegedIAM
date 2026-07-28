@@ -1,7 +1,7 @@
 ---
 id: aztier-group-azure-escalation
 name: Group membership to Azure escalation (Directory Writers)
-source: Emilien Socchi | https://github.com/emiliensocchi/azure-tiering
+basedOn: Emilien Socchi | https://github.com/emiliensocchi/azure-tiering
 severity: Critical
 targetTier: ControlPlane
 ---
@@ -31,5 +31,4 @@ A role that can update the membership of a security group (for example Directory
 
 ## References
 - Emilien Socchi — Entra roles tiering (Directory Writers, Tier 0) | https://github.com/emiliensocchi/azure-tiering/blob/main/Entra%20roles/tiered-entra-roles.json
-- Andreas Happe (m365internals) — Lateral Movement with Managed Identities of Azure VMs | https://m365internals.com/2021/11/30/lateral-movement-with-managed-identities-of-azure-virtual-machines/
 - MITRE ATT&CK T1098 — Account Manipulation | https://attack.mitre.org/techniques/T1098/

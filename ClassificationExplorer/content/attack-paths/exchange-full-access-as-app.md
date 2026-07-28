@@ -1,7 +1,7 @@
 ---
 id: exchange-full-access-as-app
 name: Tenant-wide mailbox access via Exchange Online full_access_as_app
-source: AppGovScore | https://www.appgovscore.com/blog/insecure-app-registrations-breached-microsoft
+basedOn: AppGovScore | https://www.appgovscore.com/blog/insecure-app-registrations-breached-microsoft
 severity: High
 targetTier: ManagementPlane
 ---

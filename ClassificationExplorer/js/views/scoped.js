@@ -22,7 +22,7 @@ EOCE.views.scoped = {
         return null;
     },
 
-    systemsWithParam: ['EntraID', 'Azure', 'DeviceManagement', 'Defender'],
+    systemsWithParam: ['EntraID', 'Azure', 'DeviceManagement', 'Defender', 'IdentityGovernance'],
 
     render: function (el) {
         var self = this;

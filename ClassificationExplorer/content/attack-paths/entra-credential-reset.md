@@ -1,7 +1,7 @@
 ---
 id: entra-credential-reset
 name: Privileged credential / MFA reset takeover
-source: Microsoft Security | https://learn.microsoft.com/entra/identity/role-based-access-control/privileged-roles-permissions
+basedOn: Microsoft Security | https://learn.microsoft.com/entra/identity/role-based-access-control/privileged-roles-permissions
 severity: Critical
 targetTier: ControlPlane
 ---

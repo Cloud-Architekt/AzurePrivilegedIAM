@@ -1,8 +1,8 @@
 {
-  "generatedUtc": "2026-07-26T09:20:13.3807960Z",
+  "generatedUtc": "2026-07-28T06:03:40.7869990Z",
   "mode": "Standalone",
   "repoRoot": "AzurePrivilegedIAM",
-  "fileCount": 18,
+  "fileCount": 19,
   "files": [
     {
       "path": "Classification/Classification_EntraIdDirectoryRoles.json",
@@ -27,10 +27,10 @@
     },
     {
       "path": "Classification/Classification_AzureResources.json",
-      "bytes": 3254968,
+      "bytes": 3256241,
       "items": 919,
       "param": false,
-      "sha256": "a7075007d173260421e9f8da2222a56466ec3ab66cb9abb96efe12359e871a16"
+      "sha256": "6dc86c872888d8899e6dcf6cac161271ed0b0ecede3333786e723a5f658c49a8"
     },
     {
       "path": "Classification/Classification_DeviceManagementRoles.json",
@@ -82,18 +82,25 @@
       "sha256": "b909cc39c184680449b7d5a66d8e3fd0b8f11aaef8e26e023ca31b6e460eb94b"
     },
     {
+      "path": "EntraOps_Classification/Classification_IdentityGovernance.Param.json",
+      "bytes": 3893,
+      "items": 3,
+      "param": true,
+      "sha256": "82253d3aef31be4babdd72e8d3d2ff44b60b5a7803495804945f9b1f02963af0"
+    },
+    {
       "path": "EntraOps_Classification/Classification_Azure.json",
-      "bytes": 25805,
+      "bytes": 27079,
       "items": 3,
       "param": false,
-      "sha256": "117906ce0492917c94d41eece49e8c5564d8e1b8fa832d2af1fea473c6260a84"
+      "sha256": "eeecbd0a9cfd9a7eb1781ab7b15303ab3d6d448e51b06b90755896b1abf4f78b"
     },
     {
       "path": "EntraOps_Classification/Classification_Azure.Param.json",
-      "bytes": 44934,
+      "bytes": 46913,
       "items": 3,
       "param": true,
-      "sha256": "09d1aac9d57bae5f2f829ad822cc862543ba797069e1b8e9b530e6108bb7f43d"
+      "sha256": "45cffe7f33e3338049ba873c1905e36d3fee063393389336024d7758fe7d1cfe"
     },
     {
       "path": "EntraOps_Classification/Classification_DeviceManagement.json",

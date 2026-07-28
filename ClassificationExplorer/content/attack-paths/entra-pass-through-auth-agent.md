@@ -1,7 +1,7 @@
 ---
 id: entra-pass-through-auth-agent
 name: Pass-Through Authentication (PTA) Agent takeover
-source: Dr. Nestori Syynimaa (AADInternals) | https://aadinternals.com/post/pta/
+basedOn: Dr. Nestori Syynimaa (AADInternals) | https://aadinternals.com/post/pta/
 severity: Critical
 targetTier: ControlPlane
 ---

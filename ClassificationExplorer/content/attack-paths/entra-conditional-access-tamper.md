@@ -1,7 +1,7 @@
 ---
 id: entra-conditional-access-tamper
 name: Conditional Access policy tampering
-source: Microsoft Security | https://learn.microsoft.com/entra/identity/conditional-access/overview
+basedOn: Microsoft Security | https://learn.microsoft.com/entra/identity/conditional-access/overview
 severity: High
 targetTier: ControlPlane
 ---

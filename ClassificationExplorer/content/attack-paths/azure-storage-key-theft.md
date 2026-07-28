@@ -1,7 +1,7 @@
 ---
 id: azure-storage-key-theft
 name: Storage account access key dumping (AZT605.1)
-source: Microsoft (Azure Threat Research Matrix) | https://microsoft.github.io/Azure-Threat-Research-Matrix/CredentialAccess/AZT605/AZT605-1/
+basedOn: Microsoft (Azure Threat Research Matrix) | https://microsoft.github.io/Azure-Threat-Research-Matrix/CredentialAccess/AZT605/AZT605-1/
 severity: Medium
 targetTier: ManagementPlane
 ---

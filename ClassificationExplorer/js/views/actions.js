@@ -5,7 +5,7 @@ window.EOCE = window.EOCE || {};
 EOCE.views = EOCE.views || {};
 
 EOCE.views.actions = {
-    state: { q: '', sys: 'all', cat: 'all', tiers: {}, attackPathOnly: false, learnOnly: false, sortKey: 'action', sortDir: 1 },
+    state: { q: '', sys: 'all', cat: 'all', plane: 'all', tiers: {}, attackPathOnly: false, learnOnly: false, sortKey: 'action', sortDir: 1 },
 
     render: function (el, params) {
         var self = this;
@@ -41,7 +41,7 @@ EOCE.views.actions = {
                                 tier: EOCE.TIERS[p.EAMTierLevelName] ? p.EAMTierLevelName : 'Unclassified',
                                 category: p.Category || '—',
                                 actionType: p.ActionType || '',
-                                scopeAware: EOCE.roleIsScopeAware(k, [p.AuthorizedResourceAction], scopeAwareActions),
+                                scopeAware: EOCE.roleIsScopeAware(k, [{ action: p.AuthorizedResourceAction, actionType: p.ActionType }], scopeAwareActions),
                                 roles: []
                             };
                         }
@@ -124,7 +124,7 @@ EOCE.views.actions = {
                         tier: meta.tier,
                         category: meta.category,
                         actionType: meta.actionType,
-                        scopeAware: EOCE.roleIsScopeAware(sysKey, [meta.action], scopeAwareActions),
+                        scopeAware: EOCE.roleIsScopeAware(sysKey, [{ action: meta.action, actionType: meta.actionType }], scopeAwareActions),
                         roles: [],
                         docsRoles: docsRolesByAction[lk] || [],
                         docsOnly: true
@@ -175,6 +175,19 @@ EOCE.views.actions = {
             html += '<option value="' + EOCE.util.escapeHtml(c) + '"' + (self.state.cat === c ? ' selected' : '') + '>' + EOCE.util.escapeHtml(c) + '</option>';
         });
         html += '</select>';
+        // Azure RBAC keeps control/management plane Actions and data plane DataActions in
+        // separate namespaces - only offer the split when the current system/filter actually
+        // has both (avoids a pointless control for EntraID, Intune, Defender, ID Governance).
+        if (this.hasPlaneSplit(this.state.sys)) {
+            if (this.state.plane !== 'all' && this.state.plane !== 'action' && this.state.plane !== 'dataaction') this.state.plane = 'all';
+            html += '<select class="filter" id="actPlane" title="Azure RBAC keeps control/management plane Actions and data plane DataActions in separate namespaces — matches the Actions / Data actions split shown in the Azure Portal and Microsoft Learn">' +
+                '<option value="all"' + (this.state.plane === 'all' ? ' selected' : '') + '>Actions + Data actions</option>' +
+                '<option value="action"' + (this.state.plane === 'action' ? ' selected' : '') + '>Actions only</option>' +
+                '<option value="dataaction"' + (this.state.plane === 'dataaction' ? ' selected' : '') + '>Data actions only</option>' +
+                '</select>';
+        } else {
+            this.state.plane = 'all';
+        }
         html += '<div class="tier-toggles" id="actTierToggles">';
         ['ControlPlane', 'ManagementPlane', 'UserAccess', 'Unclassified'].forEach(function (t) {
             html += '<span class="tier-toggle tier-' + t.toLowerCase() + (self.state.tiers[t] ? ' on' : '') + '" data-tier="' + t + '"><span class="tier-dot"></span>' + EOCE.tier(t).short + '</span>';
@@ -201,6 +214,12 @@ EOCE.views.actions = {
         document.getElementById('actCat').addEventListener('change', function (e) {
             self.state.cat = e.target.value; self.renderTable();
         });
+        var planeSel = document.getElementById('actPlane');
+        if (planeSel) {
+            planeSel.addEventListener('change', function (e) {
+                self.state.plane = e.target.value; self.renderTable();
+            });
+        }
         document.getElementById('actTierToggles').addEventListener('click', function (e) {
             var b = e.target.closest('[data-tier]'); if (!b) return;
             var t = b.getAttribute('data-tier'); self.state.tiers[t] = !self.state.tiers[t];
@@ -215,6 +234,17 @@ EOCE.views.actions = {
                 self.state.learnOnly = e.target.checked; self.renderTable();
             });
         }
+    },
+
+    // True when the given system (or, for 'all', any system) has both control/management
+    // plane Actions and data plane DataActions among its role actions - see planeOf().
+    hasPlaneSplit: function (sys) {
+        var hasAction = false, hasDataAction = false;
+        (this.all || []).forEach(function (a) {
+            if (sys !== 'all' && a.sysKey !== sys) return;
+            if (a.actionType === 'DataAction') hasDataAction = true; else hasAction = true;
+        });
+        return hasAction && hasDataAction;
     },
 
     categoriesFor: function (sys) {
@@ -233,6 +263,8 @@ EOCE.views.actions = {
             if (s.sys !== 'all' && a.sysKey !== s.sys) return false;
             if (s.cat !== 'all' && a.category !== s.cat) return false;
             if (!s.tiers[a.tier]) return false;
+            if (s.plane === 'action' && a.actionType === 'DataAction') return false;
+            if (s.plane === 'dataaction' && a.actionType !== 'DataAction') return false;
             if (s.attackPathOnly && !EOCE.attackIndex().byAction[a.sysKey + '|' + String(a.action || '').toLowerCase()]) return false;
             if (q && (a.action + ' ' + a.category).toLowerCase().indexOf(q) === -1) return false;
             return true;
@@ -281,10 +313,11 @@ EOCE.views.actions = {
                     : (a.docsOnly ? (a.docsRoles || []).length + ' (Learn)' : a.roles.length);
                 if (histActionSets[a.sysKey] === undefined) histActionSets[a.sysKey] = EOCE.historyLatestAddedActionSet(a.sysKey) || {};
                 var histChip = histActionSets[a.sysKey][a.action] ? ' ' + EOCE.historyChangedChip('added') : '';
+                var dataChip = a.actionType === 'DataAction' ? ' <span class="chip dataplane" title="Azure RBAC data plane operation - a separate permission namespace from control/management plane Actions">Data action</span>' : '';
                 html += '<tr data-idx="' + idx + '">' +
                     '<td class="cell-mono">' + EOCE.util.highlight(EOCE.util.escapeHtml(a.action), s.q) + (EOCE.scopeAwareChip(a.sysKey, a.scopeAware) ? ' ' + EOCE.scopeAwareChip(a.sysKey, a.scopeAware) : '') + learnChip + (atkChip ? ' ' + atkChip : '') + histChip + '</td>' +
                     '<td class="muted nowrap">' + EOCE.util.escapeHtml(EOCE.RBAC_SYSTEMS[a.sysKey].short) + '</td>' +
-                    '<td class="muted">' + EOCE.util.highlight(EOCE.util.escapeHtml(a.category), s.q) + '</td>' +
+                    '<td class="muted">' + EOCE.util.highlight(EOCE.util.escapeHtml(a.category), s.q) + dataChip + '</td>' +
                     '<td>' + EOCE.util.tierBadge(a.tier) + '</td>' +
                     '<td class="muted nowrap" style="text-align:right;">' + roleCount + '</td>' +
                     '</tr>';
@@ -319,7 +352,7 @@ EOCE.views.actions = {
         body += '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;">' +
             EOCE.util.tierBadge(a.tier) + '<span class="chip brand">' + EOCE.util.escapeHtml(sys.short) + '</span>' +
             '<span class="chip">' + EOCE.util.escapeHtml(a.category) + '</span>' +
-            (a.actionType ? '<span class="chip">' + EOCE.util.escapeHtml(a.actionType) + '</span>' : '') +
+            (a.actionType === 'DataAction' ? '<span class="chip dataplane" title="Azure RBAC data plane operation - a separate permission namespace from control/management plane Actions">Data action</span>' : (a.actionType ? '<span class="chip">' + EOCE.util.escapeHtml(a.actionType) + '</span>' : '')) +
             (a.docsOnly ? '<span class="chip docdiff" title="Only documented in the ' + EOCE.util.escapeHtml(docsLabel) + ' permissions reference">\u21C4 Learn-only</span>' : '') +
             EOCE.attackPathChip(attackPaths.length) +
             (window.EOReview ? '<button type="button" id="eoActionStar" class="eo-star" title="Add to review list">&#9734;</button>' : '') +

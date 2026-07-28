@@ -1,7 +1,7 @@
 ---
 id: aztier-conditional-access-lockout
 name: Conditional Access lockout & tenant extortion
-source: Emilien Socchi | https://github.com/emiliensocchi/azure-tiering
+basedOn: Emilien Socchi | https://github.com/emiliensocchi/azure-tiering
 severity: Critical
 targetTier: ControlPlane
 ---

@@ -1,7 +1,7 @@
 ---
 id: azure-keyvault-credential-theft
 name: Key Vault secret & certificate dumping (AZT604)
-source: Microsoft (Azure Threat Research Matrix) | https://microsoft.github.io/Azure-Threat-Research-Matrix/CredentialAccess/AZT604/AZT604/
+basedOn: Microsoft (Azure Threat Research Matrix) | https://microsoft.github.io/Azure-Threat-Research-Matrix/CredentialAccess/AZT604/AZT604/
 severity: High
 targetTier: ControlPlane
 ---

@@ -1,7 +1,7 @@
 ---
 id: entra-hybrid-sync-takeover
 name: Hybrid identity / Entra Connect sync account abuse
-source: Dr. Nestori Syynimaa (o365blog) | https://aadinternals.com/post/on-prem_admin/
+basedOn: Dr. Nestori Syynimaa (o365blog) | https://aadinternals.com/post/on-prem_admin/
 severity: Critical
 targetTier: ControlPlane
 ---

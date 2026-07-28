@@ -1,7 +1,7 @@
 ---
 id: azure-logicapp-managed-identity-abuse
 name: Logic App workflow managed identity token theft
-source: Andy Robbins (SpecterOps) | https://specterops.io/blog/2022/06/07/managed-identity-attack-paths-part-2-logic-apps/
+basedOn: Andy Robbins (SpecterOps) | https://specterops.io/blog/2022/06/07/managed-identity-attack-paths-part-2-logic-apps/
 severity: High
 targetTier: ControlPlane
 ---

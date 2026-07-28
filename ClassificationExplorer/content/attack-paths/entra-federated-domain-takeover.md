@@ -1,7 +1,7 @@
 ---
 id: entra-federated-domain-takeover
 name: Federated domain modification backdoor
-source: Dr. Nestori Syynimaa | https://aadinternals.com/post/aad-deepdive/
+basedOn: Dr. Nestori Syynimaa | https://aadinternals.com/post/aad-deepdive/
 severity: Critical
 targetTier: ControlPlane
 ---

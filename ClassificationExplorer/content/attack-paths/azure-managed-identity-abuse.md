@@ -1,7 +1,7 @@
 ---
 id: azure-managed-identity-abuse
 name: Compute managed identity abuse (run command / extensions)
-source: Fabian Bader (cloudbrothers) | https://cloudbrothers.info/en/azure-attack-paths/
+basedOn: Fabian Bader (cloudbrothers) | https://cloudbrothers.info/en/azure-attack-paths/
 severity: High
 targetTier: ControlPlane
 ---

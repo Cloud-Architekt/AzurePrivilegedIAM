@@ -1,7 +1,7 @@
 ---
 id: entra-role-assignable-group
 name: Role-assignable group takeover
-source: Microsoft Learn | https://learn.microsoft.com/entra/identity/role-based-access-control/groups-concept
+basedOn: Microsoft Learn | https://learn.microsoft.com/entra/identity/role-based-access-control/groups-concept
 severity: High
 targetTier: ControlPlane
 ---

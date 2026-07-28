@@ -1,7 +1,7 @@
 ---
 id: intune-autopilot-grouptag-scope-shift
 name: Autopilot Group Tag manipulation causes Intune scope tag/tier shift
-source: Thomas Naunheim & Martin Sohn Christensen | https://www.troopers.de/troopers26/agenda/
+basedOn: Thomas Naunheim & Martin Sohn Christensen | https://www.troopers.de/troopers26/agenda/
 severity: Critical
 targetTier: ControlPlane
 ---
