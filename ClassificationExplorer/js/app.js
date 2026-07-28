@@ -42,25 +42,23 @@ EOCE.app = (function () {
     }
 
     // ---- Routing ---------------------------------------------------------
-    // Object.create(null) avoids inherited Object.prototype properties
-    // (e.g. 'constructor', 'toString') being picked up when looking up a
-    // route name that comes straight from the user-controlled URL hash.
-    var routes = Object.assign(Object.create(null), {
-        dashboard: function () { return EOCE.views.overview; },
-        overview: function () { return EOCE.views.tiermap; },
-        model: function () { return EOCE.views.model; },
-        roles: function () { return EOCE.views.roles; },
-        actions: function () { return EOCE.views.actions; },
-        permissions: function () { return EOCE.views.permissions; },
-        scoped: function () { return EOCE.views.scoped; },
-        overwrites: function () { return EOCE.views.overwrites; },
-        // Standalone mode only.
-        history: function () { return EOCE.isEntraOpsMode() ? null : EOCE.views.history; },
-        // Entraops mode only.
-        customize: function () { return EOCE.isEntraOpsMode() ? EOCE.views.customize : null; },
-        compare: function () { return EOCE.isEntraOpsMode() ? EOCE.views.compare : null; },
-        attackpaths: function () { return EOCE.views.attackpaths; }
-    });
+    function resolveRoute(route) {
+        switch (route) {
+            case 'overview': return { route: route, view: EOCE.views.tiermap };
+            case 'model': return { route: route, view: EOCE.views.model };
+            case 'roles': return { route: route, view: EOCE.views.roles };
+            case 'actions': return { route: route, view: EOCE.views.actions };
+            case 'permissions': return { route: route, view: EOCE.views.permissions };
+            case 'scoped': return { route: route, view: EOCE.views.scoped };
+            case 'overwrites': return { route: route, view: EOCE.views.overwrites };
+            case 'history': return { route: route, view: EOCE.isEntraOpsMode() ? null : EOCE.views.history };
+            case 'customize': return { route: route, view: EOCE.isEntraOpsMode() ? EOCE.views.customize : null };
+            case 'compare': return { route: route, view: EOCE.isEntraOpsMode() ? EOCE.views.compare : null };
+            case 'attackpaths': return { route: route, view: EOCE.views.attackpaths };
+            case 'dashboard':
+            default: return { route: 'dashboard', view: EOCE.views.overview };
+        }
+    }
 
     function parseHash() {
         var h = (location.hash || '#dashboard').replace(/^#/, '');
@@ -105,11 +103,10 @@ EOCE.app = (function () {
             window.scrollTo(0, 0);
             return;
         }
-        var factory = routes[parsed.route];
-        if (typeof factory !== 'function') factory = routes.dashboard;
-        var view = factory();
+        var resolved = resolveRoute(parsed.route);
+        var view = resolved.view;
         if (!view) { setError(new Error('View not found: ' + parsed.route)); return; }
-        setActiveNav(parsed.route);
+        setActiveNav(resolved.route);
         document.getElementById('nav').classList.remove('open');
         current = view;
         setLoading();
