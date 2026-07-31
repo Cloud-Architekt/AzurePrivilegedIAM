@@ -11,7 +11,7 @@ function Update-EntraOpsClassificationModels {
           * Lane "ApiPermissions" (sequential):
                 Export-EntraOpsClassificationAppRoles -> Export-EntraOpsClassificationScopes -> Export-EntraOpsClassificationApiPermissions
           * Lane "EntraIdRoles" (sequential):
-                Export-EntraOpsClassificationDirectoryRoles -> Export-EntraOpsClassificationDirectoryRolesFromMsftDocs -> Get-EntraOpsClassificationDirectoryRolesMissmatchFromMsftDocs
+                Export-EntraOpsClassificationDirectoryRoles -> Export-EntraOpsClassificationDirectoryRolesFromMsftDocs -> Get-EntraOpsClassificationDirectoryRolesMismatchFromMsftDocs
           * Lane "IdentityGovernance":   Export-EntraOpsClassificationIdentityGovernanceRoles
           * Lane "DeviceManagement":     Export-EntraOpsClassificationDeviceManagementRoles
           * Lane "AzureRoles":           Export-EntraOpsClassificationAzureRoles
@@ -145,6 +145,7 @@ function Update-EntraOpsClassificationModels {
         MismatchTempFile                 = $MismatchTempFile
     }
 
+    try {
     #region Lane definitions
     $LaneApiPermissions = {
         param($RepoRoot, $ScriptsPath, $Options)
@@ -168,13 +169,13 @@ function Update-EntraOpsClassificationModels {
         Set-Location $RepoRoot
         . (Join-Path $ScriptsPath "Export-EntraOpsClassificationDirectoryRoles.ps1")
         . (Join-Path $ScriptsPath "Export-EntraOpsClassificationDirectoryRolesFromMsftDocs.ps1")
-        . (Join-Path $ScriptsPath "Get-EntraOpsClassificationDirectoryRolesMissmatchFromMsftDocs.ps1")
+        . (Join-Path $ScriptsPath "Get-EntraOpsClassificationDirectoryRolesMismatchFromMsftDocs.ps1")
 
         try { Write-Output "Step 1/3 Export-EntraOpsClassificationDirectoryRoles"; Export-EntraOpsClassificationDirectoryRoles -IncludeCustomRoles $Options.IncludeCustomRoles } catch { throw "DirectoryRoles failed: $($_.Exception.Message)" }
         try { Write-Output "Step 2/3 Export-EntraOpsClassificationDirectoryRolesFromMsftDocs"; Export-EntraOpsClassificationDirectoryRolesFromMsftDocs } catch { throw "DirectoryRolesFromMsftDocs failed: $($_.Exception.Message)" }
         try {
-            Write-Output "Step 3/3 Get-EntraOpsClassificationDirectoryRolesMissmatchFromMsftDocs"
-            $mm = Get-EntraOpsClassificationDirectoryRolesMissmatchFromMsftDocs -ShowSummaryOnly $true
+            Write-Output "Step 3/3 Get-EntraOpsClassificationDirectoryRolesMismatchFromMsftDocs"
+            $mm = Get-EntraOpsClassificationDirectoryRolesMismatchFromMsftDocs -ShowSummaryOnly $true
             $mm | ConvertTo-Json -Depth 8 | Out-File -FilePath $Options.MismatchTempFile -Force
         } catch { throw "Mismatch comparison failed: $($_.Exception.Message)" }
         Write-Output "Lane complete"
@@ -442,5 +443,8 @@ function Update-EntraOpsClassificationModels {
         GraphOnlyActions      = $OnlyInGraph
         DirectoryUnclassified = $DocsUnclassified
         ActionDifferenceCount = if ($Mismatch) { @($Mismatch.ActionDifferences).Count } else { 0 }
+    }
+    } finally {
+        Remove-Item -LiteralPath $MismatchTempFile -Force -ErrorAction SilentlyContinue
     }
 }

@@ -20999,6 +20999,50 @@
     }
   },
   {
+    "RoleId": "4f772c11-8026-4833-859c-5c23e84b5c30",
+    "RoleName": "Azure Kubernetes Service Prepared Image Specification Contributor",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Allows users to create and manage Prepared Image Specification resources.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/preparedImageSpecifications/*",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "ed915fdf-c373-4707-988e-fb5d15a5a9ec",
+    "RoleName": "Azure Kubernetes Service Prepared Image Specification Reader",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Allows read-only access to Prepared Image Specification resources.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/preparedImageSpecifications/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "UserAccess",
+      "EAMTierLevelTagValue": "2"
+    }
+  },
+  {
     "RoleId": "3498e952-d568-435e-9b2c-8d77e338d7f7",
     "RoleName": "Azure Kubernetes Service RBAC Admin",
     "IsCustom": false,
@@ -25008,6 +25052,13 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.Network/loadBalancers/delete",
+        "ActionType": "Action",
+        "Category": "Network",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.Network/loadBalancers/inboundNatRules/join/action",
         "ActionType": "Action",
         "Category": "Network",
@@ -25072,6 +25123,13 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Network/privatelinkservices/delete",
+        "ActionType": "Action",
+        "Category": "Network",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Network/privatelinkservices/privateEndpointConnections/delete",
         "ActionType": "Action",
         "Category": "Network",
         "EAMTierLevelName": "ManagementPlane",
@@ -40778,6 +40836,20 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.Mission/virtualEnclaves/setEnclaveRoleAssignments/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Mission/virtualEnclaves/setWorkloadRoleAssignments/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.Mission/virtualEnclaves/workloads/write",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
@@ -41081,6 +41153,27 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Mission/virtualEnclaves/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Mission/virtualEnclaves/setEnclaveRoleAssignments/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Mission/virtualEnclaves/setMaintenanceMode/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Mission/virtualEnclaves/setWorkloadRoleAssignments/action",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
@@ -41738,6 +41831,20 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.ComputeLimit/locations/trustedHostSubscriptions/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ComputeLimit/locations/trustedHostSubscriptions/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.ComputeLimit/register/action",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
@@ -41795,6 +41902,13 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.ComputeLimit/locations/sharedLimits/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ComputeLimit/locations/trustedHostSubscriptions/read",
         "ActionType": "Action",
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",
@@ -45058,6 +45172,20 @@
         "Category": "General Management Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.DocumentDB/databaseAccounts/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.DocumentDB/locations/operationsStatus/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       }
     ],
     "Classification": {
@@ -76854,11 +76982,18 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "RichDescription": "Create, read, and modify jobs and other Workspace data. This role is in preview and subject to change.",
+    "RichDescription": "Create, read, and modify jobs and other Workspace data.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.Insights/alertRules/*",
         "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Quantum/Workspaces/chat/action",
+        "ActionType": "DataAction",
         "Category": "General Management Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"

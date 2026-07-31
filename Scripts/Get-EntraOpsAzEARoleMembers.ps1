@@ -45,7 +45,10 @@ function Get-EntraOpsAzEARoleMembers {
     Connect-AzAccount -Tenant $TenantName | Out-Null
 
     # Get Token and connect to MgGraph
-    $AccessToken = (Get-AzAccessToken -ResourceTypeName "MSGraph").Token | ConvertTo-SecureString -AsPlainText -Force
+    $AccessToken = (Get-AzAccessToken -ResourceTypeName "MSGraph").Token
+    if ($AccessToken -isnot [System.Security.SecureString]) {
+        $AccessToken = ConvertTo-SecureString -String $AccessToken -AsPlainText -Force
+    }
     Connect-MgGraph -AccessToken $AccessToken | Out-Null
     $TenantId = (Get-AzContext).Tenant.Id
 
@@ -56,7 +59,7 @@ function Get-EntraOpsAzEARoleMembers {
         $AzContext = Set-AzContext -SubscriptionId $Subscription -WarningAction SilentlyContinue
         $ClassicAdmins = ((Invoke-AzRestMethod -Method Get https://management.azure.com/subscriptions/"$Subscription"/providers/Microsoft.Authorization/classicAdministrators?api-version=2015-06-01).content | ConvertFrom-Json).Value.properties
         foreach ($ClassicAdmin in $ClassicAdmins) {
-            if($ClassicAdmin.Role.Contains(";")) { $ClassicAdmin.Role = $ClassicAdmins.role.Split(";") }
+            if($ClassicAdmin.Role.Contains(";")) { $ClassicAdmin.Role = $ClassicAdmin.Role.Split(";") }
             [pscustomobject]@{
                 SubscriptionId                   =   $Subscription
                 Emailaddress                     =   $ClassicAdmin.emailAddress
@@ -81,17 +84,13 @@ function Get-EntraOpsAzEARoleMembers {
                 $BillingRoleDefinitions += $EnrollmentRoleDefinitions = ((Invoke-AzRestMethod -Method Get https://management.azure.com/providers/Microsoft.Billing/billingAccounts/$BillingAccountId/billingRoleDefinitions?api-version=2019-10-01-preview).content | ConvertFrom-Json).value
 
                 ## ENROLLMENT ADMINISTRATORS
-                $EnrollmentAdminDetails = $BillingAccounts | ForEach-Object {
-                    ((Invoke-AzRestMethod -Method Get https://management.azure.com/providers/Microsoft.Billing/billingAccounts/$BillingAccountId/billingRoleAssignments?api-version=2019-10-01-preview).Content | ConvertFrom-Json).value
-                }
+                $EnrollmentAdminDetails = ((Invoke-AzRestMethod -Method Get https://management.azure.com/providers/Microsoft.Billing/billingAccounts/$BillingAccountId/billingRoleAssignments?api-version=2019-10-01-preview).Content | ConvertFrom-Json).value
                 $EnterpriseEnrollmentAdmin = $EnrollmentAdminDetails | Select-Object id, properties
                 $AzureEaAdmins += $EnterpriseEnrollmentAdmin | select-object id, properties
 
                 ## ENROLLMENT ACCOUNTS
                 Write-Host "Getting Enrollment account admins..."
-                $EnterpriseEnrollmentAccounts = $BillingAccounts | ForEach-Object {
-                    ((Invoke-AzRestMethod -Method get https://management.azure.com/providers/Microsoft.Billing/billingAccounts/$BillingAccountId/enrollmentAccounts?api-version=2019-10-01-preview).content | ConvertFrom-Json).value
-                }
+                $EnterpriseEnrollmentAccounts = ((Invoke-AzRestMethod -Method get https://management.azure.com/providers/Microsoft.Billing/billingAccounts/$BillingAccountId/enrollmentAccounts?api-version=2019-10-01-preview).content | ConvertFrom-Json).value
                 $EnterpriseEnrollmentAccountsRoleAssignments = $EnterpriseEnrollmentAccounts | foreach-object {
                     $EnrollmentAccountName = $_.name
                     ((Invoke-AzRestMethod -Method Get https://management.azure.com/providers/Microsoft.Billing/billingAccounts/$BillingAccountId/enrollmentAccounts/$EnrollmentAccountName/billingRoleAssignments?api-version=2019-10-01-preview).content | ConvertFrom-Json).value
@@ -105,9 +104,7 @@ function Get-EntraOpsAzEARoleMembers {
 
                 ## ENROLLMENT DEPARTMENTS
                 Write-Host "Getting Enrollment department admins..."
-                $EnterpriseEnrollmentDepartment = $BillingAccounts | ForEach-Object {
-                    ((Invoke-AzRestMethod -Method Get https://management.azure.com/providers/Microsoft.Billing/billingAccounts/$BillingAccountId/departments?api-version=2019-10-01-preview).content | ConvertFrom-Json).value
-                }
+                $EnterpriseEnrollmentDepartment = ((Invoke-AzRestMethod -Method Get  https://management.azure.com/providers/Microsoft.Billing/billingAccounts/$BillingAccountId/departments?api-version=2019-10-01-preview).content | ConvertFrom-Json).value
 
                 $EnterpriseEnrollmentDepartmentRoleAssignments = $EnterpriseEnrollmentDepartment | foreach-object {
                     $DepartmentName = $_.name
@@ -136,7 +133,7 @@ function Get-EntraOpsAzEARoleMembers {
             $UserMailAddress = $AzureEaAdmin.properties.userEmailAddress
             $BillingRoleDefinitionId = $AzureEaAdmin.properties.roleDefinitionId
             $BillingRoleDefinitionDetails = ($BillingRoleDefinitions | where-object {$_.id -eq "$BillingRoleDefinitionId"}).properties
-            if ($AzureEaAdmins.properties.userAuthenticationType -eq "Organization")
+            if ($AzureEaAdmin.properties.userAuthenticationType -eq "Organization")
                 { $User = Get-MgUser -Filter "proxyAddresses/any(y:startswith(y,'smtp:$UserMailAddress'))"
             }
             [pscustomobject]@{

@@ -229,8 +229,8 @@ EOCE.RBAC_SYSTEMS = {
                     text: 'Scope and role actions are tagged manually in the EntraOps Classification_IdentityGovernance.json template (scope /AccessPackageCatalog/*), giving each Entitlement Management action a tier and service. This is the classification shown here.'
                 },
                 {
-                    tag: 'AssignedCatalogObjects',
-                    text: 'At runtime EntraOps reads the objects assigned inside a catalog (for example a role-assignable or privileged group) and applies their classification to any delegation scoped to that catalog - so a Catalog owner over a catalog that grants Tier 0 access becomes Control Plane automatically. Because catalogs are objects a delegated admin can create at any time, this resolution fails safe: a catalog only leaves Control Plane once it is affirmatively proven to be Management Plane or User Access - anything unresolved, unclassified or newly created between classification runs stays Control Plane by default.'
+                    tag: 'AssignedAadGroup',
+                    text: 'At runtime EntraOps reads the resources assigned inside a catalog (for example a role-assignable or privileged group) and applies their classification to any delegation scoped to that catalog. Concrete Assigned* provenance tags identify whether the resource is an Entra group, application permission, directory role, or Azure resource. A Catalog owner over a catalog that grants Tier 0 access therefore becomes Control Plane automatically. Because catalogs are objects a delegated admin can create at any time, this resolution fails safe: a catalog only leaves Control Plane once it is affirmatively proven to be Management Plane or User Access - anything unresolved, unclassified or newly created between classification runs stays Control Plane by default.'
                 }
             ],
             docsLabel: 'Entitlement Management delegation reference',

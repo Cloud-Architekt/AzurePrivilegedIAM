@@ -1,4 +1,4 @@
-function Get-EntraOpsClassificationDirectoryRolesMissmatchFromMsftDocs {
+function Get-EntraOpsClassificationDirectoryRolesMismatchFromMsftDocs {
 
     <#
     .SYNOPSIS
@@ -24,10 +24,10 @@ function Get-EntraOpsClassificationDirectoryRolesMissmatchFromMsftDocs {
         Only return the objects without writing the colored console summary. Default is $False.
 
     .EXAMPLE
-        Get-EntraOpsClassificationDirectoryRolesMissmatchFromMsftDocs
+        Get-EntraOpsClassificationDirectoryRolesMismatchFromMsftDocs
 
     .EXAMPLE
-        $result = Get-EntraOpsClassificationDirectoryRolesMissmatchFromMsftDocs -ShowSummaryOnly $true
+        $result = Get-EntraOpsClassificationDirectoryRolesMismatchFromMsftDocs -ShowSummaryOnly $true
         $result.ActionDifferences | Format-Table
         $result.UnclassifiedActions | Format-Table
     #>
