@@ -164,6 +164,57 @@ EOCE.app = (function () {
         }).catch(function () { });
     }
 
+    function classificationNotifications() {
+        var history = window.EOCE_HISTORY;
+        if (!history || !history.sources) return { id: 'none', items: [] };
+        var notification = history.notification || null;
+        var notificationSources = notification && Array.isArray(notification.sourceKeys) ? notification.sourceKeys : null;
+        if (notificationSources && notificationSources.length === 0) {
+            return { id: notification.changeSetId || 'none', items: [] };
+        }
+        var items = [];
+        var newestDate = '';
+        Object.keys(history.sources).forEach(function (sourceKey) {
+            if (notificationSources && notificationSources.indexOf(sourceKey) === -1) return;
+            var source = history.sources[sourceKey];
+            var commits = source && Array.isArray(source.commits) ? source.commits : [];
+            if (!commits.length) return;
+            var commit = commits[commits.length - 1];
+            if (commit.date > newestDate) newestDate = commit.date;
+            var isPermission = source.kind === 'permissions';
+            var resourceHref = function (entry) {
+                return isPermission
+                    ? '#permissions/all/' + encodeURIComponent(entry.name || '') + '/' + encodeURIComponent(entry.id || '')
+                    : '#roles/' + encodeURIComponent(sourceKey) + '/' + encodeURIComponent(entry.id || '');
+            };
+            ['added', 'removed', 'changed'].forEach(function (changeKey) {
+                (commit[changeKey] || []).forEach(function (entry) {
+                    var tierChanged = entry.oldTier && entry.newTier && entry.oldTier !== entry.newTier;
+                    var actionChanged = (entry.actionsAdded && entry.actionsAdded.length) || (entry.actionsRemoved && entry.actionsRemoved.length);
+                    var changeLabel = changeKey.charAt(0).toUpperCase() + changeKey.slice(1);
+                    if (changeKey !== 'changed' || isPermission || tierChanged) {
+                        items.push({
+                            kind: isPermission ? 'API permission' : 'Role',
+                            change: changeLabel,
+                            title: (entry.name || entry.id) + ' ' + changeKey,
+                            detail: entry.oldTier && entry.newTier ? entry.oldTier + ' -> ' + entry.newTier : source.label,
+                            href: resourceHref(entry)
+                        });
+                    }
+                    if (!isPermission) {
+                        (entry.actions || entry.actionsAdded || []).forEach(function (action) {
+                            items.push({ kind: 'Role action', change: 'Added', title: action, detail: 'Role: ' + (entry.name || entry.id), href: '#actions/' + encodeURIComponent(sourceKey) + '/' + encodeURIComponent(action) });
+                        });
+                        (entry.actionsRemoved || []).forEach(function (action) {
+                            items.push({ kind: 'Role action', change: 'Removed', title: action, detail: 'Role: ' + (entry.name || entry.id), href: '#actions/' + encodeURIComponent(sourceKey) + '/' + encodeURIComponent(action) });
+                        });
+                    }
+                });
+            });
+        });
+        return { id: notification && notification.changeSetId || newestDate || 'none', items: items };
+    }
+
     // ---- Init ------------------------------------------------------------
     function init() {
         if (window.EOReview) {
@@ -175,6 +226,11 @@ EOCE.app = (function () {
         titleEl = document.getElementById('drawerTitle');
         bodyEl = document.getElementById('drawerBody');
         eyebrowEl = document.getElementById('drawerEyebrow');
+
+        if (window.EONotifications) {
+            var notifications = classificationNotifications();
+            EONotifications.init({ appId: 'ClassificationExplorer', changeSetId: notifications.id, items: notifications.items });
+        }
 
         document.getElementById('drawerClose').addEventListener('click', closeDrawer);
         backdropEl.addEventListener('click', closeDrawer);

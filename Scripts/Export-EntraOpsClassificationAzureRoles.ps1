@@ -19,6 +19,13 @@ function Export-EntraOpsClassificationAzureRoles {
     .PARAMETER ClassificationFile
         Path to the JSON classification definition file. Default is "./EntraOps_Classification/Classification_Azure.json".
         When the parameterized file (Classification_Azure.Param.json) is used, the scope placeholders are substituted with the values from Tier0IncludedResourceScope and Tier1IncludedResourceScope.
+        Each TierLevelDefinition entry may set an optional "ActionType" property ("Action" or "DataAction", defaults to "Action" when omitted). Its "RoleDefinitionActions"/
+        "ExcludedRoleDefinitionActions" patterns are matched only against a role's permissions from that same plane. Azure RBAC Actions and DataActions are separate
+        namespaces (e.g. "Microsoft.KeyVault/vaults/write" is an Action, "Microsoft.KeyVault/vaults/secrets/read" is a DataAction), so a pattern authored for one plane is
+        never matched against a role's permissions from the other plane - services with both control/management plane and data plane permissions (e.g. Key Vault) use two
+        sibling TierLevelDefinition entries, one per ActionType. Wildcards ("*") are supported in either direction within a plane (e.g. a classified pattern
+        "Microsoft.KeyVault/*/read" matches a role's literal "Microsoft.KeyVault/vaults/read" action, and a role's wildcard action "Microsoft.KeyVault/vaults/secrets/*"
+        matches a classified literal "Microsoft.KeyVault/vaults/secrets/read").
 
     .PARAMETER Tier0IncludedResourceScope
         List of Azure scopes (management groups, subscriptions, resource groups) which are treated as Control Plane (Tier 0). Used to substitute the <Tier0IncludedResourceScope> placeholder in the parameterized classification file. The tenant root scope ("/") is always included as Control Plane in addition to the scopes provided here.
@@ -80,6 +87,11 @@ function Export-EntraOpsClassificationAzureRoles {
         if ([string]::IsNullOrEmpty($RoleAction) -or [string]::IsNullOrEmpty($ClassifiedAction)) {
             return $false
         }
+        # Azure documents */read as control-plane metadata access; it cannot by itself
+        # grant a concrete telemetry or other sensitive-read operation.
+        if ($RoleAction -eq '*/read' -and $ClassifiedAction -ne '*/read') {
+            return $false
+        }
 
         if ($RoleAction -eq $ClassifiedAction) {
             return $true
@@ -132,11 +144,32 @@ function Export-EntraOpsClassificationAzureRoles {
         return $false
     }
 
-    # Resolve the tier level and service classification for a single Azure role action
+    # A TierLevelDefinition entry's plane defaults to "Action" when the optional ActionType property is absent,
+    # so classification files/entries without any data plane concept (Entra ID, Identity Governance, Device
+    # Management, and most Azure services) never need to set it.
+    function Get-EntraOpsTierDefinitionActionType {
+        param
+        (
+            [Parameter(Mandatory = $true)] $TierDefinition
+        )
+
+        if ($null -ne $TierDefinition.ActionType -and $TierDefinition.ActionType -eq "DataAction") {
+            return "DataAction"
+        }
+        return "Action"
+    }
+
+    # Resolve the tier level and service classification for a single Azure role action. Azure RBAC keeps
+    # control/management plane Actions and data plane DataActions in entirely separate namespaces (e.g.
+    # "Microsoft.KeyVault/vaults/write" is an Action, "Microsoft.KeyVault/vaults/secrets/read" is a DataAction),
+    # so a TierLevelDefinition entry is only considered when its own plane (ActionType) matches the plane of the
+    # role permission being classified - a pattern authored for one plane is never matched against a role
+    # permission from the other plane.
     function Get-EntraOpsAzureActionClassification {
         param
         (
             [Parameter(Mandatory = $true)] [string] $RoleAction,
+            [Parameter(Mandatory = $true)] [ValidateSet("Action", "DataAction")] [string] $ActionType,
             [Parameter(Mandatory = $true)] $Classification,
             [Parameter(Mandatory = $true)] [string] $Scope,
             [Parameter(Mandatory = $false)] [string[]] $ExcludedActions = @()
@@ -144,6 +177,10 @@ function Export-EntraOpsClassificationAzureRoles {
 
         foreach ($TierLevel in $Classification) {
             foreach ($TierDefinition in $TierLevel.TierLevelDefinition) {
+
+                if ((Get-EntraOpsTierDefinitionActionType -TierDefinition $TierDefinition) -ne $ActionType) {
+                    continue
+                }
 
                 $ScopeMatch = ($TierDefinition.RoleAssignmentScopeName -contains $Scope) -or ($TierDefinition.RoleAssignmentScopeName -contains "/*")
                 if (-not $ScopeMatch) {
@@ -249,8 +286,8 @@ function Export-EntraOpsClassificationAzureRoles {
 
             $RolePermission = $RolePermissionEntry.Action
 
-            # Apply Classification
-            $AzureRolePermissionClassification = Get-EntraOpsAzureActionClassification -RoleAction $RolePermission -Classification $Classification -Scope $DefaultScope -ExcludedActions $RolePermissionEntry.ExcludedActions
+            # Apply Classification (matched only against classification patterns authored for the same plane/ActionType)
+            $AzureRolePermissionClassification = Get-EntraOpsAzureActionClassification -RoleAction $RolePermission -ActionType $RolePermissionEntry.ActionType -Classification $Classification -Scope $DefaultScope -ExcludedActions $RolePermissionEntry.ExcludedActions
 
             if ($null -eq $AzureRolePermissionClassification) {
                 $AzureRolePermissionClassification = [PSCustomObject]@{

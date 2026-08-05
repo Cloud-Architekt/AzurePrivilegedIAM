@@ -36,6 +36,9 @@
             <span class="sub">Enterprise Access Model</span>
         </div>
         <div class="spacer"></div>
+        <button type="button" class="eo-notification-button" id="notificationButton" aria-label="No unread changes"
+            title="Recent classification changes"><span class="eo-notification-bell" aria-hidden="true"></span><span
+                class="eo-notification-count hidden">0</span></button>
         <label class="variant-picker" id="variantPicker" data-mode="entraops" hidden>
             <span>Classification source</span>
             <select id="variantSelect" aria-label="Classification source"></select>
@@ -73,13 +76,16 @@
             </div>
             <div class="nav-item" data-route="overwrites"><span class="ico">&#9998;</span><span>Role
                     Overwrites</span><span class="count" id="cnt-ovr"></span></div>
-            <div class="nav-item" data-route="customize" data-mode="entraops"><span class="ico">&#9881;</span><span>Customize
+            <div class="nav-item" data-route="customize" data-mode="entraops"><span
+                    class="ico">&#9881;</span><span>Customize
                     Overwrites</span></div>
-            <div class="nav-item" data-route="compare" data-mode="entraops"><span class="ico">&#8646;</span><span>Template
+            <div class="nav-item" data-route="compare" data-mode="entraops"><span
+                    class="ico">&#8646;</span><span>Template
                     Comparison</span></div>
 
             <div class="nav-group-label" data-mode="standalone">History</div>
-            <div class="nav-item" data-route="history" data-mode="standalone"><span class="ico">&#8635;</span><span>Change
+            <div class="nav-item" data-route="history" data-mode="standalone"><span
+                    class="ico">&#8635;</span><span>Change
                     History</span></div>
         </nav>
 
@@ -101,8 +107,7 @@
 
     <!-- Detail drawer -->
     <div class="drawer-backdrop" id="drawerBackdrop"></div>
-    <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle"
-        aria-hidden="true">
+    <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" aria-hidden="true">
         <div class="drawer-head">
             <div style="min-width:0;">
                 <div id="drawerEyebrow" class="breadcrumb" style="margin:0 0 4px;"></div>
@@ -138,8 +143,8 @@
     <!-- Optional embedded tier-map dataset. When absent the Overview view derives the same data
          from the embedded classification bundle. -->
     <script src="data/tier-map.js"></script>
-    <!-- Optional embedded change history (standalone mode only, from `git log`, skip with
-         -SkipHistory). When absent the History view shows an empty state. -->
+    <!-- Optional embedded change history (from `git log`, skip with -SkipHistory). Used by
+            notifications in both modes and by the full History view in standalone mode. -->
     <script src="data/history-data.js"></script>
     <!-- d3 + d3-sankey power the Overview (Enterprise Access Model Map) Sankey diagram.
          Vendored locally so the app stays fully self-contained and works from file:// with no internet. -->
@@ -147,6 +152,7 @@
     <script src="assets/vendor/d3-sankey.min.js"></script>
     <script src="js/config.js"></script>
     <script src="js/data.js"></script>
+    <script src="js/notifications.js"></script>
     <script src="js/review.js"></script>
     <script src="js/navCollapse.js"></script>
     <script src="js/views/overview.js"></script>

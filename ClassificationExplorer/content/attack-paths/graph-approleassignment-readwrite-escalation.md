@@ -18,6 +18,9 @@ A role or workload identity that can create Microsoft Graph app role assignments
 3. With RoleManagement.ReadWrite.Directory, assign the Global Administrator role to a controlled principal via Microsoft Graph.
 4. Operate as Global Administrator with full Control Plane access — no interactive admin consent required.
 
+## Permissions
+- Microsoft Graph | AppRoleAssignment.ReadWrite.All | Application
+
 ## Actions
 - EntraID | microsoft.directory/servicePrincipals/appRoleAssignedTo/update
 

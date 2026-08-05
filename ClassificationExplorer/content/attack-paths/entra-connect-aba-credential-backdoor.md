@@ -18,6 +18,9 @@ Ownership of — or a directory role / API permission that can add credentials t
 3. Authenticate to the AD Synchronization Service API as the ABA identity using the backdoor credential from outside the Connect server.
 4. Abuse synchronization and password writeback (for example AADInternals Set-AADIntUserPassword) to take over privileged cloud accounts.
 
+## Permissions
+- Microsoft Graph | Application.ReadWrite.All | Application
+
 ## Actions
 - EntraID | microsoft.directory/applications/credentials/update
 - EntraID | microsoft.directory/servicePrincipals/credentials/update

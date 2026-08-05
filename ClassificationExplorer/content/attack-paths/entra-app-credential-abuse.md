@@ -18,6 +18,9 @@ A delegated role over application / service principal objects — no admin conse
 3. Authenticate as the service principal with the new credential and request an app-only token.
 4. Use the workload identity’s Graph permissions to assign Global Administrator or grant further app roles — full tenant compromise.
 
+## Permissions
+- Microsoft Graph | Application.ReadWrite.All | Application
+
 ## Actions
 - EntraID | microsoft.directory/applications/credentials/update
 - EntraID | microsoft.directory/servicePrincipals/credentials/update

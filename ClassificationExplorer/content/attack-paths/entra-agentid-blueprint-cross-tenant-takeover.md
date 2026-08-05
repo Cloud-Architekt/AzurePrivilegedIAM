@@ -21,6 +21,10 @@ Control over an account holding the Agent ID Administrator role (or another role
 6. Perform a two-step `fmi_path` token exchange — first requesting a token as the blueprint with `scope=api://AzureADTokenExchange/.default` and the target agent's ID as `fmi_path`, then presenting that token as a `client_assertion` for the agent identity's own `client_id` — to obtain an app-only token as the privileged agent.
 7. Use the agent's `UserAuthMethod-TAP.ReadWrite.All` permission to set a Temporary Access Pass on a Global Administrator account and sign in to the Azure/Entra portal with it, bypassing the account's password and MFA.
 
+## Permissions
+- Microsoft Graph | AgentIdentityBlueprint.AddRemoveCreds.All | Application
+- Microsoft Graph | AgentIdentityBlueprint.ReadWrite.All | Application
+
 ## Actions
 - EntraID | microsoft.directory/agentIdentityBlueprints/credentials/update
 - EntraID | microsoft.directory/agentIdentities/authentication/update

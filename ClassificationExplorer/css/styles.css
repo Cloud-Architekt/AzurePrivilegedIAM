@@ -134,6 +134,173 @@ mark {
     text-decoration: none;
 }
 
+.eo-notification-button {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    padding: 0;
+}
+
+.eo-notification-button:hover,
+.eo-notification-button:focus-visible {
+    background: rgba(255, 255, 255, .12);
+    outline: none;
+}
+
+.eo-notification-bell {
+    position: absolute;
+    top: 9px;
+    left: 10px;
+    width: 14px;
+    height: 15px;
+    border: 2px solid currentColor;
+    border-bottom: 0;
+    border-radius: 8px 8px 3px 3px;
+}
+
+.eo-notification-bell::before {
+    content: "";
+    position: absolute;
+    right: -4px;
+    bottom: -4px;
+    left: -4px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 1px;
+}
+
+.eo-notification-bell::after {
+    content: "";
+    position: absolute;
+    bottom: -7px;
+    left: 5px;
+    width: 4px;
+    height: 3px;
+    background: currentColor;
+    border-radius: 0 0 2px 2px;
+}
+
+.eo-notification-count {
+    position: absolute;
+    top: 1px;
+    right: 0;
+    min-width: 16px;
+    padding: 0 4px;
+    border: 0;
+    border-radius: 0;
+    height: 16px;
+    background: #fff;
+    color: #1f1f1f;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 16px;
+}
+
+.eo-notification-backdrop {
+    position: fixed;
+    inset: var(--header-h) 0 0;
+    z-index: 78;
+    display: none;
+    background: rgba(0, 0, 0, .18);
+}
+
+.eo-notification-backdrop.open {
+    display: block;
+}
+
+.eo-notification-panel {
+    position: fixed;
+    top: var(--header-h);
+    right: 0;
+    bottom: 0;
+    z-index: 79;
+    width: min(440px, 100vw);
+    background: var(--neutral-surface);
+    box-shadow: -8px 0 24px rgba(0, 0, 0, .18);
+    transform: translateX(102%);
+    transition: transform .18s ease;
+}
+
+.eo-notification-panel.open {
+    transform: translateX(0);
+}
+
+.eo-notification-head {
+    min-height: 72px;
+    padding: 16px 18px;
+    border-bottom: 1px solid var(--neutral-stroke);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.eo-notification-head strong,
+.eo-notification-head span {
+    display: block;
+}
+
+.eo-notification-head span {
+    margin-top: 4px;
+    color: var(--neutral-fg-secondary);
+    font-size: 12px;
+}
+
+.eo-notification-close {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.eo-notification-body {
+    height: calc(100% - 72px);
+    overflow: auto;
+}
+
+.eo-notification-item {
+    display: block;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--neutral-stroke);
+    color: inherit;
+}
+
+.eo-notification-item:hover {
+    background: var(--brand-bg);
+    text-decoration: none;
+}
+
+.eo-notification-kind {
+    display: block;
+    color: var(--brand);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.eo-notification-title {
+    display: block;
+    margin-top: 4px;
+    font-weight: 600;
+}
+
+.eo-notification-detail {
+    display: block;
+    margin-top: 4px;
+    color: var(--neutral-fg-secondary);
+    font-size: 12px;
+}
+
+.eo-notification-empty {
+    padding: 28px 18px;
+    color: var(--neutral-fg-secondary);
+}
+
 /* Classification source selector (built-in template vs. tenant-specific, entraops mode only) */
 .appbar .variant-picker {
     display: inline-flex;
@@ -1638,7 +1805,7 @@ table.grid-table tbody tr.selected {
         min-width: 0;
     }
 
-    .appbar .brand > span:not(.sub) {
+    .appbar .brand>span:not(.sub) {
         overflow: hidden;
         text-overflow: ellipsis;
     }
@@ -1699,7 +1866,7 @@ table.grid-table tbody tr.selected {
     }
 
     .attack-step .step-body,
-    .attack-refs > *,
+    .attack-refs>*,
     .chip.attack.cell-mono,
     .callout,
     .page-head p {

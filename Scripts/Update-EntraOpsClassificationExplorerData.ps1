@@ -18,7 +18,7 @@ function Update-EntraOpsClassificationExplorerData {
             Standalone (default) - reads classification-logic templates from the flat
                 EntraOps_Classification/ folder of -RepoRoot. No tenant-specific classification
                 variants. Also (re)generates the git-log-based change history for the History
-                view (skip with -SkipHistory).
+                view and notifications (skip with -SkipHistory).
 
             EntraOps - reads the RBAC system outputs (classified roles) from the AzurePrivilegedIAM
                 repository (-RepoRoot, auto-detected as a sibling folder when omitted) and the
@@ -27,8 +27,8 @@ function Update-EntraOpsClassificationExplorerData {
                 by Update-EntraOpsClassificationControlPlaneScope to Classification/<TenantName>/
                 (embedded as window.EOCE_TENANTS for the variant picker / Template Comparison
                 view). Missing/optional template files are embedded as an empty array with a
-                warning instead of failing generation. Does not generate change history (the
-                History view is hidden in this mode - see js/config.js EOCE.isEntraOpsMode()).
+                warning instead of failing generation. Generates change history for notifications;
+                the full History view remains hidden in this mode.
 
         The web app is fully self-contained in both modes: it loads its data exclusively from the
         embedded bundle data/classification-data.js (window.EOCE_DATA) - there is no runtime fetch
@@ -41,8 +41,8 @@ function Update-EntraOpsClassificationExplorerData {
                                               app itself).
             * data/attack-paths.js         - attack-path catalog, from content/attack-paths/*.md.
             * data/tier-map.js             - Overview (Enterprise Access Model Map) Sankey dataset.
-            * data/history-data.js         - standalone mode only: change history (git log) for
-                                              the History view.
+            * data/history-data.js         - change history (git log) for notifications and the
+                                              standalone History view.
 
         Each file is validated (the *.Param.json files contain EntraOps scope placeholder tokens
         such as <Tier0IncludedResourceScope>, which are sanitized the same way the app does before
@@ -75,10 +75,9 @@ function Update-EntraOpsClassificationExplorerData {
         generates this embedded bundle, which lets the app run with no web server.
 
     .PARAMETER SkipHistory
-        Standalone mode only. Do not write data/history-data.js (the History view's git-log-based
-        change history). Useful while iterating locally, since walking the commit history of every
-        tracked file is the slowest part of this script. Has no effect in EntraOps mode (history is
-        never generated there).
+        Do not write data/history-data.js (the git-log-based notification and History dataset).
+        Useful while iterating locally, since walking the commit history of every tracked file is
+        the slowest part of this script.
 
     .PARAMETER PassThru
         Emit the result objects (one per source file) to the pipeline.
@@ -157,8 +156,8 @@ function Update-EntraOpsClassificationExplorerData {
         return 'Unclassified'
     }
 
-    # The role/permission catalogs browsable in the History view (data/history-data.js,
-    # standalone mode only) - kept in sync with EOCE.RBAC_SYSTEMS[*].file /
+    # The role/permission catalogs used by notifications and the History view
+    # (data/history-data.js) - kept in sync with EOCE.RBAC_SYSTEMS[*].file /
     # EOCE.PERMISSION_SETS[*].file in js/config.js.
     $HistorySources = [ordered]@{
         EntraID            = [ordered]@{ label = 'Microsoft Entra ID Directory Roles'; kind = 'roles'; file = 'Classification/Classification_EntraIdDirectoryRoles.json' }
@@ -369,6 +368,7 @@ function Update-EntraOpsClassificationExplorerData {
             foreach ($p in $perms) {
                 $action = Get-JsonProp $p 'AuthorizedResourceAction'
                 if ([string]::IsNullOrEmpty([string]$action)) { continue }
+                $actionType = if ((Get-JsonProp $p 'ActionType') -eq 'DataAction') { 'DataAction' } else { 'Action' }
                 $tv = Get-JsonProp $p 'EAMTierLevelName'
                 $tier = if ($tv -and ($validTiers -contains [string]$tv)) { [string]$tv } else { 'Unclassified' }
                 $svc = [string](Get-JsonProp $p 'Category')
@@ -386,6 +386,7 @@ function Update-EntraOpsClassificationExplorerData {
                         cats          = $cats
                         service       = $svc
                         action        = [string]$action
+                        actionType    = $actionType
                         tier          = $tier
                         docsOnly      = $DocsOnly
                         graphOnlyDiff = $graphOnlyDiff
@@ -595,26 +596,30 @@ function Update-EntraOpsClassificationExplorerData {
     # --- Discover tenant-specific classification folders (EntraOps mode only) -----------------
     # Update-EntraOpsClassificationControlPlaneScope writes parameterized, tenant-specific copies
     # of the classification-logic files to Classification/<TenantName>/. Every such folder (any
-    # subfolder of Classification other than Templates that contains Classification_*.json files)
-    # is embedded so the app can switch between the built-in template and the tenant-specific
-    # variant, and diff the two (Template Comparison view).
+    # subfolder of Classification other than Templates that contains classification or reasoning
+    # JSON files) is embedded. Classification files remain separate from reasoning artifacts so
+    # Template Comparison only receives files with a built-in template counterpart.
     $TenantFileSet = [System.Collections.Generic.HashSet[string]]::new()
+    $TenantReasoningFileSet = [System.Collections.Generic.HashSet[string]]::new()
     $Tenants = @()
     if ($Mode -eq 'EntraOps') {
         $EntraOpsClassificationRoot = Join-Path $EntraOpsRoot 'Classification'
         foreach ($TenantDir in @(Get-ChildItem -LiteralPath $EntraOpsClassificationRoot -Directory | Where-Object { $_.Name -ne 'Templates' } | Sort-Object Name)) {
             $TenantJsonFiles = @(Get-ChildItem -LiteralPath $TenantDir.FullName -Filter 'Classification_*.json' -File | Sort-Object Name)
-            if ($TenantJsonFiles.Count -eq 0) { continue }
+            $TenantReasoningFiles = @(Get-ChildItem -LiteralPath $TenantDir.FullName -File | Where-Object { $_.Name -like 'ScopeReasoning_*.json' -or $_.Name -eq 'DeviceManagement_ScopeGroupDeviceMembers.json' } | Sort-Object Name)
+            if ($TenantJsonFiles.Count -eq 0 -and $TenantReasoningFiles.Count -eq 0) { continue }
             $TenantRelPaths = @($TenantJsonFiles | ForEach-Object { "Classification/$($TenantDir.Name)/$($_.Name)" })
+            $TenantReasoningRelPaths = @($TenantReasoningFiles | ForEach-Object { "Classification/$($TenantDir.Name)/$($_.Name)" })
             foreach ($TenantRelPath in $TenantRelPaths) { [void]$TenantFileSet.Add($TenantRelPath) }
-            $Tenants += [pscustomobject]@{ name = $TenantDir.Name; files = @($TenantRelPaths) }
-            Write-Verbose ("Tenant variant  : {0} ({1} file(s))" -f $TenantDir.Name, $TenantRelPaths.Count)
+            foreach ($TenantReasoningRelPath in $TenantReasoningRelPaths) { [void]$TenantReasoningFileSet.Add($TenantReasoningRelPath) }
+            $Tenants += [pscustomobject]@{ name = $TenantDir.Name; files = @($TenantRelPaths); reasoningFiles = @($TenantReasoningRelPaths) }
+            Write-Verbose ("Tenant variant  : {0} ({1} classification file(s), {2} reasoning file(s))" -f $TenantDir.Name, $TenantRelPaths.Count, $TenantReasoningRelPaths.Count)
         }
     }
 
     function Get-SourcePath {
         param([string]$Rel)
-        if ($Mode -eq 'EntraOps' -and ($Rel -like "$TemplateBase/*" -or $TenantFileSet.Contains($Rel))) {
+        if ($Mode -eq 'EntraOps' -and ($Rel -like "$TemplateBase/*" -or $TenantFileSet.Contains($Rel) -or $TenantReasoningFileSet.Contains($Rel))) {
             return Join-Path $EntraOpsRoot $Rel
         }
         return Join-Path $RepoRoot $Rel
@@ -645,7 +650,7 @@ function Update-EntraOpsClassificationExplorerData {
     $errors = 0
     $embed = [ordered]@{}
 
-    $AllSourceFiles = @($RequiredFiles) + @($TenantFileSet | Sort-Object)
+    $AllSourceFiles = @($RequiredFiles) + @($TenantFileSet | Sort-Object) + @($TenantReasoningFileSet | Sort-Object)
     foreach ($rel in $AllSourceFiles) {
         $src = Get-SourcePath -Rel $rel
         $isParam = $rel -match '\.Param\.json$'
@@ -926,12 +931,22 @@ function Update-EntraOpsClassificationExplorerData {
         }
     }
 
-    # --- Build the change history (git log) for the History view - Standalone mode only --------
-    # The History view is hidden in EntraOps mode (see js/config.js EOCE.isEntraOpsMode()), so
-    # this (relatively slow) step is skipped entirely there regardless of -SkipHistory.
+    # --- Build change history (git log) for notifications and the standalone History view ------
     $historyBytes = 0
     $historySummary = @()
-    if ($Mode -eq 'Standalone' -and -not $SkipHistory) {
+    if (-not $SkipHistory) {
+        $historyPath = Join-Path $AppRoot 'data/history-data.js'
+        $previousHistory = $null
+        if (Test-Path -LiteralPath $historyPath -PathType Leaf) {
+            try {
+                $previousHistoryText = Get-Content -LiteralPath $historyPath -Raw -Encoding UTF8
+                $previousHistoryJson = $previousHistoryText -replace '(?s)^.*?window\.EOCE_HISTORY\s*=\s*', '' -replace ';\s*$', ''
+                $previousHistory = $previousHistoryJson | ConvertFrom-Json -Depth 15 -ErrorAction Stop
+            } catch {
+                Write-Verbose "Existing Classification Explorer history could not be used as a notification baseline: $($_.Exception.Message)"
+            }
+        }
+
         $gitOk = $true
         try {
             $null = & git -C $RepoRoot rev-parse --is-inside-work-tree 2>$null
@@ -999,15 +1014,40 @@ function Update-EntraOpsClassificationExplorerData {
             Write-Verbose ("History {0}: {1} commit(s) with changes" -f $key, $commits.Count)
         }
 
+        $previousHeads = @{}
+        if ($null -ne $previousHistory -and $null -ne $previousHistory.sources) {
+            foreach ($sourceProperty in @($previousHistory.sources.PSObject.Properties)) {
+                $previousCommits = @($sourceProperty.Value.commits)
+                if ($previousCommits.Count -gt 0 -and $previousCommits[-1].sha) {
+                    $previousHeads[$sourceProperty.Name] = [string]$previousCommits[-1].sha
+                }
+            }
+        }
+        $currentHeads = @{}
+        $notificationSourceKeys = New-Object System.Collections.Generic.List[string]
+        foreach ($sourceKey in $historyResultSources.Keys) {
+            $currentCommits = @($historyResultSources[$sourceKey].commits)
+            if ($currentCommits.Count -eq 0 -or -not $currentCommits[-1].sha) { continue }
+            $currentHeads[$sourceKey] = [string]$currentCommits[-1].sha
+            if ($previousHeads.ContainsKey($sourceKey) -and $previousHeads[$sourceKey] -ne $currentHeads[$sourceKey]) {
+                $notificationSourceKeys.Add($sourceKey) | Out-Null
+            }
+        }
+        $notificationChangeSetId = (@($currentHeads.Keys | Sort-Object | ForEach-Object { "${_}:$($currentHeads[$_])" }) -join '|')
+        if ([string]::IsNullOrWhiteSpace($notificationChangeSetId)) { $notificationChangeSetId = 'none' }
+
         $historyObj = [ordered]@{
             generatedUtc = (Get-Date).ToUniversalTime().ToString('o')
             sources      = $historyResultSources
+            notification = [ordered]@{
+                changeSetId = $notificationChangeSetId
+                sourceKeys  = @($notificationSourceKeys)
+            }
         }
         $historyJson = ($historyObj | ConvertTo-Json -Depth 12 -Compress)
         $historyJson = $historyJson.Replace('<', '\u003c').Replace('>', '\u003e')
 
-        $historyPath = Join-Path $AppRoot 'data/history-data.js'
-        $historyHeader = "/* Classification Explorer (Standalone mode) - embedded classification change history (git log).`n" +
+        $historyHeader = "/* Classification Explorer ($Mode mode) - embedded classification change history (git log).`n" +
         "   Auto-generated by Scripts/Update-EntraOpsClassificationExplorerData.ps1 on $((Get-Date).ToUniversalTime().ToString('o')).`n" +
         "   Do not edit by hand - re-run the script to refresh. */"
         $historyContent = "$historyHeader`nwindow.EOCE_HISTORY = $historyJson;`n"
@@ -1039,7 +1079,7 @@ function Update-EntraOpsClassificationExplorerData {
     if ($Mode -eq 'EntraOps') {
         Write-Host ("  Tenants       : {0} tenant-specific variant(s)" -f $Tenants.Count)
     }
-    if ($Mode -eq 'Standalone' -and -not $SkipHistory) {
+    if (-not $SkipHistory) {
         Write-Host ("  History       : data/history-data.js ({0:N0} KB) - git log per source:" -f ([math]::Round($historyBytes / 1KB)))
         foreach ($s in $historySummary) { Write-Host ("    {0,-20} {1} commit(s)" -f $s.Source, $s.Commits) }
     }

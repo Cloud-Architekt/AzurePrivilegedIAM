@@ -229,7 +229,9 @@
                     "Microsoft.KeyVault/vaults/keys/unwrap/action",
                     "Microsoft.KeyVault/vaults/keys/wrap/action",
                     "Microsoft.KeyVault/managedHSMs/keys/read",
-                    "Microsoft.KeyVault/managedHSMs/keys/decrypt/action"
+                    "Microsoft.KeyVault/managedHSMs/keys/decrypt/action",
+                    "Microsoft.KeyVault/vaults/*",
+                    "Microsoft.KeyVault/managedHSMs/*"
                 ],
                 "ExcludedRoleDefinitionActions": []
             },
@@ -294,9 +296,237 @@
                     "Microsoft.Automation/automationAccounts/compilationjobs/write",
                     "Microsoft.Automation/automationAccounts/nodeConfigurations/write",
                     "Microsoft.Automation/automationAccounts/hybridRunbookWorkerGroups/write",
-                    "Microsoft.Resources/deployments/write",
                     "Microsoft.Resources/subscriptions/resourceGroups/write",
                     "Microsoft.Resources/subscriptions/resourceGroups/delete"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Storage Data Access",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [
+                    <Tier0IncludedResourceScope>
+                ],
+                "ExcludedRoleAssignmentScopeName": [],
+                "RoleDefinitionActions": [
+                    "Microsoft.Storage/storageAccounts/*"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Container Registry Data Access",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [
+                    <Tier0IncludedResourceScope>
+                ],
+                "ExcludedRoleAssignmentScopeName": [],
+                "RoleDefinitionActions": [
+                    "Microsoft.ContainerRegistry/registries/*"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Cosmos DB Data Access",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [
+                    <Tier0IncludedResourceScope>
+                ],
+                "ExcludedRoleAssignmentScopeName": [],
+                "RoleDefinitionActions": [
+                    "Microsoft.DocumentDB/databaseAccounts/*"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Messaging Data Access",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [
+                    <Tier0IncludedResourceScope>
+                ],
+                "ExcludedRoleAssignmentScopeName": [],
+                "RoleDefinitionActions": [
+                    "Microsoft.EventHub/namespaces/*",
+                    "Microsoft.ServiceBus/namespaces/*"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "App Configuration Data Access",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [
+                    <Tier0IncludedResourceScope>
+                ],
+                "ExcludedRoleAssignmentScopeName": [],
+                "RoleDefinitionActions": [
+                    "Microsoft.AppConfiguration/configurationStores/*"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Cognitive Services Data Access",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [
+                    <Tier0IncludedResourceScope>
+                ],
+                "ExcludedRoleAssignmentScopeName": [],
+                "RoleDefinitionActions": [
+                    "Microsoft.CognitiveServices/accounts/*"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Azure AI Search Data Access",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [<Tier0IncludedResourceScope>
+                ],
+                "ExcludedRoleAssignmentScopeName": [],
+                "RoleDefinitionActions": [
+                    "Microsoft.Search/searchServices/*"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "SQL Database Data Access",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [<Tier0IncludedResourceScope>
+                ],
+                "ExcludedRoleAssignmentScopeName": [],
+                "RoleDefinitionActions": [
+                    "Microsoft.Sql/servers/databases/*",
+                    "Microsoft.Sql/managedInstances/databases/*"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Redis Data Access",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [<Tier0IncludedResourceScope>
+                ],
+                "ExcludedRoleAssignmentScopeName": [],
+                "RoleDefinitionActions": [
+                    "Microsoft.Cache/redis/*",
+                    "Microsoft.Cache/redisEnterprise/*"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Azure Data Explorer Data Access",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [<Tier0IncludedResourceScope>
+                ],
+                "ExcludedRoleAssignmentScopeName": [],
+                "RoleDefinitionActions": [
+                    "Microsoft.Kusto/clusters/*"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Azure Synapse Data Access",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [<Tier0IncludedResourceScope>
+                ],
+                "ExcludedRoleAssignmentScopeName": [],
+                "RoleDefinitionActions": [
+                    "Microsoft.Synapse/workspaces/*"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Machine Learning Data Access",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [<Tier0IncludedResourceScope>
+                ],
+                "ExcludedRoleAssignmentScopeName": [],
+                "RoleDefinitionActions": [
+                    "Microsoft.MachineLearningServices/workspaces/*"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "IoT Data Access",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [<Tier0IncludedResourceScope>
+                ],
+                "ExcludedRoleAssignmentScopeName": [],
+                "RoleDefinitionActions": [
+                    "Microsoft.Devices/IotHubs/*",
+                    "Microsoft.Devices/provisioningServices/*"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Event Grid Data Access",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [<Tier0IncludedResourceScope>
+                ],
+                "ExcludedRoleAssignmentScopeName": [],
+                "RoleDefinitionActions": [
+                    "Microsoft.EventGrid/*"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Real-time Messaging Data Access",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [<Tier0IncludedResourceScope>
+                ],
+                "ExcludedRoleAssignmentScopeName": [],
+                "RoleDefinitionActions": [
+                    "Microsoft.SignalRService/SignalR/*",
+                    "Microsoft.SignalRService/WebPubSub/*"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Log Analytics",
+                "RoleAssignmentScopeName": [
+                    <Tier0IncludedResourceScope>
+                ],
+                "ExcludedRoleAssignmentScopeName": [],
+                "RoleDefinitionActions": [
+                    "Microsoft.OperationalInsights/workspaces/query/read",
+                    "Microsoft.OperationalInsights/workspaces/search/action"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Log Analytics",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [
+                    <Tier0IncludedResourceScope>
+                ],
+                "ExcludedRoleAssignmentScopeName": [],
+                "RoleDefinitionActions": [
+                    "Microsoft.OperationalInsights/workspaces/tables/data/read"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Microsoft Sentinel",
+                "RoleAssignmentScopeName": [
+                    <Tier0IncludedResourceScope>
+                ],
+                "ExcludedRoleAssignmentScopeName": [],
+                "RoleDefinitionActions": [
+                    "Microsoft.SecurityInsights/*/read"
                 ],
                 "ExcludedRoleDefinitionActions": []
             }
@@ -571,7 +801,9 @@
                     "Microsoft.KeyVault/vaults/keys/unwrap/action",
                     "Microsoft.KeyVault/vaults/keys/wrap/action",
                     "Microsoft.KeyVault/managedHSMs/keys/read",
-                    "Microsoft.KeyVault/managedHSMs/keys/decrypt/action"
+                    "Microsoft.KeyVault/managedHSMs/keys/decrypt/action",
+                    "Microsoft.KeyVault/vaults/*",
+                    "Microsoft.KeyVault/managedHSMs/*"
                 ],
                 "ExcludedRoleDefinitionActions": []
             },
@@ -843,6 +1075,64 @@
             },
             {
                 "Category": "Microsoft.Azure",
+                "Service": "Monitor Metrics",
+                "RoleAssignmentScopeName": [
+                    "/*"
+                ],
+                "ExcludedRoleAssignmentScopeName": [],
+                "RoleDefinitionActions": [
+                    "Microsoft.Insights/metrics/read",
+                    "Microsoft.Insights/metricDefinitions/read",
+                    "Microsoft.Insights/eventtypes/values/read"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Log Analytics",
+                "RoleAssignmentScopeName": [
+                    "/*"
+                ],
+                "ExcludedRoleAssignmentScopeName": [
+                    <Tier0IncludedResourceScope>
+                ],
+                "RoleDefinitionActions": [
+                    "Microsoft.OperationalInsights/workspaces/query/read",
+                    "Microsoft.OperationalInsights/workspaces/search/action"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Log Analytics",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [
+                    "/*"
+                ],
+                "ExcludedRoleAssignmentScopeName": [
+                    <Tier0IncludedResourceScope>
+                ],
+                "RoleDefinitionActions": [
+                    "Microsoft.OperationalInsights/workspaces/tables/data/read"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Microsoft Sentinel",
+                "RoleAssignmentScopeName": [
+                    "/*"
+                ],
+                "ExcludedRoleAssignmentScopeName": [
+                    <Tier0IncludedResourceScope>
+                ],
+                "RoleDefinitionActions": [
+                    "Microsoft.SecurityInsights/*/read"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
                 "Service": "API Management",
                 "RoleAssignmentScopeName": [
                     "/*"
@@ -905,6 +1195,257 @@
             },
             {
                 "Category": "Microsoft.Azure",
+                "Service": "Storage Data Access",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [
+                    "/*"
+                ],
+                "ExcludedRoleAssignmentScopeName": [
+                    <Tier0IncludedResourceScope>
+                ],
+                "RoleDefinitionActions": [
+                    "Microsoft.Storage/storageAccounts/*"
+                ],
+                "ExcludedRoleDefinitionActions": [
+                    "*/read"
+                ]
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Container Registry Data Access",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [
+                    "/*"
+                ],
+                "ExcludedRoleAssignmentScopeName": [
+                    <Tier0IncludedResourceScope>
+                ],
+                "RoleDefinitionActions": [
+                    "Microsoft.ContainerRegistry/registries/*"
+                ],
+                "ExcludedRoleDefinitionActions": [
+                    "*/read"
+                ]
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Cosmos DB Data Access",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [
+                    "/*"
+                ],
+                "ExcludedRoleAssignmentScopeName": [
+                    <Tier0IncludedResourceScope>
+                ],
+                "RoleDefinitionActions": [
+                    "Microsoft.DocumentDB/databaseAccounts/*"
+                ],
+                "ExcludedRoleDefinitionActions": [
+                    "*/read"
+                ]
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Messaging Data Access",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [
+                    "/*"
+                ],
+                "ExcludedRoleAssignmentScopeName": [
+                    <Tier0IncludedResourceScope>
+                ],
+                "RoleDefinitionActions": [
+                    "Microsoft.EventHub/namespaces/*",
+                    "Microsoft.ServiceBus/namespaces/*"
+                ],
+                "ExcludedRoleDefinitionActions": [
+                    "*/read"
+                ]
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "App Configuration Data Access",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [
+                    "/*"
+                ],
+                "ExcludedRoleAssignmentScopeName": [
+                    <Tier0IncludedResourceScope>
+                ],
+                "RoleDefinitionActions": [
+                    "Microsoft.AppConfiguration/configurationStores/*"
+                ],
+                "ExcludedRoleDefinitionActions": [
+                    "*/read"
+                ]
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Cognitive Services Data Access",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [
+                    "/*"
+                ],
+                "ExcludedRoleAssignmentScopeName": [
+                    <Tier0IncludedResourceScope>
+                ],
+                "RoleDefinitionActions": [
+                    "Microsoft.CognitiveServices/accounts/*"
+                ],
+                "ExcludedRoleDefinitionActions": [
+                    "*/read"
+                ]
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Azure AI Search Data Access",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [
+                    "/*"
+                ],
+                "ExcludedRoleAssignmentScopeName": [<Tier0IncludedResourceScope>
+                ],
+                "RoleDefinitionActions": [
+                    "Microsoft.Search/searchServices/*"
+                ],
+                "ExcludedRoleDefinitionActions": [
+                    "*/read"
+                ]
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "SQL Database Data Access",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [
+                    "/*"
+                ],
+                "ExcludedRoleAssignmentScopeName": [<Tier0IncludedResourceScope>
+                ],
+                "RoleDefinitionActions": [
+                    "Microsoft.Sql/servers/databases/*",
+                    "Microsoft.Sql/managedInstances/databases/*"
+                ],
+                "ExcludedRoleDefinitionActions": [
+                    "*/read"
+                ]
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Redis Data Access",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [
+                    "/*"
+                ],
+                "ExcludedRoleAssignmentScopeName": [<Tier0IncludedResourceScope>
+                ],
+                "RoleDefinitionActions": [
+                    "Microsoft.Cache/redis/*",
+                    "Microsoft.Cache/redisEnterprise/*"
+                ],
+                "ExcludedRoleDefinitionActions": [
+                    "*/read"
+                ]
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Azure Data Explorer Data Access",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [
+                    "/*"
+                ],
+                "ExcludedRoleAssignmentScopeName": [<Tier0IncludedResourceScope>
+                ],
+                "RoleDefinitionActions": [
+                    "Microsoft.Kusto/clusters/*"
+                ],
+                "ExcludedRoleDefinitionActions": [
+                    "*/read"
+                ]
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Azure Synapse Data Access",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [
+                    "/*"
+                ],
+                "ExcludedRoleAssignmentScopeName": [<Tier0IncludedResourceScope>
+                ],
+                "RoleDefinitionActions": [
+                    "Microsoft.Synapse/workspaces/*"
+                ],
+                "ExcludedRoleDefinitionActions": [
+                    "*/read"
+                ]
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Machine Learning Data Access",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [
+                    "/*"
+                ],
+                "ExcludedRoleAssignmentScopeName": [<Tier0IncludedResourceScope>
+                ],
+                "RoleDefinitionActions": [
+                    "Microsoft.MachineLearningServices/workspaces/*"
+                ],
+                "ExcludedRoleDefinitionActions": [
+                    "*/read"
+                ]
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "IoT Data Access",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [
+                    "/*"
+                ],
+                "ExcludedRoleAssignmentScopeName": [<Tier0IncludedResourceScope>
+                ],
+                "RoleDefinitionActions": [
+                    "Microsoft.Devices/IotHubs/*",
+                    "Microsoft.Devices/provisioningServices/*"
+                ],
+                "ExcludedRoleDefinitionActions": [
+                    "*/read"
+                ]
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Event Grid Data Access",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [
+                    "/*"
+                ],
+                "ExcludedRoleAssignmentScopeName": [<Tier0IncludedResourceScope>
+                ],
+                "RoleDefinitionActions": [
+                    "Microsoft.EventGrid/*"
+                ],
+                "ExcludedRoleDefinitionActions": [
+                    "*/read"
+                ]
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Real-time Messaging Data Access",
+                "ActionType": "DataAction",
+                "RoleAssignmentScopeName": [
+                    "/*"
+                ],
+                "ExcludedRoleAssignmentScopeName": [<Tier0IncludedResourceScope>
+                ],
+                "RoleDefinitionActions": [
+                    "Microsoft.SignalRService/SignalR/*",
+                    "Microsoft.SignalRService/WebPubSub/*"
+                ],
+                "ExcludedRoleDefinitionActions": [
+                    "*/read"
+                ]
+            },
+            {
+                "Category": "Microsoft.Azure",
                 "Service": "General Data Plane Operations",
                 "ActionType": "DataAction",
                 "RoleAssignmentScopeName": [
@@ -931,7 +1472,9 @@
                 "RoleAssignmentScopeName": [
                     "/*"
                 ],
-                "ExcludedRoleAssignmentScopeName": [],
+                "ExcludedRoleAssignmentScopeName": [
+                    <Tier0IncludedResourceScope>
+                ],
                 "RoleDefinitionActions": [
                     "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read",
                     "Microsoft.Storage/storageAccounts/queueServices/queues/messages/read",

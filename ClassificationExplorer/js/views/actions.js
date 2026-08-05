@@ -33,14 +33,15 @@ EOCE.views.actions = {
                         // (data-quality issue in the source export) instead of rendering a
                         // blank row that sorts to the top of the table.
                         if (!p.AuthorizedResourceAction) return;
-                        var key = k + '|' + p.AuthorizedResourceAction;
+                        var actionType = p.ActionType === 'DataAction' ? 'DataAction' : 'Action';
+                        var key = k + '|' + actionType + '|' + p.AuthorizedResourceAction;
                         if (!index[key]) {
                             index[key] = {
                                 sysKey: k,
                                 action: p.AuthorizedResourceAction,
                                 tier: EOCE.TIERS[p.EAMTierLevelName] ? p.EAMTierLevelName : 'Unclassified',
                                 category: p.Category || '—',
-                                actionType: p.ActionType || '',
+                                actionType: actionType,
                                 scopeAware: EOCE.roleIsScopeAware(k, [{ action: p.AuthorizedResourceAction, actionType: p.ActionType }], scopeAwareActions),
                                 roles: []
                             };
@@ -147,11 +148,12 @@ EOCE.views.actions = {
             self.renderToolbar();
             self.renderTable();
 
-            // Deep link: #actions/<sys>/<action> opens the action drawer.
+            // Deep link: #actions/<sys>/<action>/<actionType> opens the action drawer.
             if (params && params[1]) {
                 var wanted = decodeURIComponent(params[1]);
-                var match = self.all.filter(function (a) { return a.sysKey === self.state.sys && a.action === wanted; })[0] ||
-                    self.all.filter(function (a) { return a.action === wanted; })[0];
+                var wantedType = params[2] === 'DataAction' ? 'DataAction' : null;
+                var match = self.all.filter(function (a) { return a.sysKey === self.state.sys && a.action === wanted && (!wantedType || a.actionType === wantedType); })[0] ||
+                    self.all.filter(function (a) { return a.action === wanted && (!wantedType || a.actionType === wantedType); })[0];
                 if (match) self.openAction(match);
             }
         });
@@ -360,7 +362,7 @@ EOCE.views.actions = {
 
         if (a.sysKey !== 'Defender') {
             body += '<div style="margin:0 0 14px;display:flex;gap:16px;flex-wrap:wrap;"><a class="inline-link" href="#overview/action/' +
-                encodeURIComponent(a.sysKey) + '/' + encodeURIComponent(a.action) + '">&#8862; View in EAM Map &rarr;</a>' +
+                encodeURIComponent(a.sysKey) + '/' + encodeURIComponent(a.action) + '/' + encodeURIComponent(a.actionType || 'Action') + '">&#8862; View in EAM Map &rarr;</a>' +
                 EOCE.historyItemLink(a.sysKey, a.action) + '</div>';
         }
 

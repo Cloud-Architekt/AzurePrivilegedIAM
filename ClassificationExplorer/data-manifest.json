@@ -1,15 +1,15 @@
 {
-  "generatedUtc": "2026-07-31T06:26:58.7459340Z",
+  "generatedUtc": "2026-08-05T10:54:59.3017670Z",
   "mode": "Standalone",
   "repoRoot": "AzurePrivilegedIAM",
   "fileCount": 19,
   "files": [
     {
       "path": "Classification/Classification_EntraIdDirectoryRoles.json",
-      "bytes": 611155,
+      "bytes": 611774,
       "items": 145,
       "param": false,
-      "sha256": "7c6c38232cc70ea59efd7b73dd8fb40e1999a0ac600dd4cfdacb70d7b21303f3"
+      "sha256": "ec25d0b4cda7f0d5728078d32d7878d4599711b6ff02279b2c031408ee269f53"
     },
     {
       "path": "Classification/Classification_EntraIdDirectoryRolesFromMsftDocs.json",
@@ -27,10 +27,10 @@
     },
     {
       "path": "Classification/Classification_AzureResources.json",
-      "bytes": 3261332,
+      "bytes": 3265481,
       "items": 921,
       "param": false,
-      "sha256": "bd96e70b206759749c482862e7f3a53eaf9f93f4d6bad5009a069b4ce008770d"
+      "sha256": "ebab7673bd57d2a74ba50dfec20f3f9c58ca7fb2cc9728404f335d30aa743ee9"
     },
     {
       "path": "Classification/Classification_DeviceManagementRoles.json",
@@ -58,7 +58,7 @@
       "bytes": 349076,
       "items": 1236,
       "param": false,
-      "sha256": "3423cf9c859c0631d05cd0a7f4b1193d3308eac6434008ffc244330ce14a1bdc"
+      "sha256": "69e1c6e0a1cbc3ac04dbe3db39affa5d999df45d3437f219b164d6b279a80f18"
     },
     {
       "path": "EntraOps_Classification/Classification_AadResources.json",
@@ -90,17 +90,17 @@
     },
     {
       "path": "EntraOps_Classification/Classification_Azure.json",
-      "bytes": 27079,
+      "bytes": 36524,
       "items": 3,
       "param": false,
-      "sha256": "eeecbd0a9cfd9a7eb1781ab7b15303ab3d6d448e51b06b90755896b1abf4f78b"
+      "sha256": "230effaaead62a8605ad0f667c756a5a58d15e403ce815c620b2b6681ab781c4"
     },
     {
       "path": "EntraOps_Classification/Classification_Azure.Param.json",
-      "bytes": 46913,
+      "bytes": 67886,
       "items": 3,
       "param": true,
-      "sha256": "45cffe7f33e3338049ba873c1905e36d3fee063393389336024d7758fe7d1cfe"
+      "sha256": "c3b30c5e87c1c42df9ceee451e2c8944b2ff73bb2e215926918f8add65d74931"
     },
     {
       "path": "EntraOps_Classification/Classification_DeviceManagement.json",

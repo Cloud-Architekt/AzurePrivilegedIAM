@@ -18,6 +18,10 @@ A service principal holding Application.ReadWrite.All, or a role that can add cr
 3. Authenticate as the target application with the new credential and request an app-only Graph token.
 4. Use the inherited Control Plane Graph permissions to assign privileged roles or grant further app roles.
 
+## Permissions
+- Microsoft Graph | RoleManagement.ReadWrite.Directory | Application
+- Microsoft Graph | Application.ReadWrite.All | Application
+
 ## Actions
 - EntraID | microsoft.directory/applications/credentials/update
 - EntraID | microsoft.directory/servicePrincipals/credentials/update

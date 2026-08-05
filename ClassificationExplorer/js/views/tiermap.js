@@ -41,7 +41,7 @@ EOCE.views.tiermap = {
         },
         action: {
             label: 'Role action', kind: 'action',
-            id: function (p) { return 'A:' + p.sys + '|' + p.action; },
+            id: function (p) { return 'A:' + p.sys + '|' + (p.actionType === 'DataAction' ? 'DataAction' : 'Action') + '|' + p.action; },
             name: function (p) { return p.action; },
             tier: function (p) { return p.tier; }
         },
@@ -126,7 +126,7 @@ EOCE.views.tiermap = {
                 document.body.appendChild(self.tooltip);
             }
 
-            // Deep-link focus: #overview/role/<sys>/<roleId> or #overview/action/<sys>/<action>
+            // Deep-link focus: #overview/role/<sys>/<roleId> or #overview/action/<sys>/<action>/<actionType>
             self.pendingFocus = null;
             self.state.linkFocus = null;
             if (params && params[0]) {
@@ -135,9 +135,10 @@ EOCE.views.tiermap = {
                     self.scopeToFocus(params[1], { type: 'role', sys: params[1], key: params[2] });
                     self.pendingFocus = { column: 'role', id: 'R:' + params[1] + '|' + params[2] };
                 } else if (kind === 'action' && params[1] && params[2]) {
-                    self.scopeToFocus(params[1], { type: 'action', sys: params[1], key: params[2] });
+                    var actionType = params[3] === 'DataAction' ? 'DataAction' : null;
+                    self.scopeToFocus(params[1], { type: 'action', sys: params[1], key: params[2], actionType: actionType });
                     if (self.state.columns.indexOf('action') === -1) self.state.columns.push('action');
-                    self.pendingFocus = { column: 'action', id: 'A:' + params[1] + '|' + params[2] };
+                    if (actionType) self.pendingFocus = { column: 'action', id: 'A:' + params[1] + '|' + actionType + '|' + params[2] };
                 }
             }
 
@@ -254,6 +255,7 @@ EOCE.views.tiermap = {
                     cats: role.Categories || '',
                     service: p.Category || '(uncategorized)',
                     action: p.AuthorizedResourceAction,
+                    actionType: p.ActionType === 'DataAction' ? 'DataAction' : 'Action',
                     tier: EOCE.TIERS[p.EAMTierLevelName] ? p.EAMTierLevelName : 'Unclassified',
                     docsOnly: true,
                     graphOnlyDiff: false
@@ -282,7 +284,7 @@ EOCE.views.tiermap = {
             if (lf) {
                 if (p.sys !== lf.sys) return false;
                 if (lf.type === 'role' && p.roleId !== lf.key) return false;
-                if (lf.type === 'action' && p.action !== lf.key) return false;
+                if (lf.type === 'action' && (p.action !== lf.key || (lf.actionType && (p.actionType === 'DataAction' ? 'DataAction' : 'Action') !== lf.actionType))) return false;
             }
             if (!s.systems[p.sys]) return false;
             if (!s.mismatchOnly && p.docsOnly) return false;
@@ -1041,11 +1043,11 @@ EOCE.views.tiermap = {
         paths.forEach(function (p) {
             roles[p.sys + '|' + p.roleId] = true;
             services[p.sys + '|' + p.service] = true;
-            actions[p.sys + '|' + p.action] = true;
+            actions[p.sys + '|' + (p.actionType === 'DataAction' ? 'DataAction' : 'Action') + '|' + p.action] = true;
             if (p.tier === 'ControlPlane') {
                 cp++;
                 cpRoles[p.sys + '|' + p.roleId] = true;
-                cpActions[p.sys + '|' + p.action] = true;
+                cpActions[p.sys + '|' + (p.actionType === 'DataAction' ? 'DataAction' : 'Action') + '|' + p.action] = true;
             }
         });
         var stats = [
@@ -1102,7 +1104,7 @@ EOCE.views.tiermap = {
             html += '<tr><td colspan="5"><div class="empty"><div class="big">&#128269;</div>No role actions match.</div></td></tr>';
         } else {
             rows.slice(0, 300).forEach(function (p) {
-                html += '<tr class="tm-contrib-row" data-sys="' + EOCE.util.escapeHtml(p.sys) + '" data-action="' + EOCE.util.escapeHtml(p.action) + '">' +
+                html += '<tr class="tm-contrib-row" data-sys="' + EOCE.util.escapeHtml(p.sys) + '" data-action="' + EOCE.util.escapeHtml(p.action) + '" data-action-type="' + EOCE.util.escapeHtml(p.actionType || 'Action') + '">' +
                     '<td><span class="cell-strong">' + EOCE.util.escapeHtml(p.role) + '</span>' +
                     (p.priv ? ' <span class="chip priv">privileged</span>' : '') +
                     (p.docsOnly ? ' <span class="chip docdiff">Learn-only</span>' : '') + '</td>' +
@@ -1118,7 +1120,7 @@ EOCE.views.tiermap = {
         table.innerHTML = html;
         table.querySelectorAll('tbody tr[data-action]').forEach(function (tr) {
             tr.addEventListener('click', function () {
-                EOCE.app.go('actions/' + tr.getAttribute('data-sys') + '/' + encodeURIComponent(tr.getAttribute('data-action')));
+                EOCE.app.go('actions/' + tr.getAttribute('data-sys') + '/' + encodeURIComponent(tr.getAttribute('data-action')) + '/' + tr.getAttribute('data-action-type'));
             });
         });
 

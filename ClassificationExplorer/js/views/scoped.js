@@ -24,11 +24,220 @@ EOCE.views.scoped = {
 
     systemsWithParam: ['EntraID', 'Azure', 'DeviceManagement', 'Defender', 'IdentityGovernance'],
 
+    tierFromReasoning: function (value) {
+        var values = Array.isArray(value) ? value : [value];
+        var tiers = values.map(function (item) {
+            var text = String(item || '').toLowerCase();
+            if (text.indexOf('tier0') !== -1 || text.indexOf('controlplane') !== -1 || text.indexOf('control plane') !== -1) return 'ControlPlane';
+            if (text.indexOf('tier1') !== -1 || text.indexOf('managementplane') !== -1 || text.indexOf('management plane') !== -1) return 'ManagementPlane';
+            if (text.indexOf('tier2') !== -1 || text.indexOf('useraccess') !== -1 || text.indexOf('user access') !== -1) return 'UserAccess';
+            return 'Unclassified';
+        });
+        return EOCE.util.highestTier(tiers);
+    },
+
+    selectedReasoningPaths: function () {
+        if (!EOCE.isEntraOpsMode() || EOCE.getVariant() === EOCE.VARIANT_TEMPLATE) return [];
+        var tenant = EOCE.tenantByName(EOCE.getVariant());
+        return tenant && Array.isArray(tenant.reasoningFiles) ? tenant.reasoningFiles : [];
+    },
+
+    normalizeReasoning: function (paths, payloads) {
+        var self = this;
+        var records = [];
+        var byFile = {};
+        paths.forEach(function (path, index) { byFile[path.split('/').pop()] = payloads[index]; });
+
+        function rootOf(fileName) {
+            var payload = byFile[fileName];
+            if (Array.isArray(payload) && payload.length === 1 && payload[0] && typeof payload[0] === 'object') return payload[0];
+            return payload || {};
+        }
+
+        function reasonLeaves(value, prefix, output) {
+            if (value === null || value === undefined || value === '') return;
+            if (Array.isArray(value)) {
+                value.forEach(function (item) { reasonLeaves(item, prefix, output); });
+                return;
+            }
+            if (typeof value === 'object') {
+                Object.keys(value).forEach(function (key) { reasonLeaves(value[key], key, output); });
+                return;
+            }
+            output.push((prefix ? prefix + ': ' : '') + String(value));
+        }
+
+        function valuesForKey(value, targetKey, output) {
+            if (!value || typeof value !== 'object') return;
+            if (Array.isArray(value)) {
+                value.forEach(function (item) { valuesForKey(item, targetKey, output); });
+                return;
+            }
+            Object.keys(value).forEach(function (key) {
+                if (key.toLowerCase() === targetKey.toLowerCase() && value[key] !== null && value[key] !== undefined) output.push(String(value[key]));
+                valuesForKey(value[key], targetKey, output);
+            });
+        }
+
+        function add(system, kind, title, id, tier, source, reason, detail) {
+            records.push({
+                system: system,
+                kind: kind,
+                title: title || id || 'Unnamed scope',
+                id: id || '',
+                tier: self.tierFromReasoning(tier),
+                source: source || '',
+                reason: reason || 'No reason was persisted for this record.',
+                detail: detail
+            });
+        }
+
+        var azure = rootOf('ScopeReasoning_Azure.json');
+        (azure.ScopeDetails || []).forEach(function (detail) {
+            add('Azure', 'Azure resource scope', detail.ScopeName, detail.ScopeId, detail.EAMTier || detail.ResultingScope,
+                detail.Source, detail.Reason, detail);
+        });
+
+        var defender = rootOf('ScopeReasoning_Defender.json');
+        (defender.CloudSetDetails || []).forEach(function (detail) {
+            add('Defender', 'Defender CloudSet', detail.CloudSetName, detail.CloudSetId, detail.ResultingScope,
+                detail.ResolutionStatus, detail.Reason, detail);
+        });
+
+        var entra = rootOf('ScopeReasoning_EntraID.json');
+        (entra.ScopeDetails || []).forEach(function (detail) {
+            add('EntraID', detail.ScopeCategory || 'Entra scope', detail.ScopeName, Array.isArray(detail.ScopeId) ? detail.ScopeId.join(', ') : detail.ScopeId,
+                'ControlPlane', detail.ScopeCategory, detail.Reason, detail);
+        });
+
+        var governance = rootOf('ScopeReasoning_IdentityGovernance.json');
+        (governance.ScopeDetails || []).forEach(function (detail) {
+            add('IdentityGovernance', detail.ScopeType || 'Identity Governance scope', detail.ScopeName, detail.ScopeId,
+                detail.EAMTier || detail.ResultingScope, detail.Source || detail.CatalogDisplayName, detail.Reason, detail);
+        });
+
+        var memberPayload = byFile['DeviceManagement_ScopeGroupDeviceMembers.json'];
+        var memberRoot = Array.isArray(memberPayload) ? memberPayload[0] : memberPayload;
+        var groupMembers = memberRoot && memberRoot.groupDeviceMembers ? memberRoot.groupDeviceMembers : {};
+        var device = rootOf('ScopeReasoning_DeviceManagement.json');
+        (device.Groups || []).forEach(function (detail) {
+            var reasons = [];
+            if (detail.IncludedInScopeTagFilter) reasons.push('Matched Intune scope tag filter: ' + (detail.MatchedIntuneScopeTags || 'configured filter'));
+            if (Array.isArray(detail.EAMTierLevelName) && detail.EAMTierLevelName.length) reasons.push('Group classification: ' + detail.EAMTierLevelName.join(', '));
+            add('DeviceManagement', 'Intune scope group', detail.GroupName, detail.GroupId, detail.EAMTierLevelName,
+                detail.IncludedInScopeTagFilter ? 'Intune scope tag filter' : 'Classified group membership', reasons.join('; '), {
+                GroupReasoning: detail,
+                DeviceMembers: groupMembers[detail.GroupId] || null
+            });
+        });
+
+        var controlPlane = rootOf('ScopeReasoning_ControlPlane.json');
+        (controlPlane.PrivilegedObjects || []).forEach(function (detail) {
+            var classificationReason = detail.ClassificationReason || {};
+            var reasonSystems = [];
+            valuesForKey(classificationReason, 'RoleSystem', reasonSystems);
+            reasonSystems = reasonSystems.filter(function (value, index, all) { return all.indexOf(value) === index; });
+            var system = reasonSystems.length === 1 ? reasonSystems[0] : 'CrossRbac';
+            if (!EOCE.RBAC_SYSTEMS[system]) system = 'CrossRbac';
+            var reasonParts = [];
+            reasonLeaves(classificationReason, '', reasonParts);
+            add(system, 'Dynamically classified object', detail.ObjectDisplayName, detail.ObjectId, 'ControlPlane',
+                Array.isArray(detail.ClassificationSource) ? detail.ClassificationSource.join(', ') : detail.ClassificationSource,
+                reasonParts.join('; ') || 'Classified as a privileged object by the selected classification sources.', detail);
+        });
+
+        return records.sort(function (a, b) {
+            var systemCompare = a.system.localeCompare(b.system);
+            return systemCompare || a.title.localeCompare(b.title);
+        });
+    },
+
+    renderReasoning: function (records, reasoningPaths) {
+        this.reasoningRecords = records;
+        var variant = EOCE.getVariant();
+        var html = '<div class="section-title">Resolved tenant scope evidence</div>';
+
+        if (variant === EOCE.VARIANT_TEMPLATE) {
+            return html + '<div class="empty"><div class="big">&#9432;</div>Select a tenant-specific classification source in the app bar to inspect its resolved scope evidence.</div>';
+        }
+        if (!reasoningPaths.length) {
+            return html + '<div class="empty"><div class="big">&#9432;</div>No scope reasoning artifacts were generated for ' + EOCE.util.escapeHtml(variant) + '.</div>';
+        }
+
+        var systems = records.map(function (record) { return record.system; }).filter(function (value, index, all) { return all.indexOf(value) === index; });
+        html += '<p class="muted" style="margin:-4px 0 14px;font-size:12.5px;">Actual reasons persisted by the selected tenant classification run. Open a row to inspect the complete evidence, including nested resources, affected objects, expanded Azure paths and CloudSet subscription correlation.</p>';
+        var expectedArtifacts = {
+            'ScopeReasoning_Azure.json': 'Azure resource reasoning',
+            'ScopeReasoning_Defender.json': 'Defender CloudSet reasoning',
+            'ScopeReasoning_EntraID.json': 'Entra ID scope reasoning',
+            'ScopeReasoning_IdentityGovernance.json': 'Identity Governance scope reasoning',
+            'ScopeReasoning_DeviceManagement.json': 'Intune scope-group reasoning',
+            'ScopeReasoning_ControlPlane.json': 'dynamic privileged-object reasoning'
+        };
+        var presentFiles = reasoningPaths.map(function (path) { return path.split('/').pop(); });
+        var missingArtifacts = Object.keys(expectedArtifacts).filter(function (fileName) { return presentFiles.indexOf(fileName) === -1; });
+        if (missingArtifacts.length) {
+            html += '<div class="callout" style="margin-bottom:14px;"><div class="callout-title">Reasoning not generated</div>' +
+                missingArtifacts.map(function (fileName) { return EOCE.util.escapeHtml(expectedArtifacts[fileName]); }).join(', ') +
+                '. Re-run dynamic classification for the affected RBAC system to add this evidence.</div>';
+        }
+        html += '<div class="toolbar"><div class="search"><span class="search-ico">&#128269;</span><input id="scopeReasonSearch" type="search" placeholder="Search scopes, objects, sources and reasons" aria-label="Search resolved scope evidence"></div>';
+        html += '<select class="filter" id="scopeReasonSystem" aria-label="Filter by RBAC system"><option value="all">All RBAC systems (' + records.length + ')</option>';
+        systems.forEach(function (system) { html += '<option value="' + EOCE.util.escapeHtml(system) + '">' + EOCE.util.escapeHtml((EOCE.RBAC_SYSTEMS[system] || {}).short || system) + '</option>'; });
+        html += '</select><span class="toolbar-meta" id="scopeReasonCount"></span></div>';
+        html += '<div id="scopeReasonTable"></div>';
+        return html;
+    },
+
+    updateReasoningTable: function () {
+        var self = this;
+        var host = document.getElementById('scopeReasonTable');
+        if (!host) return;
+        var search = (document.getElementById('scopeReasonSearch').value || '').toLowerCase();
+        var system = document.getElementById('scopeReasonSystem').value;
+        var filtered = (this.reasoningRecords || []).filter(function (record) {
+            if (system !== 'all' && record.system !== system) return false;
+            return !search || [record.system, record.kind, record.title, record.id, record.source, record.reason, JSON.stringify(record.detail)].join(' ').toLowerCase().indexOf(search) !== -1;
+        });
+        var count = document.getElementById('scopeReasonCount');
+        if (count) count.textContent = filtered.length + ' of ' + (this.reasoningRecords || []).length + ' records';
+        if (!filtered.length) {
+            host.innerHTML = '<div class="empty">No resolved evidence matches the current filters.</div>';
+            return;
+        }
+        var html = '<div class="table-wrap"><table class="grid-table"><thead><tr><th>RBAC system</th><th>Scope or object</th><th class="nowrap">Plane</th><th>Classification source</th><th>Reason</th></tr></thead><tbody>';
+        filtered.forEach(function (record) {
+            var index = self.reasoningRecords.indexOf(record);
+            var systemMeta = EOCE.RBAC_SYSTEMS[record.system];
+            html += '<tr data-reason-index="' + index + '" style="cursor:pointer;"><td><span class="chip brand">' + EOCE.util.escapeHtml(systemMeta ? systemMeta.short : record.system) + '</span><div class="muted" style="margin-top:5px;font-size:11px;">' + EOCE.util.escapeHtml(record.kind) + '</div></td>' +
+                '<td><div class="cell-strong">' + EOCE.util.escapeHtml(record.title) + '</div><div class="cell-mono muted" style="font-size:11px;word-break:break-all;">' + EOCE.util.escapeHtml(record.id) + '</div></td>' +
+                '<td>' + EOCE.util.tierBadge(record.tier, { short: true }) + '</td><td>' + EOCE.util.escapeHtml(record.source) + '</td><td>' + EOCE.util.escapeHtml(record.reason) + '</td></tr>';
+        });
+        host.innerHTML = html + '</tbody></table></div>';
+        host.querySelectorAll('tr[data-reason-index]').forEach(function (row) {
+            row.addEventListener('click', function () { self.openReasoning(self.reasoningRecords[parseInt(row.getAttribute('data-reason-index'), 10)]); });
+        });
+    },
+
+    openReasoning: function (record) {
+        var systemMeta = EOCE.RBAC_SYSTEMS[record.system];
+        var body = '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;">' + EOCE.util.tierBadge(record.tier) +
+            '<span class="chip brand">' + EOCE.util.escapeHtml(systemMeta ? systemMeta.short : record.system) + '</span><span class="chip">' + EOCE.util.escapeHtml(record.kind) + '</span></div>' +
+            '<div class="callout scope"><div class="callout-title">Classification reason</div>' + EOCE.util.escapeHtml(record.reason) + '</div>' +
+            '<dl class="kv"><dt>Scope / object ID</dt><dd class="cell-mono" style="word-break:break-all;">' + EOCE.util.escapeHtml(record.id) + '</dd><dt>Source</dt><dd>' + EOCE.util.escapeHtml(record.source) + '</dd></dl>' +
+            '<div class="section-title">Complete persisted evidence</div><pre class="cell-mono" style="white-space:pre-wrap;word-break:break-word;font-size:11.5px;line-height:1.55;">' + EOCE.util.escapeHtml(JSON.stringify(record.detail, null, 2)) + '</pre>';
+        EOCE.app.openDrawer('Resolved scope evidence', EOCE.util.escapeHtml(record.title), body);
+    },
+
     render: function (el) {
         var self = this;
         var keys = this.systemsWithParam;
         var paths = keys.map(function (k) { return EOCE.RBAC_SYSTEMS[k].param; });
-        return EOCE.data.loadAll(paths).then(function (params) {
+        var reasoningPaths = this.selectedReasoningPaths();
+        var reasoningPayloads = EOCE.isEntraOpsMode() ? Promise.all(reasoningPaths.map(EOCE.data.loadRaw)) : Promise.resolve([]);
+        return Promise.all([EOCE.data.loadAll(paths), reasoningPayloads]).then(function (loaded) {
+            var params = loaded[0];
+            var reasoningRecords = EOCE.isEntraOpsMode() ? self.normalizeReasoning(reasoningPaths, loaded[1]) : [];
             // Collect scope-aware service entries per system.
             var bySystem = {};
             keys.forEach(function (sysKey, idx) {
@@ -64,6 +273,8 @@ EOCE.views.scoped = {
 
             html += '<div class="callout control" style="margin-bottom:20px;"><div class="callout-title">Conservative classification when scope is unknown</div>' +
                 'Scope-aware classification requires the EntraOps parameter files to resolve assignment scopes to their target assets. If you do not use these files, for example by using <code>Update-EntraOpsClassificationControlPlaneScope</code>, EntraOps cannot apply the scope-aware distinction and more assets can be classified as <strong>Control Plane</strong>. Scope-aware classification depends on resolving the assignment scope to its target assets. When that scope cannot be determined reliably, use the more critical classification to avoid a tier breach. Treat permissions over management assets or user-access assets as <strong>Control Plane</strong> until their scope can be verified.</div>';
+
+            if (EOCE.isEntraOpsMode()) html += self.renderReasoning(reasoningRecords, reasoningPaths);
 
             // Placeholder reference cards
             html += '<div class="section-title">Dynamic scope placeholders</div>';
@@ -127,6 +338,15 @@ EOCE.views.scoped = {
                     self.openService(e, sysKey);
                 });
             });
+            if (EOCE.isEntraOpsMode()) {
+                var reasoningSearch = document.getElementById('scopeReasonSearch');
+                var reasoningSystem = document.getElementById('scopeReasonSystem');
+                if (reasoningSearch && reasoningSystem) {
+                    reasoningSearch.addEventListener('input', EOCE.util.debounce(function () { self.updateReasoningTable(); }, 120));
+                    reasoningSystem.addEventListener('change', function () { self.updateReasoningTable(); });
+                    self.updateReasoningTable();
+                }
+            }
         });
     },
 

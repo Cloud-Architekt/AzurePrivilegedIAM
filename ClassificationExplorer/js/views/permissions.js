@@ -63,6 +63,10 @@ EOCE.views.permissions = {
 
             self.renderToolbar();
             self.renderTable();
+            if (params && params[2]) {
+                var match = all.filter(function (permission) { return permission.id === params[2]; })[0];
+                if (match) self.openPerm(match);
+            }
         });
     },
 
