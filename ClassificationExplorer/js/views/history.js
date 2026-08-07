@@ -141,7 +141,7 @@ EOCE.views.history = {
                 '<p>See how the classification of roles, role actions and API permissions changed over time.</p></div>' +
                 '<div class="empty" style="padding:48px;"><div class="big">&#9202;</div>' +
                 'No change history is embedded in this copy of the app.<br><br>' +
-                'Run <span class="cell-mono">. ./Scripts/Update-EntraOpsClassificationExplorerData.ps1; Update-EntraOpsClassificationExplorerData</span> from a full git clone of the repository ' +
+                'Run <span class="cell-mono">' + this.esc(EOCE.GENERATOR_COMMAND) + '</span> from a full git clone of the repository ' +
                 '(not a downloaded zip) to generate <span class="cell-mono">data/history-data.js</span>, then reload.</div>' +
                 '</div>';
             return;

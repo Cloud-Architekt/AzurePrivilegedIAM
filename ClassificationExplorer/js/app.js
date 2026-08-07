@@ -38,7 +38,7 @@ EOCE.app = (function () {
             '<div class="error-box"><strong>Unable to load data.</strong><br>' +
             EOCE.util.escapeHtml(err && err.message ? err.message : String(err)) +
             '<br><br>This app runs entirely from the classification data embedded in data/classification-data.js. ' +
-            'Re-run the generator script (<code>Scripts/Update-EntraOpsClassificationExplorerData.ps1</code>) to refresh it.</div>';
+            'Re-run <code>' + EOCE.util.escapeHtml(EOCE.GENERATOR_COMMAND) + '</code> to refresh it.</div>';
     }
 
     // ---- Routing ---------------------------------------------------------
@@ -226,6 +226,11 @@ EOCE.app = (function () {
         titleEl = document.getElementById('drawerTitle');
         bodyEl = document.getElementById('drawerBody');
         eyebrowEl = document.getElementById('drawerEyebrow');
+
+        if (EOCE.deploymentError) {
+            setError(new Error(EOCE.deploymentError));
+            return;
+        }
 
         if (window.EONotifications) {
             var notifications = classificationNotifications();

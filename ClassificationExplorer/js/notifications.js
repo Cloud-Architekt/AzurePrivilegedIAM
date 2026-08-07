@@ -15,8 +15,8 @@
         var items = Array.isArray(options.items) ? options.items : [];
         var changeSetId = String(options.changeSetId || "none");
         var storageKey = "entraops.notifications.read." + options.appId;
-        var isRead = localStorage.getItem(storageKey) === changeSetId;
-
+        var isRead = false;
+        try { isRead = localStorage.getItem(storageKey) === changeSetId; } catch (e) { /* private mode */ }
         var backdrop = document.createElement("div");
         backdrop.className = "eo-notification-backdrop";
         var panel = document.createElement("aside");
@@ -36,7 +36,7 @@
 
         function markRead() {
             isRead = true;
-            localStorage.setItem(storageKey, changeSetId);
+            try { localStorage.setItem(storageKey, changeSetId); } catch (e) { /* private mode */ }
             updateCount();
         }
 

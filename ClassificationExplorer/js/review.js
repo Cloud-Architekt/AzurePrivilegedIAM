@@ -284,7 +284,12 @@
         var head = ["Kind", "Name", "System", "Scope", "Tier", "Tool", "DeepLink", "AddedAt"];
         var cell = function (v) {
             var s = v === undefined || v === null ? "" : String(v);
-            return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+            // Neutralise spreadsheet formula injection before RFC-4180 quoting. Excel and Sheets execute a
+            // cell whose text begins with = + - @ (or a leading tab/CR), and these exports carry tenant
+            // display names, which are attacker-influenceable (a guest can set their own). A leading
+            // apostrophe forces the cell to be treated as literal text.
+            var csvSafe = /^[=+\-@\t\r]/.test(s) ? "'" + s : s;
+            return /[",\n\r]/.test(csvSafe) ? '"' + csvSafe.replace(/"/g, '""') + '"' : csvSafe;
         };
         var lines = [head.join(",")];
         load().forEach(function (i) {

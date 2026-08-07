@@ -19,6 +19,20 @@ window.EOCE = window.EOCE || {};
 // else in this app is generated from one source and kept identical.
 EOCE.MODE = (window.EOCE_MODE === 'entraops') ? 'entraops' : 'standalone';
 EOCE.isEntraOpsMode = function () { return EOCE.MODE === 'entraops'; };
+EOCE.GENERATOR_COMMAND = EOCE.isEntraOpsMode()
+    ? 'Import-Module ./EntraOps -Force; Update-EntraOpsClassificationExplorerData -Mode EntraOps'
+    : '. ./Scripts/Update-EntraOpsClassificationExplorerData.ps1; Update-EntraOpsClassificationExplorerData -Mode Standalone';
+
+// The generator stamps its mode into the embedded bundle. Keep this separate from
+// EOCE.MODE so app startup can reject a stale or incorrectly deployed bundle.
+EOCE.BUNDLE_MODE = window.EOCE_DATA_MANIFEST && typeof window.EOCE_DATA_MANIFEST.mode === 'string'
+    ? window.EOCE_DATA_MANIFEST.mode.toLowerCase()
+    : '';
+EOCE.deploymentError = EOCE.BUNDLE_MODE && EOCE.BUNDLE_MODE !== EOCE.MODE
+    ? 'Deployment mode mismatch: js/mode.js declares "' + EOCE.MODE +
+    '", but data/classification-data.js was generated for "' + EOCE.BUNDLE_MODE +
+    '". Regenerate the bundle with the matching -Mode.'
+    : null;
 
 // Base folder for classification-logic definition/param templates. Basenames are
 // identical between the two repositories, only the containing folder differs:
@@ -360,7 +374,7 @@ EOCE.scopeAwareCallout = function (sysKey) {
     if (sa.docs) {
         var linkLabel = esc(sa.docsLabel || 'Learn more');
         var isInternal = String(sa.docs).charAt(0) === '#';
-        html += '<div style="margin-top:10px;"><a href="' + (isInternal ? sa.docs : EOCE.util.safeUrl(sa.docs)) +
+        html += '<div style="margin-top:10px;"><a href="' + (isInternal ? esc(sa.docs) : EOCE.util.safeUrl(sa.docs)) +
             (isInternal ? '' : '" target="_blank" rel="noopener noreferrer') + '">' + linkLabel + ' &rarr;</a></div>';
     }
     html += '</div>';

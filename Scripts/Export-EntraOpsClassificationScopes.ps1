@@ -159,7 +159,7 @@ function Export-EntraOpsClassificationScopes {
         }
     }
 
-    $ScopesOutput = $ScopesOutput | Sort-Object ScopeDisplayName
+    $ScopesOutput = $ScopesOutput | Sort-Object ScopeDisplayName, AppId, ScopeId
     $ScopesOutput | ConvertTo-Json -Depth 10 | Out-File .\Classification\Classification_Scopes.json -Force
     $ScopesOutput | Where-Object { $_.AppId -eq "00000003-0000-0000-c000-000000000000" } | ConvertTo-Json -Depth 10 | Out-File .\Classification\Classification_MsGraphScopes.json -Force
 

@@ -67,11 +67,11 @@ interactive, Microsoft **Fluent UI / Azure Portal** styled experience.
 
 ## Access levels (Enterprise Access Model)
 
-| Tier | Plane | Meaning |
-| ---- | ----- | ------- |
-| 0 | **Control Plane** | Controls the identity & security fabric (roles, credentials, policy, sync). Compromise = tenant/estate takeover. |
-| 1 | **Management Plane** | Manages workloads, apps, devices, groups and resources. |
-| 2 | **User Access** | Read / self-service with limited blast radius. |
+| Tier | Plane                | Meaning                                                                                                          |
+| ---- | -------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| 0    | **Control Plane**    | Controls the identity & security fabric (roles, credentials, policy, sync). Compromise = tenant/estate takeover. |
+| 1    | **Management Plane** | Manages workloads, apps, devices, groups and resources.                                                          |
+| 2    | **User Access**      | Read / self-service with limited blast radius.                                                                   |
 
 ## Running locally
 
@@ -91,23 +91,31 @@ re-run the generator (below) whenever the classification data changes.
 
 The embedded bundle is produced by the shared, mode-aware PowerShell generator, which
 reads the latest classification files **directly from the repository** (the raw JSON is
-no longer copied into the app folder):
+no longer copied into the app folder). Use the command for the deployment you are
+refreshing:
 
 ```powershell
+# AzurePrivilegedIAM standalone repository
 . ./Scripts/Update-EntraOpsClassificationExplorerData.ps1
-Update-EntraOpsClassificationExplorerData
+Update-EntraOpsClassificationExplorerData -Mode Standalone
+```
+
+```powershell
+# EntraOps repository (the generator is exported by the EntraOps module)
+Import-Module ./EntraOps -Force
+Update-EntraOpsClassificationExplorerData -Mode EntraOps
 ```
 
 This validates every source file (sanitizing the `*.Param.json` scope placeholders the
 same way the app does) and regenerates everything the app consumes:
 
-| Output | Contents |
-| ------ | -------- |
-| `data-manifest.json` | Timestamp, size, SHA-256 hash and item count per source file. |
-| `data/classification-data.js` (`window.EOCE_DATA`) | The embedded classification bundle. |
-| `data/attack-paths.js` | Attack-path catalog, from `content/attack-paths/*.md`. |
-| `data/tier-map.js` | Overview (Enterprise Access Model Map) Sankey dataset. |
-| `data/history-data.js` (`window.EOCE_HISTORY`) | Change history (`git log`) for the History view. |
+| Output                                             | Contents                                                      |
+| -------------------------------------------------- | ------------------------------------------------------------- |
+| `data-manifest.json`                               | Timestamp, size, SHA-256 hash and item count per source file. |
+| `data/classification-data.js` (`window.EOCE_DATA`) | The embedded classification bundle.                           |
+| `data/attack-paths.js`                             | Attack-path catalog, from `content/attack-paths/*.md`.        |
+| `data/tier-map.js`                                 | Overview (Enterprise Access Model Map) Sankey dataset.        |
+| `data/history-data.js` (`window.EOCE_HISTORY`)     | Change history (`git log`) for the History view.              |
 
 Re-run it whenever the classification data changes. Useful switches: `-WhatIf`,
 `-Verbose`, `-SkipEmbed`, `-SkipManifest`, `-SkipHistory`.
@@ -128,17 +136,17 @@ will then be available at
 
 ## Data sources
 
-| Area | File(s) |
-| ---- | ------- |
-| Entra ID directory roles | `Classification/Classification_EntraIdDirectoryRoles.json` |
-| Entra ID directory roles (Microsoft Learn reference, for doc-mismatch comparison) | `Classification/Classification_EntraIdDirectoryRolesFromMsftDocs.json` |
-| Identity Governance (Entitlement Management) roles | `Classification/Classification_IdentityGovernance.json` |
-| Azure resource roles | `Classification/Classification_AzureResources.json` |
-| Intune device management roles | `Classification/Classification_DeviceManagementRoles.json` |
-| Microsoft Defender XDR permissions | `EntraOps_Classification/Classification_Defender.json` |
-| API permissions / AppRoles / Scopes | `Classification/Classification_ApiPermissions.json`, `Classification_AppRoles.json`, `Classification_Scopes.json` |
-| Scope-aware definitions | `EntraOps_Classification/*.Param.json` |
-| Role overwrites | `EntraOps_Classification/Classification_RoleDefinitionOverwrites.json` |
+| Area                                                                              | File(s)                                                                                                           |
+| --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| Entra ID directory roles                                                          | `Classification/Classification_EntraIdDirectoryRoles.json`                                                        |
+| Entra ID directory roles (Microsoft Learn reference, for doc-mismatch comparison) | `Classification/Classification_EntraIdDirectoryRolesFromMsftDocs.json`                                            |
+| Identity Governance (Entitlement Management) roles                                | `Classification/Classification_IdentityGovernance.json`                                                           |
+| Azure resource roles                                                              | `Classification/Classification_AzureResources.json`                                                               |
+| Intune device management roles                                                    | `Classification/Classification_DeviceManagementRoles.json`                                                        |
+| Microsoft Defender XDR permissions                                                | `EntraOps_Classification/Classification_Defender.json`                                                            |
+| API permissions / AppRoles / Scopes                                               | `Classification/Classification_ApiPermissions.json`, `Classification_AppRoles.json`, `Classification_Scopes.json` |
+| Scope-aware definitions                                                           | `EntraOps_Classification/*.Param.json`                                                                            |
+| Role overwrites                                                                   | `EntraOps_Classification/Classification_RoleDefinitionOverwrites.json`                                            |
 
 These paths are relative to the **repository root**; the script reads them from there
 and embeds the data into the app. The `ClassificationExplorer` folder itself no longer

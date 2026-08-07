@@ -27,14 +27,30 @@ EOCE.util = (function () {
     }
 
     // Highlight a search term inside an already escaped string.
+    //
+    // Matching must skip over HTML entities. Searching the escaped text directly meant a term such as
+    // "amp", "quot", "lt" or "39" matched inside &amp; / &quot; / &#39;, producing &<mark>amp</mark>;
+    // which breaks the entity and leaks its raw text into the page. Anyone searching for "<" or "&" in
+    // a role action hit this. The entity runs are therefore split out and passed through untouched,
+    // and only the text between them is searched.
     function highlight(escaped, term) {
         if (!term) return escaped;
         var safe = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        var matcher;
         try {
-            return escaped.replace(new RegExp('(' + safe + ')', 'ig'), '<mark>$1</mark>');
+            matcher = new RegExp('(' + safe + ')', 'ig');
         } catch (e) {
             return escaped;
         }
+        // Alternating segments: even indexes are plain text, odd indexes are whole entities.
+        return String(escaped)
+            .split(/(&(?:[a-zA-Z][a-zA-Z0-9]*|#\d+|#[xX][0-9a-fA-F]+);)/)
+            .map(function (segment, i) {
+                if (i % 2 === 1) return segment;               // an entity - never highlight inside it
+                matcher.lastIndex = 0;
+                return segment.replace(matcher, '<mark>$1</mark>');
+            })
+            .join('');
     }
 
     function tierBadge(tierName, opts) {
@@ -60,10 +76,18 @@ EOCE.util = (function () {
 
     // Return url only when it starts with https:// or http://, otherwise '#'.
     // Prevents javascript: and data: protocol injection from data-driven URLs.
+    //
+    // The result is also HTML-escaped, because every caller interpolates it straight into a
+    // double-quoted href="..." attribute. Validating only the scheme left the rest of the string raw,
+    // so a quote inside an otherwise valid https:// URL closed the attribute and allowed injecting an
+    // event handler - e.g. front matter in content/attack-paths/*.md of the form
+    //   basedOn: Researcher | https://example.com" onmouseover="...
+    // Escaping here rather than at each call site keeps the guarantee with the function that callers
+    // already trust to make a URL safe to emit.
     function safeUrl(url) {
         if (!url) return '#';
         var s = String(url).trim();
-        return /^https?:\/\//i.test(s) ? s : '#';
+        return /^https?:\/\//i.test(s) ? escapeHtml(s) : '#';
     }
 
     return {
@@ -82,7 +106,7 @@ EOCE.data = (function () {
 
     // All classification data is embedded at build/generation time into
     // window.EOCE_DATA (data/classification-data.js), keyed by repo-relative path,
-    // by the (mode-aware) generator script - see Scripts/Update-EntraOpsClassificationExplorerData.ps1.
+    // by the mode-aware Update-EntraOpsClassificationExplorerData generator.
     // This is the only loading strategy: both the standalone and entraops
     // deployments run fully client-side from file:// with no web server and no
     // runtime fetch/manifest fallback. *.Param.json placeholders are already
@@ -110,7 +134,7 @@ EOCE.data = (function () {
                 }
             }
         }
-        return Promise.reject(new Error('"' + path + '" is not present in the embedded classification bundle. Re-run the generator script (Scripts/Update-EntraOpsClassificationExplorerData.ps1) to refresh data/classification-data.js.'));
+        return Promise.reject(new Error('"' + path + '" is not present in the embedded classification bundle. Run "' + EOCE.GENERATOR_COMMAND + '" to refresh data/classification-data.js.'));
     }
 
     // Variant resolution: when a tenant-specific classification source is selected

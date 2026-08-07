@@ -2890,6 +2890,28 @@
     }
   },
   {
+    "RoleId": "d6c7ff7d-dd03-45a8-af9c-2a825e11bf9f",
+    "RoleName": "Associated Billing Accounts Reader",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Allows users to list all the associated billing accounts for their tenant.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.AzureActiveDirectory/associatedBillingAccounts/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "UserAccess",
+      "EAMTierLevelTagValue": "2"
+    }
+  },
+  {
     "RoleId": "a6a9a135-9048-45df-b559-a90bb025e92f",
     "RoleName": "Astronomer Astro Contributor",
     "IsCustom": false,
@@ -14727,6 +14749,13 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.GuestConfiguration/guestConfigurationAssignments/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.GuestConfiguration/guestConfigurationAssignments/write",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
@@ -21031,6 +21060,13 @@
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.ContainerService/preparedImageSpecifications/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/preparedImageSpecifications/versions/read",
         "ActionType": "Action",
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",

@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-08-05T10:54:59.3017670Z",
+  "generatedUtc": "2026-08-07T14:23:34.2550640Z",
   "mode": "Standalone",
   "repoRoot": "AzurePrivilegedIAM",
   "fileCount": 19,
@@ -27,10 +27,10 @@
     },
     {
       "path": "Classification/Classification_AzureResources.json",
-      "bytes": 3265481,
-      "items": 921,
+      "bytes": 3266768,
+      "items": 922,
       "param": false,
-      "sha256": "ebab7673bd57d2a74ba50dfec20f3f9c58ca7fb2cc9728404f335d30aa743ee9"
+      "sha256": "dd69d1678f3fe8f4315957bf791b6e21abc2ad90c23e5728ec4b232ed4cb4182"
     },
     {
       "path": "Classification/Classification_DeviceManagementRoles.json",
@@ -58,7 +58,7 @@
       "bytes": 349076,
       "items": 1236,
       "param": false,
-      "sha256": "69e1c6e0a1cbc3ac04dbe3db39affa5d999df45d3437f219b164d6b279a80f18"
+      "sha256": "811a5ded2cf7df7dbd65ebd7e89cb98e5dc22cde7196ee9d11236d526831cf00"
     },
     {
       "path": "EntraOps_Classification/Classification_AadResources.json",
