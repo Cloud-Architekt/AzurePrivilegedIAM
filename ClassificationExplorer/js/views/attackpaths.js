@@ -605,6 +605,8 @@ EOCE.views.attackpaths = {
     renderGraph: function () {
         var self = this;
         if (self._raf) { cancelAnimationFrame(self._raf); self._raf = null; }
+        if (self._graphResizeObserver) { self._graphResizeObserver.disconnect(); self._graphResizeObserver = null; }
+        if (self._graphResizeTimer) { clearTimeout(self._graphResizeTimer); self._graphResizeTimer = null; }
 
         var host = document.getElementById('apGraph');
         if (!host) return;
@@ -619,12 +621,13 @@ EOCE.views.attackpaths = {
         var NS = 'http://www.w3.org/2000/svg';
 
         host.innerHTML =
-            '<div class="ap-graph-panel' + (maxed ? ' maximized' : '') + '">' +
+            '<div class="ap-graph-panel' + (maxed ? ' maximized' : '') + '"' +
+            (maxed ? ' role="dialog" aria-modal="true" aria-label="Attack graph"' : '') + '>' +
             '<div class="ap-graph-bar">' +
             '<span class="ap-graph-title">Attack graph</span>' +
             '<span class="ap-graph-meta">' + g.nodes.length + ' nodes \u00b7 ' + g.edges.length + ' edges \u2014 drag nodes to explore, click a role or action to open it</span>' +
-            '<button class="seg" id="apGraphReplay" title="Re-run layout">&#8635; Re-layout</button>' +
-            '<button class="seg" id="apGraphMax" title="' + (maxed ? 'Exit full screen (Esc)' : 'Maximize the graph') + '">' +
+            '<button type="button" class="seg" id="apGraphReplay" title="Re-run layout">&#8635; Re-layout</button>' +
+            '<button type="button" class="seg" id="apGraphMax" title="' + (maxed ? 'Exit full screen (Esc)' : 'Maximize the graph') + '">' +
             (maxed ? '&#10005; Exit full screen' : '&#9974; Maximize') + '</button>' +
             '</div>' +
             '<div class="ap-graph-legend">' +
@@ -653,7 +656,8 @@ EOCE.views.attackpaths = {
         var H = Math.max(canvas.clientHeight || 460, 320);
 
         var svg = document.createElementNS(NS, 'svg');
-        svg.setAttribute('class', 'ap-graph-svg');
+        svg.setAttribute('class', 'ap-graph-svg' + (g.nodes.length > 60 ? ' dense' : ''));
+        svg.setAttribute('aria-label', 'Attack graph with ' + g.nodes.length + ' nodes and ' + g.edges.length + ' edges');
         svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
         svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
 
@@ -674,11 +678,33 @@ EOCE.views.attackpaths = {
         // ---- init node positions (circle) + radius/colour by type ----------
         var radius = { technique: 11, role: 9, action: 7, perm: 7, tier: 15 };
         var cx = W / 2, cy = H / 2;
+        var layoutLength = Math.max(54, Math.min(180, Math.sqrt((W * H) / g.nodes.length) * 1.15));
+        var spreadY = Math.min(H * 0.36, layoutLength * 1.55);
+        var insetX = W * 0.06, insetY = H * 0.06;
+        var stageForType = { technique: 'technique', role: 'role', action: 'capability', perm: 'capability', tier: 'tier' };
+        var stageOrder = ['technique', 'role', 'capability', 'tier'];
+        var activeStages = stageOrder.filter(function (stage) {
+            return g.nodes.some(function (n) { return stageForType[n.type] === stage; });
+        });
+        var stageX = {};
+        activeStages.forEach(function (stage, i) {
+            stageX[stage] = activeStages.length === 1 ? cx : W * (0.1 + 0.8 * i / (activeStages.length - 1));
+        });
+        function clampNode(n, stopVelocity) {
+            var minX = insetX + n.r, maxX = W - insetX - n.r;
+            var minY = insetY + n.r, maxY = H - insetY - n.r;
+            var nextX = Math.max(minX, Math.min(maxX, n.x));
+            var nextY = Math.max(minY, Math.min(maxY, n.y));
+            if (stopVelocity && nextX !== n.x) n.vx = 0;
+            if (stopVelocity && nextY !== n.y) n.vy = 0;
+            n.x = nextX; n.y = nextY;
+        }
         g.nodes.forEach(function (n, i) {
             var ang = (i / g.nodes.length) * Math.PI * 2;
-            var rr = n.type === 'tier' ? 20 : 150 + (i % 5) * 18;
-            n.x = cx + Math.cos(ang) * rr;
-            n.y = cy + Math.sin(ang) * rr;
+            var ring = n.type === 'tier' ? 0.2 : 0.72 + (i % 5) * 0.07;
+            n.columnX = stageX[stageForType[n.type]];
+            n.x = n.columnX + Math.cos(ang) * layoutLength * 0.25;
+            n.y = cy + Math.sin(ang) * spreadY * ring;
             n.vx = 0; n.vy = 0;
             n.r = radius[n.type] || 8;
         });
@@ -686,11 +712,14 @@ EOCE.views.attackpaths = {
         g.nodes.forEach(function (n) { byId[n.id] = n; });
 
         // ---- build SVG elements -------------------------------------------
+        g.nodes.forEach(function (n) { n.incidentEdges = []; });
         g.edges.forEach(function (e) {
             e.line = document.createElementNS(NS, 'line');
             e.line.setAttribute('class', 'ap-edge');
             e.line.setAttribute('marker-end', 'url(#apArrow)');
             edgeG.appendChild(e.line);
+            byId[e.s].incidentEdges.push(e);
+            byId[e.t].incidentEdges.push(e);
         });
 
         g.nodes.forEach(function (n) {
@@ -700,7 +729,12 @@ EOCE.views.attackpaths = {
             if (n.type === 'action') goto = 'actions/' + n.meta.sys + '/' + encodeURIComponent(n.meta.action);
             else if (n.type === 'perm') goto = self.permGoto(n.meta.perm);
             else if (n.type === 'role') goto = self.roleGoto(n.meta.sys, n.meta.name);
-            if (goto) grp.style.cursor = 'pointer';
+            if (goto) {
+                grp.style.cursor = 'pointer';
+                grp.setAttribute('role', 'link');
+                grp.setAttribute('tabindex', '0');
+                grp.setAttribute('aria-label', n.full);
+            }
 
             var circle = document.createElementNS(NS, 'circle');
             circle.setAttribute('r', n.r);
@@ -712,8 +746,10 @@ EOCE.views.attackpaths = {
 
             var label = document.createElementNS(NS, 'text');
             label.setAttribute('class', 'ap-node-label');
-            label.setAttribute('x', n.r + 4);
+            var labelOnLeft = n.columnX > cx;
+            label.setAttribute('x', labelOnLeft ? -(n.r + 4) : n.r + 4);
             label.setAttribute('y', 4);
+            if (labelOnLeft) label.setAttribute('text-anchor', 'end');
             label.textContent = n.label.length > 30 ? n.label.slice(0, 29) + '\u2026' : n.label;
             grp.appendChild(label);
 
@@ -726,6 +762,7 @@ EOCE.views.attackpaths = {
                 ev.preventDefault();
                 n.dragging = true; n.fixed = true;
                 n._moved = false;
+                grp.classList.add('dragging');
                 grp.setPointerCapture(ev.pointerId);
                 self._alpha = Math.max(self._alpha || 0, 0.6);
                 self._tick();
@@ -735,20 +772,56 @@ EOCE.views.attackpaths = {
                 var pt = self._toGraph(svg, zoomG, ev.clientX, ev.clientY);
                 if (Math.abs(pt.x - n.x) > 2 || Math.abs(pt.y - n.y) > 2) n._moved = true;
                 n.x = pt.x; n.y = pt.y; n.vx = 0; n.vy = 0;
+                clampNode(n, false);
                 self._alpha = Math.max(self._alpha || 0, 0.3);
             });
-            grp.addEventListener('pointerup', function (ev) {
-                n.dragging = false; n.fixed = false;
+            function finishDrag(ev, followLink) {
+                if (!n.dragging) return;
+                n.dragging = false;
+                n.fixed = !!n._moved;
+                grp.classList.remove('dragging');
+                grp.classList.toggle('pinned', n.fixed);
                 try { grp.releasePointerCapture(ev.pointerId); } catch (e) { }
-                if (!n._moved && n.goto) EOCE.app.go(n.goto);
+                if (followLink && !n._moved && n.goto) EOCE.app.go(n.goto);
+            }
+            grp.addEventListener('pointerup', function (ev) { finishDrag(ev, true); });
+            grp.addEventListener('pointercancel', function (ev) { finishDrag(ev, false); });
+            grp.addEventListener('lostpointercapture', function (ev) { finishDrag(ev, false); });
+            grp.addEventListener('keydown', function (ev) {
+                if (n.goto && (ev.key === 'Enter' || ev.key === ' ')) {
+                    ev.preventDefault(); EOCE.app.go(n.goto);
+                }
             });
+            grp.addEventListener('pointerenter', function () { highlight(n); });
+            grp.addEventListener('pointerleave', clearHighlight);
+            grp.addEventListener('focus', function () { highlight(n); });
+            grp.addEventListener('blur', clearHighlight);
         });
+
+        function highlight(n) {
+            clearHighlight();
+            svg.classList.add('has-highlight');
+            n.el.classList.add('active');
+            n.incidentEdges.forEach(function (e) {
+                e.line.classList.add('active');
+                byId[e.s].el.classList.add('adjacent');
+                byId[e.t].el.classList.add('adjacent');
+            });
+        }
+        function clearHighlight() {
+            svg.classList.remove('has-highlight');
+            g.nodes.forEach(function (n) { n.el.classList.remove('active', 'adjacent'); });
+            g.edges.forEach(function (e) { e.line.classList.remove('active'); });
+        }
 
         document.getElementById('apGraphReplay').addEventListener('click', function () {
             g.nodes.forEach(function (n, i) {
                 var ang = Math.random() * Math.PI * 2;
-                n.x = cx + Math.cos(ang) * (60 + Math.random() * 150);
-                n.y = cy + Math.sin(ang) * (60 + Math.random() * 110);
+                var ring = 0.45 + Math.random() * 0.55;
+                n.fixed = false;
+                n.el.classList.remove('pinned');
+                n.x = n.columnX + Math.cos(ang) * layoutLength * 0.3;
+                n.y = cy + Math.sin(ang) * spreadY * ring;
                 n.vx = 0; n.vy = 0;
             });
             self._alpha = 1; self._tick();
@@ -757,6 +830,7 @@ EOCE.views.attackpaths = {
         document.getElementById('apGraphMax').addEventListener('click', function () {
             self.state.graphMax = !self.state.graphMax;
             self.renderGraph();
+            document.getElementById('apGraphMax').focus();
         });
 
         // Allow Esc to leave full screen (bound once).
@@ -765,7 +839,20 @@ EOCE.views.attackpaths = {
             document.addEventListener('keydown', function (ev) {
                 if (ev.key === 'Escape' && self.state.graphMax) {
                     self.state.graphMax = false;
-                    if (document.getElementById('apGraph')) self.renderGraph();
+                    if (document.getElementById('apGraph')) {
+                        self.renderGraph(); document.getElementById('apGraphMax').focus();
+                    }
+                } else if (ev.key === 'Tab' && self.state.graphMax) {
+                    var panel = document.querySelector('.ap-graph-panel.maximized');
+                    if (!panel) return;
+                    var focusable = Array.prototype.slice.call(panel.querySelectorAll('button, [href], [tabindex="0"]'));
+                    if (!focusable.length) return;
+                    var first = focusable[0], last = focusable[focusable.length - 1];
+                    if (ev.shiftKey && document.activeElement === first) {
+                        ev.preventDefault(); last.focus();
+                    } else if (!ev.shiftKey && document.activeElement === last) {
+                        ev.preventDefault(); first.focus();
+                    }
                 }
             });
         }
@@ -776,7 +863,7 @@ EOCE.views.attackpaths = {
 
         this._step = function () {
             var nodes = g.nodes, edges = g.edges, a = self._alpha;
-            var REP = 4200, SPRING = 0.035, LEN = 96, GRAV = 0.025, DAMP = 0.84;
+            var REP = layoutLength * layoutLength * 0.45, SPRING = 0.025, COLUMN_GRAV = 0.025, GRAV = 0.015, DAMP = 0.84;
             var i, j, n, m, dx, dy, d, f;
             // repulsion
             for (i = 0; i < nodes.length; i++) {
@@ -796,7 +883,8 @@ EOCE.views.attackpaths = {
                 var s = byId[edges[i].s], tt = byId[edges[i].t];
                 dx = tt.x - s.x; dy = tt.y - s.y;
                 d = Math.sqrt(dx * dx + dy * dy) || 0.5;
-                f = SPRING * (d - LEN) * a;
+                var desiredLength = Math.max(layoutLength, Math.abs(tt.columnX - s.columnX));
+                f = SPRING * (d - desiredLength) * a;
                 var vx = (dx / d) * f, vy = (dy / d) * f;
                 s.vx += vx; s.vy += vy; tt.vx -= vx; tt.vy -= vy;
             }
@@ -804,12 +892,11 @@ EOCE.views.attackpaths = {
             for (i = 0; i < nodes.length; i++) {
                 n = nodes[i];
                 if (n.fixed) { n.vx = 0; n.vy = 0; continue; }
-                n.vx += (self._dims.cx - n.x) * GRAV * a;
+                n.vx += (n.columnX - n.x) * COLUMN_GRAV * a;
                 n.vy += (self._dims.cy - n.y) * GRAV * a;
                 n.vx *= DAMP; n.vy *= DAMP;
                 n.x += n.vx; n.y += n.vy;
-                n.x = Math.max(n.r + 4, Math.min(self._dims.W - n.r - 4, n.x));
-                n.y = Math.max(n.r + 4, Math.min(self._dims.H - n.r - 4, n.y));
+                clampNode(n, true);
             }
             self._alpha *= 0.985;
             self._paint();
@@ -841,6 +928,23 @@ EOCE.views.attackpaths = {
             self._raf = requestAnimationFrame(loop);
         };
 
+        if (typeof ResizeObserver !== 'undefined') {
+            var graphResizeObserver = new ResizeObserver(function () {
+                if (!document.body.contains(svg)) {
+                    graphResizeObserver.disconnect();
+                    if (self._graphResizeObserver === graphResizeObserver) self._graphResizeObserver = null;
+                    return;
+                }
+                var nextW = canvas.clientWidth, nextH = canvas.clientHeight;
+                if (Math.abs(nextW - W) < 8 && Math.abs(nextH - H) < 8) return;
+                clearTimeout(self._graphResizeTimer);
+                self._graphResizeTimer = setTimeout(function () { self.renderGraph(); }, 120);
+            });
+            self._graphResizeObserver = graphResizeObserver;
+            graphResizeObserver.observe(canvas);
+        }
+
+        this._paint();
         this._tick();
     },
 

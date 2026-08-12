@@ -1417,6 +1417,7 @@ table.grid-table tbody tr.selected {
 .ap-edge {
     stroke: rgba(120, 130, 150, .42);
     stroke-width: 1.4;
+    transition: opacity .12s ease, stroke .12s ease;
 }
 
 .ap-node circle {
@@ -1429,6 +1430,21 @@ table.grid-table tbody tr.selected {
     filter: brightness(1.12);
 }
 
+.ap-node.dragging circle,
+.ap-node.pinned circle {
+    stroke: var(--neutral-fg);
+    stroke-width: 3;
+}
+
+.ap-node:focus-visible {
+    outline: none;
+}
+
+.ap-node:focus-visible circle {
+    stroke: var(--neutral-fg);
+    stroke-width: 4;
+}
+
 .ap-node .ap-node-label {
     font-size: 11px;
     fill: var(--neutral-fg);
@@ -1438,6 +1454,37 @@ table.grid-table tbody tr.selected {
     stroke-linejoin: round;
     pointer-events: none;
     font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    transition: opacity .12s ease;
+}
+
+.ap-graph-svg.dense .ap-node-label {
+    opacity: 0;
+}
+
+.ap-graph-svg.dense .ap-tier .ap-node-label,
+.ap-graph-svg.dense .ap-node.active .ap-node-label,
+.ap-graph-svg.dense .ap-node:hover .ap-node-label,
+.ap-graph-svg.dense .ap-node:focus .ap-node-label {
+    opacity: 1;
+}
+
+.ap-graph-svg.has-highlight .ap-edge {
+    opacity: .1;
+}
+
+.ap-graph-svg.has-highlight .ap-edge.active {
+    opacity: 1;
+    stroke: var(--neutral-fg-secondary);
+    stroke-width: 2;
+}
+
+.ap-graph-svg.has-highlight .ap-node {
+    opacity: .25;
+}
+
+.ap-graph-svg.has-highlight .ap-node.active,
+.ap-graph-svg.has-highlight .ap-node.adjacent {
+    opacity: 1;
 }
 
 .ap-node.ap-technique circle {
