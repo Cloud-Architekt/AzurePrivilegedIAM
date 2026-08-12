@@ -4076,6 +4076,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "795fc94d-3deb-4632-b1eb-e6d1a5f44918",
+    "AppRoleDisplayName": "Policy.ReadWrite.Recovery",
+    "Category": "Tenant Policy Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "1c6e93a6-28e2-4cbb-9f64-1a46a821124d",
     "AppRoleDisplayName": "Policy.ReadWrite.SecurityDefaults",
     "Category": "Tenant Policy Management",
@@ -4097,6 +4105,14 @@
     "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "66ae8ecc-328f-47f6-97ca-4d9e952df081",
+    "AppRoleDisplayName": "PreAuthorizationGrant.Read.All",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -5147,18 +5163,18 @@
     "EAMTierLevelTagValue": "0"
   },
   {
-    "AppId": "00000003-0000-0ff1-ce00-000000000000",
-    "AppRoleId": "806d1b36-e37b-4f02-9c9e-a1269982b2aa",
-    "AppRoleDisplayName": "SharePointCrossTenantMigration.Manage.All",
-    "Category": "SharePoint Operations",
-    "EAMTierLevelName": "ManagementPlane",
-    "EAMTierLevelTagValue": "1"
-  },
-  {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "a0521574-fcd8-4742-b29c-f796df57ea70",
     "AppRoleDisplayName": "SharePointCrossTenantMigration.Manage.All",
     "Category": "Microsoft SharePoint",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0ff1-ce00-000000000000",
+    "AppRoleId": "806d1b36-e37b-4f02-9c9e-a1269982b2aa",
+    "AppRoleDisplayName": "SharePointCrossTenantMigration.Manage.All",
+    "Category": "SharePoint Operations",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -5195,18 +5211,18 @@
     "EAMTierLevelTagValue": "1"
   },
   {
-    "AppId": "00000003-0000-0ff1-ce00-000000000000",
-    "AppRoleId": "85bd96b3-dd7e-44d4-94f4-47fbb58e5718",
-    "AppRoleDisplayName": "SharePointTenantSettings.ReadWrite.All",
-    "Category": "SharePoint Administration",
-    "EAMTierLevelName": "ManagementPlane",
-    "EAMTierLevelTagValue": "1"
-  },
-  {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "19b94e34-907c-4f43-bde9-38b1909ed408",
     "AppRoleDisplayName": "SharePointTenantSettings.ReadWrite.All",
     "Category": "Microsoft SharePoint",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0ff1-ce00-000000000000",
+    "AppRoleId": "85bd96b3-dd7e-44d4-94f4-47fbb58e5718",
+    "AppRoleDisplayName": "SharePointTenantSettings.ReadWrite.All",
+    "Category": "SharePoint Administration",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -5259,18 +5275,18 @@
     "EAMTierLevelTagValue": "1"
   },
   {
-    "AppId": "00000003-0000-0000-c000-000000000000",
-    "AppRoleId": "a82116e5-55eb-4c41-a434-62fe8a61c773",
-    "AppRoleDisplayName": "Sites.FullControl.All",
-    "Category": "Microsoft SharePoint",
-    "EAMTierLevelName": "ManagementPlane",
-    "EAMTierLevelTagValue": "1"
-  },
-  {
     "AppId": "00000003-0000-0ff1-ce00-000000000000",
     "AppRoleId": "678536fe-1083-478a-9c59-b99265e6b0d3",
     "AppRoleDisplayName": "Sites.FullControl.All",
     "Category": "SharePoint Administration",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "a82116e5-55eb-4c41-a434-62fe8a61c773",
+    "AppRoleDisplayName": "Sites.FullControl.All",
+    "Category": "Microsoft SharePoint",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -5291,18 +5307,18 @@
     "EAMTierLevelTagValue": "1"
   },
   {
-    "AppId": "00000003-0000-0ff1-ce00-000000000000",
-    "AppRoleId": "d13f72ca-a275-4b96-b789-48ebcc4da984",
-    "AppRoleDisplayName": "Sites.Read.All",
-    "Category": "SharePoint Operations",
-    "EAMTierLevelName": "ManagementPlane",
-    "EAMTierLevelTagValue": "1"
-  },
-  {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "332a536c-c7ef-4017-ab91-336970924f0d",
     "AppRoleDisplayName": "Sites.Read.All",
     "Category": "Microsoft SharePoint",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0ff1-ce00-000000000000",
+    "AppRoleId": "d13f72ca-a275-4b96-b789-48ebcc4da984",
+    "AppRoleDisplayName": "Sites.Read.All",
+    "Category": "SharePoint Operations",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -6371,6 +6387,14 @@
     "EAMTierLevelTagValue": "0"
   },
   {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "df021288-bdef-4463-88db-98f22de89214",
+    "AppRoleDisplayName": "User.Read.All",
+    "Category": "Default Member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
     "AppId": "00000002-0000-0ff1-ce00-000000000000",
     "AppRoleId": "bf24470f-10c1-436d-8d53-7b997eb473be",
     "AppRoleDisplayName": "User.Read.All",
@@ -6403,9 +6427,9 @@
     "EAMTierLevelTagValue": "1"
   },
   {
-    "AppId": "00000003-0000-0000-c000-000000000000",
-    "AppRoleId": "df021288-bdef-4463-88db-98f22de89214",
-    "AppRoleDisplayName": "User.Read.All",
+    "AppId": "00000002-0000-0ff1-ce00-000000000000",
+    "AppRoleId": "77e65b5a-ceae-48b3-9490-50a86a038a48",
+    "AppRoleDisplayName": "User.ReadBasic.All",
     "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
@@ -6413,14 +6437,6 @@
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "97235f07-e226-4f63-ace3-39588e11d3a1",
-    "AppRoleDisplayName": "User.ReadBasic.All",
-    "Category": "Default Member",
-    "EAMTierLevelName": "UserAccess",
-    "EAMTierLevelTagValue": "2"
-  },
-  {
-    "AppId": "00000002-0000-0ff1-ce00-000000000000",
-    "AppRoleId": "77e65b5a-ceae-48b3-9490-50a86a038a48",
     "AppRoleDisplayName": "User.ReadBasic.All",
     "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
@@ -6435,20 +6451,20 @@
     "EAMTierLevelTagValue": "0"
   },
   {
-    "AppId": "00000003-0000-0000-c000-000000000000",
-    "AppRoleId": "741f803b-c850-494e-b5df-cde7c675a1ca",
-    "AppRoleDisplayName": "User.ReadWrite.All",
-    "Category": "Global User Management",
-    "EAMTierLevelName": "ControlPlane",
-    "EAMTierLevelTagValue": "0"
-  },
-  {
     "AppId": "00000003-0000-0ff1-ce00-000000000000",
     "AppRoleId": "741f803b-c850-494e-b5df-cde7c675a1ca",
     "AppRoleDisplayName": "User.ReadWrite.All",
     "Category": "SharePoint Operations",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "741f803b-c850-494e-b5df-cde7c675a1ca",
+    "AppRoleDisplayName": "User.ReadWrite.All",
+    "Category": "Global User Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",

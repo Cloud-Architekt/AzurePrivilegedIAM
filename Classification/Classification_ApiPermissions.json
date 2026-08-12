@@ -1830,7 +1830,7 @@
     "EAMTierLevelTagValue": "2"
   },
   {
-    "PermissionId": "9b005f11-86f0-45f7-8c27-4fff5d849916",
+    "PermissionId": "6222dbab-a24c-4210-9d91-2f47cf565614",
     "PermissionValue": "User.ReadBasic.All",
     "PermissionType": "Delegated",
     "TargetAppDisplayName": "Exchange Online",
@@ -1840,7 +1840,7 @@
     "EAMTierLevelTagValue": "2"
   },
   {
-    "PermissionId": "6222dbab-a24c-4210-9d91-2f47cf565614",
+    "PermissionId": "9b005f11-86f0-45f7-8c27-4fff5d849916",
     "PermissionValue": "User.ReadBasic.All",
     "PermissionType": "Delegated",
     "TargetAppDisplayName": "Exchange Online",
@@ -10685,6 +10685,16 @@
     "EAMTierLevelTagValue": "0"
   },
   {
+    "PermissionId": "795fc94d-3deb-4632-b1eb-e6d1a5f44918",
+    "PermissionValue": "Policy.ReadWrite.Recovery",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Tenant Policy Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
     "PermissionId": "1e7a2f4c-e602-4b1b-9547-304dd65c4cc2",
     "PermissionValue": "Policy.ReadWrite.Recovery",
     "PermissionType": "Delegated",
@@ -10743,6 +10753,26 @@
     "Category": "Exchange Online",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
+  },
+  {
+    "PermissionId": "66ae8ecc-328f-47f6-97ca-4d9e952df081",
+    "PermissionValue": "PreAuthorizationGrant.Read.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "9c98cbde-410c-4719-9058-166504f17863",
+    "PermissionValue": "PreAuthorizationGrant.Read.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "PermissionId": "76bc735e-aecd-4a1d-8b4c-2b915deabb79",

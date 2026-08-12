@@ -3380,6 +3380,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "795fc94d-3deb-4632-b1eb-e6d1a5f44918",
+    "AppRoleDisplayName": "Policy.ReadWrite.Recovery",
+    "Category": "Tenant Policy Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "1c6e93a6-28e2-4cbb-9f64-1a46a821124d",
     "AppRoleDisplayName": "Policy.ReadWrite.SecurityDefaults",
     "Category": "Tenant Policy Management",
@@ -3393,6 +3401,14 @@
     "Category": "External Identities",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "66ae8ecc-328f-47f6-97ca-4d9e952df081",
+    "AppRoleDisplayName": "PreAuthorizationGrant.Read.All",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",

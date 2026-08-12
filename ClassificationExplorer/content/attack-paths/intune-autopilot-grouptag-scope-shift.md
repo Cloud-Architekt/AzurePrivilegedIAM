@@ -1,7 +1,7 @@
 ---
 id: intune-autopilot-grouptag-scope-shift
 name: Autopilot Group Tag manipulation causes Intune scope tag/tier shift
-basedOn: Thomas Naunheim & Martin Sohn Christensen | https://www.troopers.de/troopers26/agenda/
+basedOn: Thomas Naunheim & Martin Sohn Christensen 
 severity: Critical
 targetTier: ControlPlane
 ---
@@ -46,7 +46,7 @@ An administrator with scoped, Tier2-level Intune enrollment permissions can chan
 - Implement a **hard security boundary** for Tier0/Tier1 devices by introducing a Red Tenant Architecture to manage devices and their Autopilot objects in a separate tenant with fully isolated administrative plane, rather than relying on Intune scope tags and dynamic group membership for tier separation.
 
 ## References
-- Thomas Naunheim & Martin Sohn Christensen — Tier Breakers: Blind Spots in Cloud-Managed PAWs (TROOPERS26) | https://www.troopers.de/troopers26/agenda/tier-breakers-blind-spots-in-cloud-managed-paws/
+- Thomas Naunheim & Martin Sohn Christensen — Tier Breakers: Blind Spots in Cloud-Managed PAWs (TROOPERS26) | https://troopers.de/troopers26/talks/8cbzws/
 - Microsoft Learn - Microsoft Intune built-in roles reference | https://learn.microsoft.com/en-us/intune/fundamentals/role-based-access-control/ref-built-in-roles
 - Microsoft Learn - Manually register devices with Windows Autopilot | https://learn.microsoft.com/en-us/autopilot/add-devices
 - Microsoft Learn - Manage rules for dynamic membership groups in Microsoft Entra ID | https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership

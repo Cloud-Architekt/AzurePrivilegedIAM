@@ -824,19 +824,8 @@
         "RoleDefinitionActions": [
           "Policy.ReadWrite.FedTokenValidation",
           "Policy.ReadWrite.IdentityProtection",
+          "Policy.ReadWrite.Recovery",
           "Policy.ReadWrite.SecurityDefaults"
-        ]
-      },
-      {
-        "Category": "Microsoft.Graph",
-        "Service": "Tenant Policy Management",
-        "ResourceAppId": "00000003-0000-0000-c000-000000000000",
-        "ResourceScope": "Delegation",
-        "RoleAssignmentScopeName": [
-          "/"
-        ],
-        "RoleDefinitionActions": [
-          "Policy.ReadWrite.Recovery"
         ]
       },
       {
@@ -2554,6 +2543,7 @@
           "Policy.Read.IdentityProtection",
           "Policy.Read.PermissionGrant",
           "Policy.Read.Recovery",
+          "PreAuthorizationGrant.Read.All",
           "PrivilegedAccess-CustomExt.Read.All",
           "PrivilegedAccess.Read.AzureAD",
           "PrivilegedAccess.Read.AzureADGroup",

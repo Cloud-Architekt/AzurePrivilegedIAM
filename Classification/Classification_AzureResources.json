@@ -18090,7 +18090,35 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.Authorization/*/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.ContainerService/fleets/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Resources/subscriptions/operationresults/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Resources/subscriptions/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Resources/subscriptions/resourceGroups/read",
         "ActionType": "Action",
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",
@@ -18287,13 +18315,6 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.ContainerService/fleets/placement.kubernetes-fleet.io/clusterresourceplacements/read",
-        "ActionType": "DataAction",
-        "Category": "Reader Data Access",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/fleets/placement.kubernetes-fleet.io/clusterresourcesnapshots/read",
         "ActionType": "DataAction",
         "Category": "Reader Data Access",
         "EAMTierLevelName": "UserAccess",
@@ -41552,6 +41573,28 @@
     }
   },
   {
+    "RoleId": "222f0527-8571-4054-955d-aae12f1d09d6",
+    "RoleName": "Commvault Contributor",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Provides access to Commvault ContentStore Control Plane Operations",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Commvault.ContentStore/*",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
     "RoleId": "df2711a6-406d-41cf-b366-b0250bff9ad1",
     "RoleName": "Compute Diagnostics Role",
     "IsCustom": false,
@@ -45139,35 +45182,35 @@
     "RichDescription": "Allows performing long term retention backup operations for Cosmos DB",
     "RolePermissions": [
       {
-        "AuthorizedResourceAction": "Microsoft.DocumentDB/databaseAccounts/backup/action",
+        "AuthorizedResourceAction": "Microsoft.DocumentDB/databaseAccounts/backup/*",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.DocumentDB/databaseAccounts/disableLongTermProtection/action",
+        "AuthorizedResourceAction": "Microsoft.DocumentDB/databaseAccounts/disableLongTermProtection/*",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.DocumentDB/databaseAccounts/enableLongTermProtection/action",
+        "AuthorizedResourceAction": "Microsoft.DocumentDB/databaseAccounts/enableLongTermProtection/*",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.DocumentDB/databaseAccounts/preBackup/action",
+        "AuthorizedResourceAction": "Microsoft.DocumentDB/databaseAccounts/preBackup/*",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.DocumentDB/databaseAccounts/validateForLongTermProtection/action",
+        "AuthorizedResourceAction": "Microsoft.DocumentDB/databaseAccounts/validateForLongTermProtection/*",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
@@ -45203,14 +45246,14 @@
     "RichDescription": "Allows performing long term retention restore operations for Cosmos DB",
     "RolePermissions": [
       {
-        "AuthorizedResourceAction": "Microsoft.DocumentDB/databaseAccounts/preRestore/action",
+        "AuthorizedResourceAction": "Microsoft.DocumentDB/databaseAccounts/preRestore/*",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.DocumentDB/databaseAccounts/restore/action",
+        "AuthorizedResourceAction": "Microsoft.DocumentDB/databaseAccounts/restore/*",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
         "EAMTierLevelName": "ManagementPlane",

@@ -3661,6 +3661,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "9c98cbde-410c-4719-9058-166504f17863",
+    "ScopeDisplayName": "PreAuthorizationGrant.Read.All",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "76bc735e-aecd-4a1d-8b4c-2b915deabb79",
     "ScopeDisplayName": "Presence.Read",
     "Category": "Microsoft Teams",
