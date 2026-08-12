@@ -145,6 +145,10 @@
     <!-- Optional embedded change history (from `git log`, skip with -SkipHistory). Used by
             notifications in both modes and by the full History view in standalone mode. -->
     <script src="data/history-data.js"></script>
+        <!-- d3 + d3-sankey power the Overview (Enterprise Access Model Map) Sankey diagram.
+         Vendored locally so the app stays fully self-contained and works from file:// with no internet. -->
+        <script src="assets/vendor/d3.min.js"></script>
+        <script src="assets/vendor/d3-sankey.min.js"></script>
     <script src="js/config.js"></script>
     <script src="js/data.js"></script>
     <script src="js/notifications.js"></script>

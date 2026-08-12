@@ -92,10 +92,17 @@ EOCE.views.tiermap = {
         var sysKeys = EOCE.rolesSystemKeys();
         var rolePaths = sysKeys.map(function (k) { return EOCE.RBAC_SYSTEMS[k].file; });
         var docsCfg = EOCE.DOCS_COMPARE.EntraID;
-        return Promise.all([
-            EOCE.data.loadAll(rolePaths),
-            docsCfg ? EOCE.data.load(docsCfg.file).catch(function () { return []; }) : Promise.resolve([])
-        ]).then(function (res) {
+        return EOCE.util.loadScripts([
+            'assets/vendor/d3.min.js',
+            'assets/vendor/d3-sankey.min.js'
+        ]).catch(function () {
+            // draw() renders a useful fallback when the vendored libraries are unavailable.
+        }).then(function () {
+            return Promise.all([
+                EOCE.data.loadAll(rolePaths),
+                docsCfg ? EOCE.data.load(docsCfg.file).catch(function () { return []; }) : Promise.resolve([])
+            ]);
+        }).then(function (res) {
             self.paths = self.buildPaths(sysKeys, res[0], res[1]);
 
             el.innerHTML =
