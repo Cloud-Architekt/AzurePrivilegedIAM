@@ -98,6 +98,9 @@ refreshing:
 # AzurePrivilegedIAM standalone repository
 . ./Scripts/Update-EntraOpsClassificationExplorerData.ps1
 Update-EntraOpsClassificationExplorerData -Mode Standalone
+
+# Release validation: fail on unresolved attack-path mappings
+Update-EntraOpsClassificationExplorerData -Mode Standalone -StrictAttackPaths
 ```
 
 ```powershell
@@ -107,18 +110,20 @@ Update-EntraOpsClassificationExplorerData -Mode EntraOps
 ```
 
 This validates every source file (sanitizing the `*.Param.json` scope placeholders the
-same way the app does) and regenerates everything the app consumes:
+same way the app does) and regenerates the app bundles and traceability artifacts:
 
 | Output                                             | Contents                                                      |
 | -------------------------------------------------- | ------------------------------------------------------------- |
 | `data-manifest.json`                               | Timestamp, size, SHA-256 hash and item count per source file. |
 | `data/classification-data.js` (`window.EOCE_DATA`) | The embedded classification bundle.                           |
 | `data/attack-paths.js`                             | Attack-path catalog, from `content/attack-paths/*.md`.        |
-| `data/tier-map.js`                                 | Overview (Enterprise Access Model Map) Sankey dataset.        |
+| `data/tier-map.js`                                 | Optional precomputed map dataset; not loaded by default.      |
 | `data/history-data.js` (`window.EOCE_HISTORY`)     | Change history (`git log`) for the History view.              |
 
-Re-run it whenever the classification data changes. Useful switches: `-WhatIf`,
-`-Verbose`, `-SkipEmbed`, `-SkipManifest`, `-SkipHistory`.
+Re-run it whenever the classification data changes. Release builds should pass
+`-StrictAttackPaths`, which rejects malformed or unresolved attack-path mappings in
+addition to the always-enforced catalog/index consistency checks. Useful switches:
+`-WhatIf`, `-Verbose`, `-SkipEmbed`, `-SkipManifest`, `-SkipHistory`.
 
 The change history needs the `git` command line and a full (non-shallow) clone — run
 the script from the repository, not from a downloaded zip. When git is unavailable, or

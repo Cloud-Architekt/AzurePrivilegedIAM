@@ -79,6 +79,11 @@ function Update-EntraOpsClassificationExplorerData {
         Useful while iterating locally, since walking the commit history of every tracked file is
         the slowest part of this script.
 
+    .PARAMETER StrictAttackPaths
+        Fail generation when an attack-path action, role or API permission mapping is malformed or
+        cannot be resolved against the embedded classification data. Without this switch, mapping
+        issues are warnings so contributors can iterate before classifications are updated.
+
     .PARAMETER PassThru
         Emit the result objects (one per source file) to the pipeline.
 
@@ -112,6 +117,7 @@ function Update-EntraOpsClassificationExplorerData {
         [switch]$SkipManifest,
         [switch]$SkipEmbed,
         [switch]$SkipHistory,
+        [switch]$StrictAttackPaths,
         [switch]$PassThru
     )
 
@@ -751,15 +757,16 @@ function Update-EntraOpsClassificationExplorerData {
 
     # --- Validate attack-path mappings against the embedded classification data ----------------
     # Attack-path markdown is intentionally descriptive, but Actions, Roles and Permissions are
-    # machine-linked by the Explorer. Warn about stale or misspelled declarations without blocking
-    # data generation so contributors can iterate on new paths before classifications are updated.
-    function Test-AttackPathIds {
+    # machine-linked by the Explorer. Catalog structure is always strict; mapping resolution can
+    # remain warning-only while contributors iterate, or fail a release run via -StrictAttackPaths.
+    function Test-AttackPathCatalog {
         param([string]$Directory)
 
         if (-not (Test-Path -LiteralPath $Directory -PathType Container)) { return }
 
+        $files = @(Get-ChildItem -LiteralPath $Directory -Filter '*.md' | Sort-Object Name)
         $ids = @{}
-        foreach ($file in Get-ChildItem -LiteralPath $Directory -Filter '*.md') {
+        foreach ($file in $files) {
             $idLine = Get-Content -LiteralPath $file.FullName -Encoding UTF8 | Where-Object { $_ -match '^id:\s*(.+)$' } | Select-Object -First 1
             if (-not $idLine) { throw "Attack-path frontmatter is missing an id: $($file.Name)" }
             $id = [regex]::Match($idLine, '^id:\s*(.+)$').Groups[1].Value.Trim()
@@ -767,6 +774,36 @@ function Update-EntraOpsClassificationExplorerData {
                 throw "Duplicate attack-path id '$id' in '$($ids[$id])' and '$($file.Name)'."
             }
             $ids[$id] = $file.Name
+            if ($file.BaseName -ne $id) {
+                throw "Attack-path id '$id' must match its filename '$($file.BaseName)' in '$($file.Name)'."
+            }
+        }
+
+        $indexPath = Join-Path $Directory 'index.json'
+        if (-not (Test-Path -LiteralPath $indexPath -PathType Leaf)) {
+            throw "Attack-path catalog index is missing: $indexPath"
+        }
+        $indexText = Get-Content -LiteralPath $indexPath -Raw -Encoding UTF8
+        if ([string]::IsNullOrWhiteSpace($indexText) -or $indexText.TrimStart()[0] -ne '[') {
+            throw "Attack-path catalog index must be a JSON array: $indexPath"
+        }
+        try {
+            $order = @($indexText | ConvertFrom-Json -ErrorAction Stop)
+        } catch {
+            throw "Invalid attack-path catalog index '$indexPath': $($_.Exception.Message)"
+        }
+
+        $duplicateIndexIds = @($order | Group-Object | Where-Object Count -gt 1 | ForEach-Object Name)
+        $unknownIndexIds = @($order | Where-Object { -not $ids.ContainsKey([string]$_) })
+        $unlistedFileIds = @($ids.Keys | Where-Object { $order -notcontains $_ } | Sort-Object)
+        if ($duplicateIndexIds.Count -gt 0) {
+            throw "Duplicate attack-path index id(s): $($duplicateIndexIds -join ', ')"
+        }
+        if ($unknownIndexIds.Count -gt 0) {
+            throw "Attack-path index id(s) without matching Markdown files: $($unknownIndexIds -join ', ')"
+        }
+        if ($unlistedFileIds.Count -gt 0) {
+            throw "Attack-path Markdown file(s) missing from index.json: $($unlistedFileIds -join ', ')"
         }
     }
 
@@ -789,6 +826,7 @@ function Update-EntraOpsClassificationExplorerData {
             $actions[$system] = @($items | ForEach-Object { Get-JsonProp $_ 'RolePermissions' } | ForEach-Object { Get-JsonProp $_ 'AuthorizedResourceAction' })
         }
         $permissions = @($Data['Classification/Classification_ApiPermissions.json'])
+        $mappingErrors = New-Object System.Collections.Generic.List[string]
 
         foreach ($file in Get-ChildItem -LiteralPath $Directory -Filter '*.md') {
             $section = ''
@@ -800,7 +838,15 @@ function Update-EntraOpsClassificationExplorerData {
                 if ([string]::IsNullOrEmpty($section) -or $line -notmatch '^[-*]\s+(.+)$') { continue }
 
                 $parts = @($Matches[1].Split('|') | ForEach-Object { $_.Trim() })
-                if (($section -eq 'Actions' -or $section -eq 'Roles') -and $parts.Count -eq 2 -and $sourceFiles.Contains($parts[0])) {
+                if ($section -eq 'Actions' -or $section -eq 'Roles') {
+                    if ($parts.Count -ne 2 -or [string]::IsNullOrWhiteSpace($parts[0]) -or [string]::IsNullOrWhiteSpace($parts[1])) {
+                        $mappingErrors.Add(("{0}:{1} [{2}] expected '<System> | <Value>': {3}" -f $file.Name, $lineNumber, $section, $Matches[1])) | Out-Null
+                        continue
+                    }
+                    if (-not $sourceFiles.Contains($parts[0])) {
+                        $mappingErrors.Add(("{0}:{1} [{2}] unknown system '{3}'" -f $file.Name, $lineNumber, $section, $parts[0])) | Out-Null
+                        continue
+                    }
                     $isKnown = if ($section -eq 'Actions') {
                         $knownActions = $actions[$parts[0]]
                         ($knownActions -contains $parts[1]) -or @($knownActions | Where-Object {
@@ -810,26 +856,39 @@ function Update-EntraOpsClassificationExplorerData {
                         $roleNames[$parts[0]] -contains $parts[1]
                     }
                     if (-not $isKnown) {
-                        Write-Warning ("Attack-path mapping unresolved: {0}:{1} [{2}] {3} | {4}" -f $file.Name, $lineNumber, $section, $parts[0], $parts[1])
+                        $mappingErrors.Add(("{0}:{1} [{2}] unresolved mapping: {3} | {4}" -f $file.Name, $lineNumber, $section, $parts[0], $parts[1])) | Out-Null
                     }
                     continue
                 }
-                if ($section -eq 'Permissions' -and $parts.Count -eq 3 -and $permissions.Count -gt 0) {
+                if ($section -eq 'Permissions') {
+                    if ($parts.Count -ne 3 -or @($parts | Where-Object { [string]::IsNullOrWhiteSpace($_) }).Count -gt 0) {
+                        $mappingErrors.Add(("{0}:{1} [Permissions] expected '<ResourceApp> | <Permission> | <Type>': {2}" -f $file.Name, $lineNumber, $Matches[1])) | Out-Null
+                        continue
+                    }
                     $isKnown = @($permissions | Where-Object {
                             (Get-JsonProp $_ 'TargetAppDisplayName') -eq $parts[0] -and
                             (Get-JsonProp $_ 'PermissionValue') -eq $parts[1] -and
                             (Get-JsonProp $_ 'PermissionType') -eq $parts[2]
                         }).Count -gt 0
                     if (-not $isKnown) {
-                        Write-Warning ("Attack-path mapping unresolved: {0}:{1} [Permissions] {2} | {3} | {4}" -f $file.Name, $lineNumber, $parts[0], $parts[1], $parts[2])
+                        $mappingErrors.Add(("{0}:{1} [Permissions] unresolved mapping: {2} | {3} | {4}" -f $file.Name, $lineNumber, $parts[0], $parts[1], $parts[2])) | Out-Null
                     }
                 }
+            }
+        }
+
+        if ($mappingErrors.Count -gt 0) {
+            if ($StrictAttackPaths) {
+                throw "$($mappingErrors.Count) attack-path mapping error(s):`n  - $($mappingErrors -join "`n  - ")"
+            }
+            foreach ($mappingError in $mappingErrors) {
+                Write-Warning "Attack-path mapping issue: $mappingError"
             }
         }
     }
 
     $attackPathDirectory = Join-Path $AppRoot 'content/attack-paths'
-    Test-AttackPathIds -Directory $attackPathDirectory
+    Test-AttackPathCatalog -Directory $attackPathDirectory
     Test-AttackPathMappings -Directory $attackPathDirectory -Data $embed
 
     # --- Write the data manifest ---------------------------------------------------------------
@@ -899,13 +958,10 @@ function Update-EntraOpsClassificationExplorerData {
     if (Test-Path -LiteralPath $attackDir -PathType Container) {
         $mdFiles = Get-ChildItem -LiteralPath $attackDir -Filter '*.md' | Sort-Object Name
         $indexPath = Join-Path $attackDir 'index.json'
-        if (Test-Path -LiteralPath $indexPath -PathType Leaf) {
-            $order = Get-Content -LiteralPath $indexPath -Raw | ConvertFrom-Json
-            $ordered = @()
-            foreach ($id in $order) { $f = $mdFiles | Where-Object { $_.BaseName -eq $id }; if ($f) { $ordered += $f } }
-            foreach ($f in $mdFiles) { if ($order -notcontains $f.BaseName) { $ordered += $f } }
-            $mdFiles = $ordered
-        }
+        $order = @(Get-Content -LiteralPath $indexPath -Raw -Encoding UTF8 | ConvertFrom-Json)
+        $mdFilesById = @{}
+        foreach ($file in $mdFiles) { $mdFilesById[$file.BaseName] = $file }
+        $mdFiles = @($order | ForEach-Object { $mdFilesById[[string]$_] })
         $mdTexts = @($mdFiles | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw -Encoding UTF8 })
         $attackJson = ($mdTexts | ConvertTo-Json -Depth 3 -Compress)
         if ($mdTexts.Count -eq 1) { $attackJson = "[$attackJson]" }

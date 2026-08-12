@@ -4,6 +4,8 @@
 window.EOCE = window.EOCE || {};
 
 EOCE.util = (function () {
+    var scriptPromises = {};
+
     function escapeHtml(value) {
         if (value === null || value === undefined) return '';
         return String(value)
@@ -90,6 +92,27 @@ EOCE.util = (function () {
         return /^https?:\/\//i.test(s) ? escapeHtml(s) : '#';
     }
 
+    function loadScript(src) {
+        if (scriptPromises[src]) return scriptPromises[src];
+        scriptPromises[src] = new Promise(function (resolve, reject) {
+            var script = document.createElement('script');
+            script.src = src;
+            script.onload = resolve;
+            script.onerror = function () {
+                delete scriptPromises[src];
+                reject(new Error('Unable to load script: ' + src));
+            };
+            document.head.appendChild(script);
+        });
+        return scriptPromises[src];
+    }
+
+    function loadScripts(sources) {
+        return sources.reduce(function (pending, src) {
+            return pending.then(function () { return loadScript(src); });
+        }, Promise.resolve());
+    }
+
     return {
         escapeHtml: escapeHtml,
         debounce: debounce,
@@ -97,7 +120,8 @@ EOCE.util = (function () {
         tierBadge: tierBadge,
         formatNumber: formatNumber,
         highestTier: highestTier,
-        safeUrl: safeUrl
+        safeUrl: safeUrl,
+        loadScripts: loadScripts
     };
 })();
 
