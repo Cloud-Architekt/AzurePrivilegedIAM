@@ -476,6 +476,10 @@ a.nav-item:hover {
     color: var(--neutral-fg-secondary);
 }
 
+.drawer-eyebrow {
+    margin: 0 0 4px;
+}
+
 /* ---------- Cards & surfaces -------------------------------------------- */
 .card {
     background: var(--neutral-surface);
@@ -801,6 +805,11 @@ select.filter:focus {
     opacity: .55;
 }
 
+.tier-toggle:focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 2px;
+}
+
 .tier-toggle.on {
     opacity: 1;
 }
@@ -1076,6 +1085,10 @@ table.grid-table tbody tr.selected {
     display: flex;
     align-items: flex-start;
     gap: 12px;
+}
+
+.drawer-title-wrap {
+    min-width: 0;
 }
 
 .drawer-head .title {
@@ -1840,6 +1853,10 @@ table.grid-table tbody tr.selected {
 /* responsive nav */
 .nav-toggle {
     display: none;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 18px;
 }
 
 @media (max-width: 860px) {
@@ -1969,6 +1986,22 @@ table.grid-table tbody tr.selected {
 }
 
 /* ---------- Overview (Enterprise Access Model Map) Sankey -------------- */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto !important;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
 .tm-toolbar {
     align-items: flex-start;
 }
@@ -2822,6 +2855,9 @@ tr.eo-flash>td {
 
 .cmp-role-card-name .chip-x {
     margin-left: auto;
+    padding: 2px 4px;
+    border: 0;
+    background: transparent;
     cursor: pointer;
     color: var(--neutral-fg-secondary);
     font-size: 11px;

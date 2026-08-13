@@ -131,6 +131,10 @@ EOCE.views.history = {
     },
 
     render: function (el, params) {
+        if (!window.EOCE_HISTORY) {
+            var self = this;
+            return EOCE.util.ensureHistory().then(function () { return self.render(el, params); });
+        }
         var d = this.data();
         var keys = this.sourceKeys();
 
