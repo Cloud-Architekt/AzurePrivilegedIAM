@@ -42,14 +42,22 @@
         }
 
         function load() {
-            if (!options.load || loadPromise) return loadPromise || Promise.resolve();
-            loadPromise = Promise.resolve(options.load()).then(function (result) {
-                result = result || {};
-                items = Array.isArray(result.items) ? result.items : [];
-                changeSetId = String(result.changeSetId || result.id || "none");
-                try { isRead = localStorage.getItem(storageKey) === changeSetId; } catch (e) { /* private mode */ }
-                updateCount();
-            });
+            if (!options.load) return Promise.resolve();
+            if (loadPromise) return loadPromise;
+            loadPromise = Promise.resolve()
+                .then(function () { return options.load(); })
+                .then(function (result) {
+                    result = result || {};
+                    items = Array.isArray(result.items) ? result.items : [];
+                    changeSetId = String(result.changeSetId || result.id || "none");
+                    try { isRead = localStorage.getItem(storageKey) === changeSetId; } catch (e) { /* private mode */ }
+                    updateCount();
+                    return result;
+                })
+                .catch(function (err) {
+                    loadPromise = null; // allow retry on next open
+                    throw err;
+                });
             return loadPromise;
         }
 
