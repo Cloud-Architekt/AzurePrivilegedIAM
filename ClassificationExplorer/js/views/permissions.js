@@ -31,7 +31,8 @@ EOCE.views.permissions = {
 
         var keys = Object.keys(EOCE.PERMISSION_SETS);
         var paths = keys.map(function (k) { return EOCE.PERMISSION_SETS[k].file; });
-        return EOCE.data.loadAll(paths).then(function (sets) {
+        return Promise.all([EOCE.data.loadAll(paths), EOCE.util.ensureAttackPaths()]).then(function (res) {
+            var sets = res[0];
             var all = [];
             keys.forEach(function (k, i) {
                 var def = EOCE.PERMISSION_SETS[k];
@@ -92,7 +93,7 @@ EOCE.views.permissions = {
         });
         html += '</div>';
         var apps = this.apps();
-        html += '<select class="filter" id="permApp"><option value="all">All apps (' + apps.length + ')</option>';
+        html += '<select class="filter" id="permApp" aria-label="Filter permissions by application"><option value="all">All apps (' + apps.length + ')</option>';
         apps.forEach(function (a) { html += '<option value="' + EOCE.util.escapeHtml(a) + '"' + (self.state.app === a ? ' selected' : '') + '>' + EOCE.util.escapeHtml(a) + '</option>'; });
         html += '</select>';
         html += '<div class="tier-toggles" id="permTierToggles">';
@@ -149,10 +150,12 @@ EOCE.views.permissions = {
         });
     },
 
-    renderTable: function () {
+    renderTable: function (keepLimit) {
         var self = this;
         var rows = this.sortRows(this.filtered());
         var s = this.state;
+        if (!keepLimit) this._visibleRows = 100;
+        var visibleRows = Math.min(this._visibleRows || 100, rows.length);
         var histStatus = EOCE.historyLatestItemStatus('ApiPermissions') || {};
         function arrow(key) { return s.sortKey === key ? '<span class="arrow">' + (s.sortDir === 1 ? '\u25B2' : '\u25BC') + '</span>' : '<span class="arrow">\u21C5</span>'; }
 
@@ -167,7 +170,7 @@ EOCE.views.permissions = {
         if (!rows.length) {
             html += '<tr><td colspan="5"><div class="empty"><div class="big">&#128269;</div>No permissions match your filters.</div></td></tr>';
         } else {
-            rows.slice(0, 500).forEach(function (p, idx) {
+            rows.slice(0, visibleRows).forEach(function (p, idx) {
                 var histChip = p.id && histStatus[p.id] ? ' ' + EOCE.historyChangedChip(histStatus[p.id]) : '';
                 var atkChip = EOCE.attackPathChip(EOCE.attackPathsForPermission(p).length);
                 html += '<tr data-idx="' + idx + '">' +
@@ -195,7 +198,15 @@ EOCE.views.permissions = {
         });
 
         document.getElementById('permCount').textContent = EOCE.util.formatNumber(rows.length) + ' permission' + (rows.length === 1 ? '' : 's');
-        document.getElementById('permPager').innerHTML = rows.length > 500 ? 'Showing first 500 of ' + EOCE.util.formatNumber(rows.length) + ' &mdash; refine your search.' : '';
+        var pager = document.getElementById('permPager');
+        pager.innerHTML = visibleRows < rows.length
+            ? 'Showing ' + EOCE.util.formatNumber(visibleRows) + ' of ' + EOCE.util.formatNumber(rows.length) + ' permissions. <button type="button" class="btn" data-show-more>Show 100 more</button>'
+            : '';
+        var more = pager.querySelector('[data-show-more]');
+        if (more) more.addEventListener('click', function () {
+            self._visibleRows = visibleRows + 100;
+            self.renderTable(true);
+        });
     },
 
     openPerm: function (p) {

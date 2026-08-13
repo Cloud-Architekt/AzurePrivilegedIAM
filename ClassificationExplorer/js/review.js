@@ -125,6 +125,7 @@
         return (
             '<button type="button" class="eo-star' + (on ? " on" : "") + (extraClass ? " " + extraClass : "") +
             '" title="' + (on ? "Remove from review list" : "Add to review list") +
+            '" aria-label="' + (on ? "Remove from review list" : "Add to review list") +
             '" aria-pressed="' + (on ? "true" : "false") + '">' + (on ? "&#9733;" : "&#9734;") + "</button>"
         );
     }
@@ -134,6 +135,7 @@
         btn.classList.toggle("on", on);
         btn.innerHTML = on ? "&#9733;" : "&#9734;";
         btn.title = on ? "Remove from review list" : "Add to review list";
+        btn.setAttribute("aria-label", btn.title);
         btn.setAttribute("aria-pressed", on ? "true" : "false");
     }
 
@@ -175,6 +177,7 @@
 
         panelEl = document.createElement("aside");
         panelEl.className = "eo-review-panel";
+        panelEl.setAttribute("aria-label", "Review list");
         panelEl.setAttribute("aria-hidden", "true");
         document.body.appendChild(panelEl);
 
@@ -197,13 +200,16 @@
         panelEl.classList.add("open");
         panelEl.setAttribute("aria-hidden", "false");
         backdropEl.classList.add("open");
+        EOCE.a11y.openDialog(panelEl, panelEl.querySelector("[data-eo-close]"));
     }
 
     function closePanel() {
         if (!panelEl) return;
+        var wasOpen = panelEl.classList.contains("open");
         panelEl.classList.remove("open");
         panelEl.setAttribute("aria-hidden", "true");
         backdropEl.classList.remove("open");
+        if (wasOpen) EOCE.a11y.closeDialog(panelEl);
     }
 
     function tierChip(tier) {
@@ -224,7 +230,7 @@
         var html =
             '<div class="eo-review-head"><span class="eo-review-title">&#9733; Review list</span>' +
             '<span class="eo-review-sub">' + list.length + " item(s)" + sharedSub + "</span>" +
-            '<button type="button" class="eo-review-close" title="Close" data-eo-close>&#10005;</button></div>' +
+            '<button type="button" class="eo-review-close" aria-label="Close review list" data-eo-close>&#10005;</button></div>' +
             '<div class="eo-review-body">';
 
         if (!list.length) {
@@ -242,7 +248,7 @@
                     '<div class="eo-review-item-head">' +
                     '<span class="chip ' + kindChipCls + '">' + esc(item.kind) + "</span>" +
                     tierChip(item.tier) +
-                    '<button type="button" class="eo-review-remove" title="Remove from review list" data-eo-remove="' + esc(item.id) + '">&#10005;</button>' +
+                    '<button type="button" class="eo-review-remove" aria-label="Remove ' + esc(item.name) + ' from review list" data-eo-remove="' + esc(item.id) + '">&#10005;</button>' +
                     "</div>" +
                     '<div class="eo-review-item-name">' + esc(item.name) + "</div>" +
                     '<div class="eo-review-item-meta">' +

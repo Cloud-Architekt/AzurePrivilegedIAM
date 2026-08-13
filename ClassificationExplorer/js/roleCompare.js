@@ -103,14 +103,17 @@ EOCE.roleCompare = (function () {
         if (!m || !bd) return;
         m.classList.add('open');
         bd.classList.add('open');
+        EOCE.a11y.openDialog(m, document.getElementById('cmpClose'));
         updateHash();
         render();
     }
 
     function close() {
         var m = modalEl(), bd = backdropEl();
+        var wasOpen = isOpen();
         if (m) m.classList.remove('open');
         if (bd) bd.classList.remove('open');
+        if (wasOpen) EOCE.a11y.closeDialog(m);
         if ((location.hash || '').indexOf('#rolecompare') === 0) history.replaceState(null, '', '#roles');
     }
 
@@ -173,7 +176,7 @@ EOCE.roleCompare = (function () {
             html += '<div class="cmp-role-card">' +
                 '<div class="cmp-role-card-name">' +
                 '<a class="inline-link cell-strong" href="#roles/' + encodeURIComponent(r.sysKey) + '/' + encodeURIComponent(r.id) + '" title="Open role details">' + esc(r.name) + '</a>' +
-                '<span class="chip-x" data-cmp-remove="' + esc(keyOf(r)) + '" title="Remove from comparison">&#10005;</span></div>' +
+                '<button type="button" class="chip-x" data-cmp-remove="' + esc(keyOf(r)) + '" aria-label="Remove ' + esc(r.name) + ' from comparison">&#10005;</button></div>' +
                 '<div class="cmp-role-card-meta">' + EOCE.util.tierBadge(r.classification) + ' <span class="muted">' + esc(sys.short) + '</span>' +
                 (r.isPrivileged ? '<span class="chip priv">privileged</span>' : '') + '</div></div>';
         });

@@ -118,12 +118,31 @@ same way the app does) and regenerates the app bundles and traceability artifact
 | `data/classification-data.js` (`window.EOCE_DATA`) | The embedded classification bundle.                           |
 | `data/attack-paths.js`                             | Attack-path catalog, from `content/attack-paths/*.md`.        |
 | `data/tier-map.js`                                 | Optional precomputed map dataset; not loaded by default.      |
+| `data/notification-data.js`                        | Compact latest-change summary for the app-bar badge.          |
 | `data/history-data.js` (`window.EOCE_HISTORY`)     | Change history (`git log`) for the History view.              |
 
 Re-run it whenever the classification data changes. Release builds should pass
 `-StrictAttackPaths`, which rejects malformed or unresolved attack-path mappings in
 addition to the always-enforced catalog/index consistency checks. Useful switches:
 `-WhatIf`, `-Verbose`, `-SkipEmbed`, `-SkipManifest`, `-SkipHistory`.
+
+The core classification bundle is compressed JSON and loads at startup. Attack-path
+and history bundles load only when their views or controls need them, including from
+`file://`. Large role, action and permission tables initially render 100 rows and expose
+a **Show 100 more** control, reducing initial DOM and layout work without truncating
+search results.
+
+Run the browser release suite from the repository root:
+
+```bash
+python -m pip install -r requirements-test.txt
+python -m playwright install chromium
+python -m unittest tests/test_classification_explorer.py -v
+```
+
+The `Classification Explorer` GitHub Actions workflow runs strict generator validation,
+the browser suite, direct-file and HTTP smoke tests, accessibility checks and whitespace
+validation on relevant pull requests and pushes.
 
 The change history needs the `git` command line and a full (non-shallow) clone — run
 the script from the repository, not from a downloaded zip. When git is unavailable, or

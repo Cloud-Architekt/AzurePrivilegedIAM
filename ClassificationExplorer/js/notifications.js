@@ -14,6 +14,7 @@
 
         var items = Array.isArray(options.items) ? options.items : [];
         var changeSetId = String(options.changeSetId || "none");
+        var loadPromise = null;
         var storageKey = "entraops.notifications.read." + options.appId;
         var isRead = false;
         try { isRead = localStorage.getItem(storageKey) === changeSetId; } catch (e) { /* private mode */ }
@@ -30,7 +31,7 @@
             var count = isRead ? 0 : items.length;
             var badge = button.querySelector(".eo-notification-count");
             badge.textContent = count > 99 ? "99+" : String(count);
-            badge.classList.toggle("hidden", count === 0);
+            badge.hidden = count === 0;
             button.setAttribute("aria-label", count ? count + " unread changes" : "No unread changes");
         }
 
@@ -40,10 +41,32 @@
             updateCount();
         }
 
+        function load() {
+            if (!options.load) return Promise.resolve();
+            if (loadPromise) return loadPromise;
+            loadPromise = Promise.resolve()
+                .then(function () { return options.load(); })
+                .then(function (result) {
+                    result = result || {};
+                    items = Array.isArray(result.items) ? result.items : [];
+                    changeSetId = String(result.changeSetId || result.id || "none");
+                    try { isRead = localStorage.getItem(storageKey) === changeSetId; } catch (e) { /* private mode */ }
+                    updateCount();
+                    return result;
+                })
+                .catch(function (err) {
+                    loadPromise = null; // allow retry on next open
+                    throw err;
+                });
+            return loadPromise;
+        }
+
         function close() {
+            var wasOpen = panel.classList.contains("open");
             panel.classList.remove("open");
             backdrop.classList.remove("open");
             panel.setAttribute("aria-hidden", "true");
+            if (wasOpen) EOCE.a11y.closeDialog(panel);
         }
 
         function render() {
@@ -68,11 +91,14 @@
         }
 
         button.addEventListener("click", function () {
-            render();
-            panel.classList.add("open");
-            backdrop.classList.add("open");
-            panel.setAttribute("aria-hidden", "false");
-            markRead();
+            load().catch(function () { items = []; }).then(function () {
+                render();
+                panel.classList.add("open");
+                backdrop.classList.add("open");
+                panel.setAttribute("aria-hidden", "false");
+                EOCE.a11y.openDialog(panel, panel.querySelector(".eo-notification-close"));
+                markRead();
+            });
         });
         backdrop.addEventListener("click", close);
         document.addEventListener("keydown", function (event) {

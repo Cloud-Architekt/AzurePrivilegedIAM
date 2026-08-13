@@ -21,7 +21,7 @@ EOCE.views.attackpaths = {
         var docsKeys = sysKeys.filter(function (k) { return EOCE.hasDocsCompare(k); });
         var docsPaths = docsKeys.map(function (k) { return EOCE.DOCS_COMPARE[k].file; });
 
-        return Promise.all([EOCE.data.loadAll(rolePaths), EOCE.data.loadAll(docsPaths)]).then(function (res) {
+        return Promise.all([EOCE.data.loadAll(rolePaths), EOCE.data.loadAll(docsPaths), EOCE.util.ensureAttackPaths()]).then(function (res) {
             var sets = res[0], docsSets = res[1];
             // Resolve role names -> ids per system so chips can deep-link precisely.
             var roleIdByName = {};

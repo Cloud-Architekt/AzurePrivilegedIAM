@@ -28,7 +28,8 @@ EOCE.views.roles = {
             EOCE.data.loadAll(rolePaths),
             EOCE.data.load(EOCE.OVERWRITES_FILE),
             EOCE.data.loadAll(docsPaths),
-            EOCE.loadScopeAwareActions()
+            EOCE.loadScopeAwareActions(),
+            EOCE.util.ensureAttackPaths()
         ]).then(function (res) {
             self.docsIndex = {};
             docsKeys.forEach(function (k, i) { self.docsIndex[k] = EOCE.buildDocsIndex(res[2][i]); });
@@ -284,10 +285,12 @@ EOCE.views.roles = {
         });
     },
 
-    renderTable: function () {
+    renderTable: function (keepLimit) {
         var self = this;
         var rows = this.sortRows(this.filtered());
         var s = this.state;
+        if (!keepLimit) this._visibleRows = 100;
+        var visibleRows = Math.min(this._visibleRows || 100, rows.length);
         var cmp = window.EOCE.roleCompare;
         var histStatus = {}; // sysKey -> { id -> 'added'|'changed' }
         function arrow(key) { return s.sortKey === key ? '<span class="arrow">' + (s.sortDir === 1 ? '\u25B2' : '\u25BC') + '</span>' : '<span class="arrow">\u21C5</span>'; }
@@ -304,7 +307,7 @@ EOCE.views.roles = {
         if (!rows.length) {
             html += '<tr><td colspan="6"><div class="empty"><div class="big">&#128269;</div>No roles match your filters.</div></td></tr>';
         } else {
-            rows.slice(0, 400).forEach(function (r, idx) {
+            rows.slice(0, visibleRows).forEach(function (r, idx) {
                 var sys = EOCE.RBAC_SYSTEMS[r.sysKey];
                 var nm = EOCE.util.highlight(EOCE.util.escapeHtml(r.name), s.q);
                 var ovr = self.overwrites[r.id] ? '<span class="chip warn" title="Has a classification overwrite">overwrite</span>' : '';
@@ -361,8 +364,15 @@ EOCE.views.roles = {
 
         document.getElementById('rolesCount').textContent =
             EOCE.util.formatNumber(rows.length) + ' role' + (rows.length === 1 ? '' : 's');
-        document.getElementById('rolesPager').innerHTML =
-            rows.length > 400 ? 'Showing first 400 of ' + EOCE.util.formatNumber(rows.length) + ' &mdash; refine your search to narrow results.' : '';
+        var pager = document.getElementById('rolesPager');
+        pager.innerHTML = visibleRows < rows.length
+            ? 'Showing ' + EOCE.util.formatNumber(visibleRows) + ' of ' + EOCE.util.formatNumber(rows.length) + ' roles. <button type="button" class="btn" data-show-more>Show 100 more</button>'
+            : '';
+        var more = pager.querySelector('[data-show-more]');
+        if (more) more.addEventListener('click', function () {
+            self._visibleRows = visibleRows + 100;
+            self.renderTable(true);
+        });
         this.renderCompareBar();
     },
 

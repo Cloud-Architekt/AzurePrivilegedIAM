@@ -22,7 +22,8 @@ EOCE.views.actions = {
             EOCE.data.loadAll(rolePaths),
             EOCE.data.load(EOCE.RBAC_SYSTEMS.Defender.definition),
             EOCE.data.loadAll(docsCompareKeys.map(function (k) { return EOCE.DOCS_COMPARE[k].file; })),
-            EOCE.loadScopeAwareActions()
+            EOCE.loadScopeAwareActions(),
+            EOCE.util.ensureAttackPaths()
         ]).then(function (res) {
             var roleSets = res[0], defenderDef = res[1], docsSets = res[2], scopeAwareActions = res[3];
             var index = {}; // key = sysKey + '|' + action
@@ -290,10 +291,12 @@ EOCE.views.actions = {
         });
     },
 
-    renderTable: function () {
+    renderTable: function (keepLimit) {
         var self = this;
         var rows = this.sortRows(this.filtered());
         var s = this.state;
+        if (!keepLimit) this._visibleRows = 100;
+        var visibleRows = Math.min(this._visibleRows || 100, rows.length);
         var histActionSets = {}; // sysKey -> { action -> true }
         function arrow(key) { return s.sortKey === key ? '<span class="arrow">' + (s.sortDir === 1 ? '\u25B2' : '\u25BC') + '</span>' : '<span class="arrow">\u21C5</span>'; }
 
@@ -308,7 +311,7 @@ EOCE.views.actions = {
         if (!rows.length) {
             html += '<tr><td colspan="5"><div class="empty"><div class="big">&#128269;</div>No actions match your filters.</div></td></tr>';
         } else {
-            rows.slice(0, 500).forEach(function (a, idx) {
+            rows.slice(0, visibleRows).forEach(function (a, idx) {
                 var atkChip = EOCE.attackPathChip(EOCE.attackPathsForAction(a.sysKey, a.action).length);
                 var learnChip = a.docsOnly ? ' <span class="chip docdiff" title="This role action only exists in the Microsoft Learn permissions reference - it is not part of any live Microsoft Graph role definition">Learn-only</span>' : '';
                 var roleCount = a.sysKey === 'Defender' ? (a.services ? a.services.length : 0) + ' svc'
@@ -341,7 +344,15 @@ EOCE.views.actions = {
         });
 
         document.getElementById('actCount').textContent = EOCE.util.formatNumber(rows.length) + ' action' + (rows.length === 1 ? '' : 's');
-        document.getElementById('actPager').innerHTML = rows.length > 500 ? 'Showing first 500 of ' + EOCE.util.formatNumber(rows.length) + ' &mdash; refine your search.' : '';
+        var pager = document.getElementById('actPager');
+        pager.innerHTML = visibleRows < rows.length
+            ? 'Showing ' + EOCE.util.formatNumber(visibleRows) + ' of ' + EOCE.util.formatNumber(rows.length) + ' actions. <button type="button" class="btn" data-show-more>Show 100 more</button>'
+            : '';
+        var more = pager.querySelector('[data-show-more]');
+        if (more) more.addEventListener('click', function () {
+            self._visibleRows = visibleRows + 100;
+            self.renderTable(true);
+        });
     },
 
     openAction: function (a) {

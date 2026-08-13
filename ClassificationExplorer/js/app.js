@@ -6,11 +6,9 @@ window.EOCE = window.EOCE || {};
 EOCE.app = (function () {
     var appEl, drawerEl, backdropEl, titleEl, bodyEl, eyebrowEl;
     var current = null;
-    var drawerReturnFocus = null;
 
     // ---- Drawer ----------------------------------------------------------
     function openDrawer(eyebrow, title, html) {
-        drawerReturnFocus = document.activeElement;
         eyebrowEl.innerHTML = eyebrow || '';
         titleEl.innerHTML = title || '';
         bodyEl.innerHTML = html || '';
@@ -18,15 +16,14 @@ EOCE.app = (function () {
         drawerEl.setAttribute('aria-hidden', 'false');
         backdropEl.classList.add('open');
         bodyEl.scrollTop = 0;
-        document.getElementById('drawerClose').focus();
+        EOCE.a11y.openDialog(drawerEl, document.getElementById('drawerClose'));
     }
     function closeDrawer() {
         var wasOpen = drawerEl.classList.contains('open');
         drawerEl.classList.remove('open');
         drawerEl.setAttribute('aria-hidden', 'true');
         backdropEl.classList.remove('open');
-        if (wasOpen && drawerReturnFocus && document.contains(drawerReturnFocus)) drawerReturnFocus.focus();
-        drawerReturnFocus = null;
+        if (wasOpen) EOCE.a11y.closeDialog(drawerEl);
     }
 
     // ---- Rendering helpers ----------------------------------------------
@@ -164,8 +161,8 @@ EOCE.app = (function () {
         }).catch(function () { });
     }
 
-    function classificationNotifications() {
-        var history = window.EOCE_HISTORY;
+    function classificationNotifications(history) {
+        history = history || window.EOCE_NOTIFICATION_DATA || window.EOCE_HISTORY;
         if (!history || !history.sources) return { id: 'none', items: [] };
         var notification = history.notification || null;
         var notificationSources = notification && Array.isArray(notification.sourceKeys) ? notification.sourceKeys : null;

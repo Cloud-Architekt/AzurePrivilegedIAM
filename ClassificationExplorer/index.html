@@ -28,8 +28,7 @@
 <body>
     <!-- Top app bar -->
     <header class="appbar">
-        <button class="btn nav-toggle" id="navToggle" aria-label="Toggle navigation"
-            style="background:transparent;border:none;color:#fff;font-size:18px;">&#9776;</button>
+        <button class="btn nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
         <div class="brand">
             <img src="assets/EntraOps.png" alt="EntraOps logo" />
             <span>EntraOps Classification Explorer</span>
@@ -38,7 +37,7 @@
         <div class="spacer"></div>
         <button type="button" class="eo-notification-button" id="notificationButton" aria-label="No unread changes"
             title="Recent classification changes"><span class="eo-notification-bell" aria-hidden="true"></span><span
-                class="eo-notification-count hidden">0</span></button>
+                class="eo-notification-count" hidden>0</span></button>
         <label class="variant-picker" id="variantPicker" data-mode="entraops" hidden>
             <span>Classification source</span>
             <select id="variantSelect" aria-label="Classification source"></select>
@@ -109,8 +108,8 @@
     <div class="drawer-backdrop" id="drawerBackdrop"></div>
     <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle" aria-hidden="true">
         <div class="drawer-head">
-            <div style="min-width:0;">
-                <div id="drawerEyebrow" class="breadcrumb" style="margin:0 0 4px;"></div>
+            <div class="drawer-title-wrap">
+                <div id="drawerEyebrow" class="breadcrumb drawer-eyebrow"></div>
                 <h2 class="title" id="drawerTitle"></h2>
             </div>
             <button class="close" id="drawerClose" aria-label="Close details">&times;</button>
@@ -121,7 +120,8 @@
     <!-- Role Comparison blade (contextual, triggered from the Roles table's
          compare checkboxes or the role details drawer) -->
     <div class="eo-cmp-backdrop" id="cmpBackdrop"></div>
-    <div class="eo-cmp-modal" id="cmpModal" role="dialog" aria-modal="true" aria-labelledby="cmpTitle">
+    <div class="eo-cmp-modal" id="cmpModal" role="dialog" aria-modal="true" aria-labelledby="cmpTitle"
+        aria-hidden="true">
         <div class="eo-cmp-head">
             <span class="title" id="cmpTitle">&#8644; Role Comparison</span>
             <button class="close" id="cmpClose" aria-label="Close comparison">&#10005;</button>
@@ -140,15 +140,9 @@
          and no runtime fetch fallback. In entraops mode this bundle also sets window.EOCE_TENANTS
          (tenant-specific classification variants). -->
     <script src="data/classification-data.js"></script>
-    <script src="data/attack-paths.js"></script>
+    <script src="data/notification-data.js"></script>
     <!-- The Overview view derives its map data from the embedded classification bundle. -->
-    <!-- Optional embedded change history (from `git log`, skip with -SkipHistory). Used by
-            notifications in both modes and by the full History view in standalone mode. -->
-    <script src="data/history-data.js"></script>
-        <!-- d3 + d3-sankey power the Overview (Enterprise Access Model Map) Sankey diagram.
-         Vendored locally so the app stays fully self-contained and works from file:// with no internet. -->
-        <script src="assets/vendor/d3.min.js"></script>
-        <script src="assets/vendor/d3-sankey.min.js"></script>
+    <!-- Attack paths and full change history are loaded on demand by js/data.js. -->
     <script src="js/config.js"></script>
     <script src="js/data.js"></script>
     <script src="js/notifications.js"></script>

@@ -795,7 +795,12 @@ EOCE.parseAttackPathMarkdown = function (md) {
 };
 // Authored as markdown in content/attack-paths/<id>.md and embedded into
 // window.EOCE_ATTACK_PATHS_MD by the generator script (run after edits).
-EOCE.ATTACK_PATHS = (window.EOCE_ATTACK_PATHS_MD || []).map(EOCE.parseAttackPathMarkdown).filter(function (p) { return p && p.id; });
+EOCE.refreshAttackPaths = function () {
+    EOCE.ATTACK_PATHS = (window.EOCE_ATTACK_PATHS_MD || []).map(EOCE.parseAttackPathMarkdown).filter(function (p) { return p && p.id; });
+    EOCE._attackIndex = null;
+    return EOCE.ATTACK_PATHS;
+};
+EOCE.refreshAttackPaths();
 
 // Lazy lookup indexes for attack paths, keyed by "sysKey|loweredValue".
 EOCE._attackIndex = null;
