@@ -350,6 +350,8 @@ mark {
     width: var(--nav-w);
     background: var(--nav-bg-2);
     color: var(--nav-fg);
+    display: flex;
+    flex-direction: column;
     flex-shrink: 0;
     padding: 8px 0;
     position: sticky;
@@ -427,25 +429,26 @@ a.nav-item:hover {
 
 /* ---------- App footer ---------------------------------------------------- */
 .app-footer {
-    padding: 14px 20px;
-    text-align: center;
-    font-size: 12px;
-    color: var(--neutral-fg-secondary);
-    border-top: 1px solid var(--neutral-stroke);
-    background: var(--neutral-surface);
+    margin-top: auto;
+    padding: 10px 20px 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 10px;
+    line-height: 1.3;
+    color: var(--nav-fg-muted);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--nav-bg-2);
 }
 
 .app-footer a {
-    color: var(--neutral-fg-secondary);
+    color: var(--nav-fg-muted);
     text-decoration: underline;
 }
 
-.app-footer a:hover {
-    color: var(--brand);
-}
-
-.app-footer-sep {
-    margin: 0 8px;
+.app-footer a:hover,
+.app-footer a:focus-visible {
+    color: #fff;
 }
 
 /* ---------- Page header -------------------------------------------------- */
@@ -2728,6 +2731,10 @@ tr.eo-flash>td {
 .nav.collapsed .nav-item .ico {
     width: auto;
     font-size: 16px;
+}
+
+.nav.collapsed .app-footer {
+    display: none;
 }
 
 @media (max-width: 860px) {

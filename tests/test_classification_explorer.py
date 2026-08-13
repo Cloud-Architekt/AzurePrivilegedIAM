@@ -163,6 +163,15 @@ class ClassificationExplorerTests(unittest.TestCase):
         finally:
             reduced.close()
 
+    def test_sidebar_legal_footer_is_visible_and_linked(self):
+        self.open_route("dashboard")
+        footer = self.page.locator("#nav .app-footer")
+        self.assertTrue(footer.is_visible())
+        self.assertEqual(1, footer.locator("#footerDisclosureLink").count())
+        self.assertEqual("https://www.cloud-architekt.net/disclosure/", footer.locator("#footerDisclosureLink").get_attribute("href"))
+        self.assertEqual("noopener noreferrer", footer.locator("#footerDisclosureLink").get_attribute("rel"))
+        self.assertEqual([], self.errors)
+
     def test_file_protocol_smoke(self):
         self.page.goto(APP.joinpath("index.html").as_uri() + "#overview")
         self.page.wait_for_selector("#app h1")

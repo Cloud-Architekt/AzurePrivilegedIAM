@@ -262,7 +262,6 @@ EOCE.app = (function () {
         document.getElementById('docsLink').href = EOCE.DOCS.enterpriseAccessModel;
         document.getElementById('repoLink').href = EOCE.DOCS.entraOpsRepo;
         document.getElementById('footerAuthorLink').href = EOCE.DOCS.blog;
-        document.getElementById('footerLicenseLink').href = EOCE.DOCS.license;
         document.getElementById('footerDisclosureLink').href = EOCE.DOCS.disclosure;
 
         // Entraops mode only: classification source selector (built-in template vs
