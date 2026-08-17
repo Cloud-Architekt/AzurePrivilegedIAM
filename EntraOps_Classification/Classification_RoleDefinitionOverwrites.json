@@ -70,5 +70,32 @@
     "EAMTierLevelTagValue": "1",
     "Service": "Security and Compliance",
     "Justification": "Has service-specific permissions in Microsoft Purview workloads but not listed as role actions in Microsoft Entra ID."
+  },
+  {
+    "RbacSystem": "EntraID",
+    "RoleDefinitionId": "9c094953-4995-41c8-84c8-3ebb9b32c93f",
+    "RoleDefinitionName": "Device Join",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2",
+    "Service": "Default member",
+    "Justification": "Deprecated role with unpublished actions for nonadministrative device join."
+  },
+  {
+    "RbacSystem": "EntraID",
+    "RoleDefinitionId": "c34f683f-4d5a-4403-affd-6615e00e3a7f",
+    "RoleDefinitionName": "Workplace Device Join",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2",
+    "Service": "Default member",
+    "Justification": "Deprecated role with unpublished actions for nonadministrative device registration."
+  },
+  {
+    "RbacSystem": "EntraID",
+    "RoleDefinitionId": "d405c6df-0af8-4e3b-95e4-4d06e542189e",
+    "RoleDefinitionName": "Device Users",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2",
+    "Service": "Default member",
+    "Justification": "Deprecated role with unpublished actions for nonadministrative device access."
   }
 ]
