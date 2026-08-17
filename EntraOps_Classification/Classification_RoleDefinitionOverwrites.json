@@ -43,5 +43,32 @@
     "EAMTierLevelTagValue": "0",
     "Service": "Privileged User Management",
     "Justification": "Has permissions to manage authentication methods and password reset for privileged accounts and should be classified independently of scope."
+  },
+  {
+    "RbacSystem": "EntraID",
+    "RoleDefinitionId": "3f04f91a-4ad7-4bd3-bcfa-49882ea1a88a",
+    "RoleDefinitionName": "Purview Workload Content Administrator",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1",
+    "Service": "Security and Compliance",
+    "Justification": "Has service-specific permissions in Microsoft Purview workloads but not listed as role actions in Microsoft Entra ID."
+  },
+  {
+    "RbacSystem": "EntraID",
+    "RoleDefinitionId": "e07494ad-1654-4dd2-922e-6f81a71bf00f",
+    "RoleDefinitionName": "Purview Workload Content Reader",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1",
+    "Service": "Security and Compliance",
+    "Justification": "Has service-specific permissions in Microsoft Purview workloads but not listed as role actions in Microsoft Entra ID."
+  },
+  {
+    "RbacSystem": "EntraID",
+    "RoleDefinitionId": "02d5655b-c1cf-4e5f-98da-5fb919085bf6",
+    "RoleDefinitionName": "Purview Workload Content Writer",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1",
+    "Service": "Security and Compliance",
+    "Justification": "Has service-specific permissions in Microsoft Purview workloads but not listed as role actions in Microsoft Entra ID."
   }
 ]
