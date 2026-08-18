@@ -232,11 +232,6 @@
           "microsoft.directory/conditionalAccessPolicies/delete",
           "microsoft.directory/conditionalAccessPolicies/owners/update",
           "microsoft.directory/conditionalAccessPolicies/tenantDefault/update",
-          "microsoft.directory/crossTenantAccessPolicies/basic/update",
-          "microsoft.directory/crossTenantAccessPolicies/create",
-          "microsoft.directory/crossTenantAccessPolicies/delete",
-          "microsoft.directory/crossTenantAccessPolicies/owners/update",
-          "microsoft.directory/crossTenantAccessPolicies/tenantDefault/update",
           "microsoft.directory/crossTenantAccessPolicy/basic/update",
           "microsoft.directory/crossTenantAccessPolicy/default/b2bCollaboration/update",
           "microsoft.directory/crossTenantAccessPolicy/default/b2bDirectConnect/update",
@@ -1190,8 +1185,6 @@
           "microsoft.directory/contacts/create",
           "microsoft.directory/contacts/delete",
           "microsoft.office365.exchange/allEntities/basic/allTasks",
-          "microsoft.office365.exchange/allRecipients/allProperties/allTasks",
-          "microsoft.office365.exchange/messageTracking/allProperties/allTasks",
           "microsoft.office365.exchange/migration/allProperties/allTasks",
           "microsoft.office365.exchange/recipients/allProperties/allTasks"
         ]
@@ -1306,7 +1299,6 @@
           "microsoft.hardware.support/shippingStatus/allProperties/read",
           "microsoft.hardware.support/warrantyClaims/allProperties/allTasks",
           "microsoft.hardware.support/warrantyClaims/allProperties/read",
-          "microsoft.hardware.support/warrantyClaims/create/AsOwner",
           "microsoft.hardware.support/warrantyClaims/createAsOwner"
         ]
       },
@@ -1426,7 +1418,7 @@
           "microsoft.directory/userCredentialPolicies/standard/read",
           "microsoft.directory/users/allProperties/read",
           "microsoft.directory/users/authenticationMethods/standard/read",
-          "microsoft.directory/users/authenticationMethods/standard/restrictedread",
+          "microsoft.directory/users/authenticationMethods/standard/restrictedRead",
           "microsoft.directory/users/lifeCycleInfo/read",
           "microsoft.directory/verifiableCredentials/configuration/allProperties/read",
           "microsoft.directory/verifiableCredentials/configuration/contracts/allProperties/read",
@@ -1477,16 +1469,6 @@
       },
       {
         "Category": "Microsoft.AzureAD",
-        "Service": "Workload Identity Management",
-        "RoleAssignmentScopeName": [
-          "/"
-        ],
-        "RoleDefinitionActions": [
-          "microsoft.directory/servicePrincipals/managePermissionGrantsForGroup.microsoft-all-application-permissions"
-        ]
-      },
-      {
-        "Category": "Microsoft.AzureAD",
         "Service": "Yammer",
         "RoleAssignmentScopeName": [
           "/"
@@ -1533,7 +1515,6 @@
           "microsoft.directory/directoryRoles/standard/read",
           "microsoft.directory/directoryRoleTemplates/allProperties/read",
           "microsoft.directory/domains/standard/read",
-          "microsoft.directory/groups.security/create/AsOwner",
           "microsoft.directory/groups/appRoleAssignments/read",
           "microsoft.directory/groups/memberOf/read",
           "microsoft.directory/groups/members/read",

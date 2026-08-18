@@ -1882,6 +1882,22 @@ table.grid-table tbody tr.selected {
         display: none;
     }
 
+    .appbar .variant-picker {
+        flex: 0 1 120px;
+        min-width: 0;
+        margin-right: 0;
+    }
+
+    .appbar .variant-picker span {
+        display: none;
+    }
+
+    .appbar .variant-picker select {
+        min-width: 0;
+        width: 100%;
+        text-overflow: ellipsis;
+    }
+
     .nav {
         position: fixed;
         left: 0;

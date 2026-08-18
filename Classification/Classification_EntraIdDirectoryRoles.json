@@ -2196,10 +2196,16 @@
       "88d8e3e3-8f55-4a1e-953a-9b9898b8876b"
     ],
     "Categories": "identity",
-    "RichDescription": "Assign the Authentication Extensibility Password Administrator role to users who need to do the following tasks:\n- Trigger a password submit event for custom authentication to migrate user passwords from an external identity system to Microsoft Entra External ID",
+    "RichDescription": "Assign the Authentication Extensibility Password Administrator role to users who need to do the following tasks:\n- Trigger a password submit or password update event for custom authentication to migrate user passwords from an external identity system to Microsoft Entra External ID",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/onPasswordSubmitCustomAuthenticationExtension/allProperties/allTasks",
+        "Category": "Authentication",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/onPasswordUpdateCustomAuthenticationExtension/allProperties/allTasks",
         "Category": "Authentication",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"

@@ -267,7 +267,7 @@ EOCE.views.history = {
         commits.slice().reverse().forEach(function (c) {
             var active = c.sha === self.state.sha;
             var dateStr = self.fmtDate(c.date);
-            html += '<div class="hist-commit' + (active ? ' active' : '') + '" data-sha="' + c.sha + '">' +
+            html += '<div class="hist-commit' + (active ? ' active' : '') + '" data-sha="' + self.esc(c.sha) + '">' +
                 '<div class="hist-commit-head"><span class="hist-commit-date">' + self.esc(dateStr) + '</span></div>' +
                 '<div class="hist-commit-chips">' +
                 (c.added.length ? '<span class="chip diff-add">+' + EOCE.util.formatNumber(c.added.length) + ' new</span>' : '') +
