@@ -310,6 +310,26 @@ EOCE.views.customize = (function () {
         });
     }
 
+    // ---- Inline error banner (replaces window.alert) ---------------------------
+    // Renders a dismissible error callout (same .callout.attack styling as the
+    // validation-issues box above the table) into the given host element:
+    // #custError in the main view, #cfError inside the add/edit blade.
+    function showError(hostId, message) {
+        var host = document.getElementById(hostId);
+        if (!host) return;
+        host.innerHTML = '<div class="callout attack" role="alert" style="margin-bottom:14px;">' +
+            '<button type="button" class="btn small" style="float:right;" data-dismiss title="Dismiss" aria-label="Dismiss error">&#10005;</button>' +
+            '<div class="callout-title">&#9888; Error</div>' +
+            '<div style="white-space:pre-line;">' + esc(message) + '</div></div>';
+        host.querySelector('[data-dismiss]').addEventListener('click', function () { host.innerHTML = ''; });
+        if (host.firstChild && host.firstChild.scrollIntoView) host.firstChild.scrollIntoView({ block: 'nearest' });
+    }
+
+    function clearError(hostId) {
+        var host = document.getElementById(hostId);
+        if (host) host.innerHTML = '';
+    }
+
     // ==========================================================================
     var view = {
         state: { type: 'roledef' },
@@ -336,6 +356,7 @@ EOCE.views.customize = (function () {
                 '<p>Create or modify EntraOps classification overwrite files: pin an entire <strong>role definition</strong> to a tier, down-/upgrade individual <strong>role actions</strong> on a scope, or down-/upgrade an individual <strong>API permission</strong>. ' +
                 'Load the built-in template or a tenant-specific file, edit the entries, then export or save the JSON. Store your customization as <code>Classification/&lt;TenantName&gt;/&lt;file&gt;</code> in your EntraOps repository.</p></div>' +
                 '<div id="custToolbar"></div>' +
+                '<div id="custError"></div>' +
                 '<div id="custIssues"></div>' +
                 '<div class="table-wrap"><table class="grid-table" id="custTable"></table></div>' +
                 '<div class="cust-footer" id="custFooter"></div>' +
@@ -382,6 +403,7 @@ EOCE.views.customize = (function () {
             document.getElementById('custTypeSeg').addEventListener('click', function (e) {
                 var b = e.target.closest('[data-type]'); if (!b) return;
                 self.state.type = b.getAttribute('data-type');
+                clearError('custError');
                 self.renderToolbar(); self.renderTable(); self.renderFooter(); self.renderHint();
             });
             document.getElementById('custLoad').addEventListener('click', function () {
@@ -396,9 +418,10 @@ EOCE.views.customize = (function () {
                         dirty: false
                     };
                     persistDrafts(self.drafts);
+                    clearError('custError');
                     self.renderTable(); self.renderFooter(); self.updateStatus();
                 }).catch(function (err) {
-                    window.alert('Could not load "' + opt.path + '": ' + (err && err.message ? err.message : err) +
+                    showError('custError', 'Could not load "' + opt.path + '": ' + (err && err.message ? err.message : err) +
                         '\n\nThe file may not exist (yet) or the app is running without an embedded data bundle.');
                 });
             });
@@ -427,9 +450,10 @@ EOCE.views.customize = (function () {
                             dirty: true
                         };
                         persistDrafts(self.drafts);
+                        clearError('custError');
                         self.renderTable(); self.renderFooter(); self.updateStatus();
                     } catch (err) {
-                        window.alert('Import failed: ' + (err && err.message ? err.message : err));
+                        showError('custError', 'Import failed: ' + (err && err.message ? err.message : err));
                     }
                 };
                 reader.readAsText(file);
@@ -671,6 +695,7 @@ EOCE.views.customize = (function () {
             html += '<label class="f-label">Justification <span class="chip attack" style="font-size:10px;">required</span></label>' +
                 '<textarea class="f-input" id="cfJust" rows="3" placeholder="Document why this classification is changed, e.g. \'No privileged access workstation is present in the tenant.\'">' + esc(e.Justification) + '</textarea>';
 
+            html += '<div id="cfError"></div>';
             html += '<div class="cust-blade-foot">' +
                 '<button class="btn primary" id="cfApply">' + (this.form.editIndex >= 0 ? 'Update entry' : 'Add to file') + '</button>' +
                 '<button class="btn" id="cfCancel">Cancel</button></div>';
@@ -767,7 +792,7 @@ EOCE.views.customize = (function () {
             if (type === 'apipermission' && !e.PermissionValue) problems.push('PermissionValue is required.');
             if (TIER_CHOICES.indexOf(e.EAMTierLevelName) === -1) problems.push('Select a tier level.');
             if (!e.Justification) problems.push('A Justification is mandatory.');
-            if (problems.length) { window.alert('Please fix before applying:\n\n- ' + problems.join('\n- ')); return; }
+            if (problems.length) { showError('cfError', 'Please fix before applying:\n\n- ' + problems.join('\n- ')); return; }
 
             if (type === 'roleaction' && !e.RoleAssignmentScopeName.length) e.RoleAssignmentScopeName = ['/*'];
             if (this.form.editIndex >= 0) this.draft().entries[this.form.editIndex] = e;
@@ -1051,8 +1076,8 @@ EOCE.views.customize = (function () {
             loadRolesIndex().then(function (idx) {
                 var role = (res.sysKey && res.roleId) ? idx.byId[res.sysKey + '|' + res.roleId] : null;
                 if (!role) role = idx.list.filter(function (r) { return r.name.toLowerCase() === String(item.name).toLowerCase(); })[0];
-                if (!role) { window.alert('Could not resolve the role definition for "' + item.name + '" in the classified role exports.'); return; }
-                if (!role.actions.length) { window.alert('The role "' + role.name + '" has no role actions in its definition.'); return; }
+                if (!role) { showError('cfError', 'Could not resolve the role definition for "' + item.name + '" in the classified role exports.'); return; }
+                if (!role.actions.length) { showError('cfError', 'The role "' + role.name + '" has no role actions in its definition.'); return; }
                 if (TYPES.roleaction.systems.indexOf(role.sysKey) !== -1 && e.RbacSystem !== role.sysKey) {
                     e.RbacSystem = role.sysKey;
                     var sysEl = document.getElementById('cfSys');

@@ -153,7 +153,7 @@ function Update-EntraOpsClassificationExplorerData {
         return $null
     }
 
-    $ValidTiers = @('ControlPlane', 'ManagementPlane', 'UserAccess', 'Unclassified')
+    $ValidTiers = @('ControlPlane', 'ManagementPlane', 'WorkloadPlane', 'UserAccess', 'Unclassified')
 
     function Get-TierName {
         param($Value)
@@ -486,6 +486,44 @@ function Update-EntraOpsClassificationExplorerData {
         }
 
         return , $paths.ToArray()
+    }
+
+    function ConvertTo-TierMapRoles {
+        param([System.Collections.IDictionary]$Embed)
+
+        $sysByFile = [ordered]@{
+            'Classification/Classification_EntraIdDirectoryRoles.json' = 'EntraID'
+            'Classification/Classification_IdentityGovernance.json'    = 'IdentityGovernance'
+            'Classification/Classification_AzureResources.json'        = 'Azure'
+            'Classification/Classification_DeviceManagementRoles.json' = 'DeviceManagement'
+        }
+        $validTiers = @('ControlPlane', 'ManagementPlane', 'UserAccess', 'Unclassified')
+        $roles = New-Object System.Collections.Generic.List[object]
+
+        foreach ($file in $sysByFile.Keys) {
+            if (-not $Embed.Contains($file)) { continue }
+            foreach ($role in $Embed[$file]) {
+                $roleId = [string](Get-JsonProp $role 'RoleId')
+                if ([string]::IsNullOrEmpty($roleId)) { continue }
+                $classification = Get-JsonProp $role 'Classification'
+                $tierName = 'Unclassified'
+                $service = ''
+                if ($classification) {
+                    $value = Get-JsonProp $classification 'EAMTierLevelName'
+                    if ($value -and ($validTiers -contains [string]$value)) { $tierName = [string]$value }
+                    $service = [string](Get-JsonProp $classification 'Service')
+                }
+                $roles.Add([ordered]@{
+                        sys       = $sysByFile[$file]
+                        roleId    = $roleId
+                        role      = [string](Get-JsonProp $role 'RoleName')
+                        roleClass = $tierName
+                        service   = $service
+                    }) | Out-Null
+            }
+        }
+
+        return , $roles.ToArray()
     }
 
     # --- Mode-specific path resolution -------------------------------------------------------
@@ -983,11 +1021,14 @@ function Update-EntraOpsClassificationExplorerData {
     $tierMapBytes = 0
     $tierMapCount = 0
     if (-not $SkipEmbed) {
+        $tierMapRoles = ConvertTo-TierMapRoles -Embed $embed
         $tierMapPaths = ConvertTo-TierMapPaths -Embed $embed
         $tierMapCount = @($tierMapPaths).Count
         $tierMapObj = [ordered]@{
             generatedUtc = (Get-Date).ToUniversalTime().ToString('o')
+            roleCount    = @($tierMapRoles).Count
             pathCount    = $tierMapCount
+            roles        = @($tierMapRoles)
             paths        = @($tierMapPaths)
         }
         $tierMapJson = ($tierMapObj | ConvertTo-Json -Depth 10 -Compress)

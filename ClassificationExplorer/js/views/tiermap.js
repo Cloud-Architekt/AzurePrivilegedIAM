@@ -131,10 +131,20 @@ EOCE.views.tiermap = {
                 self.tooltip.className = 'tm-tooltip';
                 self.tooltip.style.display = 'none';
                 document.body.appendChild(self.tooltip);
+                // The tooltip is appended to <body>, so it outlives this view - hide it
+                // on any navigation so it can't linger over another view.
+                window.addEventListener('hashchange', function () { self.tooltip.style.display = 'none'; });
             }
+            self.tooltip.style.display = 'none';
 
             // Deep-link focus: #overview/role/<sys>/<roleId> or #overview/action/<sys>/<action>/<actionType>
             self.pendingFocus = null;
+            // Re-rendering without focus params ends a previous deep-link focus, so
+            // restore the systems selection scopeToFocus narrowed (see scopeToFocus).
+            if (self.state.linkFocus && self._preFocusSystems) {
+                self.state.systems = self._preFocusSystems;
+                self._preFocusSystems = null;
+            }
             self.state.linkFocus = null;
             if (params && params[0]) {
                 var kind = params[0];
@@ -142,10 +152,12 @@ EOCE.views.tiermap = {
                     self.scopeToFocus(params[1], { type: 'role', sys: params[1], key: params[2] });
                     self.pendingFocus = { column: 'role', id: 'R:' + params[1] + '|' + params[2] };
                 } else if (kind === 'action' && params[1] && params[2]) {
-                    var actionType = params[3] === 'DataAction' ? 'DataAction' : null;
+                    // 'Action' and 'DataAction' are both valid deep-link action types
+                    // (actions.js sends 'Action' for ordinary actions).
+                    var actionType = params[3] === 'DataAction' ? 'DataAction' : 'Action';
                     self.scopeToFocus(params[1], { type: 'action', sys: params[1], key: params[2], actionType: actionType });
                     if (self.state.columns.indexOf('action') === -1) self.state.columns.push('action');
-                    if (actionType) self.pendingFocus = { column: 'action', id: 'A:' + params[1] + '|' + actionType + '|' + params[2] };
+                    self.pendingFocus = { column: 'action', id: 'A:' + params[1] + '|' + actionType + '|' + params[2] };
                 }
             }
 
@@ -160,6 +172,15 @@ EOCE.views.tiermap = {
     // includes Microsoft Learn-only roles so the focused entity always appears.
     scopeToFocus: function (sys, focus) {
         var s = this.state;
+        // Remember the systems selection so ending the focus (clear button or a
+        // re-render without focus params) can restore it instead of leaving the
+        // view narrowed to a single system. Only the first scoping in a focus
+        // session records it - consecutive deep links keep the true pre-focus state.
+        if (!this._preFocusSystems) {
+            var saved = {};
+            Object.keys(s.systems).forEach(function (k) { saved[k] = s.systems[k]; });
+            this._preFocusSystems = saved;
+        }
         EOCE.rolesSystemKeys().forEach(function (k) { s.systems[k] = (k === sys); });
         EOCE.TIER_ORDER.forEach(function (t) { s.tiers[t] = true; });
         s.privOnly = false;
@@ -173,7 +194,12 @@ EOCE.views.tiermap = {
     clearLinkFocus: function () {
         var s = this.state;
         s.linkFocus = null;
-        EOCE.rolesSystemKeys().forEach(function (k) { s.systems[k] = true; });
+        if (this._preFocusSystems) {
+            s.systems = this._preFocusSystems;
+            this._preFocusSystems = null;
+        } else {
+            EOCE.rolesSystemKeys().forEach(function (k) { s.systems[k] = true; });
+        }
         this.renderToolbar();
         this.draw();
     },
@@ -567,8 +593,11 @@ EOCE.views.tiermap = {
         // For hierarchy/heatmap modes, focus the contributing-actions table and
         // visually emphasise the matching marks.
         var label = pf.id;
+        // Derive candidate ids via COLUMNS so the lookup matches the real node id
+        // shape (action ids include the action type segment).
+        var col = this.COLUMNS[pf.column];
         var match = (this.paths || []).find(function (p) {
-            return pf.column === 'role' ? ('R:' + p.sys + '|' + p.roleId) === pf.id : ('A:' + p.sys + '|' + p.action) === pf.id;
+            return col.id(p) === pf.id;
         });
         if (match) label = pf.column === 'role' ? match.role : match.action;
         this.state.tableFilter = { column: pf.column, id: pf.id, label: label };
