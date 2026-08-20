@@ -318,6 +318,10 @@ mark {
     display: none !important;
 }
 
+.hidden {
+     display: none !important;
+}
+
 .appbar .variant-picker span {
     color: var(--nav-fg-muted);
     font-size: 12px;

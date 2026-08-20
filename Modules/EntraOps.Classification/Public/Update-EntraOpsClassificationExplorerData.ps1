@@ -1215,10 +1215,24 @@ function Update-EntraOpsClassificationExplorerData {
             $source = $historyResultSources[$sourceKey]
             $commits = @($source.commits)
             if ($commits.Count -eq 0) { continue }
+            $notificationCommits = @($commits)
+            if ($previousHeads.ContainsKey($sourceKey)) {
+                $previousIndex = -1
+                for ($commitIndex = 0; $commitIndex -lt $commits.Count; $commitIndex++) {
+                    if ($commits[$commitIndex].sha -eq $previousHeads[$sourceKey]) {
+                        $previousIndex = $commitIndex
+                        break
+                    }
+                }
+                if ($previousIndex -ge 0) {
+                    $notificationCommits = @($commits | Select-Object -Skip ($previousIndex + 1))
+                }
+            }
+            if ($notificationCommits.Count -eq 0) { continue }
             $notificationSources[$sourceKey] = [ordered]@{
                 label   = $source.label
                 kind    = $source.kind
-                commits = @($commits[-1])
+                commits = $notificationCommits
             }
         }
         $notificationObj = [ordered]@{
