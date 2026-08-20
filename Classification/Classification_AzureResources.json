@@ -61990,6 +61990,13 @@
     "RichDescription": "Users with editor access can sign in, view and edit all the bot resources, scenarios and configuration setting except for the bot instance keys & secrets and the end-user inputs (including Feedback, Unrecognized utterances and Conversation logs). A read-only access to the bot skills and channels.",
     "RolePermissions": [
       {
+        "AuthorizedResourceAction": "Microsoft.HealthBot/healthBots/AuthenticationProviders/*",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.HealthBot/healthBots/Channels/*",
         "ActionType": "DataAction",
         "Category": "General Data Plane Operations",
@@ -62005,6 +62012,13 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.HealthBot/healthBots/CopilotStudioSolution/*",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.HealthBot/healthBots/DataConnections/*",
         "ActionType": "DataAction",
         "Category": "General Data Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
@@ -62054,20 +62068,6 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.HealthBot/healthBots/AuditTrails/Read",
-        "ActionType": "DataAction",
-        "Category": "Reader Data Access",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.HealthBot/healthBots/AuthenticationProviders/Read",
-        "ActionType": "DataAction",
-        "Category": "Reader Data Access",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.HealthBot/healthBots/DataConnections/Read",
         "ActionType": "DataAction",
         "Category": "Reader Data Access",
         "EAMTierLevelName": "UserAccess",

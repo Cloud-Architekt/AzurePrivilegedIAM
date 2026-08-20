@@ -96,7 +96,7 @@ refreshing:
 
 ```powershell
 # AzurePrivilegedIAM standalone repository
-. ./Scripts/Update-EntraOpsClassificationExplorerData.ps1
+Import-Module ./Modules/EntraOps.Classification -Force
 Update-EntraOpsClassificationExplorerData -Mode Standalone
 
 # Release validation: fail on unresolved attack-path mappings
@@ -134,14 +134,18 @@ search results.
 
 Run the browser release suite from the repository root:
 
-```bash
-python -m pip install -r requirements-test.txt
-python -m playwright install chromium
-python -m unittest tests/test_classification_explorer.py -v
+```powershell
+Install-Module Pester -RequiredVersion 5.7.1 -Scope CurrentUser
+$playwrightRoot = Join-Path ([IO.Path]::GetTempPath()) 'eoce-playwright'
+dotnet new console --output $playwrightRoot --framework net8.0
+dotnet add $playwrightRoot package Microsoft.Playwright --version 1.55.0
+dotnet build $playwrightRoot --configuration Release
+& (Join-Path $playwrightRoot 'bin/Release/net8.0/playwright.ps1') install chromium
+Invoke-Pester ./Tests/ClassificationExplorer.Tests.ps1 -CI -Output Detailed
 ```
 
 The `Classification Explorer` GitHub Actions workflow runs strict generator validation,
-the browser suite, direct-file and HTTP smoke tests, accessibility checks and whitespace
+the browser suite, direct-file and HTTP smoke Tests, accessibility checks and whitespace
 validation on relevant pull requests and pushes.
 
 The change history needs the `git` command line and a full (non-shallow) clone — run
