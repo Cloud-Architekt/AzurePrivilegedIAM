@@ -27,14 +27,14 @@ $requiredGraphScopes = @(
 $mgContext = Get-MgContext -ErrorAction SilentlyContinue
 $missingGraphScopes = @($requiredGraphScopes | Where-Object { $_ -notin $mgContext.Scopes })
 if (-not $mgContext -or -not $mgContext.Account -or $missingGraphScopes.Count -gt 0) {
-	Write-Host 'Microsoft Graph is not connected with the required scopes. Signing in to Microsoft Graph...'
+	Write-Host 'Logging into Microsoft Graph... A window will open; complete the sign-in there. The script will wait here until sign-in finishes.'
 	Connect-MgGraph -Scopes $requiredGraphScopes -ContextScope Process -ErrorAction Stop | Out-Null
 	$mgContext = Get-MgContext -ErrorAction Stop
 }
 
 $azContext = Get-AzContext -ErrorAction SilentlyContinue
 if (-not $azContext -or -not $azContext.Account -or -not $azContext.Tenant -or $azContext.Tenant.Id -ne $mgContext.TenantId) {
-	Write-Host 'No matching Azure context detected. Signing in to Azure...'
+	Write-Host 'Logging into Azure... A window may open; complete the sign-in there. The script will wait here until sign-in finishes.'
 	Disable-AzContextAutosave -Scope Process | Out-Null
 	Connect-AzAccount -TenantId $mgContext.TenantId -ErrorAction Stop | Out-Null
 }
