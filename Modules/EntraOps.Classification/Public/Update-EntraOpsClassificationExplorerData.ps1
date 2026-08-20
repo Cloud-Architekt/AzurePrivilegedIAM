@@ -54,8 +54,8 @@ function Update-EntraOpsClassificationExplorerData {
 
     .PARAMETER RepoRoot
         Path to the AzurePrivilegedIAM repository root (contains 'Classification' and, in
-        Standalone mode, 'EntraOps_Classification'). Defaults to the parent of this script's
-        folder in Standalone mode; auto-detected as a sibling folder of -EntraOpsRoot named
+        Standalone mode, 'EntraOps_Classification'). Defaults to the root inferred from the
+        imported module in Standalone mode; auto-detected as a sibling folder of -EntraOpsRoot named
         'AzurePrivilegedIAM*' in EntraOps mode.
 
     .PARAMETER EntraOpsRoot
@@ -103,8 +103,8 @@ function Update-EntraOpsClassificationExplorerData {
         Cross-platform on PowerShell 7+. This file is synced verbatim
         between the two repositories by Sync-EntraOpsClassificationExplorerSource (to
         <EntraOpsRoot>/EntraOps/Public/Reportings/, where it is loaded as a public function of the
-        EntraOps module, same as every Export-EntraOps* cmdlet in this repository) - edit only the
-        canonical copy in AzurePrivilegedIAM/Scripts.
+        EntraOps module, same as every Export-EntraOps* cmdlet in this repository) - edit the
+        canonical copy in AzurePrivilegedIAM/Modules/EntraOps.Classification/Public.
     #>
     [CmdletBinding(SupportsShouldProcess = $true)]
     param(
@@ -354,7 +354,8 @@ function Update-EntraOpsClassificationExplorerData {
             'Classification/Classification_DeviceManagementRoles.json' = 'DeviceManagement'
         }
         $docsFile = 'Classification/Classification_EntraIdDirectoryRolesFromMsftDocs.json'
-        $validTiers = @('ControlPlane', 'ManagementPlane', 'UserAccess', 'Unclassified')
+        # Use the function-level $ValidTiers (5 tiers incl. WorkloadPlane) - resolved from the
+        # calling scope; do not shadow it with a local subset here.
         $paths = New-Object System.Collections.Generic.List[object]
 
         function Add-RolePaths {
@@ -497,7 +498,8 @@ function Update-EntraOpsClassificationExplorerData {
             'Classification/Classification_AzureResources.json'        = 'Azure'
             'Classification/Classification_DeviceManagementRoles.json' = 'DeviceManagement'
         }
-        $validTiers = @('ControlPlane', 'ManagementPlane', 'UserAccess', 'Unclassified')
+        # Use the function-level $ValidTiers (5 tiers incl. WorkloadPlane) - resolved from the
+        # calling scope; do not shadow it with a local subset here.
         $roles = New-Object System.Collections.Generic.List[object]
 
         foreach ($file in $sysByFile.Keys) {
@@ -534,7 +536,8 @@ function Update-EntraOpsClassificationExplorerData {
 
     if ($Mode -eq 'EntraOps') {
         # This function lives at <EntraOpsRoot>/EntraOps/Public/Reportings/Update-EntraOpsClassificationExplorerData.ps1
-        # (synced verbatim from AzurePrivilegedIAM/Scripts by Sync-EntraOpsClassificationExplorerSource) once
+        # (synced verbatim from AzurePrivilegedIAM/Modules/EntraOps.Classification/Public by
+        # Sync-EntraOpsClassificationExplorerSource) once
         # copied into the EntraOps repository, where it is dot-sourced and exported as a public function by
         # the module loader (EntraOps.psm1). Prefer the module's own ModuleBase (always populated once the
         # module is imported) over $PSScriptRoot, which can be empty depending on how this function was invoked.
@@ -566,7 +569,11 @@ function Update-EntraOpsClassificationExplorerData {
         }
     } else {
         if ([string]::IsNullOrWhiteSpace($RepoRoot)) {
-            $RepoRoot = if ($PSScriptRoot) { Join-Path $PSScriptRoot '..' } else { (Get-Location).Path }
+            $module = $MyInvocation.MyCommand.Module
+            if (-not $module -or -not $module.ModuleBase) {
+                throw 'Update-EntraOpsClassificationExplorerData must be invoked from an imported module or supplied -RepoRoot.'
+            }
+            $RepoRoot = Resolve-EntraOpsClassificationRepoRoot -ModuleBase $module.ModuleBase
         }
         if ([string]::IsNullOrWhiteSpace($AppRoot)) { $AppRoot = Join-Path (Resolve-FullPath $RepoRoot) 'ClassificationExplorer' }
     }
@@ -608,6 +615,21 @@ function Update-EntraOpsClassificationExplorerData {
     $expectedAppMode = $Mode.ToLowerInvariant()
     if ($appMode -ne $expectedAppMode) {
         throw "Deployment mode mismatch: -Mode $Mode targets '$expectedAppMode', but $modePath declares '$appMode'. Update js/mode.js or use the matching -Mode."
+    }
+
+    $indexPath = Join-Path $AppRoot 'index.html'
+    if (-not (Test-Path -LiteralPath $indexPath -PathType Leaf)) {
+        throw "Classification Explorer index file not found: $indexPath"
+    }
+    $indexText = Get-Content -LiteralPath $indexPath -Raw -Encoding UTF8
+    $themePath = if ($Mode -eq 'Standalone') { './theme/' } else { '../shared/' }
+    $updatedIndexText = if ($Mode -eq 'Standalone') {
+        $indexText.Replace('../shared/', $themePath)
+    } else {
+        $indexText.Replace('./theme/', $themePath)
+    }
+    if ($updatedIndexText -ne $indexText -and $PSCmdlet.ShouldProcess($indexPath, "Update $Mode theme asset paths")) {
+        Set-Content -LiteralPath $indexPath -Value $updatedIndexText -Encoding UTF8
     }
 
     # --- Required / optional source files (relative paths, kept in sync with js/config.js) ----
@@ -943,7 +965,7 @@ function Update-EntraOpsClassificationExplorerData {
                 })
         }
         if ($PSCmdlet.ShouldProcess($manifestPath, 'Write data-manifest.json')) {
-            ($manifest | ConvertTo-Json -Depth 5) | Set-Content -LiteralPath $manifestPath -Encoding UTF8
+            Save-EntraOpsReportDataFile -Content ($manifest | ConvertTo-Json -Depth 5) -LiteralPath $manifestPath
             Write-Verbose "Wrote manifest: $manifestPath"
         }
     }
@@ -962,7 +984,6 @@ function Update-EntraOpsClassificationExplorerData {
         # Escape angle brackets so a stray '</script>' in any value can never break out of the
         # surrounding <script> tag.
         $jsonData = ($embed | ConvertTo-Json -Depth 100 -Compress)
-        $jsonData = $jsonData.Replace('<', '\u003c').Replace('>', '\u003e')
 
         $embedMeta = [ordered]@{
             generatedUtc = (Get-Date).ToUniversalTime().ToString('o')
@@ -977,7 +998,6 @@ function Update-EntraOpsClassificationExplorerData {
         # Standalone mode) so js/config.js can read window.EOCE_TENANTS unconditionally.
         $tenantsJson = ConvertTo-Json -InputObject ([object[]]$Tenants) -Depth 5 -Compress
         if ([string]::IsNullOrEmpty($tenantsJson)) { $tenantsJson = '[]' }
-        $tenantsJson = $tenantsJson.Replace('<', '\u003c').Replace('>', '\u003e')
 
         $header = "/* Classification Explorer ($Mode mode) - embedded classification data.`n" +
         "   Auto-generated by Update-EntraOpsClassificationExplorerData on $((Get-Date).ToUniversalTime().ToString('o')).`n" +
@@ -985,7 +1005,7 @@ function Update-EntraOpsClassificationExplorerData {
         $content = "$header`nwindow.EOCE_DATA = $jsonData;`nwindow.EOCE_DATA_MANIFEST = $metaJson;`nwindow.EOCE_TENANTS = $tenantsJson;`n"
 
         if ($PSCmdlet.ShouldProcess($embedPath, 'Write classification-data.js')) {
-            Set-Content -LiteralPath $embedPath -Value $content -Encoding UTF8
+            Save-EntraOpsReportDataFile -Content $content -LiteralPath $embedPath
             $embedBytes = (Get-Item -LiteralPath $embedPath).Length
             Write-Verbose ("Wrote embedded bundle: {0} ({1:N0} bytes)" -f $embedPath, $embedBytes)
         }
@@ -1004,14 +1024,13 @@ function Update-EntraOpsClassificationExplorerData {
         $mdTexts = @($mdFiles | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw -Encoding UTF8 })
         $attackJson = ($mdTexts | ConvertTo-Json -Depth 3 -Compress)
         if ($mdTexts.Count -eq 1) { $attackJson = "[$attackJson]" }
-        $attackJson = $attackJson.Replace('<', '\u003c').Replace('>', '\u003e')
         $attackPath = Join-Path $AppRoot 'data/attack-paths.js'
         $attackHeader = "/* Classification Explorer ($Mode mode) - embedded attack-path catalog.`n" +
         "   Auto-generated by Update-EntraOpsClassificationExplorerData from content/attack-paths/*.md on $((Get-Date).ToUniversalTime().ToString('o')).`n" +
         "   Do not edit by hand - edit the markdown files and re-run the script. */"
         $attackContent = "$attackHeader`nwindow.EOCE_ATTACK_PATHS_MD = $attackJson;`n"
         if ($PSCmdlet.ShouldProcess($attackPath, 'Write data/attack-paths.js')) {
-            Set-Content -LiteralPath $attackPath -Value $attackContent -Encoding UTF8
+            Save-EntraOpsReportDataFile -Content $attackContent -LiteralPath $attackPath
             $attackBytes = (Get-Item -LiteralPath $attackPath).Length
             Write-Verbose ("Wrote attack-path catalog: {0} ({1} paths, {2:N0} bytes)" -f $attackPath, $mdTexts.Count, $attackBytes)
         }
@@ -1032,14 +1051,13 @@ function Update-EntraOpsClassificationExplorerData {
             paths        = @($tierMapPaths)
         }
         $tierMapJson = ($tierMapObj | ConvertTo-Json -Depth 10 -Compress)
-        $tierMapJson = $tierMapJson.Replace('<', '\u003c').Replace('>', '\u003e')
         $tierMapPath = Join-Path $AppRoot 'data/tier-map.js'
         $tierMapHeader = "/* Classification Explorer ($Mode mode) - embedded Enterprise Access Model Map (Overview Sankey) dataset.`n" +
         "   Auto-generated by Update-EntraOpsClassificationExplorerData on $((Get-Date).ToUniversalTime().ToString('o')).`n" +
         "   Do not edit by hand - re-run the script to refresh. */"
         $tierMapContent = "$tierMapHeader`nwindow.EOCE_TIER_MAP = $tierMapJson;`n"
         if ($PSCmdlet.ShouldProcess($tierMapPath, 'Write data/tier-map.js')) {
-            Set-Content -LiteralPath $tierMapPath -Value $tierMapContent -Encoding UTF8
+            Save-EntraOpsReportDataFile -Content $tierMapContent -LiteralPath $tierMapPath
             $tierMapBytes = (Get-Item -LiteralPath $tierMapPath).Length
             Write-Verbose ("Wrote EAM Map dataset: {0} ({1} paths, {2:N0} bytes)" -f $tierMapPath, $tierMapCount, $tierMapBytes)
         }
@@ -1147,6 +1165,28 @@ function Update-EntraOpsClassificationExplorerData {
                 $notificationSourceKeys.Add($sourceKey) | Out-Null
             }
         }
+        if ($notificationSourceKeys.Count -eq 0) {
+            # A generated bundle may be committed alongside its source change. In that case the
+            # baseline already contains the current heads, so fall back to the newest recorded
+            # classification change instead of emitting an empty notification panel.
+            $newestCommitDate = $null
+            foreach ($sourceKey in $historyResultSources.Keys) {
+                $commits = @($historyResultSources[$sourceKey].commits)
+                if ($commits.Count -eq 0) { continue }
+                $date = [datetimeoffset]$commits[-1].date
+                if ($null -eq $newestCommitDate -or $date -gt $newestCommitDate) {
+                    $newestCommitDate = $date
+                }
+            }
+            if ($newestCommitDate) {
+                foreach ($sourceKey in $historyResultSources.Keys) {
+                    $commits = @($historyResultSources[$sourceKey].commits)
+                    if ($commits.Count -gt 0 -and ([datetimeoffset]$commits[-1].date) -eq $newestCommitDate) {
+                        $notificationSourceKeys.Add($sourceKey) | Out-Null
+                    }
+                }
+            }
+        }
         $notificationChangeSetId = (@($currentHeads.Keys | Sort-Object | ForEach-Object { "${_}:$($currentHeads[$_])" }) -join '|')
         if ([string]::IsNullOrWhiteSpace($notificationChangeSetId)) { $notificationChangeSetId = 'none' }
 
@@ -1159,14 +1199,13 @@ function Update-EntraOpsClassificationExplorerData {
             }
         }
         $historyJson = ($historyObj | ConvertTo-Json -Depth 12 -Compress)
-        $historyJson = $historyJson.Replace('<', '\u003c').Replace('>', '\u003e')
 
         $historyHeader = "/* Classification Explorer ($Mode mode) - embedded classification change history (git log).`n" +
         "   Auto-generated by Update-EntraOpsClassificationExplorerData on $((Get-Date).ToUniversalTime().ToString('o')).`n" +
         "   Do not edit by hand - re-run the script to refresh. */"
         $historyContent = "$historyHeader`nwindow.EOCE_HISTORY = $historyJson;`n"
         if ($PSCmdlet.ShouldProcess($historyPath, 'Write data/history-data.js')) {
-            Set-Content -LiteralPath $historyPath -Value $historyContent -Encoding UTF8
+            Save-EntraOpsReportDataFile -Content $historyContent -LiteralPath $historyPath
             $historyBytes = (Get-Item -LiteralPath $historyPath).Length
             Write-Verbose ("Wrote change history: {0} ({1:N0} bytes)" -f $historyPath, $historyBytes)
         }
@@ -1186,13 +1225,13 @@ function Update-EntraOpsClassificationExplorerData {
             sources      = $notificationSources
             notification = $historyObj.notification
         }
-        $notificationJson = ($notificationObj | ConvertTo-Json -Depth 12 -Compress).Replace('<', '\u003c').Replace('>', '\u003e')
+        $notificationJson = ($notificationObj | ConvertTo-Json -Depth 12 -Compress)
         $notificationPath = Join-Path $AppRoot 'data/notification-data.js'
         $notificationContent = "/* Classification Explorer ($Mode mode) - compact classification change notifications.`n" +
         "   Auto-generated by Update-EntraOpsClassificationExplorerData; do not edit by hand. */`n" +
         "window.EOCE_NOTIFICATION_DATA = $notificationJson;"
         if ($PSCmdlet.ShouldProcess($notificationPath, 'Write data/notification-data.js')) {
-            Set-Content -LiteralPath $notificationPath -Value $notificationContent -Encoding UTF8
+            Save-EntraOpsReportDataFile -Content $notificationContent -LiteralPath $notificationPath
             Write-Verbose ("Wrote notification summary: {0}" -f $notificationPath)
         }
     }

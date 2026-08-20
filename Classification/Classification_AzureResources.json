@@ -1727,13 +1727,6 @@
         "EAMTierLevelTagValue": "1"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.Storage/storageAccounts/blobServices/generateUserDelegationKey/action",
-        "ActionType": "Action",
-        "Category": "General Management Plane Operations",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
         "AuthorizedResourceAction": "Microsoft.Storage/storageAccounts/blobServices/write",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
@@ -1786,6 +1779,13 @@
         "AuthorizedResourceAction": "Microsoft.Storage/storageAccounts/write",
         "ActionType": "Action",
         "Category": "Storage",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Storage/storageAccounts/blobServices/generateUserDelegationKey/action",
+        "ActionType": "Action",
+        "Category": "Storage Delegation Key Operations",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -26485,13 +26485,6 @@
     "RichDescription": "Enables permissions for the operator to manage a singleton instance of the OpenShift image registry. It manages all configuration of the registry, including creating storage.",
     "RolePermissions": [
       {
-        "AuthorizedResourceAction": "Microsoft.Storage/storageAccounts/blobServices/generateUserDelegationKey/action",
-        "ActionType": "Action",
-        "Category": "General Management Plane Operations",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
         "AuthorizedResourceAction": "Microsoft.Storage/storageAccounts/PrivateEndpointConnectionsApproval/action",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
@@ -26621,6 +26614,13 @@
         "AuthorizedResourceAction": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write",
         "ActionType": "DataAction",
         "Category": "Storage Data Access",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Storage/storageAccounts/blobServices/generateUserDelegationKey/action",
+        "ActionType": "Action",
+        "Category": "Storage Delegation Key Operations",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -45365,7 +45365,7 @@
       {
         "AuthorizedResourceAction": "*",
         "ActionType": "Action",
-        "Category": "Authorization",
+        "Category": "Management Groups",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       }
@@ -77651,13 +77651,6 @@
     "RichDescription": "Read and create quota requests, get quota request status, and create support tickets.",
     "RolePermissions": [
       {
-        "AuthorizedResourceAction": "Microsoft.Capacity/resourceProviders/locations/serviceLimits/write",
-        "ActionType": "Action",
-        "Category": "Reservations and Capacity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
         "AuthorizedResourceAction": "Microsoft.Capacity/register/action",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
@@ -77689,6 +77682,13 @@
         "AuthorizedResourceAction": "Microsoft.Support/*",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Capacity/resourceProviders/locations/serviceLimits/write",
+        "ActionType": "Action",
+        "Category": "Reservations and Capacity",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -77750,8 +77750,8 @@
       }
     ],
     "Classification": {
-      "EAMTierLevelName": "ControlPlane",
-      "EAMTierLevelTagValue": "0"
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
     }
   },
   {
@@ -84806,13 +84806,6 @@
     "RichDescription": "Allows for read, write and delete access to Azure Storage blob containers and data",
     "RolePermissions": [
       {
-        "AuthorizedResourceAction": "Microsoft.Storage/storageAccounts/blobServices/generateUserDelegationKey/action",
-        "ActionType": "Action",
-        "Category": "General Management Plane Operations",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
         "AuthorizedResourceAction": "Microsoft.Storage/storageAccounts/blobServices/containers/delete",
         "ActionType": "Action",
         "Category": "Storage",
@@ -84855,6 +84848,13 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.Storage/storageAccounts/blobServices/generateUserDelegationKey/action",
+        "ActionType": "Action",
+        "Category": "Storage Delegation Key Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.Storage/storageAccounts/blobServices/containers/read",
         "ActionType": "Action",
         "Category": "Reader",
@@ -84884,13 +84884,6 @@
     "RichDescription": "Allows for full access to Azure Storage blob containers and data, including assigning POSIX access control.",
     "RolePermissions": [
       {
-        "AuthorizedResourceAction": "Microsoft.Storage/storageAccounts/blobServices/generateUserDelegationKey/action",
-        "ActionType": "Action",
-        "Category": "General Management Plane Operations",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
         "AuthorizedResourceAction": "Microsoft.Storage/storageAccounts/blobServices/containers/*",
         "ActionType": "Action",
         "Category": "Storage",
@@ -84901,6 +84894,13 @@
         "AuthorizedResourceAction": "Microsoft.Storage/storageAccounts/blobServices/containers/blobs/*",
         "ActionType": "DataAction",
         "Category": "Storage Data Access",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Storage/storageAccounts/blobServices/generateUserDelegationKey/action",
+        "ActionType": "Action",
+        "Category": "Storage Delegation Key Operations",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       }
@@ -84922,7 +84922,7 @@
       {
         "AuthorizedResourceAction": "Microsoft.Storage/storageAccounts/blobServices/generateUserDelegationKey/action",
         "ActionType": "Action",
-        "Category": "General Management Plane Operations",
+        "Category": "Storage Delegation Key Operations",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -84958,7 +84958,7 @@
       {
         "AuthorizedResourceAction": "Microsoft.Storage/storageAccounts/blobServices/generateUserDelegationKey/action",
         "ActionType": "Action",
-        "Category": "General Management Plane Operations",
+        "Category": "Storage Delegation Key Operations",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       }

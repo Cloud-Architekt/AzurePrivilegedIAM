@@ -9084,6 +9084,14 @@
     "EAMTierLevelTagValue": "1"
   },
   {
+    "AppId": "3db474b9-6a0c-4840-96ac-1fceb342124f",
+    "ScopeId": "438013ce-a6ed-4686-9a80-778b7d82e8ce",
+    "ScopeDisplayName": "VerifiedId.MyAccountEligibility.Read",
+    "Category": "Verified ID",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "27470298-d3b8-4b9c-aad4-6334312a3eac",
     "ScopeDisplayName": "VirtualAppointment.Read",

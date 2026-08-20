@@ -98,7 +98,7 @@ function Export-EntraOpsClassificationDirectoryRoles {
 
     # Single classifcation (highest tier level only)
     Write-Output "Query directory role templates for mapping ID to name and further details"
-    $DirectoryRoleDefinitions = (Invoke-MgGraphRequest -Uri "https://graph.microsoft.com/beta/roleManagement/directory/roleDefinitions").value | select-object displayName, templateId, isBuiltin, isPrivileged, rolePermissions, categories, richDescription, inheritsPermissionsFrom, assignmentMode
+    $DirectoryRoleDefinitions = Invoke-EntraOpsMsGraphQuery -Method Get -Uri "https://graph.microsoft.com/beta/roleManagement/directory/roleDefinitions" -OutputType PSObject | select-object displayName, templateId, isBuiltin, isPrivileged, rolePermissions, categories, richDescription, inheritsPermissionsFrom, assignmentMode
 
     # Build a lookup of role actions (and further inheritance) by templateId from the full, unfiltered role
     # definitions list so inherited permissions can be resolved even when IncludeCustomRoles is $False.

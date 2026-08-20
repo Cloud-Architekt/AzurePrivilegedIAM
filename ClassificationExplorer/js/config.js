@@ -437,17 +437,24 @@ EOCE.isFullyScopeAwareSystem = function (sysKey) {
 // recognising exact literal-string matches (which silently misses any role whose actions are
 // expressed as a wildcard not spelled out verbatim in the Param file, e.g. Key Vault
 // Certificates Officer's "Microsoft.KeyVault/vaults/certificates/*").
+EOCE._actionRegexCache = Object.create(null);
+EOCE._actionToRegex = function (lowerPattern) {
+    // Compiled-wildcard cache: the same patterns are tested against thousands of actions in the
+    // Roles / Role Actions views - recompiling a RegExp per pair dominated their render time.
+    var cached = EOCE._actionRegexCache[lowerPattern];
+    if (!cached) {
+        var escaped = lowerPattern.replace(/[.+?^${}()|[\]\\]/g, '\\$&').replace(/\*/g, '.*');
+        cached = EOCE._actionRegexCache[lowerPattern] = new RegExp('^' + escaped + '$');
+    }
+    return cached;
+};
 EOCE.actionMatch = function (a, b) {
     if (!a || !b) return false;
     if (a === b) return true;
     var la = String(a).toLowerCase(), lb = String(b).toLowerCase();
     if (la === lb) return true;
-    function toRegex(pattern) {
-        var escaped = pattern.replace(/[.+?^${}()|[\]\\]/g, '\\$&').replace(/\*/g, '.*');
-        return new RegExp('^' + escaped + '$');
-    }
-    if (lb.indexOf('*') !== -1 && toRegex(lb).test(la)) return true;
-    if (la.indexOf('*') !== -1 && toRegex(la).test(lb)) return true;
+    if (lb.indexOf('*') !== -1 && EOCE._actionToRegex(lb).test(la)) return true;
+    if (la.indexOf('*') !== -1 && EOCE._actionToRegex(la).test(lb)) return true;
     return false;
 };
 
@@ -477,10 +484,60 @@ EOCE.loadScopeAwareActions = function () {
                 });
             });
             bySystem[sysKey] = patterns;
+            // Fast-match index attached to the array (consumers that iterate the array are
+            // unaffected): exact patterns become a per-plane lowercase Set (EntraID and Intune
+            // Param files contain no wildcards at all, so their matching collapses to Set.has);
+            // wildcard patterns stay a small list matched via the cached-regex actionMatch.
+            var index = { Action: { literalSet: new Set(), literals: [], wildcards: [] }, DataAction: { literalSet: new Set(), literals: [], wildcards: [] } };
+            patterns.forEach(function (p) {
+                var lower = String(p.pattern).toLowerCase();
+                var bucket = index[p.actionType] || index.Action;
+                if (lower.indexOf('*') === -1) { bucket.literalSet.add(lower); bucket.literals.push(lower); }
+                else bucket.wildcards.push(p.pattern);
+            });
+            try { Object.defineProperty(patterns, '__index', { value: index, enumerable: false }); }
+            catch (_) { patterns.__index = index; }
         });
         return bySystem;
     });
     return EOCE._scopeAwareActionsPromise;
+};
+
+// Fast per-entry scope-aware test using the __index built in loadScopeAwareActions, with the
+// same semantics as scanning the pattern array via EOCE.actionMatch: exact (case-insensitive)
+// match, pattern-side wildcards, and action-side wildcards against literal patterns. Results
+// are memoized per (system, plane, action) - actions repeat massively across roles.
+EOCE._scopeAwareEntryCache = new Map();
+EOCE._entryIsScopeAware = function (sysKey, entry, patterns) {
+    var index = patterns.__index;
+    if (!index) {
+        // Fallback: index-less array (defensive) - original linear scan.
+        for (var j = 0; j < patterns.length; j++) {
+            if (patterns[j].actionType === entry.actionType && EOCE.actionMatch(entry.action, patterns[j].pattern)) return true;
+        }
+        return false;
+    }
+    var lower = String(entry.action || '').toLowerCase();
+    var cacheKey = sysKey + '\u0001' + entry.actionType + '\u0001' + lower;
+    var cached = EOCE._scopeAwareEntryCache.get(cacheKey);
+    if (cached !== undefined) return cached;
+    var bucket = index[entry.actionType] || index.Action;
+    var result = bucket.literalSet.has(lower);
+    if (!result) {
+        for (var w = 0; w < bucket.wildcards.length; w++) {
+            if (EOCE.actionMatch(entry.action, bucket.wildcards[w])) { result = true; break; }
+        }
+    }
+    if (!result && lower.indexOf('*') !== -1) {
+        // Action-side wildcard (e.g. an Azure role granting Microsoft.KeyVault/vaults/certificates/*)
+        // can match a literal pattern - mirror actionMatch's reverse direction.
+        var actionRe = EOCE._actionToRegex(lower);
+        for (var l = 0; l < bucket.literals.length; l++) {
+            if (actionRe.test(bucket.literals[l])) { result = true; break; }
+        }
+    }
+    EOCE._scopeAwareEntryCache.set(cacheKey, result);
+    return result;
 };
 
 // Normalizes an actionList entry (plain action string, or { action, actionType }) to
@@ -500,9 +557,7 @@ EOCE.roleIsScopeAware = function (sysKey, actionList, scopeAwareActionsBySystem)
     if (!patterns || !patterns.length) return false;
     for (var i = 0; i < actionList.length; i++) {
         var entry = EOCE._normalizeScopeAwareEntry(actionList[i]);
-        for (var j = 0; j < patterns.length; j++) {
-            if (patterns[j].actionType === entry.actionType && EOCE.actionMatch(entry.action, patterns[j].pattern)) return true;
-        }
+        if (EOCE._entryIsScopeAware(sysKey, entry, patterns)) return true;
     }
     return false;
 };
@@ -519,11 +574,8 @@ EOCE.scopeAwareMatchesForRole = function (sysKey, actionList, scopeAwareActionsB
     var seen = {}, matches = [];
     actionList.forEach(function (item) {
         var entry = EOCE._normalizeScopeAwareEntry(item);
-        for (var j = 0; j < patterns.length; j++) {
-            if (patterns[j].actionType === entry.actionType && EOCE.actionMatch(entry.action, patterns[j].pattern)) {
-                if (!seen[entry.action]) { seen[entry.action] = true; matches.push(entry.action); }
-                break;
-            }
+        if (EOCE._entryIsScopeAware(sysKey, entry, patterns)) {
+            if (!seen[entry.action]) { seen[entry.action] = true; matches.push(entry.action); }
         }
     });
     return matches;

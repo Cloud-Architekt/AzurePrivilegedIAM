@@ -23,10 +23,15 @@ Sample queries to use classification in KQL queries in Microsoft Sentinel can be
 * [Added API Permissions with enriched classification from EntraOps Privileged EAM](https://github.com/Cloud-Architekt/AzureSentinel/blob/main/Hunting%20Queries/EID-PrivilegedIdentities/AddedAppRolesWithClassification.kusto)
 * [Sign-in to Cloud Application with sensitive delegated permission (classified by EntraOps Privileged EAM) to Microsoft Graph API](https://raw.githubusercontent.com/Cloud-Architekt/AzureSentinel/main/Hunting%20Queries/EID-PrivilegedIdentities/SensitiveMicrosoftGraphDelegatedPermissionAccess.kusto)
 
-The helper script to create classification by using the definition of classification are available here:
+The helper functions to create classifications from the definition files are available in the module:
 
-* [Script for Classification of Entra ID Roles](./Scripts/Export-EntraOpsClassificationDirectoryRoles.ps1)
-* [Script for Classification of Microsoft Graph API Permission](./Scripts/Export-EntraOpsClassificationAppRoles.ps1)
+* [EntraOps.Classification PowerShell module](./Modules/EntraOps.Classification/EntraOps.Classification.psd1)
+
+```powershell
+Import-Module ./Modules/EntraOps.Classification -Force
+Export-EntraOpsClassificationDirectoryRoles
+Export-EntraOpsClassificationAppRoles
+```
 
 Side Note: The classification export of App Roles (`Export-EntraOpsClassificationAppRoles`) can also include a list of "Authorized Api Calls" by using the Parameter `IncludeAuthorizedApiCalls`. This information will be enriched from the GitHub project "[graphpermissions.github.io](https://github.com/merill/graphpermissions.github.io)" (created by [Merill Fernando](https://github.com/merill)). Kudos to Merill!
 
@@ -48,4 +53,4 @@ On- and Offboarding of Privileged Accounts can be automated with the Entra ID Go
 Various articles on Microsoft Learn describes Roles and Personas for privileged access in Azure. I've created a role definition matrix to compare the descriptions of personas but also tiering levels from Enterprise Access Model. Check out the "[EAS_EAM_AzureRBAC_TabularSummary.pdf](https://github.com/Cloud-Architekt/AzurePrivilegedIAM/blob/main/EAS_EAM_AzureRBAC_TabularSummary.pdf)"
 
 ## 🤖 Scripts for Automation and Definition of Classification
-Examples for PowerShell Scripts to export a list of privileged assignments in Azure (incl. Azure Billing/Enterprise Agreement) and also helper files for Classification can be found [here](https://github.com/Cloud-Architekt/AzurePrivilegedIAM/tree/main/Scripts).
+Examples for PowerShell functions to export a list of privileged assignments in Azure (incl. Azure Billing/Enterprise Agreement) and helper functions for classification are available in the [EntraOps.Classification module](./Modules/EntraOps.Classification/EntraOps.Classification.psd1).
