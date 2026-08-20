@@ -103,7 +103,7 @@ BeforeAll {
 window.__pesterBrowserErrors = [];
 window.addEventListener('error', e => window.__pesterBrowserErrors.push(String(e.error || e.message)));
 window.addEventListener('unhandledrejection', e => window.__pesterBrowserErrors.push(String(e.reason)));
-'@))
+'@, $null)) | Out-Null
         $page
     }
 
@@ -116,12 +116,12 @@ window.addEventListener('unhandledrejection', e => window.__pesterBrowserErrors.
 
     function Invoke-JavaScript {
         param([Parameter(Mandatory)] $Page, [Parameter(Mandatory)][string] $Expression)
-        Complete-Task ($Page.EvaluateAsync[object]($Expression))
+        Complete-Task ($Page.EvaluateAsync[object]($Expression, $null))
     }
 
     function Invoke-JavaScriptObject {
         param([Parameter(Mandatory)] $Page, [Parameter(Mandatory)][string] $Expression)
-        $json = Complete-Task ($Page.EvaluateAsync[string]("() => JSON.stringify(($Expression)())"))
+        $json = Complete-Task ($Page.EvaluateAsync[string]("() => JSON.stringify(($Expression)())", $null))
         $json | ConvertFrom-Json
     }
 
@@ -258,7 +258,7 @@ Describe 'Classification Explorer' {
             Complete-Task ($reducedPage.GotoAsync("$($script:Server.BaseUrl)/#roles")) | Out-Null
             Complete-Task ($reducedPage.WaitForSelectorAsync('#app h1')) | Out-Null
             $duration = Complete-Task (
-                $reducedPage.Locator('.drawer').EvaluateAsync[string]('el => getComputedStyle(el).transitionDuration')
+                $reducedPage.Locator('.drawer').EvaluateAsync[string]('el => getComputedStyle(el).transitionDuration', $null, $null)
             )
             $duration | Should -BeIn @('0s', '1e-05s')
         } finally {
@@ -270,17 +270,18 @@ Describe 'Classification Explorer' {
         Open-Route $script:Page 'dashboard'
         $footer = $script:Page.Locator('#nav .app-footer')
         (Complete-Task ($footer.IsVisibleAsync())) | Should -BeTrue
-        (Complete-Task ($footer.Locator('#footerDisclosureLink').CountAsync())) | Should -Be 1
-        (Complete-Task ($footer.Locator('#footerDisclosureLink').GetAttributeAsync('href'))) |
+        $footerDisclosureLink = $script:Page.Locator('#nav .app-footer #footerDisclosureLink')
+        (Complete-Task ($footerDisclosureLink.CountAsync())) | Should -Be 1
+        (Complete-Task ($footerDisclosureLink.GetAttributeAsync('href'))) |
         Should -Be 'https://www.cloud-architekt.net/disclosure/'
-        (Complete-Task ($footer.Locator('#footerDisclosureLink').GetAttributeAsync('rel'))) |
+        (Complete-Task ($footerDisclosureLink.GetAttributeAsync('rel'))) |
         Should -Be 'noopener noreferrer'
         Assert-NoBrowserErrors $script:Page
     }
 
     It 'opens directly from the file protocol' {
-        $uri = ([uri](Join-Path $script:AppRoot 'index.html')).AbsoluteUri + '#overview'
-        Complete-Task ($script:Page.GotoAsync($uri)) | Out-Null
+        $uri = ([uri]::new((Join-Path $script:AppRoot 'index.html'))).AbsoluteUri + '#overview'
+        Complete-Task ($script:Page.GotoAsync($uri, $null)) | Out-Null
         Complete-Task ($script:Page.WaitForSelectorAsync('#app h1')) | Out-Null
         (Complete-Task ($script:Page.Locator('#app .error-box').CountAsync())) | Should -Be 0
         (Invoke-JavaScript $script:Page '() => location.protocol') | Should -Be 'file:'
@@ -293,7 +294,11 @@ Describe 'Classification Explorer' {
             New-Item -ItemType Directory -Path $tempRoot | Out-Null
             Copy-Item -LiteralPath $script:AppRoot -Destination $appCopy -Recurse
             $indexPath = Join-Path $appCopy 'index.html'
-            (Get-Content $indexPath -Raw -Encoding utf8).Replace('./theme/', '../shared/') |
+            (Get-Content $indexPath -Raw -Encoding utf8).Replace('</head>', @'
+    <script src="../shared/theme.js"></script>
+    <link rel="stylesheet" href="../shared/theme.css" />
+</head>
+'@) |
             Set-Content $indexPath -Encoding utf8 -NoNewline
             $arguments = @{
                 RepoRoot = $script:RepoRoot; AppRoot = $appCopy
@@ -322,12 +327,19 @@ Describe 'Classification Explorer' {
             $modePath = Join-Path $appCopy 'js/mode.js'
             (Get-Content $modePath -Raw -Encoding utf8).Replace("'standalone'", "'entraops'") |
             Set-Content $modePath -Encoding utf8 -NoNewline
+            $indexPath = Join-Path $appCopy 'index.html'
+            (Get-Content $indexPath -Raw -Encoding utf8).Replace('</head>', @'
+    <script src="./theme/theme.js"></script>
+    <link rel="stylesheet" href="./theme/theme.css" />
+</head>
+'@) |
+            Set-Content $indexPath -Encoding utf8 -NoNewline
             $arguments = @{
                 Mode = 'EntraOps'; RepoRoot = $script:RepoRoot; EntraOpsRoot = $entraOpsRoot
                 AppRoot = $appCopy; SkipEmbed = $true; SkipManifest = $true; SkipHistory = $true
             }
             Update-EntraOpsClassificationExplorerData @arguments
-            $indexText = Get-Content (Join-Path $appCopy 'index.html') -Raw -Encoding utf8
+            $indexText = Get-Content $indexPath -Raw -Encoding utf8
             $indexText | Should -Not -Match ([regex]::Escape('./theme/'))
             $indexText | Should -Match ([regex]::Escape('src="../shared/theme.js"'))
             $indexText | Should -Match ([regex]::Escape('href="../shared/theme.css"'))
@@ -390,9 +402,11 @@ Describe 'Classification Explorer' {
         $notification = $notificationMatch.Groups[1].Value | ConvertFrom-Json
         ($history.notification | ConvertTo-Json -Depth 100 -Compress) |
         Should -Be ($notification.notification | ConvertTo-Json -Depth 100 -Compress)
+        @($notification.notification.sourceKeys) | Should -Not -BeNullOrEmpty
         foreach ($sourceKey in $notification.notification.sourceKeys) {
             $commits = @($history.sources.$sourceKey.commits)
-            $commits[-1] | Should -Be $notification.sources.$sourceKey.commits[0]
+            ($commits[-1] | ConvertTo-Json -Depth 100 -Compress) |
+            Should -Be ($notification.sources.$sourceKey.commits[0] | ConvertTo-Json -Depth 100 -Compress)
         }
     }
 }

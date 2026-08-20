@@ -1165,6 +1165,28 @@ function Update-EntraOpsClassificationExplorerData {
                 $notificationSourceKeys.Add($sourceKey) | Out-Null
             }
         }
+        if ($notificationSourceKeys.Count -eq 0) {
+            # A generated bundle may be committed alongside its source change. In that case the
+            # baseline already contains the current heads, so fall back to the newest recorded
+            # classification change instead of emitting an empty notification panel.
+            $newestCommitDate = $null
+            foreach ($sourceKey in $historyResultSources.Keys) {
+                $commits = @($historyResultSources[$sourceKey].commits)
+                if ($commits.Count -eq 0) { continue }
+                $date = [datetimeoffset]$commits[-1].date
+                if ($null -eq $newestCommitDate -or $date -gt $newestCommitDate) {
+                    $newestCommitDate = $date
+                }
+            }
+            if ($newestCommitDate) {
+                foreach ($sourceKey in $historyResultSources.Keys) {
+                    $commits = @($historyResultSources[$sourceKey].commits)
+                    if ($commits.Count -gt 0 -and ([datetimeoffset]$commits[-1].date) -eq $newestCommitDate) {
+                        $notificationSourceKeys.Add($sourceKey) | Out-Null
+                    }
+                }
+            }
+        }
         $notificationChangeSetId = (@($currentHeads.Keys | Sort-Object | ForEach-Object { "${_}:$($currentHeads[$_])" }) -join '|')
         if ([string]::IsNullOrWhiteSpace($notificationChangeSetId)) { $notificationChangeSetId = 'none' }
 
