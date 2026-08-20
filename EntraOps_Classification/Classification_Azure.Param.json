@@ -23,9 +23,7 @@
                     "Microsoft.Authorization/denyAssignments/write",
                     "Microsoft.Authorization/denyAssignments/delete",
                     "Microsoft.Authorization/roleAssignmentScheduleRequests/write",
-                    "Microsoft.Authorization/roleAssignmentScheduleRequests/cancel/action",
                     "Microsoft.Authorization/roleEligibilityScheduleRequests/write",
-                    "Microsoft.Authorization/roleEligibilityScheduleRequests/cancel/action",
                     "Microsoft.Authorization/roleManagementPolicies/write",
                     "Microsoft.Authorization/roleManagementPolicyAssignments/write",
                     "Microsoft.Authorization/roleManagementPolicyAssignments/delete"
@@ -91,21 +89,6 @@
             },
             {
                 "Category": "Microsoft.Azure",
-                "Service": "Reservations and Capacity",
-                "RoleAssignmentScopeName": [
-                    <Tier0IncludedResourceScope>
-                ],
-                "ExcludedRoleAssignmentScopeName": [],
-                "RoleDefinitionActions": [
-                    "Microsoft.Capacity/*/write",
-                    "Microsoft.Capacity/*/delete",
-                    "Microsoft.Capacity/reservationorders/write",
-                    "Microsoft.Capacity/reservationorders/reservations/write"
-                ],
-                "ExcludedRoleDefinitionActions": []
-            },
-            {
-                "Category": "Microsoft.Azure",
                 "Service": "Azure Lighthouse",
                 "RoleAssignmentScopeName": [
                     <Tier0IncludedResourceScope>
@@ -149,19 +132,6 @@
                     "Microsoft.ManagedIdentity/userAssignedIdentities/*/assign/action",
                     "Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials/write",
                     "Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials/delete"
-                ],
-                "ExcludedRoleDefinitionActions": []
-            },
-            {
-                "Category": "Microsoft.Azure",
-                "Service": "Custom Providers",
-                "RoleAssignmentScopeName": [
-                    <Tier0IncludedResourceScope>
-                ],
-                "ExcludedRoleAssignmentScopeName": [],
-                "RoleDefinitionActions": [
-                    "Microsoft.CustomProviders/resourceProviders/write",
-                    "Microsoft.CustomProviders/resourceProviders/delete"
                 ],
                 "ExcludedRoleDefinitionActions": []
             },
@@ -538,6 +508,47 @@
         "TierLevelDefinition": [
             {
                 "Category": "Microsoft.Azure",
+                "Service": "Authorization - Request Cancellation",
+                "RoleAssignmentScopeName": [
+                    "/*"
+                ],
+                "ExcludedRoleAssignmentScopeName": [],
+                "RoleDefinitionActions": [
+                    "Microsoft.Authorization/roleAssignmentScheduleRequests/cancel/action",
+                    "Microsoft.Authorization/roleEligibilityScheduleRequests/cancel/action"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Reservations and Capacity",
+                "RoleAssignmentScopeName": [
+                    "/*"
+                ],
+                "ExcludedRoleAssignmentScopeName": [],
+                "RoleDefinitionActions": [
+                    "Microsoft.Capacity/*/write",
+                    "Microsoft.Capacity/*/delete",
+                    "Microsoft.Capacity/reservationorders/write",
+                    "Microsoft.Capacity/reservationorders/reservations/write"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
+                "Service": "Custom Providers",
+                "RoleAssignmentScopeName": [
+                    "/*"
+                ],
+                "ExcludedRoleAssignmentScopeName": [],
+                "RoleDefinitionActions": [
+                    "Microsoft.CustomProviders/resourceProviders/write",
+                    "Microsoft.CustomProviders/resourceProviders/delete"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
                 "Service": "Authorization",
                 "RoleAssignmentScopeName": [
                     <Tier1IncludedResourceScope>
@@ -558,9 +569,7 @@
                     "Microsoft.Authorization/denyAssignments/write",
                     "Microsoft.Authorization/denyAssignments/delete",
                     "Microsoft.Authorization/roleAssignmentScheduleRequests/write",
-                    "Microsoft.Authorization/roleAssignmentScheduleRequests/cancel/action",
                     "Microsoft.Authorization/roleEligibilityScheduleRequests/write",
-                    "Microsoft.Authorization/roleEligibilityScheduleRequests/cancel/action",
                     "Microsoft.Authorization/roleManagementPolicies/write",
                     "Microsoft.Authorization/roleManagementPolicyAssignments/write",
                     "Microsoft.Authorization/roleManagementPolicyAssignments/delete"
@@ -632,23 +641,6 @@
             },
             {
                 "Category": "Microsoft.Azure",
-                "Service": "Reservations and Capacity",
-                "RoleAssignmentScopeName": [
-                    <Tier1IncludedResourceScope>
-                ],
-                "ExcludedRoleAssignmentScopeName": [
-                    <Tier0IncludedResourceScope>
-                ],
-                "RoleDefinitionActions": [
-                    "Microsoft.Capacity/*/write",
-                    "Microsoft.Capacity/*/delete",
-                    "Microsoft.Capacity/reservationorders/write",
-                    "Microsoft.Capacity/reservationorders/reservations/write"
-                ],
-                "ExcludedRoleDefinitionActions": []
-            },
-            {
-                "Category": "Microsoft.Azure",
                 "Service": "Azure Lighthouse",
                 "RoleAssignmentScopeName": [
                     <Tier1IncludedResourceScope>
@@ -679,21 +671,6 @@
                     "Microsoft.Blueprint/blueprints/delete",
                     "Microsoft.Blueprint/blueprintAssignments/write",
                     "Microsoft.Blueprint/blueprintAssignments/delete"
-                ],
-                "ExcludedRoleDefinitionActions": []
-            },
-            {
-                "Category": "Microsoft.Azure",
-                "Service": "Custom Providers",
-                "RoleAssignmentScopeName": [
-                    <Tier1IncludedResourceScope>
-                ],
-                "ExcludedRoleAssignmentScopeName": [
-                    <Tier0IncludedResourceScope>
-                ],
-                "RoleDefinitionActions": [
-                    "Microsoft.CustomProviders/resourceProviders/write",
-                    "Microsoft.CustomProviders/resourceProviders/delete"
                 ],
                 "ExcludedRoleDefinitionActions": []
             },
@@ -1181,6 +1158,18 @@
             },
             {
                 "Category": "Microsoft.Azure",
+                "Service": "Storage Delegation Key Operations",
+                "RoleAssignmentScopeName": [
+                    "/*"
+                ],
+                "ExcludedRoleAssignmentScopeName": [],
+                "RoleDefinitionActions": [
+                    "Microsoft.Storage/storageAccounts/blobServices/generateUserDelegationKey/action"
+                ],
+                "ExcludedRoleDefinitionActions": []
+            },
+            {
+                "Category": "Microsoft.Azure",
                 "Service": "General Management Plane Operations",
                 "RoleAssignmentScopeName": [
                     "/*"
@@ -1190,7 +1179,8 @@
                     "*/*"
                 ],
                 "ExcludedRoleDefinitionActions": [
-                    "*/read"
+                    "*/read",
+                    "Microsoft.Storage/storageAccounts/blobServices/generateUserDelegationKey/action"
                 ]
             },
             {

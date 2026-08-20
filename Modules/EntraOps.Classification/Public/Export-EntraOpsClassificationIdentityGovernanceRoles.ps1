@@ -90,7 +90,7 @@ function Export-EntraOpsClassificationIdentityGovernanceRoles {
 
     # Single classifcation (highest tier level only)
     Write-Output "Query Identity Governance (Entitlement Management) role templates for mapping ID to name and further details"
-    $IdentityGovernanceRoleDefinitions = (Invoke-MgGraphRequest -Uri "https://graph.microsoft.com/beta/roleManagement/entitlementManagement/roleDefinitions").value | select-object displayName, templateId, isBuiltin, isPrivileged, description, rolePermissions, inheritsPermissionsFrom, assignmentMode
+    $IdentityGovernanceRoleDefinitions = Invoke-EntraOpsMsGraphQuery -Method Get -Uri "https://graph.microsoft.com/beta/roleManagement/entitlementManagement/roleDefinitions" -OutputType PSObject | select-object displayName, templateId, isBuiltin, isPrivileged, description, rolePermissions, inheritsPermissionsFrom, assignmentMode
 
     # Build a lookup of role actions (and further inheritance) by templateId from the full, unfiltered role
     # definitions list so inherited permissions can be resolved even when IncludeCustomRoles is $False.

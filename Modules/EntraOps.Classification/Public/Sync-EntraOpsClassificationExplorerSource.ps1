@@ -18,36 +18,35 @@ function Sync-EntraOpsClassificationExplorerSource {
                                    Update-EntraOpsClassificationExplorerData (-Mode Standalone|EntraOps),
                                    NEVER copied by this script.
 
-        The shared generator function's source file (Scripts/Update-EntraOpsClassificationExplorerData.ps1)
-        is also copied into <EntraOpsRoot>/EntraOps/Public/Reportings/, so it is dot-sourced and exported
-        directly as a public function of the EntraOps module (same as every Export-EntraOps* cmdlet here) -
-        no separate wrapper/path-resolution step is needed.
+        The shared generator function is also copied into <EntraOpsRoot>/EntraOps/Public/Reportings/,
+        so it is dot-sourced and exported directly as a public function of the EntraOps module
+        (same as every Export-EntraOps* cmdlet here) - no separate wrapper/path-resolution step is needed.
 
         Run this after making any change to the app source (HTML/CSS/JS/content) or to the generator
         function, then run Update-EntraOpsClassificationExplorerData in each repository to regenerate the
         embedded data bundle for that deployment.
 
     .PARAMETER RepoRoot
-        Path to the AzurePrivilegedIAM repository root (source of truth). Defaults to the parent of
-        this script's folder.
+        Path to the AzurePrivilegedIAM repository root (source of truth). Defaults to the root
+        containing this module.
 
     .PARAMETER EntraOpsRoot
         Path to the EntraOps repository root (sync target). Auto-detected as a sibling folder of
         -RepoRoot named 'entraops*' (case-insensitive) when omitted.
 
     .EXAMPLE
-        . ./Scripts/Sync-EntraOpsClassificationExplorerSource.ps1
+        Import-Module ./Modules/EntraOps.Classification -Force
         Sync-EntraOpsClassificationExplorerSource -WhatIf
 
         Shows what would be copied without changing any files.
 
     .EXAMPLE
-        . ./Scripts/Sync-EntraOpsClassificationExplorerSource.ps1
+        Import-Module ./Modules/EntraOps.Classification -Force
         Sync-EntraOpsClassificationExplorerSource -EntraOpsRoot ../EntraOps
     #>
     [CmdletBinding(SupportsShouldProcess = $true)]
     param(
-        [string]$RepoRoot = (Split-Path -Parent $PSScriptRoot),
+        [string]$RepoRoot,
         [string]$EntraOpsRoot
     )
 
@@ -59,15 +58,22 @@ function Sync-EntraOpsClassificationExplorerSource {
         return [System.IO.Path]::GetFullPath($Path)
     }
 
+    if ([string]::IsNullOrWhiteSpace($RepoRoot)) {
+        $module = $MyInvocation.MyCommand.Module
+        if (-not $module -or -not $module.ModuleBase) {
+            throw 'Sync-EntraOpsClassificationExplorerSource must be invoked from an imported module or supplied -RepoRoot.'
+        }
+        $RepoRoot = Resolve-EntraOpsClassificationRepoRoot -ModuleBase $module.ModuleBase
+    }
     $RepoRoot = Resolve-FullPath $RepoRoot
     $SourceAppRoot = Join-Path $RepoRoot 'ClassificationExplorer'
-    $SourceGenerator = Join-Path $RepoRoot 'Scripts/Update-EntraOpsClassificationExplorerData.ps1'
+    $SourceGenerator = Join-Path $RepoRoot 'Modules/EntraOps.Classification/Public/Update-EntraOpsClassificationExplorerData.ps1'
 
     if (-not (Test-Path -LiteralPath $SourceAppRoot -PathType Container)) {
         throw "Source app folder not found: $SourceAppRoot"
     }
     if (-not (Test-Path -LiteralPath $SourceGenerator -PathType Leaf)) {
-        throw "Source generator script not found: $SourceGenerator"
+        throw "Source generator function file not found: $SourceGenerator"
     }
 
     if ([string]::IsNullOrWhiteSpace($EntraOpsRoot)) {
@@ -76,7 +82,10 @@ function Sync-EntraOpsClassificationExplorerSource {
         if ($CodingRoot -and (Test-Path -LiteralPath $CodingRoot -PathType Container)) {
             $Candidates = @(Get-ChildItem -LiteralPath $CodingRoot -Directory | Where-Object { $_.Name -match '(?i)entraops' } | ForEach-Object { $_.FullName })
         }
-        $EntraOpsRoot = $Candidates | Where-Object { Test-Path -LiteralPath (Join-Path $_ 'Reports/ClassificationExplorer') -PathType Container } | Select-Object -First 1
+        $EntraOpsRoot = $Candidates |
+        Where-Object { Test-Path -LiteralPath (Join-Path $_ 'Reports/ClassificationExplorer') -PathType Container } |
+        Sort-Object @{ Expression = { if ((Split-Path -Leaf $_) -ieq 'entraops') { 0 } else { 1 } } }, { Split-Path -Leaf $_ } |
+        Select-Object -First 1
         if (-not $EntraOpsRoot) {
             throw "Could not auto-detect the EntraOps repository (looked for 'Reports/ClassificationExplorer' under: $($Candidates -join ', ')). Pass -EntraOpsRoot pointing at your EntraOps clone."
         }
@@ -128,6 +137,17 @@ function Sync-EntraOpsClassificationExplorerSource {
             Copy-Item -LiteralPath $_.FullName -Destination $destPath -Force
         }
         $copied.Add($rel) | Out-Null
+    }
+
+    # The target's deployment mode is EntraOps even though index.html is maintained in the
+    # standalone source repository. Keep its shared theme references deployment-specific.
+    $TargetIndexPath = Join-Path $TargetAppRoot 'index.html'
+    if (Test-Path -LiteralPath $TargetIndexPath -PathType Leaf) {
+        $TargetIndexText = Get-Content -LiteralPath $TargetIndexPath -Raw -Encoding UTF8
+        $EntraOpsIndexText = $TargetIndexText.Replace('./theme/', '../shared/')
+        if ($EntraOpsIndexText -ne $TargetIndexText -and $PSCmdlet.ShouldProcess($TargetIndexPath, 'Update EntraOps theme asset paths')) {
+            Set-Content -LiteralPath $TargetIndexPath -Value $EntraOpsIndexText -Encoding UTF8
+        }
     }
 
     # Remove stale destination files that no longer exist in the source (keeps the two copies

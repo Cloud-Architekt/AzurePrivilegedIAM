@@ -2660,7 +2660,8 @@
         ],
         "RoleDefinitionActions": [
           "VerifiableCredential.Create.IssueRequest",
-          "VerifiableCredential.Create.IssueRequest.User"
+          "VerifiableCredential.Create.IssueRequest.User",
+          "VerifiedId.MyAccountEligibility.Read"
         ]
       }
     ]

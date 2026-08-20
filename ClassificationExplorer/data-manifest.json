@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-08-18T05:54:07.2199930Z",
+  "generatedUtc": "2026-08-20T06:42:17.0695250Z",
   "mode": "Standalone",
   "repoRoot": "AzurePrivilegedIAM",
   "fileCount": 19,
@@ -27,10 +27,10 @@
     },
     {
       "path": "Classification/Classification_AzureResources.json",
-      "bytes": 3284597,
+      "bytes": 3284595,
       "items": 927,
       "param": false,
-      "sha256": "f785e230fc13244f6d04c4465aaede214d6ef55bea3847d229d754941cf5d59c"
+      "sha256": "583f2e5ddaf32c9c65a66acaa0beab318bc64223b6d46a1563393d9f9c37d694"
     },
     {
       "path": "Classification/Classification_DeviceManagementRoles.json",
@@ -41,10 +41,10 @@
     },
     {
       "path": "Classification/Classification_ApiPermissions.json",
-      "bytes": 793742,
-      "items": 2099,
+      "bytes": 794133,
+      "items": 2100,
       "param": false,
-      "sha256": "9b64970babe0998b2342aae08076c74abd3e22fe83d8c2379dcc5668ecfc546c"
+      "sha256": "67f4fd4490bc1231b72d10bbb2edf404a563c61e1f0c15625a0f065182bc2d21"
     },
     {
       "path": "Classification/Classification_AppRoles.json",
@@ -55,10 +55,10 @@
     },
     {
       "path": "Classification/Classification_Scopes.json",
-      "bytes": 349375,
-      "items": 1237,
+      "bytes": 349662,
+      "items": 1238,
       "param": false,
-      "sha256": "a9cd51e1b8bd02c1b179202c8627918d8c68c9870d41d77a65981e0b2a89a728"
+      "sha256": "5ac4c04b9d9a5cc450981ce8a25fc325f80dce4aac5991bddce3ce42470969b0"
     },
     {
       "path": "EntraOps_Classification/Classification_AadResources.json",
@@ -90,17 +90,17 @@
     },
     {
       "path": "EntraOps_Classification/Classification_Azure.json",
-      "bytes": 36524,
+      "bytes": 37417,
       "items": 3,
       "param": false,
-      "sha256": "230effaaead62a8605ad0f667c756a5a58d15e403ce815c620b2b6681ab781c4"
+      "sha256": "4422e2b1a66569a28256c2261f738f8b8660ce12b68bb4772d2a0beff33b119e"
     },
     {
       "path": "EntraOps_Classification/Classification_Azure.Param.json",
-      "bytes": 67886,
+      "bytes": 67314,
       "items": 3,
       "param": true,
-      "sha256": "c3b30c5e87c1c42df9ceee451e2c8944b2ff73bb2e215926918f8add65d74931"
+      "sha256": "aecab82c44dda5da6e8fde1034001f49cb793195184efd68ac64e4e750671499"
     },
     {
       "path": "EntraOps_Classification/Classification_DeviceManagement.json",

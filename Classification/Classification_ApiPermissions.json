@@ -1830,7 +1830,7 @@
     "EAMTierLevelTagValue": "2"
   },
   {
-    "PermissionId": "6222dbab-a24c-4210-9d91-2f47cf565614",
+    "PermissionId": "9b005f11-86f0-45f7-8c27-4fff5d849916",
     "PermissionValue": "User.ReadBasic.All",
     "PermissionType": "Delegated",
     "TargetAppDisplayName": "Exchange Online",
@@ -1840,7 +1840,7 @@
     "EAMTierLevelTagValue": "2"
   },
   {
-    "PermissionId": "9b005f11-86f0-45f7-8c27-4fff5d849916",
+    "PermissionId": "6222dbab-a24c-4210-9d91-2f47cf565614",
     "PermissionValue": "User.ReadBasic.All",
     "PermissionType": "Delegated",
     "TargetAppDisplayName": "Exchange Online",
@@ -1923,6 +1923,16 @@
     "PermissionId": "410607a4-22de-48a8-b35d-ad33c0c2e1bf",
     "PermissionValue": "VerifiableCredential.Create.PresentRequest",
     "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Entra Verified ID",
+    "TargetAppId": "3db474b9-6a0c-4840-96ac-1fceb342124f",
+    "Category": "Verified ID",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "438013ce-a6ed-4686-9a80-778b7d82e8ce",
+    "PermissionValue": "VerifiedId.MyAccountEligibility.Read",
+    "PermissionType": "Delegated",
     "TargetAppDisplayName": "Microsoft Entra Verified ID",
     "TargetAppId": "3db474b9-6a0c-4840-96ac-1fceb342124f",
     "Category": "Verified ID",
