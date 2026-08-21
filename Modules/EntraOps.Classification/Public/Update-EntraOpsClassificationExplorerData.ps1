@@ -1157,6 +1157,7 @@ function Update-EntraOpsClassificationExplorerData {
         }
         $currentHeads = @{}
         $notificationSourceKeys = New-Object System.Collections.Generic.List[string]
+        $fallbackNotificationSourceKeys = @{}
         foreach ($sourceKey in $historyResultSources.Keys) {
             $currentCommits = @($historyResultSources[$sourceKey].commits)
             if ($currentCommits.Count -eq 0 -or -not $currentCommits[-1].sha) { continue }
@@ -1183,6 +1184,7 @@ function Update-EntraOpsClassificationExplorerData {
                     $commits = @($historyResultSources[$sourceKey].commits)
                     if ($commits.Count -gt 0 -and ([datetimeoffset]$commits[-1].date) -eq $newestCommitDate) {
                         $notificationSourceKeys.Add($sourceKey) | Out-Null
+                        $fallbackNotificationSourceKeys[$sourceKey] = $true
                     }
                 }
             }
@@ -1216,7 +1218,11 @@ function Update-EntraOpsClassificationExplorerData {
             $commits = @($source.commits)
             if ($commits.Count -eq 0) { continue }
             $notificationCommits = @($commits)
-            if ($previousHeads.ContainsKey($sourceKey)) {
+            if ($fallbackNotificationSourceKeys.ContainsKey($sourceKey)) {
+                # The committed history already contains the current head. Preserve the newest
+                # commit selected by the fallback instead of filtering everything after that head.
+                $notificationCommits = @($commits[-1])
+            } elseif ($previousHeads.ContainsKey($sourceKey)) {
                 $previousIndex = -1
                 for ($commitIndex = 0; $commitIndex -lt $commits.Count; $commitIndex++) {
                     if ($commits[$commitIndex].sha -eq $previousHeads[$sourceKey]) {
