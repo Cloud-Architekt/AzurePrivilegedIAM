@@ -1157,6 +1157,7 @@ function Update-EntraOpsClassificationExplorerData {
         }
         $currentHeads = @{}
         $notificationSourceKeys = New-Object System.Collections.Generic.List[string]
+        $fallbackNotificationSourceKeys = @{}
         foreach ($sourceKey in $historyResultSources.Keys) {
             $currentCommits = @($historyResultSources[$sourceKey].commits)
             if ($currentCommits.Count -eq 0 -or -not $currentCommits[-1].sha) { continue }
@@ -1183,6 +1184,7 @@ function Update-EntraOpsClassificationExplorerData {
                     $commits = @($historyResultSources[$sourceKey].commits)
                     if ($commits.Count -gt 0 -and ([datetimeoffset]$commits[-1].date) -eq $newestCommitDate) {
                         $notificationSourceKeys.Add($sourceKey) | Out-Null
+                        $fallbackNotificationSourceKeys[$sourceKey] = $true
                     }
                 }
             }
@@ -1215,10 +1217,28 @@ function Update-EntraOpsClassificationExplorerData {
             $source = $historyResultSources[$sourceKey]
             $commits = @($source.commits)
             if ($commits.Count -eq 0) { continue }
+            $notificationCommits = @($commits)
+            if ($fallbackNotificationSourceKeys.ContainsKey($sourceKey)) {
+                # The committed history already contains the current head. Preserve the newest
+                # commit selected by the fallback instead of filtering everything after that head.
+                $notificationCommits = @($commits[-1])
+            } elseif ($previousHeads.ContainsKey($sourceKey)) {
+                $previousIndex = -1
+                for ($commitIndex = 0; $commitIndex -lt $commits.Count; $commitIndex++) {
+                    if ($commits[$commitIndex].sha -eq $previousHeads[$sourceKey]) {
+                        $previousIndex = $commitIndex
+                        break
+                    }
+                }
+                if ($previousIndex -ge 0) {
+                    $notificationCommits = @($commits | Select-Object -Skip ($previousIndex + 1))
+                }
+            }
+            if ($notificationCommits.Count -eq 0) { continue }
             $notificationSources[$sourceKey] = [ordered]@{
                 label   = $source.label
                 kind    = $source.kind
-                commits = @($commits[-1])
+                commits = $notificationCommits
             }
         }
         $notificationObj = [ordered]@{
