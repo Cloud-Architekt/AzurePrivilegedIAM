@@ -121,6 +121,22 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "eccf3f2d-f81a-4718-95d7-ef4a0c42ac43",
+    "AppRoleDisplayName": "AgentCommunicationConfiguration.Read.All",
+    "Category": "Default Member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "9c72696d-c77b-4d8d-b59e-dfca4792c9ec",
+    "AppRoleDisplayName": "AgentCommunicationConfiguration.ReadWrite.All",
+    "Category": "Agent Identity",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "ad25cc1d-84d8-47df-a08e-b34c2e800819",
     "AppRoleDisplayName": "AgentIdentity.Create.All",
     "Category": "Agent Identity",
@@ -1521,6 +1537,22 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "c5825671-0390-4bf2-b99b-80496fd4b673",
+    "AppRoleDisplayName": "DeviceManagementDeploymentPlans.Read.All",
+    "Category": "Microsoft 365 Platform Management",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "68356fd1-028d-4ce3-b724-241dec11127a",
+    "AppRoleDisplayName": "DeviceManagementDeploymentPlans.ReadWrite.All",
+    "Category": "Global Endpoint Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "5b07b0dd-2377-4e44-a38d-703f09a0dc3c",
     "AppRoleDisplayName": "DeviceManagementManagedDevices.PrivilegedOperations.All",
     "Category": "Global Endpoint Management",
@@ -2527,6 +2559,22 @@
     "AppRoleId": "5facf0c1-8979-4e95-abcf-ff3d079771c0",
     "AppRoleDisplayName": "LicenseAssignment.ReadWrite.All",
     "Category": "License Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "6343d63f-034f-45b5-832d-9f9d7632e182",
+    "AppRoleDisplayName": "LifecyclePolicies-AgentId.Read.All",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "00d1c504-8dc7-461b-8a0b-dc15c8f1bd5a",
+    "AppRoleDisplayName": "LifecyclePolicies-AgentId.ReadWrite.All",
+    "Category": "Agent Identity",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
   },
@@ -3713,6 +3761,14 @@
     "Category": "Public Key Infrastructure",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "f369d3b8-fe98-4772-85e1-b23e7cf41982",
+    "AppRoleDisplayName": "PullPrintPrinter.Read.All",
+    "Category": "Printer Management",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",

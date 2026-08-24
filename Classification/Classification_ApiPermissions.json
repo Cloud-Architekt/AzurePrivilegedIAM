@@ -2250,6 +2250,46 @@
     "EAMTierLevelTagValue": "1"
   },
   {
+    "PermissionId": "57ff8075-2fb3-4879-8693-5d51ee8d5e9e",
+    "PermissionValue": "AgentCommunicationConfiguration.Read",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Default Member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "PermissionId": "eccf3f2d-f81a-4718-95d7-ef4a0c42ac43",
+    "PermissionValue": "AgentCommunicationConfiguration.Read.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Default Member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "PermissionId": "15e0db35-0641-4175-b014-c2cb39286338",
+    "PermissionValue": "AgentCommunicationConfiguration.ReadWrite",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Agent Identity",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "PermissionId": "9c72696d-c77b-4d8d-b59e-dfca4792c9ec",
+    "PermissionValue": "AgentCommunicationConfiguration.ReadWrite.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Agent Identity",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
     "PermissionId": "ad25cc1d-84d8-47df-a08e-b34c2e800819",
     "PermissionValue": "AgentIdentity.Create.All",
     "PermissionType": "Application",
@@ -5806,6 +5846,46 @@
     "EAMTierLevelTagValue": "0"
   },
   {
+    "PermissionId": "c5825671-0390-4bf2-b99b-80496fd4b673",
+    "PermissionValue": "DeviceManagementDeploymentPlans.Read.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Microsoft 365 Platform Management",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "700bfe0b-b3bd-4fa4-bec2-6849edd7fb7b",
+    "PermissionValue": "DeviceManagementDeploymentPlans.Read.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Microsoft 365 Platform Management",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "68356fd1-028d-4ce3-b724-241dec11127a",
+    "PermissionValue": "DeviceManagementDeploymentPlans.ReadWrite.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Global Endpoint Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "PermissionId": "9d95843d-67b9-48b2-8e20-e42372db8549",
+    "PermissionValue": "DeviceManagementDeploymentPlans.ReadWrite.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Global Endpoint Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
     "PermissionId": "5b07b0dd-2377-4e44-a38d-703f09a0dc3c",
     "PermissionValue": "DeviceManagementManagedDevices.PrivilegedOperations.All",
     "PermissionType": "Application",
@@ -8418,6 +8498,46 @@
     "TargetAppDisplayName": "Microsoft Graph",
     "TargetAppId": "00000003-0000-0000-c000-000000000000",
     "Category": "License Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "PermissionId": "6343d63f-034f-45b5-832d-9f9d7632e182",
+    "PermissionValue": "LifecyclePolicies-AgentId.Read.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "65857db0-62ac-4279-aa73-c2b5dab186f5",
+    "PermissionValue": "LifecyclePolicies-AgentId.Read.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "00d1c504-8dc7-461b-8a0b-dc15c8f1bd5a",
+    "PermissionValue": "LifecyclePolicies-AgentId.ReadWrite.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Agent Identity",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "PermissionId": "f2292ca5-46fc-4195-9b4d-16491bf9bf7f",
+    "PermissionValue": "LifecyclePolicies-AgentId.ReadWrite.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Agent Identity",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
   },
@@ -11673,6 +11793,46 @@
     "Category": "Public Key Infrastructure",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
+  },
+  {
+    "PermissionId": "ef6b83cd-f762-47ff-97d7-6f6f2d0486ea",
+    "PermissionValue": "PullPrintPrinter.FullControl.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Printer Management",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "f369d3b8-fe98-4772-85e1-b23e7cf41982",
+    "PermissionValue": "PullPrintPrinter.Read.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Printer Management",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "deac7994-79bc-44c9-8828-01c1a9a96618",
+    "PermissionValue": "PullPrintPrinter.Read.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Printer Management",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "c628c397-5d7f-4c93-ae0f-4680282fd6d5",
+    "PermissionValue": "PullPrintPrinter.ReadWrite.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Printer Management",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "PermissionId": "ee49e170-1dd1-4030-b44c-61ad6e98f743",

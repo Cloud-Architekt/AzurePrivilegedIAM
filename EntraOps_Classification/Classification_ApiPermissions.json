@@ -28,7 +28,8 @@
           "AgentIdentityBlueprintPrincipal.ReadWrite.All",
           "AgentIdUser.ReadWrite.All",
           "AgentInstance.ReadWrite.All",
-          "AgentRegistration.ReadWrite.All"
+          "AgentRegistration.ReadWrite.All",
+          "LifecyclePolicies-AgentId.ReadWrite.All"
         ]
       },
       {
@@ -43,7 +44,20 @@
           "AgentCard.ReadWrite.ManagedBy",
           "AgentCardManifest.ReadWrite.ManagedBy",
           "AgentCollection.ReadWrite.ManagedBy",
+          "AgentCommunicationConfiguration.ReadWrite.All",
           "AgentInstance.ReadWrite.ManagedBy"
+        ]
+      },
+      {
+        "Category": "Microsoft.Graph",
+        "Service": "Agent Identity",
+        "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+        "ResourceScope": "Delegation",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "AgentCommunicationConfiguration.ReadWrite"
         ]
       },
       {
@@ -410,6 +424,7 @@
           "CloudPC.ReadWrite.All",
           "DeviceManagementApps.ReadWrite.All",
           "DeviceManagementConfiguration.ReadWrite.All",
+          "DeviceManagementDeploymentPlans.ReadWrite.All",
           "DeviceManagementManagedDevices.PrivilegedOperations.All",
           "DeviceManagementManagedDevices.ReadWrite.All",
           "DeviceManagementScripts.ReadWrite.All",
@@ -1626,6 +1641,7 @@
           "DeviceLocalCredential.ReadBasic.All",
           "DeviceManagementApps.Read.All",
           "DeviceManagementConfiguration.Read.All",
+          "DeviceManagementDeploymentPlans.Read.All",
           "DeviceManagementManagedDevices.Read.All",
           "DeviceManagementRBAC.Read.All",
           "DeviceManagementScripts.Read.All",
@@ -2188,7 +2204,8 @@
           "PrintJob.ReadBasic.All",
           "PrintJob.ReadWrite.All",
           "PrintJob.ReadWriteBasic.All",
-          "PrintSettings.Read.All"
+          "PrintSettings.Read.All",
+          "PullPrintPrinter.Read.All"
         ]
       },
       {
@@ -2218,7 +2235,9 @@
           "Printer.Create",
           "Printer.FullControl.All",
           "PrinterShare.ReadWrite.All",
-          "PrintSettings.ReadWrite.All"
+          "PrintSettings.ReadWrite.All",
+          "PullPrintPrinter.FullControl.All",
+          "PullPrintPrinter.ReadWrite.All"
         ]
       },
       {
@@ -2519,6 +2538,7 @@
           "Group-XTenantIdentitySync.Read.All",
           "IdentityUserFlow.Read.All",
           "IdentityNotifications.Read.All",
+          "LifecyclePolicies-AgentId.Read.All",
           "LifecycleWorkflows-CustomExt.Read.All",
           "LifecycleWorkflows-Reports.Read.All",
           "LifecycleWorkflows-Workflow.Read.All",
@@ -2946,6 +2966,7 @@
           "AgentCard.Read.All",
           "AgentCardManifest.Read.All",
           "AgentCollection.Read.All",
+          "AgentCommunicationConfiguration.Read.All",
           "AgentIdentity.Read.All",
           "AgentIdentityBlueprint.Read.All",
           "AgentIdentityBlueprintPrincipal.Read.All",
@@ -2993,6 +3014,7 @@
           "/"
         ],
         "RoleDefinitionActions": [
+          "AgentCommunicationConfiguration.Read",
           "Analytics.Read",
           "Calendars.Read.Shared",
           "Calendars.ReadBasic",
