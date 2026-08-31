@@ -210,6 +210,78 @@
     }
   },
   {
+    "RoleId": "e4ea5ade-238a-4e4a-9e4d-683d809f7072",
+    "RoleName": "Advisor Discoverable Workload Reader",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "View discoverable workloads and their resources.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.Advisor/discoverableWorkloads/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Advisor/workloadResourceMappings/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "UserAccess",
+      "EAMTierLevelTagValue": "2"
+    }
+  },
+  {
+    "RoleId": "98911e7b-8e37-41af-86f4-9258b2a05035",
+    "RoleName": "Advisor Discoverable Workloads Contributor",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Convert discoverable workload into service group.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.Advisor/discoverableWorkloads/convert/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Advisor/discoverableWorkloads/conversionStatus/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Advisor/discoverableWorkloads/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Advisor/workloadResourceMappings/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
     "RoleId": "f680209a-a2a2-4e0d-aa81-5d2a65c13604",
     "RoleName": "Advisor Recommendations Contributor",
     "IsCustom": false,
@@ -568,6 +640,72 @@
         "Category": "Reader Data Access",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "a6b68e3d-a1f0-4c60-8678-237c050cf4ea",
+    "RoleName": "AI Gateway Models User",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Invoke models in the AI Gateway tier of Azure API Management. This role is in preview and subject to change.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.ApiManagement/service/workspaces/models/*",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "dce03f8d-857f-4e40-a90d-67770fa6ecd2",
+    "RoleName": "AI Gateway Tools User",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Invoke MCP servers in the AI Gateway tier of Azure API Management. This role is in preview and subject to change.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.ApiManagement/service/workspaces/toolServers/*",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "caad7a21-134e-43f4-a550-c5ffc17e051c",
+    "RoleName": "AI Gateway User",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Invoke all assets in the AI Gateway tier of Azure API Management. This role is in preview and subject to change.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.ApiManagement/service/workspaces/*",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
       }
     ],
     "Classification": {
@@ -15040,25 +15178,11 @@
     "RoleId": "95dd08a6-00bd-4661-84bf-f6726f83a4d0",
     "RoleName": "Azure Container Storage Contributor",
     "IsCustom": false,
-    "isPrivileged": true,
+    "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
     "RichDescription": "Lets you install Azure Container Storage and manage its storage resources",
     "RolePermissions": [
-      {
-        "AuthorizedResourceAction": "Microsoft.Authorization/roleAssignments/delete",
-        "ActionType": "Action",
-        "Category": "Authorization",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Authorization/roleAssignments/write",
-        "ActionType": "Action",
-        "Category": "Authorization",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
       {
         "AuthorizedResourceAction": "Microsoft.KubernetesConfiguration/extensions/delete",
         "ActionType": "Action",
@@ -15131,8 +15255,8 @@
       }
     ],
     "Classification": {
-      "EAMTierLevelName": "ControlPlane",
-      "EAMTierLevelTagValue": "0"
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
     }
   },
   {
@@ -15144,27 +15268,6 @@
     "InheritsPermissionsFrom": null,
     "RichDescription": "Role required by a Managed Identity for Azure Container Storage operations",
     "RolePermissions": [
-      {
-        "AuthorizedResourceAction": "Microsoft.Compute/virtualMachines/write",
-        "ActionType": "Action",
-        "Category": "Compute",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Compute/virtualMachineScaleSets/virtualMachines/write",
-        "ActionType": "Action",
-        "Category": "Compute",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Compute/virtualMachineScaleSets/write",
-        "ActionType": "Action",
-        "Category": "Compute",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
       {
         "AuthorizedResourceAction": "Microsoft.ElasticSan/elasticSans/*",
         "ActionType": "Action",
@@ -15215,27 +15318,6 @@
         "EAMTierLevelTagValue": "1"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.Compute/virtualMachines/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Compute/virtualMachineScaleSets/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Compute/virtualMachineScaleSets/virtualMachines/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
         "AuthorizedResourceAction": "Microsoft.ElasticSan/locations/asyncoperations/read",
         "ActionType": "Action",
         "Category": "Reader",
@@ -15280,25 +15362,11 @@
     "RoleId": "95de85bd-744d-4664-9dde-11430bc34793",
     "RoleName": "Azure Container Storage Owner",
     "IsCustom": false,
-    "isPrivileged": true,
+    "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
     "RichDescription": "Lets you install Azure Container Storage and grants access to its storage resources",
     "RolePermissions": [
-      {
-        "AuthorizedResourceAction": "Microsoft.Authorization/roleAssignments/delete",
-        "ActionType": "Action",
-        "Category": "Authorization",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Authorization/roleAssignments/write",
-        "ActionType": "Action",
-        "Category": "Authorization",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
       {
         "AuthorizedResourceAction": "Microsoft.ElasticSan/elasticSans/*",
         "ActionType": "Action",
@@ -15406,8 +15474,8 @@
       }
     ],
     "Classification": {
-      "EAMTierLevelName": "ControlPlane",
-      "EAMTierLevelTagValue": "0"
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
     }
   },
   {
@@ -37760,6 +37828,91 @@
     }
   },
   {
+    "RoleId": "1a22653f-3441-4c27-8f4a-ba9f93b30e5d",
+    "RoleName": "Cloud Device Platform Sandbox Partner Data Contributor",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Read and manage resources for Cloud Device Platform sandbox partners.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/sandboxPartners/images/write",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/sandboxPartners/policies/write",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/sandboxPartners/pools/write",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/sandboxPartners/sandboxes/write",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/sandboxPartners/volumes/write",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/sandboxPartners/images/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/sandboxPartners/policies/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/sandboxPartners/pools/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/sandboxPartners/sandboxes/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/sandboxPartners/volumes/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
     "RoleId": "4e9d0bd4-5aab-4f91-92df-9def33fe287c",
     "RoleName": "CloudTest Contributor Role",
     "IsCustom": false,
@@ -42737,6 +42890,28 @@
     "Classification": {
       "EAMTierLevelName": "ManagementPlane",
       "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "2aea396c-91f9-444f-a367-6bd94ab9a5cf",
+    "RoleName": "Container Apps Artifact Data Pull",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Grants content pull permission for Container Apps Artifacts, allowing callers to pull the contents of Artifact versions.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.App/artifacts/versions/pull/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "UserAccess",
+      "EAMTierLevelTagValue": "2"
     }
   },
   {
@@ -51875,7 +52050,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "RichDescription": "Gives you full access to management and content operations",
+    "RichDescription": "Gives you full access to Device Update content and device management operations, with read access to Device Update resources",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.DeviceUpdate/accounts/instances/management/delete",
@@ -51935,6 +52110,20 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.DeviceUpdate/accounts/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.DeviceUpdate/linkedAccounts/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.DeviceUpdate/updateInstances/read",
         "ActionType": "Action",
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",
@@ -52116,7 +52305,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "RichDescription": "Gives you full access to manage Device Update accounts, instances, and private endpoint connections",
+    "RichDescription": "Gives you full access to manage Device Update accounts, instances, linked accounts, linking operations, and private endpoint connections",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.DeviceUpdate/accounts/delete",
@@ -52161,6 +52350,48 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.DeviceUpdate/updateInstances/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.DeviceUpdate/updateInstances/linkInitiate/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.DeviceUpdate/updateInstances/linkNotify/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.DeviceUpdate/updateInstances/linkPreflight/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.DeviceUpdate/updateInstances/linkUpdate/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.DeviceUpdate/updateInstances/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.Insights/alertRules/*",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
@@ -52197,6 +52428,13 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.DeviceUpdate/accounts/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.DeviceUpdate/updateInstances/read",
         "ActionType": "Action",
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",
@@ -52866,6 +53104,17 @@
       "EAMTierLevelName": "UserAccess",
       "EAMTierLevelTagValue": "2"
     }
+  },
+  {
+    "RoleId": "506c2fa4-2713-45d3-a893-4b1360a66e88",
+    "RoleName": "Discovery Log Analytics Cluster Linker - Preview",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Allows the Discovery control plane to link Log Analytics workspaces to a customer's dedicated cluster for CMK (customer-managed key) encryption. Grants only cluster read and write permissions — no storage key access, no VM extensions, no broad read.",
+    "RolePermissions": [],
+    "Classification": null
   },
   {
     "RoleId": "3e5e47e6-65f7-47ef-90b5-e5dd4d455f24",
@@ -57393,6 +57642,92 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.HealthcareApis/workspaces/fhirservices/resources/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "1eedde9e-98e4-4247-8236-e8aa2ffff3b8",
+    "RoleName": "File Share Data Privileged Contributor",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Allows for read, write, and delete access to all files and directories in an Azure file share, overriding the ownership and permissions configured on those files and directories.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.FileShares/fileShares/files/delete",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.FileShares/fileShares/files/modifypermissions/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.FileShares/fileShares/files/write",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.FileShares/fileShares/readFileBackupSemantics/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.FileShares/fileShares/writeFileBackupSemantics/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.FileShares/fileShares/files/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "1cfd6744-7b03-40d9-87bd-9f36e42e1df2",
+    "RoleName": "File Share Data Privileged Reader",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Allows for read access to all files and directories in an Azure file share, overriding the ownership and permissions configured on those files and directories.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.FileShares/fileShares/readFileBackupSemantics/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.FileShares/fileShares/files/read",
         "ActionType": "DataAction",
         "Category": "Reader Data Access",
         "EAMTierLevelName": "UserAccess",
@@ -69676,12 +70011,12 @@
   },
   {
     "RoleId": "8ec773c5-7ce6-4b78-91d1-182f8faa536d",
-    "RoleName": "Microsoft Discovery Bookshelf Index Data Reader - Preview",
+    "RoleName": "Microsoft Discovery Bookshelf Index Data Reader",
     "IsCustom": false,
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "RichDescription": "Grants query access to search and retrieve data from Microsoft Discovery Bookshelf knowledge bases, and read-only access to list Bookshelves and their knowledge bases. This is the minimum role required to use the retrieve action when linking a knowledge base to an agent. This role is in preview and subject to change.",
+    "RichDescription": "Grants query access to search and retrieve data from Microsoft Discovery Bookshelf knowledge bases, and read-only access to list Bookshelves and their knowledge bases. This is the minimum role required to use the retrieve action when linking a knowledge base to an agent.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.Discovery/bookshelf/knowledgeBaseVersions/query/action",
@@ -69741,12 +70076,12 @@
   },
   {
     "RoleId": "7a2b6e6c-472e-4b39-8878-a26eb63d75c6",
-    "RoleName": "Microsoft Discovery Platform Administrator (Preview)",
+    "RoleName": "Microsoft Discovery Platform Administrator",
     "IsCustom": false,
     "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "RichDescription": "Grants full access to manage Microsoft.Discovery resources. This role is in preview and subject to change.",
+    "RichDescription": "Grants full access to manage Microsoft.Discovery resources.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.Authorization/roleAssignments/delete",
@@ -69854,12 +70189,12 @@
   },
   {
     "RoleId": "01288891-85ee-45a7-b367-9db3b752fc65",
-    "RoleName": "Microsoft Discovery Platform Contributor (Preview)",
+    "RoleName": "Microsoft Discovery Platform Contributor",
     "IsCustom": false,
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "RichDescription": "Grants permissions to view and operate on most Discovery platform resources, including workspaces, supercomputers, storages, agents, bookshelves, data containers, models, tools, workflows, and investigations, as well as perform data plane actions, but does not allow creating, updating, or deleting core resources such as workspaces, supercomputers, storages, bookshelves, node pools, or projects. This role is in preview and subject to change.",
+    "RichDescription": "Grants permissions to view and operate on most Discovery platform resources, including workspaces, supercomputers, storages, agents, bookshelves, data containers, models, tools, workflows, and investigations, as well as perform data plane actions, but does not allow creating, updating, or deleting core resources such as workspaces, supercomputers, storages, bookshelves, node pools, or projects.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.Discovery/*",
@@ -70037,12 +70372,12 @@
   },
   {
     "RoleId": "3bb7c424-af4e-436b-bfcc-8779c8934c31",
-    "RoleName": "Microsoft Discovery Platform Reader (Preview)",
+    "RoleName": "Microsoft Discovery Platform Reader",
     "IsCustom": false,
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "RichDescription": "Grants readonly permissions to view Microsoft.Discovery resources. This role in preview and subject to change.",
+    "RichDescription": "Grants readonly permissions to view Microsoft.Discovery resources.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.Discovery/*/read",
@@ -75955,6 +76290,20 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.BillingBenefits/spendPlans/cancel/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.BillingBenefits/spendPlans/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.EnterpriseSupport/enterpriseSupports/delete",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
@@ -76312,6 +76661,20 @@
         "EAMTierLevelTagValue": "2"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.BillingBenefits/spendPlans/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.BillingBenefits/spendPlans/terms/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.EnterpriseSupport/enterpriseSupports/read",
         "ActionType": "Action",
         "Category": "Reader",
@@ -76573,6 +76936,20 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.BillingBenefits/register/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.BillingBenefits/spendPlans/cancel/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.BillingBenefits/spendPlans/write",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
@@ -76965,6 +77342,20 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.BillingBenefits/maccs/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.BillingBenefits/spendPlans/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.BillingBenefits/spendPlans/terms/read",
         "ActionType": "Action",
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",
@@ -87111,7 +87502,14 @@
     "RichDescription": "Has access to view and search through all video's insights and transcription in the Video Indexer portal. No access to model customization, embedding of widget, downloading videos, or sharing the account.",
     "RolePermissions": [
       {
-        "AuthorizedResourceAction": "Microsoft.VideoIndexer/accounts/*/action",
+        "AuthorizedResourceAction": "Microsoft.VideoIndexer/accounts/generateExtensionRestrictedViewerAccessToken/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.VideoIndexer/accounts/generateRestrictedViewerAccessToken/action",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
         "EAMTierLevelName": "ManagementPlane",

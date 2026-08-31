@@ -1830,7 +1830,7 @@
     "EAMTierLevelTagValue": "2"
   },
   {
-    "PermissionId": "9b005f11-86f0-45f7-8c27-4fff5d849916",
+    "PermissionId": "6222dbab-a24c-4210-9d91-2f47cf565614",
     "PermissionValue": "User.ReadBasic.All",
     "PermissionType": "Delegated",
     "TargetAppDisplayName": "Exchange Online",
@@ -1840,7 +1840,7 @@
     "EAMTierLevelTagValue": "2"
   },
   {
-    "PermissionId": "6222dbab-a24c-4210-9d91-2f47cf565614",
+    "PermissionId": "9b005f11-86f0-45f7-8c27-4fff5d849916",
     "PermissionValue": "User.ReadBasic.All",
     "PermissionType": "Delegated",
     "TargetAppDisplayName": "Exchange Online",
@@ -16055,6 +16055,16 @@
     "EAMTierLevelTagValue": "2"
   },
   {
+    "PermissionId": "712f5e0d-bc8d-4ae5-8242-cfb9a4921ed3",
+    "PermissionValue": "UserAuthenticationMethod.Delete.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
     "PermissionId": "1f6b61c5-2f65-4135-9c9f-31c0f8d32b52",
     "PermissionValue": "UserAuthenticationMethod.Read",
     "PermissionType": "Delegated",
@@ -16108,6 +16118,16 @@
     "PermissionId": "b7887744-6746-4312-813d-72daeaee7e2d",
     "PermissionValue": "UserAuthenticationMethod.ReadWrite.All",
     "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "PermissionId": "f0e9adfd-ed6b-45f5-b969-324a75286a39",
+    "PermissionValue": "UserAuthMethod-Email.Delete.All",
+    "PermissionType": "Application",
     "TargetAppDisplayName": "Microsoft Graph",
     "TargetAppId": "00000003-0000-0000-c000-000000000000",
     "Category": "Authentication",
@@ -16175,6 +16195,16 @@
     "EAMTierLevelTagValue": "0"
   },
   {
+    "PermissionId": "7fa6d39e-1e4e-44be-bf9c-e8260b12e1f5",
+    "PermissionValue": "UserAuthMethod-External.Delete.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
     "PermissionId": "d1739827-146b-4f7f-b52c-1c509253aa57",
     "PermissionValue": "UserAuthMethod-External.Read",
     "PermissionType": "Delegated",
@@ -16228,6 +16258,16 @@
     "PermissionId": "9d91805d-0f53-43e3-a0f3-303ad4f3056f",
     "PermissionValue": "UserAuthMethod-External.ReadWrite.All",
     "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "PermissionId": "9d8eb432-7ea3-491a-9ed7-e6361b308f08",
+    "PermissionValue": "UserAuthMethod-HardwareOATH.Delete.All",
+    "PermissionType": "Application",
     "TargetAppDisplayName": "Microsoft Graph",
     "TargetAppId": "00000003-0000-0000-c000-000000000000",
     "Category": "Authentication",
@@ -16295,6 +16335,16 @@
     "EAMTierLevelTagValue": "0"
   },
   {
+    "PermissionId": "ae494ca6-9612-417a-972a-ef52efaf2de3",
+    "PermissionValue": "UserAuthMethod-MicrosoftAuthApp.Delete.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
     "PermissionId": "f14a567b-3280-4124-95a0-eca86006967e",
     "PermissionValue": "UserAuthMethod-MicrosoftAuthApp.Read",
     "PermissionType": "Delegated",
@@ -16348,6 +16398,16 @@
     "PermissionId": "1b7322b2-5cb3-4f13-928f-d7ca97c5fba9",
     "PermissionValue": "UserAuthMethod-MicrosoftAuthApp.ReadWrite.All",
     "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "PermissionId": "9563fbd0-03a7-466e-8042-63d668b7d1a3",
+    "PermissionValue": "UserAuthMethod-Passkey.Delete.All",
+    "PermissionType": "Application",
     "TargetAppDisplayName": "Microsoft Graph",
     "TargetAppId": "00000003-0000-0000-c000-000000000000",
     "Category": "Authentication",
@@ -16475,6 +16535,16 @@
     "EAMTierLevelTagValue": "0"
   },
   {
+    "PermissionId": "59f17651-8b6c-494e-a269-4ac582fbbca0",
+    "PermissionValue": "UserAuthMethod-Phone.Delete.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
     "PermissionId": "43dab3b9-e8b4-424d-8e13-6a2ad2a625fa",
     "PermissionValue": "UserAuthMethod-Phone.Read",
     "PermissionType": "Delegated",
@@ -16528,6 +16598,16 @@
     "PermissionId": "48c99302-9a24-4f27-a8a7-acef4debba14",
     "PermissionValue": "UserAuthMethod-Phone.ReadWrite.All",
     "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "PermissionId": "bd760918-651f-4e67-b66f-8f614384dec2",
+    "PermissionValue": "UserAuthMethod-PlatformCred.Delete.All",
+    "PermissionType": "Application",
     "TargetAppDisplayName": "Microsoft Graph",
     "TargetAppId": "00000003-0000-0000-c000-000000000000",
     "Category": "Authentication",
@@ -16595,6 +16675,16 @@
     "EAMTierLevelTagValue": "0"
   },
   {
+    "PermissionId": "e1c34213-26ac-400b-9548-a749f1b1a4e0",
+    "PermissionValue": "UserAuthMethod-QR.Delete.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
     "PermissionId": "d6893c31-9187-405c-8dfc-f700c8fc161a",
     "PermissionValue": "UserAuthMethod-QR.Read",
     "PermissionType": "Delegated",
@@ -16655,6 +16745,16 @@
     "EAMTierLevelTagValue": "0"
   },
   {
+    "PermissionId": "a71aecaf-82f1-47c5-ad0a-5e63503b928f",
+    "PermissionValue": "UserAuthMethod-ResourceKey.Delete.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
     "PermissionId": "94ed018c-a499-47e0-beef-803b93873ece",
     "PermissionValue": "UserAuthMethod-ResourceKey.Read.All",
     "PermissionType": "Application",
@@ -16688,6 +16788,16 @@
     "PermissionId": "e71dec0d-02b4-429d-a49a-030950d45faa",
     "PermissionValue": "UserAuthMethod-ResourceKey.ReadWrite.All",
     "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "PermissionId": "e5676e10-1a16-452b-ad10-71f54b755852",
+    "PermissionValue": "UserAuthMethod-SoftwareOATH.Delete.All",
+    "PermissionType": "Application",
     "TargetAppDisplayName": "Microsoft Graph",
     "TargetAppId": "00000003-0000-0000-c000-000000000000",
     "Category": "Authentication",
@@ -16755,6 +16865,16 @@
     "EAMTierLevelTagValue": "0"
   },
   {
+    "PermissionId": "4f872e9d-d232-4ecd-ab9c-337cbdb184e5",
+    "PermissionValue": "UserAuthMethod-TAP.Delete.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
     "PermissionId": "84ded88f-26ba-49d6-b776-efec398de692",
     "PermissionValue": "UserAuthMethod-TAP.Read",
     "PermissionType": "Delegated",
@@ -16808,6 +16928,16 @@
     "PermissionId": "05de4a66-e51a-4312-842a-30c8094698d2",
     "PermissionValue": "UserAuthMethod-TAP.ReadWrite.All",
     "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "PermissionId": "f3197110-aa7f-4acd-a0fd-71981ad68d42",
+    "PermissionValue": "UserAuthMethod-WindowsHello.Delete.All",
+    "PermissionType": "Application",
     "TargetAppDisplayName": "Microsoft Graph",
     "TargetAppId": "00000003-0000-0000-c000-000000000000",
     "Category": "Authentication",

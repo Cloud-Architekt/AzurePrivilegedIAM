@@ -11414,6 +11414,30 @@
         "EAMTierLevelTagValue": "0"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/users/disable",
+        "Category": "Global User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/users/enable",
+        "Category": "Global User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/users/invalidateAllRefreshTokens",
+        "Category": "Global User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/users/password/update",
+        "Category": "Global User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/identityProtection/allProperties/update",
         "Category": "Identity Threat Detection and Response",
         "EAMTierLevelName": "ControlPlane",
@@ -14060,12 +14084,6 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/accessReviews/definitions.groups/delete",
-        "Category": "Entitlement Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/entitlementManagement/allProperties/allTasks",
         "Category": "Entitlement Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
