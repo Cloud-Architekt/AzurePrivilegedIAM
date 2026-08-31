@@ -15178,11 +15178,25 @@
     "RoleId": "95dd08a6-00bd-4661-84bf-f6726f83a4d0",
     "RoleName": "Azure Container Storage Contributor",
     "IsCustom": false,
-    "isPrivileged": false,
+    "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
     "RichDescription": "Lets you install Azure Container Storage and manage its storage resources",
     "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.Authorization/roleAssignments/delete",
+        "ActionType": "Action",
+        "Category": "Authorization",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Authorization/roleAssignments/write",
+        "ActionType": "Action",
+        "Category": "Authorization",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
       {
         "AuthorizedResourceAction": "Microsoft.KubernetesConfiguration/extensions/delete",
         "ActionType": "Action",
@@ -15255,8 +15269,8 @@
       }
     ],
     "Classification": {
-      "EAMTierLevelName": "ManagementPlane",
-      "EAMTierLevelTagValue": "1"
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
     }
   },
   {
@@ -15268,6 +15282,27 @@
     "InheritsPermissionsFrom": null,
     "RichDescription": "Role required by a Managed Identity for Azure Container Storage operations",
     "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.Compute/virtualMachines/write",
+        "ActionType": "Action",
+        "Category": "Compute",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Compute/virtualMachineScaleSets/virtualMachines/write",
+        "ActionType": "Action",
+        "Category": "Compute",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Compute/virtualMachineScaleSets/write",
+        "ActionType": "Action",
+        "Category": "Compute",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
       {
         "AuthorizedResourceAction": "Microsoft.ElasticSan/elasticSans/*",
         "ActionType": "Action",
@@ -15318,6 +15353,27 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.Compute/virtualMachines/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Compute/virtualMachineScaleSets/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Compute/virtualMachineScaleSets/virtualMachines/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.ElasticSan/locations/asyncoperations/read",
         "ActionType": "Action",
         "Category": "Reader",
@@ -15362,11 +15418,25 @@
     "RoleId": "95de85bd-744d-4664-9dde-11430bc34793",
     "RoleName": "Azure Container Storage Owner",
     "IsCustom": false,
-    "isPrivileged": false,
+    "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
     "RichDescription": "Lets you install Azure Container Storage and grants access to its storage resources",
     "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.Authorization/roleAssignments/delete",
+        "ActionType": "Action",
+        "Category": "Authorization",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Authorization/roleAssignments/write",
+        "ActionType": "Action",
+        "Category": "Authorization",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
       {
         "AuthorizedResourceAction": "Microsoft.ElasticSan/elasticSans/*",
         "ActionType": "Action",
@@ -15474,8 +15544,8 @@
       }
     ],
     "Classification": {
-      "EAMTierLevelName": "ManagementPlane",
-      "EAMTierLevelTagValue": "1"
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
     }
   },
   {
