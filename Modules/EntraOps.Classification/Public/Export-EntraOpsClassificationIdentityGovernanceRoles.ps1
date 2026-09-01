@@ -111,7 +111,7 @@ function Export-EntraOpsClassificationIdentityGovernanceRoles {
         $IdentityGovernanceRolePermissions = @($_.RolePermissions.allowedResourceActions)
 
         # Include role actions inherited via inheritsPermissionsFrom (e.g. custom roles based on a built-in template)
-        $InheritsPermissionsFromIds = @($_.inheritsPermissionsFrom | Select-Object -ExpandProperty id)
+        $InheritsPermissionsFromIds = @($_.inheritsPermissionsFrom | Select-Object -ExpandProperty id | Sort-Object -Unique)
         if ($IncludeInheritedPermissions -eq $True -and $InheritsPermissionsFromIds.Count -gt 0) {
             $VisitedRoleIds = [System.Collections.Generic.HashSet[string]]::new()
             $VisitedRoleIds.Add($_.templateId) | Out-Null
@@ -148,11 +148,12 @@ function Export-EntraOpsClassificationIdentityGovernanceRoles {
                 "EAMTierLevelTagValue"     = $IdentityGovernanceRolePermissionTierLevelClassification.EAMTierLevelTagValue
             }
         }
+        $ClassifiedIdentityGovernanceRolePermissions = $ClassifiedIdentityGovernanceRolePermissions | Sort-Object EAMTierLevelTagValue, Category, AuthorizedResourceAction
 
         if ($SingleClassification -eq $True) {
             $RoleDefinitionClassification = ($ClassifiedIdentityGovernanceRolePermissions | select-object -ExcludeProperty AuthorizedResourceAction, Category -Unique | Sort-Object EAMTierLevelTagValue | select-object -First 1)
         } else {
-            $FilteredRoleClassifications = ($ClassifiedIdentityGovernanceRolePermissions | select-object -ExcludeProperty AuthorizedResourceAction -Unique | Sort-Object EAMTierLevelTagValue )
+            $FilteredRoleClassifications = ($ClassifiedIdentityGovernanceRolePermissions | select-object -ExcludeProperty AuthorizedResourceAction -Unique | Sort-Object EAMTierLevelTagValue, Category)
             $RoleDefinitionClassification = [System.Collections.Generic.List[object]]::new()
             $RoleDefinitionClassification.Add($FilteredRoleClassifications)
         }
@@ -169,6 +170,6 @@ function Export-EntraOpsClassificationIdentityGovernanceRoles {
         }
     }
 
-    $IdentityGovernanceRoles = $IdentityGovernanceRoles | sort-object RoleName
+    $IdentityGovernanceRoles = $IdentityGovernanceRoles | Sort-Object RoleName, RoleId
     $IdentityGovernanceRoles | ConvertTo-Json -Depth 10 | Out-File $ExportFile -Force
 }

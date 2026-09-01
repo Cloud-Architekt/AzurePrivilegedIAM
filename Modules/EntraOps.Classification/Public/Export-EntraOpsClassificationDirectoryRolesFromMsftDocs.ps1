@@ -226,7 +226,7 @@ function Export-EntraOpsClassificationDirectoryRolesFromMsftDocs {
         if ($SingleClassification -eq $True) {
             $RoleDefinitionClassification = ($ClassifiedDirectoryRolePermissions | Select-Object -ExcludeProperty AuthorizedResourceAction, Category -Unique | Sort-Object EAMTierLevelTagValue | Select-Object -First 1)
         } else {
-            $FilteredRoleClassifications = ($ClassifiedDirectoryRolePermissions | Select-Object -ExcludeProperty AuthorizedResourceAction -Unique | Sort-Object EAMTierLevelTagValue )
+            $FilteredRoleClassifications = ($ClassifiedDirectoryRolePermissions | Select-Object -ExcludeProperty AuthorizedResourceAction -Unique | Sort-Object EAMTierLevelTagValue, Category)
             $RoleDefinitionClassification = [System.Collections.Generic.List[object]]::new()
             $RoleDefinitionClassification.Add($FilteredRoleClassifications)
         }
@@ -276,7 +276,7 @@ function Export-EntraOpsClassificationDirectoryRolesFromMsftDocs {
         ) | Out-Null
     }
 
-    $DirectoryRoles = $DirectoryRoles | Sort-Object RoleName
+    $DirectoryRoles = $DirectoryRoles | Sort-Object RoleName, RoleId
 
     $OutputDirectory = Split-Path -Path $OutputFilePath -Parent
     if (-not [string]::IsNullOrEmpty($OutputDirectory) -and -not (Test-Path -Path $OutputDirectory)) {

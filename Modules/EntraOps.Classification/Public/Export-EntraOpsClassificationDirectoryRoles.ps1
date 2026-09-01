@@ -11,7 +11,8 @@ function Export-EntraOpsClassificationDirectoryRoles {
         Use the highest tier level classification only for each role definition. Default is $True.
 
     .PARAMETER FilteredConditions
-        List of role permission conditions to exclude from classification. Default filters out '$ResourceIsSelf' and '$SubjectIsOwner'.
+        List of role permission conditions to exclude from classification. Default filters out '$ResourceIsSelf'.
+        '$SubjectIsOwner' is always excluded because owner-scoped actions are not tenant-wide privileges.
 
     .PARAMETER IncludeCustomRoles
         Include custom role definitions in addition to built-in roles.
@@ -38,13 +39,21 @@ function Export-EntraOpsClassificationDirectoryRoles {
         $SingleClassification = $True
         ,
         [Parameter(Mandatory = $false)]
-        $FilteredConditions = @('$ResourceIsSelf', '$SubjectIsOwner')
+        $FilteredConditions = @('$ResourceIsSelf')
         ,
         [Parameter(Mandatory = $false)]
         $IncludeCustomRoles = $False
         ,
         [Parameter(Mandatory = $false)]
         $IncludeInheritedPermissions = $false
+    )
+
+    # Keep the owner-only exclusion mandatory even when a caller supplies a custom filter list.
+    $FilteredConditions = @(
+        @($FilteredConditions) + '$SubjectIsOwner' |
+        ForEach-Object { "$($_)".Trim() } |
+        Where-Object { -not [string]::IsNullOrEmpty($_) } |
+        Select-Object -Unique
     )
 
     # Resolve role actions inherited via "inheritsPermissionsFrom" (e.g. a custom role based on a built-in role
@@ -105,7 +114,7 @@ function Export-EntraOpsClassificationDirectoryRoles {
     $RoleActionsLookup = @{}
     foreach ($RoleDef in $DirectoryRoleDefinitions) {
         $RoleActionsLookup[$RoleDef.templateId] = [PSCustomObject]@{
-            Actions      = @(($RoleDef.RolePermissions | Where-Object { $_.condition -notin $FilteredConditions }).allowedResourceActions)
+            Actions      = @(($RoleDef.RolePermissions | Where-Object { "$($_.condition)".Trim() -notin $FilteredConditions }).allowedResourceActions)
             InheritsFrom = @($RoleDef.inheritsPermissionsFrom | Select-Object -ExpandProperty id)
         }
     }
@@ -116,10 +125,10 @@ function Export-EntraOpsClassificationDirectoryRoles {
 
     $DirectoryRoles = $DirectoryRoleDefinitions | foreach-object {
 
-        $DirectoryRolePermissions = @(($_.RolePermissions | Where-Object { $_.condition -notin $FilteredConditions }).allowedResourceActions)
+        $DirectoryRolePermissions = @(($_.RolePermissions | Where-Object { "$($_.condition)".Trim() -notin $FilteredConditions }).allowedResourceActions)
 
         # Include role actions inherited via inheritsPermissionsFrom (e.g. custom roles based on a built-in template)
-        $InheritsPermissionsFromIds = @($_.inheritsPermissionsFrom | Select-Object -ExpandProperty id)
+        $InheritsPermissionsFromIds = @($_.inheritsPermissionsFrom | Select-Object -ExpandProperty id | Sort-Object -Unique)
         if ($IncludeInheritedPermissions -eq $True -and $InheritsPermissionsFromIds.Count -gt 0) {
             $VisitedRoleIds = [System.Collections.Generic.HashSet[string]]::new()
             $VisitedRoleIds.Add($_.templateId) | Out-Null
@@ -165,7 +174,7 @@ function Export-EntraOpsClassificationDirectoryRoles {
         if ($SingleClassification -eq $True) {
             $RoleDefinitionClassification = ($ClassifiedDirectoryRolePermissions | select-object -ExcludeProperty AuthorizedResourceAction, Category -Unique | Sort-Object EAMTierLevelTagValue | select-object -First 1)
         } else {
-            $FilteredRoleClassifications = ($ClassifiedDirectoryRolePermissions | select-object -ExcludeProperty AuthorizedResourceAction -Unique | Sort-Object EAMTierLevelTagValue )
+            $FilteredRoleClassifications = ($ClassifiedDirectoryRolePermissions | select-object -ExcludeProperty AuthorizedResourceAction -Unique | Sort-Object EAMTierLevelTagValue, Category)
             $RoleDefinitionClassification = [System.Collections.Generic.List[object]]::new()
             $RoleDefinitionClassification.Add($FilteredRoleClassifications)        
         }
@@ -182,7 +191,14 @@ function Export-EntraOpsClassificationDirectoryRoles {
                 "EAMTierLevelName"     = "ManagementPlane"
                 "EAMTierLevelTagValue" = "1"
             }
-        }        
+        }
+
+        $RoleCategories = @($_.categories | Sort-Object -Unique)
+        if ($RoleCategories.Count -eq 0) {
+            $RoleCategories = $null
+        } elseif ($RoleCategories.Count -eq 1) {
+            $RoleCategories = $RoleCategories[0]
+        }
 
         [PSCustomObject]@{
             "RoleId"                  = $_.templateId
@@ -190,13 +206,13 @@ function Export-EntraOpsClassificationDirectoryRoles {
             "isPrivileged"            = $_.isPrivileged
             "AssignmentMode"          = $_.assignmentMode
             "InheritsPermissionsFrom" = $InheritsPermissionsFromIds
-            "Categories"              = $_.categories
+            "Categories"              = $RoleCategories
             "RichDescription"         = $_.richDescription
             "RolePermissions"         = @($ClassifiedDirectoryRolePermissions) 
             "Classification"          = $RoleDefinitionClassification
         }    
     }
 
-    $DirectoryRoles = $DirectoryRoles | sort-object RoleName
+    $DirectoryRoles = $DirectoryRoles | Sort-Object RoleName, RoleId
     $DirectoryRoles | ConvertTo-Json -Depth 10 | Out-File .\Classification\Classification_EntraIdDirectoryRoles.json -Force
 }
