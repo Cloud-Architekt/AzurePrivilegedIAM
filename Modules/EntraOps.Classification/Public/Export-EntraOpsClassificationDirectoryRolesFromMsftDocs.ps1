@@ -253,12 +253,11 @@ function Export-EntraOpsClassificationDirectoryRolesFromMsftDocs {
         }
         #endregion
 
-        # Derive the role categories from the distinct service classifications of the role actions
-        $Categories = ($ClassifiedDirectoryRolePermissions | Select-Object -ExpandProperty Category -Unique | Where-Object { $_ -ne "Unclassified" } | Sort-Object)
-        if ($null -eq $Categories -or @($Categories).Count -eq 0) {
-            $Categories = "Unclassified"
-        } elseif (@($Categories).Count -eq 1) {
-            $Categories = @($Categories)[0]
+        # Derive the role categories from the distinct service classifications of the role actions.
+        # Stays an array so the JSON type does not depend on the number of categories.
+        $Categories = @($ClassifiedDirectoryRolePermissions | Select-Object -ExpandProperty Category -Unique | Where-Object { $_ -ne "Unclassified" } | Sort-Object)
+        if ($Categories.Count -eq 0) {
+            $Categories = @("Unclassified")
         }
 
         $DirectoryRoles.Add(

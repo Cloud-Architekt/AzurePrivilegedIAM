@@ -165,7 +165,7 @@ function Export-EntraOpsClassificationIdentityGovernanceRoles {
             "AssignmentMode"          = $_.assignmentMode
             "InheritsPermissionsFrom" = $InheritsPermissionsFromIds
             "RichDescription"         = $_.description
-            "RolePermissions"         = $ClassifiedIdentityGovernanceRolePermissions
+            "RolePermissions"         = @($ClassifiedIdentityGovernanceRolePermissions)
             "Classification"          = $RoleDefinitionClassification
         }
     }

@@ -165,7 +165,7 @@ function Export-EntraOpsClassificationDeviceManagementRoles {
             "isPrivileged"            = $_.isPrivileged
             "AssignmentMode"          = $_.assignmentMode
             "InheritsPermissionsFrom" = $InheritsPermissionsFromIds
-            "RolePermissions"         = $ClassifiedDeviceRolePermissions
+            "RolePermissions"         = @($ClassifiedDeviceRolePermissions)
             "Classification"          = $RoleDefinitionClassification
         }
     }

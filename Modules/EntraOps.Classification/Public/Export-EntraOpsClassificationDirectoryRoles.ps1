@@ -193,11 +193,11 @@ function Export-EntraOpsClassificationDirectoryRoles {
             }
         }
 
+        # Stays an array so the JSON type does not depend on the number of categories.
+        # Absent categories are emitted as null, which reporting apps render as "no value".
         $RoleCategories = @($_.categories | Sort-Object -Unique)
         if ($RoleCategories.Count -eq 0) {
             $RoleCategories = $null
-        } elseif ($RoleCategories.Count -eq 1) {
-            $RoleCategories = $RoleCategories[0]
         }
 
         [PSCustomObject]@{
