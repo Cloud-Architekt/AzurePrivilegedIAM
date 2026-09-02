@@ -174,7 +174,9 @@ function Export-EntraOpsClassificationApiPermissions {
         }
 
     # ── Sort final output ────────────────────────────────────────────────────────
-    $MergedOutput = $MergedOutput | Sort-Object TargetAppDisplayName, PermissionValue, PermissionType
+    # Display names and permission values are not guaranteed to be unique. Use the
+    # target application and permission IDs as final deterministic tie-breakers.
+    $MergedOutput = $MergedOutput | Sort-Object TargetAppDisplayName, PermissionValue, PermissionType, TargetAppId, PermissionId
 
     # ── Write output ─────────────────────────────────────────────────────────────
     $OutputPath = ".\Classification\Classification_ApiPermissions.json"

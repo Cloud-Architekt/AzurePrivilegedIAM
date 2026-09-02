@@ -3,9 +3,8 @@ function Sync-EntraOpsClassificationExplorerSource {
 
     <#
     .SYNOPSIS
-        Syncs the canonical Classification Explorer app source (and its generator script) from the
-        AzurePrivilegedIAM repository into the EntraOps repository, so both deployments run from a
-        single maintained copy of the code.
+        Syncs the canonical classification templates, Classification Explorer app source, and its
+        generator script from the AzurePrivilegedIAM repository into the EntraOps repository.
 
     .DESCRIPTION
         ClassificationExplorer app source (HTML/CSS/JS/content/assets) is edited once, in this
@@ -21,6 +20,10 @@ function Sync-EntraOpsClassificationExplorerSource {
         The shared generator function is also copied into <EntraOpsRoot>/EntraOps/Public/Reportings/,
         so it is dot-sourced and exported directly as a public function of the EntraOps module
         (same as every Export-EntraOps* cmdlet here) - no separate wrapper/path-resolution step is needed.
+
+        Classification templates are mirrored from <RepoRoot>/EntraOps_Classification into
+        <EntraOpsRoot>/Classification/Templates. Stale files in the target Templates folder are
+        removed; tenant-specific classification folders alongside Templates are not touched.
 
         Run this after making any change to the app source (HTML/CSS/JS/content) or to the generator
         function, then run Update-EntraOpsClassificationExplorerData in each repository to regenerate the
@@ -67,10 +70,14 @@ function Sync-EntraOpsClassificationExplorerSource {
     }
     $RepoRoot = Resolve-FullPath $RepoRoot
     $SourceAppRoot = Join-Path $RepoRoot 'ClassificationExplorer'
+    $SourceTemplateRoot = Join-Path $RepoRoot 'EntraOps_Classification'
     $SourceGenerator = Join-Path $RepoRoot 'Modules/EntraOps.Classification/Public/Update-EntraOpsClassificationExplorerData.ps1'
 
     if (-not (Test-Path -LiteralPath $SourceAppRoot -PathType Container)) {
         throw "Source app folder not found: $SourceAppRoot"
+    }
+    if (-not (Test-Path -LiteralPath $SourceTemplateRoot -PathType Container)) {
+        throw "Source classification template folder not found: $SourceTemplateRoot"
     }
     if (-not (Test-Path -LiteralPath $SourceGenerator -PathType Leaf)) {
         throw "Source generator function file not found: $SourceGenerator"
@@ -93,6 +100,7 @@ function Sync-EntraOpsClassificationExplorerSource {
     }
     $EntraOpsRoot = Resolve-FullPath $EntraOpsRoot
     $TargetAppRoot = Join-Path $EntraOpsRoot 'Reports/ClassificationExplorer'
+    $TargetTemplateRoot = Join-Path $EntraOpsRoot 'Classification/Templates'
     $TargetGeneratorDir = Join-Path $EntraOpsRoot 'EntraOps/Public/Reportings'
 
     if (-not (Test-Path -LiteralPath $TargetAppRoot -PathType Container)) {
@@ -164,6 +172,45 @@ function Sync-EntraOpsClassificationExplorerSource {
         }
     }
 
+    # --- Classification templates ------------------------------------------------------------
+    # Classification/Templates is the canonical template copy in EntraOps. Mirror this folder
+    # exactly, but do not touch tenant-specific folders next to Templates under Classification.
+    if (-not (Test-Path -LiteralPath $TargetTemplateRoot -PathType Container)) {
+        if ($PSCmdlet.ShouldProcess($TargetTemplateRoot, 'Create classification template directory')) {
+            New-Item -ItemType Directory -Path $TargetTemplateRoot -Force | Out-Null
+        }
+    }
+
+    $templatesCopied = New-Object System.Collections.Generic.List[string]
+    Get-ChildItem -LiteralPath $SourceTemplateRoot -Recurse -File | ForEach-Object {
+        $rel = $_.FullName.Substring($SourceTemplateRoot.Length + 1) -replace '\\', '/'
+        if ($rel -eq '.DS_Store' -or $rel.EndsWith('/.DS_Store')) { return }
+        $destPath = Join-Path $TargetTemplateRoot $rel
+        $destDir = Split-Path -Parent $destPath
+        if (-not (Test-Path -LiteralPath $destDir -PathType Container)) {
+            if ($PSCmdlet.ShouldProcess($destDir, 'Create classification template directory')) {
+                New-Item -ItemType Directory -Path $destDir -Force | Out-Null
+            }
+        }
+        if ($PSCmdlet.ShouldProcess($destPath, 'Copy classification template')) {
+            Copy-Item -LiteralPath $_.FullName -Destination $destPath -Force
+        }
+        $templatesCopied.Add($rel) | Out-Null
+    }
+
+    if (Test-Path -LiteralPath $TargetTemplateRoot -PathType Container) {
+        Get-ChildItem -LiteralPath $TargetTemplateRoot -Recurse -File | ForEach-Object {
+            $rel = $_.FullName.Substring($TargetTemplateRoot.Length + 1) -replace '\\', '/'
+            if ($rel -eq '.DS_Store' -or $rel.EndsWith('/.DS_Store')) { return }
+            $srcPath = Join-Path $SourceTemplateRoot $rel
+            if (-not (Test-Path -LiteralPath $srcPath -PathType Leaf)) {
+                if ($PSCmdlet.ShouldProcess($_.FullName, 'Remove stale classification template')) {
+                    Remove-Item -LiteralPath $_.FullName -Force
+                }
+            }
+        }
+    }
+
     # --- Shared generator function ------------------------------------------------------------
     if (-not (Test-Path -LiteralPath $TargetGeneratorDir)) {
         if ($PSCmdlet.ShouldProcess($TargetGeneratorDir, 'Create directory')) {
@@ -184,11 +231,12 @@ function Sync-EntraOpsClassificationExplorerSource {
         }
     }
 
-    Write-Host "Classification Explorer source sync complete." -ForegroundColor Green
+    Write-Host "EntraOps repository sync complete." -ForegroundColor Green
     Write-Host ("  Source        : {0}" -f $SourceAppRoot)
     Write-Host ("  Target        : {0}" -f $TargetAppRoot)
     Write-Host ("  Files synced  : {0}" -f $copied.Count)
     Write-Host ("  Files skipped : {0} ({1})" -f $skipped.Count, ($skipped -join ', '))
+    Write-Host ("  Templates     : {0} files -> {1}" -f $templatesCopied.Count, $TargetTemplateRoot)
     Write-Host ("  Generator     : {0}" -f $TargetGenerator)
     Write-Host ""
     Write-Host "Next steps:" -ForegroundColor Yellow

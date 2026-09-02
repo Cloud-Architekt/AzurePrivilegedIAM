@@ -551,7 +551,7 @@
                 "Category": "Microsoft.Azure",
                 "Service": "Authorization",
                 "RoleAssignmentScopeName": [
-                    <Tier1IncludedResourceScope>
+                    "/*"
                 ],
                 "ExcludedRoleAssignmentScopeName": [
                     <Tier0IncludedResourceScope>

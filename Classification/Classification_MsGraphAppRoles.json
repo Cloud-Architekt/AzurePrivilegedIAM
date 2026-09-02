@@ -5396,6 +5396,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "712f5e0d-bc8d-4ae5-8242-cfb9a4921ed3",
+    "AppRoleDisplayName": "UserAuthenticationMethod.Delete.All",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "38d9df27-64da-44fd-b7c5-a6fbac20248f",
     "AppRoleDisplayName": "UserAuthenticationMethod.Read.All",
     "Category": "Default Member",
@@ -5406,6 +5414,14 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "50483e42-d915-4231-9639-7fdb7fd190e5",
     "AppRoleDisplayName": "UserAuthenticationMethod.ReadWrite.All",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "f0e9adfd-ed6b-45f5-b969-324a75286a39",
+    "AppRoleDisplayName": "UserAuthMethod-Email.Delete.All",
     "Category": "Authentication",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
@@ -5428,6 +5444,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "7fa6d39e-1e4e-44be-bf9c-e8260b12e1f5",
+    "AppRoleDisplayName": "UserAuthMethod-External.Delete.All",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "d2c4289f-9f95-40da-ad43-eeb1506f0db7",
     "AppRoleDisplayName": "UserAuthMethod-External.Read.All",
     "Category": "Default Member",
@@ -5438,6 +5462,14 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "c7a22c2e-5b01-4129-8159-6c8be2c78f16",
     "AppRoleDisplayName": "UserAuthMethod-External.ReadWrite.All",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "9d8eb432-7ea3-491a-9ed7-e6361b308f08",
+    "AppRoleDisplayName": "UserAuthMethod-HardwareOATH.Delete.All",
     "Category": "Authentication",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
@@ -5460,6 +5492,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "ae494ca6-9612-417a-972a-ef52efaf2de3",
+    "AppRoleDisplayName": "UserAuthMethod-MicrosoftAuthApp.Delete.All",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "a9c5f16e-e5ca-4e33-89ad-903fcfc01c23",
     "AppRoleDisplayName": "UserAuthMethod-MicrosoftAuthApp.Read.All",
     "Category": "Default Member",
@@ -5470,6 +5510,14 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "c833c349-a1ab-4b6d-94a2-fa9a8674420c",
     "AppRoleDisplayName": "UserAuthMethod-MicrosoftAuthApp.ReadWrite.All",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "9563fbd0-03a7-466e-8042-63d668b7d1a3",
+    "AppRoleDisplayName": "UserAuthMethod-Passkey.Delete.All",
     "Category": "Authentication",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
@@ -5508,6 +5556,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "59f17651-8b6c-494e-a269-4ac582fbbca0",
+    "AppRoleDisplayName": "UserAuthMethod-Phone.Delete.All",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "f529a223-ea70-43ec-b268-5012de2fbaa2",
     "AppRoleDisplayName": "UserAuthMethod-Phone.Read.All",
     "Category": "Default Member",
@@ -5518,6 +5574,14 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "6e85d483-7092-4375-babe-0a94a8213a58",
     "AppRoleDisplayName": "UserAuthMethod-Phone.ReadWrite.All",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "bd760918-651f-4e67-b66f-8f614384dec2",
+    "AppRoleDisplayName": "UserAuthMethod-PlatformCred.Delete.All",
     "Category": "Authentication",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
@@ -5540,6 +5604,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "e1c34213-26ac-400b-9548-a749f1b1a4e0",
+    "AppRoleDisplayName": "UserAuthMethod-QR.Delete.All",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "9a45bc50-cddd-4ebe-bd9c-4f2eacf646ae",
     "AppRoleDisplayName": "UserAuthMethod-QR.Read.All",
     "Category": "Default Member",
@@ -5550,6 +5622,14 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "4869299f-18c3-40c8-98f2-222657e67db1",
     "AppRoleDisplayName": "UserAuthMethod-QR.ReadWrite.All",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "a71aecaf-82f1-47c5-ad0a-5e63503b928f",
+    "AppRoleDisplayName": "UserAuthMethod-ResourceKey.Delete.All",
     "Category": "Authentication",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
@@ -5572,6 +5652,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "e5676e10-1a16-452b-ad10-71f54b755852",
+    "AppRoleDisplayName": "UserAuthMethod-SoftwareOATH.Delete.All",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "a6b423df-a0c8-411d-a809-a4a5985d2939",
     "AppRoleDisplayName": "UserAuthMethod-SoftwareOATH.Read.All",
     "Category": "Default Member",
@@ -5588,6 +5676,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "4f872e9d-d232-4ecd-ab9c-337cbdb184e5",
+    "AppRoleDisplayName": "UserAuthMethod-TAP.Delete.All",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "bf82209c-b22b-4747-ac88-a68be99032cf",
     "AppRoleDisplayName": "UserAuthMethod-TAP.Read.All",
     "Category": "Default Member",
@@ -5598,6 +5694,14 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "627169a8-8c15-451c-861a-5b80e383de5c",
     "AppRoleDisplayName": "UserAuthMethod-TAP.ReadWrite.All",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "f3197110-aa7f-4acd-a0fd-71981ad68d42",
+    "AppRoleDisplayName": "UserAuthMethod-WindowsHello.Delete.All",
     "Category": "Authentication",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"

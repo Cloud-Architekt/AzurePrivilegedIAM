@@ -52,7 +52,7 @@ function Update-EntraOpsClassificationModels {
         Do not run Update-EntraOpsClassificationExplorerData at the end.
 
     .PARAMETER SkipEntraOpsRepoSync
-        Do not prompt to sync the Classification Explorer app source into the EntraOps repository
+        Do not prompt to sync classification templates and the Classification Explorer app source into the EntraOps repository
         (Sync-EntraOpsClassificationExplorerSource) at the end of the run.
 
     .PARAMETER SkipHistoryUpdate
@@ -286,12 +286,12 @@ function Update-EntraOpsClassificationModels {
         }
         #endregion
 
-        #region Sync Classification Explorer source to EntraOps repository
+        #region Sync classification templates and Classification Explorer source to EntraOps repository
         if (-not $SkipEntraOpsRepoSync) {
             if (Get-Command Sync-EntraOpsClassificationExplorerSource -ErrorAction SilentlyContinue) {
                 Write-Host ""
-                Write-Host "=== Sync Classification Explorer source to EntraOps repository ===" -ForegroundColor Cyan
-                $EntraOpsRootAnswer = Read-Host 'Update Classification Explorer in the EntraOps repository as well? Press Enter to auto-detect, type a custom path, or n to skip'
+                Write-Host "=== Sync classification templates and Classification Explorer source to EntraOps repository ===" -ForegroundColor Cyan
+                $EntraOpsRootAnswer = Read-Host 'Update classification templates and Classification Explorer in the EntraOps repository as well? Press Enter to auto-detect, type a custom path, or n to skip'
                 if ($EntraOpsRootAnswer -notin @('n', 'N', 'no', 'No')) {
                     try {
                         $syncParameters = @{ RepoRoot = $RepoRoot }
@@ -301,7 +301,7 @@ function Update-EntraOpsClassificationModels {
                         Sync-EntraOpsClassificationExplorerSource @syncParameters
                     } catch { throw "Sync-EntraOpsClassificationExplorerSource failed: $($_.Exception.Message)" }
                 } else {
-                    Write-Host "Skipped syncing Classification Explorer source to EntraOps repository." -ForegroundColor DarkGray
+                    Write-Host "Skipped syncing classification templates and Classification Explorer source to EntraOps repository." -ForegroundColor DarkGray
                 }
             } else {
                 Write-Verbose 'Classification Explorer source sync is not available in the loaded module.'

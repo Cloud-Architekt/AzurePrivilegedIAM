@@ -88,9 +88,11 @@ function Export-EntraOpsClassificationScopes {
             # Apply Classification (Delegated permissions match ResourceScope 'Delegation' or 'All')
             $AppRoleTierLevelClassification = $ClassificationAppRoles | where-object { ($_.TierLevelDefinition | where-object { $_.ResourceScope -in @("Delegation", "All") -and $_.ResourceAppId -eq $CurrentAppId }).RoleDefinitionActions -contains $($Scope.value) } | select-object EAMTierLevelName, EAMTierLevelTagValue
             $AppRoleServiceClassification = $ClassificationAppRoles | select-object -ExpandProperty TierLevelDefinition | where-object { $_.ResourceScope -in @("Delegation", "All") -and $_.ResourceAppId -eq $CurrentAppId -and $_.RoleDefinitionActions -contains $($Scope.value) } | select-object Service
+            # Reset per permission so a non-Graph resource cannot inherit the previous Graph app's calls.
+            $AppRoleAuthorizedApiCalls = @()
             if ($IncludeAuthorizedApiCalls -eq $True -and $_.appId -eq "00000003-0000-0000-c000-000000000000") {
                 # Apply Autorized Graph Calls if AppRoleProvider is Microsoft Graph
-                $AppRoleAuthorizedApiCalls = $AllAuthorizedApiCalls | where-object { $_.PermissionName -contains $($Scope.value) } | select-object -ExpandProperty API
+                $AppRoleAuthorizedApiCalls = @($AllAuthorizedApiCalls | where-object { $_.PermissionName -contains $($Scope.value) } | select-object -ExpandProperty API | Sort-Object -Unique)
             }
 
             if ($AppRoleTierLevelClassification.Count -gt 1 -and $AppRoleServiceClassification.Count -gt 1) {

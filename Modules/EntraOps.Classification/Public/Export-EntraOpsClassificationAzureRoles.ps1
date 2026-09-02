@@ -308,12 +308,12 @@ function Export-EntraOpsClassificationAzureRoles {
             )
             $ClassifiedAzureRolePermissions.Add($ClassifiedAzureRolePermission) | Out-Null
         }
-        $ClassifiedAzureRolePermissions = $ClassifiedAzureRolePermissions | Sort-Object EAMTierLevelTagValue, Category, AuthorizedResourceAction
+        $ClassifiedAzureRolePermissions = $ClassifiedAzureRolePermissions | Sort-Object EAMTierLevelTagValue, Category, AuthorizedResourceAction, ActionType
 
         if ($SingleClassification -eq $True) {
             $RoleDefinitionClassification = ($ClassifiedAzureRolePermissions | Select-Object -ExcludeProperty AuthorizedResourceAction, ActionType, Category -Unique | Sort-Object EAMTierLevelTagValue | Select-Object -First 1)
         } else {
-            $FilteredRoleClassifications = ($ClassifiedAzureRolePermissions | Select-Object -ExcludeProperty AuthorizedResourceAction, ActionType -Unique | Sort-Object EAMTierLevelTagValue )
+            $FilteredRoleClassifications = ($ClassifiedAzureRolePermissions | Select-Object -ExcludeProperty AuthorizedResourceAction, ActionType -Unique | Sort-Object EAMTierLevelTagValue, Category)
             $RoleDefinitionClassification = [System.Collections.Generic.List[object]]::new()
             $RoleDefinitionClassification.Add($FilteredRoleClassifications)
         }
@@ -366,6 +366,6 @@ function Export-EntraOpsClassificationAzureRoles {
         }
     }
 
-    $AzureRoles = $AzureRoles | Sort-Object RoleName
+    $AzureRoles = $AzureRoles | Sort-Object RoleName, RoleId
     $AzureRoles | ConvertTo-Json -Depth 10 | Out-File $Exportfile -Force
 }

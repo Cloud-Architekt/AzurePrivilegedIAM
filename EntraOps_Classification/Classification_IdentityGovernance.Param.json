@@ -46,6 +46,7 @@
                 "Category": "Microsoft.IdentityGovernance",
                 "Service": "Entitlement Management",
                 "RoleAssignmentScopeName": [
+                    "/",
                     "/AccessPackageCatalog/*",
                     "/AccessPackage/*"
                 ],

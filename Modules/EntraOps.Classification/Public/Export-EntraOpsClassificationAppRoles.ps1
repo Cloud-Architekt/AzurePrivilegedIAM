@@ -88,9 +88,11 @@ function Export-EntraOpsClassificationAppRoles {
             # Apply Classification (Application permissions match ResourceScope 'Application' or 'All')
             $AppRoleTierLevelClassification = $ClassificationAppRoles | where-object { ($_.TierLevelDefinition | where-object { $_.ResourceScope -in @("Application", "All") -and $_.ResourceAppId -eq $CurrentAppId }).RoleDefinitionActions -contains $($AppRole.value) } | select-object EAMTierLevelName, EAMTierLevelTagValue
             $AppRoleServiceClassification = $ClassificationAppRoles | select-object -ExpandProperty TierLevelDefinition | where-object { $_.ResourceScope -in @("Application", "All") -and $_.ResourceAppId -eq $CurrentAppId -and $_.RoleDefinitionActions -contains $($AppRole.value) } | select-object Service
+            # Reset per permission so a non-Graph resource cannot inherit the previous Graph app's calls.
+            $AppRoleAuthorizedApiCalls = @()
             if ($IncludeAuthorizedApiCalls -eq $True -and $_.appId -eq "00000003-0000-0000-c000-000000000000") {
                 # Apply Autorized Graph Calls if AppRoleProvider is Microsoft Graph
-                $AppRoleAuthorizedApiCalls = $AllAuthorizedApiCalls | where-object { $_.PermissionName -contains $($AppRole.value) } | select-object -ExpandProperty API
+                $AppRoleAuthorizedApiCalls = @($AllAuthorizedApiCalls | where-object { $_.PermissionName -contains $($AppRole.value) } | select-object -ExpandProperty API | Sort-Object -Unique)
             }
 
             if ($AppRoleTierLevelClassification.Count -gt 1 -and $AppRoleServiceClassification.Count -gt 1) {
@@ -159,7 +161,9 @@ function Export-EntraOpsClassificationAppRoles {
         }
     }
 
-    $AppRolesOutput = $AppRolesOutput | Sort-Object AppRoleDisplayName
+    # Permission display names are not unique across resource service principals.
+    # Use immutable IDs as tie-breakers so Graph response order cannot change the JSON.
+    $AppRolesOutput = $AppRolesOutput | Sort-Object AppRoleDisplayName, AppId, AppRoleId
     $AppRolesOutput | ConvertTo-Json -Depth 10 | Out-File .\Classification\Classification_AppRoles.json -Force
     $AppRolesOutput | Where-Object { $_.AppId -eq "00000003-0000-0000-c000-000000000000" } | ConvertTo-Json -Depth 10 | Out-File .\Classification\Classification_MsGraphAppRoles.json -Force
 

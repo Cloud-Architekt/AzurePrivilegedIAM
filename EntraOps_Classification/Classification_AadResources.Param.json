@@ -176,6 +176,7 @@
           "microsoft.directory/domains/federationConfiguration/delete",
           "microsoft.directory/hybridAuthenticationPolicy/allProperties/allTasks",
           "microsoft.directory/onPasswordSubmitCustomAuthenticationExtension/allProperties/allTasks",
+          "microsoft.directory/onPasswordUpdateCustomAuthenticationExtension/allProperties/allTasks",
           "microsoft.directory/organization/strongAuthentication/allTasks",
           "microsoft.directory/passwordHashSync/allProperties/allTasks",
           "microsoft.directory/userCredentialPolicies/basic/update",

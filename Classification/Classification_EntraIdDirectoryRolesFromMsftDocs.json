@@ -5,16 +5,7 @@
     "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Agent Identity",
-      "Default member",
-      "Extended member",
-      "Global Agent User Management",
-      "Microsoft 365 Support Operations",
-      "Security and Compliance",
-      "Support and Service Health",
-      "Tenant Configuration (Reader)"
-    ],
+    "Categories": "Agent Identity,Default member,Extended member,Global Agent User Management,Microsoft 365 Support Operations,Security and Compliance,Support and Service Health,Tenant Configuration (Reader)",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nAssign the Agent ID Administrator role to users who need to do the following:\n\n- Manage the full lifecycle of agent identities, agent identity blueprint principals, agent identity blueprints, and agent users in a tenant\n- Permanently delete and restore deleted agent identities, agent identity blueprint principals, agent identity blueprints, and agent users\n- Manage licenses, invalidate refresh tokens, and revoke sign-in sessions for agent users\n- Read all properties of audit logs and sign-in reports\n- Read standard properties of organization, policies, external user profiles, hidden group members, and bulk jobs for users\n- Create Microsoft 365 groups as owner\n- Read and configure Azure and Microsoft 365 service health and support tickets\n- Create and manage Azure and Microsoft 365 service health and support tickets",
     "RolePermissions": [
       {
@@ -413,10 +404,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Agent Identity",
-      "Default member"
-    ],
+    "Categories": "Agent Identity,Default member",
     "RichDescription": "Assign the Agent ID Developer role to users who need to do the following:\n\n- Create an agent identity blueprint and its agent identity blueprint principal in a tenant. User will be added as an owner of the created agent identity blueprint and its agent identity blueprint principal.",
     "RolePermissions": [
       {
@@ -464,16 +452,7 @@
     "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Agent Identity",
-      "Application and Workload Identity",
-      "Default member",
-      "Global Agent User Management",
-      "Microsoft 365 Support Operations",
-      "Microsoft Copilot",
-      "Support and Service Health",
-      "Tenant Configuration (Reader)"
-    ],
+    "Categories": "Agent Identity,Application and Workload Identity,Default member,Global Agent User Management,Microsoft 365 Support Operations,Microsoft Copilot,Support and Service Health,Tenant Configuration (Reader)",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Assign the AI Administrator role to users who need to do the following tasks:\n\n- Manage all aspects of Microsoft 365 Copilot\n- Manage AI-related enterprise services, extensibility, and copilot agents from the Integrated apps page in the Microsoft 365 admin center\n- Manage admin consent request policies in Microsoft Entra ID\n- Approve and publish line-of-business copilot agents\n- Allow users to install an app or install an app for users in the organization if the app does not require permission\n- Read and configure Azure and Microsoft 365 service health dashboards\n- View usage reports, adoption insights, and organizational insight\n- Create and manage support tickets in Azure and the Microsoft 365 admin center\n- Manage the full lifecycle of agent identities, agent identity blueprints, agent identity blueprint principals, and agent users including restoration of deleted items",
     "RolePermissions": [
       {
@@ -908,15 +887,7 @@
     "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Default member",
-      "Global Agent User Management",
-      "Guest user",
-      "Microsoft 365 Platform Operations",
-      "Microsoft 365 Support Operations",
-      "Support and Service Health",
-      "Tenant Configuration (Reader)"
-    ],
+    "Categories": "Default member,Global Agent User Management,Guest user,Microsoft 365 Platform Operations,Microsoft 365 Support Operations,Support and Service Health,Tenant Configuration (Reader)",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Assign the AI Reader role to users who need to do the following tasks:\n\n- Read all aspects of Microsoft 365 Copilot\n- Read AI-related enterprise services, extensibility, and copilot agents\n- Read information for directory objects including applications, users, groups, agent identities, agent identity blueprints, agent identity blueprint principals, and agent users\n- Read and configure Azure and Microsoft 365 service health dashboards",
     "RolePermissions": [
       {
@@ -1204,18 +1175,7 @@
     "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Application and Workload Identity",
-      "Authentication",
-      "Default member",
-      "Microsoft 365 Support Operations",
-      "Private Secure Access",
-      "Security and Compliance",
-      "Support and Service Health",
-      "Tenant Configuration (Reader)",
-      "Tenant Policy Management",
-      "User Lifecycle and Provisioning Management"
-    ],
+    "Categories": "Application and Workload Identity,Authentication,Default member,Microsoft 365 Support Operations,Private Secure Access,Security and Compliance,Support and Service Health,Tenant Configuration (Reader),Tenant Policy Management,User Lifecycle and Provisioning Management",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Users in this role can create and manage all aspects of enterprise applications, application registrations, and application proxy settings. Note that users assigned to this role are not added as owners when creating new application registrations or enterprise applications.\n\nThis role also grants the ability to consent for delegated permissions and application permissions, with the exception of application permissions for Azure AD Graph and Microsoft Graph.\n\n> [!IMPORTANT]\n> This exception means that you can still consent to application permissions for _other_ apps (for example, other Microsoft apps, 3rd-party apps, or apps that you have registered). You can still _request_ these permissions as part of the app registration, but _granting_ (that is, consenting to) these permissions requires a more privileged administrator, such as Privileged Role Administrator.\n>\n>This role grants the ability to manage application credentials. Users assigned this role can add credentials to an application, and use those credentials to impersonate the application's identity. If the application's identity has been granted access to a resource, such as the ability to create or update User or other objects, then a user assigned to this role could perform those actions while impersonating the application. This ability to impersonate the application's identity may be an elevation of privilege over what the user can do via their role assignments. It is important to understand that assigning a user to the Application Administrator role gives them the ability to impersonate an application's identity.",
     "RolePermissions": [
       {
@@ -1668,10 +1628,7 @@
     "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Application and Workload Identity",
-      "Extended member"
-    ],
+    "Categories": "Application and Workload Identity,Extended member",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Users in this role can create application registrations when the \"Users can register applications\" setting is set to No. This role also grants permission to consent on one's own behalf when the \"Users can consent to apps accessing company data on their behalf\" setting is set to No. Users assigned to this role are added as owners when creating new application registrations.",
     "RolePermissions": [
       {
@@ -1764,13 +1721,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Application and Workload Identity",
-      "Global Endpoint Management",
-      "Global User Management",
-      "Privileged ABAC",
-      "Tenant Configuration (Reader)"
-    ],
+    "Categories": "Application and Workload Identity,Global Endpoint Management,Global User Management,Privileged ABAC,Tenant Configuration (Reader)",
     "RichDescription": "Users with this role can assign and remove custom security attribute keys and values for supported Microsoft Entra objects such as users, service principals, and devices.\n\n[!INCLUDE [security-attributes-roles](../../../includes/security-attributes-roles.md)]\n\nFor more information, see [Manage access to custom security attributes in Microsoft Entra ID](../../../fundamentals/custom-security-attributes-manage.md).",
     "RolePermissions": [
       {
@@ -1845,13 +1796,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Application and Workload Identity",
-      "Global Endpoint Management",
-      "Global User Management",
-      "Privileged ABAC",
-      "Tenant Configuration (Reader)"
-    ],
+    "Categories": "Application and Workload Identity,Global Endpoint Management,Global User Management,Privileged ABAC,Tenant Configuration (Reader)",
     "RichDescription": "Users with this role can read custom security attribute keys and values for supported Microsoft Entra objects.\n\n[!INCLUDE [security-attributes-roles](../../../includes/security-attributes-roles.md)]\n\nFor more information, see [Manage access to custom security attributes in Microsoft Entra ID](../../../fundamentals/custom-security-attributes-manage.md).",
     "RolePermissions": [
       {
@@ -1956,10 +1901,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Global Security and Compliance Management",
-      "Security and Compliance"
-    ],
+    "Categories": "Global Security and Compliance Management,Security and Compliance",
     "RichDescription": "Assign the Attribute Log Reader role to users who need to do the following tasks:\n\n- Read audit logs for custom security attribute value changes\n- Read audit logs for custom security attribute definition changes and assignments\n- Configure diagnostic settings for custom security attributes\n\nUsers with this role **cannot** read audit logs for other events.\n\n[!INCLUDE [security-attributes-roles](../../../includes/security-attributes-roles.md)]\n\nFor more information, see [Manage access to custom security attributes in Microsoft Entra ID](../../../fundamentals/custom-security-attributes-manage.md).",
     "RolePermissions": [
       {
@@ -2055,12 +1997,7 @@
     "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Global User Management",
-      "Microsoft 365 Support Operations",
-      "Support and Service Health",
-      "Tenant Configuration (Reader)"
-    ],
+    "Categories": "Global User Management,Microsoft 365 Support Operations,Support and Service Health,Tenant Configuration (Reader)",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Assign the Authentication Administrator role to users who need to do the following:\n\n- Set or reset any authentication method (including passwords) for nonadministrators and some roles. For a list of the roles that an Authentication Administrator can read or update authentication methods, see [Who can reset passwords](../privileged-roles-permissions.md#who-can-reset-passwords).\n- Require users who are nonadministrators or assigned to some roles to re-register against existing nonpassword credentials (for example, MFA or FIDO), and can also revoke **remember MFA on the device**, which prompts for MFA on the next sign-in.\n- Manage MFA settings in the legacy MFA management portal.\n- Perform sensitive actions for some users. For more information, see [Who can perform sensitive actions](../privileged-roles-permissions.md#who-can-perform-sensitive-actions).\n- Create and manage support tickets in Azure and the Microsoft 365 admin center.\n\nUsers with this role **cannot** do the following:\n\n- Cannot change the credentials or reset MFA for members and owners of a [role-assignable group](../groups-concept.md).\n- Cannot manage Hardware OATH tokens.\n\n[!INCLUDE [authentication-table-include](authentication-table-include.md)]\n\n> [!IMPORTANT]\n> Users with this role can change credentials for people who may have access to sensitive or private information or critical configuration inside and outside of Microsoft Entra ID. Changing the credentials of a user may mean the ability to assume that user's identity and permissions. For example:\n>\n>* Application Registration and Enterprise Application owners, who can manage credentials of apps they own. Those apps may have privileged permissions in Microsoft Entra ID and elsewhere not granted to Authentication Administrators. Through this path, an Authentication Administrator can assume the identity of an application owner and then further assume the identity of a privileged application by updating the credentials for the application.\n>* Azure subscription owners, who may have access to sensitive or private information or critical configuration in Azure.\n>* Security Group and Microsoft 365 group owners, who can manage group membership. Those groups may grant access to sensitive or private information or critical configuration in Microsoft Entra ID and elsewhere.\n>* Administrators in other services outside of Microsoft Entra ID like Exchange Online, Microsoft Defender XDR portal, Microsoft Purview portal, and human resources systems.\n>* Nonadministrators like executives, legal counsel, and human resources employees who may have access to sensitive or private information.",
     "RolePermissions": [
       {
@@ -2231,12 +2168,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Authentication",
-      "Support and Service Health",
-      "Tenant Configuration (Reader)",
-      "Verified ID"
-    ],
+    "Categories": "Authentication,Support and Service Health,Tenant Configuration (Reader),Verified ID",
     "RichDescription": "Assign the Authentication Policy Administrator role to users who need to do the following:\n\n- Configure the authentication methods policy, tenant-wide MFA settings, and password protection policy that determine which methods each user can register and use.\n- Manage Password Protection settings: smart lockout configurations and updating the custom banned passwords list.\n- Manage MFA settings in the legacy MFA management portal.\n- Create and manage verifiable credentials.\n- Create and manage Azure support tickets.\n\nUsers with this role **cannot** do the following:\n\n- Cannot update sensitive properties. For more information, see [Who can perform sensitive actions](../privileged-roles-permissions.md#who-can-perform-sensitive-actions).\n- Cannot delete or restore users. For more information, see [Who can perform sensitive actions](../privileged-roles-permissions.md#who-can-perform-sensitive-actions).\n- Cannot manage Hardware OATH tokens.\n\n[!INCLUDE [authentication-table-include](authentication-table-include.md)]",
     "RolePermissions": [
       {
@@ -2386,12 +2318,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Default member",
-      "Microsoft 365 Support Operations",
-      "Microsoft Information Protection",
-      "Support and Service Health"
-    ],
+    "Categories": "Default member,Microsoft 365 Support Operations,Microsoft Information Protection,Support and Service Health",
     "RichDescription": "Users with this role have all permissions in the Azure Information Protection service. This role allows configuring labels for the Azure Information Protection policy, managing protection templates, and activating protection. This role doesn't grant any permissions in Microsoft Entra ID Protection, Privileged Identity Management, Monitor Microsoft 365 Service Health, Microsoft Defender XDR portal, or Microsoft Purview portal.",
     "RolePermissions": [
       {
@@ -2490,12 +2417,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Billing Management",
-      "Microsoft 365 Support Operations",
-      "Support and Service Health",
-      "Tenant Management"
-    ],
+    "Categories": "Microsoft 365 Billing Management,Microsoft 365 Support Operations,Support and Service Health,Tenant Management",
     "RichDescription": "Makes purchases, manages subscriptions, manages support tickets, and monitors service health.",
     "RolePermissions": [
       {
@@ -2552,10 +2474,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Cloud Access Security Broker",
-      "Microsoft 365 Support Operations"
-    ],
+    "Categories": "Cloud Access Security Broker,Microsoft 365 Support Operations",
     "RichDescription": "Users with this role have full permissions in Defender for Cloud Apps. They can add administrators, add Microsoft Defender for Cloud Apps policies and settings, upload logs, and perform governance actions.",
     "RolePermissions": [
       {
@@ -2582,16 +2501,7 @@
     "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Application and Workload Identity",
-      "Default member",
-      "Microsoft 365 Support Operations",
-      "Security and Compliance",
-      "Support and Service Health",
-      "Tenant Configuration (Reader)",
-      "Tenant Policy Management",
-      "User Lifecycle and Provisioning Management"
-    ],
+    "Categories": "Application and Workload Identity,Default member,Microsoft 365 Support Operations,Security and Compliance,Support and Service Health,Tenant Configuration (Reader),Tenant Policy Management,User Lifecycle and Provisioning Management",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Users in this role have the same permissions as the Application Administrator role, excluding the ability to manage application proxy. This role grants the ability to create and manage all aspects of enterprise applications and application registrations. Users assigned to this role are not added as owners when creating new application registrations or enterprise applications.\n\nThis role also grants the ability to consent for delegated permissions and application permissions, with the exception of application permissions for Azure AD Graph and Microsoft Graph.\n\n> [!IMPORTANT]\n> This exception means that you can still consent to application permissions for _other_ apps (for example, other Microsoft apps, 3rd-party apps, or apps that you have registered). You can still _request_ these permissions as part of the app registration, but _granting_ (that is, consenting to) these permissions requires a more privileged administrator, such as Privileged Role Administrator.\n>\n>This role grants the ability to manage application credentials. Users assigned this role can add credentials to an application, and use those credentials to impersonate the application's identity. If the application's identity has been granted access to a resource, such as the ability to create or update User or other objects, then a user assigned to this role could perform those actions while impersonating the application. This ability to impersonate the application's identity may be an elevation of privilege over what the user can do via their role assignments. It is important to understand that assigning a user to the Application Administrator role gives them the ability to impersonate an application's identity.",
     "RolePermissions": [
       {
@@ -2972,16 +2882,7 @@
     "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Default member",
-      "Global Endpoint Bitlocker Recovery",
-      "Global Endpoint Local Admin",
-      "Global Endpoint Management",
-      "Microsoft 365 Support Operations",
-      "Security and Compliance",
-      "Support and Service Health",
-      "Tenant Configuration (Reader)"
-    ],
+    "Categories": "Default member,Global Endpoint Bitlocker Recovery,Global Endpoint Local Admin,Global Endpoint Management,Microsoft 365 Support Operations,Security and Compliance,Support and Service Health,Tenant Configuration (Reader)",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Users in this role can enable, disable, and delete devices in Microsoft Entra ID and read Windows 10 BitLocker keys (if present) in the Azure portal. The role does not grant permissions to manage any other properties on the device.",
     "RolePermissions": [
       {
@@ -3110,12 +3011,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Support Operations",
-      "Security and Compliance",
-      "Support and Service Health",
-      "Tenant Configuration (Reader)"
-    ],
+    "Categories": "Microsoft 365 Support Operations,Security and Compliance,Support and Service Health,Tenant Configuration (Reader)",
     "RichDescription": "Users with this role have permissions to manage compliance-related features in the Microsoft Purview portal, Microsoft 365 admin center, Azure, and Microsoft Defender portal. Assignees can also manage all features within the Exchange admin center and create support tickets for Azure and Microsoft 365. For more information, see [Roles and role groups in Microsoft Defender for Office 365 and Microsoft Purview](/microsoft-365/security/office-365-security/scc-permissions).\n\n| In | Can do |\n| ----- | ---------- |\n| [Microsoft Purview portal](/purview/purview-portal) | Protect and manage your organization's data across Microsoft 365 services<br>Manage compliance alerts |\n| [Microsoft Purview Compliance Manager](/purview/compliance-manager) | Track, assign, and verify your organization's regulatory compliance activities |\n| [Microsoft Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) | Manage data governance<br>Perform legal and data investigation<br>Manage Data Subject Request<br><br>This role has the same permissions as the [Compliance Administrator role group](/microsoft-365/security/office-365-security/scc-permissions) in Microsoft Defender portal role-based access control. |\n| [Intune](/mem/intune/fundamentals/role-based-access-control) | View all Intune audit data |\n| [Microsoft Defender for Cloud Apps](/defender-cloud-apps/manage-admins) | Has read-only permissions and can manage alerts<br>Can create and modify file policies and allow file governance actions<br>Can view all the built-in reports under Data Management |",
     "RolePermissions": [
       {
@@ -3172,14 +3068,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Cloud Access Security Broker",
-      "Default member",
-      "Microsoft 365 Support Operations",
-      "Microsoft Information Protection",
-      "Security and Compliance",
-      "Support and Service Health"
-    ],
+    "Categories": "Cloud Access Security Broker,Default member,Microsoft 365 Support Operations,Microsoft Information Protection,Security and Compliance,Support and Service Health",
     "RichDescription": "Users with this role have permissions to track data in the Microsoft Purview portal, Microsoft 365 admin center, and Azure. Users can also track compliance data within the Exchange admin center, Compliance Manager, and Teams & Skype for Business admin center and create support tickets for Azure and Microsoft 365. For more information about the differences between Compliance Administrator and Compliance Data Administrator, see [Roles and role groups in Microsoft Defender for Office 365 and Microsoft Purview compliance](/microsoft-365/security/office-365-security/scc-permissions).\n\n| In | Can do |\n| ----- | ---------- |\n| [Microsoft Purview portal](/purview/purview-portal) | Monitor compliance-related policies across Microsoft 365 services<br>Manage compliance alerts |\n| [Microsoft Purview Compliance Manager](/purview/compliance-manager) | Track, assign, and verify your organization's regulatory compliance activities |\n| [Microsoft 365 Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) | Manage data governance<br>Perform legal and data investigation<br>Manage Data Subject Request<br><br>This role has the same permissions as the [Compliance Data Administrator role group](/microsoft-365/security/office-365-security/scc-permissions) in Microsoft 365 Defender portal role-based access control. |\n| [Intune](/mem/intune/fundamentals/role-based-access-control) | View all Intune audit data |\n| [Microsoft Defender for Cloud Apps](/defender-cloud-apps/manage-admins) | Has read-only permissions and can manage alerts<br>Can create and modify file policies and allow file governance actions<br>Can view all the built-in reports under Data Management |",
     "RolePermissions": [
       {
@@ -3248,10 +3137,7 @@
     "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Conditional Access",
-      "Tenant Configuration (Reader)"
-    ],
+    "Categories": "Conditional Access,Tenant Configuration (Reader)",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Users with this role have the ability to manage Microsoft Entra Conditional Access settings.",
     "RolePermissions": [
       {
@@ -3344,10 +3230,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Cross Tenant Management",
-      "Microsoft 365 Support Operations"
-    ],
+    "Categories": "Cross Tenant Management,Microsoft 365 Support Operations",
     "RichDescription": "Assign the Customer Delegated Admin Relationship Administrator role to users who need to do the following tasks:\n\n- Accept a granular delegated admin privileges (GDAP) relationship from a partner for their tenant.\n- List and view GDAP relationships with partners.\n- Terminate a GDAP relationship with a partner.",
     "RolePermissions": [
       {
@@ -3374,10 +3257,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Support Operations",
-      "Security and Compliance"
-    ],
+    "Categories": "Microsoft 365 Support Operations,Security and Compliance",
     "RichDescription": "Manages [Microsoft Purview Customer Lockbox requests](/purview/customer-lockbox-requests) in your organization. They receive email notifications for Customer Lockbox requests and can approve and deny requests from the Microsoft 365 admin center. They can also turn the Customer Lockbox feature on or off. Only Global Administrators can reset the passwords of people assigned to this role.",
     "RolePermissions": [
       {
@@ -3404,11 +3284,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Default member",
-      "Microsoft 365 Support Operations",
-      "Support and Service Health"
-    ],
+    "Categories": "Default member,Microsoft 365 Support Operations,Support and Service Health",
     "RichDescription": "Users in this role can manage the Desktop Analytics service. This includes the ability to view asset inventory, create deployment plans, and view deployment and health status.",
     "RolePermissions": [
       {
@@ -3447,11 +3323,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Default member",
-      "Guest user",
-      "Tenant Configuration (Reader)"
-    ],
+    "Categories": "Default member,Guest user,Tenant Configuration (Reader)",
     "RichDescription": "Users in this role can read basic directory information. This role should be used for:\n\n* Granting a specific set of guest users read access instead of granting it to all guest users.\n* Granting a specific set of non-admin users access to Microsoft Entra admin center when \"Restrict access to Microsoft Entra admin center\" is set to \"Yes\".\n* Granting service principals access to directory where Directory.Read.All is not an option.",
     "RolePermissions": [
       {
@@ -3820,15 +3692,7 @@
     "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Application and Workload Identity",
-      "External Identities",
-      "Global User Management",
-      "Group Management",
-      "License Management",
-      "Microsoft Exchange Online",
-      "User Lifecycle and Provisioning Management"
-    ],
+    "Categories": "Application and Workload Identity,External Identities,Global User Management,Group Management,License Management,Microsoft Exchange Online,User Lifecycle and Provisioning Management",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Users in this role can read and update basic information of users, groups, and service principals.",
     "RolePermissions": [
       {
@@ -4095,10 +3959,7 @@
     "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Support Operations",
-      "Tenant Management"
-    ],
+    "Categories": "Microsoft 365 Support Operations,Tenant Management",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Users with this role can manage (read, add, verify, update, and delete) domain names. They can also read directory information about users, groups, and applications, as these objects possess domain dependencies. For on-premises environments, users with this role can configure domain names for federation so that associated users are always authenticated on-premises. These users can then sign into Microsoft Entra based services with their on-premises passwords via single sign-on. Federation settings need to be synced via Microsoft Entra Connect, so users also have permissions to manage Microsoft Entra Connect.",
     "RolePermissions": [
       {
@@ -4131,11 +3992,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Support Operations",
-      "Microsoft Dragon",
-      "Support and Service Health"
-    ],
+    "Categories": "Microsoft 365 Support Operations,Microsoft Dragon,Support and Service Health",
     "RichDescription": "Assign the Dragon Administrator role to users who need to do the following tasks:\n\n- Manage all aspects of the administrative experience in the Dragon admin center\n- Provision clinical applications\n- Create and manage the organization hierarchy\n- Oversee healthcare groups\n- Manage experiences of various clinical applications embedded in Electronic Health Record (EHR) systems\n- Configure clinical applications, such as manage settings, view analytics, and handle library objects\n- Create, manage, and view support tickets for their organization in the Dragon admin center\n- Create, view, manage, and monitor billing plans for licenses purchased by their organization (additional roles may be required)\n\n[Learn more](/industry/healthcare/dragon-admin-center/get-started/)",
     "RolePermissions": [
       {
@@ -4198,11 +4055,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Dynamics 365",
-      "Microsoft 365 Support Operations",
-      "Support and Service Health"
-    ],
+    "Categories": "Dynamics 365,Microsoft 365 Support Operations,Support and Service Health",
     "RichDescription": "Assign the Dynamics 365 Administrator role to users who need to manage all aspects of Dynamics 365 services, including configuration, user management, and support tickets.",
     "RolePermissions": [
       {
@@ -4253,13 +4106,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Default member",
-      "Dynamics 365",
-      "Guest user",
-      "Microsoft 365 Support Operations",
-      "Support and Service Health"
-    ],
+    "Categories": "Default member,Dynamics 365,Guest user,Microsoft 365 Support Operations,Support and Service Health",
     "RichDescription": "Assign the Dynamics 365 Business Central Administrator role to users who need to do the following tasks:\n\n- Access Dynamics 365 Business Central environments\n- Perform all administrative tasks on environments\n- Manage the lifecycle of customer's environments\n- Supervise the extensions installed on environments\n- Control upgrades of environments\n- Perform data exports of environments\n- Read and configure Azure and Microsoft 365 service health dashboards\n\nThis role does not provide any permissions for other Dynamics 365 products.",
     "RolePermissions": [
       {
@@ -4325,10 +4172,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Support Operations",
-      "User Virtual Endpoint Management"
-    ],
+    "Categories": "Microsoft 365 Support Operations,User Virtual Endpoint Management",
     "RichDescription": "Users in this role can create and manage the enterprise site list required for Internet Explorer mode on Microsoft Edge. This role grants permissions to create, edit, and publish the site list and additionally allows access to manage support tickets.\n\n[Learn more](https://go.microsoft.com/fwlink/?linkid=2165707)",
     "RolePermissions": [
       {
@@ -4361,10 +4205,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Backup and Recovery",
-      "Security and Compliance"
-    ],
+    "Categories": "Backup and Recovery,Security and Compliance",
     "RichDescription": "Assign the Entra Backup Administrator role to users who need to do the following tasks:\n\n- List all the snapshots in a tenant\n- Create a difference report (preview job) of a backup in the past and optionally include scoping filters\n- Compare states of changed directory objects that are in backup and recovery scope\n- Filter directory objects with supported scoping filters\n- Read status of a job\n- List all the jobs including preview and recovery jobs\n- Trigger recovery jobs and optionally include scoping filters",
     "RolePermissions": [
       {
@@ -4415,10 +4256,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Backup and Recovery",
-      "Security and Compliance"
-    ],
+    "Categories": "Backup and Recovery,Security and Compliance",
     "RichDescription": "Assign the Entra Backup Reader role to users who need to do the following tasks:\n\n- List all the snapshots in a tenant\n- Create a difference report (preview job) of a backup in the past and optionally include scoping filters\n- Compare states of changed directory objects that are in backup and recovery scope\n- Filter directory objects with supported scoping filters\n- Read status of a job\n- View all the jobs including preview and recovery jobs",
     "RolePermissions": [
       {
@@ -4457,15 +4295,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Default member",
-      "Microsoft 365 Backup",
-      "Microsoft 365 Group Management",
-      "Microsoft 365 Support Operations",
-      "Microsoft Exchange Online",
-      "Support and Service Health",
-      "Tenant Configuration (Reader)"
-    ],
+    "Categories": "Default member,Microsoft 365 Backup,Microsoft 365 Group Management,Microsoft 365 Support Operations,Microsoft Exchange Online,Support and Service Health,Tenant Configuration (Reader)",
     "RichDescription": "Users with this role have global permissions within Microsoft Exchange Online, when the service is present. Also has the ability to create and manage all Microsoft 365 groups, manage support tickets, and monitor service health. For more information, see [About admin roles in the Microsoft 365 admin center](/microsoft-365/admin/add-users/about-admin-roles).\n\n> [!NOTE]\n> In the Microsoft Graph API and Microsoft Graph PowerShell, this role is named Exchange Service Administrator. In the [Azure portal](/azure/azure-portal/azure-portal-overview), it is named Exchange Administrator. In the [Exchange admin center](/exchange/exchange-admin-center), it is named Exchange Online administrator.",
     "RolePermissions": [
       {
@@ -4630,11 +4460,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Backup",
-      "Microsoft 365 Support Operations",
-      "Support and Service Health"
-    ],
+    "Categories": "Microsoft 365 Backup,Microsoft 365 Support Operations,Support and Service Health",
     "RichDescription": "Assign the Exchange Backup Administrator role to users who need to do the following tasks:\n- Manage all aspects of Microsoft 365 Backup for Exchange Online\n- Back up and restore content including granular restore for Exchange Online\n- Create, edit, and manage backup configuration policies for Exchange Online\n- Perform restore operations for Exchange Online",
     "RolePermissions": [
       {
@@ -4748,10 +4574,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Teams",
-      "Tenant Configuration (Reader)"
-    ],
+    "Categories": "Teams,Tenant Configuration (Reader)",
     "RichDescription": "",
     "RolePermissions": [
       {
@@ -4850,10 +4673,7 @@
     "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Authentication",
-      "External Identities"
-    ],
+    "Categories": "Authentication,External Identities",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). This administrator manages federation between Microsoft Entra organizations and external identity providers. With this role, users can add new identity providers and configure all available settings (e.g. authentication path, service ID, assigned key containers). This user can enable the Microsoft Entra organization to trust authentications from external identity providers. The resulting impact on end-user experiences depends on the type of organization:\n\n* Microsoft Entra organizations for employees and partners: The addition of a federation (e.g. with Gmail) will immediately impact all guest invitations not yet redeemed. See [Adding Google as an identity provider for B2B guest users](~/external-id/google-federation.md).\n* Azure Active Directory B2C organizations: The addition of a federation (for example, with Facebook, or with another Microsoft Entra organization) does not immediately impact end-user flows until the identity provider is added as an option in a user flow (also called a built-in policy). See [Configuring a Microsoft account as an identity provider](/azure/active-directory-b2c/identity-provider-microsoft-account) for an example. To change user flows, the limited role of \"B2C User Flow Administrator\" is required.",
     "RolePermissions": [
       {
@@ -4880,11 +4700,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Business Apps Management",
-      "Microsoft 365 Support Operations",
-      "Support and Service Health"
-    ],
+    "Categories": "Business Apps Management,Microsoft 365 Support Operations,Support and Service Health",
     "RichDescription": "Users with this role have global permissions within Microsoft Fabric and Power BI, when the service is present, as well as the ability to manage support tickets and monitor service health. For more information, see [Understanding Fabric admin roles](/fabric/admin/roles).",
     "RolePermissions": [
       {
@@ -4935,58 +4751,7 @@
     "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Agent Identity",
-      "Application and Workload Identity",
-      "Authentication",
-      "Backup and Recovery",
-      "Business Apps Management",
-      "Cloud Access Security Broker",
-      "Cloud Infrastructure Entitlement Management",
-      "Conditional Access",
-      "Cross Tenant Management",
-      "Cross Tenant Partner Management",
-      "Default member",
-      "Dynamics 365",
-      "Entitlement Management",
-      "Global Endpoint Bitlocker Recovery",
-      "Global Endpoint Local Admin",
-      "Global Endpoint Management",
-      "Global Secure Access Management",
-      "Global Security and Compliance Management",
-      "Global User Management",
-      "Group Management",
-      "Guest user",
-      "Hybrid Identity Synchronization",
-      "Identity Threat Detection and Response",
-      "License Management",
-      "Microsoft 365 Backup",
-      "Microsoft 365 Billing Management",
-      "Microsoft 365 Platform Operations",
-      "Microsoft 365 Support Operations",
-      "Microsoft Copilot",
-      "Microsoft Dragon",
-      "Microsoft Exchange Online",
-      "Microsoft Information Protection",
-      "Microsoft People",
-      "Microsoft SharePoint",
-      "Microsoft Viva",
-      "Multi Tenant Management",
-      "Private Secure Access",
-      "Privileged IAM",
-      "Security and Compliance",
-      "Support and Service Health",
-      "Teams",
-      "Tenant Configuration (Reader)",
-      "Tenant Management",
-      "Tenant Policy Management",
-      "User Hardware Management",
-      "User Lifecycle and Provisioning Management",
-      "User Virtual Endpoint Management",
-      "Verified ID",
-      "Virtual Visits",
-      "Yammer"
-    ],
+    "Categories": "Agent Identity,Application and Workload Identity,Authentication,Backup and Recovery,Business Apps Management,Cloud Access Security Broker,Cloud Infrastructure Entitlement Management,Conditional Access,Cross Tenant Management,Cross Tenant Partner Management,Default member,Dynamics 365,Entitlement Management,Global Endpoint Bitlocker Recovery,Global Endpoint Local Admin,Global Endpoint Management,Global Secure Access Management,Global Security and Compliance Management,Global User Management,Group Management,Guest user,Hybrid Identity Synchronization,Identity Threat Detection and Response,License Management,Microsoft 365 Backup,Microsoft 365 Billing Management,Microsoft 365 Platform Operations,Microsoft 365 Support Operations,Microsoft Copilot,Microsoft Dragon,Microsoft Exchange Online,Microsoft Information Protection,Microsoft People,Microsoft SharePoint,Microsoft Viva,Multi Tenant Management,Private Secure Access,Privileged IAM,Security and Compliance,Support and Service Health,Teams,Tenant Configuration (Reader),Tenant Management,Tenant Policy Management,User Hardware Management,User Lifecycle and Provisioning Management,User Virtual Endpoint Management,Verified ID,Virtual Visits,Yammer",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Users with this role have access to all administrative features in Microsoft Entra ID, as well as services that use Microsoft Entra identities like the Microsoft Defender portal, the Microsoft Purview portal, Exchange Online, SharePoint Online, and Skype for Business Online. Global Administrators can view Directory Activity logs. Furthermore, Global Administrators can [elevate their access](/azure/role-based-access-control/elevate-access-global-admin) to manage all Azure subscriptions and management groups. This allows Global Administrators to get full access to all Azure resources using the respective Microsoft Entra tenant. The person who signs up for the Microsoft Entra organization becomes a Global Administrator. There can be more than one Global Administrator at your company. Global Administrators can reset the password for any user and all other administrators. A Global Administrator cannot remove their own Global Administrator assignment. This is to prevent a situation where an organization has zero Global Administrators.\n\n> [!NOTE]\n> As a best practice, Microsoft recommends that you assign the Global Administrator role to fewer than five people in your organization. For more information, see [Best practices for Microsoft Entra roles](../best-practices.md).",
     "RolePermissions": [
       {
@@ -6519,28 +6284,7 @@
     "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Application and Workload Identity",
-      "Cloud Infrastructure Entitlement Management",
-      "Default member",
-      "Global Endpoint Bitlocker Recovery",
-      "Guest user",
-      "Microsoft 365 Backup",
-      "Microsoft 365 Billing Management",
-      "Microsoft 365 Platform Operations",
-      "Microsoft 365 Support Operations",
-      "Microsoft Dragon",
-      "Microsoft SharePoint",
-      "Microsoft Viva",
-      "Security and Compliance",
-      "Support and Service Health",
-      "Teams",
-      "Tenant Configuration (Reader)",
-      "User Hardware Management",
-      "User Virtual Endpoint Management",
-      "Virtual Visits",
-      "Yammer"
-    ],
+    "Categories": "Application and Workload Identity,Cloud Infrastructure Entitlement Management,Default member,Global Endpoint Bitlocker Recovery,Guest user,Microsoft 365 Backup,Microsoft 365 Billing Management,Microsoft 365 Platform Operations,Microsoft 365 Support Operations,Microsoft Dragon,Microsoft SharePoint,Microsoft Viva,Security and Compliance,Support and Service Health,Teams,Tenant Configuration (Reader),User Hardware Management,User Virtual Endpoint Management,Virtual Visits,Yammer",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Users in this role can read settings and administrative information across Microsoft 365 services but can't take management actions. Global Reader is the read-only counterpart to Global Administrator. Assign Global Reader instead of Global Administrator for planning, audits, or investigations. Use Global Reader in combination with other limited admin roles like Exchange Administrator to make it easier to get work done without the assigning the Global Administrator role. Global Reader works with Microsoft 365 admin center, Exchange admin center, SharePoint admin center, Teams admin center, Microsoft Defender portal, Microsoft Purview portal, Azure portal, and Device Management admin center.\n\nUsers with this role **cannot** do the following:\n\n- Cannot access the Purchase Services area in the Microsoft 365 admin center.\n\n> [!NOTE]\n> Global Reader role has the following limitations:\n>\n>- OneDrive admin center - OneDrive admin center does not support the Global Reader role\n>- [Microsoft Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) - Global Reader can't do content search or see Secure Score.\n>- [Teams admin center](/microsoftteams/manage-teams-in-modern-portal) - Global Reader cannot read **Teams lifecycle**, **Analytics & reports**, **IP phone device management**, and **App catalog**. For more information, see [Use Microsoft Teams administrator roles to manage Teams](/microsoftteams/using-admin-roles).\n>- [Privileged Access Management](/purview/privileged-access-management) doesn't support the Global Reader role.\n>- [Azure Information Protection](/azure/information-protection/what-is-information-protection) - Global Reader is supported [for central reporting](/azure/information-protection/reports-aip) only, and when your Microsoft Entra organization isn't on the [unified labeling platform](/azure/information-protection/faqs#how-can-i-determine-if-my-tenant-is-on-the-unified-labeling-platform).\n> - [SharePoint](/sharepoint/get-started-new-admin-center) - Global Reader has read access to SharePoint Online PowerShell cmdlets and Read APIs.\n> - [Power Platform admin center](/power-platform/admin/admin-documentation) - Global Reader is not yet supported in the Power Platform admin center.\n> - Microsoft Purview doesn't support the Global Reader role.",
     "RolePermissions": [
       {
@@ -7155,14 +6899,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Default member",
-      "Global Secure Access Management",
-      "Microsoft 365 Support Operations",
-      "Security and Compliance",
-      "Support and Service Health",
-      "Tenant Configuration (Reader)"
-    ],
+    "Categories": "Default member,Global Secure Access Management,Microsoft 365 Support Operations,Security and Compliance,Support and Service Health,Tenant Configuration (Reader)",
     "RichDescription": "Assign the Global Secure Access Administrator role to users who need to do the following:\n\n- Create and manage all aspects of Microsoft Entra Internet Access and Microsoft Entra Private Access\n- Manage access to public and private endpoints\n\nUsers with this role **cannot** do the following:\n\n- Cannot manage enterprise applications, application registrations, Conditional Access, or application proxy settings\n\n[Learn more](../../../global-secure-access/reference-role-based-permissions.md)",
     "RolePermissions": [
       {
@@ -7318,13 +7055,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Group Management",
-      "License Management",
-      "Microsoft 365 Support Operations",
-      "Support and Service Health",
-      "Tenant Configuration (Reader)"
-    ],
+    "Categories": "Group Management,License Management,Microsoft 365 Support Operations,Support and Service Health,Tenant Configuration (Reader)",
     "RichDescription": "Users in this role can create/manage groups and its settings like naming and expiration policies. It is important to understand that assigning a user to this role gives them the ability to manage all groups in the organization across various workloads like Teams, SharePoint, Yammer in addition to Outlook. Also the user will be able to manage the various groups settings across various admin portals like Microsoft admin center, Azure portal, as well as workload specific ones like Teams and SharePoint admin centers.",
     "RolePermissions": [
       {
@@ -7495,10 +7226,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Default member",
-      "External Identities"
-    ],
+    "Categories": "Default member,External Identities",
     "RichDescription": "Users in this role can manage Microsoft Entra B2B guest user invitations when the **Members can invite** user setting is set to No. More information about B2B collaboration at [About Microsoft Entra B2B collaboration](~/external-id/what-is-b2b.md). It does not include any other permissions.",
     "RolePermissions": [
       {
@@ -7615,13 +7343,7 @@
     "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Global Endpoint Bitlocker Recovery",
-      "Global User Management",
-      "Microsoft 365 Support Operations",
-      "Support and Service Health",
-      "Tenant Configuration (Reader)"
-    ],
+    "Categories": "Global Endpoint Bitlocker Recovery,Global User Management,Microsoft 365 Support Operations,Support and Service Health,Tenant Configuration (Reader)",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Users with this role can change passwords, invalidate refresh tokens, create and manage support requests with Microsoft for Azure and Microsoft 365 services, and monitor service health. Invalidating a refresh token forces the user to sign in again. Whether a Helpdesk Administrator can reset a user's password and invalidate refresh tokens depends on the role the user is assigned. For a list of the roles that a Helpdesk Administrator can reset passwords for and invalidate refresh tokens, see [Who can reset passwords](../privileged-roles-permissions.md#who-can-reset-passwords).\n\nUsers with this role **cannot** do the following:\n\n- Cannot change the credentials or reset MFA for members and owners of a [role-assignable group](../groups-concept.md).\n\n> [!IMPORTANT]\n> Users with this role can change passwords for people who may have access to sensitive or private information or critical configuration inside and outside of Microsoft Entra ID. Changing the password of a user may mean the ability to assume that user's identity and permissions. For example:\n>\n>- Application Registration and Enterprise Application owners, who can manage credentials of apps they own. Those apps may have privileged permissions in Microsoft Entra ID and elsewhere not granted to Helpdesk Administrators. Through this path a Helpdesk Administrator may be able to assume the identity of an application owner and then further assume the identity of a privileged application by updating the credentials for the application.\n>- Azure subscription owners, who might have access to sensitive or private information or critical configuration in Azure.\n>- Security Group and Microsoft 365 group owners, who can manage group membership. Those groups may grant access to sensitive or private information or critical configuration in Microsoft Entra ID and elsewhere.\n>- Administrators in other services outside of Microsoft Entra ID like Exchange Online, Microsoft Defender portal, Microsoft Purview portal, and human resources systems.\n>- Non-administrators like executives, legal counsel, and human resources employees who may have access to sensitive or private information.\n\nDelegating administrative permissions over subsets of users and applying policies to a subset of users is possible with [Administrative Units](../administrative-units.md).\n\nThis role was previously named Password Administrator in the [Azure portal](/azure/azure-portal/azure-portal-overview). It was renamed to Helpdesk Administrator to align with the existing name in the Microsoft Graph API and Microsoft Graph PowerShell.",
     "RolePermissions": [
       {
@@ -7690,18 +7412,7 @@
     "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Application and Workload Identity",
-      "Authentication",
-      "Global User Management",
-      "Hybrid Identity Synchronization",
-      "Microsoft 365 Support Operations",
-      "Security and Compliance",
-      "Support and Service Health",
-      "Tenant Configuration (Reader)",
-      "Tenant Policy Management",
-      "User Lifecycle and Provisioning Management"
-    ],
+    "Categories": "Application and Workload Identity,Authentication,Global User Management,Hybrid Identity Synchronization,Microsoft 365 Support Operations,Security and Compliance,Support and Service Health,Tenant Configuration (Reader),Tenant Policy Management,User Lifecycle and Provisioning Management",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Users in this role can create, manage and deploy provisioning configuration setup from Active Directory to Microsoft Entra ID using Cloud Provisioning as well as manage Microsoft Entra Connect, pass-through authentication (PTA), password hash synchronization (PHS), seamless single sign-on (seamless SSO), and federation settings. Does not have access to manage Microsoft Entra Connect Health. Users can also troubleshoot and monitor logs using this role.",
     "RolePermissions": [
       {
@@ -8082,12 +7793,7 @@
     "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Application and Workload Identity",
-      "Entitlement Management",
-      "Group Management",
-      "Tenant Configuration (Reader)"
-    ],
+    "Categories": "Application and Workload Identity,Entitlement Management,Group Management,Tenant Configuration (Reader)",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nUsers with this role can manage Microsoft Entra ID Governance configuration, including access packages, access reviews, catalogs and policies, ensuring access is approved and reviewed and guest users who no longer need access are removed.",
     "RolePermissions": [
       {
@@ -8162,11 +7868,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Support Operations",
-      "Microsoft Viva",
-      "Support and Service Health"
-    ],
+    "Categories": "Microsoft 365 Support Operations,Microsoft Viva,Support and Service Health",
     "RichDescription": "Users in this role can access the full set of administrative capabilities in the Microsoft Viva Insights app. This role has the ability to read directory information, monitor service health, file support tickets, and access the Insights Administrator settings aspects.\n\n[Learn more](https://go.microsoft.com/fwlink/?linkid=2129521)",
     "RolePermissions": [
       {
@@ -8217,10 +7919,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Support Operations",
-      "Microsoft Viva"
-    ],
+    "Categories": "Microsoft 365 Support Operations,Microsoft Viva",
     "RichDescription": "Assign the Insights Analyst role to users who need to do the following:\n\n- Analyze data in the Microsoft Viva Insights app, but can't manage any configuration settings\n- Create, manage, and run queries\n- View basic settings and reports in the Microsoft 365 admin center\n- Create and manage service requests in the Microsoft 365 admin center\n\n[Learn more](https://go.microsoft.com/fwlink/?linkid=2129521)",
     "RolePermissions": [
       {
@@ -8253,10 +7952,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft Viva",
-      "Tenant Configuration (Reader)"
-    ],
+    "Categories": "Microsoft Viva,Tenant Configuration (Reader)",
     "RichDescription": "Users in this role can access a set of dashboards and insights via the Microsoft Viva Insights app. This includes full access to all dashboards and presented insights and data exploration functionality. Users in this role do not have access to product configuration settings, which is the responsibility of the Insights Administrator role.\n\n[Learn more](https://go.microsoft.com/fwlink/?linkid=2129521)",
     "RolePermissions": [
       {
@@ -8283,19 +7979,7 @@
     "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Global Endpoint Bitlocker Recovery",
-      "Global Endpoint Local Admin",
-      "Global Endpoint Management",
-      "Global User Management",
-      "Group Management",
-      "Microsoft 365 Platform Operations",
-      "Microsoft 365 Support Operations",
-      "Microsoft Exchange Online",
-      "Support and Service Health",
-      "Tenant Configuration (Reader)",
-      "User Virtual Endpoint Management"
-    ],
+    "Categories": "Global Endpoint Bitlocker Recovery,Global Endpoint Local Admin,Global Endpoint Management,Global User Management,Group Management,Microsoft 365 Platform Operations,Microsoft 365 Support Operations,Microsoft Exchange Online,Support and Service Health,Tenant Configuration (Reader),User Virtual Endpoint Management",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Users with this role have global permissions within Microsoft Intune Online, when the service is present. Additionally, this role contains the ability to manage users and devices in order to associate policy, as well as create and manage groups. For more information, see [Role-based administration control (RBAC) with Microsoft Intune](/mem/intune/fundamentals/role-based-access-control).\n\nThis role can create and manage all security groups. However, Intune Administrator does not have admin rights over Microsoft 365 groups. That means the admin cannot update owners or memberships of all Microsoft 365 groups in the organization. However, he/she can manage the Microsoft 365 group that he creates which comes as a part of his/her end-user privileges. So, any Microsoft 365 group (not security group) that he/she creates should be counted against his/her quota of 250.\n\n> [!NOTE]\n> In the Microsoft Graph API and Microsoft Graph PowerShell, this role is named Intune Service Administrator. In the [Azure portal](/azure/azure-portal/azure-portal-overview), it is named Intune Administrator.",
     "RolePermissions": [
       {
@@ -8613,10 +8297,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Default member",
-      "Microsoft 365 Support Operations"
-    ],
+    "Categories": "Default member,Microsoft 365 Support Operations",
     "RichDescription": "Users with this role have global permissions to manage settings within Microsoft Kaizala, when the service is present, as well as the ability to manage support tickets and monitor service health. Additionally, the user can access reports related to adoption & usage of Kaizala by Organization members and business reports generated using the Kaizala actions.",
     "RolePermissions": [
       {
@@ -8655,14 +8336,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Extended member",
-      "Group Management",
-      "Microsoft 365 Platform Operations",
-      "Microsoft 365 Support Operations",
-      "Microsoft SharePoint",
-      "Security and Compliance"
-    ],
+    "Categories": "Extended member,Group Management,Microsoft 365 Platform Operations,Microsoft 365 Support Operations,Microsoft SharePoint,Security and Compliance",
     "RichDescription": "Users in this role have full access to all knowledge, learning and intelligent features settings in the Microsoft 365 admin center. They have a general understanding of the suite of products, licensing details and have responsibility to control access. Knowledge Administrator can create and manage content, like topics, acronyms and learning resources. Additionally, these users can create content centers, monitor service health, and create service requests.",
     "RolePermissions": [
       {
@@ -8755,13 +8429,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Extended member",
-      "Group Management",
-      "Microsoft 365 Platform Operations",
-      "Microsoft 365 Support Operations",
-      "Microsoft SharePoint"
-    ],
+    "Categories": "Extended member,Group Management,Microsoft 365 Platform Operations,Microsoft 365 Support Operations,Microsoft SharePoint",
     "RichDescription": "Users in this role can create and manage content, like topics, acronyms and learning content. These users are primarily responsible for the quality and structure of knowledge. This user has full rights to topic management actions to confirm a topic, approve edits, or delete a topic. This role can also manage taxonomies as part of the term store management tool and create content centers.",
     "RolePermissions": [
       {
@@ -8842,13 +8510,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Default member",
-      "Global User Management",
-      "License Management",
-      "Microsoft 365 Support Operations",
-      "Support and Service Health"
-    ],
+    "Categories": "Default member,Global User Management,License Management,Microsoft 365 Support Operations,Support and Service Health",
     "RichDescription": "Users in this role can read, add, remove, and update license assignments on users, groups (using group-based licensing), and manage the usage location on users. The role does not grant the ability to purchase or manage subscriptions, create or manage groups, or create or manage users beyond the usage location. This role has no access to view, create, or manage support tickets.",
     "RolePermissions": [
       {
@@ -8917,10 +8579,7 @@
     "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Tenant Configuration (Reader)",
-      "User Lifecycle and Provisioning Management"
-    ],
+    "Categories": "Tenant Configuration (Reader),User Lifecycle and Provisioning Management",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Assign the Lifecycle Workflows Administrator role to users who need to do the following tasks:\n\n- Create and manage all aspects of workflows and tasks associated with Lifecycle Workflows in Microsoft Entra ID\n- Check the execution of scheduled workflows\n- Launch on-demand workflow runs\n- Inspect workflow execution logs",
     "RolePermissions": [
       {
@@ -8953,10 +8612,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Support Operations",
-      "Support and Service Health"
-    ],
+    "Categories": "Microsoft 365 Support Operations,Support and Service Health",
     "RichDescription": "Users in this role can monitor all notifications in the Message Center, including data privacy messages. Message Center Privacy Readers get email notifications including those related to data privacy and they can unsubscribe using Message Center Preferences. Only the Global Administrator and the Message Center Privacy Reader can read data privacy messages. Additionally, this role contains the ability to view groups, domains, and subscriptions. This role has no permission to view, create, or manage service requests.",
     "RolePermissions": [
       {
@@ -9016,11 +8672,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Backup",
-      "Microsoft 365 Support Operations",
-      "Support and Service Health"
-    ],
+    "Categories": "Microsoft 365 Backup,Microsoft 365 Support Operations,Support and Service Health",
     "RichDescription": "Assign the Microsoft 365 Backup Administrator role to users who need to do the following tasks:\n\n- Manage all aspects of Microsoft 365 Backup\n- Create, edit, and manage backup configuration policies for SharePoint, OneDrive, and Exchange Online\n- Perform restore operations for backed-up SharePoint sites, OneDrive accounts, and Exchange mailboxes",
     "RolePermissions": [
       {
@@ -9083,10 +8735,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Platform Operations",
-      "Microsoft 365 Support Operations"
-    ],
+    "Categories": "Microsoft 365 Platform Operations,Microsoft 365 Support Operations",
     "RichDescription": "Assign the Microsoft 365 Migration Administrator role to users who need to do the following tasks:\n\n- Use Migration Manager in the Microsoft 365 admin center to manage content migration to Microsoft 365, including Teams, OneDrive for Business, and SharePoint sites, from Google Drive, Dropbox, Box, and Egnyte\n- Select migration sources, create migration inventories (such as Google Drive user lists), schedule and execute migrations, and download reports\n- Create new SharePoint sites if the destination sites don't already exist, create SharePoint lists under the SharePoint admin sites, and create and update items in SharePoint lists\n- Manage migration project settings and migration lifecycle for tasks\n- Manage permission mappings from source to destination\n\n> [!NOTE]\n> This role doesn't allow you to migrate from file share sources using the SharePoint admin center. You can use the SharePoint Administrator role to migrate from file share sources.\n\n[Learn more](/sharepointmigration/mm-migration-admin-role)",
     "RolePermissions": [
       {
@@ -9146,11 +8795,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Platform Operations",
-      "Microsoft 365 Support Operations",
-      "Support and Service Health"
-    ],
+    "Categories": "Microsoft 365 Platform Operations,Microsoft 365 Support Operations,Support and Service Health",
     "RichDescription": "Assign the Microsoft Graph Data Connect Administrator role to users who need to do the following tasks:\n\n- Access the full set of administrative capabilities of Microsoft Graph Data Connect\n- Manage Microsoft Graph Data Connect settings in a tenant\n- Enable or disable the Microsoft Graph Data Connect service\n- Configure dataset workload selections in Microsoft Graph Data Connect\n- Configure cross-tenant data movement settings in Microsoft Graph Data Connect\n- View, approve, or deny application authorization requests for Microsoft Graph Data Connect\n- View, create, update, or delete application registrations for Microsoft Graph Data Connect\n\n[Learn more](/graph/data-connect-concept-overview)",
     "RolePermissions": [
       {
@@ -9207,10 +8852,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Support Operations",
-      "User Hardware Management"
-    ],
+    "Categories": "Microsoft 365 Support Operations,User Hardware Management",
     "RichDescription": "Assign the Microsoft Hardware Warranty Administrator role to users who need to do the following tasks:\n\n- Create new warranty claims for Microsoft manufactured hardware, like Surface and HoloLens\n- Search and read opened or closed warranty claims\n- Search and read warranty claims by serial number\n- Create, read, update, and delete shipping addresses\n- Read shipping status for open warranty claims\n- Create and manage service requests in the Microsoft 365 admin center\n- Read Message center announcements in the Microsoft 365 admin center\n\nA warranty claim is a request to have the hardware repaired or replaced in accordance with the terms of the warranty. For more information, see [Self-serve your Surface warranty & service requests](/surface/self-serve-warranty-service).",
     "RolePermissions": [
       {
@@ -9261,10 +8903,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Support Operations",
-      "User Hardware Management"
-    ],
+    "Categories": "Microsoft 365 Support Operations,User Hardware Management",
     "RichDescription": "Assign the Microsoft Hardware Warranty Specialist role to users who need to do the following tasks:\n\n- Create new warranty claims for Microsoft manufactured hardware, like Surface and HoloLens\n- Read warranty claims that they created\n- Read and update existing shipping addresses\n- Read shipping status for open warranty claims they created\n- Create and manage service requests in the Microsoft 365 admin center\n\nA warranty claim is a request to have the hardware repaired or replaced in accordance with the terms of the warranty. For more information, see [Self-serve your Surface warranty & service requests](/surface/self-serve-warranty-service).",
     "RolePermissions": [
       {
@@ -9315,10 +8954,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Platform Operations",
-      "Microsoft 365 Support Operations"
-    ],
+    "Categories": "Microsoft 365 Platform Operations,Microsoft 365 Support Operations",
     "RichDescription": "Users in this role can review network perimeter architecture recommendations from Microsoft that are based on network telemetry from their user locations. Network performance for Microsoft 365 relies on careful enterprise customer network perimeter architecture which is generally user location specific. This role allows for editing of discovered user locations and configuration of network parameters for those locations to facilitate improved telemetry measurements and design recommendations.",
     "RolePermissions": [
       {
@@ -9351,11 +8987,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Platform Operations",
-      "Microsoft 365 Support Operations",
-      "Support and Service Health"
-    ],
+    "Categories": "Microsoft 365 Platform Operations,Microsoft 365 Support Operations,Support and Service Health",
     "RichDescription": "Users in this role can manage Microsoft 365 apps' cloud settings. This includes managing cloud policies, self-service download management and the ability to view Office apps related report. This role additionally grants the ability to manage support tickets, and monitor service health within the main admin center. Users assigned to this role can also manage communication of new features in Office apps.",
     "RolePermissions": [
       {
@@ -9433,11 +9065,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Platform Operations",
-      "Microsoft 365 Support Operations",
-      "Support and Service Health"
-    ],
+    "Categories": "Microsoft 365 Platform Operations,Microsoft 365 Support Operations,Support and Service Health",
     "RichDescription": "Assign the Organizational Data Source Administrator role to users who need to do the following tasks:\n\n- Manage settings related to ingesting and managing organizational data for Microsoft 365 and Microsoft Viva applications\n- Upload, update, and delete the ingested organizational data in Microsoft 365 and Microsoft Viva applications\n- Export organizational data from the authorized applications\n\n[Learn more](/viva/import-orgdata)",
     "RolePermissions": [
       {
@@ -9494,10 +9122,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Platform Operations",
-      "Microsoft 365 Support Operations"
-    ],
+    "Categories": "Microsoft 365 Platform Operations,Microsoft 365 Support Operations",
     "RichDescription": "Assign the Organizational Messages Approver role to users who need to do the following tasks:\n\n- Review, approve, or reject new organizational messages for delivery in the Microsoft 365 admin center before they are sent to users using the Microsoft 365 Organizational Messages platform\n- Read all aspects of organizational messages\n- Read basic properties on all resources in the Microsoft 365 admin center",
     "RolePermissions": [
       {
@@ -9530,10 +9155,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Platform Operations",
-      "Microsoft 365 Support Operations"
-    ],
+    "Categories": "Microsoft 365 Platform Operations,Microsoft 365 Support Operations",
     "RichDescription": "Assign the Organizational Messages Writer role to users who need to do the following tasks:\n\n- Write, publish, and delete organizational messages using Microsoft 365 admin center or Microsoft Intune\n- Manage organizational message delivery options using Microsoft 365 admin center or Microsoft Intune\n- Read organizational message delivery results using Microsoft 365 admin center or Microsoft Intune\n- View usage reports and most settings in the Microsoft 365 admin center, but can't make changes",
     "RolePermissions": [
       {
@@ -9566,17 +9188,7 @@
     "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Application and Workload Identity",
-      "Global User Management",
-      "Group Management",
-      "License Management",
-      "Microsoft 365 Group Management",
-      "Microsoft 365 Support Operations",
-      "Microsoft Exchange Online",
-      "Support and Service Health",
-      "Tenant Policy Management"
-    ],
+    "Categories": "Application and Workload Identity,Global User Management,Group Management,License Management,Microsoft 365 Group Management,Microsoft 365 Support Operations,Microsoft Exchange Online,Support and Service Health,Tenant Policy Management",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Do not use. This role has been deprecated and will be removed from Microsoft Entra ID in the future. This role is intended for use by a small number of Microsoft resale partners, and is not intended for general use.\n\n> [!IMPORTANT]\n> This role can reset passwords and invalidate refresh tokens for only non-administrators. This role should not be used because it is deprecated.",
     "RolePermissions": [
       {
@@ -9831,20 +9443,7 @@
     "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Application and Workload Identity",
-      "Default member",
-      "Global User Management",
-      "Group Management",
-      "License Management",
-      "Microsoft 365 Group Management",
-      "Microsoft 365 Support Operations",
-      "Microsoft Exchange Online",
-      "Privileged IAM",
-      "Support and Service Health",
-      "Tenant Management",
-      "Tenant Policy Management"
-    ],
+    "Categories": "Application and Workload Identity,Default member,Global User Management,Group Management,License Management,Microsoft 365 Group Management,Microsoft 365 Support Operations,Microsoft Exchange Online,Privileged IAM,Support and Service Health,Tenant Management,Tenant Policy Management",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Do not use. This role has been deprecated and will be removed from Microsoft Entra ID in the future. This role is intended for use by a small number of Microsoft resale partners, and is not intended for general use.\n\n> [!IMPORTANT]\n> This role can reset passwords and invalidate refresh tokens for all non-administrators and administrators (including Global Administrators). This role should not be used because it is deprecated.",
     "RolePermissions": [
       {
@@ -10135,10 +9734,7 @@
     "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Global User Management",
-      "Microsoft 365 Support Operations"
-    ],
+    "Categories": "Global User Management,Microsoft 365 Support Operations",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Users with this role have limited ability to manage passwords. This role does not grant the ability to manage service requests or monitor service health. Whether a Password Administrator can reset a user's password depends on the role the user is assigned. For a list of the roles that a Password Administrator can reset passwords for, see [Who can reset passwords](../privileged-roles-permissions.md#who-can-reset-passwords).\n\nUsers with this role **cannot** do the following:\n\n- Cannot change the credentials or reset MFA for members and owners of a [role-assignable group](../groups-concept.md).",
     "RolePermissions": [
       {
@@ -10165,11 +9761,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Default member",
-      "Microsoft 365 Support Operations",
-      "Microsoft People"
-    ],
+    "Categories": "Default member,Microsoft 365 Support Operations,Microsoft People",
     "RichDescription": "Assign the People Administrator role to users who need to do the following tasks:\n\n- Update profile photos for all users including administrators\n- Update people settings for all users, such as pronouns, name pronunciation, and profile card settings",
     "RolePermissions": [
       {
@@ -10256,12 +9848,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Business Apps Management",
-      "Dynamics 365",
-      "Microsoft 365 Support Operations",
-      "Support and Service Health"
-    ],
+    "Categories": "Business Apps Management,Dynamics 365,Microsoft 365 Support Operations,Support and Service Health",
     "RichDescription": "Users in this role can create and manage all aspects of environments, Power Apps, Flows, Data Loss Prevention policies. Additionally, users with this role have the ability to manage support tickets and monitor service health.",
     "RolePermissions": [
       {
@@ -10390,12 +9977,7 @@
     "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Global User Management",
-      "Microsoft 365 Support Operations",
-      "Support and Service Health",
-      "Tenant Configuration (Reader)"
-    ],
+    "Categories": "Global User Management,Microsoft 365 Support Operations,Support and Service Health,Tenant Configuration (Reader)",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Assign the Privileged Authentication Administrator role to users who need to do the following:\n\n- Set or reset any authentication method (including passwords) for any user, including Global Administrators.\n- Delete or restore any users, including Global Administrators. For more information, see [Who can perform sensitive actions](../privileged-roles-permissions.md#who-can-perform-sensitive-actions).\n- Force users to re-register against existing non-password credential (such as MFA or FIDO2) and revoke **remember MFA on the device**, prompting for MFA on the next sign-in of all users.\n- Update sensitive properties for all users. For more information, see [Who can perform sensitive actions](../privileged-roles-permissions.md#who-can-perform-sensitive-actions).\n- Create and manage support tickets in Azure and the Microsoft 365 admin center.\n- Configure certificate authorities with a PKI-based trust store (preview)\n\nUsers with this role **cannot** do the following:\n\n- Cannot manage per-user MFA in the legacy MFA management portal.\n\n[!INCLUDE [authentication-table-include](authentication-table-include.md)]\n\n> [!IMPORTANT]\n> Users with this role can change credentials for people who may have access to sensitive or private information or critical configuration inside and outside of Microsoft Entra ID. Changing the credentials of a user may mean the ability to assume that user's identity and permissions. For example:\n>\n>* Application Registration and Enterprise Application owners, who can manage credentials of apps they own. Those apps may have privileged permissions in Microsoft Entra ID and elsewhere not granted to Authentication Administrators. Through this path an Authentication Administrator can assume the identity of an application owner and then further assume the identity of a privileged application by updating the credentials for the application.\n>* Azure subscription owners, who may have access to sensitive or private information or critical configuration in Azure.\n>* Security Group and Microsoft 365 group owners, who can manage group membership. Those groups may grant access to sensitive or private information or critical configuration in Microsoft Entra ID and elsewhere.\n>* Administrators in other services outside of Microsoft Entra ID like Exchange Online, Microsoft Defender portal, and Microsoft Purview portal, and human resources systems.\n>* Non-administrators like executives, legal counsel, and human resources employees who may have access to sensitive or private information.",
     "RolePermissions": [
       {
@@ -10530,15 +10112,7 @@
     "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Application and Workload Identity",
-      "Entitlement Management",
-      "License Management",
-      "Microsoft 365 Support Operations",
-      "Privileged IAM",
-      "Tenant Configuration (Reader)",
-      "Tenant Management"
-    ],
+    "Categories": "Application and Workload Identity,Entitlement Management,License Management,Microsoft 365 Support Operations,Privileged IAM,Tenant Configuration (Reader),Tenant Management",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Users with this role can manage role assignments in Microsoft Entra ID, as well as within Microsoft Entra Privileged Identity Management. They can create and manage groups that can be assigned to Microsoft Entra roles. In addition, this role allows management of all aspects of Privileged Identity Management and administrative units.\n\n> [!IMPORTANT]\n> This role grants the ability to manage assignments for all Microsoft Entra roles including the Global Administrator role. This role does not include any other privileged abilities in Microsoft Entra ID like creating or updating users. However, users assigned to this role can grant themselves or others additional privilege by assigning additional roles.",
     "RolePermissions": [
       {
@@ -10763,11 +10337,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Support Operations",
-      "Security and Compliance",
-      "Support and Service Health"
-    ],
+    "Categories": "Microsoft 365 Support Operations,Security and Compliance,Support and Service Health",
     "RichDescription": "Users with this role can view usage reporting data and the reports dashboard in Microsoft 365 admin center and the adoption context pack in Fabric and Power BI. Additionally, the role provides access to all sign-in logs, audit logs, and activity reports in Microsoft Entra ID and data returned by the Microsoft Graph reporting API. A user assigned to the Reports Reader role can access only relevant usage and adoption metrics. They don't have any admin permissions to configure settings or access the product-specific admin centers like Exchange. This role has no access to view, create, or manage support tickets.",
     "RolePermissions": [
       {
@@ -10902,24 +10472,7 @@
     "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Application and Workload Identity",
-      "Authentication",
-      "Conditional Access",
-      "Cross Tenant Partner Management",
-      "Default member",
-      "Global Endpoint Bitlocker Recovery",
-      "Global Secure Access Management",
-      "Global Security and Compliance Management",
-      "Guest user",
-      "Identity Threat Detection and Response",
-      "Microsoft 365 Support Operations",
-      "Multi Tenant Management",
-      "Security and Compliance",
-      "Support and Service Health",
-      "Tenant Configuration (Reader)",
-      "Tenant Policy Management"
-    ],
+    "Categories": "Application and Workload Identity,Authentication,Conditional Access,Cross Tenant Partner Management,Default member,Global Endpoint Bitlocker Recovery,Global Secure Access Management,Global Security and Compliance Management,Guest user,Identity Threat Detection and Response,Microsoft 365 Support Operations,Multi Tenant Management,Security and Compliance,Support and Service Health,Tenant Configuration (Reader),Tenant Policy Management",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Users with this role have permissions to manage security-related features in the Microsoft Defender portal, Microsoft Entra ID Protection, Microsoft Entra Authentication, Azure Information Protection, and Microsoft Purview portal. For more information about Office 365 permissions, see [Roles and role groups in Microsoft Defender for Office 365 and Microsoft Purview compliance](/microsoft-365/security/office-365-security/scc-permissions).\n\n| In | Can do |\n| --- | --- |\n| [Microsoft Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) | Monitor security-related policies across Microsoft 365 services<br>Manage security threats and alerts<br>View reports |\n| [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) | All permissions of the Security Reader role<br>Perform all ID Protection operations except for resetting passwords |\n| [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md) | All permissions of the Security Reader role<br>**Cannot** manage Microsoft Entra role assignments or settings |\n| [Microsoft Purview portal](/purview/purview-portal) | Manage security policies<br>View, investigate, and respond to security threats<br>View reports |\n| Azure Advanced Threat Protection | Monitor and respond to suspicious security activity |\n| [Microsoft Defender for Endpoint](/microsoft-365/security/defender-endpoint/prepare-deployment) | Assign roles<br>Manage machine groups<br>Configure endpoint threat detection and automated remediation<br>View, investigate, and respond to alerts<br/>View machines/device inventory |\n| [Intune](/mem/intune/fundamentals/role-based-access-control) | Maps to the [Intune Endpoint Security Manager role](/mem/intune/fundamentals/role-based-access-control-reference) |\n| [Microsoft Defender for Cloud Apps](/defender-cloud-apps/manage-admins) | Add admins, add policies and settings, upload logs and perform governance actions |\n| [Microsoft 365 service health](/microsoft-365/enterprise/view-service-health) | View the health of Microsoft 365 services |\n| [Smart lockout](~/identity/authentication/howto-password-smart-lockout.md) | Define the threshold and duration for lockouts when failed sign-in events happen. |\n| [Password Protection](~/identity/authentication/concept-password-ban-bad.md) | Configure custom banned password list or on-premises password protection. |\n| [Cross-tenant synchronization](~/identity/multi-tenant-organizations/cross-tenant-synchronization-overview.md) | Configure cross-tenant access settings for users in another tenant. Security Administrators can't directly create and delete users, but can indirectly create and delete synchronized users from another tenant when both tenants are configured for cross-tenant synchronization, which is a privileged permission. |",
     "RolePermissions": [
       {
@@ -11426,18 +10979,7 @@
     "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Cloud Access Security Broker",
-      "Default member",
-      "Global Endpoint Management",
-      "Global Security and Compliance Management",
-      "Global User Management",
-      "Identity Threat Detection and Response",
-      "Microsoft 365 Support Operations",
-      "Security and Compliance",
-      "Support and Service Health",
-      "Tenant Configuration (Reader)"
-    ],
+    "Categories": "Cloud Access Security Broker,Default member,Global Endpoint Management,Global Security and Compliance Management,Global User Management,Identity Threat Detection and Response,Microsoft 365 Support Operations,Security and Compliance,Support and Service Health,Tenant Configuration (Reader)",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Users with this role can manage alerts, perform identity containment actions during security incidents and have global read-only access on security-related features, including all information in Microsoft Defender portal, Microsoft Entra ID Protection, Privileged Identity Management, and Microsoft Purview portal. For more information about Office 365 permissions, see [Roles and role groups in Microsoft Defender for Office 365 and Microsoft Purview compliance](/microsoft-365/security/office-365-security/scc-permissions).\n\n| In | Can do |\n| --- | --- |\n| [Microsoft Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) | All permissions of the Security Reader role<br/>View, investigate, and respond to security threats alerts<br/>Perform identity containment actions for security incidents <br/> Manage security settings in Microsoft Defender portal |\n| [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) | All permissions of the Security Reader role<br>Perform all ID Protection operations except for configuring or changing risk-based policies, resetting passwords, and configuring alert e-mails. |\n| [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md) | All permissions of the Security Reader role |\n| [Microsoft Purview portal](/purview/purview-portal) | All permissions of the Security Reader role<br>View, investigate, and respond to security alerts |\n| [Microsoft Defender for Endpoint](/microsoft-365/security/defender-endpoint/prepare-deployment) | All permissions of the Security Reader role<br/>View, investigate, and respond to security alerts<br/>When you turn on role-based access control in Microsoft Defender for Endpoint, users with read-only permissions such as the Security Reader role lose access until they're assigned a Microsoft Defender for Endpoint role. |\n| [Intune](/mem/intune/fundamentals/role-based-access-control) | All permissions of the Security Reader role |\n| [Microsoft Defender for Cloud Apps](/defender-cloud-apps/manage-admins) | All permissions of the Security Reader role<br>View, investigate, and respond to security alerts |\n| [Microsoft 365 service health](/microsoft-365/enterprise/view-service-health) | View the health of Microsoft 365 services |",
     "RolePermissions": [
       {
@@ -11554,15 +11096,7 @@
     "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Default member",
-      "Global Endpoint Bitlocker Recovery",
-      "Guest user",
-      "Microsoft 365 Support Operations",
-      "Security and Compliance",
-      "Support and Service Health",
-      "Tenant Configuration (Reader)"
-    ],
+    "Categories": "Default member,Global Endpoint Bitlocker Recovery,Guest user,Microsoft 365 Support Operations,Security and Compliance,Support and Service Health,Tenant Configuration (Reader)",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Users with this role have global read-only access on security-related feature, including all information in Microsoft Defender portal, Microsoft Entra ID Protection, Privileged Identity Management, and the ability to read Microsoft Entra sign-in reports and audit logs, and in Microsoft Purview portal. For more information about Office 365 permissions, see [Roles and role groups in Microsoft Defender for Office 365 and Microsoft Purview compliance](/microsoft-365/security/office-365-security/scc-permissions).\n\n| In | Can do |\n| --- | --- |\n| [Microsoft Defender portal](/microsoft-365/security/defender/microsoft-365-defender-portal) | View security-related policies across Microsoft 365 services<br>View security threats and alerts<br>View reports |\n| [Microsoft Entra ID Protection](~/id-protection/overview-identity-protection.md) | View all ID Protection reports and Overview |\n| [Privileged Identity Management](~/id-governance/privileged-identity-management/pim-configure.md) | Has read-only access to all information surfaced in Microsoft Entra Privileged Identity Management: Policies and reports for Microsoft Entra role assignments and security reviews.<br>**Cannot** sign up for Microsoft Entra Privileged Identity Management or make any changes to it. In the Privileged Identity Management portal or via PowerShell, someone in this role can activate additional roles (for example, Privileged Role Administrator), if the user is eligible for them. |\n| [Microsoft Purview portal](/purview/purview-portal) | View security policies<br>View and investigate security threats<br>View reports |\n| [Microsoft Defender for Endpoint](/microsoft-365/security/defender-endpoint/prepare-deployment) | View and investigate alerts<br/>When you turn on role-based access control in Microsoft Defender for Endpoint, users with read-only permissions such as the Security Reader role lose access until they're assigned a Microsoft Defender for Endpoint role. |\n| [Intune](/mem/intune/fundamentals/role-based-access-control) | Views user, device, enrollment, configuration, and application information. Cannot make changes to Intune. |\n| [Microsoft Defender for Cloud Apps](/defender-cloud-apps/manage-admins) | Has read permissions. |\n| [Microsoft 365 service health](/microsoft-365/enterprise/view-service-health) | View the health of Microsoft 365 services |",
     "RolePermissions": [
       {
@@ -11781,10 +11315,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Support Operations",
-      "Support and Service Health"
-    ],
+    "Categories": "Microsoft 365 Support Operations,Support and Service Health",
     "RichDescription": "Users with this role can create and manage support requests with Microsoft for Azure and Microsoft 365 services, and view the service dashboard and message center in the [Azure portal](/azure/azure-portal/azure-portal-overview) and [Microsoft 365 admin center](/microsoft-365/admin/admin-overview/admin-center-overview). For more information, see [About admin roles in the Microsoft 365 admin center](/microsoft-365/admin/add-users/about-admin-roles).\n\n> [!NOTE]\n> This role was previously named Service Administrator in the [Azure portal](/azure/azure-portal/azure-portal-overview) and [Microsoft 365 admin center](/microsoft-365/admin/admin-overview/admin-center-overview). It was renamed to Service Support Administrator to align with the existing name in the Microsoft Graph API and Microsoft Graph PowerShell.",
     "RolePermissions": [
       {
@@ -11835,15 +11366,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Backup",
-      "Microsoft 365 Group Management",
-      "Microsoft 365 Platform Operations",
-      "Microsoft 365 Support Operations",
-      "Microsoft SharePoint",
-      "Support and Service Health",
-      "Tenant Configuration (Reader)"
-    ],
+    "Categories": "Microsoft 365 Backup,Microsoft 365 Group Management,Microsoft 365 Platform Operations,Microsoft 365 Support Operations,Microsoft SharePoint,Support and Service Health,Tenant Configuration (Reader)",
     "RichDescription": "Users with this role have global permissions within Microsoft SharePoint Online, when the service is present, as well as the ability to create and manage all Microsoft 365 groups, manage support tickets, and monitor service health. For more information, see [About admin roles in the Microsoft 365 admin center](/microsoft-365/admin/add-users/about-admin-roles).\n\n> [!NOTE]\n> In the Microsoft Graph API and Microsoft Graph PowerShell, this role is named SharePoint Service Administrator. In the [Azure portal](/azure/azure-portal/azure-portal-overview), it is named SharePoint Administrator.\n\n> [!NOTE]\n> This role also grants scoped permissions to the Microsoft Graph API for Microsoft Intune, allowing the management and configuration of policies related to SharePoint and OneDrive resources.",
     "RolePermissions": [
       {
@@ -12020,15 +11543,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Backup",
-      "Microsoft 365 Group Management",
-      "Microsoft 365 Platform Operations",
-      "Microsoft 365 Support Operations",
-      "Microsoft SharePoint",
-      "Support and Service Health",
-      "Tenant Configuration (Reader)"
-    ],
+    "Categories": "Microsoft 365 Backup,Microsoft 365 Group Management,Microsoft 365 Platform Operations,Microsoft 365 Support Operations,Microsoft SharePoint,Support and Service Health,Tenant Configuration (Reader)",
     "RichDescription": "Assign the SharePoint Advanced Management Administrator role to users who need to do the following tasks:\n\n- Perform all actions available to SharePoint Administrators, including global management of SharePoint Online, support ticket handling, and service health monitoring\n- View names, paths, and URLs of files, folders, libraries, documents, and lists within SharePoint sites, without accessing file or item content\n- Remove permissions from files, folders, libraries, documents, and lists within SharePoint sites",
     "RolePermissions": [
       {
@@ -12211,11 +11726,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Backup",
-      "Microsoft 365 Support Operations",
-      "Support and Service Health"
-    ],
+    "Categories": "Microsoft 365 Backup,Microsoft 365 Support Operations,Support and Service Health",
     "RichDescription": "Assign the SharePoint Backup Administrator role to users who need to do the following tasks:\n- Manage all aspects of Microsoft 365 Backup for SharePoint and OneDrive\n- Back up and restore content including granular restore across SharePoint and OneDrive\n- Create, edit, and manage backup configuration policies for SharePoint and OneDrive\n- Perform restore operations for SharePoint and OneDrive",
     "RolePermissions": [
       {
@@ -12332,10 +11843,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Support Operations",
-      "Microsoft SharePoint"
-    ],
+    "Categories": "Microsoft 365 Support Operations,Microsoft SharePoint",
     "RichDescription": "Assign the SharePoint Embedded Administrator role to users who need to do the following tasks:\n\n- Perform all tasks using PowerShell, Microsoft Graph API, or SharePoint admin center\n- Manage, configure, and maintain SharePoint Embedded containers\n- Enumerate and manage SharePoint Embedded containers\n- Enumerate and manage permissions for SharePoint Embedded containers\n- Manage storage of SharePoint Embedded containers in a tenant\n- Assign security and compliance policies on SharePoint Embedded containers\n- Apply security and compliance policies on SharePoint Embedded containers in a tenant\n\n[Learn more](/sharepoint/dev/embedded/concepts/admin-exp/cta)",
     "RolePermissions": [
       {
@@ -12386,11 +11894,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Support Operations",
-      "Support and Service Health",
-      "Teams"
-    ],
+    "Categories": "Microsoft 365 Support Operations,Support and Service Health,Teams",
     "RichDescription": "Users with this role have global permissions within Microsoft Skype for Business, when the service is present, as well as manage Skype-specific user attributes in Microsoft Entra ID. Additionally, this role grants the ability to manage support tickets and monitor service health, and to access the Teams and Skype for Business admin center. The account must also be licensed for Teams or it can't run Teams PowerShell cmdlets. For more information, see [Skype for Business Online Admin](/skypeforbusiness/skype-for-business-online) and Teams licensing information at [Skype for Business add-on licensing](/skypeforbusiness/skype-for-business-and-microsoft-teams-add-on-licensing/skype-for-business-and-microsoft-teams-add-on-licensing).\n\n> [!NOTE]\n> In the Microsoft Graph API and Microsoft Graph PowerShell, this role is named Lync Service Administrator. In the [Azure portal](/azure/azure-portal/azure-portal-overview), it is named Skype for Business Administrator.",
     "RolePermissions": [
       {
@@ -12447,15 +11951,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Cross Tenant Partner Management",
-      "Default member",
-      "Microsoft 365 Group Management",
-      "Microsoft 365 Support Operations",
-      "Support and Service Health",
-      "Teams",
-      "Tenant Configuration (Reader)"
-    ],
+    "Categories": "Cross Tenant Partner Management,Default member,Microsoft 365 Group Management,Microsoft 365 Support Operations,Support and Service Health,Teams,Tenant Configuration (Reader)",
     "RichDescription": "Users in this role can manage all aspects of the Microsoft Teams workload via the Microsoft Teams & Skype for Business admin center and the respective PowerShell modules. This includes, among other areas, all management tools related to telephony, messaging, meetings, and the teams themselves. This role additionally grants the ability to create and manage all Microsoft 365 groups, manage support tickets, and monitor service health.",
     "RolePermissions": [
       {
@@ -12668,12 +12164,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Default member",
-      "Microsoft 365 Support Operations",
-      "Support and Service Health",
-      "Teams"
-    ],
+    "Categories": "Default member,Microsoft 365 Support Operations,Support and Service Health,Teams",
     "RichDescription": "Users in this role can manage aspects of the Microsoft Teams workload related to voice & telephony. This includes the management tools for telephone number assignment, voice and meeting policies, and full access to the call analytics toolset.",
     "RolePermissions": [
       {
@@ -12754,12 +12245,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Default member",
-      "Microsoft 365 Support Operations",
-      "Support and Service Health",
-      "Teams"
-    ],
+    "Categories": "Default member,Microsoft 365 Support Operations,Support and Service Health,Teams",
     "RichDescription": "Users in this role can troubleshoot communication issues within Microsoft Teams & Skype for Business using the user call troubleshooting tools in the Microsoft Teams & Skype for Business admin center. Users in this role can view full call record information for all participants involved. This role has no access to view, create, or manage support tickets.",
     "RolePermissions": [
       {
@@ -12810,12 +12296,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Default member",
-      "Microsoft 365 Support Operations",
-      "Support and Service Health",
-      "Teams"
-    ],
+    "Categories": "Default member,Microsoft 365 Support Operations,Support and Service Health,Teams",
     "RichDescription": "Users in this role can troubleshoot communication issues within Microsoft Teams & Skype for Business using the user call troubleshooting tools in the Microsoft Teams & Skype for Business admin center. Users in this role can only view user details in the call for the specific user they have looked up. This role has no access to view, create, or manage support tickets.",
     "RolePermissions": [
       {
@@ -12866,10 +12347,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Support Operations",
-      "Teams"
-    ],
+    "Categories": "Microsoft 365 Support Operations,Teams",
     "RichDescription": "Users with this role can manage [Teams-certified devices](https://www.microsoft.com/microsoft-teams/across-devices/devices) from the Teams admin center. This role allows viewing all devices at single glance, with ability to search and filter devices. The user can check details of each device including logged-in account, make and model of the device. The user can change the settings on the device and update the software versions. This role does not grant permissions to check Teams activity and call quality of the device.",
     "RolePermissions": [
       {
@@ -12896,12 +12374,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Default member",
-      "Microsoft 365 Support Operations",
-      "Support and Service Health",
-      "Teams"
-    ],
+    "Categories": "Default member,Microsoft 365 Support Operations,Support and Service Health,Teams",
     "RichDescription": "Assign the Teams External Collaboration Administrator role to users who need to do the following tasks:\n\n- Manage Teams external collaboration settings that govern the organization's interactions with external users in chats, meetings, and calls.\n- Configure external domains, including creating, editing, and deleting domain entries that specify how users engage with external organizations.\n- Establish and manage allow list and block list policies for external collaboration at both the user and group levels.\n- Control which external domains and users can collaborate with the organization for secure and compliant external collaboration.",
     "RolePermissions": [
       {
@@ -12940,10 +12413,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Support Operations",
-      "Teams"
-    ],
+    "Categories": "Microsoft 365 Support Operations,Teams",
     "RichDescription": "Assign the Teams Reader role to users who need to do the following tasks: \n\n- Read settings and administrative information in the Teams admin center, but not perform any management actions\n- Read the Microsoft Call Quality Dashboard (CQD), but not access any troubleshooting capabilities\n\nUsers with this role **cannot** do the following tasks:\n\n- Cannot view Teams management\n- Cannot access Meetings & Calls details of users\n- Cannot access Notifications & Rules management\n- Cannot access Frontline worker deployment management\n- Cannot access the advanced collaboration insights dashboard\n\n[Learn more](/microsoftteams/using-admin-roles)",
     "RolePermissions": [
       {
@@ -12970,12 +12440,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Default member",
-      "Microsoft 365 Support Operations",
-      "Support and Service Health",
-      "Teams"
-    ],
+    "Categories": "Default member,Microsoft 365 Support Operations,Support and Service Health,Teams",
     "RichDescription": "Assign the Teams Telephony Administrator role to users who need to do the following tasks:\n\n- Manage voice and telephony, including calling policies, phone number management and assignment, and voice applications\n- Access to only Public Switched Telephone Network (PSTN) usage reports from Teams admin center\n- View user profile page\n- Create and manage support tickets in Azure and the Microsoft 365 admin center\n\n[Learn more](/microsoftteams/using-admin-roles)",
     "RolePermissions": [
       {
@@ -13071,13 +12536,7 @@
     "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Conditional Access",
-      "Cross Tenant Partner Management",
-      "Microsoft 365 Support Operations",
-      "Tenant Configuration (Reader)",
-      "Tenant Governance"
-    ],
+    "Categories": "Conditional Access,Cross Tenant Partner Management,Microsoft 365 Support Operations,Tenant Configuration (Reader),Tenant Governance",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nAssign the Tenant Governance Administrator role to users who need to do the following tasks:\n\n- Manage all capabilities in the Microsoft Entra Tenant Governance service",
     "RolePermissions": [
       {
@@ -13236,10 +12695,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Support Operations",
-      "Tenant Configuration (Reader)"
-    ],
+    "Categories": "Microsoft 365 Support Operations,Tenant Configuration (Reader)",
     "RichDescription": "Assign the Tenant Governance Reader role to users who need to do the following tasks:\n\n- Read all tenant governance data",
     "RolePermissions": [
       {
@@ -13296,11 +12752,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Support Operations",
-      "Tenant Configuration (Reader)",
-      "Tenant Governance"
-    ],
+    "Categories": "Microsoft 365 Support Operations,Tenant Configuration (Reader),Tenant Governance",
     "RichDescription": "Assign the Tenant Governance Relationship Administrator role to users who need to do the following tasks:\n\n- Manage all aspects of tenant governance relationships, except accepting requests",
     "RolePermissions": [
       {
@@ -13393,10 +12845,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Support Operations",
-      "Tenant Configuration (Reader)"
-    ],
+    "Categories": "Microsoft 365 Support Operations,Tenant Configuration (Reader)",
     "RichDescription": "Assign the Tenant Governance Relationship Reader role to users who need to do the following tasks:\n\n- Read tenant governance relationships and relevant objects",
     "RolePermissions": [
       {
@@ -13447,10 +12896,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Platform Operations",
-      "Microsoft 365 Support Operations"
-    ],
+    "Categories": "Microsoft 365 Platform Operations,Microsoft 365 Support Operations",
     "RichDescription": "Assign the Usage Summary Reports Reader role to users who need to do the following tasks in the Microsoft 365 admin center:\n\n- View the Usage reports and Adoption Score\n- Read organizational insights, but not personally identifiable information (PII) of users\n\nThis role only allows users to view organizational-level data with the following exceptions:\n\n- Member users can view user management data and settings.\n- Guest users assigned this role cannot view user management data and settings.",
     "RolePermissions": [
       {
@@ -13483,20 +12929,7 @@
     "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Application and Workload Identity",
-      "Default member",
-      "Entitlement Management",
-      "External Identities",
-      "Global User Management",
-      "Group Management",
-      "License Management",
-      "Microsoft 365 Group Management",
-      "Microsoft 365 Support Operations",
-      "Microsoft Exchange Online",
-      "Support and Service Health",
-      "Tenant Configuration (Reader)"
-    ],
+    "Categories": "Application and Workload Identity,Default member,Entitlement Management,External Identities,Global User Management,Group Management,License Management,Microsoft 365 Group Management,Microsoft 365 Support Operations,Microsoft Exchange Online,Support and Service Health,Tenant Configuration (Reader)",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Assign the User Administrator role to users who need to do the following:\n\n| Permission | More information |\n| --- | --- |\n| Create users |  |\n| Update most user properties for all users, including all administrators | [Who can perform sensitive actions](../privileged-roles-permissions.md#who-can-perform-sensitive-actions) |\n| Update sensitive properties (including user principal name) for some users | [Who can perform sensitive actions](../privileged-roles-permissions.md#who-can-perform-sensitive-actions) |\n| Disable or enable some users | [Who can perform sensitive actions](../privileged-roles-permissions.md#who-can-perform-sensitive-actions) |\n| Delete or restore some users | [Who can perform sensitive actions](../privileged-roles-permissions.md#who-can-perform-sensitive-actions) |\n| Create and manage user views |  |\n| Create and manage all groups |  |\n| Assign and read licenses for all users, including all administrators |  |\n| Reset passwords | [Who can reset passwords](../privileged-roles-permissions.md#who-can-reset-passwords) |\n| Invalidate refresh tokens | [Who can reset passwords](../privileged-roles-permissions.md#who-can-reset-passwords) |\n| Update (FIDO) device keys |  |\n| Update password expiration policies |  |\n| Create and manage support tickets in Azure and the Microsoft 365 admin center |  |\n| Monitor service health |  |\n\nUsers with this role **cannot** do the following:\n\n- Cannot manage MFA.\n- Cannot change the credentials or reset MFA for members and owners of a [role-assignable group](../groups-concept.md).\n- Cannot manage shared mailboxes.\n- Cannot modify security questions for password reset operation.\n\n> [!IMPORTANT]\n> Users with this role can change passwords for people who may have access to sensitive or private information or critical configuration inside and outside of Microsoft Entra ID. Changing the password of a user may mean the ability to assume that user's identity and permissions. For example:\n>\n>- Application Registration and Enterprise Application owners, who can manage credentials of apps they own. Those apps may have privileged permissions in Microsoft Entra ID and elsewhere not granted to User Administrators. Through this path a User Administrator may be able to assume the identity of an application owner and then further assume the identity of a privileged application by updating the credentials for the application.\n>- Azure subscription owners, who may have access to sensitive or private information or critical configuration in Azure.\n>- Security Group and Microsoft 365 group owners, who can manage group membership. Those groups may grant access to sensitive or private information or critical configuration in Microsoft Entra ID and elsewhere.\n>- Administrators in other services outside of Microsoft Entra ID like Exchange Online, Microsoft Defender portal, Microsoft Purview portal, and human resources systems.\n>- Non-administrators like executives, legal counsel, and human resources employees who may have access to sensitive or private information.",
     "RolePermissions": [
       {
@@ -13847,11 +13280,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Billing Management",
-      "Microsoft 365 Platform Operations",
-      "Microsoft 365 Support Operations"
-    ],
+    "Categories": "Microsoft 365 Billing Management,Microsoft 365 Platform Operations,Microsoft 365 Support Operations",
     "RichDescription": "Assign the User Experience Success Manager role to users who need to do the following tasks:\n\n- Read organizational-level usage reports for Microsoft 365 Apps and services, but not user details\n- View your organization's product feedback, Net Promoter Score (NPS) survey results, and help article views to identify communication and training opportunities\n- Read message center posts and service health data\n\n[Learn more](/microsoft-365/admin/add-users/about-admin-roles)",
     "RolePermissions": [
       {
@@ -13908,10 +13337,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Support Operations",
-      "Virtual Visits"
-    ],
+    "Categories": "Microsoft 365 Support Operations,Virtual Visits",
     "RichDescription": "Users with this role can do the following tasks:\n\n- Manage and configure all aspects of Virtual Visits in Bookings in the Microsoft 365 admin center, and in the Teams EHR connector\n- View usage reports for Virtual Visits in the Teams admin center, Microsoft 365 admin center, Fabric, and Power BI\n- View features and settings in the Microsoft 365 admin center, but can't edit any settings\n\nVirtual Visits are a simple way to schedule and manage online and video appointments for staff and attendees. For example, usage reporting can show how sending SMS text messages before appointments can reduce the number of people who don't show up for appointments.",
     "RolePermissions": [
       {
@@ -13938,11 +13364,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Support Operations",
-      "Microsoft Viva",
-      "Support and Service Health"
-    ],
+    "Categories": "Microsoft 365 Support Operations,Microsoft Viva,Support and Service Health",
     "RichDescription": "Assign the Viva Glint Tenant Administrator role to users who need to do the following tasks:\n\n- Read and configure Viva Glint settings in the Microsoft 365 admin center\n- Assign or remove Viva Glint service admins\n- Create and manage Viva Feature Access Management policies\n- View and manage Viva Glint experiences (if applicable)\n- Create and manage Azure support tickets\n\nFor more information, see [Key roles for Viva Glint](/viva/glint/start/role-definitions) and [Assign Viva Glint Tenant and Service Administrators](/viva/glint/setup/post-provisioning-next-steps).",
     "RolePermissions": [
       {
@@ -13999,10 +13421,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Support Operations",
-      "Microsoft Viva"
-    ],
+    "Categories": "Microsoft 365 Support Operations,Microsoft Viva",
     "RichDescription": "Assign the Viva Goals Administrator role to users who need to do the following tasks:\n\n- Manage and configure all aspects of the Microsoft Viva Goals application\n- Configure Microsoft Viva Goals admin settings\n- Read Microsoft Entra tenant information\n- Monitor Microsoft 365 service health\n- Create and manage Microsoft 365 service requests\n\nFor more information, see [Roles and permissions in Viva Goals](/viva/goals/roles-permissions-in-viva-goals) and [Introduction to Microsoft Viva Goals](/viva/goals/intro-to-ms-viva-goals).",
     "RolePermissions": [
       {
@@ -14035,10 +13454,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Support Operations",
-      "Microsoft Viva"
-    ],
+    "Categories": "Microsoft 365 Support Operations,Microsoft Viva",
     "RichDescription": "Assign the Viva Pulse Administrator role to users who need to do the following tasks:\n\n- Read and configure all settings of Viva Pulse\n- Read basic properties on all resources in the Microsoft 365 admin center\n- Read and configure Azure Service Health\n- Create and manage Azure support tickets\n- Read messages in Message Center in the Microsoft 365 admin center, excluding security messages\n- Read usage reports in the Microsoft 365 admin center\n\nFor more information, see [Assign a Viva Pulse admin in the Microsoft 365 admin center](/viva/pulse/setup-admin-access/assign-a-viva-pulse-admin-in-m365-admin-center).",
     "RolePermissions": [
       {
@@ -14089,14 +13505,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Global Endpoint Management",
-      "Group Management",
-      "Microsoft 365 Support Operations",
-      "Support and Service Health",
-      "Tenant Configuration (Reader)",
-      "User Virtual Endpoint Management"
-    ],
+    "Categories": "Global Endpoint Management,Group Management,Microsoft 365 Support Operations,Support and Service Health,Tenant Configuration (Reader),User Virtual Endpoint Management",
     "RichDescription": "Users with this role have global permissions on Windows 365 resources, when the service is present. Additionally, this role contains the ability to manage users and devices in order to associate policy, as well as create and manage groups.\n\nThis role can create and manage security groups, but does not have administrator rights over Microsoft 365 groups. That means administrators cannot update owners or memberships of Microsoft 365 groups in the organization. However, they can manage the Microsoft 365 group they create, which is a part of their end-user privileges. So, any Microsoft 365 group (not security group) they create is counted against their quota of 250.\n\nAssign the Windows 365 Administrator role to users who need to do the following tasks:\n\n- Manage Windows 365 Cloud PCs in Microsoft Intune\n- Enroll and manage devices in Microsoft Entra ID, including assigning users and policies\n- Create and manage security groups, but not role-assignable groups\n- View basic properties in the Microsoft 365 admin center\n- Read usage reports in the Microsoft 365 admin center\n- Create and manage support tickets in Azure and the Microsoft 365 admin center",
     "RolePermissions": [
       {
@@ -14300,12 +13709,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": [
-      "Microsoft 365 Group Management",
-      "Microsoft 365 Support Operations",
-      "Tenant Configuration (Reader)",
-      "Yammer"
-    ],
+    "Categories": "Microsoft 365 Group Management,Microsoft 365 Support Operations,Tenant Configuration (Reader),Yammer",
     "RichDescription": "Assign the Yammer Administrator role to users who need to do the following tasks:\n\n- Manage all aspects of Yammer\n- Create, manage, and restore Microsoft 365 Groups, but not role-assignable groups\n- View the hidden members of Security groups and Microsoft 365 groups, including role assignable groups\n- Read usage reports in the Microsoft 365 admin center\n- Create and manage service requests in the Microsoft 365 admin center\n- View announcements in the Message center, but not security announcements\n- View service health\n\n[Learn more](/viva/engage/eac-key-admin-roles-permissions)",
     "RolePermissions": [
       {

@@ -226,7 +226,7 @@ function Export-EntraOpsClassificationDirectoryRolesFromMsftDocs {
         if ($SingleClassification -eq $True) {
             $RoleDefinitionClassification = ($ClassifiedDirectoryRolePermissions | Select-Object -ExcludeProperty AuthorizedResourceAction, Category -Unique | Sort-Object EAMTierLevelTagValue | Select-Object -First 1)
         } else {
-            $FilteredRoleClassifications = ($ClassifiedDirectoryRolePermissions | Select-Object -ExcludeProperty AuthorizedResourceAction -Unique | Sort-Object EAMTierLevelTagValue )
+            $FilteredRoleClassifications = ($ClassifiedDirectoryRolePermissions | Select-Object -ExcludeProperty AuthorizedResourceAction -Unique | Sort-Object EAMTierLevelTagValue, Category)
             $RoleDefinitionClassification = [System.Collections.Generic.List[object]]::new()
             $RoleDefinitionClassification.Add($FilteredRoleClassifications)
         }
@@ -253,12 +253,13 @@ function Export-EntraOpsClassificationDirectoryRolesFromMsftDocs {
         }
         #endregion
 
-        # Derive the role categories from the distinct service classifications of the role actions
-        $Categories = ($ClassifiedDirectoryRolePermissions | Select-Object -ExpandProperty Category -Unique | Where-Object { $_ -ne "Unclassified" } | Sort-Object)
-        if ($null -eq $Categories -or @($Categories).Count -eq 0) {
+        # Derive the role categories from the distinct service classifications of the role actions.
+        # Match the Microsoft Graph representation: a scalar string with multiple values comma-delimited.
+        $Categories = @($ClassifiedDirectoryRolePermissions | Select-Object -ExpandProperty Category -Unique | Where-Object { $_ -ne "Unclassified" } | Sort-Object)
+        if ($Categories.Count -eq 0) {
             $Categories = "Unclassified"
-        } elseif (@($Categories).Count -eq 1) {
-            $Categories = @($Categories)[0]
+        } else {
+            $Categories = $Categories -join ','
         }
 
         $DirectoryRoles.Add(
@@ -276,7 +277,7 @@ function Export-EntraOpsClassificationDirectoryRolesFromMsftDocs {
         ) | Out-Null
     }
 
-    $DirectoryRoles = $DirectoryRoles | Sort-Object RoleName
+    $DirectoryRoles = $DirectoryRoles | Sort-Object RoleName, RoleId
 
     $OutputDirectory = Split-Path -Path $OutputFilePath -Parent
     if (-not [string]::IsNullOrEmpty($OutputDirectory) -and -not (Test-Path -Path $OutputDirectory)) {
