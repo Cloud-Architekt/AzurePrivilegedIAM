@@ -193,20 +193,15 @@ function Export-EntraOpsClassificationDirectoryRoles {
             }
         }
 
-        # Stays an array so the JSON type does not depend on the number of categories.
-        # Absent categories are emitted as null, which reporting apps render as "no value".
-        $RoleCategories = @($_.categories | Sort-Object -Unique)
-        if ($RoleCategories.Count -eq 0) {
-            $RoleCategories = $null
-        }
-
         [PSCustomObject]@{
             "RoleId"                  = $_.templateId
             "RoleName"                = $_.displayName
             "isPrivileged"            = $_.isPrivileged
             "AssignmentMode"          = $_.assignmentMode
             "InheritsPermissionsFrom" = $InheritsPermissionsFromIds
-            "Categories"              = $RoleCategories
+            # Preserve the Microsoft Graph representation: Categories is a scalar string, and Graph
+            # exposes multiple category values as one comma-delimited string (for example, "Collaboration,Identity").
+            "Categories"              = $_.categories
             "RichDescription"         = $_.richDescription
             "RolePermissions"         = @($ClassifiedDirectoryRolePermissions) 
             "Classification"          = $RoleDefinitionClassification

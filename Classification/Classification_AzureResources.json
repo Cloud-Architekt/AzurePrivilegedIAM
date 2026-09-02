@@ -69557,6 +69557,28 @@
     }
   },
   {
+    "RoleId": "24e6456b-7741-4fc8-b632-f44af1180ec3",
+    "RoleName": "MEAT Criteria Data User",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Process health data in MEAT Criteria service API",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.HealthBot/healthBots/AIActions/MEATCriteria/Process/Action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
     "RoleId": "0343f3e8-01ac-4bb8-8f93-78b1d31ba64b",
     "RoleName": "Microsoft Approvals Request User",
     "IsCustom": false,
@@ -84455,6 +84477,13 @@
         "AuthorizedResourceAction": "Microsoft.Insights/alertRules/read",
         "ActionType": "Action",
         "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.App/agents/extendedAgents/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
       },

@@ -254,10 +254,12 @@ function Export-EntraOpsClassificationDirectoryRolesFromMsftDocs {
         #endregion
 
         # Derive the role categories from the distinct service classifications of the role actions.
-        # Stays an array so the JSON type does not depend on the number of categories.
+        # Match the Microsoft Graph representation: a scalar string with multiple values comma-delimited.
         $Categories = @($ClassifiedDirectoryRolePermissions | Select-Object -ExpandProperty Category -Unique | Where-Object { $_ -ne "Unclassified" } | Sort-Object)
         if ($Categories.Count -eq 0) {
-            $Categories = @("Unclassified")
+            $Categories = "Unclassified"
+        } else {
+            $Categories = $Categories -join ','
         }
 
         $DirectoryRoles.Add(

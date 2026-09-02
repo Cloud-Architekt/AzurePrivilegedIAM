@@ -64,12 +64,14 @@
     "AssignmentMode": null,
     "InheritsPermissionsFrom": [],
     "RichDescription": "Catalog creator",
-    "RolePermissions": {
-      "AuthorizedResourceAction": "microsoft.entitlementManagement/AccessPackageCatalog/Create",
-      "Category": "Entitlement Management",
-      "EAMTierLevelName": "ManagementPlane",
-      "EAMTierLevelTagValue": "1"
-    },
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.entitlementManagement/AccessPackageCatalog/Create",
+        "Category": "Entitlement Management",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
     "Classification": {
       "EAMTierLevelName": "ManagementPlane",
       "EAMTierLevelTagValue": "1"
@@ -82,12 +84,14 @@
     "AssignmentMode": null,
     "InheritsPermissionsFrom": [],
     "RichDescription": "Catalog owner",
-    "RolePermissions": {
-      "AuthorizedResourceAction": "microsoft.entitlementManagement/allEntities/allTasks",
-      "Category": "Entitlement Management",
-      "EAMTierLevelName": "ControlPlane",
-      "EAMTierLevelTagValue": "0"
-    },
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.entitlementManagement/allEntities/allTasks",
+        "Category": "Entitlement Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      }
+    ],
     "Classification": {
       "EAMTierLevelName": "ControlPlane",
       "EAMTierLevelTagValue": "0"
@@ -100,12 +104,14 @@
     "AssignmentMode": null,
     "InheritsPermissionsFrom": [],
     "RichDescription": "Catalog reader",
-    "RolePermissions": {
-      "AuthorizedResourceAction": "microsoft.entitlementManagement/allEntities/Read",
-      "Category": "Entitlement Management",
-      "EAMTierLevelName": "ManagementPlane",
-      "EAMTierLevelTagValue": "1"
-    },
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.entitlementManagement/allEntities/Read",
+        "Category": "Entitlement Management",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
     "Classification": {
       "EAMTierLevelName": "ManagementPlane",
       "EAMTierLevelTagValue": "1"

@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-09-01T16:30:35.2896000Z",
+  "generatedUtc": "2026-09-02T06:36:18.0869490Z",
   "mode": "Standalone",
   "repoRoot": "AzurePrivilegedIAM",
   "fileCount": 19,
@@ -13,24 +13,24 @@
     },
     {
       "path": "Classification/Classification_EntraIdDirectoryRolesFromMsftDocs.json",
-      "bytes": 639502,
+      "bytes": 634546,
       "items": 135,
       "param": false,
-      "sha256": "7bc391a9b18fe1a4f5f319d656f4bffa7275eafc8ede976d5fff4834a703acfa"
+      "sha256": "9b71c8e9fcd3df831fd7eee6182c280f7e1536d624e4fa123899de0f0ab060e6"
     },
     {
       "path": "Classification/Classification_IdentityGovernance.json",
-      "bytes": 3828,
+      "bytes": 3900,
       "items": 5,
       "param": false,
-      "sha256": "74602a2bc30161cb5c2f35dd9468f99643b8608f464cbaac3a0d51961d12b0c8"
+      "sha256": "707d9209bdda581763d86954d33af94aa6a43a24103b37a493fa8b42258369c3"
     },
     {
       "path": "Classification/Classification_AzureResources.json",
-      "bytes": 3301639,
-      "items": 938,
+      "bytes": 3302625,
+      "items": 939,
       "param": false,
-      "sha256": "778421e728000cd7e875b5f73a5aaefb693d3a9a6a70d28dbd73ce7a798bd1bd"
+      "sha256": "71a905dd204446334f608ae645c9accbc0b74b74e33087e427671ea307aff4b1"
     },
     {
       "path": "Classification/Classification_DeviceManagementRoles.json",
