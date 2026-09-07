@@ -4290,6 +4290,45 @@
     }
   },
   {
+    "RoleId": "58f930cc-fcf4-4152-852c-1d7dbf502139",
+    "RoleName": "Entra SOC Identity Responder",
+    "isPrivileged": true,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "Categories": "Global User Management",
+    "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Assign the Entra SOC Identity Responder role to users who need to do the following tasks from the Microsoft Defender portal:\n\n- Disable and enable user accounts during active security incidents\n- Revoke active sign-in sessions for compromised users by invalidating their refresh tokens\n- Reset passwords for compromised user accounts",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.directory/users/disable",
+        "Category": "Global User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/users/enable",
+        "Category": "Global User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/users/invalidateAllRefreshTokens",
+        "Category": "Global User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/users/password/update",
+        "Category": "Global User Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
+    }
+  },
+  {
     "RoleId": "29232cdf-9323-42fd-ade2-1d097af3e4de",
     "RoleName": "Exchange Administrator",
     "isPrivileged": false,

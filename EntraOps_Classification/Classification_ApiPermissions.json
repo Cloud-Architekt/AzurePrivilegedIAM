@@ -1498,7 +1498,11 @@
           "HealthMonitoringAlert.Read.All",
           "HealthMonitoringAlert.ReadWrite.All",
           "HealthMonitoringAlertConfig.Read.All",
-          "HealthMonitoringAlertConfig.ReadWrite.All"
+          "HealthMonitoringAlertConfig.ReadWrite.All",
+          "IdentityDiagnostic.Read",
+          "IdentityDiagnostic.Read.All",
+          "IdentityDiagnostic.StartDiagnosis",
+          "IdentityDiagnostic.StartDiagnosis.All"
         ]
       },
       {

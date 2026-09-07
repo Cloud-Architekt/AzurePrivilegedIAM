@@ -319,7 +319,7 @@ mark {
 }
 
 .hidden {
-     display: none !important;
+    display: none !important;
 }
 
 .appbar .variant-picker span {
@@ -428,7 +428,7 @@ a.nav-item:hover {
     flex: 1;
     min-width: 0;
     padding: 24px 28px 64px;
-    max-width: 1500px;
+    max-width: none;
 }
 
 /* ---------- App footer ---------------------------------------------------- */
