@@ -45807,7 +45807,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "RichDescription": "Lets you manage Azure Cosmos DB accounts, but not access data in them. Prevents access to account keys and connection strings.",
+    "RichDescription": "Lets you manage Azure Cosmos DB accounts and their databases, containers, stored procedures, triggers, user-defined functions, and client encryption key metadata. Does not grant direct access to item data, account keys, or connection strings.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.DocumentDb/databaseAccounts/*",
