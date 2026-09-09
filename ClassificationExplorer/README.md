@@ -153,6 +153,16 @@ the script from the repository, not from a downloaded zip. When git is unavailab
 you want a faster refresh while iterating on classification JSON, pass `-SkipHistory`;
 the History view simply shows an empty state and nothing else in the app depends on it.
 
+In an EntraOps deployment the history is skipped by default: `New-EntraOpsClassificationExplorerData`
+maps `ClassificationExplorer.GenerateChangeHistory` in `EntraOpsConfig.json` to its internal
+`-SkipHistory` switch and treats a missing setting or configuration file as generation disabled.
+Set it to `true`, or pass `-SkipHistory:$false`, to generate the history for an individual run.
+
+The reporting workflow uses the same positive setting only to choose a shallow or full checkout;
+the cmdlet reads the configuration directly. Existing workflow templates therefore keep the correct
+behavior after a module/config update, but must be refreshed manually to gain the shallow-checkout
+optimization because workflow files are excluded from automated EntraOps updates by default.
+
 ## Hosting on GitHub Pages
 
 Because the data is embedded, you can publish **only** the `ClassificationExplorer`

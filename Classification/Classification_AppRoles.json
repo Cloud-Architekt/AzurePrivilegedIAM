@@ -2609,6 +2609,22 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "bb1e8ab4-fe40-4b26-82ec-65dfaf4d367b",
+    "AppRoleDisplayName": "IdentityDiagnostic.Read.All",
+    "Category": "Health Monitoring",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "2607bb8b-0a9b-4f53-9d2f-6f81b99ac145",
+    "AppRoleDisplayName": "IdentityDiagnostic.StartDiagnosis.All",
+    "Category": "Health Monitoring",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "52ced3dd-dbb6-41a0-9ce5-61a056be97b8",
     "AppRoleDisplayName": "IdentityNotifications.Read.All",
     "Category": [

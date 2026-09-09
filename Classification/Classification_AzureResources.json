@@ -1,5 +1,55 @@
 [
   {
+    "RoleId": "849de3f8-3686-489c-bd02-732984d0c145",
+    "RoleName": "A365 Gateway Policy Operator",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Read Azure API Management services and update asset's access state according to A365 policies.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.ApiManagement/service/apis/write",
+        "ActionType": "Action",
+        "Category": "API Management",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ApiManagement/service/workspaces/toolServers/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ApiManagement/service/apis/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ApiManagement/service/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ApiManagement/service/workspaces/toolServers/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
     "RoleId": "76cc9ee4-d5d3-4a45-a930-26add3d73475",
     "RoleName": "Access Review Operator Service Role",
     "IsCustom": false,
@@ -7881,16 +7931,45 @@
     }
   },
   {
-    "RoleId": "82b2f1a9-9593-4498-a824-c209343a28ec",
-    "RoleName": "Azure AI Manager and Namespace RBAC Inference Operator",
+    "RoleId": "11102f94-c441-49e6-a78b-ef80e0188abc",
+    "RoleName": "Azure AI Safety Evaluator",
     "IsCustom": false,
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "RichDescription": "Allows read access to all objects in an Azure AI Manager namespace, plus the ability to read Secrets and invoke inference against AI models deployed in that namespace. This role does not allow modifying objects, roles, or role bindings. However, the ability to read Secrets allows the holder to obtain ServiceAccount tokens in the namespace. Applying this role at the AI Manager scope will give access across all namespaces.",
+    "RichDescription": "This role can perform all actions under workspace evaluations and simulations.",
     "RolePermissions": [
       {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/inference/action",
+        "AuthorizedResourceAction": "Microsoft.MachineLearningServices/workspaces/evaluations/*",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.MachineLearningServices/workspaces/simulations/*",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "82b2f1a9-9593-4498-a824-c209343a28ec",
+    "RoleName": "Azure AIManager and Namespace RBAC Inference Operator",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Allows read access to all objects in an Azure AIManager namespace, plus the ability to read Secrets and invoke inference against AI models deployed in that namespace. This role does not allow modifying objects, roles, or role bindings. However, the ability to read Secrets allows the holder to obtain ServiceAccount tokens in the namespace. Applying this role at the AI Manager scope will give access across all namespaces.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/namespaces/inference/action",
         "ActionType": "DataAction",
         "Category": "General Data Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
@@ -8147,35 +8226,6 @@
         "Category": "Reader Data Access",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
-      }
-    ],
-    "Classification": {
-      "EAMTierLevelName": "ManagementPlane",
-      "EAMTierLevelTagValue": "1"
-    }
-  },
-  {
-    "RoleId": "11102f94-c441-49e6-a78b-ef80e0188abc",
-    "RoleName": "Azure AI Safety Evaluator",
-    "IsCustom": false,
-    "isPrivileged": false,
-    "AssignmentMode": null,
-    "InheritsPermissionsFrom": null,
-    "RichDescription": "This role can perform all actions under workspace evaluations and simulations.",
-    "RolePermissions": [
-      {
-        "AuthorizedResourceAction": "Microsoft.MachineLearningServices/workspaces/evaluations/*",
-        "ActionType": "Action",
-        "Category": "General Management Plane Operations",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.MachineLearningServices/workspaces/simulations/*",
-        "ActionType": "Action",
-        "Category": "General Management Plane Operations",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
       }
     ],
     "Classification": {
@@ -34024,6 +34074,13 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappingStatus/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.RecoveryServices/Vaults/backupFabrics/backupProtectionIntent/*",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
@@ -45750,7 +45807,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "RichDescription": "Lets you manage Azure Cosmos DB accounts, but not access data in them. Prevents access to account keys and connection strings.",
+    "RichDescription": "Lets you manage Azure Cosmos DB accounts and their databases, containers, stored procedures, triggers, user-defined functions, and client encryption key metadata. Does not grant direct access to item data, account keys, or connection strings.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.DocumentDb/databaseAccounts/*",

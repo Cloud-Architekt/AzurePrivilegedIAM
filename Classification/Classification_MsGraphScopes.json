@@ -2351,6 +2351,38 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "3839e465-e636-4c8e-b959-340182fb0567",
+    "ScopeDisplayName": "IdentityDiagnostic.Read",
+    "Category": "Health Monitoring",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "9181fb3f-4b8e-45ef-98ae-41774b813b80",
+    "ScopeDisplayName": "IdentityDiagnostic.Read.All",
+    "Category": "Health Monitoring",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "1ad58246-a11b-4ea3-9b75-8b6c315cbe21",
+    "ScopeDisplayName": "IdentityDiagnostic.StartDiagnosis",
+    "Category": "Health Monitoring",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "51470ff5-62b6-4aef-9a3a-d8c8a1e66d09",
+    "ScopeDisplayName": "IdentityDiagnostic.StartDiagnosis.All",
+    "Category": "Health Monitoring",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "59cd3e28-aa9c-4f72-a734-1b592eb06853",
     "ScopeDisplayName": "IdentityNotifications.Read.All",
     "Category": [
