@@ -20588,42 +20588,6 @@
     }
   },
   {
-    "RoleId": "8f139b0f-7eaf-460b-a9da-5b1246d9ed0d",
-    "RoleName": "Azure Kubernetes Service Flex Node Agent Role",
-    "IsCustom": false,
-    "isPrivileged": false,
-    "AssignmentMode": null,
-    "InheritsPermissionsFrom": null,
-    "RichDescription": "Grants AKS Flex Node agents permission to retrieve bootstrap data and manage machine resources within an agent pool",
-    "RolePermissions": [
-      {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/managedClusters/agentPools/listBootstrapData/action",
-        "ActionType": "Action",
-        "Category": "General Management Plane Operations",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/managedClusters/agentPools/machines/write",
-        "ActionType": "Action",
-        "Category": "General Management Plane Operations",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/managedClusters/agentPools/machines/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      }
-    ],
-    "Classification": {
-      "EAMTierLevelName": "ManagementPlane",
-      "EAMTierLevelTagValue": "1"
-    }
-  },
-  {
     "RoleId": "b5092dac-c796-4349-8681-1a322a31c3f9",
     "RoleName": "Azure Kubernetes Service Hybrid Cluster Admin Role",
     "IsCustom": false,
@@ -60363,28 +60327,6 @@
     "Classification": {
       "EAMTierLevelName": "ManagementPlane",
       "EAMTierLevelTagValue": "1"
-    }
-  },
-  {
-    "RoleId": "1344669a-e3ad-4e43-8972-087b0c4cf2d9",
-    "RoleName": "Genome Data Reader",
-    "IsCustom": false,
-    "isPrivileged": false,
-    "AssignmentMode": null,
-    "InheritsPermissionsFrom": null,
-    "RichDescription": "Grants read access to Genome data plane operations",
-    "RolePermissions": [
-      {
-        "AuthorizedResourceAction": "Microsoft.Genome/data/read",
-        "ActionType": "DataAction",
-        "Category": "Reader Data Access",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      }
-    ],
-    "Classification": {
-      "EAMTierLevelName": "UserAccess",
-      "EAMTierLevelTagValue": "2"
     }
   },
   {
