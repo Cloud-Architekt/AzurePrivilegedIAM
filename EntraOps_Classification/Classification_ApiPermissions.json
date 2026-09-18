@@ -780,6 +780,19 @@
       },
       {
         "Category": "Microsoft.Graph",
+        "Service": "Lockbox",
+        "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+        "ResourceScope": "Delegation",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "LockboxRequest.ReadWrite.All",
+          "LockboxSettings.ReadWrite.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.Graph",
         "Service": "Tenant Management",
         "ResourceAppId": "00000003-0000-0000-c000-000000000000",
         "ResourceScope": "All",
@@ -2621,6 +2634,8 @@
           "ConsentRequest.Read",
           "CrossTenantUserProfileSharing.Read",
           "LifecyclePolicies-Guests.Read.All",
+          "LockboxRequest.Read.All",
+          "LockboxSettings.Read.All",
           "ManagedTenants.Read.All",
           "Subscription.Read.All"
         ]

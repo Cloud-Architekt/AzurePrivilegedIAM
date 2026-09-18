@@ -8842,6 +8842,46 @@
     "EAMTierLevelTagValue": "1"
   },
   {
+    "PermissionId": "a368a3ce-713b-46d9-9c93-bb559acf38ca",
+    "PermissionValue": "LockboxRequest.Read.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "524d6259-f823-43c4-964a-97e3b8ddb56c",
+    "PermissionValue": "LockboxRequest.ReadWrite.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Lockbox",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "PermissionId": "2ea429a7-d1fa-4f96-b451-e91ecc5e5fe2",
+    "PermissionValue": "LockboxSettings.Read.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "bdc52289-9ed7-4339-83ab-772ae618713c",
+    "PermissionValue": "LockboxSettings.ReadWrite.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Lockbox",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
     "PermissionId": "f3af82f6-18e0-4a41-8dc8-a03c11854a8d",
     "PermissionValue": "Mail-Advanced.ReadWrite",
     "PermissionType": "Delegated",
