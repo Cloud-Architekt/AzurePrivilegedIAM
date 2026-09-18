@@ -4105,6 +4105,38 @@
     "EAMTierLevelTagValue": "1"
   },
   {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "a368a3ce-713b-46d9-9c93-bb559acf38ca",
+    "ScopeDisplayName": "LockboxRequest.Read.All",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "524d6259-f823-43c4-964a-97e3b8ddb56c",
+    "ScopeDisplayName": "LockboxRequest.ReadWrite.All",
+    "Category": "Lockbox",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "2ea429a7-d1fa-4f96-b451-e91ecc5e5fe2",
+    "ScopeDisplayName": "LockboxSettings.Read.All",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "bdc52289-9ed7-4339-83ab-772ae618713c",
+    "ScopeDisplayName": "LockboxSettings.ReadWrite.All",
+    "Category": "Lockbox",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
     "AppId": "fc780465-2017-40d4-a0c5-307022471b92",
     "ScopeId": "5eb7b9dc-cbce-4c7e-9d73-5be248260ae6",
     "ScopeDisplayName": "Machine.CollectForensics",
