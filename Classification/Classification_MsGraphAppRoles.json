@@ -913,6 +913,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "010650d3-1605-49e9-b242-230afecb9dc5",
+    "AppRoleDisplayName": "CaseManagement.ConfigManage.All",
+    "Category": "Global Security and Compliance Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "b328f35f-712c-40d6-b6b4-95449d77b352",
     "AppRoleDisplayName": "CaseManagement.Read.All",
     "Category": "Security and Compliance",
@@ -2113,6 +2121,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "603ce4e3-fb05-4b63-91ba-729bb1dca667",
+    "AppRoleDisplayName": "Group-PreferredDataLocation.ReadWrite.All",
+    "Category": "Group Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "35b96aac-d839-4362-abd4-7381f2b27ccd",
     "AppRoleDisplayName": "Group-XTenantIdentitySync.Read.All",
     "Category": "Tenant Configuration (Reader)",
@@ -2145,6 +2161,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "07d67222-3a10-4d3b-9ddc-b8aa43198a00",
+    "AppRoleDisplayName": "Group.ReadBasic.All",
+    "Category": "Default Member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "62a82d76-70ea-41e2-9197-370581804d09",
     "AppRoleDisplayName": "Group.ReadWrite.All",
     "Category": "Group Management",
@@ -2155,6 +2179,14 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "98830695-27a2-44f7-8c18-0c3ebc9698f6",
     "AppRoleDisplayName": "GroupMember.Read.All",
+    "Category": "Default Member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "8222c640-cae5-4860-8d11-b32cfad95e03",
+    "AppRoleDisplayName": "GroupMember.ReadBasic.All",
     "Category": "Default Member",
     "EAMTierLevelName": "UserAccess",
     "EAMTierLevelTagValue": "2"
@@ -2471,6 +2503,54 @@
     "AppRoleId": "4f5ac95f-62fd-472c-b60f-125d24ca0bc5",
     "AppRoleDisplayName": "IndustryData.ReadBasic.All",
     "Category": "Industry Data",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "66905074-ba83-4bb3-b5a1-1bb769025947",
+    "AppRoleDisplayName": "InfoProtectABACPolicy.Read.All",
+    "Category": "Microsoft Purview",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "4bfc1735-3a0c-4602-a159-9cfa07213339",
+    "AppRoleDisplayName": "InfoProtectABACPolicy.ReadWrite.All",
+    "Category": "Microsoft Purview",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "64e5621c-1c93-43aa-ac76-c58f9fd136c7",
+    "AppRoleDisplayName": "InfoProtectAttributeAssignment.Read.All",
+    "Category": "Microsoft Purview",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "bc81c4f9-5b1f-4107-b330-4665a9cebecf",
+    "AppRoleDisplayName": "InfoProtectAttributeAssignment.ReadWrite.All",
+    "Category": "Microsoft Purview",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "1a8b595b-d654-4a0c-9b37-caf656a24853",
+    "AppRoleDisplayName": "InfoProtectAttributeDefinition.Read.All",
+    "Category": "Microsoft Purview",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "7ec4dbde-910f-4bbb-9717-d1cde4470763",
+    "AppRoleDisplayName": "InfoProtectAttributeDefinition.ReadWrite.All",
+    "Category": "Microsoft Purview",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },

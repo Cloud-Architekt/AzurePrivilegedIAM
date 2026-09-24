@@ -690,6 +690,12 @@
         "EAMTierLevelTagValue": "0"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/oAuth2PermissionGrants/allProperties/allTasks",
+        "Category": "Application and Workload Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/agentUsers/assignLicense",
         "Category": "Global Agent User Management",
         "EAMTierLevelName": "ControlPlane",
@@ -13367,7 +13373,7 @@
       "88d8e3e3-8f55-4a1e-953a-9b9898b8876b"
     ],
     "Categories": "identity",
-    "RichDescription": "Can manage all aspects of tenant governance.",
+    "RichDescription": "Can manage all aspects of tenant governance, including provisioning first-party and third-party service principals, managing\napplication role assignments, and granting delegated permissions through the approved Tenant Governance application.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/crossTenantAccessPolicy/basic/update",
