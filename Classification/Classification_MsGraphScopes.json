@@ -5781,6 +5781,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "a2e55068-32fd-4091-a37c-120338337abd",
+    "ScopeDisplayName": "ThreatHunting.ReadWrite.All",
+    "Category": "Global Security and Compliance Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "9cc427b4-2004-41c5-aa22-757b755e9796",
     "ScopeDisplayName": "ThreatIndicators.Read.All",
     "Category": "Security and Compliance",
@@ -6594,6 +6602,22 @@
     "Category": "Global Endpoint Management",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "e37141d2-4e2c-459d-8e5b-5214ae4af482",
+    "ScopeDisplayName": "Workbooks.Read.All",
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "5cf5c2d4-f542-4e67-b524-51ab19ef7584",
+    "ScopeDisplayName": "Workbooks.ReadWrite.All",
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",

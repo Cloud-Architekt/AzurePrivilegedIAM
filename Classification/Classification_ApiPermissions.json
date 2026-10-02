@@ -2960,6 +2960,16 @@
     "EAMTierLevelTagValue": "0"
   },
   {
+    "PermissionId": "f0d7f93b-6fce-4221-a197-ace5848da396",
+    "PermissionValue": "AppCertTrustConfiguration.Read.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
     "PermissionId": "af281d3a-030d-4122-886e-146fb30a0413",
     "PermissionValue": "AppCertTrustConfiguration.Read.All",
     "PermissionType": "Delegated",
@@ -2971,6 +2981,16 @@
     ],
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "e508b0bc-7b1a-4b59-8646-d12066f4a72f",
+    "PermissionValue": "AppCertTrustConfiguration.ReadWrite.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Application and Workload Identity",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
   },
   {
     "PermissionId": "4bae2ed4-473e-4841-a493-9829cfd51d48",
@@ -5212,6 +5232,26 @@
     "TargetAppDisplayName": "Microsoft Graph",
     "TargetAppId": "00000003-0000-0000-c000-000000000000",
     "Category": "Copilot",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "0ef71a66-690d-439b-96ef-41705a240606",
+    "PermissionValue": "CrossTenantContentMigration.Read.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Microsoft SharePoint",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "c5a29fd1-4629-4f52-8316-4d639ffa95d0",
+    "PermissionValue": "CrossTenantContentMigration.ReadWrite.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Microsoft SharePoint",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -15755,6 +15795,26 @@
     "EAMTierLevelTagValue": "1"
   },
   {
+    "PermissionId": "6e251752-0d87-4158-b87b-b60e768fa657",
+    "PermissionValue": "ThreatHunting.ReadWrite.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Global Security and Compliance Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "PermissionId": "a2e55068-32fd-4091-a37c-120338337abd",
+    "PermissionValue": "ThreatHunting.ReadWrite.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Global Security and Compliance Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
     "PermissionId": "197ee4e9-b993-4066-898f-d6aecc55125b",
     "PermissionValue": "ThreatIndicators.Read.All",
     "PermissionType": "Application",
@@ -17573,6 +17633,46 @@
     "Category": "Global Endpoint Management",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
+  },
+  {
+    "PermissionId": "d6559210-2a3e-46f8-90b3-e69ef5507772",
+    "PermissionValue": "Workbooks.Read.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "e37141d2-4e2c-459d-8e5b-5214ae4af482",
+    "PermissionValue": "Workbooks.Read.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "164a9e2c-8434-444a-a250-b8c70dded2af",
+    "PermissionValue": "Workbooks.ReadWrite.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "5cf5c2d4-f542-4e67-b524-51ab19ef7584",
+    "PermissionValue": "Workbooks.ReadWrite.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "PermissionId": "f10b94b9-37d1-4c88-8b7e-bf75a1152d39",

@@ -401,6 +401,22 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "f0d7f93b-6fce-4221-a197-ace5848da396",
+    "AppRoleDisplayName": "AppCertTrustConfiguration.Read.All",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "e508b0bc-7b1a-4b59-8646-d12066f4a72f",
+    "AppRoleDisplayName": "AppCertTrustConfiguration.ReadWrite.All",
+    "Category": "Application and Workload Identity",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "3be0012a-cc4e-426b-895b-f9c836bf6381",
     "AppRoleDisplayName": "Application-RemoteDesktopConfig.ReadWrite.All",
     "Category": "Application and Workload Identity",
@@ -1292,6 +1308,22 @@
     "AppRoleId": "cc147c17-b8e8-4d3f-9f94-aa9e279a079a",
     "AppRoleDisplayName": "CopilotPolicySettings.ReadWrite",
     "Category": "Copilot",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "0ef71a66-690d-439b-96ef-41705a240606",
+    "AppRoleDisplayName": "CrossTenantContentMigration.Read.All",
+    "Category": "Microsoft SharePoint",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "c5a29fd1-4629-4f52-8316-4d639ffa95d0",
+    "AppRoleDisplayName": "CrossTenantContentMigration.ReadWrite.All",
+    "Category": "Microsoft SharePoint",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
@@ -5276,6 +5308,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "6e251752-0d87-4158-b87b-b60e768fa657",
+    "AppRoleDisplayName": "ThreatHunting.ReadWrite.All",
+    "Category": "Global Security and Compliance Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "197ee4e9-b993-4066-898f-d6aecc55125b",
     "AppRoleDisplayName": "ThreatIndicators.Read.All",
     "Category": "Security and Compliance",
@@ -5913,6 +5953,22 @@
     "Category": "Global Endpoint Management",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "d6559210-2a3e-46f8-90b3-e69ef5507772",
+    "AppRoleDisplayName": "Workbooks.Read.All",
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "164a9e2c-8434-444a-a250-b8c70dded2af",
+    "AppRoleDisplayName": "Workbooks.ReadWrite.All",
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",

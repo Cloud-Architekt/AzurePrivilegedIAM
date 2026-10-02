@@ -707,6 +707,13 @@
     "RichDescription": "Invoke models in the AI Gateway tier of Azure API Management. This role is in preview and subject to change.",
     "RolePermissions": [
       {
+        "AuthorizedResourceAction": "Microsoft.ApiManagement/aigateways/models/*",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.ApiManagement/service/workspaces/models/*",
         "ActionType": "DataAction",
         "Category": "General Data Plane Operations",
@@ -729,6 +736,13 @@
     "RichDescription": "Invoke MCP servers in the AI Gateway tier of Azure API Management. This role is in preview and subject to change.",
     "RolePermissions": [
       {
+        "AuthorizedResourceAction": "Microsoft.ApiManagement/aigateways/tools/*",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.ApiManagement/service/workspaces/toolServers/*",
         "ActionType": "DataAction",
         "Category": "General Data Plane Operations",
@@ -750,6 +764,13 @@
     "InheritsPermissionsFrom": null,
     "RichDescription": "Invoke all assets in the AI Gateway tier of Azure API Management. This role is in preview and subject to change.",
     "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.ApiManagement/aigateways/*",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
       {
         "AuthorizedResourceAction": "Microsoft.ApiManagement/service/workspaces/*",
         "ActionType": "DataAction",
@@ -8026,6 +8047,13 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/namespaces/listAccessKeys/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.Authorization/*/read",
         "ActionType": "Action",
         "Category": "Reader",
@@ -8067,8 +8095,26 @@
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
     "RichDescription": "Allows read access to list models, get model details, and calculate model costs",
-    "RolePermissions": [],
-    "Classification": null
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/locations/aiModels/calculateCost/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/locations/aiModels/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
   },
   {
     "RoleId": "e2845093-d729-45cd-9f6e-a337c027d655",
@@ -8158,217 +8204,154 @@
         "EAMTierLevelTagValue": "2"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/apps/controllerrevisions/read",
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/*/read",
         "ActionType": "DataAction",
         "Category": "Reader Data Access",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/apps/daemonsets/read",
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/approuting.kubernetes.azure.com/*/read",
         "ActionType": "DataAction",
         "Category": "Reader Data Access",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/apps/deployments/read",
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/apps/*/read",
         "ActionType": "DataAction",
         "Category": "Reader Data Access",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/apps/replicasets/read",
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/autoscaling/*/read",
         "ActionType": "DataAction",
         "Category": "Reader Data Access",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/apps/statefulsets/read",
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/azmonitoring.coreos.com/*/read",
         "ActionType": "DataAction",
         "Category": "Reader Data Access",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/autoscaling/horizontalpodautoscalers/read",
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/batch/*/read",
         "ActionType": "DataAction",
         "Category": "Reader Data Access",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/batch/cronjobs/read",
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/cilium.io/*/read",
         "ActionType": "DataAction",
         "Category": "Reader Data Access",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/batch/jobs/read",
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/discovery.k8s.io/*/read",
         "ActionType": "DataAction",
         "Category": "Reader Data Access",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/configmaps/read",
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/events.k8s.io/*/read",
         "ActionType": "DataAction",
         "Category": "Reader Data Access",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/discovery.k8s.io/endpointslices/read",
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/extensions/*/read",
         "ActionType": "DataAction",
         "Category": "Reader Data Access",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/endpoints/read",
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/gateway.networking.k8s.io/*/read",
         "ActionType": "DataAction",
         "Category": "Reader Data Access",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/events.k8s.io/events/read",
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/inference.networking.k8s.io/*/read",
         "ActionType": "DataAction",
         "Category": "Reader Data Access",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/events/read",
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/kaito.sh/*/read",
         "ActionType": "DataAction",
         "Category": "Reader Data Access",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/extensions/daemonsets/read",
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/karpenter.azure.com/*/read",
         "ActionType": "DataAction",
         "Category": "Reader Data Access",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/extensions/deployments/read",
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/karpenter.sh/*/read",
         "ActionType": "DataAction",
         "Category": "Reader Data Access",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/extensions/ingresses/read",
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/keda.sh/*/read",
         "ActionType": "DataAction",
         "Category": "Reader Data Access",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/extensions/networkpolicies/read",
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/llm-d.ai/*/read",
         "ActionType": "DataAction",
         "Category": "Reader Data Access",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/extensions/replicasets/read",
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/metrics.k8s.io/*/read",
         "ActionType": "DataAction",
         "Category": "Reader Data Access",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/limitranges/read",
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/networking.istio.io/*/read",
         "ActionType": "DataAction",
         "Category": "Reader Data Access",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/metrics.k8s.io/nodes/read",
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/networking.k8s.io/*/read",
         "ActionType": "DataAction",
         "Category": "Reader Data Access",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/metrics.k8s.io/pods/read",
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/policy/*/read",
         "ActionType": "DataAction",
         "Category": "Reader Data Access",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/namespaces/read",
-        "ActionType": "DataAction",
-        "Category": "Reader Data Access",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/networking.k8s.io/ingresses/read",
-        "ActionType": "DataAction",
-        "Category": "Reader Data Access",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/networking.k8s.io/networkpolicies/read",
-        "ActionType": "DataAction",
-        "Category": "Reader Data Access",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/persistentvolumeclaims/read",
-        "ActionType": "DataAction",
-        "Category": "Reader Data Access",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/pods/read",
-        "ActionType": "DataAction",
-        "Category": "Reader Data Access",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/policy/poddisruptionbudgets/read",
-        "ActionType": "DataAction",
-        "Category": "Reader Data Access",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/replicationcontrollers/read",
-        "ActionType": "DataAction",
-        "Category": "Reader Data Access",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/resourcequotas/read",
-        "ActionType": "DataAction",
-        "Category": "Reader Data Access",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/serviceaccounts/read",
-        "ActionType": "DataAction",
-        "Category": "Reader Data Access",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/services/read",
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/security.istio.io/*/read",
         "ActionType": "DataAction",
         "Category": "Reader Data Access",
         "EAMTierLevelName": "UserAccess",
@@ -8397,7 +8380,21 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/namespaces/listAccessKeys/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/namespaces/listCredential/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/locations/aiModels/calculateCost/action",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
@@ -8411,7 +8408,21 @@
         "EAMTierLevelTagValue": "2"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/namespaces/*/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/locations/aiModels/read",
         "ActionType": "Action",
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",
@@ -28999,6 +29010,13 @@
         "EAMTierLevelTagValue": "2"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.AzureResilienceManagement/drills/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.AzureResilienceManagement/goalAssignments/goalResources/read",
         "ActionType": "Action",
         "Category": "Reader",
@@ -29028,6 +29046,13 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.AzureResilienceManagement/operations/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.AzureResilienceManagement/recoveryPlans/read",
         "ActionType": "Action",
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",
@@ -29140,6 +29165,13 @@
         "EAMTierLevelTagValue": "2"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.AzureResilienceManagement/drills/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.AzureResilienceManagement/goalAssignments/goalResources/read",
         "ActionType": "Action",
         "Category": "Reader",
@@ -29169,6 +29201,13 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.AzureResilienceManagement/operations/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.AzureResilienceManagement/recoveryPlans/read",
         "ActionType": "Action",
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",
@@ -37456,6 +37495,330 @@
     }
   },
   {
+    "RoleId": "1091dee8-a09b-4205-95fa-b0100e8f006d",
+    "RoleName": "Chaos Permissions Admin",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Can review and fix resource permissions for Chaos Studio scenario configurations, with read-only access to other workspace resources and results. Cannot author resources, trigger discovery or evaluation, validate configurations, or execute or cancel runs. Intended for security and IAM administrators.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/scenarios/configurations/fixResourcePermissions/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/locations/actions/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/locations/actionVersions/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/locations/operationResults/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/locations/operationStatuses/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/locations/targetTypes/capabilityTypes/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/locations/targetTypes/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/locations/workspaceOperationResults/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/operations/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/connections/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/discoveredResources/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/discoveries/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/evaluations/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/operationResults/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/scenarios/configurations/fixResourcePermissions/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/scenarios/configurations/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/scenarios/configurations/validations/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/scenarios/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/scenarios/runs/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "08debc4b-0ada-478e-b198-db165d97e7de",
+    "RoleName": "Chaos Scenario Operator",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Can validate configurations and execute, cancel, and monitor Chaos Studio scenario runs. Cannot author or delete workspace resources, trigger discovery or evaluation, or fix resource permissions. Intended for SREs and on-call engineers.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/scenarios/configurations/execute/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/scenarios/configurations/validate/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/scenarios/runs/cancel/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/locations/actions/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/locations/actionVersions/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/locations/operationResults/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/locations/operationStatuses/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/locations/targetTypes/capabilityTypes/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/locations/targetTypes/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/locations/workspaceOperationResults/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/operations/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/connections/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/discoveredResources/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/discoveries/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/evaluations/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/operationResults/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/scenarios/configurations/fixResourcePermissions/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/scenarios/configurations/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/scenarios/configurations/validations/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/scenarios/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/scenarios/runs/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
     "RoleId": "7c2e40b7-25eb-482a-82cb-78ba06cb46d5",
     "RoleName": "Chaos Studio Experiment Contributor",
     "IsCustom": false,
@@ -37735,6 +38098,245 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "9a6bb34c-81a2-4692-b7e4-d892eb1f56b5",
+    "RoleName": "Chaos Workspace Contributor",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Can manage Chaos Studio workspaces and connections, discover resources, evaluate recommendations, author and validate scenarios and configurations, and execute and cancel runs. Cannot fix resource permissions. Intended for workspace owners.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/connections/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/connections/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/discover/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/evaluate/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/scenarios/configurations/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/scenarios/configurations/execute/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/scenarios/configurations/validate/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/scenarios/configurations/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/scenarios/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/scenarios/runs/cancel/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/scenarios/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/locations/actions/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/locations/actionVersions/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/locations/operationResults/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/locations/operationStatuses/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/locations/targetTypes/capabilityTypes/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/locations/targetTypes/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/locations/workspaceOperationResults/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/operations/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/connections/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/discoveredResources/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/discoveries/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/evaluations/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/operationResults/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/scenarios/configurations/fixResourcePermissions/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/scenarios/configurations/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/scenarios/configurations/validations/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/scenarios/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Chaos/workspaces/scenarios/runs/read",
         "ActionType": "Action",
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",
@@ -44732,6 +45334,162 @@
     "Classification": {
       "EAMTierLevelName": "UserAccess",
       "EAMTierLevelTagValue": "2"
+    }
+  },
+  {
+    "RoleId": "e85263c4-8ef3-4ab1-82a4-f6d18e75d328",
+    "RoleName": "Container Registry Connected Registry Sync Contributor",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Grants the data-plane permissions required to list repositories; read, write, and delete repository content and metadata; and communicate with the ACR gateway for ReadWrite Connected Registry synchronization.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerRegistry/registries/connectedRegistries/config/write",
+        "ActionType": "DataAction",
+        "Category": "Container Registry Data Access",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerRegistry/registries/connectedRegistries/message/write",
+        "ActionType": "DataAction",
+        "Category": "Container Registry Data Access",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerRegistry/registries/repositories/content/delete",
+        "ActionType": "DataAction",
+        "Category": "Container Registry Data Access",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerRegistry/registries/repositories/content/write",
+        "ActionType": "DataAction",
+        "Category": "Container Registry Data Access",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerRegistry/registries/repositories/metadata/delete",
+        "ActionType": "DataAction",
+        "Category": "Container Registry Data Access",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerRegistry/registries/repositories/metadata/write",
+        "ActionType": "DataAction",
+        "Category": "Container Registry Data Access",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerRegistry/registries/catalog/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerRegistry/registries/connectedRegistries/config/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerRegistry/registries/connectedRegistries/message/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerRegistry/registries/repositories/content/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerRegistry/registries/repositories/metadata/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "2b7c9e07-f345-488e-ac2f-78e83b45fda4",
+    "RoleName": "Container Registry Connected Registry Sync Reader",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Grants the data-plane permissions required to list repositories, read repository content and metadata, and communicate with the ACR gateway for ReadOnly Connected Registry synchronization.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerRegistry/registries/connectedRegistries/config/write",
+        "ActionType": "DataAction",
+        "Category": "Container Registry Data Access",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerRegistry/registries/connectedRegistries/message/write",
+        "ActionType": "DataAction",
+        "Category": "Container Registry Data Access",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerRegistry/registries/catalog/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerRegistry/registries/connectedRegistries/config/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerRegistry/registries/connectedRegistries/message/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerRegistry/registries/repositories/content/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerRegistry/registries/repositories/metadata/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
     }
   },
   {
@@ -78885,1292 +79643,6 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Resources/subscriptions/resourceGroups/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      }
-    ],
-    "Classification": {
-      "EAMTierLevelName": "ManagementPlane",
-      "EAMTierLevelTagValue": "1"
-    }
-  },
-  {
-    "RoleId": "3f6d1a95-b7c8-4e2b-8f04-d91a6ce7235e",
-    "RoleName": "Red Team Administrator",
-    "IsCustom": false,
-    "isPrivileged": true,
-    "AssignmentMode": null,
-    "InheritsPermissionsFrom": null,
-    "RichDescription": "Read approved Azure reconnaissance, security posture, Key Vault metadata, and Log Analytics information, and create or delete Azure role assignments within approved scopes.",
-    "RolePermissions": [
-      {
-        "AuthorizedResourceAction": "Microsoft.Authorization/roleAssignments/delete",
-        "ActionType": "Action",
-        "Category": "Authorization",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Authorization/roleAssignments/write",
-        "ActionType": "Action",
-        "Category": "Authorization",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/certificates/read",
-        "ActionType": "DataAction",
-        "Category": "Key Vault Data Access",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/keys/read",
-        "ActionType": "DataAction",
-        "Category": "Key Vault Data Access",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/secrets/readMetadata/action",
-        "ActionType": "DataAction",
-        "Category": "Key Vault Data Access",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.OperationalInsights/workspaces/query/read",
-        "ActionType": "Action",
-        "Category": "Log Analytics",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.OperationalInsights/workspaces/search/action",
-        "ActionType": "Action",
-        "Category": "Log Analytics",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Web/sites/config/list/action",
-        "ActionType": "Action",
-        "Category": "Secret and Key Listing",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Authorization/roleAssignments/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Automation/automationAccounts/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Compute/virtualMachines/extensions/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Compute/virtualMachines/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.ContainerRegistry/registries/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/managedClusters/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.DocumentDB/databaseAccounts/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Network/dnsZones/CNAME/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Network/dnsZones/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Network/networkInterfaces/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Network/networkSecurityGroups/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Network/publicIPAddresses/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.OperationalInsights/workspaces/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.ResourceGraph/resources/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Resources/deployments/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Resources/subscriptions/providers/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Resources/subscriptions/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Resources/subscriptions/resourceGroups/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Security/alerts/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Security/assessmentMetadata/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Security/assessments/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Security/automations/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Security/secureScoreControls/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Security/secureScores/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Security/tasks/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Sql/servers/firewallRules/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Sql/servers/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Storage/storageAccounts/blobServices/containers/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Storage/storageAccounts/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Web/sites/config/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Web/sites/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      }
-    ],
-    "Classification": {
-      "EAMTierLevelName": "ControlPlane",
-      "EAMTierLevelTagValue": "0"
-    }
-  },
-  {
-    "RoleId": "9ab4e761-2c0f-4d8e-a573-6f18c92deab7",
-    "RoleName": "Red Team Operator",
-    "IsCustom": false,
-    "isPrivileged": false,
-    "AssignmentMode": null,
-    "InheritsPermissionsFrom": null,
-    "RichDescription": "Read approved Azure reconnaissance, security posture, Key Vault metadata, App Service configuration, and Log Analytics information; no role-assignment management.",
-    "RolePermissions": [
-      {
-        "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/certificates/read",
-        "ActionType": "DataAction",
-        "Category": "Key Vault Data Access",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/keys/read",
-        "ActionType": "DataAction",
-        "Category": "Key Vault Data Access",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/secrets/readMetadata/action",
-        "ActionType": "DataAction",
-        "Category": "Key Vault Data Access",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.OperationalInsights/workspaces/query/read",
-        "ActionType": "Action",
-        "Category": "Log Analytics",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.OperationalInsights/workspaces/search/action",
-        "ActionType": "Action",
-        "Category": "Log Analytics",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Web/sites/config/list/action",
-        "ActionType": "Action",
-        "Category": "Secret and Key Listing",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Authorization/roleAssignments/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Automation/automationAccounts/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Compute/virtualMachines/extensions/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Compute/virtualMachines/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.ContainerRegistry/registries/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/managedClusters/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.DocumentDB/databaseAccounts/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Network/dnsZones/CNAME/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Network/dnsZones/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Network/networkInterfaces/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Network/networkSecurityGroups/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Network/publicIPAddresses/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.OperationalInsights/workspaces/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.ResourceGraph/resources/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Resources/deployments/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Resources/subscriptions/providers/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Resources/subscriptions/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Resources/subscriptions/resourceGroups/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Security/alerts/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Security/assessmentMetadata/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Security/assessments/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Security/automations/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Security/secureScoreControls/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Security/secureScores/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Security/tasks/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Sql/servers/firewallRules/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Sql/servers/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Storage/storageAccounts/blobServices/containers/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Storage/storageAccounts/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Web/sites/config/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Web/sites/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      }
-    ],
-    "Classification": {
-      "EAMTierLevelName": "ManagementPlane",
-      "EAMTierLevelTagValue": "1"
-    }
-  },
-  {
-    "RoleId": "689fda5e-27b1-47b9-b9c7-ddb104e5cdba",
-    "RoleName": "Red Team Reader",
-    "IsCustom": false,
-    "isPrivileged": false,
-    "AssignmentMode": null,
-    "InheritsPermissionsFrom": null,
-    "RichDescription": "Read the same approved Azure reconnaissance, security posture, Key Vault metadata, App Service configuration, and Log Analytics information as Red Team Recon Agent - Azure; no role-assignment management.",
-    "RolePermissions": [
-      {
-        "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/certificates/read",
-        "ActionType": "DataAction",
-        "Category": "Key Vault Data Access",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/keys/read",
-        "ActionType": "DataAction",
-        "Category": "Key Vault Data Access",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/secrets/readMetadata/action",
-        "ActionType": "DataAction",
-        "Category": "Key Vault Data Access",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.OperationalInsights/workspaces/query/read",
-        "ActionType": "Action",
-        "Category": "Log Analytics",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.OperationalInsights/workspaces/search/action",
-        "ActionType": "Action",
-        "Category": "Log Analytics",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Web/sites/config/list/action",
-        "ActionType": "Action",
-        "Category": "Secret and Key Listing",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Authorization/roleAssignments/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Automation/automationAccounts/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Compute/virtualMachines/extensions/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Compute/virtualMachines/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.ContainerRegistry/registries/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/managedClusters/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.DocumentDB/databaseAccounts/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Network/dnsZones/CNAME/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Network/dnsZones/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Network/networkInterfaces/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Network/networkSecurityGroups/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Network/publicIPAddresses/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.OperationalInsights/workspaces/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.ResourceGraph/resources/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Resources/deployments/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Resources/subscriptions/providers/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Resources/subscriptions/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Resources/subscriptions/resourceGroups/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Security/alerts/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Security/assessmentMetadata/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Security/assessments/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Security/automations/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Security/secureScoreControls/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Security/secureScores/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Security/tasks/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Sql/servers/firewallRules/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Sql/servers/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Storage/storageAccounts/blobServices/containers/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Storage/storageAccounts/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Web/sites/config/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Web/sites/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      }
-    ],
-    "Classification": {
-      "EAMTierLevelName": "ManagementPlane",
-      "EAMTierLevelTagValue": "1"
-    }
-  },
-  {
-    "RoleId": "7e2a3b84-6f91-4c5d-b8a2-1f37e9d4ac60",
-    "RoleName": "Red Team Recon Agent - Azure",
-    "IsCustom": false,
-    "isPrivileged": false,
-    "AssignmentMode": null,
-    "InheritsPermissionsFrom": null,
-    "RichDescription": "Read approved Azure reconnaissance, security posture, Key Vault metadata, App Service configuration, and Log Analytics information; no role-assignment management.",
-    "RolePermissions": [
-      {
-        "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/certificates/read",
-        "ActionType": "DataAction",
-        "Category": "Key Vault Data Access",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/keys/read",
-        "ActionType": "DataAction",
-        "Category": "Key Vault Data Access",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/secrets/readMetadata/action",
-        "ActionType": "DataAction",
-        "Category": "Key Vault Data Access",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.OperationalInsights/workspaces/query/read",
-        "ActionType": "Action",
-        "Category": "Log Analytics",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.OperationalInsights/workspaces/search/action",
-        "ActionType": "Action",
-        "Category": "Log Analytics",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Web/sites/config/list/action",
-        "ActionType": "Action",
-        "Category": "Secret and Key Listing",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Authorization/roleAssignments/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Automation/automationAccounts/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Compute/virtualMachines/extensions/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Compute/virtualMachines/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.ContainerRegistry/registries/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.ContainerService/managedClusters/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.DocumentDB/databaseAccounts/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Network/dnsZones/CNAME/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Network/dnsZones/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Network/networkInterfaces/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Network/networkSecurityGroups/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Network/publicIPAddresses/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.OperationalInsights/workspaces/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.ResourceGraph/resources/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Resources/deployments/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Resources/subscriptions/providers/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Resources/subscriptions/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Resources/subscriptions/resourceGroups/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Security/alerts/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Security/assessmentMetadata/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Security/assessments/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Security/automations/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Security/secureScoreControls/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Security/secureScores/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Security/tasks/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Sql/servers/firewallRules/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Sql/servers/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Storage/storageAccounts/blobServices/containers/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Storage/storageAccounts/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Web/sites/config/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Web/sites/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      }
-    ],
-    "Classification": {
-      "EAMTierLevelName": "ManagementPlane",
-      "EAMTierLevelTagValue": "1"
-    }
-  },
-  {
-    "RoleId": "c1d8f2a9-45be-4f73-9a16-8b02d5e7f4c1",
-    "RoleName": "Red Team Web App Agent",
-    "IsCustom": false,
-    "isPrivileged": false,
-    "AssignmentMode": null,
-    "InheritsPermissionsFrom": null,
-    "RichDescription": "Read approved Azure web application, configuration, network exposure, storage account, registry, and managed identity information for web application penetration testing.",
-    "RolePermissions": [
-      {
-        "AuthorizedResourceAction": "Microsoft.Web/sites/config/list/action",
-        "ActionType": "Action",
-        "Category": "Secret and Key Listing",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.ContainerRegistry/registries/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.ManagedIdentity/userAssignedIdentities/federatedIdentityCredentials/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Network/dnsZones/CNAME/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Network/dnsZones/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Network/networkInterfaces/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Network/networkSecurityGroups/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Network/publicIPAddresses/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.ResourceGraph/resources/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Resources/subscriptions/providers/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Resources/subscriptions/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Resources/subscriptions/resourceGroups/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Storage/storageAccounts/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Web/sites/config/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Web/sites/read",
         "ActionType": "Action",
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",
