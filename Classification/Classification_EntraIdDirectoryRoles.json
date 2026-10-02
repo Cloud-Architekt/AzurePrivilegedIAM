@@ -3442,17 +3442,10 @@
     "InheritsPermissionsFrom": [],
     "Categories": null,
     "RichDescription": null,
-    "RolePermissions": [
-      {
-        "AuthorizedResourceAction": null,
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      }
-    ],
+    "RolePermissions": [],
     "Classification": {
-      "EAMTierLevelName": "Unclassified",
-      "EAMTierLevelTagValue": "Unclassified"
+      "EAMTierLevelName": "UserAccess",
+      "EAMTierLevelTagValue": "2"
     }
   },
   {
@@ -3538,17 +3531,10 @@
     "InheritsPermissionsFrom": [],
     "Categories": null,
     "RichDescription": null,
-    "RolePermissions": [
-      {
-        "AuthorizedResourceAction": null,
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      }
-    ],
+    "RolePermissions": [],
     "Classification": {
-      "EAMTierLevelName": "Unclassified",
-      "EAMTierLevelTagValue": "Unclassified"
+      "EAMTierLevelName": "UserAccess",
+      "EAMTierLevelTagValue": "2"
     }
   },
   {
@@ -14837,17 +14823,10 @@
     "InheritsPermissionsFrom": [],
     "Categories": null,
     "RichDescription": null,
-    "RolePermissions": [
-      {
-        "AuthorizedResourceAction": null,
-        "Category": "Unclassified",
-        "EAMTierLevelName": "Unclassified",
-        "EAMTierLevelTagValue": "Unclassified"
-      }
-    ],
+    "RolePermissions": [],
     "Classification": {
-      "EAMTierLevelName": "Unclassified",
-      "EAMTierLevelTagValue": "Unclassified"
+      "EAMTierLevelName": "UserAccess",
+      "EAMTierLevelTagValue": "2"
     }
   },
   {

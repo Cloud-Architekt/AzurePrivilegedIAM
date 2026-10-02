@@ -120,8 +120,11 @@ EOCE.app = (function () {
 
     // ---- Sidebar counts --------------------------------------------------
     function updateCounts() {
-        var elA = document.getElementById('cnt-attack');
-        if (elA && EOCE.ATTACK_PATHS) elA.textContent = EOCE.util.formatNumber(EOCE.ATTACK_PATHS.length);
+        // Attack paths are lazy-loaded; EOCE.ATTACK_PATHS is still empty at startup.
+        EOCE.util.ensureAttackPaths().then(function (paths) {
+            var elA = document.getElementById('cnt-attack');
+            if (elA) elA.textContent = EOCE.util.formatNumber((paths || []).length);
+        }).catch(function () { });
 
         var rolePaths = EOCE.rolesSystemKeys().map(function (k) { return EOCE.RBAC_SYSTEMS[k].file; });
         Promise.all([
