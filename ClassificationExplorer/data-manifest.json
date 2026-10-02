@@ -1,15 +1,15 @@
 {
-  "generatedUtc": "2026-10-02T08:54:42.8751260Z",
+  "generatedUtc": "2026-10-02T10:01:43.1187720Z",
   "mode": "Standalone",
   "repoRoot": "AzurePrivilegedIAM",
   "fileCount": 19,
   "files": [
     {
       "path": "Classification/Classification_EntraIdDirectoryRoles.json",
-      "bytes": 612638,
+      "bytes": 613777,
       "items": 145,
       "param": false,
-      "sha256": "2d6335dd046664cb08b5f856498b5d1d66d7d6d05790260a465977022763839b"
+      "sha256": "b5ce10122ffc2de45cc8ed1454893b47636e923c154297478231e582797f1741"
     },
     {
       "path": "Classification/Classification_EntraIdDirectoryRolesFromMsftDocs.json",

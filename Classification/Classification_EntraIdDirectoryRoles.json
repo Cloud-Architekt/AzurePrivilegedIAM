@@ -3442,7 +3442,14 @@
     "InheritsPermissionsFrom": [],
     "Categories": null,
     "RichDescription": null,
-    "RolePermissions": [],
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": null,
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      }
+    ],
     "Classification": {
       "EAMTierLevelName": "UserAccess",
       "EAMTierLevelTagValue": "2"
@@ -3531,7 +3538,14 @@
     "InheritsPermissionsFrom": [],
     "Categories": null,
     "RichDescription": null,
-    "RolePermissions": [],
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": null,
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      }
+    ],
     "Classification": {
       "EAMTierLevelName": "UserAccess",
       "EAMTierLevelTagValue": "2"
@@ -10915,7 +10929,14 @@
     ],
     "Categories": "securityAndCompliance",
     "RichDescription": "Assign the Purview Workload Content Administrator role to users who need to do the following tasks:\n- Manage or purge Microsoft 365 data (such as SharePoint, Teams, OneDrive, or Exchange) when accessing from the Microsoft Purview portal\nTo assign this role, you must use the Microsoft Purview portal. If you try to assign this role using the Microsoft Entra admin center, it might be overwritten.",
-    "RolePermissions": [],
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": null,
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      }
+    ],
     "Classification": {
       "EAMTierLevelName": "ManagementPlane",
       "EAMTierLevelTagValue": "1"
@@ -10931,7 +10952,14 @@
     ],
     "Categories": "securityAndCompliance",
     "RichDescription": "Assign the Purview Workload Content Reader role to users who need to do the following tasks:\n- Read data from Microsoft 365 (such as SharePoint, Teams, OneDrive, or Exchange) when accessing from the Microsoft Purview portal\nTo assign this role, you must use the Microsoft Purview portal. If you try to assign this role using the Microsoft Entra admin center, it might be overwritten.",
-    "RolePermissions": [],
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": null,
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      }
+    ],
     "Classification": {
       "EAMTierLevelName": "ManagementPlane",
       "EAMTierLevelTagValue": "1"
@@ -10947,7 +10975,14 @@
     ],
     "Categories": "securityAndCompliance",
     "RichDescription": "Assign the Purview Workload Content Writer role to users who need to do the following tasks:\n- Read and edit Microsoft 365 data (such as SharePoint, Teams, OneDrive, or Exchange) when accessing from the Microsoft Purview portal\nTo assign this role, you must use the Microsoft Purview portal. If you try to assign this role using the Microsoft Entra admin center, it might be overwritten.",
-    "RolePermissions": [],
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": null,
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      }
+    ],
     "Classification": {
       "EAMTierLevelName": "ManagementPlane",
       "EAMTierLevelTagValue": "1"
@@ -14823,7 +14858,14 @@
     "InheritsPermissionsFrom": [],
     "Categories": null,
     "RichDescription": null,
-    "RolePermissions": [],
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": null,
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      }
+    ],
     "Classification": {
       "EAMTierLevelName": "UserAccess",
       "EAMTierLevelTagValue": "2"

@@ -120,11 +120,9 @@ EOCE.app = (function () {
 
     // ---- Sidebar counts --------------------------------------------------
     function updateCounts() {
-        // Attack paths are lazy-loaded; EOCE.ATTACK_PATHS is still empty at startup.
-        EOCE.util.ensureAttackPaths().then(function (paths) {
-            var elA = document.getElementById('cnt-attack');
-            if (elA) elA.textContent = EOCE.util.formatNumber((paths || []).length);
-        }).catch(function () { });
+        // Attack paths load on demand (ensureAttackPaths fills the badge); don't show "0" before that.
+        var elA = document.getElementById('cnt-attack');
+        if (elA && EOCE.ATTACK_PATHS && EOCE.ATTACK_PATHS.length) elA.textContent = EOCE.util.formatNumber(EOCE.ATTACK_PATHS.length);
 
         var rolePaths = EOCE.rolesSystemKeys().map(function (k) { return EOCE.RBAC_SYSTEMS[k].file; });
         Promise.all([

@@ -169,6 +169,18 @@ function Export-EntraOpsClassificationDirectoryRoles {
         }
         $ClassifiedDirectoryRolePermissions = $ClassifiedDirectoryRolePermissions | sort-object EAMTierLevelTagValue, Category, AuthorizedResourceAction
 
+        # Keep one Unclassified placeholder for roles without role actions: KQL mv-expand drops rows with empty arrays
+        if (@($ClassifiedDirectoryRolePermissions).Count -eq 0) {
+            $ClassifiedDirectoryRolePermissions = @(
+                [PSCustomObject]@{
+                    "AuthorizedResourceAction" = $null
+                    "Category"                 = "Unclassified"
+                    "EAMTierLevelName"         = "Unclassified"
+                    "EAMTierLevelTagValue"     = "Unclassified"
+                }
+            )
+        }
+
         if ($SingleClassification -eq $True) {
             $RoleDefinitionClassification = ($ClassifiedDirectoryRolePermissions | select-object -ExcludeProperty AuthorizedResourceAction, Category -Unique | Sort-Object EAMTierLevelTagValue | select-object -First 1)
         } else {

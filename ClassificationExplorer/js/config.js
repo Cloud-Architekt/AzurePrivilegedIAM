@@ -346,11 +346,12 @@ EOCE.rolesSystemKeys = function () {
 
 // Role exports occasionally carry RolePermissions as a single object instead of an
 // array (a role with exactly one permission). Always return an array so callers can
-// iterate safely.
+// iterate safely. Entries without an action are placeholders for roles without role
+// actions (kept in the Entra ID export so KQL mv-expand doesn't drop the role).
 EOCE.rolePerms = function (role) {
     var p = role && role.RolePermissions;
     if (!p) return [];
-    return Array.isArray(p) ? p : [p];
+    return (Array.isArray(p) ? p : [p]).filter(function (x) { return x && x.AuthorizedResourceAction; });
 };
 
 // Informational callout explaining a system's advanced scope-aware tiering. Used by
