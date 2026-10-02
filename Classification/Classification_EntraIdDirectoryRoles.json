@@ -11770,7 +11770,7 @@
       "88d8e3e3-8f55-4a1e-953a-9b9898b8876b"
     ],
     "Categories": "securityAndCompliance",
-    "RichDescription": "Users with this role can manage alerts and have global read-only access on security-related feature, including all information in Microsoft 365 security center, Microsoft Entra ID Protection, Privileged Identity Management.",
+    "RichDescription": "Users with this role can manage alerts, perform identity containment actions during security incidents, and have global read-only access on security-related feature, including all information in Microsoft Defender portal, Microsoft Entra ID Protection, Privileged Identity Management, and Microsoft Purview portal.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/cloudAppSecurity/allProperties/allTasks",
