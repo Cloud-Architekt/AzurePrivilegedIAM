@@ -25452,6 +25452,514 @@
     }
   },
   {
+    "RoleId": "560925e9-df7e-4147-af0c-56cd61a450a9",
+    "RoleName": "Azure NetApp Files Backup Manager",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Allows full backup lifecycle operations for Azure NetApp Files resources",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/locations/checkfilepathavailability/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/locations/checknameavailability/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/accountBackups/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/accountBackups/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/backupPolicies/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/backupPolicies/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/backupVaults/backups/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/backupVaults/backups/restoreFiles/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/backupVaults/backups/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/backupVaults/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/backupVaults/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/backups/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/backups/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/migrateBackups/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/revert/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/snapshots/restoreFiles/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/migrateBackups/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/snapshotPolicies/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/snapshotPolicies/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/*/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "ed55662f-36d4-4cdf-803b-9f0a4611d841",
+    "RoleName": "Azure NetApp Files Backup Operator",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Allows backup creation and restore operations for Azure NetApp Files resources",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/locations/checkfilepathavailability/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/locations/checknameavailability/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/accountBackups/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/backupPolicies/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/backupVaults/backups/restoreFiles/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/backupVaults/backups/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/backupVaults/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/backups/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/migrateBackups/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/snapshots/restoreFiles/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/migrateBackups/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/snapshotPolicies/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/*/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "9a2eb804-9386-45a4-a977-605001278085",
+    "RoleName": "Azure NetApp Files Cost Manager",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Allows capacity and cost-impacting operations for Azure NetApp Files resources",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/locations/checkfilepathavailability/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/locations/checknameavailability/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/locations/checkquotaavailability/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/caches/poolChange/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/changeZone/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/listQuotaReport/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/listReplications/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/poolChange/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/subvolumes/getMetadata/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/volumeQuotaRules/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/volumeQuotaRules/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/*/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "88aa0c9d-b88e-4a65-98b5-6908009ba28a",
+    "RoleName": "Azure NetApp Files Policy And Compliance Manager",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Allows policy and compliance operations for Azure NetApp Files resources",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/locations/checkfilepathavailability/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/locations/checknameavailability/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/locations/checkquotaavailability/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/backupPolicies/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/backupPolicies/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/providers/Microsoft.Insights/diagnosticSettings/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/listQuotaReport/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/listReplications/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/subvolumes/getMetadata/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/volumeQuotaRules/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/volumeQuotaRules/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/providers/Microsoft.Insights/diagnosticSettings/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/snapshotPolicies/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/snapshotPolicies/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/*/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
     "RoleId": "bafa5965-3211-483c-a7b7-027648c789e9",
     "RoleName": "Azure NetApp Files Reader",
     "IsCustom": false,
@@ -25518,6 +26026,935 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/getKeyVaultStatus/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/*/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "17279d5b-dadc-4ed6-89b8-a1bdb7c911d7",
+    "RoleName": "Azure NetApp Files Replication Manager",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Allows full replication lifecycle operations for Azure NetApp Files resources",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/locations/checkfilepathavailability/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/locations/checknameavailability/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/caches/listPeeringPassphrases/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/authorizeExternalReplication/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/authorizeReplication/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/breakReplication/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/createOnPremMigrationReplication/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/deleteReplication/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/finalizeExternalReplication/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/finalizeOnPremMigration/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/finalizeRelocation/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/listReplications/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/peerClusterForOnPremMigration/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/peerExternalCluster/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/performReplicationTransfer/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/reestablishReplication/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/reInitializeReplication/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/relocate/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/resyncReplication/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/revertRelocation/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/*/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "a0a967d8-29e2-4c1a-b9b1-3e596ae3298a",
+    "RoleName": "Azure NetApp Files Replication Operator",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Allows replication operations for Azure NetApp Files resources",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/locations/checkfilepathavailability/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/locations/checknameavailability/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/caches/listPeeringPassphrases/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/authorizeExternalReplication/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/authorizeReplication/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/breakReplication/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/createOnPremMigrationReplication/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/deleteReplication/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/finalizeExternalReplication/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/finalizeOnPremMigration/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/finalizeRelocation/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/listReplications/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/peerClusterForOnPremMigration/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/peerExternalCluster/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/performReplicationTransfer/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/reestablishReplication/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/reInitializeReplication/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/resyncReplication/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/revertRelocation/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/*/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "b24ae3d9-cb64-4f41-b0f9-945879b43a72",
+    "RoleName": "Azure NetApp Files Security And Identity Manager",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Allows security and identity operations for Azure NetApp Files resources",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/locations/checkfilepathavailability/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/locations/checknameavailability/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/providers/Microsoft.Insights/diagnosticSettings/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/buckets/generateAkvCredentials/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/buckets/generateCredentials/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/buckets/refreshCertificate/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/getGroupIdListForLdapUser/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/ransomwareReports/clearsuspects/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/resetCifsPassword/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/changeKeyVault/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/getKeyVaultStatus/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/migrateEncryption/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/providers/Microsoft.Insights/diagnosticSettings/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/renewCredentials/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/snapshotPolicies/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/snapshotPolicies/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/transitionToCmk/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/*/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "d653ec4d-4137-4db2-9b34-2056fb930d93",
+    "RoleName": "Azure NetApp Files Storage Manager",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Allows full storage lifecycle operations for Azure NetApp Files resources",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/locations/checkfilepathavailability/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/locations/checknameavailability/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/locations/checkquotaavailability/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/locations/queryNetworkSiblingSet/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/locations/updateNetworkSiblingSet/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/caches/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/caches/poolChange/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/caches/resetSmbPassword/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/caches/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/changeZone/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/breakFileLocks/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/buckets/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/buckets/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/finalizeRelocation/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/listQuotaReport/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/poolChange/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/relocate/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/resetCifsPassword/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/revert/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/revertRelocation/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/snapshots/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/snapshots/restoreFiles/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/snapshots/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/subvolumes/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/subvolumes/getMetadata/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/subvolumes/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/updateAVSDataStoreInfo/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/snapshotPolicies/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/snapshotPolicies/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/volumeGroups/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/volumeGroups/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/*/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "bfa9c06b-d58c-4c1e-a5a5-da7cb961f0e9",
+    "RoleName": "Azure NetApp Files Storage Operator",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Allows day-to-day storage operations for Azure NetApp Files resources",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/locations/checkfilepathavailability/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/locations/checknameavailability/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/locations/checkquotaavailability/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/caches/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/caches/poolChange/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/caches/resetSmbPassword/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/caches/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/changeZone/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/breakFileLocks/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/buckets/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/buckets/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/listQuotaReport/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/poolChange/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/snapshots/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/snapshots/restoreFiles/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/snapshots/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/subvolumes/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/subvolumes/getMetadata/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/subvolumes/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/updateAVSDataStoreInfo/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/snapshotPolicies/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.NetApp/netAppAccounts/volumeGroups/write",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
@@ -39041,13 +40478,6 @@
         "AuthorizedResourceAction": "Microsoft.Insights/alertRules/",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Resources/deployments/*",
-        "ActionType": "Action",
-        "Category": "Resource Management",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
