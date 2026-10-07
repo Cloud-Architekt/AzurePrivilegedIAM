@@ -28,6 +28,7 @@ Describe 'Sync-EntraOpsClassificationExplorerSource' {
 
             Set-Content -LiteralPath (Join-Path $sourceApp 'index.html') -Value '<html></html>' -NoNewline
             Set-Content -LiteralPath (Join-Path $sourceApp 'js/mode.js') -Value 'standalone' -NoNewline
+            Set-Content -LiteralPath (Join-Path $sourceApp 'README.md') -Value 'Invoke-Pester ./Tests/ClassificationExplorer.Tests.ps1 -CI -Output Detailed' -NoNewline
             Set-Content -LiteralPath (Join-Path $sourceTemplates 'Classification_ApiPermissions.json') -Value '{"version":2}' -NoNewline
             Set-Content -LiteralPath (Join-Path $sourceTemplates 'nested/template.json') -Value '{"nested":true}' -NoNewline
             Set-Content -LiteralPath (Join-Path $sourceGeneratorDir 'Update-EntraOpsClassificationExplorerData.ps1') -Value '# generator' -NoNewline
@@ -47,6 +48,8 @@ Describe 'Sync-EntraOpsClassificationExplorerSource' {
             Get-Content -LiteralPath (Join-Path $tenantClassification 'custom.json') -Raw |
                 Should -Be '{"tenant":true}'
             Get-Content -LiteralPath (Join-Path $targetApp 'js/mode.js') -Raw | Should -Be 'entraops'
+            (Get-Content -LiteralPath (Join-Path $targetApp 'README.md') -Raw).Trim() |
+                Should -Be 'Invoke-Pester ./Tests/Reporting/New-EntraOpsClassificationExplorerData.Tests.ps1 -CI -Output Detailed'
         } finally {
             if (Test-Path -LiteralPath $tempRoot) {
                 Remove-Item -LiteralPath $tempRoot -Recurse -Force

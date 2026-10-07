@@ -158,6 +158,21 @@ function Sync-EntraOpsClassificationExplorerSource {
         }
     }
 
+    # The shared README documents the standalone browser suite. In the EntraOps deployment,
+    # retain the report generator's own Pester suite instead of pointing contributors at a test
+    # file that exists only in AzurePrivilegedIAM.
+    $TargetReadmePath = Join-Path $TargetAppRoot 'README.md'
+    if (Test-Path -LiteralPath $TargetReadmePath -PathType Leaf) {
+        $TargetReadmeText = Get-Content -LiteralPath $TargetReadmePath -Raw -Encoding UTF8
+        $EntraOpsReadmeText = $TargetReadmeText.Replace(
+            'Invoke-Pester ./Tests/ClassificationExplorer.Tests.ps1 -CI -Output Detailed',
+            'Invoke-Pester ./Tests/Reporting/New-EntraOpsClassificationExplorerData.Tests.ps1 -CI -Output Detailed'
+        )
+        if ($EntraOpsReadmeText -ne $TargetReadmeText -and $PSCmdlet.ShouldProcess($TargetReadmePath, 'Update EntraOps Pester command')) {
+            Set-Content -LiteralPath $TargetReadmePath -Value $EntraOpsReadmeText -Encoding UTF8
+        }
+    }
+
     # Remove stale destination files that no longer exist in the source (keeps the two copies
     # byte-identical over time), except the always-excluded deployment-specific files.
     Get-ChildItem -LiteralPath $TargetAppRoot -Recurse -File | ForEach-Object {
