@@ -146,6 +146,7 @@
         ],
         "RoleDefinitionActions": [
           "CustomAuthenticationExtension.ReadWrite.All",
+          "EventListener.ReadWrite.All",
           "Policy.ReadWrite.AuthenticationFlows",
           "Policy.ReadWrite.AuthenticationMethod",
           "Policy.ReadWrite.Authorization",
@@ -698,11 +699,8 @@
           "/"
         ],
         "RoleDefinitionActions": [
-          "CustomSecAttributeAssignment.Read.All",
           "CustomSecAttributeAssignment.ReadWrite.All",
-          "CustomSecAttributeDefinition.Read.All",
           "CustomSecAttributeDefinition.ReadWrite.All",
-          "CustomSecAttributeProvisioning.Read.All",
           "CustomSecAttributeProvisioning.ReadWrite.All"
         ]
       },
@@ -2543,6 +2541,20 @@
         ]
       },
       {
+        "Category": "Microsoft.Graph",
+        "Service": "ABAC",
+        "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+        "ResourceScope": "All",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "CustomSecAttributeAssignment.Read.All",
+          "CustomSecAttributeDefinition.Read.All",
+          "CustomSecAttributeProvisioning.Read.All"
+        ]
+      },
+      {
         "Category": "Microsoft.AzureADGraph",
         "Service": "Tenant Configuration (Reader)",
         "ResourceAppId": "00000002-0000-0000-c000-000000000000",
@@ -2577,7 +2589,6 @@
           "DirectoryRecommendations.Read.All",
           "EntitlementManagement.Read.All",
           "EventListener.Read.All",
-          "EventListener.ReadWrite.All",
           "ExternalUserProfile.Read.All",
           "Group-XTenantIdentitySync.Read.All",
           "IdentityUserFlow.Read.All",
