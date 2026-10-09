@@ -423,9 +423,9 @@
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprints/createAsOwner",
-        "Category": "Agent Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
+        "Category": "Application and Workload Identity",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/standard/read",
@@ -435,8 +435,8 @@
       }
     ],
     "Classification": {
-      "EAMTierLevelName": "ControlPlane",
-      "EAMTierLevelTagValue": "0"
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
     }
   },
   {
@@ -1759,26 +1759,8 @@
     "RichDescription": "Users with this role can assign and remove custom security attribute keys and values for supported Microsoft Entra objects such as users, service principals, and devices.",
     "RolePermissions": [
       {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/customSecurityAttributes/read",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
         "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/customSecurityAttributes/update",
         "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/devices/customSecurityAttributes/read",
-        "Category": "Global Endpoint Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/customSecurityAttributes/read",
-        "Category": "Global User Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
@@ -1789,19 +1771,7 @@
         "EAMTierLevelTagValue": "0"
       },
       {
-        "AuthorizedResourceAction": "microsoft.directory/attributeSets/allProperties/read",
-        "Category": "Privileged ABAC",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
         "AuthorizedResourceAction": "microsoft.directory/azureManagedIdentities/customSecurityAttributes/update",
-        "Category": "Privileged ABAC",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/customSecurityAttributeDefinitions/allProperties/read",
         "Category": "Privileged ABAC",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
@@ -1811,6 +1781,36 @@
         "Category": "Privileged ABAC",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/attributeSets/allProperties/read",
+        "Category": "Custom Security Attributes (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/customSecurityAttributeDefinitions/allProperties/read",
+        "Category": "Custom Security Attributes (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/devices/customSecurityAttributes/read",
+        "Category": "Custom Security Attributes (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/customSecurityAttributes/read",
+        "Category": "Custom Security Attributes (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/users/customSecurityAttributes/read",
+        "Category": "Custom Security Attributes (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/azureManagedIdentities/customSecurityAttributes/read",
@@ -1836,34 +1836,34 @@
     "RichDescription": "Users with this role can read custom security attribute keys and values for supported Microsoft Entra objects.",
     "RolePermissions": [
       {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/customSecurityAttributes/read",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/devices/customSecurityAttributes/read",
-        "Category": "Global Endpoint Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/customSecurityAttributes/read",
-        "Category": "Global User Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
         "AuthorizedResourceAction": "microsoft.directory/attributeSets/allProperties/read",
-        "Category": "Privileged ABAC",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
+        "Category": "Custom Security Attributes (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/customSecurityAttributeDefinitions/allProperties/read",
-        "Category": "Privileged ABAC",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
+        "Category": "Custom Security Attributes (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/devices/customSecurityAttributes/read",
+        "Category": "Custom Security Attributes (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/customSecurityAttributes/read",
+        "Category": "Custom Security Attributes (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/users/customSecurityAttributes/read",
+        "Category": "Custom Security Attributes (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/azureManagedIdentities/customSecurityAttributes/read",
@@ -1873,8 +1873,8 @@
       }
     ],
     "Classification": {
-      "EAMTierLevelName": "ControlPlane",
-      "EAMTierLevelTagValue": "0"
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
     }
   },
   {
@@ -1919,20 +1919,20 @@
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/attributeSets/allProperties/read",
-        "Category": "Privileged ABAC",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
+        "Category": "Custom Security Attributes (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/customSecurityAttributeDefinitions/allProperties/read",
-        "Category": "Privileged ABAC",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
+        "Category": "Custom Security Attributes (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
       }
     ],
     "Classification": {
-      "EAMTierLevelName": "ControlPlane",
-      "EAMTierLevelTagValue": "0"
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
     }
   },
   {
@@ -1999,16 +1999,16 @@
     "RichDescription": null,
     "RolePermissions": [
       {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/read",
+        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/update",
         "Category": "Application and Workload Identity",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
       {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/update",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
+        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/read",
+        "Category": "Custom Security Attributes (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
       }
     ],
     "Classification": {
@@ -2029,14 +2029,14 @@
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/read",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
+        "Category": "Custom Security Attributes (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
       }
     ],
     "Classification": {
-      "EAMTierLevelName": "ControlPlane",
-      "EAMTierLevelTagValue": "0"
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
     }
   },
   {
@@ -4898,25 +4898,25 @@
         "EAMTierLevelTagValue": "1"
       },
       {
-        "AuthorizedResourceAction": "microsoft.directory/externalUserProfiles/standard/read",
-        "Category": "Tenant Configuration (Reader)",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
         "AuthorizedResourceAction": "microsoft.directory/pendingExternalUserProfiles/basic/update",
-        "Category": "Tenant Configuration (Reader)",
+        "Category": "Teams",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/pendingExternalUserProfiles/create",
-        "Category": "Tenant Configuration (Reader)",
+        "Category": "Teams",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/pendingExternalUserProfiles/delete",
+        "Category": "Teams",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/externalUserProfiles/standard/read",
         "Category": "Tenant Configuration (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
@@ -6345,6 +6345,24 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/pendingExternalUserProfiles/basic/update",
+        "Category": "Teams",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/pendingExternalUserProfiles/create",
+        "Category": "Teams",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/pendingExternalUserProfiles/delete",
+        "Category": "Teams",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.office365.skypeForBusiness/allEntities/allTasks",
         "Category": "Teams",
         "EAMTierLevelName": "ManagementPlane",
@@ -6484,24 +6502,6 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/onPremisesSynchronization/standard/read",
-        "Category": "Tenant Configuration (Reader)",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/pendingExternalUserProfiles/basic/update",
-        "Category": "Tenant Configuration (Reader)",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/pendingExternalUserProfiles/create",
-        "Category": "Tenant Configuration (Reader)",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/pendingExternalUserProfiles/delete",
         "Category": "Tenant Configuration (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
@@ -11513,6 +11513,12 @@
         "EAMTierLevelTagValue": "0"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/policies/basic/update",
+        "Category": "Tenant Policy Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/policies/create",
         "Category": "Tenant Policy Management",
         "EAMTierLevelName": "ControlPlane",
@@ -11736,12 +11742,6 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/namedLocations/standard/read",
-        "Category": "Tenant Configuration (Reader)",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/policies/basic/update",
         "Category": "Tenant Configuration (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
@@ -12914,6 +12914,24 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/pendingExternalUserProfiles/basic/update",
+        "Category": "Teams",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/pendingExternalUserProfiles/create",
+        "Category": "Teams",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/pendingExternalUserProfiles/delete",
+        "Category": "Teams",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.office365.skypeForBusiness/allEntities/allTasks",
         "Category": "Teams",
         "EAMTierLevelName": "ManagementPlane",
@@ -12951,24 +12969,6 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/groups/hiddenMembers/read",
-        "Category": "Tenant Configuration (Reader)",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/pendingExternalUserProfiles/basic/update",
-        "Category": "Tenant Configuration (Reader)",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/pendingExternalUserProfiles/create",
-        "Category": "Tenant Configuration (Reader)",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/pendingExternalUserProfiles/delete",
         "Category": "Tenant Configuration (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"

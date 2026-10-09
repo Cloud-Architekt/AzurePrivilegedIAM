@@ -1473,6 +1473,30 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "73fac914-e726-4af5-9a46-62f65f7b0a8b",
+    "AppRoleDisplayName": "ContentHub-Catalog.Read.All",
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "cc44d51e-040e-4631-a93a-1982ea54b428",
+    "AppRoleDisplayName": "ContentHub-Installed.Read.All",
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "0c6404f6-8e7a-413b-adc0-e9b750d959c8",
+    "AppRoleDisplayName": "ContentHub-Installed.ReadWrite.All",
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "f9af4646-98b0-4e9d-a53e-40d4f6452fc4",
     "AppRoleDisplayName": "Contracts.Read.All",
     "Category": "Security and Compliance",
@@ -1593,11 +1617,51 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "7eb97e53-a7bc-4492-9113-1cd84a1ef8d8",
+    "AppRoleDisplayName": "CustomObject.Read.All",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "2ebdaf81-319a-4058-9cb1-7c2c20cda877",
+    "AppRoleDisplayName": "CustomObject.ReadWrite.All",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "3bb529ad-d59a-499c-abe2-736f636068a5",
+    "AppRoleDisplayName": "CustomObjectDefinition.Read.All",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "4d482dd7-21ae-4e2d-97f9-58cd926f5c5e",
+    "AppRoleDisplayName": "CustomObjectDefinition.ReadBasic.All",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "19f10513-d519-42cf-b01a-b3b662f46b8f",
+    "AppRoleDisplayName": "CustomObjectDefinition.ReadWrite.All",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "3b37c5a4-1226-493d-bec3-5d6c6b866f3f",
     "AppRoleDisplayName": "CustomSecAttributeAssignment.Read.All",
-    "Category": "Privileged ABAC",
-    "EAMTierLevelName": "ControlPlane",
-    "EAMTierLevelTagValue": "0"
+    "Category": "ABAC",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -1619,9 +1683,9 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "b185aa14-d8d2-42c1-a685-0f5596613624",
     "AppRoleDisplayName": "CustomSecAttributeDefinition.Read.All",
-    "Category": "Privileged ABAC",
-    "EAMTierLevelName": "ControlPlane",
-    "EAMTierLevelTagValue": "0"
+    "Category": "ABAC",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -1635,9 +1699,9 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "9fd1f8bf-a443-4df6-bc2a-5d00c5ec7828",
     "AppRoleDisplayName": "CustomSecAttributeProvisioning.Read.All",
-    "Category": "Privileged ABAC",
-    "EAMTierLevelName": "ControlPlane",
-    "EAMTierLevelTagValue": "0"
+    "Category": "ABAC",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -2299,9 +2363,9 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "0edf5e9e-4ce8-468a-8432-d08631d18c43",
     "AppRoleDisplayName": "EventListener.ReadWrite.All",
-    "Category": "Tenant Configuration (Reader)",
-    "EAMTierLevelName": "ManagementPlane",
-    "EAMTierLevelTagValue": "1"
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
   },
   {
     "AppId": "00000002-0000-0ff1-ce00-000000000000",
@@ -5663,6 +5727,38 @@
     "AppRoleId": "25c32ff3-849a-494b-b94f-20a8ac4e6774",
     "AppRoleDisplayName": "SynchronizationData-User.Upload.OwnedBy",
     "Category": "Global User Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "9c668bfa-7e4d-4ea4-9f0b-ba2d67cac55c",
+    "AppRoleDisplayName": "SynchronizationMetadata.Read.All",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "7090aa1b-99c0-444b-b40b-528bd2f35087",
+    "AppRoleDisplayName": "SynchronizationMetadata.Read.OwnedBy",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "71a8afcf-c9ac-4704-a49c-a2520ddfc6d8",
+    "AppRoleDisplayName": "SynchronizationMetadata.ReadWrite.All",
+    "Category": "Application and Workload Identity",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "dc64b9ee-d7b6-4de6-97d3-189051d1c773",
+    "AppRoleDisplayName": "SynchronizationMetadata.ReadWrite.OwnedBy",
+    "Category": "Application and Workload Identity",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
   },

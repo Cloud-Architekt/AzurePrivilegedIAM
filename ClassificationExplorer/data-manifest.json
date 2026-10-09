@@ -1,22 +1,22 @@
 {
-  "generatedUtc": "2026-10-07T04:30:04.8467790Z",
+  "generatedUtc": "2026-10-09T06:44:53.5630700Z",
   "mode": "Standalone",
   "repoRoot": "AzurePrivilegedIAM",
   "fileCount": 19,
   "files": [
     {
       "path": "Classification/Classification_EntraIdDirectoryRoles.json",
-      "bytes": 613778,
+      "bytes": 613802,
       "items": 145,
       "param": false,
-      "sha256": "c4bc7d6fb53c60246394969ed764376730df2dc8b063a90287a0676b2a862078"
+      "sha256": "74bc5ef7ad597799a59760c46f4876ccfeb0797162e76080380619a4b5378fda"
     },
     {
       "path": "Classification/Classification_EntraIdDirectoryRolesFromMsftDocs.json",
-      "bytes": 636360,
+      "bytes": 636950,
       "items": 136,
       "param": false,
-      "sha256": "f31e3b4a58d12fec663398bb2cddebbedbfbe99aa7dd0c70b06d1dbcfcbd7f2a"
+      "sha256": "075103d552f46a2d83484f3b4943f3201b423eb8319492d62151168f95de218e"
     },
     {
       "path": "Classification/Classification_IdentityGovernance.json",
@@ -27,10 +27,10 @@
     },
     {
       "path": "Classification/Classification_AzureResources.json",
-      "bytes": 3408753,
+      "bytes": 3409565,
       "items": 965,
       "param": false,
-      "sha256": "4ae26fa03bc20aa8fe5cc76f1fc61e3aef40c1cf7c873c6bda17c16752c96da6"
+      "sha256": "a7b990c11a8afdc682b9db39ffd352f4d7a16185564d30817fcf209000e4f5e4"
     },
     {
       "path": "Classification/Classification_DeviceManagementRoles.json",
@@ -41,38 +41,38 @@
     },
     {
       "path": "Classification/Classification_ApiPermissions.json",
-      "bytes": 820653,
-      "items": 2169,
+      "bytes": 829107,
+      "items": 2191,
       "param": false,
-      "sha256": "bc02afbcd14005ae46fcd79d8700b1f6d979446de4cca37163a9c006d2ab108a"
+      "sha256": "530ee7c8d9955bb815031fd1144b9b5564564b7b662eccb6d1fb8ec707f1f2e3"
     },
     {
       "path": "Classification/Classification_AppRoles.json",
-      "bytes": 262688,
-      "items": 901,
+      "bytes": 266247,
+      "items": 913,
       "param": false,
-      "sha256": "855c83682fbf50de37f47031c33b860c751e526917331f97abd549280251c5e6"
+      "sha256": "df9723ca3b6980991f592fbce8a8e46a31393382759e2e8835f02f619e59a571"
     },
     {
       "path": "Classification/Classification_Scopes.json",
-      "bytes": 358382,
-      "items": 1268,
+      "bytes": 361277,
+      "items": 1278,
       "param": false,
-      "sha256": "9d381e0d2217e0d45529e0072c58b1e646abb94b4383c77d981e45b948ff4a07"
+      "sha256": "fc324c188be46d7ea042e73b3aeee8586d13629d132584798a2a6d45c173b6ab"
     },
     {
       "path": "EntraOps_Classification/Classification_AadResources.json",
-      "bytes": 62624,
+      "bytes": 62847,
       "items": 3,
       "param": false,
-      "sha256": "2f411ece66d8d87627c6e7759e0d83c88e2997769ec33e861cd3c3351f641d49"
+      "sha256": "a9a329cde334d67ab08cd1d494094b34614efd7dcf0b64799bafb0f198c4070e"
     },
     {
       "path": "EntraOps_Classification/Classification_AadResources.Param.json",
-      "bytes": 81291,
+      "bytes": 81091,
       "items": 3,
       "param": true,
-      "sha256": "05ed0dee885ee11cb0ce4e8c6c047a4e7aa1806de0e9959ad0afcc3fa8de3b82"
+      "sha256": "8ba803070c75d83880260f2b39b73f778ea0ea3ef50c259eb3cb4c62f6592f26"
     },
     {
       "path": "EntraOps_Classification/Classification_IdentityGovernance.json",
@@ -118,17 +118,17 @@
     },
     {
       "path": "EntraOps_Classification/Classification_Defender.json",
-      "bytes": 5173,
+      "bytes": 4942,
       "items": 2,
       "param": false,
-      "sha256": "029738ba44f0a422458f6f77120b10a6ecd224ca33492113f8e2699730d3082a"
+      "sha256": "2cee4d51ecd7a0c9dfea0cd47cc044fc960ccff44c7e72f9f30e3dcac4fdbd18"
     },
     {
       "path": "EntraOps_Classification/Classification_Defender.Param.json",
-      "bytes": 8182,
+      "bytes": 7951,
       "items": 2,
       "param": true,
-      "sha256": "36e632a81c6488ebcb80220b2b403ad8c7e1158a50f2426e161c4f6bf392508c"
+      "sha256": "b6e6d87d337b563e56c5693df1b53ba4b3f0184e20990b6623a6d7a14216fac9"
     },
     {
       "path": "EntraOps_Classification/Classification_RoleDefinitionOverwrites.json",
