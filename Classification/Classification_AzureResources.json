@@ -9374,7 +9374,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "RichDescription": "Lets you view all resources in cluster/namespace, except secrets.",
+    "RichDescription": "Lets you view all resources in cluster/namespace, except secrets. This Role Definition is on the path to deprecation, please use Azure Arc Kubernetes Reader instead.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.Insights/alertRules/*",
@@ -16995,13 +16995,6 @@
         "EAMTierLevelTagValue": "1"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.Resources/deployments/*",
-        "ActionType": "Action",
-        "Category": "Resource Management",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
         "AuthorizedResourceAction": "Microsoft.Authorization/*/read",
         "ActionType": "Action",
         "Category": "Reader",
@@ -17017,6 +17010,13 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Cdn/profiles/*/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Resources/deployments/read",
         "ActionType": "Action",
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",
@@ -29053,6 +29053,13 @@
         "EAMTierLevelTagValue": "2"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.AzureResilienceManagement/goalAssignments/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.AzureResilienceManagement/recoveryPlans/*/read",
         "ActionType": "Action",
         "Category": "Reader",
@@ -29869,6 +29876,13 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.AzureResilienceManagement/drills/*/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.AzureResilienceManagement/goalAssignments/read",
         "ActionType": "Action",
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",
@@ -83083,7 +83097,28 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.Security/serviceEntitlementSettings/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Security/serviceEntitlementSettings/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.Security/serviceEntitlements/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Security/serviceEntitlementSettings/read",
         "ActionType": "Action",
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",
@@ -90988,7 +91023,7 @@
     "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "RichDescription": "Create and Delete resources during VM Restore. This role is in preview and subject to change.",
+    "RichDescription": "Grants permissions to create, access, and delete the Restore VM, Restored VM Extension, Disks, Network, and staging location storage account resources required during Azure Backup VM restore operations. Assign this role only to the Recovery Services vault's managed identity (system- or user-assigned), scoped to the target resource group and staging storage account. This role is in preview and subject to change.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.Compute/disks/beginGetAccess/action",

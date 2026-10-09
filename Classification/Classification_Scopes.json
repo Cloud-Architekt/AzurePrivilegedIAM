@@ -1607,6 +1607,30 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "31da6e02-bb98-49de-b898-6c4017bf4d80",
+    "ScopeDisplayName": "ContentHub-Catalog.Read.All",
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "324ffa40-1e6c-4101-8757-802306798c4d",
+    "ScopeDisplayName": "ContentHub-Installed.Read.All",
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "6e84bce8-6b4b-4249-80b9-04fe0dc4ca08",
+    "ScopeDisplayName": "ContentHub-Installed.ReadWrite.All",
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "9df4d5b0-7921-4437-9ea8-adf0c9e276dc",
     "ScopeDisplayName": "Contracts.Read.All",
     "Category": "Security and Compliance",
@@ -1775,11 +1799,51 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "c4d45078-098e-45c7-966b-855ce89b157f",
+    "ScopeDisplayName": "CustomObject.Read.All",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "e5285887-5e95-4670-87a3-cb02d141e70c",
+    "ScopeDisplayName": "CustomObject.ReadWrite.All",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "28621fe2-a83d-4769-89f4-05130f0fe072",
+    "ScopeDisplayName": "CustomObjectDefinition.Read.All",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "90177fb8-02b9-48d8-b91a-bc8061f335b8",
+    "ScopeDisplayName": "CustomObjectDefinition.ReadBasic.All",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "469b592c-2844-41f0-b800-61afd6b449c1",
+    "ScopeDisplayName": "CustomObjectDefinition.ReadWrite.All",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "b46ffa80-fe3d-4822-9a1a-c200932d54d0",
     "ScopeDisplayName": "CustomSecAttributeAssignment.Read.All",
-    "Category": "Privileged ABAC",
-    "EAMTierLevelName": "ControlPlane",
-    "EAMTierLevelTagValue": "0"
+    "Category": "ABAC",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -1801,9 +1865,9 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "ce026878-a0ff-4745-a728-d4fedd086c07",
     "ScopeDisplayName": "CustomSecAttributeDefinition.Read.All",
-    "Category": "Privileged ABAC",
-    "EAMTierLevelName": "ControlPlane",
-    "EAMTierLevelTagValue": "0"
+    "Category": "ABAC",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -1817,9 +1881,9 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "9ddd870d-077c-49e7-b3e3-6b3012a8a880",
     "ScopeDisplayName": "CustomSecAttributeProvisioning.Read.All",
-    "Category": "Privileged ABAC",
-    "EAMTierLevelName": "ControlPlane",
-    "EAMTierLevelTagValue": "0"
+    "Category": "ABAC",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -2753,9 +2817,9 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "d11625a6-fe21-4fc6-8d3d-063eba5525ad",
     "ScopeDisplayName": "EventListener.ReadWrite.All",
-    "Category": "Tenant Configuration (Reader)",
-    "EAMTierLevelName": "ManagementPlane",
-    "EAMTierLevelTagValue": "1"
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
   },
   {
     "AppId": "00000009-0000-0000-c000-000000000000",
@@ -7552,6 +7616,22 @@
     "ScopeId": "1a2e7420-4e92-4d2b-94cb-fb2952e9ddf7",
     "ScopeDisplayName": "SynchronizationData-User.Upload",
     "Category": "Global User Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "711dc0a5-feb5-4e98-958c-cce64a7f5c99",
+    "ScopeDisplayName": "SynchronizationMetadata.Read.All",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "024b13ed-0f01-4565-8f66-a79471c51cf4",
+    "ScopeDisplayName": "SynchronizationMetadata.ReadWrite.All",
+    "Category": "Application and Workload Identity",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
   },

@@ -404,14 +404,14 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": "Agent Identity,Default member",
+    "Categories": "Application and Workload Identity,Default member",
     "RichDescription": "Assign the Agent ID Developer role to users who need to do the following:\n\n- Create an agent identity blueprint and its agent identity blueprint principal in a tenant. User will be added as an owner of the created agent identity blueprint and its agent identity blueprint principal.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprints/createAsOwner",
-        "Category": "Agent Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
+        "Category": "Application and Workload Identity",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/standard/read",
@@ -421,8 +421,8 @@
       }
     ],
     "Classification": {
-      "EAMTierLevelName": "ControlPlane",
-      "EAMTierLevelTagValue": "0"
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
     }
   },
   {
@@ -1721,30 +1721,12 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": "Application and Workload Identity,Global Endpoint Management,Global User Management,Privileged ABAC,Tenant Configuration (Reader)",
+    "Categories": "Application and Workload Identity,Custom Security Attributes (Reader),Global User Management,Privileged ABAC,Tenant Configuration (Reader)",
     "RichDescription": "Users with this role can assign and remove custom security attribute keys and values for supported Microsoft Entra objects such as users, service principals, and devices.\n\n[!INCLUDE [security-attributes-roles](../../../includes/security-attributes-roles.md)]\n\nFor more information, see [Manage access to custom security attributes in Microsoft Entra ID](../../../fundamentals/custom-security-attributes-manage.md).",
     "RolePermissions": [
       {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/customSecurityAttributes/read",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
         "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/customSecurityAttributes/update",
         "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/devices/customSecurityAttributes/read",
-        "Category": "Global Endpoint Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/customSecurityAttributes/read",
-        "Category": "Global User Management",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
       },
@@ -1755,19 +1737,7 @@
         "EAMTierLevelTagValue": "0"
       },
       {
-        "AuthorizedResourceAction": "microsoft.directory/attributeSets/allProperties/read",
-        "Category": "Privileged ABAC",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
         "AuthorizedResourceAction": "microsoft.directory/azureManagedIdentities/customSecurityAttributes/update",
-        "Category": "Privileged ABAC",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/customSecurityAttributeDefinitions/allProperties/read",
         "Category": "Privileged ABAC",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
@@ -1777,6 +1747,36 @@
         "Category": "Privileged ABAC",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/attributeSets/allProperties/read",
+        "Category": "Custom Security Attributes (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/customSecurityAttributeDefinitions/allProperties/read",
+        "Category": "Custom Security Attributes (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/devices/customSecurityAttributes/read",
+        "Category": "Custom Security Attributes (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/customSecurityAttributes/read",
+        "Category": "Custom Security Attributes (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/users/customSecurityAttributes/read",
+        "Category": "Custom Security Attributes (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/azureManagedIdentities/customSecurityAttributes/read",
@@ -1796,38 +1796,38 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": "Application and Workload Identity,Global Endpoint Management,Global User Management,Privileged ABAC,Tenant Configuration (Reader)",
+    "Categories": "Custom Security Attributes (Reader),Tenant Configuration (Reader)",
     "RichDescription": "Users with this role can read custom security attribute keys and values for supported Microsoft Entra objects.\n\n[!INCLUDE [security-attributes-roles](../../../includes/security-attributes-roles.md)]\n\nFor more information, see [Manage access to custom security attributes in Microsoft Entra ID](../../../fundamentals/custom-security-attributes-manage.md).",
     "RolePermissions": [
       {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/customSecurityAttributes/read",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/devices/customSecurityAttributes/read",
-        "Category": "Global Endpoint Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/users/customSecurityAttributes/read",
-        "Category": "Global User Management",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
-      {
         "AuthorizedResourceAction": "microsoft.directory/attributeSets/allProperties/read",
-        "Category": "Privileged ABAC",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
+        "Category": "Custom Security Attributes (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/customSecurityAttributeDefinitions/allProperties/read",
-        "Category": "Privileged ABAC",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
+        "Category": "Custom Security Attributes (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/devices/customSecurityAttributes/read",
+        "Category": "Custom Security Attributes (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/customSecurityAttributes/read",
+        "Category": "Custom Security Attributes (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/users/customSecurityAttributes/read",
+        "Category": "Custom Security Attributes (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/azureManagedIdentities/customSecurityAttributes/read",
@@ -1837,8 +1837,8 @@
       }
     ],
     "Classification": {
-      "EAMTierLevelName": "ControlPlane",
-      "EAMTierLevelTagValue": "0"
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
     }
   },
   {
@@ -1874,25 +1874,25 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": "Privileged ABAC",
+    "Categories": "Custom Security Attributes (Reader)",
     "RichDescription": "Users with this role can read the definition of custom security attributes.\n\n[!INCLUDE [security-attributes-roles](../../../includes/security-attributes-roles.md)]\n\nFor more information, see [Manage access to custom security attributes in Microsoft Entra ID](../../../fundamentals/custom-security-attributes-manage.md).",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/attributeSets/allProperties/read",
-        "Category": "Privileged ABAC",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
+        "Category": "Custom Security Attributes (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/customSecurityAttributeDefinitions/allProperties/read",
-        "Category": "Privileged ABAC",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
+        "Category": "Custom Security Attributes (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
       }
     ],
     "Classification": {
-      "EAMTierLevelName": "ControlPlane",
-      "EAMTierLevelTagValue": "0"
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
     }
   },
   {
@@ -1949,20 +1949,20 @@
     "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": "Application and Workload Identity",
+    "Categories": "Application and Workload Identity,Custom Security Attributes (Reader)",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Assign the Attribute Provisioning Administrator role to users who need to do the following tasks:\n\n- Read and write attribute mappings for custom security attributes when provisioning in an application.\n- Read and write provisioning and auditing logs for custom security attributes when provisioning in an application.\n\nUsers with this role cannot read audit logs for other events. This role must be used in conjunction with the Cloud Application Administrator or Application Administrator roles (from least to most privileged) to read provisioning configurations.\n\n> [!IMPORTANT]\n> This role does not have the ability to create custom security attribute sets or to directly assign or update custom security attribute values for the user object. This role can only configure the flow of the custom security attributes in the provisioning app.\n\n[Learn more](../../app-provisioning/provision-custom-security-attributes.md)",
     "RolePermissions": [
-      {
-        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/read",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
-      },
       {
         "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/update",
         "Category": "Application and Workload Identity",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/read",
+        "Category": "Custom Security Attributes (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
       }
     ],
     "Classification": {
@@ -1976,19 +1976,19 @@
     "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": "Application and Workload Identity",
+    "Categories": "Custom Security Attributes (Reader)",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Assign the Attribute Provisioning Reader role to users who need to do the following tasks:\n\n- Read the attribute mappings for custom security attributes when provisioning in an application.\n- Read the provisioning and auditing logs for custom security attributes when provisioning in an application.\n\nUsers with this role can't read audit logs for other events. This role must be used with the Cloud Application Administrator or Application Administrator roles (from least to most privileged) to read provisioning configurations.\n\n[Learn more](../../app-provisioning/provision-custom-security-attributes.md)",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/read",
-        "Category": "Application and Workload Identity",
-        "EAMTierLevelName": "ControlPlane",
-        "EAMTierLevelTagValue": "0"
+        "Category": "Custom Security Attributes (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
       }
     ],
     "Classification": {
-      "EAMTierLevelName": "ControlPlane",
-      "EAMTierLevelTagValue": "0"
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
     }
   },
   {
@@ -4629,25 +4629,25 @@
         "EAMTierLevelTagValue": "1"
       },
       {
-        "AuthorizedResourceAction": "microsoft.directory/externalUserProfiles/standard/read",
-        "Category": "Tenant Configuration (Reader)",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
         "AuthorizedResourceAction": "microsoft.directory/pendingExternalUserProfiles/basic/update",
-        "Category": "Tenant Configuration (Reader)",
+        "Category": "Teams",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/pendingExternalUserProfiles/create",
-        "Category": "Tenant Configuration (Reader)",
+        "Category": "Teams",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/pendingExternalUserProfiles/delete",
+        "Category": "Teams",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/externalUserProfiles/standard/read",
         "Category": "Tenant Configuration (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
@@ -6030,6 +6030,24 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/pendingExternalUserProfiles/basic/update",
+        "Category": "Teams",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/pendingExternalUserProfiles/create",
+        "Category": "Teams",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/pendingExternalUserProfiles/delete",
+        "Category": "Teams",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.office365.skypeForBusiness/allEntities/allTasks",
         "Category": "Teams",
         "EAMTierLevelName": "ManagementPlane",
@@ -6145,24 +6163,6 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/onPremisesSynchronization/standard/read",
-        "Category": "Tenant Configuration (Reader)",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/pendingExternalUserProfiles/basic/update",
-        "Category": "Tenant Configuration (Reader)",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/pendingExternalUserProfiles/create",
-        "Category": "Tenant Configuration (Reader)",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/pendingExternalUserProfiles/delete",
         "Category": "Tenant Configuration (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
@@ -10749,6 +10749,12 @@
         "EAMTierLevelTagValue": "0"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/policies/basic/update",
+        "Category": "Tenant Policy Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/policies/create",
         "Category": "Tenant Policy Management",
         "EAMTierLevelName": "ControlPlane",
@@ -10966,12 +10972,6 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/namedLocations/standard/read",
-        "Category": "Tenant Configuration (Reader)",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/policies/basic/update",
         "Category": "Tenant Configuration (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
@@ -12114,6 +12114,24 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/pendingExternalUserProfiles/basic/update",
+        "Category": "Teams",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/pendingExternalUserProfiles/create",
+        "Category": "Teams",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/pendingExternalUserProfiles/delete",
+        "Category": "Teams",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.office365.skypeForBusiness/allEntities/allTasks",
         "Category": "Teams",
         "EAMTierLevelName": "ManagementPlane",
@@ -12151,24 +12169,6 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/groups/hiddenMembers/read",
-        "Category": "Tenant Configuration (Reader)",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/pendingExternalUserProfiles/basic/update",
-        "Category": "Tenant Configuration (Reader)",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/pendingExternalUserProfiles/create",
-        "Category": "Tenant Configuration (Reader)",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "microsoft.directory/pendingExternalUserProfiles/delete",
         "Category": "Tenant Configuration (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
@@ -12576,7 +12576,7 @@
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
     "Categories": "Conditional Access,Cross Tenant Partner Management,Microsoft 365 Support Operations,Tenant Configuration (Reader),Tenant Governance",
-    "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nAssign the Tenant Governance Administrator role to users who need to do the following tasks:\n\n- Manage all capabilities in the Microsoft Entra Tenant Governance service",
+    "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nAssign the Tenant Governance Administrator role to users who manage capabilities in the Microsoft Entra Tenant Governance service.\n\nThe table below lists the role's existing actions and additional application-management operations.\n\nOperations marked **application-scoped** are available only through the approved Tenant Governance application. Assigning this role does not grant equivalent unrestricted application-management permissions through other applications. This restriction does not change the scope of the role's other permissions.\n\n> [!IMPORTANT]\n> This is a privileged role. Its application-management capabilities can grant access to tenant resources. Assign it only to trusted administrators.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/crossTenantAccessPolicy/basic/update",

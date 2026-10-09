@@ -107,7 +107,8 @@
           "Policy.ReadWrite.PermissionGrant",
           "ServicePrincipalEndpoint.ReadWrite.All",
           "SpiffeTrustDomain.ReadWrite.All",
-          "Synchronization.ReadWrite.All"
+          "Synchronization.ReadWrite.All",
+          "SynchronizationMetadata.ReadWrite.All"
         ]
       },
       {
@@ -119,7 +120,8 @@
           "/"
         ],
         "RoleDefinitionActions": [
-          "Application.ReadWrite.OwnedBy"
+          "Application.ReadWrite.OwnedBy",
+          "SynchronizationMetadata.ReadWrite.OwnedBy"
         ]
       },
       {
@@ -146,6 +148,7 @@
         ],
         "RoleDefinitionActions": [
           "CustomAuthenticationExtension.ReadWrite.All",
+          "EventListener.ReadWrite.All",
           "Policy.ReadWrite.AuthenticationFlows",
           "Policy.ReadWrite.AuthenticationMethod",
           "Policy.ReadWrite.Authorization",
@@ -698,11 +701,8 @@
           "/"
         ],
         "RoleDefinitionActions": [
-          "CustomSecAttributeAssignment.Read.All",
           "CustomSecAttributeAssignment.ReadWrite.All",
-          "CustomSecAttributeDefinition.Read.All",
           "CustomSecAttributeDefinition.ReadWrite.All",
-          "CustomSecAttributeProvisioning.Read.All",
           "CustomSecAttributeProvisioning.ReadWrite.All"
         ]
       },
@@ -2304,6 +2304,9 @@
           "ChangeManagement.Read.All",
           "CloudApp-Discovery.Read.All",
           "ContentActivity.Read",
+          "ContentHub-Catalog.Read.All",
+          "ContentHub-Installed.Read.All",
+          "ContentHub-Installed.ReadWrite.All",
           "Contracts.Read.All",
           "CustomDetection.Read.All",
           "CustomSecAttributeAuditLogs.Read.All",
@@ -2543,6 +2546,20 @@
         ]
       },
       {
+        "Category": "Microsoft.Graph",
+        "Service": "ABAC",
+        "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+        "ResourceScope": "All",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "CustomSecAttributeAssignment.Read.All",
+          "CustomSecAttributeDefinition.Read.All",
+          "CustomSecAttributeProvisioning.Read.All"
+        ]
+      },
+      {
         "Category": "Microsoft.AzureADGraph",
         "Service": "Tenant Configuration (Reader)",
         "ResourceAppId": "00000002-0000-0000-c000-000000000000",
@@ -2577,7 +2594,6 @@
           "DirectoryRecommendations.Read.All",
           "EntitlementManagement.Read.All",
           "EventListener.Read.All",
-          "EventListener.ReadWrite.All",
           "ExternalUserProfile.Read.All",
           "Group-XTenantIdentitySync.Read.All",
           "IdentityUserFlow.Read.All",
@@ -2626,12 +2642,25 @@
           "RoleManagementPolicy.Read.EntraAppRole",
           "SignInIdentifier.Read.All",
           "Synchronization.Read.All",
+          "SynchronizationMetadata.Read.All",
           "TenantGovernance-Invitation.Read.All",
           "TenantGovernance-PolicyTemplate.Read.All",
           "TenantGovernance-RelatedTenant.Read.All",
           "TenantGovernance-Relationship.Read.All",
           "TenantGovernance-Request.Read.All",
           "TenantGovernance-Setting.Read.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.Graph",
+        "Service": "Tenant Configuration (Reader)",
+        "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+        "ResourceScope": "Application",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "SynchronizationMetadata.Read.OwnedBy"
         ]
       },
       {
