@@ -30884,6 +30884,13 @@
         "EAMTierLevelTagValue": "2"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.AzureResilienceManagement/goalAssignments/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.AzureResilienceManagement/recoveryPlans/*/read",
         "ActionType": "Action",
         "Category": "Reader",
@@ -31131,6 +31138,13 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Automation/automationAccounts/runbooks/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.AzureResilienceManagement/goalAssignments/read",
         "ActionType": "Action",
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",
@@ -39021,6 +39035,17 @@
       "EAMTierLevelName": "ManagementPlane",
       "EAMTierLevelTagValue": "1"
     }
+  },
+  {
+    "RoleId": "681440c1-3630-4424-a530-0305ac721cfd",
+    "RoleName": "Chaos Kubernetes Extension Operator",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Lets a Chaos Studio workspace identity impersonate the Chaos Studio extension's Kubernetes service account and read pods on AKS clusters, and read the cluster's Deployment Safeguards, so Chaos Studio can run faults through the extension.",
+    "RolePermissions": [],
+    "Classification": null
   },
   {
     "RoleId": "1091dee8-a09b-4205-95fa-b0100e8f006d",
@@ -67093,7 +67118,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "RichDescription": "Perform cryptographic operations using keys. Only works for key vaults that use the 'Azure role-based access control' permission model.",
+    "RichDescription": "Read key metadata and public material, perform cryptographic operations, back up keys, and update key properties and mutable release policies, including making policies immutable. Does not grant key release. Only works for key vaults that use the 'Azure role-based access control' permission model.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/keys/backup/action",
