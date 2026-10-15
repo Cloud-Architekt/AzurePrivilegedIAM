@@ -417,6 +417,22 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "231187a1-75b7-4554-a255-682d4d4971e8",
+    "AppRoleDisplayName": "AppFederatedCredentialIssuers.Read.All",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "aa595073-8ce6-409a-8b9e-258e9faab0f3",
+    "AppRoleDisplayName": "AppFederatedCredentialIssuers.ReadWrite.All",
+    "Category": "Application and Workload Identity",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "3be0012a-cc4e-426b-895b-f9c836bf6381",
     "AppRoleDisplayName": "Application-RemoteDesktopConfig.ReadWrite.All",
     "Category": "Application and Workload Identity",
@@ -1419,41 +1435,41 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "7eb97e53-a7bc-4492-9113-1cd84a1ef8d8",
     "AppRoleDisplayName": "CustomObject.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "2ebdaf81-319a-4058-9cb1-7c2c20cda877",
     "AppRoleDisplayName": "CustomObject.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Tenant Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "3bb529ad-d59a-499c-abe2-736f636068a5",
     "AppRoleDisplayName": "CustomObjectDefinition.Read.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "4d482dd7-21ae-4e2d-97f9-58cd926f5c5e",
     "AppRoleDisplayName": "CustomObjectDefinition.ReadBasic.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "19f10513-d519-42cf-b01a-b3b662f46b8f",
     "AppRoleDisplayName": "CustomObjectDefinition.ReadWrite.All",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Tenant Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",

@@ -3003,6 +3003,46 @@
     "EAMTierLevelTagValue": "0"
   },
   {
+    "PermissionId": "231187a1-75b7-4554-a255-682d4d4971e8",
+    "PermissionValue": "AppFederatedCredentialIssuers.Read.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "a0a49d03-4d83-4a3c-912c-4a387fd11405",
+    "PermissionValue": "AppFederatedCredentialIssuers.Read.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "aa595073-8ce6-409a-8b9e-258e9faab0f3",
+    "PermissionValue": "AppFederatedCredentialIssuers.ReadWrite.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Application and Workload Identity",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "PermissionId": "6be98e9e-e745-4a58-87b1-8455579b1844",
+    "PermissionValue": "AppFederatedCredentialIssuers.ReadWrite.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Application and Workload Identity",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
     "PermissionId": "3be0012a-cc4e-426b-895b-f9c836bf6381",
     "PermissionValue": "Application-RemoteDesktopConfig.ReadWrite.All",
     "PermissionType": "Application",
@@ -5196,6 +5236,56 @@
     "EAMTierLevelTagValue": "1"
   },
   {
+    "PermissionId": "fa5c8c5b-5aef-4d37-a426-02fdbb9c4a74",
+    "PermissionValue": "CopilotCostManagement-Assignment.Read.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Copilot",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "95db0135-a8b4-4ca5-8121-8f693ff53402",
+    "PermissionValue": "CopilotCostManagement-Assignment.ReadWrite.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Copilot",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "7fe904eb-5276-4ddc-ab01-67e4d708b664",
+    "PermissionValue": "CopilotCostManagement-Policy.Read.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Copilot",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "f6a3c1c2-c894-40f2-94e9-0eb3bca89847",
+    "PermissionValue": "CopilotCostManagement-Policy.ReadWrite.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Copilot",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "d3f39420-6eec-4e63-98ba-b2866ef3ba99",
+    "PermissionValue": "CopilotCostManagement-UserData.Read.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Copilot",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
     "PermissionId": "72f0655d-6228-4ddc-8e1b-164973b9213b",
     "PermissionValue": "CopilotPackages.Read.All",
     "PermissionType": "Application",
@@ -5306,9 +5396,29 @@
     "EAMTierLevelTagValue": "1"
   },
   {
+    "PermissionId": "b85f44c8-673a-4b31-a0c1-3070d0ae487e",
+    "PermissionValue": "CrossTenantContentMigration.Read.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Microsoft SharePoint",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
     "PermissionId": "c5a29fd1-4629-4f52-8316-4d639ffa95d0",
     "PermissionValue": "CrossTenantContentMigration.ReadWrite.All",
     "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Microsoft SharePoint",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "0569b6eb-c9e3-4dc6-a998-6df963be6689",
+    "PermissionValue": "CrossTenantContentMigration.ReadWrite.All",
+    "PermissionType": "Delegated",
     "TargetAppDisplayName": "Microsoft Graph",
     "TargetAppId": "00000003-0000-0000-c000-000000000000",
     "Category": "Microsoft SharePoint",
@@ -5491,9 +5601,9 @@
     "PermissionType": "Application",
     "TargetAppDisplayName": "Microsoft Graph",
     "TargetAppId": "00000003-0000-0000-c000-000000000000",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "PermissionId": "c4d45078-098e-45c7-966b-855ce89b157f",
@@ -5501,9 +5611,9 @@
     "PermissionType": "Delegated",
     "TargetAppDisplayName": "Microsoft Graph",
     "TargetAppId": "00000003-0000-0000-c000-000000000000",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "PermissionId": "2ebdaf81-319a-4058-9cb1-7c2c20cda877",
@@ -5511,9 +5621,9 @@
     "PermissionType": "Application",
     "TargetAppDisplayName": "Microsoft Graph",
     "TargetAppId": "00000003-0000-0000-c000-000000000000",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Tenant Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
   },
   {
     "PermissionId": "e5285887-5e95-4670-87a3-cb02d141e70c",
@@ -5521,9 +5631,9 @@
     "PermissionType": "Delegated",
     "TargetAppDisplayName": "Microsoft Graph",
     "TargetAppId": "00000003-0000-0000-c000-000000000000",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Tenant Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
   },
   {
     "PermissionId": "3bb529ad-d59a-499c-abe2-736f636068a5",
@@ -5531,9 +5641,9 @@
     "PermissionType": "Application",
     "TargetAppDisplayName": "Microsoft Graph",
     "TargetAppId": "00000003-0000-0000-c000-000000000000",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "PermissionId": "28621fe2-a83d-4769-89f4-05130f0fe072",
@@ -5541,9 +5651,9 @@
     "PermissionType": "Delegated",
     "TargetAppDisplayName": "Microsoft Graph",
     "TargetAppId": "00000003-0000-0000-c000-000000000000",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "PermissionId": "4d482dd7-21ae-4e2d-97f9-58cd926f5c5e",
@@ -5551,9 +5661,9 @@
     "PermissionType": "Application",
     "TargetAppDisplayName": "Microsoft Graph",
     "TargetAppId": "00000003-0000-0000-c000-000000000000",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "PermissionId": "90177fb8-02b9-48d8-b91a-bc8061f335b8",
@@ -5561,9 +5671,9 @@
     "PermissionType": "Delegated",
     "TargetAppDisplayName": "Microsoft Graph",
     "TargetAppId": "00000003-0000-0000-c000-000000000000",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "PermissionId": "19f10513-d519-42cf-b01a-b3b662f46b8f",
@@ -5571,9 +5681,9 @@
     "PermissionType": "Application",
     "TargetAppDisplayName": "Microsoft Graph",
     "TargetAppId": "00000003-0000-0000-c000-000000000000",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Tenant Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
   },
   {
     "PermissionId": "469b592c-2844-41f0-b800-61afd6b449c1",
@@ -5581,9 +5691,9 @@
     "PermissionType": "Delegated",
     "TargetAppDisplayName": "Microsoft Graph",
     "TargetAppId": "00000003-0000-0000-c000-000000000000",
-    "Category": "Unclassified",
-    "EAMTierLevelName": "Unclassified",
-    "EAMTierLevelTagValue": "Unclassified"
+    "Category": "Tenant Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
   },
   {
     "PermissionId": "3b37c5a4-1226-493d-bec3-5d6c6b866f3f",
