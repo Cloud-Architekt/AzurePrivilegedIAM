@@ -1,22 +1,22 @@
 {
-  "generatedUtc": "2026-10-15T05:42:21.5429530Z",
+  "generatedUtc": "2026-10-15T07:39:40.8292340Z",
   "mode": "Standalone",
   "repoRoot": "AzurePrivilegedIAM",
   "fileCount": 19,
   "files": [
     {
       "path": "Classification/Classification_EntraIdDirectoryRoles.json",
-      "bytes": 613802,
+      "bytes": 613494,
       "items": 145,
       "param": false,
-      "sha256": "74bc5ef7ad597799a59760c46f4876ccfeb0797162e76080380619a4b5378fda"
+      "sha256": "904a0bb4b3cecc21f2d47d92f4e3ca13afd1251467c38d9fe5f5816d63693d97"
     },
     {
       "path": "Classification/Classification_EntraIdDirectoryRolesFromMsftDocs.json",
-      "bytes": 636998,
+      "bytes": 636580,
       "items": 136,
       "param": false,
-      "sha256": "606f04348d692c9f827d6617ac53bc62852e3e6aec4a2c2e72ce674e603bae6f"
+      "sha256": "e65296347cc495e0d82ccb7dda8d95051e8f59cc056d038761f13b377f677e43"
     },
     {
       "path": "Classification/Classification_IdentityGovernance.json",
@@ -27,10 +27,10 @@
     },
     {
       "path": "Classification/Classification_AzureResources.json",
-      "bytes": 3418477,
-      "items": 967,
+      "bytes": 3419697,
+      "items": 968,
       "param": false,
-      "sha256": "094e0bd0acb1efe061a18278febb3853e3aa12f4248048ec5e2d5e9ff553cd57"
+      "sha256": "fe87e0126619cfbef91fc3f64ee2b3b71c0c7d77befd7b7b467bfeba71bd0f77"
     },
     {
       "path": "Classification/Classification_DeviceManagementRoles.json",
@@ -62,17 +62,17 @@
     },
     {
       "path": "EntraOps_Classification/Classification_AadResources.json",
-      "bytes": 62847,
+      "bytes": 62825,
       "items": 3,
       "param": false,
-      "sha256": "a9a329cde334d67ab08cd1d494094b34614efd7dcf0b64799bafb0f198c4070e"
+      "sha256": "21ff859908ff52a3b6c474adf9e90ed59bea8c7f5676dc82d2f427459b32f710"
     },
     {
       "path": "EntraOps_Classification/Classification_AadResources.Param.json",
-      "bytes": 81091,
+      "bytes": 81100,
       "items": 3,
       "param": true,
-      "sha256": "8ba803070c75d83880260f2b39b73f778ea0ea3ef50c259eb3cb4c62f6592f26"
+      "sha256": "b7bd1406d150930e8923df4555388ff23958124d2c2824d973b3c8e3885e13fd"
     },
     {
       "path": "EntraOps_Classification/Classification_IdentityGovernance.json",
