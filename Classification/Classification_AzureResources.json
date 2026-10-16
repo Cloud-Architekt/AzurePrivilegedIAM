@@ -8097,11 +8097,25 @@
     "RichDescription": "Allows read access to list models, get model details, and calculate model costs",
     "RolePermissions": [
       {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/customAIModels/calculateCost/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.ContainerService/locations/aiModels/calculateCost/action",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/customAIModels/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.ContainerService/locations/aiModels/read",
@@ -8351,6 +8365,13 @@
         "EAMTierLevelTagValue": "2"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/ray.io/*/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/security.istio.io/*/read",
         "ActionType": "DataAction",
         "Category": "Reader Data Access",
@@ -8372,6 +8393,13 @@
     "InheritsPermissionsFrom": null,
     "RichDescription": "Grants read access to Azure resources provided by Azure AIManager, including aimanagers, deployments, namespace, etc.",
     "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/customAIModels/calculateCost/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
       {
         "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/listCredential/action",
         "ActionType": "Action",
@@ -17146,6 +17174,20 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.AzureArcData/sqlServerInstances/getJobsStatus/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.AzureArcData/SqlServerInstances/getMigrationReadinessReport/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.AzureArcData/SqlServerInstances/getTargetRecommendationReports/action",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
@@ -50934,6 +50976,63 @@
     }
   },
   {
+    "RoleId": "fb2e8e50-bc5c-4095-8f9d-c30e1be5e98c",
+    "RoleName": "Defender Foundational CSPM",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Grants Microsoft Defender for Cloud CSPM access required for posture recommendations",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.Authorization/policyAssignments/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Authorization/policyExemptions/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Authorization/policySetDefinitions/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Management/managementGroups/descendants/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Resources/subscriptions/resources/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Security/assessmentMetadata/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "UserAccess",
+      "EAMTierLevelTagValue": "2"
+    }
+  },
+  {
     "RoleId": "8bb6f106-b146-4ee6-a3f9-b9c5a96e0ae5",
     "RoleName": "Defender Kubernetes Agent Operator",
     "IsCustom": false,
@@ -60026,6 +60125,13 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.HealthcareApis/services/fhir/resources/editProfileDefinitions/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.HealthcareApis/services/fhir/resources/export/action",
         "ActionType": "DataAction",
         "Category": "General Data Plane Operations",
@@ -60069,6 +60175,13 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.HealthcareApis/workspaces/fhirservices/resources/delete",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.HealthcareApis/workspaces/fhirservices/resources/editProfileDefinitions/action",
         "ActionType": "DataAction",
         "Category": "General Data Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
@@ -65201,6 +65314,13 @@
     "RichDescription": "Users with editor access can sign in, view and edit all the bot resources, scenarios and configuration setting except for the bot instance keys & secrets and the end-user inputs (including Feedback, Unrecognized utterances and Conversation logs). A read-only access to the bot skills and channels.",
     "RolePermissions": [
       {
+        "AuthorizedResourceAction": "Microsoft.HealthBot/healthBots/AuthenticationProviders/*",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.HealthBot/healthBots/Channels/*",
         "ActionType": "DataAction",
         "Category": "General Data Plane Operations",
@@ -65216,6 +65336,13 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.HealthBot/healthBots/CopilotStudioSolution/*",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.HealthBot/healthBots/DataConnections/*",
         "ActionType": "DataAction",
         "Category": "General Data Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
@@ -65265,20 +65392,6 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.HealthBot/healthBots/AuditTrails/Read",
-        "ActionType": "DataAction",
-        "Category": "Reader Data Access",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.HealthBot/healthBots/AuthenticationProviders/Read",
-        "ActionType": "DataAction",
-        "Category": "Reader Data Access",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.HealthBot/healthBots/DataConnections/Read",
         "ActionType": "DataAction",
         "Category": "Reader Data Access",
         "EAMTierLevelName": "UserAccess",
@@ -91944,6 +92057,35 @@
         "AuthorizedResourceAction": "Microsoft.Windows365/serviceConnectors/write",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Windows365/serviceConnectors/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "5f70377a-ce1d-4a07-b3b9-12c99f22d21f",
+    "RoleName": "Windows 365 Service Connector User",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Provides access to read service connectors and attach them to Windows 365 resources.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.Windows365/serviceConnectors/attach/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
