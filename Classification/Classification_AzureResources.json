@@ -8097,11 +8097,25 @@
     "RichDescription": "Allows read access to list models, get model details, and calculate model costs",
     "RolePermissions": [
       {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/customAIModels/calculateCost/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.ContainerService/locations/aiModels/calculateCost/action",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/customAIModels/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.ContainerService/locations/aiModels/read",
@@ -8351,6 +8365,13 @@
         "EAMTierLevelTagValue": "2"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/ray.io/*/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/security.istio.io/*/read",
         "ActionType": "DataAction",
         "Category": "Reader Data Access",
@@ -8372,6 +8393,13 @@
     "InheritsPermissionsFrom": null,
     "RichDescription": "Grants read access to Azure resources provided by Azure AIManager, including aimanagers, deployments, namespace, etc.",
     "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/customAIModels/calculateCost/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
       {
         "AuthorizedResourceAction": "Microsoft.ContainerService/aiManagers/listCredential/action",
         "ActionType": "Action",
@@ -17146,6 +17174,20 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.AzureArcData/sqlServerInstances/getJobsStatus/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.AzureArcData/SqlServerInstances/getMigrationReadinessReport/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.AzureArcData/SqlServerInstances/getTargetRecommendationReports/action",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
@@ -30884,6 +30926,13 @@
         "EAMTierLevelTagValue": "2"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.AzureResilienceManagement/goalAssignments/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.AzureResilienceManagement/recoveryPlans/*/read",
         "ActionType": "Action",
         "Category": "Reader",
@@ -31131,6 +31180,13 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Automation/automationAccounts/runbooks/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.AzureResilienceManagement/goalAssignments/read",
         "ActionType": "Action",
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",
@@ -34427,6 +34483,34 @@
     "RichDescription": "Grants permissions to perform all VM actions",
     "RolePermissions": [
       {
+        "AuthorizedResourceAction": "Microsoft.Compute/disks/beginGetAccess/action",
+        "ActionType": "Action",
+        "Category": "Compute",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Compute/disks/delete",
+        "ActionType": "Action",
+        "Category": "Compute",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Compute/disks/write",
+        "ActionType": "Action",
+        "Category": "Compute",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.AzureStackHCI/clusters/volumes/deploy/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.AzureStackHCI/GalleryImages/deploy/action",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
@@ -34736,6 +34820,13 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.AzureStackHCI/VirtualNetworks/Read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Compute/disks/read",
         "ActionType": "Action",
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",
@@ -35817,6 +35908,13 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.RecoveryServices/Vaults/backupFabrics/getRPExtendedInfo/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.RecoveryServices/Vaults/backupFabrics/operationResults/*",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
@@ -36140,6 +36238,13 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.RecoveryServices/Vaults/backupEngines/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.RecoveryServices/Vaults/backupFabrics/getRPExtendedInfoOperationResult/read",
         "ActionType": "Action",
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",
@@ -36632,6 +36737,13 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.RecoveryServices/Vaults/backupFabrics/getRPExtendedInfo/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/inquire/action",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
@@ -36996,6 +37108,13 @@
         "EAMTierLevelTagValue": "2"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.RecoveryServices/Vaults/backupFabrics/getRPExtendedInfoOperationResult/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.RecoveryServices/Vaults/backupFabrics/operationResults/read",
         "ActionType": "Action",
         "Category": "Reader",
@@ -37214,6 +37333,13 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.DataProtection/backupVaults/crossTenantVaultMappingStatus/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.DataProtection/locations/checkFeatureSupport/action",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
@@ -37271,6 +37397,13 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.RecoveryServices/locations/backupValidateFeatures/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappingStatus/action",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
@@ -38944,6 +39077,17 @@
       "EAMTierLevelName": "ManagementPlane",
       "EAMTierLevelTagValue": "1"
     }
+  },
+  {
+    "RoleId": "681440c1-3630-4424-a530-0305ac721cfd",
+    "RoleName": "Chaos Kubernetes Extension Operator",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Lets a Chaos Studio workspace identity impersonate the Chaos Studio extension's Kubernetes service account and read pods on AKS clusters, and read the cluster's Deployment Safeguards, so Chaos Studio can run faults through the extension.",
+    "RolePermissions": [],
+    "Classification": null
   },
   {
     "RoleId": "1091dee8-a09b-4205-95fa-b0100e8f006d",
@@ -48758,6 +48902,34 @@
     "RichDescription": "Allows cross-tenant restore operations using Recovery Services vault mappings.",
     "RolePermissions": [
       {
+        "AuthorizedResourceAction": "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/backupInstances/findRestorableTimeRanges/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/backupInstances/restore/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/backupInstances/validateRestore/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/remove/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/backupFabrics/getRecoveryPoints/action",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
@@ -48812,6 +48984,48 @@
         "Category": "General Management Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/backupInstances/operationResults/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/backupInstances/operationStatus/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/backupInstances/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/backupInstances/recoveryPoints/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/backupJobs/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/backupFabrics/operationsStatus/read",
@@ -48934,11 +49148,25 @@
     "RichDescription": "Allows creating cross-tenant restore vault mappings on a target Recovery Services vault.",
     "RolePermissions": [
       {
+        "AuthorizedResourceAction": "Microsoft.DataProtection/backupVaults/crossTenantVaultMappings/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.RecoveryServices/Vaults/backupCrossTenantVaultMappings/write",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.DataProtection/backupVaults/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.RecoveryServices/Vaults/read",
@@ -50745,6 +50973,63 @@
     "Classification": {
       "EAMTierLevelName": "ManagementPlane",
       "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "fb2e8e50-bc5c-4095-8f9d-c30e1be5e98c",
+    "RoleName": "Defender Foundational CSPM",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Grants Microsoft Defender for Cloud CSPM access required for posture recommendations",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.Authorization/policyAssignments/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Authorization/policyExemptions/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Authorization/policySetDefinitions/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Management/managementGroups/descendants/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Resources/subscriptions/resources/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Security/assessmentMetadata/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "UserAccess",
+      "EAMTierLevelTagValue": "2"
     }
   },
   {
@@ -56104,27 +56389,6 @@
         "EAMTierLevelTagValue": "1"
       },
       {
-        "AuthorizedResourceAction": "Microsoft.Storage/storageAccounts/listkeys/action",
-        "ActionType": "Action",
-        "Category": "Secret and Key Listing",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Storage/storageAccounts/delete",
-        "ActionType": "Action",
-        "Category": "Storage",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Storage/storageAccounts/write",
-        "ActionType": "Action",
-        "Category": "Storage",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
         "AuthorizedResourceAction": "Microsoft.Authorization/*/read",
         "ActionType": "Action",
         "Category": "Reader",
@@ -56140,13 +56404,6 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Resources/subscriptions/resourceGroups/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Storage/storageAccounts/read",
         "ActionType": "Action",
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",
@@ -58048,6 +58305,35 @@
     }
   },
   {
+    "RoleId": "a55e9338-b2cb-4a9b-8ee0-5c56842dc830",
+    "RoleName": "Embedding User",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Execute embedding operations against registered inference accounts. This role should be assigned to users who need to run embedding generation workloads but do not need to manage the accounts themselves.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.InferenceService/inferenceAccounts/invoke/embedding/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.InferenceService/inferenceAccounts/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
     "RoleId": "2142ea27-02ad-4094-bfea-2dbac6d24934",
     "RoleName": "Enclave Approver Role",
     "IsCustom": false,
@@ -59839,6 +60125,13 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.HealthcareApis/services/fhir/resources/editProfileDefinitions/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.HealthcareApis/services/fhir/resources/export/action",
         "ActionType": "DataAction",
         "Category": "General Data Plane Operations",
@@ -59882,6 +60175,13 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.HealthcareApis/workspaces/fhirservices/resources/delete",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.HealthcareApis/workspaces/fhirservices/resources/editProfileDefinitions/action",
         "ActionType": "DataAction",
         "Category": "General Data Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
@@ -65014,6 +65314,13 @@
     "RichDescription": "Users with editor access can sign in, view and edit all the bot resources, scenarios and configuration setting except for the bot instance keys & secrets and the end-user inputs (including Feedback, Unrecognized utterances and Conversation logs). A read-only access to the bot skills and channels.",
     "RolePermissions": [
       {
+        "AuthorizedResourceAction": "Microsoft.HealthBot/healthBots/AuthenticationProviders/*",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.HealthBot/healthBots/Channels/*",
         "ActionType": "DataAction",
         "Category": "General Data Plane Operations",
@@ -65029,6 +65336,13 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.HealthBot/healthBots/CopilotStudioSolution/*",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.HealthBot/healthBots/DataConnections/*",
         "ActionType": "DataAction",
         "Category": "General Data Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
@@ -65078,20 +65392,6 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.HealthBot/healthBots/AuditTrails/Read",
-        "ActionType": "DataAction",
-        "Category": "Reader Data Access",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.HealthBot/healthBots/AuthenticationProviders/Read",
-        "ActionType": "DataAction",
-        "Category": "Reader Data Access",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.HealthBot/healthBots/DataConnections/Read",
         "ActionType": "DataAction",
         "Category": "Reader Data Access",
         "EAMTierLevelName": "UserAccess",
@@ -66931,7 +67231,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "RichDescription": "Perform cryptographic operations using keys. Only works for key vaults that use the 'Azure role-based access control' permission model.",
+    "RichDescription": "Read key metadata and public material, perform cryptographic operations, back up keys, and update key properties and mutable release policies, including making policies immutable. Does not grant key release. Only works for key vaults that use the 'Azure role-based access control' permission model.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.KeyVault/vaults/keys/backup/action",
@@ -91726,6 +92026,71 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Network/virtualNetworks/usages/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "edbce4e0-c70f-4f11-94ea-eb5f338fc09e",
+    "RoleName": "Windows 365 Service Connector Administrator",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Provides access to create, read, and update service connectors and attach them to Windows 365 resources.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.Windows365/serviceConnectors/attach/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Windows365/serviceConnectors/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Windows365/serviceConnectors/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "5f70377a-ce1d-4a07-b3b9-12c99f22d21f",
+    "RoleName": "Windows 365 Service Connector User",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Provides access to read service connectors and attach them to Windows 365 resources.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.Windows365/serviceConnectors/attach/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Windows365/serviceConnectors/read",
         "ActionType": "Action",
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",

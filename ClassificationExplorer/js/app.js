@@ -209,22 +209,21 @@ EOCE.app = (function () {
                 var categoryChanged = isPermission && (entry.oldCategory || '') !== (entry.newCategory || '');
                 var actionsAdded = entry.actionsAdded || [];
                 var actionsRemoved = entry.actionsRemoved || [];
-                // Action deltas come from Microsoft's role definition; a tier shift without them comes from the classification model.
+                // Keep definition changes separate from tier changes: history does not establish causation.
                 if (!isPermission && (actionsAdded.length || actionsRemoved.length)) {
-                    if (tierChanged) {
-                        buckets.msChanged.push({ section: MS, group: 'Changed', kind: 'Role', change: 'Changed', title: name, detail: entry.oldTier + ' -> ' + entry.newTier + ' after role action changes', href: resourceHref(entry) });
-                    }
                     actionsAdded.forEach(function (action) {
                         buckets.msChanged.push({ section: MS, group: 'Changed', kind: 'Role action', change: 'Added', title: action, detail: 'Added to ' + name, href: actionHref(action) });
                     });
                     actionsRemoved.forEach(function (action) {
                         buckets.msChanged.push({ section: MS, group: 'Changed', kind: 'Role action', change: 'Removed', title: action, detail: 'Removed from ' + name, href: actionHref(action) });
                     });
-                } else if (tierChanged || categoryChanged) {
+                }
+                if (tierChanged || categoryChanged) {
                     var details = [];
                     if (tierChanged) details.push(entry.oldTier + ' -> ' + entry.newTier);
                     if (categoryChanged) details.push('Category: ' + (entry.oldCategory || 'none') + ' -> ' + (entry.newCategory || 'none'));
-                    buckets.model.push({ section: MODEL, group: 'Tier assignment changed', kind: kind, change: 'Reclassified', title: name, detail: details.join(' · '), href: resourceHref(entry) });
+                    var group = categoryChanged ? (tierChanged ? 'Tier and category changed' : 'Category changed') : 'Tier assignment changed';
+                    buckets.model.push({ section: MODEL, group: group, kind: kind, change: 'Reclassified', title: name, detail: details.join(' · '), href: resourceHref(entry) });
                 }
             });
         });

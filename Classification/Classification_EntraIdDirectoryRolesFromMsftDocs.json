@@ -1629,7 +1629,7 @@
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
     "Categories": "Application and Workload Identity,Extended member",
-    "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Users in this role can create application registrations when the \"Users can register applications\" setting is set to No. This role also grants permission to consent on one's own behalf when the \"Users can consent to apps accessing company data on their behalf\" setting is set to No. Users assigned to this role are added as owners when creating new application registrations.",
+    "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Users in this role can create application registrations when the \"Users can register applications\" setting is set to No. Users assigned to this role are added as owners when creating new application registrations, and they can update applications that they own. This role also grants permission to consent on one's own behalf when the \"Users can consent to apps accessing company data on their behalf\" setting is set to No.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/oAuth2PermissionGrants/createAsOwner",
@@ -1721,7 +1721,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": "Application and Workload Identity,Custom Security Attributes (Reader),Global User Management,Privileged ABAC,Tenant Configuration (Reader)",
+    "Categories": "ABAC (Reader),Application and Workload Identity,Global User Management,Privileged ABAC,Tenant Configuration (Reader)",
     "RichDescription": "Users with this role can assign and remove custom security attribute keys and values for supported Microsoft Entra objects such as users, service principals, and devices.\n\n[!INCLUDE [security-attributes-roles](../../../includes/security-attributes-roles.md)]\n\nFor more information, see [Manage access to custom security attributes in Microsoft Entra ID](../../../fundamentals/custom-security-attributes-manage.md).",
     "RolePermissions": [
       {
@@ -1750,31 +1750,31 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/attributeSets/allProperties/read",
-        "Category": "Custom Security Attributes (Reader)",
+        "Category": "ABAC (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/customSecurityAttributeDefinitions/allProperties/read",
-        "Category": "Custom Security Attributes (Reader)",
+        "Category": "ABAC (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/devices/customSecurityAttributes/read",
-        "Category": "Custom Security Attributes (Reader)",
+        "Category": "ABAC (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/customSecurityAttributes/read",
-        "Category": "Custom Security Attributes (Reader)",
+        "Category": "ABAC (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/users/customSecurityAttributes/read",
-        "Category": "Custom Security Attributes (Reader)",
+        "Category": "ABAC (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -1796,36 +1796,36 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": "Custom Security Attributes (Reader),Tenant Configuration (Reader)",
+    "Categories": "ABAC (Reader),Tenant Configuration (Reader)",
     "RichDescription": "Users with this role can read custom security attribute keys and values for supported Microsoft Entra objects.\n\n[!INCLUDE [security-attributes-roles](../../../includes/security-attributes-roles.md)]\n\nFor more information, see [Manage access to custom security attributes in Microsoft Entra ID](../../../fundamentals/custom-security-attributes-manage.md).",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/attributeSets/allProperties/read",
-        "Category": "Custom Security Attributes (Reader)",
+        "Category": "ABAC (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/customSecurityAttributeDefinitions/allProperties/read",
-        "Category": "Custom Security Attributes (Reader)",
+        "Category": "ABAC (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/devices/customSecurityAttributes/read",
-        "Category": "Custom Security Attributes (Reader)",
+        "Category": "ABAC (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/customSecurityAttributes/read",
-        "Category": "Custom Security Attributes (Reader)",
+        "Category": "ABAC (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/users/customSecurityAttributes/read",
-        "Category": "Custom Security Attributes (Reader)",
+        "Category": "ABAC (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
@@ -1874,18 +1874,18 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": "Custom Security Attributes (Reader)",
+    "Categories": "ABAC (Reader)",
     "RichDescription": "Users with this role can read the definition of custom security attributes.\n\n[!INCLUDE [security-attributes-roles](../../../includes/security-attributes-roles.md)]\n\nFor more information, see [Manage access to custom security attributes in Microsoft Entra ID](../../../fundamentals/custom-security-attributes-manage.md).",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/attributeSets/allProperties/read",
-        "Category": "Custom Security Attributes (Reader)",
+        "Category": "ABAC (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/customSecurityAttributeDefinitions/allProperties/read",
-        "Category": "Custom Security Attributes (Reader)",
+        "Category": "ABAC (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       }
@@ -1949,7 +1949,7 @@
     "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": "Application and Workload Identity,Custom Security Attributes (Reader)",
+    "Categories": "ABAC (Reader),Application and Workload Identity",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Assign the Attribute Provisioning Administrator role to users who need to do the following tasks:\n\n- Read and write attribute mappings for custom security attributes when provisioning in an application.\n- Read and write provisioning and auditing logs for custom security attributes when provisioning in an application.\n\nUsers with this role cannot read audit logs for other events. This role must be used in conjunction with the Cloud Application Administrator or Application Administrator roles (from least to most privileged) to read provisioning configurations.\n\n> [!IMPORTANT]\n> This role does not have the ability to create custom security attribute sets or to directly assign or update custom security attribute values for the user object. This role can only configure the flow of the custom security attributes in the provisioning app.\n\n[Learn more](../../app-provisioning/provision-custom-security-attributes.md)",
     "RolePermissions": [
       {
@@ -1960,7 +1960,7 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/read",
-        "Category": "Custom Security Attributes (Reader)",
+        "Category": "ABAC (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       }
@@ -1976,12 +1976,12 @@
     "isPrivileged": true,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "Categories": "Custom Security Attributes (Reader)",
+    "Categories": "ABAC (Reader)",
     "RichDescription": "[![Privileged label icon.](../media/permissions-reference/privileged-label.png)](../privileged-roles-permissions.md)\n\nThis is a [privileged role](../privileged-roles-permissions.md). Assign the Attribute Provisioning Reader role to users who need to do the following tasks:\n\n- Read the attribute mappings for custom security attributes when provisioning in an application.\n- Read the provisioning and auditing logs for custom security attributes when provisioning in an application.\n\nUsers with this role can't read audit logs for other events. This role must be used with the Cloud Application Administrator or Application Administrator roles (from least to most privileged) to read provisioning configurations.\n\n[Learn more](../../app-provisioning/provision-custom-security-attributes.md)",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/servicePrincipals/synchronization.customSecurityAttributes/schema/read",
-        "Category": "Custom Security Attributes (Reader)",
+        "Category": "ABAC (Reader)",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       }
