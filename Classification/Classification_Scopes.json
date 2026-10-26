@@ -73,8 +73,32 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "3dcaa6c1-6af2-4d09-8c96-f8f16012d52d",
+    "ScopeDisplayName": "AdministrativeUnit.ReadBasic.All",
+    "Category": "Default Member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "7b8a2d34-6b3f-4542-a343-54651608ad81",
     "ScopeDisplayName": "AdministrativeUnit.ReadWrite.All",
+    "Category": "Tenant Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "b1c7bc90-edab-4b18-9a7d-441e74635223",
+    "ScopeDisplayName": "AdministrativeUnit.ReadWriteBasic.All",
+    "Category": "Tenant Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "14f19140-a110-48da-b3ba-63c2862bb7da",
+    "ScopeDisplayName": "AdministrativeUnitMember.ReadWrite.All",
     "Category": "Tenant Management",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
@@ -1679,6 +1703,22 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "0696c9ff-8589-4687-8015-58a87d0ae29f",
+    "ScopeDisplayName": "CopilotCostManagement-CreditReq.Read.All",
+    "Category": "Copilot",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "29dc273e-f551-4fe3-a672-05bea406787f",
+    "ScopeDisplayName": "CopilotCostManagement-CreditReq.ReadWrite.All",
+    "Category": "Copilot",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "7fe904eb-5276-4ddc-ab01-67e4d708b664",
     "ScopeDisplayName": "CopilotCostManagement-Policy.Read.All",
     "Category": "Copilot",
@@ -1697,6 +1737,14 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "d3f39420-6eec-4e63-98ba-b2866ef3ba99",
     "ScopeDisplayName": "CopilotCostManagement-UserData.Read.All",
+    "Category": "Copilot",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "c0fcd4f8-e2a8-4162-892c-652d9bb651fd",
+    "ScopeDisplayName": "CopilotCostManagement.Read.All",
     "Category": "Copilot",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
@@ -1796,6 +1844,22 @@
     "Category": "Microsoft SharePoint",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "07bfcf5a-655d-440d-86ed-712989e08b7e",
+    "ScopeDisplayName": "CrossTenantIdentityMapping.Read.All",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "1bc3f48a-9ebf-4bc3-beec-ec63bf290087",
+    "ScopeDisplayName": "CrossTenantIdentityMapping.ReadWrite.All",
+    "Category": "Global User Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -5733,6 +5797,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "8a5e5c26-825e-4065-a444-aa167b44de4b",
+    "ScopeDisplayName": "Policy.Read.SecurityDefaults",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "4f5bc9c8-ea54-4772-973a-9ca119cb0409",
     "ScopeDisplayName": "Policy.ReadWrite.AccessReview",
     "Category": "Entitlement Management",
@@ -6543,6 +6615,22 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "b955410e-7715-4a88-a940-dfd551018df3",
     "ScopeDisplayName": "ReportSettings.ReadWrite.All",
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "a9750a17-f46d-45ed-b6b6-42d988745301",
+    "ScopeDisplayName": "Repository.Read.All",
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "f0125870-9fec-449f-8cad-2418f0af0b16",
+    "ScopeDisplayName": "Repository.ReadWrite.All",
     "Category": "Security and Compliance",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
@@ -9311,6 +9399,14 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "13eae17d-aaa4-47b8-aaee-0eb33c6e2450",
     "ScopeDisplayName": "UserAuthMethod-WindowsHello.ReadWrite.All",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "01d92422-30dd-4401-a504-aa0a84c463bc",
+    "ScopeDisplayName": "UserCertificateIds.ReadWrite.All",
     "Category": "Authentication",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"

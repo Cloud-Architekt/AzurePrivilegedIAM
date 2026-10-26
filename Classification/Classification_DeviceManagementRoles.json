@@ -634,6 +634,30 @@
         "EAMTierLevelTagValue": "0"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.Intune/ShieldingExclusions/Assign",
+        "Category": "Global Endpoint Protection Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ShieldingExclusions/Create",
+        "Category": "Global Endpoint Protection Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ShieldingExclusions/Delete",
+        "Category": "Global Endpoint Protection Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ShieldingExclusions/Update",
+        "Category": "Global Endpoint Protection Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.Intune/AppControlPolicy/Assign",
         "Category": "Global Endpoint Security Management",
         "EAMTierLevelName": "ControlPlane",
@@ -1037,6 +1061,18 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/SecurityTasks/Read",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ShieldingExclusions/Read",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ShieldingExclusions/ViewReports",
         "Category": "Intune Configuration (Reader)",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
@@ -1625,6 +1661,12 @@
         "EAMTierLevelTagValue": "2"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.Intune/ShieldingExclusions/Read",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.Intune/TelecomExpenses/Read",
         "Category": "Intune Configuration (Reader)",
         "EAMTierLevelName": "UserAccess",
@@ -2024,6 +2066,30 @@
         "EAMTierLevelTagValue": "0"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.Intune/Recovery/Assign",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Recovery/Create",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Recovery/Delete",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Recovery/Update",
+        "Category": "Global Endpoint Management",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.Intune/WindowsOSRecovery/Assign",
         "Category": "Global Endpoint Management",
         "EAMTierLevelName": "ControlPlane",
@@ -2235,6 +2301,18 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/QuietTimePolicies/ViewReports",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Recovery/Read",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/Recovery/ViewReports",
         "Category": "Intune Configuration (Reader)",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
@@ -2535,6 +2613,12 @@
         "EAMTierLevelTagValue": "2"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.Intune/Recovery/Read",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.Intune/RemoteAssistance/Read",
         "Category": "Intune Configuration (Reader)",
         "EAMTierLevelName": "UserAccess",
@@ -2566,6 +2650,12 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Intune/ServiceNow/ViewIncidents",
+        "Category": "Intune Configuration (Reader)",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Intune/ShieldingExclusions/Read",
         "Category": "Intune Configuration (Reader)",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"

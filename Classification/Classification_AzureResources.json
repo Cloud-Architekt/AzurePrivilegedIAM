@@ -25189,6 +25189,13 @@
         "EAMTierLevelTagValue": "2"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.RecoveryServices/vaults/replicationJobs/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.Resources/subscriptions/resourceGroups/read",
         "ActionType": "Action",
         "Category": "Reader",
@@ -35782,6 +35789,13 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.DataProtection/backupVaults/crossTenantVaultMappingStatus/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.DataProtection/backupVaults/deletedBackupInstances/undelete/action",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
@@ -39086,8 +39100,47 @@
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
     "RichDescription": "Lets a Chaos Studio workspace identity impersonate the Chaos Studio extension's Kubernetes service account and read pods on AKS clusters, and read the cluster's Deployment Safeguards, so Chaos Studio can run faults through the extension.",
-    "RolePermissions": [],
-    "Classification": null
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/managedClusters/serviceaccounts/impersonate/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/deploymentSafeguards/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/managedClusters/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.KubernetesConfiguration/extensions/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ContainerService/managedClusters/pods/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
   },
   {
     "RoleId": "1091dee8-a09b-4205-95fa-b0100e8f006d",
