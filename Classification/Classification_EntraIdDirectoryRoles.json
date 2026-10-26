@@ -3284,6 +3284,24 @@
         "EAMTierLevelTagValue": "0"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/conditionalAccessPolicyPlans/basic/update",
+        "Category": "Conditional Access",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/conditionalAccessPolicyPlans/create",
+        "Category": "Conditional Access",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/conditionalAccessPolicyPlans/delete",
+        "Category": "Conditional Access",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/namedLocations/basic/update",
         "Category": "Conditional Access",
         "EAMTierLevelName": "ControlPlane",
@@ -5392,6 +5410,24 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/conditionalAccessPolicies/allProperties/allTasks",
+        "Category": "Conditional Access",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/conditionalAccessPolicyPlans/basic/update",
+        "Category": "Conditional Access",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/conditionalAccessPolicyPlans/create",
+        "Category": "Conditional Access",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/conditionalAccessPolicyPlans/delete",
         "Category": "Conditional Access",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
@@ -11310,6 +11346,24 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/conditionalAccessPolicies/tenantDefault/update",
+        "Category": "Conditional Access",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/conditionalAccessPolicyPlans/basic/update",
+        "Category": "Conditional Access",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/conditionalAccessPolicyPlans/create",
+        "Category": "Conditional Access",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/conditionalAccessPolicyPlans/delete",
         "Category": "Conditional Access",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
