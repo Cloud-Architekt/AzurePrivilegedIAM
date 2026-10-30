@@ -18,20 +18,33 @@ function Invoke-EntraOpsMsGraphQuery {
         [switch]$DisableCache
     )
 
-    $requestParameters = @{ Method = $Method; Uri = $Uri }
+    # This standalone adapter deliberately has no dependency on the EntraOps session/cache.
+    # Match the shared exporters' collection contract, including Graph continuation pages.
+    $requestParameters = @{ Method = $Method; Uri = $Uri; OutputType = $OutputType }
     foreach ($parameterName in 'Body', 'Headers', 'OutputType') {
         if ($PSBoundParameters.ContainsKey($parameterName)) {
             $requestParameters[$parameterName] = $PSBoundParameters[$parameterName]
         }
     }
     if ($ConsistencyLevel) {
-        if (-not $requestParameters.Headers) { $requestParameters.Headers = @{} }
+        $requestParameters.Headers = if ($Headers) { $Headers.Clone() } else { @{} }
         $requestParameters.Headers['ConsistencyLevel'] = $ConsistencyLevel
     }
 
-    $result = Invoke-MgGraphRequest @requestParameters
-    if ($OutputType -ne 'HttpResponseMessage' -and $result.PSObject.Properties['value']) {
-        return $result.value
-    }
-    return $result
+    do {
+        $result = Invoke-MgGraphRequest @requestParameters -ErrorAction Stop
+        if ($OutputType -in 'HttpResponseMessage', 'Json') { return $result }
+
+        $isDictionary = $result -is [System.Collections.IDictionary]
+        $isCollection = if ($isDictionary) { $result.Contains('value') } else {
+            $null -ne $result -and $null -ne $result.PSObject.Properties['value']
+        }
+        if (-not $isCollection) { return $result }
+
+        $result.value
+        $nextLink = if ($isDictionary) { $result['@odata.nextLink'] } elseif ($result.PSObject.Properties['@odata.nextLink']) {
+            $result.'@odata.nextLink'
+        } else { $null }
+        if ($nextLink -and $Method -eq 'GET') { $requestParameters.Uri = $nextLink } else { break }
+    } while ($true)
 }

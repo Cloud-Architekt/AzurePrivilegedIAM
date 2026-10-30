@@ -31,6 +31,10 @@ interactive, Microsoft **Fluent UI / Azure Portal** styled experience.
   **where** it is granted, driven by the EntraOps `*.Param.json` scope placeholders
   (privileged users / service principals / groups / devices, Azure Tier 0/1 resource
   scopes, Intune Tier 0/1 group IDs).
+- **Customize Overwrites** – editor for the overwrite files, including tagged files
+  (`<BaseName>_<Tag>.json`); every entry shows its origin (*Base* or the tag, prefixed with *Custom*
+  for editor changes), items overwritten in more than one file are listed, and several files can be
+  imported and exported at once
 - **Role Overwrites** – roles classified independently of their listed actions
   (`Classification_RoleDefinitionOverwrites.json`), each with its justification and a
   reference to the applicable role actions of the service.
@@ -195,3 +199,10 @@ keeps duplicate copies of the JSON.
 Plain HTML, CSS and JavaScript — **no build step, no dependencies**. Just static
 files. The classification data is the single source of truth and is never modified by
 the app.
+
+
+### Overwrite editor regression tests
+
+Run `npm ci`, `npx playwright install chromium`, then `npm run test:browser -- classification-explorer-customize.spec.mjs` from the repository root. The shared suite covers tagged files, origin tracking, multi-file saves, and recovery from failed or partial writes.
+
+Backport changes to shared app files from EntraOps into AzurePrivilegedIAM before syncing. `Sync-EntraOpsClassificationExplorerSource` stops before copying if the target contains app files absent from the source; `-RemoveStaleAppFiles` permits intentional removals. Deployment mode, generated data, theme paths, and the Pester command remain deployment-specific.

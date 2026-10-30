@@ -28,7 +28,9 @@ function Update-EntraOpsClassificationModels {
 
     .PARAMETER RepoRoot
         Repository root containing the 'Classification', 'EntraOps_Classification' and 'ClassificationExplorer'
-        folders. Defaults to the root inferred from the imported module.
+        folders. Defaults to the root inferred from the imported module, or the unique sibling
+        AzurePrivilegedIAM checkout when invoked from EntraOps. This command maintains source
+        classification data; use New-EntraOpsClassificationExplorerData to refresh the EntraOps report.
 
     .PARAMETER IncludeCustomRoles
         Include custom role definitions for the role-based exports (Directory, Identity Governance, Device Management, Azure).
@@ -115,12 +117,27 @@ function Update-EntraOpsClassificationModels {
     if ([string]::IsNullOrEmpty($RepoRoot)) {
         $RepoRoot = Resolve-EntraOpsClassificationRepoRoot -ModuleBase $module.ModuleBase
     }
-    $RepoRoot = (Resolve-Path $RepoRoot).Path
+    $RepoRoot = (Resolve-Path -LiteralPath $RepoRoot).Path
     $ClassificationPath = Join-Path $RepoRoot "Classification"
     $ModulePath = $module.Path
 
+    foreach ($requiredFolder in 'Classification', 'EntraOps_Classification', 'ClassificationExplorer') {
+        if (-not (Test-Path -LiteralPath (Join-Path $RepoRoot $requiredFolder) -PathType Container)) {
+            throw "Classification source folder '$requiredFolder' not found under '$RepoRoot'. Pass -RepoRoot pointing at AzurePrivilegedIAM."
+        }
+    }
+    $OriginalLocation = Get-Location
+
     if (-not (Test-Path $ModulePath)) { throw "Loaded module path not found at '$ModulePath'." }
     #endregion
+
+    # Keep the EntraOps connection hints when sharing the standalone maintenance implementation.
+    if (-not (Get-Command Get-MgContext -ErrorAction SilentlyContinue) -or $null -eq (Get-MgContext -ErrorAction SilentlyContinue)) {
+        Write-Warning 'No Microsoft Graph context detected. Run Connect-MgGraph before this command for the Graph based exports.'
+    }
+    if (-not (Get-Command Get-AzContext -ErrorAction SilentlyContinue) -or $null -eq (Get-AzContext -ErrorAction SilentlyContinue)) {
+        Write-Warning 'No Azure context detected. Run Connect-AzAccount before this command for the Azure roles export.'
+    }
 
     $MismatchTempFile = Join-Path ([System.IO.Path]::GetTempPath()) ("EntraOpsDirectoryRolesMismatch_{0}.json" -f ([guid]::NewGuid()))
 
@@ -133,13 +150,15 @@ function Update-EntraOpsClassificationModels {
         ResolveApiPermissionDisplayNames = [bool]$ResolveApiPermissionDisplayNames
         MismatchTempFile                 = $MismatchTempFile
     }
+    $Jobs = @()
 
     try {
         #region Lane definitions
         $LaneApiPermissions = {
             param($RepoRoot, $ModulePath, $Options)
-            Set-Location $RepoRoot
-            Import-Module $ModulePath -Force -ErrorAction Stop
+            $ErrorActionPreference = 'Stop'
+            Set-Location -LiteralPath $RepoRoot
+            Import-Module $ModulePath -ErrorAction Stop
 
             try { Write-Output "Step 1/3 Export-EntraOpsClassificationAppRoles"; Export-EntraOpsClassificationAppRoles } catch { throw "AppRoles failed: $($_.Exception.Message)" }
             try { Write-Output "Step 2/3 Export-EntraOpsClassificationScopes"; Export-EntraOpsClassificationScopes } catch { throw "Scopes failed: $($_.Exception.Message)" }
@@ -153,8 +172,9 @@ function Update-EntraOpsClassificationModels {
 
         $LaneEntraIdRoles = {
             param($RepoRoot, $ModulePath, $Options)
-            Set-Location $RepoRoot
-            Import-Module $ModulePath -Force -ErrorAction Stop
+            $ErrorActionPreference = 'Stop'
+            Set-Location -LiteralPath $RepoRoot
+            Import-Module $ModulePath -ErrorAction Stop
 
             try { Write-Output "Step 1/3 Export-EntraOpsClassificationDirectoryRoles"; Export-EntraOpsClassificationDirectoryRoles -IncludeCustomRoles $Options.IncludeCustomRoles } catch { throw "DirectoryRoles failed: $($_.Exception.Message)" }
             try { Write-Output "Step 2/3 Export-EntraOpsClassificationDirectoryRolesFromMsftDocs"; Export-EntraOpsClassificationDirectoryRolesFromMsftDocs } catch { throw "DirectoryRolesFromMsftDocs failed: $($_.Exception.Message)" }
@@ -168,24 +188,27 @@ function Update-EntraOpsClassificationModels {
 
         $LaneIdentityGovernance = {
             param($RepoRoot, $ModulePath, $Options)
-            Set-Location $RepoRoot
-            Import-Module $ModulePath -Force -ErrorAction Stop
+            $ErrorActionPreference = 'Stop'
+            Set-Location -LiteralPath $RepoRoot
+            Import-Module $ModulePath -ErrorAction Stop
             try { Write-Output "Export-EntraOpsClassificationIdentityGovernanceRoles"; Export-EntraOpsClassificationIdentityGovernanceRoles -IncludeCustomRoles $Options.IncludeCustomRoles } catch { throw "IdentityGovernanceRoles failed: $($_.Exception.Message)" }
             Write-Output "Lane complete"
         }
 
         $LaneDeviceManagement = {
             param($RepoRoot, $ModulePath, $Options)
-            Set-Location $RepoRoot
-            Import-Module $ModulePath -Force -ErrorAction Stop
+            $ErrorActionPreference = 'Stop'
+            Set-Location -LiteralPath $RepoRoot
+            Import-Module $ModulePath -ErrorAction Stop
             try { Write-Output "Export-EntraOpsClassificationDeviceManagementRoles"; Export-EntraOpsClassificationDeviceManagementRoles -IncludeCustomRoles $Options.IncludeCustomRoles } catch { throw "DeviceManagementRoles failed: $($_.Exception.Message)" }
             Write-Output "Lane complete"
         }
 
         $LaneAzureRoles = {
             param($RepoRoot, $ModulePath, $Options)
-            Set-Location $RepoRoot
-            Import-Module $ModulePath -Force -ErrorAction Stop
+            $ErrorActionPreference = 'Stop'
+            Set-Location -LiteralPath $RepoRoot
+            Import-Module $ModulePath -ErrorAction Stop
             $azParams = @{ IncludeCustomRoles = $Options.IncludeCustomRoles }
             if ($Options.Tier0IncludedResourceScope.Count -gt 0) { $azParams.Tier0IncludedResourceScope = $Options.Tier0IncludedResourceScope }
             if ($Options.Tier1IncludedResourceScope.Count -gt 0) { $azParams.Tier1IncludedResourceScope = $Options.Tier1IncludedResourceScope }
@@ -227,7 +250,8 @@ function Update-EntraOpsClassificationModels {
             do {
                 Start-Sleep -Milliseconds 750
                 foreach ($Job in $Jobs) {
-                    $NewOutput = Receive-Job -Job $Job
+                    # Report lane failures together below, including when the caller uses Stop.
+                    $NewOutput = Receive-Job -Job $Job -ErrorAction SilentlyContinue
                     foreach ($Line in $NewOutput) {
                         Write-Host ("[{0,-18}] {1}" -f $Job.Name, $Line) -ForegroundColor DarkGray
                     }
@@ -235,22 +259,24 @@ function Update-EntraOpsClassificationModels {
                 $Completed = @($Jobs | Where-Object { $_.State -in 'Completed', 'Failed', 'Stopped' }).Count
                 $Running = (@($Jobs | Where-Object { $_.State -eq 'Running' }) | ForEach-Object { $_.Name }) -join ", "
                 Write-Progress -Activity "Updating EntraOps classification models" -Status "$Completed of $TotalLanes lanes complete | running: $Running" -PercentComplete (($Completed / $TotalLanes) * 100)
-            } while (@($Jobs | Where-Object { $_.State -eq 'Running' }).Count -gt 0)
+            } while (@($Jobs | Where-Object { $_.State -notin 'Completed', 'Failed', 'Stopped' }).Count -gt 0)
 
             # Drain remaining output and retain failures before removing the jobs.
             $LaneFailures = [System.Collections.Generic.List[string]]::new()
             foreach ($Job in $Jobs) {
-                $NewOutput = Receive-Job -Job $Job
+                $NewOutput = Receive-Job -Job $Job -ErrorAction SilentlyContinue
                 foreach ($Line in $NewOutput) {
                     Write-Host ("[{0,-18}] {1}" -f $Job.Name, $Line) -ForegroundColor DarkGray
                 }
                 if ($Job.State -in 'Failed', 'Stopped') {
-                    $Reason = $Job.ChildJobs[0].JobStateInfo.Reason
+                    # Start-ThreadJob exposes the failure on the job itself; it has no child jobs.
+                    $Reason = $Job.JobStateInfo.Reason
                     $Message = if ($Reason) { $Reason.Message } else { "Job ended in state '$($Job.State)'" }
                     $LaneFailures.Add(("{0}: {1}" -f $Job.Name, $Message))
                 }
             }
             $Jobs | Remove-Job -Force
+            $Jobs = @()
             Write-Progress -Activity "Updating EntraOps classification models" -Completed
             if ($LaneFailures.Count -gt 0) {
                 throw ("Classification update failed in {0} lane(s): {1}" -f $LaneFailures.Count, ($LaneFailures -join '; '))
@@ -281,7 +307,7 @@ function Update-EntraOpsClassificationModels {
                 } catch { throw "Update-EntraOpsClassificationExplorerData failed: $($_.Exception.Message)" }
                 Write-Progress -Activity "Updating EntraOps classification models" -Completed
             } else {
-                throw 'Update-EntraOpsClassificationExplorerData is not exported by EntraOps.Classification.'
+                throw 'Update-EntraOpsClassificationExplorerData is not exported by the loaded module.'
             }
         }
         #endregion
@@ -430,6 +456,11 @@ function Update-EntraOpsClassificationModels {
             ActionDifferenceCount = if ($Mismatch) { @($Mismatch.ActionDifferences).Count } else { 0 }
         }
     } finally {
+        if ($Jobs.Count -gt 0) {
+            $Jobs | Stop-Job -ErrorAction SilentlyContinue
+            $Jobs | Remove-Job -Force -ErrorAction SilentlyContinue
+        }
         Remove-Item -LiteralPath $MismatchTempFile -Force -ErrorAction SilentlyContinue
+        Set-Location -LiteralPath $OriginalLocation.Path
     }
 }

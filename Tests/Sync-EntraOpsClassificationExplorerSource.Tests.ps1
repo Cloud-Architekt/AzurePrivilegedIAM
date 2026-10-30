@@ -6,6 +6,36 @@ BeforeAll {
 }
 
 Describe 'Sync-EntraOpsClassificationExplorerSource' {
+    BeforeEach {
+        $caseRoot = Join-Path $TestDrive ([guid]::NewGuid().ToString('N'))
+        $script:SafetySource = Join-Path $caseRoot 'Source'
+        $script:SafetyTarget = Join-Path $caseRoot 'Target'
+        New-Item -ItemType Directory -Force -Path "$script:SafetySource/ClassificationExplorer", "$script:SafetySource/EntraOps_Classification", "$script:SafetySource/Modules/EntraOps.Classification/Public", "$script:SafetyTarget/Reports/ClassificationExplorer" | Out-Null
+        Set-Content -LiteralPath "$script:SafetySource/ClassificationExplorer/index.html" -Value 'source'
+        Set-Content -LiteralPath "$script:SafetySource/Modules/EntraOps.Classification/Public/Update-EntraOpsClassificationExplorerData.ps1" -Value '# generator'
+        Set-Content -LiteralPath "$script:SafetyTarget/Reports/ClassificationExplorer/index.html" -Value 'target'
+        Set-Content -LiteralPath "$script:SafetyTarget/Reports/ClassificationExplorer/entraops-feature.spec.mjs" -Value '// preserve'
+    }
+
+    It 'stops before copying if EntraOps has a target-only regression test' {
+        { Sync-EntraOpsClassificationExplorerSource -RepoRoot $script:SafetySource -EntraOpsRoot $script:SafetyTarget } | Should -Throw '*entraops-feature.spec.mjs*No files were synced*'
+        (Get-Content "$script:SafetyTarget/Reports/ClassificationExplorer/index.html" -Raw).Trim() | Should -Be 'target'
+        Test-Path "$script:SafetyTarget/Reports/ClassificationExplorer/entraops-feature.spec.mjs" | Should -BeTrue
+    }
+
+    It 'removes stale app files only when explicitly requested' {
+        Sync-EntraOpsClassificationExplorerSource -RepoRoot $script:SafetySource -EntraOpsRoot $script:SafetyTarget -RemoveStaleAppFiles
+        Test-Path "$script:SafetyTarget/Reports/ClassificationExplorer/entraops-feature.spec.mjs" | Should -BeFalse
+        (Get-Content "$script:SafetyTarget/Reports/ClassificationExplorer/index.html" -Raw).Trim() | Should -Be 'source'
+    }
+
+    It 'leaves all files untouched with WhatIf even when stale removal is requested' {
+        Sync-EntraOpsClassificationExplorerSource -RepoRoot $script:SafetySource -EntraOpsRoot $script:SafetyTarget -RemoveStaleAppFiles -WhatIf
+        (Get-Content "$script:SafetyTarget/Reports/ClassificationExplorer/index.html" -Raw).Trim() | Should -Be 'target'
+        Test-Path "$script:SafetyTarget/Reports/ClassificationExplorer/entraops-feature.spec.mjs" | Should -BeTrue
+        Test-Path "$script:SafetyTarget/EntraOps/Public/Reportings/Update-EntraOpsClassificationExplorerData.ps1" | Should -BeFalse
+    }
+
     It 'mirrors classification templates and preserves tenant-specific classification folders' {
         $tempRoot = Join-Path ([IO.Path]::GetTempPath()) "entraops-sync-$([guid]::NewGuid())"
         $sourceRoot = Join-Path $tempRoot 'AzurePrivilegedIAM'
