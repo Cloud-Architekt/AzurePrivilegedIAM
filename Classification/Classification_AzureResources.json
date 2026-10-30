@@ -16,11 +16,32 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.ApiManagement/aigateways/workspaces/toolServers/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.ApiManagement/service/workspaces/toolServers/write",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ApiManagement/aigateways/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ApiManagement/aigateways/workspaces/toolServers/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "Microsoft.ApiManagement/service/apis/read",
@@ -695,6 +716,99 @@
     "Classification": {
       "EAMTierLevelName": "ManagementPlane",
       "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "7c27cbcc-1723-4201-8fbc-50f2e2c24ee5",
+    "RoleName": "AI Gateway Contributor",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Manage gateway AI artifacts and assignments of AI Gateway Developer and the three runtime User roles at the assigned scope. Grants no runtime access.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.ApiManagement/aigateways/workspaces/aliases/*",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ApiManagement/aigateways/workspaces/modelProviders/*",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ApiManagement/aigateways/workspaces/toolServers/*",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Authorization/permissions/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Authorization/roleAssignments/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Authorization/roleDefinitions/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "e71899cc-9858-44a9-a0e3-7b95f671540f",
+    "RoleName": "AI Gateway Developer",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Read model alias and MCP server configuration and inspect own permissions at the assigned scope. Grants no runtime access.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.ApiManagement/aigateways/workspaces/aliases/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.ApiManagement/aigateways/workspaces/toolServers/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Authorization/permissions/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "UserAccess",
+      "EAMTierLevelTagValue": "2"
     }
   },
   {
@@ -17821,6 +17935,13 @@
     "RichDescription": "Grants access to Azure resources needed by Azure Kubernetes Fleet Manager hub agents.",
     "RolePermissions": [
       {
+        "AuthorizedResourceAction": "Microsoft.Network/publicIPAddresses/write",
+        "ActionType": "Action",
+        "Category": "Network",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.Network/trafficManagerProfiles/azureEndpoints/delete",
         "ActionType": "Action",
         "Category": "Network",
@@ -23529,7 +23650,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "RichDescription": "Lets you manage Azure Managed Redis resources, but not access the data stored in them.",
+    "RichDescription": "Permits management of Azure Managed Redis resources. Provides access to cache access keys and permits managing access policy assignments; these capabilities can grant read and write data access to cache. Also permits importing and exporting cache data.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.Cache/locations/checknameavailability/action",
@@ -45474,6 +45595,35 @@
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "dc12e0a0-00bc-4af0-adf0-b8c90236ba03",
+    "RoleName": "Container Apps Artifact App Operator",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Grants permissions for operators of Artifact Apps, including viewing application logs and running exec commands in a running Artifact App.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.App/artifactApps/exec/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.App/artifactApps/logstream/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
       }
     ],
     "Classification": {
@@ -79298,6 +79448,20 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.BillingBenefits/flexPlans/cancel/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.BillingBenefits/flexPlans/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.BillingBenefits/maccs/cancel/action",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
@@ -79697,6 +79861,20 @@
         "EAMTierLevelTagValue": "2"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.BillingBenefits/flexPlans/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.BillingBenefits/flexPlans/terms/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.BillingBenefits/maccs/contributors/read",
         "ActionType": "Action",
         "Category": "Reader",
@@ -79944,6 +80122,20 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.BillingBenefits/discounts/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.BillingBenefits/flexPlans/cancel/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.BillingBenefits/flexPlans/write",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
@@ -80385,6 +80577,20 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.BillingBenefits/discounts/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.BillingBenefits/flexPlans/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.BillingBenefits/flexPlans/terms/read",
         "ActionType": "Action",
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",
@@ -81458,7 +81664,7 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "RichDescription": "Create and manage Azure Cache for Redis resources. Cannot read or write data stored in the cache.",
+    "RichDescription": "Permits management of Azure Cache for Redis resources. Provides access to cache access keys and permits managing access policies and assignments; these capabilities can grant read and write data access to cache. Also permits importing and exporting cache data.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.Cache/register/action",
@@ -92097,12 +92303,19 @@
     "isPrivileged": false,
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
-    "RichDescription": "Provides access to create, read, and update service connectors and attach them to Windows 365 resources.",
+    "RichDescription": "Provides access to create, read, update, and delete service connectors and attach them to Windows 365 resources.",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "Microsoft.Windows365/serviceConnectors/attach/action",
         "ActionType": "DataAction",
         "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Windows365/serviceConnectors/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
       },
