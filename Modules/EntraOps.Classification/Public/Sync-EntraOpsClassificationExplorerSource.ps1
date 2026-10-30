@@ -25,6 +25,9 @@ function Sync-EntraOpsClassificationExplorerSource {
         <EntraOpsRoot>/Classification/Templates. Stale files in the target Templates folder are
         removed; tenant-specific classification folders alongside Templates are not touched.
 
+        Target-only app files stop the sync before any writes unless -RemoveStaleAppFiles is supplied.
+        Backport EntraOps app changes before syncing, including browser regression tests.
+
         Run this after making any change to the app source (HTML/CSS/JS/content) or to the generator
         function, then run Update-EntraOpsClassificationExplorerData in each repository to regenerate the
         embedded data bundle for that deployment.
@@ -36,6 +39,11 @@ function Sync-EntraOpsClassificationExplorerSource {
     .PARAMETER EntraOpsRoot
         Path to the EntraOps repository root (sync target). Auto-detected as a sibling folder of
         -RepoRoot named 'entraops*' (case-insensitive) when omitted.
+
+    .PARAMETER RemoveStaleAppFiles
+        Allow removal of target-only app files. By default the sync stops before copying when
+        these exist, so features and regression tests added in EntraOps must first be backported.
+        Template mirroring is unaffected.
 
     .EXAMPLE
         Import-Module ./Modules/EntraOps.Classification -Force
@@ -50,7 +58,8 @@ function Sync-EntraOpsClassificationExplorerSource {
     [CmdletBinding(SupportsShouldProcess = $true)]
     param(
         [string]$RepoRoot,
-        [string]$EntraOpsRoot
+        [string]$EntraOpsRoot,
+        [switch]$RemoveStaleAppFiles
     )
 
     Set-StrictMode -Version Latest
@@ -122,6 +131,17 @@ function Sync-EntraOpsClassificationExplorerSource {
             if ($norm -eq $ex -or $norm.StartsWith("$ex/")) { return $true }
         }
         return $false
+    }
+
+    # Check before any writes: a target-only file may be an EntraOps feature or regression test,
+    # rather than a file deliberately removed from the canonical source.
+    $TargetOnlyAppFiles = @(Get-ChildItem -LiteralPath $TargetAppRoot -Recurse -File | ForEach-Object {
+        $rel = $_.FullName.Substring($TargetAppRoot.Length + 1) -replace '\\', '/'
+        if ($rel -eq '.DS_Store' -or $rel.EndsWith('/.DS_Store') -or (Test-Excluded $rel)) { return }
+        if (-not (Test-Path -LiteralPath (Join-Path $SourceAppRoot $rel) -PathType Leaf)) { $rel }
+    })
+    if ($TargetOnlyAppFiles.Count -gt 0 -and -not $RemoveStaleAppFiles) {
+        throw ("Target-only Classification Explorer files found: {0}. Backport EntraOps changes to the source first, or pass -RemoveStaleAppFiles for intentional removals. No files were synced." -f ($TargetOnlyAppFiles -join ', '))
     }
 
     $copied = New-Object System.Collections.Generic.List[string]

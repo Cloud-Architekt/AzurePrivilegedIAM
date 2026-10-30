@@ -9,6 +9,8 @@ on:
       - 'Modules/EntraOps.Classification/**'
       - 'Tests/**'
       - '.github/workflows/classification-explorer.yml'
+      - 'package*.json'
+      - 'playwright.config.mjs'
   pull_request:
     paths:
       - 'Classification/**'
@@ -17,6 +19,8 @@ on:
       - 'Modules/EntraOps.Classification/**'
       - 'Tests/**'
       - '.github/workflows/classification-explorer.yml'
+      - 'package*.json'
+      - 'playwright.config.mjs'
 
 permissions:
   contents: read
@@ -64,6 +68,15 @@ jobs:
           ClassificationExplorer/data/history-data.js
           ClassificationExplorer/data/notification-data.js
           ClassificationExplorer/data/tier-map.js
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: 22
+          cache: npm
+      - name: Run overwrite editor regression tests
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+          npm run test:browser
       - name: Run browser Tests
         shell: pwsh
-        run: Invoke-Pester ./Tests/ClassificationExplorer.Tests.ps1 -CI -Output Detailed
+        run: Invoke-Pester ./Tests -CI -Output Detailed
