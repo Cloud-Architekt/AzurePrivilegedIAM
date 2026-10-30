@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-26T07:01:20.5794810Z",
+  "generatedUtc": "2026-10-30T06:21:26.3322250Z",
   "mode": "Standalone",
   "repoRoot": "AzurePrivilegedIAM",
   "fileCount": 19,
@@ -27,10 +27,10 @@
     },
     {
       "path": "Classification/Classification_AzureResources.json",
-      "bytes": 3426982,
-      "items": 970,
+      "bytes": 3435147,
+      "items": 973,
       "param": false,
-      "sha256": "64c30eeb4a77184ee46b8e5cccbf573bb8e1aa76b066869ea3cfdc390c0e31b2"
+      "sha256": "4fd52682f051b3abaaad3e84dd7c97d7de84dd4849b070bcc06334e19dc52d96"
     },
     {
       "path": "Classification/Classification_DeviceManagementRoles.json",
