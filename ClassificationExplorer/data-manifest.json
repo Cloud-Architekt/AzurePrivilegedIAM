@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-10-30T07:51:50.3915350Z",
+  "generatedUtc": "2026-11-06T15:53:35.6848230Z",
   "mode": "Standalone",
   "repoRoot": "AzurePrivilegedIAM",
   "fileCount": 19,
@@ -27,10 +27,10 @@
     },
     {
       "path": "Classification/Classification_AzureResources.json",
-      "bytes": 3435147,
-      "items": 973,
+      "bytes": 3523656,
+      "items": 988,
       "param": false,
-      "sha256": "4fd52682f051b3abaaad3e84dd7c97d7de84dd4849b070bcc06334e19dc52d96"
+      "sha256": "6f7c5938a0f1acf72900cb493d949ca0e1e4210d751acd376478e6403286e868"
     },
     {
       "path": "Classification/Classification_DeviceManagementRoles.json",
@@ -41,24 +41,24 @@
     },
     {
       "path": "Classification/Classification_ApiPermissions.json",
-      "bytes": 840711,
-      "items": 2221,
+      "bytes": 846997,
+      "items": 2237,
       "param": false,
-      "sha256": "f795cfb037727d4712434976110094c91a3109a149c3c54c09984ed3f5bf4e3f"
+      "sha256": "ea21d60ed364b7b4cf8f2bb60a640e7c0e7e4c5e88e6ef0d980487fd466eab3c"
     },
     {
       "path": "Classification/Classification_AppRoles.json",
-      "bytes": 268965,
-      "items": 922,
+      "bytes": 271399,
+      "items": 930,
       "param": false,
-      "sha256": "83251c499a035124be86cbd760607cb9cdc2cff2ba9cb8a64b7c46c03d75ae4e"
+      "sha256": "bc6a21fa893b5f36a560a81b62876e9c0d306d5cc1ac9f276fc2156189877ecf"
     },
     {
       "path": "Classification/Classification_Scopes.json",
-      "bytes": 367421,
-      "items": 1299,
+      "bytes": 369817,
+      "items": 1307,
       "param": false,
-      "sha256": "3b420a69a6c090b388705c2b180150e150f95eb36c8e9215abd05aa6b9672e80"
+      "sha256": "78a8d33101fce2903f9fa8183f799d273ad0490f3f440d0320d0e379bcc3b9e0"
     },
     {
       "path": "EntraOps_Classification/Classification_AadResources.json",

@@ -2369,6 +2369,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "87f25f46-ce1e-47ed-935c-9d70b296f060",
+    "AppRoleDisplayName": "HardDeletionSetting.ReadWrite.Enable",
+    "Category": "Backup and Restore",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "5183ed5d-b7f8-4e9a-915e-dafb46b9cb62",
     "AppRoleDisplayName": "HealthMonitoringAlert.Read.All",
     "Category": "Health Monitoring",
@@ -4087,6 +4095,62 @@
     "AppRoleId": "2a60023f-3219-47ad-baa4-40e17cd02a1d",
     "AppRoleDisplayName": "ReportSettings.ReadWrite.All",
     "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "6ea4f0cd-532a-415b-b82f-9b9d84ca5cfd",
+    "AppRoleDisplayName": "ResourcePolicyAssignment.Read.All",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "4ebf7277-a0b3-4fb6-866e-9ade27c776c7",
+    "AppRoleDisplayName": "ResourcePolicyAssignment.ReadWrite.All",
+    "Category": "Tenant Policy Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "f5d5d13d-82db-4ee7-b7c9-4b9bc48299dc",
+    "AppRoleDisplayName": "ResourcePolicyConfiguration.Read.All",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "f415468b-cf6a-4567-867d-a965e4d31e87",
+    "AppRoleDisplayName": "ResourcePolicyConfiguration.ReadWrite.All",
+    "Category": "Tenant Policy Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "1de97903-f478-4d01-9cc2-b70fb1236a80",
+    "AppRoleDisplayName": "ResourcePolicyDefinition.Read.All",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "365dc158-5200-4b0e-9c5d-be9a2068cb4c",
+    "AppRoleDisplayName": "ResourcePolicyDefinition.ReadWrite.All",
+    "Category": "Tenant Policy Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "6642843d-a7e1-4fb6-9d68-9f7e75455c2b",
+    "AppRoleDisplayName": "ResourcePolicyEvaluation.Read.All",
+    "Category": "Tenant Configuration (Reader)",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
