@@ -5,18 +5,6 @@
     "TierLevelDefinition": [
       {
         "Category": "Microsoft.Graph",
-        "Service": "Backup and Restore",
-        "ResourceAppId": "00000003-0000-0000-c000-000000000000",
-        "ResourceScope": "All",
-        "RoleAssignmentScopeName": [
-          "/"
-        ],
-        "RoleDefinitionActions": [
-          "HardDeletionSetting.ReadWrite.Enable"
-        ]
-      },
-      {
-        "Category": "Microsoft.Graph",
         "Service": "Agent Identity",
         "ResourceAppId": "00000003-0000-0000-c000-000000000000",
         "ResourceScope": "All",
@@ -1035,6 +1023,7 @@
           "BackupRestore-Restore.Read.All",
           "BackupRestore-Restore.ReadWrite.All",
           "BackupRestore-Search.Read.All",
+          "HardDeletionSetting.ReadWrite.Enable",
           "EntraBackup.Read.All"
         ]
       },
