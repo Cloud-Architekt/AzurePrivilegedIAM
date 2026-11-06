@@ -1,18 +1,21 @@
 import { execFileSync } from 'node:child_process';
 import { readFileSync } from 'node:fs';
 import { isDeepStrictEqual } from 'node:util';
-import { pathToFileURL } from 'node:url';
-import { runInNewContext } from 'node:vm';
 
-export function normalizeGeneratedData(content, filePath) {
+// Bundles are `window.NAME = <single-line JSON>;` assignments, parsed as data and never executed.
+function normalizeGeneratedData(content, filePath) {
     let data;
     if (filePath.endsWith('.json')) {
         data = JSON.parse(content);
         delete data.generatedUtc;
     } else {
-        const context = { window: {} };
-        runInNewContext(content, context, { timeout: 5000 });
-        data = JSON.parse(JSON.stringify(context.window));
+        data = {};
+        for (const [, name, json] of content.matchAll(/^window\.(\w+)\s*=\s*(.*);\s*$/gm)) {
+            data[name] = JSON.parse(json);
+        }
+        if (Object.keys(data).length === 0) {
+            throw new Error(`No window assignments found in ${filePath}`);
+        }
         for (const value of Object.values(data)) {
             if (value && typeof value === 'object' && !Array.isArray(value)) {
                 delete value.generatedUtc;
@@ -22,7 +25,7 @@ export function normalizeGeneratedData(content, filePath) {
     return data;
 }
 
-export function verifyGeneratedData() {
+function verifyGeneratedData() {
     const files = [
         'ClassificationExplorer/data-manifest.json',
         'ClassificationExplorer/data/classification-data.js',
@@ -52,6 +55,4 @@ export function verifyGeneratedData() {
     }
 }
 
-if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-    verifyGeneratedData();
-}
+verifyGeneratedData();
