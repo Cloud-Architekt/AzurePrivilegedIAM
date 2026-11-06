@@ -2186,16 +2186,16 @@
     "ScopeId": "cef123a8-c18c-4eba-852e-d90cfbf67c91",
     "ScopeDisplayName": "EntraBackup.ReadWrite.Preview",
     "Category": "Backup and Restore",
-    "EAMTierLevelName": "ManagementPlane",
-    "EAMTierLevelTagValue": "1"
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "8269c6ff-41d7-4172-a783-b2ce38322e42",
     "ScopeDisplayName": "EntraBackup.ReadWrite.Recovery",
     "Category": "Backup and Restore",
-    "EAMTierLevelName": "ManagementPlane",
-    "EAMTierLevelTagValue": "1"
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
