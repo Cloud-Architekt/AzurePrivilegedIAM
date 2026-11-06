@@ -5,6 +5,18 @@
     "TierLevelDefinition": [
       {
         "Category": "Microsoft.Graph",
+        "Service": "Backup and Restore",
+        "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+        "ResourceScope": "All",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "HardDeletionSetting.ReadWrite.Enable"
+        ]
+      },
+      {
+        "Category": "Microsoft.Graph",
         "Service": "Agent Identity",
         "ResourceAppId": "00000003-0000-0000-c000-000000000000",
         "ResourceScope": "All",
@@ -876,7 +888,10 @@
           "Policy.ReadWrite.FedTokenValidation",
           "Policy.ReadWrite.IdentityProtection",
           "Policy.ReadWrite.Recovery",
-          "Policy.ReadWrite.SecurityDefaults"
+          "Policy.ReadWrite.SecurityDefaults",
+          "ResourcePolicyAssignment.ReadWrite.All",
+          "ResourcePolicyConfiguration.ReadWrite.All",
+          "ResourcePolicyDefinition.ReadWrite.All"
         ]
       },
       {
@@ -2655,6 +2670,10 @@
           "PrivilegedEligibilitySchedule.Read.AzureADGroup",
           "PrivilegedEligibilitySchedule.Read.EntraAppRole",
           "RemoteTenantGroups.Read.All",
+          "ResourcePolicyAssignment.Read.All",
+          "ResourcePolicyConfiguration.Read.All",
+          "ResourcePolicyDefinition.Read.All",
+          "ResourcePolicyEvaluation.Read.All",
           "RoleAssignmentSchedule.Read.Directory",
           "RoleEligibilitySchedule.Read.Directory",
           "RoleManagement.Read.Defender",

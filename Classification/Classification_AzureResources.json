@@ -16248,6 +16248,13 @@
         "Category": "General Management Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.DeviceUpdate/updateInstances/*",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
       }
     ],
     "Classification": {
@@ -16272,6 +16279,27 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "microsoft.deviceregistry/assetendpointprofiles/*",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.deviceregistry/assets/*",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.deviceregistry/namespaces/assets/*",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.deviceregistry/namespaces/devices/*",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
@@ -16279,7 +16307,77 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "microsoft.deviceregistry/namespaces/discoveredAssets/*",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.deviceregistry/namespaces/discovereddevices/*",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.deviceregistry/namespaces/generateReport/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.deviceregistry/namespaces/getLatestReport/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.deviceregistry/namespaces/groups/*",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.deviceregistry/namespaces/jobRuns/*",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.deviceregistry/namespaces/jobs/*",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.deviceregistry/namespaces/migrate/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.deviceregistry/namespaces/registryDevices/*",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.deviceregistry/namespaces/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.deviceregistry/schemaRegistries/*",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
         "EAMTierLevelName": "ManagementPlane",
@@ -16298,6 +16396,20 @@
         "Category": "IoT Data Access",
         "EAMTierLevelName": "ManagementPlane",
         "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.deviceregistry/namespaces/certificateAuthorities/certificatePolicies/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.deviceregistry/namespaces/certificateAuthorities/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       },
       {
         "AuthorizedResourceAction": "microsoft.deviceregistry/namespaces/credentials/policies/read",
@@ -16322,6 +16434,13 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.devices/iothubs/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.deviceupdate/updateinstances/read",
         "ActionType": "Action",
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",
@@ -24482,6 +24601,13 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.Migrate/migrateProjects/runbooks/*",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.Migrate/migrateProjects/taskSummary/action",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
@@ -24854,6 +24980,20 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.HybridCompute/machines/extensions/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.HybridCompute/machines/extensions/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.HybridCompute/machines/write",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
@@ -25121,6 +25261,13 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.DataReplication/*/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.HybridCompute/machines/extensions/read",
         "ActionType": "Action",
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",
@@ -36900,6 +37047,13 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints/listInstantItemRecoveryOperationResult/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/recoveryPoints/provisionInstantItemRecovery/action",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
@@ -39230,6 +39384,13 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.Authorization/*/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.ContainerService/deploymentSafeguards/read",
         "ActionType": "Action",
         "Category": "Reader",
@@ -40495,6 +40656,1766 @@
     }
   },
   {
+    "RoleId": "ae722ee4-7a39-46d9-9a1c-b86ea7be8370",
+    "RoleName": "Cloud Device Platform Collection Administrator",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Read and manage Cloud Device Platform collections, including profiles, applications, assignments, device specifications, snapshots, and profile snapshot SAS export for a partner business.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/addDevices/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/addUserAssignments/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/appDiscovery/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/assignUsers/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/checkinCloudDevice/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/checkoutCloudDevice/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/create/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/delete",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/deleteApp/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/deleteDevices/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/device/signal/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/attach/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/bulkDelete/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/bulkUpdate/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/create/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/delete",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/delete/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/deleteSnapshot/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/detach/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/importFromSasUrl/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/notifyUsage/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/restoreSnapshot/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/takeSnapshot/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/update/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/putApp/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/removeUserAssignments/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/removeUsers/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/resumeProvisioning/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/updateCollectionMetadata/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/updateDeviceSpecification/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/validateApp/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/write",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/applications/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/devices/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/operations/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/policies/autoscale/status/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/operations/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/snapshots/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/snapshots/sas/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/publishableAppSetIndex/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/publishableAppSets/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/userAssignments/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/users/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "758445d3-c703-4baf-9829-c395279585e0",
+    "RoleName": "Cloud Device Platform Collection Reader",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Read Cloud Device Platform collection, application, user assignment, device, autoscale, profile, and snapshot metadata and status for a partner business. Excludes profile snapshot SAS export.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/applications/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/devices/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/operations/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/policies/autoscale/status/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/operations/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/snapshots/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/publishableAppSetIndex/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/publishableAppSets/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/userAssignments/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/users/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "UserAccess",
+      "EAMTierLevelTagValue": "2"
+    }
+  },
+  {
+    "RoleId": "bdbf2dae-53ba-4c03-8ce9-94534a11a9b3",
+    "RoleName": "Cloud Device Platform Data Owner",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Read and manage Cloud Device Platform data for partner businesses only. Does not grant sandbox access, ARM management, or role-assignment permissions.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/addDevices/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/addUserAssignments/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/appDiscovery/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/assignUsers/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/checkinCloudDevice/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/checkoutCloudDevice/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/create/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/delete",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/deleteApp/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/deleteDevices/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/device/signal/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/attach/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/bulkDelete/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/bulkUpdate/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/create/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/delete",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/delete/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/deleteSnapshot/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/detach/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/importFromSasUrl/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/notifyUsage/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/restoreSnapshot/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/takeSnapshot/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/update/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/putApp/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/removeUserAssignments/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/removeUsers/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/resumeProvisioning/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/updateCollectionMetadata/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/updateDeviceSpecification/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/validateApp/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/write",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/archive/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/block/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/collectDiagnostics/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/create/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/deallocate/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/delete/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/deleteSnapshot/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/diagnoseAndRepair/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/failback/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/failover/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/hibernate/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/metrics/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/operations/delete",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/reset/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/restart/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/start/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/startSession/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/takeSnapshot/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/unblock/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/update/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/userAssignment/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/encryptionSets/create/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/encryptionSets/delete/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/encryptionSets/update/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/images/delete",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/images/write",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/createNetwork/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/createNetworkSetting/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/delete",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/deleteNetwork/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/updateNetwork/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/updateNetworkSetting/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/write",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/resourceIsolationGroups/delete",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/resourceIsolationGroups/forecasts/write",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/resourceIsolationGroups/write",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/secrets/create/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/secrets/delete/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/secrets/update/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/write",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/applications/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/devices/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/operations/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/policies/autoscale/status/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/operations/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/snapshots/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/snapshots/sas/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/publishableAppSetIndex/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/publishableAppSets/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/userAssignments/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/users/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/operations/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/snapshots/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/snapshots/sasUri/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/encryptionSets/operations/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/encryptionSets/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/operations/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/resourceIsolationGroups/forecasts/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/resourceIsolationGroups/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/secrets/operations/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/secrets/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "2f626d6a-86af-49fb-9414-13a48f86f2d8",
+    "RoleName": "Cloud Device Platform Data Reader",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Read Cloud Device Platform data and query device metrics for partner businesses only, excluding snapshot SAS export. Does not grant sandbox access, ARM management, or role-assignment permissions.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/metrics/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/applications/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/devices/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/operations/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/policies/autoscale/status/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/operations/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/snapshots/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/publishableAppSetIndex/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/publishableAppSets/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/userAssignments/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/users/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/operations/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/snapshots/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/encryptionSets/operations/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/encryptionSets/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/operations/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/resourceIsolationGroups/forecasts/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/resourceIsolationGroups/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/secrets/operations/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/secrets/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "8588d517-7712-4254-9c6e-00ad445bcd9e",
+    "RoleName": "Cloud Device Platform Device Administrator",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Read and manage Cloud Device Platform devices, including lifecycle, user assignment, recovery, sessions, diagnostics, snapshots, and snapshot SAS export for a partner business.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/archive/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/block/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/collectDiagnostics/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/create/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/deallocate/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/delete/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/deleteSnapshot/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/diagnoseAndRepair/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/failback/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/failover/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/hibernate/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/metrics/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/operations/delete",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/reset/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/restart/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/start/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/startSession/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/takeSnapshot/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/unblock/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/update/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/userAssignment/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/operations/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/snapshots/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/snapshots/sasUri/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "78a66f20-a3c2-48fa-bf39-a4666b380a23",
+    "RoleName": "Cloud Device Platform Device Operator",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Read Cloud Device Platform devices and operation status, query metrics, and start, restart, deallocate, or hibernate devices for a partner business. Excludes snapshot SAS export and other device mutations.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/deallocate/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/hibernate/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/metrics/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/restart/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/start/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/operations/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "295b45b9-e45c-481c-a0a0-738dae8739ff",
+    "RoleName": "Cloud Device Platform Device Reader",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Read Cloud Device Platform device metadata, operation status, and snapshot metadata, and query device metrics for a partner business. Excludes snapshot SAS export.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/metrics/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/operations/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/snapshots/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "1913c0ee-e341-4626-b2ee-ad4101335253",
+    "RoleName": "Cloud Device Platform Device Start Operator",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Read Cloud Device Platform devices and operation status, and start devices for a partner business. Intended for Scalar wake-on-connect.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/start/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/operations/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "7c60305f-1499-4fb6-b422-29b183bf3276",
+    "RoleName": "Cloud Device Platform Network Administrator",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Read and manage Cloud Device Platform networks and network settings, including network operation status, for a partner business.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/createNetwork/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/createNetworkSetting/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/delete",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/deleteNetwork/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/updateNetwork/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/updateNetworkSetting/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/write",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/operations/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "1b117211-bc97-42f5-a429-ab44eb05af98",
+    "RoleName": "Cloud Device Platform Network Reader",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Read Cloud Device Platform network metadata and network operation status for a partner business.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/operations/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/networks/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "UserAccess",
+      "EAMTierLevelTagValue": "2"
+    }
+  },
+  {
     "RoleId": "1a22653f-3441-4c27-8f4a-ba9f93b30e5d",
     "RoleName": "Cloud Device Platform Sandbox Partner Data Contributor",
     "IsCustom": false,
@@ -40577,6 +42498,49 @@
     "Classification": {
       "EAMTierLevelName": "ManagementPlane",
       "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "ee7fb110-4b69-462a-8965-b4088372ebf1",
+    "RoleName": "Cloud Device Platform Snapshot Exporter",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Read device and collection profile snapshot metadata and request snapshot SAS export credentials for a Cloud Device Platform partner business. Does not grant snapshot creation, deletion, or restore.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/snapshots/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/collections/profiles/snapshots/sas/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/snapshots/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CloudDevicePlatform/partnerBusinesses/devices/snapshots/sasUri/read",
+        "ActionType": "DataAction",
+        "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "UserAccess",
+      "EAMTierLevelTagValue": "2"
     }
   },
   {
@@ -56619,6 +58583,78 @@
     }
   },
   {
+    "RoleId": "541b4c51-7349-4db1-b5af-298b9f20dd79",
+    "RoleName": "DiskSnapshotImmutabilityAdmin Service Role",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Can set a new locked immutability policy and modify (extend) it. Cannot change ImmutabilityPolicyType from locked to unlocked for an active immutable policy, and cannot reduce the ImmutabilityPolicyDurationDays for a locked immutability policy.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.Compute/snapshots/updateImmutabilityPolicyLock/action",
+        "ActionType": "Action",
+        "Category": "Compute",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Compute/snapshots/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "5cf89f2f-ccaa-445e-84aa-48d3e203ddf9",
+    "RoleName": "DiskSnapshotImmutabilityOperator Service Role",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Can set an ImmutabilityPolicyType: unlocked on a snapshot and can modify the unlocked immutability policy (extend, reduce or remove). Cannot set or modify a locked immutability policy.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.Compute/snapshots/updateImmutabilityPolicy/action",
+        "ActionType": "Action",
+        "Category": "Compute",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Compute/snapshots/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Resources/subscriptions/resourceGroups/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
     "RoleId": "0f2ebee7-ffd4-4fc0-b3b7-664099fdad5d",
     "RoleName": "DNS Resolver Contributor",
     "IsCustom": false,
@@ -61224,6 +63260,13 @@
         "EAMTierLevelTagValue": "2"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.PolicyInsights/*/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.ResourceHealth/availabilityStatuses/read",
         "ActionType": "Action",
         "Category": "Reader",
@@ -61408,6 +63451,13 @@
         "EAMTierLevelTagValue": "2"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.PolicyInsights/*/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.ResourceHealth/availabilityStatuses/read",
         "ActionType": "Action",
         "Category": "Reader",
@@ -61515,6 +63565,13 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.CognitiveServices/locations/*/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.PolicyInsights/*/read",
         "ActionType": "Action",
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",
@@ -61643,6 +63700,13 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Insights/logDefinitions/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.PolicyInsights/*/read",
         "ActionType": "Action",
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",
@@ -87482,6 +89546,13 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.App/agents/teams/grant/action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.App/agents/threads/approve/action",
         "ActionType": "DataAction",
         "Category": "General Data Plane Operations",
@@ -87697,6 +89768,71 @@
         "AuthorizedResourceAction": "Microsoft.App/agents/threads/read",
         "ActionType": "DataAction",
         "Category": "Reader Data Access",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "UserAccess",
+      "EAMTierLevelTagValue": "2"
+    }
+  },
+  {
+    "RoleId": "c2ad708c-75ea-4e88-b37d-a2b8729db02e",
+    "RoleName": "SRE Agent Session Contributor",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Manage Agent Session resources without granting access to unrelated Microsoft.App resources.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.App/agentSessions/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.App/agentSessions/provision/action",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.App/agentSessions/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.App/agentSessions/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "577a432e-a42b-4308-bc40-6ea45e32bdf4",
+    "RoleName": "SRE Agent Session Reader",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "View Agent Session resources without changing their configuration or lifecycle.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.App/agentSessions/read",
+        "ActionType": "Action",
+        "Category": "Reader",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
       }
