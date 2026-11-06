@@ -9,14 +9,14 @@ function normalizeGeneratedData(content, filePath) {
         data = JSON.parse(content);
         delete data.generatedUtc;
     } else {
-        data = {};
+        data = new Map();
         for (const [, name, json] of content.matchAll(/^window\.(\w+)\s*=\s*(.*);\s*$/gm)) {
-            data[name] = JSON.parse(json);
+            data.set(name, JSON.parse(json));
         }
-        if (Object.keys(data).length === 0) {
+        if (data.size === 0) {
             throw new Error(`No window assignments found in ${filePath}`);
         }
-        for (const value of Object.values(data)) {
+        for (const value of data.values()) {
             if (value && typeof value === 'object' && !Array.isArray(value)) {
                 delete value.generatedUtc;
             }
