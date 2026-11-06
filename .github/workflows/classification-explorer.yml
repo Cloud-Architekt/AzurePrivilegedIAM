@@ -3,24 +3,24 @@ name: Classification Explorer
 on:
   push:
     paths:
-      - 'Classification/**'
-      - 'ClassificationExplorer/**'
-      - 'EntraOps_Classification/**'
-      - 'Modules/EntraOps.Classification/**'
-      - 'Tests/**'
-      - '.github/workflows/classification-explorer.yml'
-      - 'package*.json'
-      - 'playwright.config.mjs'
+      - "Classification/**"
+      - "ClassificationExplorer/**"
+      - "EntraOps_Classification/**"
+      - "Modules/EntraOps.Classification/**"
+      - "Tests/**"
+      - ".github/workflows/classification-explorer.yml"
+      - "package*.json"
+      - "playwright.config.mjs"
   pull_request:
     paths:
-      - 'Classification/**'
-      - 'ClassificationExplorer/**'
-      - 'EntraOps_Classification/**'
-      - 'Modules/EntraOps.Classification/**'
-      - 'Tests/**'
-      - '.github/workflows/classification-explorer.yml'
-      - 'package*.json'
-      - 'playwright.config.mjs'
+      - "Classification/**"
+      - "ClassificationExplorer/**"
+      - "EntraOps_Classification/**"
+      - "Modules/EntraOps.Classification/**"
+      - "Tests/**"
+      - ".github/workflows/classification-explorer.yml"
+      - "package*.json"
+      - "playwright.config.mjs"
 
 permissions:
   contents: read
@@ -31,7 +31,7 @@ concurrency:
 
 jobs:
   validate:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v7
         with:
@@ -39,10 +39,10 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-python@v7
         with:
-          python-version: '3.12'
+          python-version: "3.12"
       - uses: actions/setup-dotnet@v5
         with:
-          dotnet-version: '8.0.x'
+          dotnet-version: "8.0.x"
       - name: Install browser-test dependencies
         shell: pwsh
         run: |
