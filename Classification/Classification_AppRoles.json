@@ -4996,6 +4996,22 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "edca3046-3375-4d07-81a2-18dffcff6bc7",
+    "AppRoleDisplayName": "RoleManagement-Authorization.Read.All",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "7c4d6288-8d2f-40e0-82ce-efa72265e9fb",
+    "AppRoleDisplayName": "RoleManagement-Authorization.ReadWrite.All",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "c7fbd983-d9aa-4fa7-84b8-17382c103bc4",
     "AppRoleDisplayName": "RoleManagement.Read.All",
     "Category": "Default Member",

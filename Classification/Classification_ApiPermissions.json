@@ -10975,6 +10975,26 @@
     "EAMTierLevelTagValue": "1"
   },
   {
+    "PermissionId": "71c43817-a289-4216-ad88-2455ed77701b",
+    "PermissionValue": "Perception.Manage.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "PermissionId": "51c03e79-bb86-4250-a33f-16ea4a002076",
+    "PermissionValue": "Perception.Read.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
     "PermissionId": "913b9306-0ce1-42b8-9137-6a7df690a760",
     "PermissionValue": "Place.Read.All",
     "PermissionType": "Application",
@@ -13153,6 +13173,46 @@
     "Category": "Privileged IAM",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
+  },
+  {
+    "PermissionId": "edca3046-3375-4d07-81a2-18dffcff6bc7",
+    "PermissionValue": "RoleManagement-Authorization.Read.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "PermissionId": "ffa1c477-c836-4612-a223-49d76538b939",
+    "PermissionValue": "RoleManagement-Authorization.Read.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "PermissionId": "7c4d6288-8d2f-40e0-82ce-efa72265e9fb",
+    "PermissionValue": "RoleManagement-Authorization.ReadWrite.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "PermissionId": "3bce3dea-b39c-4580-a038-6e1d30d042cb",
+    "PermissionValue": "RoleManagement-Authorization.ReadWrite.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
   },
   {
     "PermissionId": "c7fbd983-d9aa-4fa7-84b8-17382c103bc4",

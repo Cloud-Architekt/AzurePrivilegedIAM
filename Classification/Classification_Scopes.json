@@ -5660,6 +5660,22 @@
     "EAMTierLevelTagValue": "1"
   },
   {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "71c43817-a289-4216-ad88-2455ed77701b",
+    "ScopeDisplayName": "Perception.Manage.All",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "51c03e79-bb86-4250-a33f-16ea4a002076",
+    "ScopeDisplayName": "Perception.Read.All",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
     "AppId": "00000009-0000-0000-c000-000000000000",
     "ScopeId": "652d7d02-6ff0-4cf7-9516-cf77d33a3ae4",
     "ScopeDisplayName": "Pipeline.Deploy",
@@ -6818,6 +6834,22 @@
     "Category": "Privileged IAM",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "ffa1c477-c836-4612-a223-49d76538b939",
+    "ScopeDisplayName": "RoleManagement-Authorization.Read.All",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "3bce3dea-b39c-4580-a038-6e1d30d042cb",
+    "ScopeDisplayName": "RoleManagement-Authorization.ReadWrite.All",
+    "Category": "Unclassified",
+    "EAMTierLevelName": "Unclassified",
+    "EAMTierLevelTagValue": "Unclassified"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
