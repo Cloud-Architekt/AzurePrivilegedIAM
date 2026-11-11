@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-11T12:35:52.4863040Z",
+  "generatedUtc": "2026-11-11T12:44:10.4024030Z",
   "mode": "Standalone",
   "repoRoot": "AzurePrivilegedIAM",
   "fileCount": 19,
@@ -41,24 +41,24 @@
     },
     {
       "path": "Classification/Classification_ApiPermissions.json",
-      "bytes": 849311,
+      "bytes": 849251,
       "items": 2243,
       "param": false,
-      "sha256": "d27d2b5dfd1b494796f1d252ea35528c60d147a8ec0e2d7afde44b9cd32f5092"
+      "sha256": "20611c40dc2da23753c2a8197b021030a27e48971f4069186f3bfea21385f157"
     },
     {
       "path": "Classification/Classification_AppRoles.json",
-      "bytes": 272006,
+      "bytes": 271986,
       "items": 932,
       "param": false,
-      "sha256": "b179a2b5ec4d72148bad5e6eb04d866acc0dcc02ec3bf26b841c3c82be6b63d8"
+      "sha256": "7b7f297ea6a0d80702bfa974f4c70fb5bff92fa89cd14078b9ec88d161dc8035"
     },
     {
       "path": "Classification/Classification_Scopes.json",
-      "bytes": 370976,
+      "bytes": 370936,
       "items": 1311,
       "param": false,
-      "sha256": "5a25812c64835179560cbcd5a354355cec6e80a139eb02b081fc8430c5d100d3"
+      "sha256": "4e5540bddd3ea0ac6aec3e95df3b5a3da98b60e8307e51a7df83e2f9f0e689db"
     },
     {
       "path": "EntraOps_Classification/Classification_AadResources.json",
