@@ -758,6 +758,7 @@
           "RoleAssignmentSchedule.Remove.Directory",
           "RoleEligibilitySchedule.ReadWrite.Directory",
           "RoleEligibilitySchedule.Remove.Directory",
+          "RoleManagement-Authorization.ReadWrite.All",
           "RoleManagement.ReadWrite.CloudPC",
           "RoleManagement.ReadWrite.Defender",
           "RoleManagement.ReadWrite.Directory",
@@ -2219,6 +2220,19 @@
         ]
       },
       {
+        "Category": "Microsoft.Graph",
+        "Service": "Perception",
+        "ResourceAppId": "00000003-0000-0000-c000-000000000000",
+        "ResourceScope": "Delegation",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "Perception.Manage.All",
+          "Perception.Read.All"
+        ]
+      },
+      {
         "Category": "Microsoft.PowerBI",
         "Service": "Power BI Administration",
         "ResourceAppId": "00000009-0000-0000-c000-000000000000",
@@ -3101,6 +3115,7 @@
           "GroupSettings.Read.All",
           "LicenseAssignment.Read.All",
           "Organization.Read.All",
+          "RoleManagement-Authorization.Read.All",
           "RoleManagement.Read.All",
           "RoleManagement.Read.CloudPC",
           "RoleManagement.Read.Directory",

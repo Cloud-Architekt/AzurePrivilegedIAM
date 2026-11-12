@@ -1,5 +1,5 @@
 {
-  "generatedUtc": "2026-11-06T15:53:35.6848230Z",
+  "generatedUtc": "2026-11-11T12:45:36.2104440Z",
   "mode": "Standalone",
   "repoRoot": "AzurePrivilegedIAM",
   "fileCount": 19,
@@ -27,10 +27,10 @@
     },
     {
       "path": "Classification/Classification_AzureResources.json",
-      "bytes": 3523656,
+      "bytes": 3509401,
       "items": 988,
       "param": false,
-      "sha256": "6f7c5938a0f1acf72900cb493d949ca0e1e4210d751acd376478e6403286e868"
+      "sha256": "bfcef310c77f1f60ced6b89513ef8233351774d6e34e751291a01ba00a246f83"
     },
     {
       "path": "Classification/Classification_DeviceManagementRoles.json",
@@ -41,24 +41,24 @@
     },
     {
       "path": "Classification/Classification_ApiPermissions.json",
-      "bytes": 846997,
-      "items": 2237,
+      "bytes": 849251,
+      "items": 2243,
       "param": false,
-      "sha256": "ea21d60ed364b7b4cf8f2bb60a640e7c0e7e4c5e88e6ef0d980487fd466eab3c"
+      "sha256": "20611c40dc2da23753c2a8197b021030a27e48971f4069186f3bfea21385f157"
     },
     {
       "path": "Classification/Classification_AppRoles.json",
-      "bytes": 271399,
-      "items": 930,
+      "bytes": 271986,
+      "items": 932,
       "param": false,
-      "sha256": "bc6a21fa893b5f36a560a81b62876e9c0d306d5cc1ac9f276fc2156189877ecf"
+      "sha256": "7b7f297ea6a0d80702bfa974f4c70fb5bff92fa89cd14078b9ec88d161dc8035"
     },
     {
       "path": "Classification/Classification_Scopes.json",
-      "bytes": 369817,
-      "items": 1307,
+      "bytes": 370936,
+      "items": 1311,
       "param": false,
-      "sha256": "78a8d33101fce2903f9fa8183f799d273ad0490f3f440d0320d0e379bcc3b9e0"
+      "sha256": "4e5540bddd3ea0ac6aec3e95df3b5a3da98b60e8307e51a7df83e2f9f0e689db"
     },
     {
       "path": "EntraOps_Classification/Classification_AadResources.json",
@@ -90,17 +90,17 @@
     },
     {
       "path": "EntraOps_Classification/Classification_Azure.json",
-      "bytes": 37417,
+      "bytes": 38880,
       "items": 3,
       "param": false,
-      "sha256": "4422e2b1a66569a28256c2261f738f8b8660ce12b68bb4772d2a0beff33b119e"
+      "sha256": "58e5b1688c1c57f4c29ad360fafa196c4c21c50d52a0141824b328eecb9ca231"
     },
     {
       "path": "EntraOps_Classification/Classification_Azure.Param.json",
-      "bytes": 67290,
+      "bytes": 70816,
       "items": 3,
       "param": true,
-      "sha256": "333e5d14b78208ca8e822335e2b34f38768cf721bd043b312e5ae1c7e239ae89"
+      "sha256": "f5afb4179cef82b2957f34d4b5f8c5a87bb64f786ad18488cabca166e6837080"
     },
     {
       "path": "EntraOps_Classification/Classification_DeviceManagement.json",

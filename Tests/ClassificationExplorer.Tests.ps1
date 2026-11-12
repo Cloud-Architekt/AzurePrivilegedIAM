@@ -406,7 +406,7 @@ Describe 'Classification Explorer' {
         foreach ($sourceKey in $notification.notification.sourceKeys) {
             $commits = @($history.sources.$sourceKey.commits)
             ($commits[-1] | ConvertTo-Json -Depth 100 -Compress) |
-            Should -Be ($notification.sources.$sourceKey.commits[0] | ConvertTo-Json -Depth 100 -Compress)
+            Should -Be ($notification.sources.$sourceKey.commits[-1] | ConvertTo-Json -Depth 100 -Compress)
         }
     }
 }
