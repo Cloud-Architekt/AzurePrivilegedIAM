@@ -10428,6 +10428,159 @@
     }
   },
   {
+    "RoleId": "c0c46a03-c257-4f91-ab71-3c7e59c89d97",
+    "RoleName": "Resource Policy Administrator",
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "Categories": "Resource Policy,Tenant Configuration (Reader)",
+    "RichDescription": "Users with this role can create, read, update, and delete resource policy definitions and assignments in Microsoft Graph. They can also read and update tenant-wide resource policy configuration and evaluate policies.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/assignments/basic/update",
+        "Category": "Resource Policy",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/assignments/create",
+        "Category": "Resource Policy",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/assignments/delete",
+        "Category": "Resource Policy",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/configuration/basic/update",
+        "Category": "Resource Policy",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/definitions/basic/update",
+        "Category": "Resource Policy",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/definitions/create",
+        "Category": "Resource Policy",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/definitions/delete",
+        "Category": "Resource Policy",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/assignments/standard/read",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/configuration/standard/read",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/definitions/standard/read",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/evaluateAssignedPolicies",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/evaluatePolicy",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
+    }
+  },
+  {
+    "RoleId": "1dae4b79-8aea-40ab-9ad0-30d3ab1fa9c1",
+    "RoleName": "Resource Policy Evaluator",
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "Categories": "Tenant Configuration (Reader)",
+    "RichDescription": "Users with this role can evaluate a supplied resource policy in Microsoft Graph by using `evaluatePolicy`. This role doesn't grant read or write access to policy definitions or assignments.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/evaluatePolicy",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "311877b7-9a2e-4337-81c2-068a250eaa22",
+    "RoleName": "Resource Policy Reader",
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "Categories": "Tenant Configuration (Reader)",
+    "RichDescription": "Users with this role can read resource policy definitions, assignments, and tenant-wide configuration in Microsoft Graph. They can evaluate supplied policies and assigned policies, but can't change policy definitions, assignments, or configuration.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/assignments/standard/read",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/configuration/standard/read",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/definitions/standard/read",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/evaluateAssignedPolicies",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/evaluatePolicy",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
     "RoleId": "0964bb5e-9bdb-4d7b-ac29-58e794862a40",
     "RoleName": "Search Administrator",
     "isPrivileged": false,

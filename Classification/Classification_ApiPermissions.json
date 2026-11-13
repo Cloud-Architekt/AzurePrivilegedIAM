@@ -3543,6 +3543,46 @@
     "EAMTierLevelTagValue": "0"
   },
   {
+    "PermissionId": "d80433ba-c09b-4b88-a6bf-1082396453c1",
+    "PermissionValue": "AutomationRules.Read.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "bca94595-72ec-4c72-9d5b-dd0161da49bb",
+    "PermissionValue": "AutomationRules.Read.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "7204d4f0-1c22-42ce-adf2-a9f29db01c68",
+    "PermissionValue": "AutomationRules.ReadWrite.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Global Security and Compliance Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "PermissionId": "8319ce7f-47f7-4c79-b118-9690338f9356",
+    "PermissionValue": "AutomationRules.ReadWrite.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Global Security and Compliance Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
     "PermissionId": "5fbb5982-3230-4882-93c0-2167523ce0c2",
     "PermissionValue": "BackupRestore-Configuration.Read.All",
     "PermissionType": "Application",
@@ -4853,6 +4893,16 @@
     "EAMTierLevelTagValue": "1"
   },
   {
+    "PermissionId": "4c0843c0-d623-4e87-b4c1-93777f7be9e8",
+    "PermissionValue": "CloudLicensing.ClaimLicenses.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "License Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
     "PermissionId": "a9e09520-8ed4-4cde-838e-4fdea192c227",
     "PermissionValue": "CloudPC.Read.All",
     "PermissionType": "Application",
@@ -5296,9 +5346,29 @@
     "EAMTierLevelTagValue": "1"
   },
   {
+    "PermissionId": "8e41e0e4-d03a-475a-8ece-129d8cde33f2",
+    "PermissionValue": "CopilotCostManagement-Assignment.Read.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Copilot",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
     "PermissionId": "fa5c8c5b-5aef-4d37-a426-02fdbb9c4a74",
     "PermissionValue": "CopilotCostManagement-Assignment.Read.All",
     "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Copilot",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "e8d341e1-ddd7-422e-83ee-b3cd34f21d0a",
+    "PermissionValue": "CopilotCostManagement-Assignment.ReadWrite.All",
+    "PermissionType": "Application",
     "TargetAppDisplayName": "Microsoft Graph",
     "TargetAppId": "00000003-0000-0000-c000-000000000000",
     "Category": "Copilot",
@@ -5336,9 +5406,29 @@
     "EAMTierLevelTagValue": "1"
   },
   {
+    "PermissionId": "7f06c49d-bf28-43b5-bad0-0805f51d0bf7",
+    "PermissionValue": "CopilotCostManagement-Policy.Read.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Copilot",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
     "PermissionId": "7fe904eb-5276-4ddc-ab01-67e4d708b664",
     "PermissionValue": "CopilotCostManagement-Policy.Read.All",
     "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Copilot",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "14b35599-28a4-4a40-bc65-7cdca3d4e141",
+    "PermissionValue": "CopilotCostManagement-Policy.ReadWrite.All",
+    "PermissionType": "Application",
     "TargetAppDisplayName": "Microsoft Graph",
     "TargetAppId": "00000003-0000-0000-c000-000000000000",
     "Category": "Copilot",
@@ -5356,9 +5446,39 @@
     "EAMTierLevelTagValue": "1"
   },
   {
+    "PermissionId": "ec42fb68-397f-40ab-baa1-c8d0b745a680",
+    "PermissionValue": "CopilotCostManagement-Reports.Read.All",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Copilot",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "db3b53cd-01a9-45db-8f48-b97de4e9e8ff",
+    "PermissionValue": "CopilotCostManagement-Reports.Read.All",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Copilot",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
     "PermissionId": "d3f39420-6eec-4e63-98ba-b2866ef3ba99",
     "PermissionValue": "CopilotCostManagement-UserData.Read.All",
     "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Copilot",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "f033faa1-6d51-46ba-824a-ad86f514eed1",
+    "PermissionValue": "CopilotCostManagement.Read.All",
+    "PermissionType": "Application",
     "TargetAppDisplayName": "Microsoft Graph",
     "TargetAppId": "00000003-0000-0000-c000-000000000000",
     "Category": "Copilot",
@@ -8902,6 +9022,16 @@
     "EAMTierLevelTagValue": "1"
   },
   {
+    "PermissionId": "249ac77a-2c50-4a29-a441-5f5ea69e8dae",
+    "PermissionValue": "InfoProtectAttributeAssignment.Read",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Microsoft Purview",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
     "PermissionId": "64e5621c-1c93-43aa-ac76-c58f9fd136c7",
     "PermissionValue": "InfoProtectAttributeAssignment.Read.All",
     "PermissionType": "Application",
@@ -9943,6 +10073,16 @@
     "Category": "Tenant Management",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
+  },
+  {
+    "PermissionId": "e0cdafaf-ffab-413a-9fe4-c85afbe0fa56",
+    "PermissionValue": "MCP.Server.Access",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Default Member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
   },
   {
     "PermissionId": "658aa5d8-239f-45c4-aa12-864f4fc7e490",
