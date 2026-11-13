@@ -652,6 +652,22 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "bca94595-72ec-4c72-9d5b-dd0161da49bb",
+    "ScopeDisplayName": "AutomationRules.Read.All",
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "8319ce7f-47f7-4c79-b118-9690338f9356",
+    "ScopeDisplayName": "AutomationRules.ReadWrite.All",
+    "Category": "Global Security and Compliance Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "444ed4b6-0554-4dc6-8e9c-3f9a34ee3ff6",
     "ScopeDisplayName": "BackupRestore-Configuration.Read.All",
     "Category": "Backup and Restore",
@@ -1385,6 +1401,14 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "f6a3c1c2-c894-40f2-94e9-0eb3bca89847",
     "ScopeDisplayName": "CopilotCostManagement-Policy.ReadWrite.All",
+    "Category": "Copilot",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "db3b53cd-01a9-45db-8f48-b97de4e9e8ff",
+    "ScopeDisplayName": "CopilotCostManagement-Reports.Read.All",
     "Category": "Copilot",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
@@ -2890,6 +2914,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "249ac77a-2c50-4a29-a441-5f5ea69e8dae",
+    "ScopeDisplayName": "InfoProtectAttributeAssignment.Read",
+    "Category": "Microsoft Purview",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "53216fbf-d31e-415b-9c4c-486a30f2aa8f",
     "ScopeDisplayName": "InfoProtectAttributeAssignment.Read.All",
     "Category": "Microsoft Purview",
@@ -3346,6 +3378,14 @@
     "Category": "Tenant Management",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "ScopeId": "e0cdafaf-ffab-413a-9fe4-c85afbe0fa56",
+    "ScopeDisplayName": "MCP.Server.Access",
+    "Category": "Default Member",
+    "EAMTierLevelName": "UserAccess",
+    "EAMTierLevelTagValue": "2"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",

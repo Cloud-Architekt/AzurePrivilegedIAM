@@ -116,5 +116,25 @@
       "EAMTierLevelName": "ManagementPlane",
       "EAMTierLevelTagValue": "1"
     }
+  },
+  {
+    "RoleId": "e65cf63f-9cc2-4b48-8871-cb667e9d90fb",
+    "RoleName": "Connected organization administrator",
+    "isPrivileged": null,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": [],
+    "RichDescription": "Connected organization administrator",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.entitlementManagement/ConnectedOrganization/allTasks",
+        "Category": "Entitlement Management",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
   }
 ]

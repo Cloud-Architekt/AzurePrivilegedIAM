@@ -51,6 +51,22 @@
       },
       {
         "Category": "Microsoft.AzureAD",
+        "Service": "Resource Policy",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "microsoft.directory/resourcePolicy/assignments/basic/update",
+          "microsoft.directory/resourcePolicy/assignments/create",
+          "microsoft.directory/resourcePolicy/assignments/delete",
+          "microsoft.directory/resourcePolicy/configuration/basic/update",
+          "microsoft.directory/resourcePolicy/definitions/basic/update",
+          "microsoft.directory/resourcePolicy/definitions/create",
+          "microsoft.directory/resourcePolicy/definitions/delete"
+        ]
+      },
+      {
+        "Category": "Microsoft.AzureAD",
         "Service": "Tenant Governance",
         "RoleAssignmentScopeName": [
           "/"
@@ -1070,6 +1086,11 @@
           "microsoft.directory/permissionGrantPolicies/standard/read",
           "microsoft.directory/policies/allProperties/read",
           "microsoft.directory/privilegedIdentityManagement/allProperties/read",
+          "microsoft.directory/resourcePolicy/assignments/standard/read",
+          "microsoft.directory/resourcePolicy/configuration/standard/read",
+          "microsoft.directory/resourcePolicy/definitions/standard/read",
+          "microsoft.directory/resourcePolicy/evaluateAssignedPolicies",
+          "microsoft.directory/resourcePolicy/evaluatePolicy",
           "microsoft.directory/roleAssignments/allProperties/read",
           "microsoft.directory/roleDefinitions/allProperties/read",
           "microsoft.directory/scopedRoleMemberships/allProperties/read",

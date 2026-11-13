@@ -529,6 +529,7 @@
         "RoleDefinitionActions": [
           "AttackSimulation.ReadWrite.All",
           "AuditActivity.Write",
+          "AutomationRules.ReadWrite.All",
           "CaseManagement.ConfigManage.All",
           "CaseManagement.ReadWrite.All",
           "ContentActivity.Write",
@@ -679,6 +680,7 @@
           "/"
         ],
         "RoleDefinitionActions": [
+          "CloudLicensing.ClaimLicenses.All",
           "LicenseAssignment.ReadWrite.All"
         ]
       },
@@ -1126,6 +1128,12 @@
           "/"
         ],
         "RoleDefinitionActions": [
+          "CopilotCostManagement-Assignment.Read.All",
+          "CopilotCostManagement-Assignment.ReadWrite.All",
+          "CopilotCostManagement-Policy.Read.All",
+          "CopilotCostManagement-Policy.ReadWrite.All",
+          "CopilotCostManagement-Reports.Read.All",
+          "CopilotCostManagement.Read.All",
           "CopilotPackages.Read.All",
           "CopilotPackages.ReadWrite.All",
           "CopilotPolicySettings.Read",
@@ -1142,14 +1150,9 @@
         ],
         "RoleDefinitionActions": [
           "CopilotConversation.Delete",
-          "CopilotCostManagement-Assignment.Read.All",
-          "CopilotCostManagement-Assignment.ReadWrite.All",
           "CopilotCostManagement-CreditReq.Read.All",
           "CopilotCostManagement-CreditReq.ReadWrite.All",
-          "CopilotCostManagement-Policy.Read.All",
-          "CopilotCostManagement-Policy.ReadWrite.All",
           "CopilotCostManagement-UserData.Read.All",
-          "CopilotCostManagement.Read.All",
           "CopilotSettings-LimitedMode.Read",
           "CopilotSettings-LimitedMode.ReadWrite"
         ]
@@ -1800,6 +1803,7 @@
           "Group.ManageProtection.All",
           "InfoProtectABACPolicy.Read.All",
           "InfoProtectABACPolicy.ReadWrite.All",
+          "InfoProtectAttributeAssignment.Read",
           "InfoProtectAttributeAssignment.Read.All",
           "InfoProtectAttributeAssignment.ReadWrite.All",
           "InfoProtectAttributeDefinition.Read.All",
@@ -2344,6 +2348,7 @@
           "AuditLogsQuery-OneDrive.Read.All",
           "AuditLogsQuery-SharePoint.Read.All",
           "AuditLogsQuery.Read.All",
+          "AutomationRules.Read.All",
           "CaseManagement.Read.All",
           "ChangeManagement.Read.All",
           "CloudApp-Discovery.Read.All",
@@ -3159,6 +3164,7 @@
           "email",
           "Family.Read",
           "Files.ReadWrite",
+          "MCP.Server.Access",
           "Notifications.ReadWrite.CreatedByApp",
           "offline_access",
           "openid",

@@ -633,6 +633,22 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "d80433ba-c09b-4b88-a6bf-1082396453c1",
+    "AppRoleDisplayName": "AutomationRules.Read.All",
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "7204d4f0-1c22-42ce-adf2-a9f29db01c68",
+    "AppRoleDisplayName": "AutomationRules.ReadWrite.All",
+    "Category": "Global Security and Compliance Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "5fbb5982-3230-4882-93c0-2167523ce0c2",
     "AppRoleDisplayName": "BackupRestore-Configuration.Read.All",
     "Category": "Backup and Restore",
@@ -1193,6 +1209,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "4c0843c0-d623-4e87-b4c1-93777f7be9e8",
+    "AppRoleDisplayName": "CloudLicensing.ClaimLicenses.All",
+    "Category": "License Management",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "a9e09520-8ed4-4cde-838e-4fdea192c227",
     "AppRoleDisplayName": "CloudPC.Read.All",
     "Category": "Microsoft 365 Platform Management",
@@ -1340,6 +1364,54 @@
     "AppRoleId": "f9af4646-98b0-4e9d-a53e-40d4f6452fc4",
     "AppRoleDisplayName": "Contracts.Read.All",
     "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "8e41e0e4-d03a-475a-8ece-129d8cde33f2",
+    "AppRoleDisplayName": "CopilotCostManagement-Assignment.Read.All",
+    "Category": "Copilot",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "e8d341e1-ddd7-422e-83ee-b3cd34f21d0a",
+    "AppRoleDisplayName": "CopilotCostManagement-Assignment.ReadWrite.All",
+    "Category": "Copilot",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "7f06c49d-bf28-43b5-bad0-0805f51d0bf7",
+    "AppRoleDisplayName": "CopilotCostManagement-Policy.Read.All",
+    "Category": "Copilot",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "14b35599-28a4-4a40-bc65-7cdca3d4e141",
+    "AppRoleDisplayName": "CopilotCostManagement-Policy.ReadWrite.All",
+    "Category": "Copilot",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "ec42fb68-397f-40ab-baa1-c8d0b745a680",
+    "AppRoleDisplayName": "CopilotCostManagement-Reports.Read.All",
+    "Category": "Copilot",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "f033faa1-6d51-46ba-824a-ad86f514eed1",
+    "AppRoleDisplayName": "CopilotCostManagement.Read.All",
+    "Category": "Copilot",
     "EAMTierLevelName": "ManagementPlane",
     "EAMTierLevelTagValue": "1"
   },
