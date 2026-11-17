@@ -140,6 +140,136 @@ test.describe("Classification Explorer: Customize Overwrites with tagged files",
         expect(pageErrors).toEqual([]);
     });
 
+    test("picks Azure role definitions and reuses starred roles without changing their system", async ({ page }) => {
+        const role = {
+            RoleId: "b24988ac-6180-42a0-ab88-20f7382dd24c",
+            RoleName: "Contributor",
+            Classification: { EAMTierLevelName: "ManagementPlane" },
+            RolePermissions: []
+        };
+        await setClassificationFixture(page, {
+            tenants: [],
+            data: { "Classification/Classification_AzureResources.json": [role] }
+        });
+        const pageErrors = await openCustomize(page);
+        await page.locator("#custAdd").click();
+        await expect(page.locator("#cfSys option[value=Azure]")).toHaveCount(1);
+        await page.locator("#cfSys").selectOption("Azure");
+        await page.locator("#cfRoleResults [data-pick]", { hasText: role.RoleName }).click();
+        await expect(page.locator("#cfRoleId")).toHaveValue(role.RoleId);
+        await expect(page.locator("#cfRoleName")).toHaveValue(role.RoleName);
+        await expect(page.locator("#cfCurrentTier")).toContainText("Management");
+        await page.locator("#cfCancel").click();
+
+        await page.evaluate((role) => window.EOReview.toggle({
+            id: `role|Azure|${role.RoleId}`, kind: "Role", system: "Azure",
+            name: role.RoleName, hash: `#roles/Azure/${role.RoleId}`
+        }), role);
+        await page.reload();
+        await page.locator("#custAdd").click();
+        await page.locator("#cfReview").getByRole("button", { name: "Use role" }).click();
+        await expect(page.locator("#cfSys")).toHaveValue("Azure");
+        await expect(page.locator("#cfRoleId")).toHaveValue(role.RoleId);
+        await page.locator("#cfTier").selectOption("ControlPlane");
+        await page.locator("#cfJust").fill("Pin Azure role classification");
+        await page.locator("#cfApply").click();
+
+        const files = await exportFiles(page);
+        expect(files[`${base}.json`]).toEqual([{
+            RbacSystem: "Azure", RoleDefinitionId: role.RoleId, RoleDefinitionName: role.RoleName,
+            EAMTierLevelName: "ControlPlane", EAMTierLevelTagValue: "0", Justification: "Pin Azure role classification"
+        }]);
+        await row(page, role.RoleName).getByRole("button", { name: "Edit" }).click();
+        await expect(page.locator("#cfSys")).toHaveValue("Azure");
+        expect(pageErrors).toEqual([]);
+    });
+
+    for (const tenantSource of [false, true]) {
+        test(`picks Azure actions from the ${tenantSource ? "tenant" : "built-in"} classification and exports scopes`, async ({ page }) => {
+            const action = "Microsoft.Authorization/roleAssignments/write";
+            const templateAction = "Microsoft.Resources/subscriptions/read";
+            const tenant = "contoso.onmicrosoft.com";
+            const tenantPath = `Classification/${tenant}/Classification_Azure.json`;
+            const definition = (action) => [{
+                EAMTierLevelName: "ControlPlane",
+                TierLevelDefinition: [{ Service: "Authorization", RoleDefinitionActions: [action] }]
+            }];
+            await setClassificationFixture(page, {
+                tenants: tenantSource ? [{ name: tenant, files: [tenantPath] }] : [],
+                data: {
+                    "Classification/Templates/Classification_Azure.json": definition(tenantSource ? templateAction : action),
+                    ...(tenantSource ? { [tenantPath]: definition(action) } : {})
+                }
+            });
+            const pageErrors = await openCustomize(page);
+            await page.locator("#custTypeSeg [data-type=roleaction]").click();
+            await page.locator("#custAdd").click();
+            await expect(page.locator("#cfSys option[value=Azure]")).toHaveCount(1);
+            await page.locator("#cfSys").selectOption("Azure");
+            await expect(page.locator("#cfActionSourceNote")).toContainText(tenantSource ? tenant : "built-in template");
+            await page.locator("#cfActionResults [data-pick]", { hasText: action }).click();
+            await expect(page.locator("#cfActionResults")).not.toContainText(templateAction);
+            await page.locator("#cfScopes").fill("<Tier0IncludedResourceScope>, /subscriptions/test/*");
+            await page.locator("#cfTier").selectOption("ControlPlane");
+            await page.locator("#cfJust").fill("Keep Azure authorization privileged");
+            await page.locator("#cfApply").click();
+
+            const files = await exportFiles(page);
+            expect(files["Classification_RoleActionOverwrites.json"]).toEqual([{
+                RbacSystem: "Azure", RoleDefinitionActions: [action],
+                RoleAssignmentScopeName: ["<Tier0IncludedResourceScope>", "/subscriptions/test/*"],
+                EAMTierLevelName: "ControlPlane", EAMTierLevelTagValue: "0",
+                Justification: "Keep Azure authorization privileged"
+            }]);
+            expect(pageErrors).toEqual([]);
+        });
+    }
+
+    test("adds starred Azure actions and all actions of a starred Azure role", async ({ page }) => {
+        const actions = ["Microsoft.Storage/storageAccounts/write", "Microsoft.Storage/storageAccounts/listKeys/action"];
+        const roleId = "17d1049b-9a84-46fb-8f53-869881c3d3ab";
+        await setClassificationFixture(page, {
+            tenants: [],
+            data: {
+                "Classification/Classification_AzureResources.json": [{
+                    RoleId: roleId, RoleName: "Storage Account Contributor",
+                    RolePermissions: actions.map((action) => ({ AuthorizedResourceAction: action }))
+                }]
+            }
+        });
+        const pageErrors = await openCustomize(page);
+        await page.evaluate(({ actions, roleId }) => {
+            window.EOReview.toggle({
+                id: `action|Azure|${actions[0]}`, kind: "Role action", system: "Azure",
+                name: actions[0], hash: `#actions/Azure/${encodeURIComponent(actions[0])}`
+            });
+            window.EOReview.toggle({
+                id: `role|Azure|${roleId}`, kind: "Role", system: "Azure",
+                name: "Storage Account Contributor", hash: `#roles/Azure/${roleId}`
+            });
+        }, { actions, roleId });
+        await page.locator("#custTypeSeg [data-type=roleaction]").click();
+        await page.locator("#custAdd").click();
+        // An empty entry takes the system of the starred role; the starred action of the same
+        // system then joins it without a duplicate.
+        await expect(page.locator("#cfSys")).toHaveValue("EntraID");
+        await page.locator("#cfReview").getByRole("button", { name: "Add all role actions" }).click();
+        await expect(page.locator("#cfSys")).toHaveValue("Azure");
+        await expect(page.locator("#cfActionChips .cust-chip")).toHaveCount(2);
+        await page.locator("#cfReview").getByRole("button", { name: "Add action", exact: true }).click();
+        await expect(page.locator("#cfActionChips .cust-chip")).toHaveCount(2);
+        await expect(page.locator("#cfError")).toBeEmpty();
+        await page.locator("#cfTier").selectOption("ManagementPlane");
+        await page.locator("#cfJust").fill("Azure workload operations");
+        await page.locator("#cfApply").click();
+        const files = await exportFiles(page);
+        expect(files["Classification_RoleActionOverwrites.json"]).toEqual([{
+            RbacSystem: "Azure", RoleDefinitionActions: actions, RoleAssignmentScopeName: ["/*"],
+            EAMTierLevelName: "ManagementPlane", EAMTierLevelTagValue: "1", Justification: "Azure workload operations"
+        }]);
+        expect(pageErrors).toEqual([]);
+    });
+
     test("keeps files that share a tag apart and exports them under their own names", async ({ page }) => {
         const pageErrors = await openCustomize(page);
 
@@ -156,6 +286,147 @@ test.describe("Classification Explorer: Customize Overwrites with tagged files",
         expect(Object.keys(files).sort()).toEqual([`${base}_Tier0_PAW.json`, `${base}_Tier1_PAW.json`]);
         expect(files[`${base}_Tier0_PAW.json`].map((e) => e.RoleDefinitionName)).toEqual(["Tier0 Role"]);
         expect(files[`${base}_Tier1_PAW.json`].map((e) => e.RoleDefinitionName)).toEqual(["Tier1 Role"]);
+        expect(pageErrors).toEqual([]);
+    });
+
+    test("rejects unsupported and mixed-system action bookmarks without changing the draft", async ({ page }) => {
+        const pageErrors = await openCustomize(page);
+        const scope = '<img src=x onerror="window.__scopeXss = true">';
+        await page.evaluate((scope) => {
+            localStorage.setItem("entraops.reviewList.v1", JSON.stringify([
+                { id: "unknown", kind: "Role action", system: "Unknown", name: "unknown/action", scope, app: "EamDashboard" },
+                { id: "azure", kind: "Role action", system: "Azure", name: "Microsoft.Authorization/roleAssignments/write", scope, app: "EamDashboard" },
+                { id: "entra", kind: "Role action", system: "EntraID", name: "microsoft.directory/users/delete", scope, app: "EamDashboard" }
+            ]));
+        }, scope);
+        await page.locator("#custTypeSeg [data-type=roleaction]").click();
+        await page.locator("#custAdd").click();
+        const add = (name) => page.locator("#cfReview .action-row", { hasText: name }).getByRole("button", { name: "Add action" });
+        await expect(page.locator("#cfReview")).toContainText(scope);
+        await expect(page.locator("#cfReview [onerror]")).toHaveCount(0);
+        await add("unknown/action").click();
+        await expect(page.locator("#cfError")).toContainText("no supported RBAC system");
+        await expect(page.locator("#cfActionChips .cust-chip")).toHaveCount(0);
+        await add("Microsoft.Authorization/roleAssignments/write").click();
+        await expect(page.locator("#cfSys")).toHaveValue("Azure");
+        await page.locator("#cfScopes").fill("/subscriptions/reviewed");
+        await add("Microsoft.Authorization/roleAssignments/write").click();
+        await expect(page.locator("#cfScopes")).toHaveValue("/subscriptions/reviewed");
+        await add("microsoft.directory/users/delete").click();
+        await expect(page.locator("#cfError")).toContainText("separate overwrite entry");
+        await expect(page.locator("#cfSys")).toHaveValue("Azure");
+        await expect(page.locator("#cfActionChips .cust-chip")).toHaveCount(1);
+        expect(await page.evaluate(() => window.__scopeXss)).toBeUndefined();
+        expect(pageErrors).toEqual([]);
+    });
+
+    test("applies the system and scope checks to all actions of a starred role", async ({ page }) => {
+        const actions = ["Microsoft.Storage/storageAccounts/write", "Microsoft.Storage/storageAccounts/listKeys/action"];
+        const entraAction = "microsoft.directory/users/delete";
+        await setClassificationFixture(page, {
+            tenants: [],
+            data: {
+                "Classification/Classification_AzureResources.json": [{
+                    RoleId: "17d1049b-9a84-46fb-8f53-869881c3d3ab", RoleName: "Storage Account Contributor",
+                    RolePermissions: actions.map((action) => ({ AuthorizedResourceAction: action }))
+                }]
+            }
+        });
+        const pageErrors = await openCustomize(page);
+        await page.evaluate((entraAction) => {
+            localStorage.setItem("entraops.reviewList.v1", JSON.stringify([
+                {
+                    id: `action|EntraID|${entraAction}`, kind: "Role action", system: "EntraID",
+                    name: entraAction, hash: `#actions/EntraID/${encodeURIComponent(entraAction)}`
+                },
+                {
+                    id: "role|Azure|assignment-1", kind: "Role", system: "Azure", name: "Storage Account Contributor",
+                    scope: "/subscriptions/s1", tier: "ManagementPlane", hash: "#assignment=assignment-1", app: "EamDashboard"
+                }
+            ]));
+        }, entraAction);
+        await page.locator("#custTypeSeg [data-type=roleaction]").click();
+        await page.locator("#custAdd").click();
+        await page.locator("#cfReview").getByRole("button", { name: "Add action", exact: true }).click();
+        await expect(page.locator("#cfSys")).toHaveValue("EntraID");
+        await expect(page.locator("#cfScopes")).toHaveValue("/*");
+
+        // The role's actions belong to another system: the entry stays unchanged.
+        const addRole = page.locator("#cfReview").getByRole("button", { name: "Add all role actions" });
+        await addRole.click();
+        await expect(page.locator("#cfError")).toContainText("separate overwrite entry");
+        await expect(page.locator("#cfSys")).toHaveValue("EntraID");
+        await expect(page.locator("#cfActionChips .cust-chip")).toHaveCount(1);
+
+        // On an empty entry, the role of the EAM Dashboard sets the system and clears the default scope.
+        await page.locator("#cfActionChips .cust-chip", { hasText: entraAction }).locator(".cust-chip-x").click();
+        await addRole.click();
+        await expect(page.locator("#cfError")).toBeEmpty();
+        await expect(page.locator("#cfSys")).toHaveValue("Azure");
+        await expect(page.locator("#cfActionChips .cust-chip")).toHaveCount(2);
+        await expect(page.locator("#cfScopes")).toHaveValue("");
+        await page.locator("#cfTier").selectOption("ManagementPlane");
+        await page.locator("#cfJust").fill("Storage operators");
+        await page.locator("#cfApply").click();
+        await expect(page.locator("#cfError")).toContainText("Enter the overwrite scope explicitly");
+
+        await page.locator("#cfScopes").fill("/subscriptions/s1/*");
+        await page.locator("#cfApply").click();
+        const files = await exportFiles(page);
+        expect(files["Classification_RoleActionOverwrites.json"]).toEqual([{
+            RbacSystem: "Azure", RoleDefinitionActions: actions, RoleAssignmentScopeName: ["/subscriptions/s1/*"],
+            EAMTierLevelName: "ManagementPlane", EAMTierLevelTagValue: "1", Justification: "Storage operators"
+        }]);
+        expect(pageErrors).toEqual([]);
+    });
+
+    test("requires an explicit scope only while a bookmarked action remains in the entry", async ({ page }) => {
+        const bookmarked = "microsoft.directory/users/delete";
+        const picked = "microsoft.directory/users/password/update";
+        const pageErrors = await openCustomize(page);
+        await page.evaluate(({ bookmarked, picked }) => {
+            localStorage.setItem("entraops.reviewList.v1", JSON.stringify([
+                {
+                    id: `action|EntraID|${bookmarked}|/administrativeUnits/au1`, kind: "Role action", system: "EntraID",
+                    name: bookmarked, scope: "/administrativeUnits/au1", tier: "ControlPlane",
+                    hash: `#assignment=assignment-1&action=${encodeURIComponent(bookmarked)}`, app: "EamDashboard"
+                },
+                {
+                    id: `action|EntraID|${picked}`, kind: "Role action", system: "EntraID",
+                    name: picked, hash: `#actions/EntraID/${encodeURIComponent(picked)}`
+                }
+            ]));
+        }, { bookmarked, picked });
+        await page.locator("#custTypeSeg [data-type=roleaction]").click();
+        await page.locator("#custAdd").click();
+        const add = (name) => page.locator("#cfReview .action-row", { hasText: name }).getByRole("button", { name: "Add action" });
+        const remove = (name) => page.locator("#cfActionChips .cust-chip", { hasText: name }).locator(".cust-chip-x");
+        await add(bookmarked).click();
+        await add(picked).click();
+        await expect(page.locator("#cfScopes")).toHaveValue("");
+        await page.locator("#cfTier").selectOption("ManagementPlane");
+        await page.locator("#cfJust").fill("Helpdesk password resets");
+
+        // Removing the other action keeps the requirement of the bookmarked one.
+        await remove(picked).click();
+        await page.locator("#cfApply").click();
+        await expect(page.locator("#cfError")).toContainText("Enter the overwrite scope explicitly");
+
+        // The RBAC system can't change while the entry has actions.
+        await page.locator("#cfSys").selectOption("Azure");
+        await expect(page.locator("#cfSys")).toHaveValue("EntraID");
+        await expect(page.locator("#cfError")).toContainText("Remove them to change the RBAC system");
+
+        // Without a bookmarked action, the empty scope falls back to all scopes.
+        await add(picked).click();
+        await remove(bookmarked).click();
+        await expect(page.locator("#cfActionChips .cust-chip")).toHaveCount(1);
+        await page.locator("#cfApply").click();
+        const files = await exportFiles(page);
+        expect(files["Classification_RoleActionOverwrites.json"]).toEqual([{
+            RbacSystem: "EntraID", RoleDefinitionActions: [picked], RoleAssignmentScopeName: ["/*"],
+            EAMTierLevelName: "ManagementPlane", EAMTierLevelTagValue: "1", Justification: "Helpdesk password resets"
+        }]);
         expect(pageErrors).toEqual([]);
     });
 

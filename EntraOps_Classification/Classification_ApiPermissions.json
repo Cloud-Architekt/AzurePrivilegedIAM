@@ -923,6 +923,18 @@
           "VerifiedId.PerformCallback.Presentation",
           "VerifiedId.Sign.VerifiablePresentationRequest"
         ]
+      },
+      {
+        "Category": "Microsoft.PartnerCenter",
+        "Service": "Partner Delegated Administration",
+        "ResourceAppId": "2832473f-ec63-45fb-976f-5d45a7d4bb91",
+        "ResourceScope": "Application",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "PartnerCustomerDelegatedAdministration.ReadWrite.All"
+        ]
       }
     ]
   },
@@ -1940,7 +1952,8 @@
           "AllSites.FullControl",
           "ProjectWebApp.FullControl",
           "SharePointTenantSettings.Read.All",
-          "SharePointTenantSettings.ReadWrite.All"
+          "SharePointTenantSettings.ReadWrite.All",
+          "Sites.FullControl.All"
         ]
       },
       {
@@ -2507,6 +2520,57 @@
           "Project.Write",
           "ProjectWebAppReporting.Read",
           "Sites.Search.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.SharePointOnline",
+        "Service": "SharePoint Operations",
+        "ResourceAppId": "00000003-0000-0ff1-ce00-000000000000",
+        "ResourceScope": "Delegation",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "Files.ReadWrite.All",
+          "Sites.ReadWrite.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.GraphConnectorService",
+        "Service": "Graph Connectors",
+        "ResourceAppId": "56c1da01-2129-48f7-9355-af6d59d42766",
+        "ResourceScope": "Delegation",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "ExternalConnection.ReadWrite.All",
+          "Sites.FullControl.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.ThreatProtection",
+        "Service": "Security and Compliance",
+        "ResourceAppId": "8ee8fdad-f234-4243-8f3b-15c294843740",
+        "ResourceScope": "Application",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "AdvancedHunting.Read.All",
+          "Incident.Read.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.PowerPlatform",
+        "Service": "Power Platform Administration",
+        "ResourceAppId": "475226c6-020e-4fb2-8a90-7a972cbfc1d4",
+        "ResourceScope": "Delegation",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "user_impersonation"
         ]
       },
       {
@@ -3184,7 +3248,8 @@
           "UserActivity.ReadWrite.CreatedByApp",
           "UserCloudClipboard.Read",
           "UserTeamwork.Read",
-          "UserTimelineActivity.Write.CreatedByApp"
+          "UserTimelineActivity.Write.CreatedByApp",
+          "Zone.Read.All"
         ]
       },
       {
@@ -3390,6 +3455,18 @@
         ],
         "RoleDefinitionActions": [
           "User"
+        ]
+      },
+      {
+        "Category": "Microsoft.Forms",
+        "Service": "Default Member",
+        "ResourceAppId": "c9a559d2-7aab-4f13-a6ed-e7e9c52aec87",
+        "ResourceScope": "Delegation",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "Forms.ReadWrite"
         ]
       },
       {

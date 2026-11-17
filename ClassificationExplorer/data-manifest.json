@@ -1,15 +1,15 @@
 {
-  "generatedUtc": "2026-11-13T06:02:40.6410870Z",
+  "generatedUtc": "2026-11-17T07:08:51.8526450Z",
   "mode": "Standalone",
   "repoRoot": "AzurePrivilegedIAM",
   "fileCount": 19,
   "files": [
     {
       "path": "Classification/Classification_EntraIdDirectoryRoles.json",
-      "bytes": 615618,
-      "items": 145,
+      "bytes": 624092,
+      "items": 148,
       "param": false,
-      "sha256": "cf91862ce84c424bc24dd88143ecad09bd884d70f662882e1b99cb2f0a3d9ca2"
+      "sha256": "4c0d301e57890ff7a5dcc4b885e0cf591c789531f15c64e82e954a2a0a855875"
     },
     {
       "path": "Classification/Classification_EntraIdDirectoryRolesFromMsftDocs.json",
@@ -27,10 +27,10 @@
     },
     {
       "path": "Classification/Classification_AzureResources.json",
-      "bytes": 3522408,
+      "bytes": 3522684,
       "items": 993,
       "param": false,
-      "sha256": "b124f8cc264486177b3117756a41f26986506f982f4a8f908dcc72a3e04cc7eb"
+      "sha256": "70a06d43324b045f625ebee317d26fcdad4a9b584ba3edd63fadf07db052fac5"
     },
     {
       "path": "Classification/Classification_DeviceManagementRoles.json",
@@ -62,17 +62,17 @@
     },
     {
       "path": "EntraOps_Classification/Classification_AadResources.json",
-      "bytes": 64089,
+      "bytes": 64256,
       "items": 3,
       "param": false,
-      "sha256": "c362c92ebbb9e58a399fe3c9d9d4a5ea0fe63ad4a88326b79b47b6e622d2313f"
+      "sha256": "df3d3f2ffe377ebf3978a019f862b7c6545b9730901bc2dcbf7675964160e185"
     },
     {
       "path": "EntraOps_Classification/Classification_AadResources.Param.json",
-      "bytes": 82032,
+      "bytes": 82201,
       "items": 3,
       "param": true,
-      "sha256": "7cad2c9eaab85aad92c9982135ffe6514fc971b009935155c6d551cb9684c873"
+      "sha256": "ab828c8153263ddfc0bf03e814b6ea1e337d3d35e30c95a9112046127e1af8d5"
     },
     {
       "path": "EntraOps_Classification/Classification_IdentityGovernance.json",
@@ -132,10 +132,10 @@
     },
     {
       "path": "EntraOps_Classification/Classification_RoleDefinitionOverwrites.json",
-      "bytes": 4477,
-      "items": 11,
+      "bytes": 4910,
+      "items": 12,
       "param": false,
-      "sha256": "f143d562925944c6d17ceab7f34e8e24b033b1a53edee7425f5d881044892935"
+      "sha256": "d12ed651e67f08938e42312fe2dbe04696dfb342c8d5306b3e66941383311280"
     }
   ]
 }

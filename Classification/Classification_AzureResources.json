@@ -85990,6 +85990,13 @@
     "RichDescription": "Allows users to read and create or update Microsoft.Security service entitlement resources for Defender product onboarding.",
     "RolePermissions": [
       {
+        "AuthorizedResourceAction": "Microsoft.Security/serviceEntitlements/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.Security/serviceEntitlements/write",
         "ActionType": "Action",
         "Category": "General Management Plane Operations",
