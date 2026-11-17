@@ -8,7 +8,7 @@
       "88d8e3e3-8f55-4a1e-953a-9b9898b8876b"
     ],
     "Categories": "identity",
-    "RichDescription": "Assign the Agent ID Administrator role to users who need to do the following tasks:\n- Manage the full lifecycle of agent identities, agent identity blueprint principals, agent identity blueprints, and agent users in a tenant\n- Permanently delete and restore deleted agent identities, agent identity blueprint principals, agent identity blueprints, and agent users\n- Manage licenses, invalidate refresh tokens, and revoke sign-in sessions for agent users\n- Read all properties of audit logs and sign-in reports\n- Read standard properties of organization, policies, external user profiles, hidden group members, and bulk jobs for users\n- Create Microsoft 365 groups as owner\n- Read and configure Azure and Microsoft 365 service health and support tickets\n- Create and manage Azure and Microsoft 365 service health and support tickets",
+    "RichDescription": "Assign the Agent ID Administrator role to users who need to do the following tasks:\n- Manage the full lifecycle of agent identities, agent identity blueprint principals, agent identity blueprints, and agent users in a tenant\n- Convert eligible applications to agent identity blueprints\n- Roll back eligible, previously converted agent identity blueprints to applications\n- Permanently delete and restore deleted agent identities, agent identity blueprint principals, agent identity blueprints, and agent users\n- Manage licenses, invalidate refresh tokens, and revoke sign-in sessions for agent users\n- Read all properties of audit logs and sign-in reports\n- Read standard properties of organization, policies, external user profiles, hidden group members, and bulk jobs for users\n- Create Microsoft 365 groups as owner\n- Read and configure Azure and Microsoft 365 service health and support tickets\n- Create and manage Azure and Microsoft 365 service health and support tickets",
     "RolePermissions": [
       {
         "AuthorizedResourceAction": "microsoft.directory/agentIdentities/appRoleAssignedTo/update",
@@ -48,6 +48,12 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/agentIdentities/enable",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentities/idJagConfiguration/update",
         "Category": "Agent Identity",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
@@ -102,6 +108,12 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprintPrincipals/enable",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprintPrincipals/idJagConfiguration/update",
         "Category": "Agent Identity",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
@@ -516,6 +528,12 @@
         "EAMTierLevelTagValue": "0"
       },
       {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentities/idJagConfiguration/update",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/agentIdentities/owners/update",
         "Category": "Agent Identity",
         "EAMTierLevelName": "ControlPlane",
@@ -565,6 +583,12 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprintPrincipals/enable",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprintPrincipals/idJagConfiguration/update",
         "Category": "Agent Identity",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
@@ -5188,6 +5212,12 @@
       },
       {
         "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprintPrincipals/enable",
+        "Category": "Agent Identity",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprintPrincipals/idJagConfiguration/update",
         "Category": "Agent Identity",
         "EAMTierLevelName": "ControlPlane",
         "EAMTierLevelTagValue": "0"
@@ -11084,6 +11114,165 @@
     }
   },
   {
+    "RoleId": "c0c46a03-c257-4f91-ab71-3c7e59c89d97",
+    "RoleName": "Resource Policy Administrator",
+    "isPrivileged": false,
+    "AssignmentMode": "allowed",
+    "InheritsPermissionsFrom": [
+      "88d8e3e3-8f55-4a1e-953a-9b9898b8876b"
+    ],
+    "Categories": "securityAndCompliance",
+    "RichDescription": "Users in this role have full permissions to create, read, update, delete, and evaluate resource policies and their assignments in Microsoft Graph. This role is intended for senior and compliance administrators who are responsible for the entire lifecycle of resource policies. Assigning this role grants comprehensive control over how resource policies are defined and enforced across the organization.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/assignments/basic/update",
+        "Category": "Resource Policy",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/assignments/create",
+        "Category": "Resource Policy",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/assignments/delete",
+        "Category": "Resource Policy",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/configuration/basic/update",
+        "Category": "Resource Policy",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/definitions/basic/update",
+        "Category": "Resource Policy",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/definitions/create",
+        "Category": "Resource Policy",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/definitions/delete",
+        "Category": "Resource Policy",
+        "EAMTierLevelName": "ControlPlane",
+        "EAMTierLevelTagValue": "0"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/assignments/standard/read",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/configuration/standard/read",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/definitions/standard/read",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/evaluateAssignedPolicies",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/evaluatePolicy",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ControlPlane",
+      "EAMTierLevelTagValue": "0"
+    }
+  },
+  {
+    "RoleId": "1dae4b79-8aea-40ab-9ad0-30d3ab1fa9c1",
+    "RoleName": "Resource Policy Evaluator",
+    "isPrivileged": false,
+    "AssignmentMode": "allowed",
+    "InheritsPermissionsFrom": [
+      "88d8e3e3-8f55-4a1e-953a-9b9898b8876b"
+    ],
+    "Categories": "readOnly,securityAndCompliance",
+    "RichDescription": "Users in this role can evaluate resource policies to understand their impact and outcome. This role does not grant any read or write access to the policy definitions or assignments themselves, making it ideal for developers, testers, and automated tools that need to perform policy validation as part of a development or CI/CD pipeline.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/evaluatePolicy",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
+    "RoleId": "311877b7-9a2e-4337-81c2-068a250eaa22",
+    "RoleName": "Resource Policy Reader",
+    "isPrivileged": false,
+    "AssignmentMode": "allowed",
+    "InheritsPermissionsFrom": [
+      "88d8e3e3-8f55-4a1e-953a-9b9898b8876b"
+    ],
+    "Categories": "readOnly,securityAndCompliance",
+    "RichDescription": "Users in this role have read-only access to resource policy definitions and assignments in Microsoft Graph. They can also evaluate policies to understand their impact, making this role ideal for audit, compliance, and support personnel who need to validate and troubleshoot policies without the ability to modify them.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/assignments/standard/read",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/configuration/standard/read",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/definitions/standard/read",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/evaluateAssignedPolicies",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "microsoft.directory/resourcePolicy/evaluatePolicy",
+        "Category": "Tenant Configuration (Reader)",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
     "RoleId": "2af84b1e-32c8-42b7-82bc-daa82404023b",
     "RoleName": "Restricted Guest User",
     "isPrivileged": false,
@@ -13682,6 +13871,12 @@
     "RichDescription": "Default role for member users. Can read all and write a limited set of directory information.",
     "RolePermissions": [
       {
+        "AuthorizedResourceAction": "microsoft.directory/agentIdentityBlueprints/createAsOwner",
+        "Category": "Application and Workload Identity",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "microsoft.directory/administrativeUnits/members/read",
         "Category": "Default member",
         "EAMTierLevelName": "UserAccess",
@@ -14112,8 +14307,8 @@
       }
     ],
     "Classification": {
-      "EAMTierLevelName": "UserAccess",
-      "EAMTierLevelTagValue": "2"
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
     }
   },
   {
