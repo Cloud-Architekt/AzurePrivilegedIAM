@@ -468,6 +468,7 @@
           "DeviceManagementApps.ReadWrite.All",
           "DeviceManagementConfiguration.ReadWrite.All",
           "DeviceManagementDeploymentPlans.ReadWrite.All",
+          "DeviceManagementEndpointSecurity.ReadWrite.All",
           "DeviceManagementManagedDevices.PrivilegedOperations.All",
           "DeviceManagementManagedDevices.ReadWrite.All",
           "DeviceManagementScripts.ReadWrite.All",
@@ -844,6 +845,7 @@
           "CustomObjectDefinition.ReadWrite.All",
           "DelegatedAdminRelationship.ReadWrite.All",
           "Directory.ReadWrite.All",
+          "Directory.Write.Restricted",
           "DirectoryRecommendations.ReadWrite.All",
           "Domain-InternalFederation.ReadWrite.All",
           "Domain.ReadWrite.All",
@@ -934,6 +936,18 @@
         ],
         "RoleDefinitionActions": [
           "PartnerCustomerDelegatedAdministration.ReadWrite.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.MCPServerForEnterprise",
+        "Service": "Global Secure Access Management",
+        "ResourceAppId": "e8c77dc2-69b3-43f4-bc51-3213c9d915b4",
+        "ResourceScope": "Delegation",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "MCP.NetworkAccess-Reports.Read.All"
         ]
       }
     ]
@@ -2882,6 +2896,83 @@
           "VerifiableCredential.Create.IssueRequest.User",
           "VerifiedId.MyAccountEligibility.Read"
         ]
+      },
+      {
+        "Category": "Microsoft.MCPServerForEnterprise",
+        "Service": "Entitlement Management",
+        "ResourceAppId": "e8c77dc2-69b3-43f4-bc51-3213c9d915b4",
+        "ResourceScope": "Delegation",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "MCP.AccessReview.Read.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.MCPServerForEnterprise",
+        "Service": "Security and Compliance",
+        "ResourceAppId": "e8c77dc2-69b3-43f4-bc51-3213c9d915b4",
+        "ResourceScope": "Delegation",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "MCP.AuditLog.Read.All",
+          "MCP.IdentityRiskEvent.Read.All",
+          "MCP.IdentityRiskyServicePrincipal.Read.All",
+          "MCP.IdentityRiskyUser.Read.All",
+          "MCP.ProvisioningLog.Read.All",
+          "MCP.Reports.Read.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.MCPServerForEnterprise",
+        "Service": "Conditional Access",
+        "ResourceAppId": "e8c77dc2-69b3-43f4-bc51-3213c9d915b4",
+        "ResourceScope": "Delegation",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "MCP.AuthenticationContext.Read.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.MCPServerForEnterprise",
+        "Service": "Tenant Configuration (Reader)",
+        "ResourceAppId": "e8c77dc2-69b3-43f4-bc51-3213c9d915b4",
+        "ResourceScope": "Delegation",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "MCP.DirectoryRecommendations.Read.All",
+          "MCP.EntitlementManagement.Read.All",
+          "MCP.LifecycleWorkflows-CustomExt.Read.All",
+          "MCP.LifecycleWorkflows-Reports.Read.All",
+          "MCP.LifecycleWorkflows-Workflow.Read.All",
+          "MCP.LifecycleWorkflows-Workflow.ReadBasic.All",
+          "MCP.LifecycleWorkflows.Read.All",
+          "MCP.NetworkAccess.Read.All",
+          "MCP.Policy.Read.All",
+          "MCP.Policy.Read.ConditionalAccess",
+          "MCP.RoleAssignmentSchedule.Read.Directory",
+          "MCP.RoleEligibilitySchedule.Read.Directory",
+          "MCP.Synchronization.Read.All"
+        ]
+      },
+      {
+        "Category": "Microsoft.MCPServerForEnterprise",
+        "Service": "Health Monitoring",
+        "ResourceAppId": "e8c77dc2-69b3-43f4-bc51-3213c9d915b4",
+        "ResourceScope": "Delegation",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "MCP.HealthMonitoringAlert.Read.All"
+        ]
       }
     ]
   },
@@ -3611,6 +3702,28 @@
           "Tasks.Read.Shared",
           "Tasks.ReadWrite",
           "Tasks.ReadWrite.Shared"
+        ]
+      },
+      {
+        "Category": "Microsoft.MCPServerForEnterprise",
+        "Service": "Default Member",
+        "ResourceAppId": "e8c77dc2-69b3-43f4-bc51-3213c9d915b4",
+        "ResourceScope": "Delegation",
+        "RoleAssignmentScopeName": [
+          "/"
+        ],
+        "RoleDefinitionActions": [
+          "MCP.AdministrativeUnit.Read.All",
+          "MCP.Application.Read.All",
+          "MCP.Device.Read.All",
+          "MCP.Domain.Read.All",
+          "MCP.GroupMember.Read.All",
+          "MCP.LicenseAssignment.Read.All",
+          "MCP.Organization.Read.All",
+          "MCP.RoleManagement.Read.Directory",
+          "MCP.Server.Access",
+          "MCP.User.Read.All",
+          "MCP.UserAuthenticationMethod.Read.All"
         ]
       }
     ]
