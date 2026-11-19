@@ -1,5 +1,76 @@
 [
   {
+    "RoleId": "76c40f53-2c1e-4841-aeb5-e870be0528ba",
+    "RoleName": "A365 Content Safety Policy Operator",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Manage Responsible AI policies and reusable Rego resources, and evaluate content through Azure AI Content Safety. Does not grant account key access or account management.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.CognitiveServices/accounts/ContentSafety/unifiedModerate/action",
+        "ActionType": "DataAction",
+        "Category": "Cognitive Services Data Access",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CognitiveServices/accounts/raiPolicies/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CognitiveServices/accounts/raiPolicies/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CognitiveServices/accounts/raiRegos/delete",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CognitiveServices/accounts/raiRegos/write",
+        "ActionType": "Action",
+        "Category": "General Management Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CognitiveServices/accounts/raiPolicies/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CognitiveServices/accounts/raiRegos/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.CognitiveServices/accounts/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
     "RoleId": "849de3f8-3686-489c-bd02-732984d0c145",
     "RoleName": "A365 Gateway Policy Operator",
     "IsCustom": false,
