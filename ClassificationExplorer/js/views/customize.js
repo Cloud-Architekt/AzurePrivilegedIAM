@@ -447,6 +447,20 @@ EOCE.views.customize = (function () {
         return rolesIndexPromise;
     }
 
+    // The role definition of a review item: by its ID, else by its name within the RBAC system of the item.
+    // The name alone is ambiguous across systems (for example "Reader" in Azure and in Intune); without a known
+    // system, only a name that exists in exactly one system is used. Returns { role, ambiguous }.
+    function findReviewRole(idx, res, name) {
+        if (res.sysKey && res.roleId && idx.byId[res.sysKey + '|' + res.roleId]) {
+            return { role: idx.byId[res.sysKey + '|' + res.roleId], ambiguous: false };
+        }
+        var lowerName = String(name).toLowerCase();
+        var matches = idx.list.filter(function (r) {
+            return r.name.toLowerCase() === lowerName && (!res.sysKey || r.sysKey === res.sysKey);
+        });
+        return { role: matches.length === 1 ? matches[0] : null, ambiguous: matches.length > 1 };
+    }
+
     // ---- Review list helpers ---------------------------------------------------
     function reviewItems() {
         return window.EOReview ? EOReview.all() : [];
@@ -1527,23 +1541,32 @@ EOCE.views.customize = (function () {
             var e = this.form.entry;
 
             if (type === 'roledef') {
+                if (res.sysKey && TYPES.roledef.systems.indexOf(res.sysKey) === -1) {
+                    showError('cfError', 'The RBAC system of "' + item.name + '" (' + res.sysKey + ') has no role definition overwrites.');
+                    return;
+                }
                 loadRolesIndex().then(function (idx) {
-                    var role = (res.sysKey && res.roleId) ? idx.byId[res.sysKey + '|' + res.roleId] : null;
-                    if (!role) {
-                        // Fallback: match by role name across supported systems.
-                        role = idx.list.filter(function (r) { return r.name.toLowerCase() === String(item.name).toLowerCase(); })[0];
+                    var found = findReviewRole(idx, res, item.name);
+                    var role = found.role;
+                    // The entry belongs to the RBAC system of the review item, also when its role isn't in the classified exports.
+                    var sysKey = role ? role.sysKey : res.sysKey;
+                    if (sysKey && TYPES.roledef.systems.indexOf(sysKey) !== -1 && e.RbacSystem !== sysKey) {
+                        e.RbacSystem = sysKey;
+                        var sysEl = document.getElementById('cfSys');
+                        if (sysEl) sysEl.value = sysKey;
                     }
                     if (role) {
-                        if (TYPES.roledef.systems.indexOf(role.sysKey) !== -1 && e.RbacSystem !== role.sysKey) {
-                            e.RbacSystem = role.sysKey;
-                            var sysEl = document.getElementById('cfSys');
-                            if (sysEl) sysEl.value = role.sysKey;
-                        }
+                        clearError('cfError');
                         self.selectRole(role);
                     } else {
                         e.RoleDefinitionName = item.name;
                         var nameEl = document.getElementById('cfRoleName');
                         if (nameEl) nameEl.value = item.name;
+                        if (!sysKey) {
+                            showError('cfError', found.ambiguous
+                                ? 'Several RBAC systems have a role named "' + item.name + '". Select its RBAC system and role.'
+                                : 'The RBAC system of "' + item.name + '" is unknown. Select it before you add the entry.');
+                        }
                     }
                 });
                 return;
@@ -1557,9 +1580,14 @@ EOCE.views.customize = (function () {
 
             // Role on the review list: add ALL role actions of its role definition.
             loadRolesIndex().then(function (idx) {
-                var role = (res.sysKey && res.roleId) ? idx.byId[res.sysKey + '|' + res.roleId] : null;
-                if (!role) role = idx.list.filter(function (r) { return r.name.toLowerCase() === String(item.name).toLowerCase(); })[0];
-                if (!role) { showError('cfError', 'Could not resolve the role definition for "' + item.name + '" in the classified role exports.'); return; }
+                var found = findReviewRole(idx, res, item.name);
+                var role = found.role;
+                if (!role) {
+                    showError('cfError', found.ambiguous
+                        ? 'Several RBAC systems have a role named "' + item.name + '". Add its actions from the role in its RBAC system.'
+                        : 'Could not resolve the role definition for "' + item.name + '"' + (res.sysKey ? ' in ' + res.sysKey : '') + ' in the classified role exports.');
+                    return;
+                }
                 if (!role.actions.length) { showError('cfError', 'The role "' + role.name + '" has no role actions in its definition.'); return; }
                 self.addReviewActions(role.sysKey, role.actions, item);
             });
