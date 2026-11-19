@@ -63,6 +63,13 @@
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",
         "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Authorization/roleAssignments/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
       }
     ],
     "Classification": {
@@ -93347,82 +93354,8 @@
     "AssignmentMode": null,
     "InheritsPermissionsFrom": null,
     "RichDescription": "Virtual Enclave Owner Role to access the resources of Microsoft.Mission stored with RPSAAS.",
-    "RolePermissions": [
-      {
-        "AuthorizedResourceAction": "Microsoft.Mission/Locations/OperationStatuses/write",
-        "ActionType": "Action",
-        "Category": "General Management Plane Operations",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Mission/virtualEnclaves/delete",
-        "ActionType": "Action",
-        "Category": "General Management Plane Operations",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Mission/virtualEnclaves/workloads/delete",
-        "ActionType": "Action",
-        "Category": "General Management Plane Operations",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Mission/virtualEnclaves/workloads/write",
-        "ActionType": "Action",
-        "Category": "General Management Plane Operations",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Mission/virtualEnclaves/write",
-        "ActionType": "Action",
-        "Category": "General Management Plane Operations",
-        "EAMTierLevelName": "ManagementPlane",
-        "EAMTierLevelTagValue": "1"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Mission/communities/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Mission/Locations/OperationStatuses/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Mission/Operations/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Mission/virtualEnclaves/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      },
-      {
-        "AuthorizedResourceAction": "Microsoft.Mission/virtualEnclaves/workloads/read",
-        "ActionType": "Action",
-        "Category": "Reader",
-        "EAMTierLevelName": "UserAccess",
-        "EAMTierLevelTagValue": "2"
-      }
-    ],
-    "Classification": {
-      "EAMTierLevelName": "ManagementPlane",
-      "EAMTierLevelTagValue": "1"
-    }
+    "RolePermissions": [],
+    "Classification": null
   },
   {
     "RoleId": "1c0163c0-47e6-4577-8991-ea5c82e286e4",

@@ -5087,9 +5087,9 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "8ff90903-1ecb-4f3a-b8b2-42120374ecd6",
     "ScopeDisplayName": "SecurityIdentitiesAutoConfig.Read.All",
-    "Category": "Global Security and Compliance Management",
-    "EAMTierLevelName": "ControlPlane",
-    "EAMTierLevelTagValue": "0"
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -5103,9 +5103,9 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "a0d0da43-a6df-4416-b63d-99c79991aae8",
     "ScopeDisplayName": "SecurityIdentitiesHealth.Read.All",
-    "Category": "Global Security and Compliance Management",
-    "EAMTierLevelName": "ControlPlane",
-    "EAMTierLevelTagValue": "0"
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
@@ -5135,9 +5135,9 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "ScopeId": "2c221239-7c5c-4b30-9355-d84663bfcd96",
     "ScopeDisplayName": "SecurityIdentitiesSensors.Read.All",
-    "Category": "Global Security and Compliance Management",
-    "EAMTierLevelName": "ControlPlane",
-    "EAMTierLevelTagValue": "0"
+    "Category": "Security and Compliance",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
