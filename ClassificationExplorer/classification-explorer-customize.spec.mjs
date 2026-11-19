@@ -670,4 +670,85 @@ test.describe("Classification Explorer: Customize Overwrites with tagged files",
         await expect(page.locator("#custError")).toContainText(`my_Tier0.json → ${base}_Tier0.json`);
         expect(pageErrors).toEqual([]);
     });
+
+    // Roles of the same name in two RBAC systems: a bookmark without role ID (for example from the EAM Dashboard)
+    // must resolve within its own system, not to the first role of that name.
+    const sameNameRoles = {
+        tenants: [],
+        data: {
+            "Classification/Classification_AzureResources.json": [{
+                RoleId: "acdd72a7-3385-48ef-bd42-f606fba81ae7", RoleName: "Reader",
+                RolePermissions: [{ AuthorizedResourceAction: "*/read" }]
+            }],
+            "Classification/Classification_DeviceManagementRoles.json": [{
+                RoleId: "a9f2c3c1-0000-4000-8000-000000000001", RoleName: "Reader",
+                RolePermissions: [{ AuthorizedResourceAction: "Microsoft.Intune_ManagedDevices_Read" }]
+            }]
+        }
+    };
+    const starIntuneReader = (page) => page.evaluate(() => window.EOReview.toggle({
+        id: "role|Intune|Reader", kind: "Role", system: "Intune", name: "Reader", hash: ""
+    }));
+
+    test("uses the role of the starred role's RBAC system when the name exists in another system", async ({ page }) => {
+        await setClassificationFixture(page, sameNameRoles);
+        const pageErrors = await openCustomize(page);
+        await starIntuneReader(page);
+        await page.reload();
+        await page.locator("#custAdd").click();
+        await page.locator("#cfReview").getByRole("button", { name: "Use role" }).click();
+        await expect(page.locator("#cfSys")).toHaveValue("DeviceManagement");
+        await expect(page.locator("#cfRoleId")).toHaveValue("a9f2c3c1-0000-4000-8000-000000000001");
+        await page.locator("#cfTier").selectOption("ManagementPlane");
+        await page.locator("#cfJust").fill("Intune read access");
+        await page.locator("#cfApply").click();
+
+        const files = await exportFiles(page);
+        expect(files[`${base}.json`]).toEqual([{
+            RbacSystem: "DeviceManagement", RoleDefinitionId: "a9f2c3c1-0000-4000-8000-000000000001", RoleDefinitionName: "Reader",
+            EAMTierLevelName: "ManagementPlane", EAMTierLevelTagValue: "1", Justification: "Intune read access"
+        }]);
+        expect(pageErrors).toEqual([]);
+    });
+
+    test("adds all role actions of the starred role's RBAC system when the name exists in another system", async ({ page }) => {
+        await setClassificationFixture(page, sameNameRoles);
+        const pageErrors = await openCustomize(page);
+        await starIntuneReader(page);
+        await page.locator("#custTypeSeg [data-type=roleaction]").click();
+        await page.locator("#custAdd").click();
+        await page.locator("#cfReview").getByRole("button", { name: "Add all role actions" }).click();
+        await expect(page.locator("#cfSys")).toHaveValue("DeviceManagement");
+        await expect(page.locator("#cfActionChips .cust-chip")).toHaveCount(1);
+        await expect(page.locator("#cfActionChips")).toContainText("Microsoft.Intune_ManagedDevices_Read");
+        await expect(page.locator("#cfActionChips")).not.toContainText("*/read");
+        expect(pageErrors).toEqual([]);
+    });
+
+    test("keeps the RBAC system of a starred role that is not in the classified role exports", async ({ page }) => {
+        await setClassificationFixture(page, sameNameRoles);
+        const pageErrors = await openCustomize(page);
+        await page.evaluate(() => window.EOReview.toggle({
+            id: "role|Azure|Custom Operator", kind: "Role", system: "Azure", name: "Custom Operator", hash: ""
+        }));
+        await page.reload();
+        await page.locator("#custAdd").click();
+        await expect(page.locator("#cfSys")).toHaveValue("EntraID");
+        await page.locator("#cfReview").getByRole("button", { name: "Use role" }).click();
+        await expect(page.locator("#cfSys")).toHaveValue("Azure");
+        await expect(page.locator("#cfRoleName")).toHaveValue("Custom Operator");
+        expect(pageErrors).toEqual([]);
+    });
+
+    test("asks for the RBAC system of a starred role whose name exists in several systems", async ({ page }) => {
+        await setClassificationFixture(page, sameNameRoles);
+        const pageErrors = await openCustomize(page);
+        await page.evaluate(() => window.EOReview.toggle({ id: "role||Reader", kind: "Role", system: "", name: "Reader", hash: "" }));
+        await page.locator("#custTypeSeg [data-type=roleaction]").click();
+        await page.locator("#custAdd").click();
+        await page.locator("#cfReview").getByRole("button", { name: "Add all role actions" }).click();
+        await expect(page.locator("#cfError")).toContainText("Several RBAC systems have a role named \"Reader\"");
+        await expect(page.locator("#cfActionChips .cust-chip")).toHaveCount(0);
+        expect(pageErrors).toEqual([]);
+    });
 });
