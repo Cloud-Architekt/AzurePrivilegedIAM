@@ -4546,7 +4546,21 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.Network/routeTables/delete",
+        "ActionType": "Action",
+        "Category": "Network",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.Network/routeTables/join/action",
+        "ActionType": "Action",
+        "Category": "Network",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Network/routeTables/write",
         "ActionType": "Action",
         "Category": "Network",
         "EAMTierLevelName": "ManagementPlane",
@@ -4610,6 +4624,13 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.Network/networkInterfaces/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Network/routeTables/read",
         "ActionType": "Action",
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",
@@ -60073,6 +60094,28 @@
     }
   },
   {
+    "RoleId": "bc578a8a-7f30-4777-bc46-55f9058a8388",
+    "RoleName": "EBM Calc Data User",
+    "IsCustom": false,
+    "isPrivileged": false,
+    "AssignmentMode": null,
+    "InheritsPermissionsFrom": null,
+    "RichDescription": "Process health data in EBM Calc service API",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": "Microsoft.HealthBot/healthBots/AIActions/EBMcalc/Process/Action",
+        "ActionType": "DataAction",
+        "Category": "General Data Plane Operations",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "ManagementPlane",
+      "EAMTierLevelTagValue": "1"
+    }
+  },
+  {
     "RoleId": "53e48117-a530-4075-bcbe-d91913e3bdb8",
     "RoleName": "Edge Management Copilot User",
     "IsCustom": false,
@@ -89352,6 +89395,13 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.Sql/servers/administrators/write",
+        "ActionType": "Action",
+        "Category": "SQL Database",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.Sql/servers/databases/delete",
         "ActionType": "Action",
         "Category": "SQL Database",
@@ -89423,6 +89473,13 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.DataMigration/sqlMigrationServices/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Sql/servers/administrators/read",
         "ActionType": "Action",
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",
@@ -89556,6 +89613,13 @@
         "EAMTierLevelTagValue": "1"
       },
       {
+        "AuthorizedResourceAction": "Microsoft.Sql/managedInstances/administrators/write",
+        "ActionType": "Action",
+        "Category": "SQL Database",
+        "EAMTierLevelName": "ManagementPlane",
+        "EAMTierLevelTagValue": "1"
+      },
+      {
         "AuthorizedResourceAction": "Microsoft.Sql/managedInstances/databases/delete",
         "ActionType": "Action",
         "Category": "SQL Database",
@@ -89627,6 +89691,13 @@
       },
       {
         "AuthorizedResourceAction": "Microsoft.DataMigration/sqlMigrationServices/read",
+        "ActionType": "Action",
+        "Category": "Reader",
+        "EAMTierLevelName": "UserAccess",
+        "EAMTierLevelTagValue": "2"
+      },
+      {
+        "AuthorizedResourceAction": "Microsoft.Sql/managedInstances/administrators/read",
         "ActionType": "Action",
         "Category": "Reader",
         "EAMTierLevelName": "UserAccess",

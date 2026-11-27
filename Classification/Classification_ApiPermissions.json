@@ -11265,6 +11265,26 @@
     "EAMTierLevelTagValue": "1"
   },
   {
+    "PermissionId": "e40cb444-6d43-4ec1-812c-7d2558b795a1",
+    "PermissionValue": "Policy.Read.AuthFeatureToggle",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "PermissionId": "7507098b-7bae-49d4-9d50-5993a7ad2987",
+    "PermissionValue": "Policy.Read.AuthFeatureToggle",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
     "PermissionId": "227900ff-df89-40f8-90e2-8157cf6995d5",
     "PermissionValue": "Policy.Read.B2BManagementPolicy",
     "PermissionType": "Application",
@@ -11497,6 +11517,26 @@
   {
     "PermissionId": "7e823077-d88e-468f-a337-e18f1f0e6c7c",
     "PermissionValue": "Policy.ReadWrite.AuthenticationMethod",
+    "PermissionType": "Delegated",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "PermissionId": "8001e13e-118d-41c3-b49b-23d85b97ce96",
+    "PermissionValue": "Policy.ReadWrite.AuthFeatureToggle",
+    "PermissionType": "Application",
+    "TargetAppDisplayName": "Microsoft Graph",
+    "TargetAppId": "00000003-0000-0000-c000-000000000000",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "PermissionId": "c0b02b42-c585-4b44-af20-171be09a05a7",
+    "PermissionValue": "Policy.ReadWrite.AuthFeatureToggle",
     "PermissionType": "Delegated",
     "TargetAppDisplayName": "Microsoft Graph",
     "TargetAppId": "00000003-0000-0000-c000-000000000000",
