@@ -4268,6 +4268,14 @@
   },
   {
     "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "e40cb444-6d43-4ec1-812c-7d2558b795a1",
+    "AppRoleDisplayName": "Policy.Read.AuthFeatureToggle",
+    "Category": "Tenant Configuration (Reader)",
+    "EAMTierLevelName": "ManagementPlane",
+    "EAMTierLevelTagValue": "1"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "227900ff-df89-40f8-90e2-8157cf6995d5",
     "AppRoleDisplayName": "Policy.Read.B2BManagementPolicy",
     "Category": "Tenant Configuration (Reader)",
@@ -4358,6 +4366,14 @@
     "AppId": "00000003-0000-0000-c000-000000000000",
     "AppRoleId": "29c18626-4985-4dcd-85c0-193eef327366",
     "AppRoleDisplayName": "Policy.ReadWrite.AuthenticationMethod",
+    "Category": "Authentication",
+    "EAMTierLevelName": "ControlPlane",
+    "EAMTierLevelTagValue": "0"
+  },
+  {
+    "AppId": "00000003-0000-0000-c000-000000000000",
+    "AppRoleId": "8001e13e-118d-41c3-b49b-23d85b97ce96",
+    "AppRoleDisplayName": "Policy.ReadWrite.AuthFeatureToggle",
     "Category": "Authentication",
     "EAMTierLevelName": "ControlPlane",
     "EAMTierLevelTagValue": "0"

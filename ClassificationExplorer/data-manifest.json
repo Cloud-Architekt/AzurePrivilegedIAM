@@ -1,15 +1,15 @@
 {
-  "generatedUtc": "2026-11-19T06:37:36.0167430Z",
+  "generatedUtc": "2026-11-27T06:05:20.8760330Z",
   "mode": "Standalone",
   "repoRoot": "AzurePrivilegedIAM",
   "fileCount": 19,
   "files": [
     {
       "path": "Classification/Classification_EntraIdDirectoryRoles.json",
-      "bytes": 624092,
-      "items": 148,
+      "bytes": 625138,
+      "items": 149,
       "param": false,
-      "sha256": "4c0d301e57890ff7a5dcc4b885e0cf591c789531f15c64e82e954a2a0a855875"
+      "sha256": "f4251cc67998164d5be3eff11d36f63a756aa3daf01d5b1f2d276daf3635b1af"
     },
     {
       "path": "Classification/Classification_EntraIdDirectoryRolesFromMsftDocs.json",
@@ -27,10 +27,10 @@
     },
     {
       "path": "Classification/Classification_AzureResources.json",
-      "bytes": 3523011,
-      "items": 994,
+      "bytes": 3525431,
+      "items": 995,
       "param": false,
-      "sha256": "f1dec360cde050c1b0cde35f42e83be2de312454027c789a8a9ad1fac04da204"
+      "sha256": "54d4f4ce6ba43add0b2f3638fdf92c3cbcadce020daa66c04b8201097a04d166"
     },
     {
       "path": "Classification/Classification_DeviceManagementRoles.json",
@@ -41,24 +41,24 @@
     },
     {
       "path": "Classification/Classification_ApiPermissions.json",
-      "bytes": 854501,
-      "items": 2257,
+      "bytes": 856039,
+      "items": 2261,
       "param": false,
-      "sha256": "3c0f4020c0f892100e51e161b44255a426d23324f16c15e54909e09c645c8fe3"
+      "sha256": "3a5b308600f41dd3a7013b632064c3a0687ad39ad0af9ac3f8fb8edd8d99351b"
     },
     {
       "path": "Classification/Classification_AppRoles.json",
-      "bytes": 274574,
-      "items": 941,
+      "bytes": 275165,
+      "items": 943,
       "param": false,
-      "sha256": "528921e121580a766f879ad3a8ee63ad6c213c8929844b918bce1cf6346a23db"
+      "sha256": "674fb9a5bcfb90d2947cc04a4d668f64a6905e094ece47d16a1d24aac85a5e59"
     },
     {
       "path": "Classification/Classification_Scopes.json",
-      "bytes": 372328,
-      "items": 1316,
+      "bytes": 372911,
+      "items": 1318,
       "param": false,
-      "sha256": "768e802cb4da56c6ab84480276faf1ee916d1b9ea294d063e3049e9ba0e8e3b1"
+      "sha256": "01da343e050d0831917e8c81f4981a60f97c37196b0d5ba4bd147dee4b3e15f7"
     },
     {
       "path": "EntraOps_Classification/Classification_AadResources.json",

@@ -2489,6 +2489,27 @@
     }
   },
   {
+    "RoleId": "ddc7372f-4ece-4e8d-8010-1b36d9992d23",
+    "RoleName": "B2B Policy Administrator",
+    "isPrivileged": false,
+    "AssignmentMode": "allowed",
+    "InheritsPermissionsFrom": [],
+    "Categories": "collaboration,identity",
+    "RichDescription": "Assign the B2B Policy Administrator role to users who need to do the following tasks:\n- Create, read, update, and delete B2B management policies.\n- Configure invitation domain restrictions and automatic invitation redemption in B2B management policies.\n- Set the tenant-default B2B management policy.\nThis role does not grant administration of other policy types, cross-tenant access policies, users, applications, or role assignments.",
+    "RolePermissions": [
+      {
+        "AuthorizedResourceAction": null,
+        "Category": "Unclassified",
+        "EAMTierLevelName": "Unclassified",
+        "EAMTierLevelTagValue": "Unclassified"
+      }
+    ],
+    "Classification": {
+      "EAMTierLevelName": "Unclassified",
+      "EAMTierLevelTagValue": "Unclassified"
+    }
+  },
+  {
     "RoleId": "aaf43236-0c0d-4d5f-883a-6955382ac081",
     "RoleName": "B2C IEF Keyset Administrator",
     "isPrivileged": true,
